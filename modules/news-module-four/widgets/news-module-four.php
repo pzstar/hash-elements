@@ -695,9 +695,9 @@ class NewsModuleFour extends Widget_Base {
     /** Get Post Metas */
     protected function get_post_meta($count) {
         $settings = $this->get_settings_for_display();
-        $post_author = $count == 1 ? $settings['top_post_author'] : $settings['bottom_post_author'];
-        $post_date = $count == 1 ? $settings['top_post_date'] : $settings['bottom_post_date'];
-        $post_comment = $count == 1 ? $settings['top_post_comment'] : $settings['bottom_post_comment'];
+        $post_author = ($count == 1 || $count == 2) ? $settings['top_post_author'] : $settings['bottom_post_author'];
+        $post_date = ($count == 1 || $count == 2) ? $settings['top_post_date'] : $settings['bottom_post_date'];
+        $post_comment = ($count == 1 || $count == 2) ? $settings['top_post_comment'] : $settings['bottom_post_comment'];
 
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
             ?>
