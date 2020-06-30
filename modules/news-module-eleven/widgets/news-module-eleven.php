@@ -160,7 +160,7 @@ class NewsModuleEleven extends Widget_Base {
 
         $this->add_control(
                 'post_author', [
-            'label' => esc_html__('Post Author', 'hash-elements'),
+            'label' => esc_html__('Show Post Author', 'hash-elements'),
             'type' => Controls_Manager::SWITCHER,
             'label_on' => esc_html__('Yes', 'hash-elements'),
             'label_off' => esc_html__('No', 'hash-elements'),
@@ -171,7 +171,7 @@ class NewsModuleEleven extends Widget_Base {
 
         $this->add_control(
                 'post_date', [
-            'label' => esc_html__('Post Date', 'hash-elements'),
+            'label' => esc_html__('Show Post Date', 'hash-elements'),
             'type' => Controls_Manager::SWITCHER,
             'default' => 'yes',
             'label_on' => esc_html__('Yes', 'hash-elements'),
@@ -182,7 +182,7 @@ class NewsModuleEleven extends Widget_Base {
 
         $this->add_control(
                 'post_comment', [
-            'label' => esc_html__('Post Comments', 'hash-elements'),
+            'label' => esc_html__('Show Post Comments', 'hash-elements'),
             'type' => Controls_Manager::SWITCHER,
             'label_on' => esc_html__('Yes', 'hash-elements'),
             'label_off' => esc_html__('No', 'hash-elements'),

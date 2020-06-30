@@ -85,7 +85,7 @@ class Group_Control_Query extends Group_Control_Base {
                 'comment_count' => esc_html__('Comment Count', 'hash-elements'),
                 'title' => esc_html__('Title', 'hash-elements'),
                 'ID' => esc_html__('Post ID', 'hash-elements'),
-                'author' => esc_html__('Post Author', 'hash-elements'),
+                'author' => esc_html__('Show Post Author', 'hash-elements'),
             ],
             'default' => 'date',
         ];

@@ -105,7 +105,7 @@ msgstr ""
 #: modules/news-module-three/widgets/news-module-three.php:190
 #: modules/news-module-two/widgets/news-module-two.php:125
 #: modules/news-module-two/widgets/news-module-two.php:200
-msgid "Post Author"
+msgid "Show Post Author"
 msgstr ""
 
 #: inc/controls/groups/group-control-query.php:94
@@ -376,7 +376,7 @@ msgstr ""
 #: modules/news-module-three/widgets/news-module-three.php:201
 #: modules/news-module-two/widgets/news-module-two.php:137
 #: modules/news-module-two/widgets/news-module-two.php:211
-msgid "Post Date"
+msgid "Show Post Date"
 msgstr ""
 
 #: modules/news-module-eight/widgets/news-module-eight.php:149
@@ -400,7 +400,7 @@ msgstr ""
 #: modules/news-module-three/widgets/news-module-three.php:212
 #: modules/news-module-two/widgets/news-module-two.php:149
 #: modules/news-module-two/widgets/news-module-two.php:222
-msgid "Post Comments"
+msgid "Show Post Comments"
 msgstr ""
 
 #: modules/news-module-eight/widgets/news-module-eight.php:162
