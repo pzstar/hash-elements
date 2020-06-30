@@ -131,25 +131,6 @@ class NewsModuleEleven extends Widget_Base {
                 ]
         );
 
-        $this->add_control(
-                'slide_count', [
-            'label' => esc_html__('No of Slides to Show', 'hash-elements'),
-            'type' => Controls_Manager::SLIDER,
-            'size_units' => ['px'],
-            'range' => [
-                'px' => [
-                    'min' => 1,
-                    'max' => 10,
-                    'step' => 1
-                ],
-            ],
-            'default' => [
-                'unit' => 'px',
-                'size' => 4,
-            ],
-                ]
-        );
-
         $this->add_control('post_excerpt_length', [
             'label' => esc_html__('Excerpt Length', 'hash-elements'),
             'description' => esc_html__('Enter 0 to hide excerpt', 'hash-elements'),
@@ -739,7 +720,6 @@ class NewsModuleEleven extends Widget_Base {
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        $slide_no = $settings['slide_count']['size'];
         $slide_post_image_size = $settings['post_image_size'];
 
         $params = array(
@@ -759,7 +739,7 @@ class NewsModuleEleven extends Widget_Base {
         );
         $params = json_encode($params);
         ?>
-        <div class="he-carousel-block" data-count="<?php echo esc_attr($slide_no); ?>">
+        <div class="he-carousel-block">
             <?php $this->render_header(); ?>
 
             <div class="he-carousel-block-wrap owl-carousel" data-params='<?php echo $params; ?>'>

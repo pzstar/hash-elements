@@ -14,17 +14,6 @@ Hash Elements allows you to add different  elementor blocks to build your websit
 
 Hash Elements is an all in one add on for Elementor page builder that includes 10+ attractive and highly customizable modules. These modules are simple and super easy to use to create formidable magazine, newspaper, business or any type of WordPress websites in no time. Keeping flexiblity in mind, this plugin comes with highly editable height and width for each modules to easily add them for any screen size. Also, the plugin contains typography and color picker to personalize each and every elements present on the block.
 
-
-<h4>Main features</h4>
-<ul>
-<li>10+ Elementor Modules</li>
-<li>Drag and Drop Reorder</li>
-<li>Editable Height and Width</li>
-<li>Color Picker to Choose Color from Unlimited Color Scheme</li>
-<li>100% Responsive and Mobile Friendly</li>
-<li>Cross Browser Compatible</li>
-</ul>
-
 == Installation ==
 The easy way to install the plugin is via WordPress.org plugin directory.
 
