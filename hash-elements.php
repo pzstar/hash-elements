@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Hash Elements
+ * Plugin Name: Hash Elements - Addons for Elementor
  * Description: Elementor addons for WordPress Themes developed by HashThemes https://hashthemes.com
  * Version: 1.0.0
  * Author: HashThemes
