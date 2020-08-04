@@ -48,6 +48,12 @@ final class HASHELE_Modules_Manager {
             'tile-module-one',
             'tile-module-two',
             'tile-module-three',
+            'square-plus-slider',
+            'square-plus-featured-block',
+            'square-module-three',
+            'square-module-four',
+            'square-module-five',
+            'square-module-six',
         ];
 
         foreach ($modules as $module) {

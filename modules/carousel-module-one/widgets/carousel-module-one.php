@@ -563,18 +563,6 @@ class CarouselModuleOne extends Widget_Base {
                 ]
         );
 
-        $this->add_control(
-                'post_margin', [
-            'label' => esc_html__('Post Margin', 'hash-elements'),
-            'type' => Controls_Manager::DIMENSIONS,
-            'allowed_dimensions' => 'vertical',
-            'size_units' => ['px', '%', 'em'],
-            'selectors' => [
-                '{{WRAPPER}} .he-carousel-block .he-carousel-block-wrap' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
-            ],
-                ]
-        );
-
         $this->end_controls_section();
 
         $this->start_controls_section(
@@ -604,6 +592,38 @@ class CarouselModuleOne extends Widget_Base {
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .he-carousel-block .he-post-content .he-post-meta'
+                ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+                'post_excerpt', [
+            'label' => esc_html__('Excerpt', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
+        $this->add_control(
+                'post_excerpt_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-excerpt' => 'color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_group_control(
+                Group_Control_Typography::get_type(), [
+            'name' => 'post_excerpt_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'selector' => '{{WRAPPER}} .he-excerpt'
                 ]
         );
 
