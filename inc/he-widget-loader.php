@@ -64,6 +64,8 @@ class HASHELE_Widget_Loader {
     }
 
     public function add_actions() {
+        add_filter('body_class', [$this, 'get_active_theme_slug']);
+
         add_action('elementor/init', [$this, 'add_elementor_widget_categories']);
 
         // Fires after Elementor controls are registered.
@@ -90,7 +92,7 @@ class HASHELE_Widget_Loader {
     function add_elementor_widget_categories() {
 
         $groups = array(
-            'viral-news-elements' => esc_html__('Viral News Block', 'hash-elements'),
+            'he-magazine-elements' => esc_html__('Magazine Block', 'hash-elements'),
         );
 
         foreach ($groups as $key => $value) {
@@ -134,8 +136,8 @@ class HASHELE_Widget_Loader {
      * Enqueue Frontend Styles
      */
     public function enqueue_frontend_styles() {
-        wp_enqueue_style('hash-elements-style', HASHELE_URL . 'assets/lib/themify-icons/themify-icons.css', array(), HASHELE_VERSION);
-        wp_enqueue_style('hash-elements-owl-carousel-style', HASHELE_URL . 'assets/lib/owl-carousel/css/owl.carousel.min.css', array(), HASHELE_VERSION);
+        wp_enqueue_style('materialdesignicons', HASHELE_URL . 'assets/lib/materialdesignicons/materialdesignicons.css', array(), HASHELE_VERSION);
+        wp_enqueue_style('owl-carousel', HASHELE_URL . 'assets/lib/owl-carousel/css/owl.carousel.min.css', array(), HASHELE_VERSION);
         wp_enqueue_style('hash-elements-frontend-style', HASHELE_URL . 'assets/css/frontend.css', array(), HASHELE_VERSION);
     }
 
@@ -168,6 +170,16 @@ class HASHELE_Widget_Loader {
      */
     public function is_elementor_pro_installed() {
         return function_exists('elementor_pro_load_plugin') ? 'yes' : 'no';
+    }
+
+    /**
+     * Check Active Theme
+     *
+     * @return string
+     */
+    public function get_active_theme_slug($classes) {
+        $classes[] = 'he-' . get_option('stylesheet');
+        return $classes;
     }
 
 }

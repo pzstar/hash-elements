@@ -28,6 +28,7 @@ final class HASHELE_Modules_Manager {
 
     public function register_modules() {
         $modules = [
+            'ticker-module',
             'news-module-one',
             'news-module-two',
             'news-module-three',
@@ -38,7 +39,15 @@ final class HASHELE_Modules_Manager {
             'news-module-eight',
             'news-module-nine',
             'news-module-ten',
-            'news-module-eleven'
+            'news-module-eleven',
+            'news-module-twelve',
+            'news-module-thirteen',
+            'news-module-fourteen',
+            'news-module-fifteen',
+            'carousel-module-one',
+            'tile-module-one',
+            'tile-module-two',
+            'tile-module-three',
         ];
 
         foreach ($modules as $module) {
@@ -48,7 +57,6 @@ final class HASHELE_Modules_Manager {
             $class_name = str_replace('-', ' ', $module);
             $class_name = str_replace(' ', '', ucwords($class_name));
             $class_name = __NAMESPACE__ . '\\Modules\\' . $class_name . '\Module'; /* HashElements\Modules\BlokOne\Module */
-            // var_dump($class_name);die();
 
             $class_name::instance();
         }

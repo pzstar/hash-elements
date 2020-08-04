@@ -16,9 +16,6 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class NewsModuleOne extends Widget_Base {
 
     /** Widget Name */
@@ -33,12 +30,12 @@ class NewsModuleOne extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'he-news-module-one';
+        return 'he-news-module-one he-news-modules';
     }
 
     /** Category */
     public function get_categories() {
-        return ['viral-news-elements'];
+        return ['he-magazine-elements'];
     }
 
     /** Controls */
@@ -296,14 +293,14 @@ class NewsModuleOne extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'header_title_style', [
+                'header_style', [
             'label' => esc_html__('Header Title', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
                 ]
         );
 
         $this->add_control(
-                'heading_color', [
+                'header_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
@@ -311,33 +308,47 @@ class NewsModuleOne extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-one .he-block-title a, 
-                 {{WRAPPER}} h2.he-block-title' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
             ],
                 ]
         );
 
         $this->add_control(
-                'underline_color', [
-            'label' => esc_html__('Underline Color', 'hash-elements'),
+                'header_short_border_color', [
+            'label' => esc_html__('Short Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-one .he-block-title a span:before, 
-                 {{WRAPPER}} h2.he-block-title span:before' => 'background: {{VALUE}}',
+                '.he-viral {{WRAPPER}} .he-block-title' => 'border-color: {{VALUE}}',
+                '.he-viral-news {{WRAPPER}} .he-block-title span:before' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'header_long_border_color', [
+            'label' => esc_html__('Long Border Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '.he-viral {{WRAPPER}} .he-block-title:after' => 'background-color: {{VALUE}}',
+                '.he-viral-news {{WRAPPER}} .he-block-title' => 'border-color: {{VALUE}}',
             ],
                 ]
         );
 
         $this->add_group_control(
                 Group_Control_Typography::get_type(), [
-            'name' => 'heading_typography',
+            'name' => 'header_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-block-title, {{WRAPPER}} h2.he-block-title',
+            'selector' => '{{WRAPPER}} .he-block-title'
                 ]
         );
 
@@ -624,7 +635,7 @@ class NewsModuleOne extends Widget_Base {
                 $query = new \WP_Query($args);
                 while ($query->have_posts()): $query->the_post();
                     $index = $query->current_post + 1;
-                    $title_class = $index == 1 ? 'he-large-title' : '';
+                    $title_class = $index == 1 ? 'he-large-title' : 'he-big-title';
                     ?>
                     <div class="he-post-item">
                         <div class="he-post-thumb">

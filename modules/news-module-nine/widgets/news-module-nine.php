@@ -16,9 +16,6 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class NewsModuleNine extends Widget_Base {
 
     /** Widget Name */
@@ -33,12 +30,12 @@ class NewsModuleNine extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'he-news-module-nine';
+        return 'he-news-module-nine he-news-modules';
     }
 
     /** Category */
     public function get_categories() {
-        return ['viral-news-elements'];
+        return ['he-magazine-elements'];
     }
 
     /** Controls */
@@ -293,23 +290,37 @@ class NewsModuleNine extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-nine .he-block-title a, 
-                 {{WRAPPER}} .he-news-module-nine .he-block-title' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
             ],
                 ]
         );
 
         $this->add_control(
-                'header_underline_color', [
-            'label' => esc_html__('Underline Color', 'hash-elements'),
+                'header_short_border_color', [
+            'label' => esc_html__('Short Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-nine .he-block-title a span:before, 
-                 {{WRAPPER}} .he-news-module-nine .he-block-title span:before' => 'background: {{VALUE}}',
+                '.he-viral {{WRAPPER}} .he-block-title' => 'border-color: {{VALUE}}',
+                '.he-viral-news {{WRAPPER}} .he-block-title span:before' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'header_long_border_color', [
+            'label' => esc_html__('Long Border Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '.he-viral {{WRAPPER}} .he-block-title:after' => 'background-color: {{VALUE}}',
+                '.he-viral-news {{WRAPPER}} .he-block-title' => 'border-color: {{VALUE}}',
             ],
                 ]
         );
@@ -319,8 +330,7 @@ class NewsModuleNine extends Widget_Base {
             'name' => 'header_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-news-module-nine .he-block-title, 
-                           {{WRAPPER}} .he-news-module-nine .he-block-title a',
+            'selector' => '{{WRAPPER}} .he-block-title'
                 ]
         );
 
@@ -338,8 +348,7 @@ class NewsModuleNine extends Widget_Base {
             'name' => 'category_normal_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-news-module-nine ul.post-categories li a,
-                           {{WRAPPER}} .he-news-module-nine .post-content ul.post-categories li a',
+            'selector' => '{{WRAPPER}} .he-news-module-nine ul.post-categories li a',
                 ]
         );
 
@@ -622,13 +631,13 @@ class NewsModuleNine extends Widget_Base {
                                     </div>
 
                                     <div class="he-post-content">
-                                        <h3><?php the_title(); ?></h3>
+                                        <h3 class="he-post-title"><?php the_title(); ?></h3>
                                         <?php $this->get_post_meta($index); ?>
                                     </div>
                                 </a>
                                 <?php
                                 if ($settings['featured_post_category'] == 'yes')
-                                    echo get_the_category_list();
+                                    echo he_get_the_primary_category();
                                 ?>
                             </div>
                         </div>
@@ -655,7 +664,7 @@ class NewsModuleNine extends Widget_Base {
                                 if ($settings['listing_post_category'] == 'yes')
                                     he_get_the_primary_category();
                                 ?>
-                                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                <h3 class="he-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                 <?php $this->get_post_meta($index); ?>
                             </div>
                         </div>

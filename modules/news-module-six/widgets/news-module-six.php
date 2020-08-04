@@ -16,9 +16,6 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class NewsModuleSix extends Widget_Base {
 
     /** Widget Name */
@@ -33,12 +30,12 @@ class NewsModuleSix extends Widget_Base {
 
     /** Category */
     public function get_categories() {
-        return ['viral-news-elements'];
+        return ['he-magazine-elements'];
     }
 
     /** Icon */
     public function get_icon() {
-        return 'he-news-module-six';
+        return 'he-news-module-six he-news-modules';
     }
 
     /** Controls */
@@ -294,23 +291,37 @@ class NewsModuleSix extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-six .he-block-title a, 
-                 {{WRAPPER}} .he-news-module-six .he-block-title' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
             ],
                 ]
         );
 
         $this->add_control(
-                'header_underline_color', [
-            'label' => esc_html__('Underline Color', 'hash-elements'),
+                'header_short_border_color', [
+            'label' => esc_html__('Short Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-six .he-block-title a span:before, 
-                 {{WRAPPER}} .he-news-module-six .he-block-title span:before' => 'background: {{VALUE}}',
+                '.he-viral {{WRAPPER}} .he-block-title' => 'border-color: {{VALUE}}',
+                '.he-viral-news {{WRAPPER}} .he-block-title span:before' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'header_long_border_color', [
+            'label' => esc_html__('Long Border Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '.he-viral {{WRAPPER}} .he-block-title:after' => 'background-color: {{VALUE}}',
+                '.he-viral-news {{WRAPPER}} .he-block-title' => 'border-color: {{VALUE}}',
             ],
                 ]
         );
@@ -320,8 +331,7 @@ class NewsModuleSix extends Widget_Base {
             'name' => 'header_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-news-module-six .he-block-title a, 
-                           {{WRAPPER}} .he-news-module-six .he-block-title',
+            'selector' => '{{WRAPPER}} .he-block-title'
                 ]
         );
 
@@ -609,7 +619,7 @@ class NewsModuleSix extends Widget_Base {
                     if ($index == 1) {
                         ?>
                         <div class="he-big-block">
-                            <div class="he-post-item he-clearfix">
+                            <div class="he-post-item">
                                 <div class="he-post-thumb">
                                     <a href="<?php the_permalink(); ?>">
                                         <div class="he-thumb-container">
@@ -639,7 +649,7 @@ class NewsModuleSix extends Widget_Base {
                         <?php if ($index == 2) { ?>
                             <div class="he-small-block">
                             <?php } ?>
-                            <div class="he-post-item he-clearfix">
+                            <div class="he-post-item">
                                 <div class="he-post-thumb">
                                     <a href="<?php the_permalink(); ?>">
                                         <div class="he-thumb-container">

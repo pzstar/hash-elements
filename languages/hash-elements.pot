@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hash Elements\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 10:46+0000\n"
+"POT-Creation-Date: 2020-07-30 07:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,36 +15,57 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.4.0; wp-5.4.2"
 
-#: hash-elements.php:99
+#: hash-elements.php:90
 msgid ""
 "Ops! Hash Elements is not working because you need to activate the Elementor "
 "plugin first."
 msgstr ""
 
-#: hash-elements.php:100
+#: hash-elements.php:91
 msgid "Activate Elementor Now"
 msgstr ""
 
-#: hash-elements.php:107
+#: hash-elements.php:98
 msgid ""
 "Ops! Hash Elements is not working because you need to install the Elementor "
 "plugin"
 msgstr ""
 
-#: hash-elements.php:108
+#: hash-elements.php:99
 msgid "Install Elementor Now"
 msgstr ""
 
-#: inc/he-widget-loader.php:94
-msgid "Viral News Block"
+#: inc/he-widget-loader.php:95
+msgid "Magazine Block"
 msgstr ""
 
-#: inc/helper-functions.php:42
+#: inc/helper-functions.php:41
 msgid "ago"
 msgstr ""
 
 #: inc/controls/groups/group-control-header.php:23
 #: inc/controls/groups/group-control-query.php:86
+#: modules/carousel-module-one/widgets/carousel-module-one.php:521
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:369
+#: modules/news-module-nine/widgets/news-module-nine.php:437
+#: modules/news-module-seven/widgets/news-module-seven.php:447
+#: modules/news-module-three/widgets/news-module-three.php:414
+#: modules/news-module-eleven/widgets/news-module-eleven.php:360
+#: modules/ticker-module/widgets/ticker-module.php:55
+#: modules/ticker-module/widgets/ticker-module.php:126
+#: modules/news-module-four/widgets/news-module-four.php:442
+#: modules/news-module-six/widgets/news-module-six.php:439
+#: modules/tile-module-two/widgets/tile-module-two.php:422
+#: modules/news-module-five/widgets/news-module-five.php:447
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:361
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:369
+#: modules/tile-module-one/widgets/tile-module-one.php:446
+#: modules/news-module-ten/widgets/news-module-ten.php:353
+#: modules/news-module-one/widgets/news-module-one.php:455
+#: modules/news-module-twelve/widgets/news-module-twelve.php:361
+#: modules/news-module-two/widgets/news-module-two.php:455
+#: modules/news-module-eight/widgets/news-module-eight.php:447
+#: modules/tile-module-three/widgets/tile-module-three.php:361
 msgid "Title"
 msgstr ""
 
@@ -85,26 +106,36 @@ msgid "Post ID"
 msgstr ""
 
 #: inc/controls/groups/group-control-query.php:88
-#: modules/news-module-eight/widgets/news-module-eight.php:125
-#: modules/news-module-eight/widgets/news-module-eight.php:199
-#: modules/news-module-eleven/widgets/news-module-eleven.php:155
-#: modules/news-module-five/widgets/news-module-five.php:125
-#: modules/news-module-five/widgets/news-module-five.php:199
-#: modules/news-module-four/widgets/news-module-four.php:119
-#: modules/news-module-four/widgets/news-module-four.php:196
-#: modules/news-module-nine/widgets/news-module-nine.php:118
-#: modules/news-module-nine/widgets/news-module-nine.php:192
-#: modules/news-module-one/widgets/news-module-one.php:125
-#: modules/news-module-one/widgets/news-module-one.php:207
-#: modules/news-module-seven/widgets/news-module-seven.php:125
-#: modules/news-module-seven/widgets/news-module-seven.php:199
-#: modules/news-module-six/widgets/news-module-six.php:118
-#: modules/news-module-six/widgets/news-module-six.php:192
-#: modules/news-module-ten/widgets/news-module-ten.php:118
-#: modules/news-module-three/widgets/news-module-three.php:117
-#: modules/news-module-three/widgets/news-module-three.php:190
-#: modules/news-module-two/widgets/news-module-two.php:125
-#: modules/news-module-two/widgets/news-module-two.php:200
+#: modules/carousel-module-one/widgets/carousel-module-one.php:141
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:122
+#: modules/news-module-nine/widgets/news-module-nine.php:115
+#: modules/news-module-nine/widgets/news-module-nine.php:200
+#: modules/news-module-seven/widgets/news-module-seven.php:123
+#: modules/news-module-seven/widgets/news-module-seven.php:208
+#: modules/news-module-three/widgets/news-module-three.php:93
+#: modules/news-module-three/widgets/news-module-three.php:176
+#: modules/news-module-eleven/widgets/news-module-eleven.php:114
+#: modules/news-module-four/widgets/news-module-four.php:116
+#: modules/news-module-four/widgets/news-module-four.php:204
+#: modules/news-module-six/widgets/news-module-six.php:115
+#: modules/news-module-six/widgets/news-module-six.php:200
+#: modules/tile-module-two/widgets/tile-module-two.php:93
+#: modules/tile-module-two/widgets/tile-module-two.php:156
+#: modules/news-module-five/widgets/news-module-five.php:123
+#: modules/news-module-five/widgets/news-module-five.php:208
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:115
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:122
+#: modules/tile-module-one/widgets/tile-module-one.php:93
+#: modules/tile-module-one/widgets/tile-module-one.php:180
+#: modules/news-module-ten/widgets/news-module-ten.php:115
+#: modules/news-module-one/widgets/news-module-one.php:123
+#: modules/news-module-one/widgets/news-module-one.php:217
+#: modules/news-module-twelve/widgets/news-module-twelve.php:114
+#: modules/news-module-two/widgets/news-module-two.php:123
+#: modules/news-module-two/widgets/news-module-two.php:217
+#: modules/news-module-eight/widgets/news-module-eight.php:123
+#: modules/news-module-eight/widgets/news-module-eight.php:208
+#: modules/tile-module-three/widgets/tile-module-three.php:93
 msgid "Show Post Author"
 msgstr ""
 
@@ -124,798 +155,1483 @@ msgstr ""
 msgid "Offset"
 msgstr ""
 
-#: modules/news-module-eight/widgets/news-module-eight.php:31
-msgid "News Module 8"
+#: modules/carousel-module-one/widgets/carousel-module-one.php:28
+msgid "Carousel Module"
 msgstr ""
 
-#: modules/news-module-eight/widgets/news-module-eight.php:50
-#: modules/news-module-eight/widgets/news-module-eight.php:57
-#: modules/news-module-eleven/widgets/news-module-eleven.php:50
-#: modules/news-module-eleven/widgets/news-module-eleven.php:57
-#: modules/news-module-five/widgets/news-module-five.php:50
-#: modules/news-module-five/widgets/news-module-five.php:57
-#: modules/news-module-four/widgets/news-module-four.php:50
-#: modules/news-module-four/widgets/news-module-four.php:57
-#: modules/news-module-nine/widgets/news-module-nine.php:50
-#: modules/news-module-nine/widgets/news-module-nine.php:57
-#: modules/news-module-one/widgets/news-module-one.php:50
-#: modules/news-module-one/widgets/news-module-one.php:57
-#: modules/news-module-seven/widgets/news-module-seven.php:50
-#: modules/news-module-seven/widgets/news-module-seven.php:57
-#: modules/news-module-six/widgets/news-module-six.php:50
-#: modules/news-module-six/widgets/news-module-six.php:57
-#: modules/news-module-ten/widgets/news-module-ten.php:50
-#: modules/news-module-ten/widgets/news-module-ten.php:57
-#: modules/news-module-three/widgets/news-module-three.php:50
-#: modules/news-module-three/widgets/news-module-three.php:57
-#: modules/news-module-two/widgets/news-module-two.php:50
-#: modules/news-module-two/widgets/news-module-two.php:57
+#: modules/carousel-module-one/widgets/carousel-module-one.php:47
+#: modules/carousel-module-one/widgets/carousel-module-one.php:54
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:46
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:53
+#: modules/news-module-nine/widgets/news-module-nine.php:47
+#: modules/news-module-nine/widgets/news-module-nine.php:54
+#: modules/news-module-seven/widgets/news-module-seven.php:47
+#: modules/news-module-seven/widgets/news-module-seven.php:54
+#: modules/news-module-three/widgets/news-module-three.php:47
+#: modules/news-module-three/widgets/news-module-three.php:54
+#: modules/news-module-eleven/widgets/news-module-eleven.php:46
+#: modules/news-module-eleven/widgets/news-module-eleven.php:53
+#: modules/news-module-four/widgets/news-module-four.php:47
+#: modules/news-module-four/widgets/news-module-four.php:54
+#: modules/news-module-six/widgets/news-module-six.php:47
+#: modules/news-module-six/widgets/news-module-six.php:54
+#: modules/tile-module-two/widgets/tile-module-two.php:47
+#: modules/tile-module-two/widgets/tile-module-two.php:54
+#: modules/news-module-five/widgets/news-module-five.php:47
+#: modules/news-module-five/widgets/news-module-five.php:54
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:46
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:53
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:46
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:53
+#: modules/tile-module-one/widgets/tile-module-one.php:47
+#: modules/tile-module-one/widgets/tile-module-one.php:54
+#: modules/news-module-ten/widgets/news-module-ten.php:47
+#: modules/news-module-ten/widgets/news-module-ten.php:54
+#: modules/news-module-one/widgets/news-module-one.php:47
+#: modules/news-module-one/widgets/news-module-one.php:54
+#: modules/news-module-twelve/widgets/news-module-twelve.php:46
+#: modules/news-module-twelve/widgets/news-module-twelve.php:53
+#: modules/news-module-two/widgets/news-module-two.php:47
+#: modules/news-module-two/widgets/news-module-two.php:54
+#: modules/news-module-eight/widgets/news-module-eight.php:47
+#: modules/news-module-eight/widgets/news-module-eight.php:54
+#: modules/tile-module-three/widgets/tile-module-three.php:47
+#: modules/tile-module-three/widgets/tile-module-three.php:54
 msgid "Header"
 msgstr ""
 
-#: modules/news-module-eight/widgets/news-module-eight.php:65
-#: modules/news-module-eleven/widgets/news-module-eleven.php:65
-#: modules/news-module-five/widgets/news-module-five.php:65
-#: modules/news-module-four/widgets/news-module-four.php:65
-#: modules/news-module-nine/widgets/news-module-nine.php:65
-#: modules/news-module-one/widgets/news-module-one.php:65
-#: modules/news-module-seven/widgets/news-module-seven.php:65
-#: modules/news-module-six/widgets/news-module-six.php:65
-#: modules/news-module-ten/widgets/news-module-ten.php:65
-#: modules/news-module-three/widgets/news-module-three.php:65
-#: modules/news-module-two/widgets/news-module-two.php:65
+#: modules/carousel-module-one/widgets/carousel-module-one.php:62
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:61
+#: modules/news-module-nine/widgets/news-module-nine.php:62
+#: modules/news-module-seven/widgets/news-module-seven.php:62
+#: modules/news-module-three/widgets/news-module-three.php:62
+#: modules/news-module-eleven/widgets/news-module-eleven.php:61
+#: modules/ticker-module/widgets/ticker-module.php:100
+#: modules/news-module-four/widgets/news-module-four.php:62
+#: modules/news-module-six/widgets/news-module-six.php:62
+#: modules/tile-module-two/widgets/tile-module-two.php:62
+#: modules/news-module-five/widgets/news-module-five.php:62
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:61
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:61
+#: modules/tile-module-one/widgets/tile-module-one.php:62
+#: modules/news-module-ten/widgets/news-module-ten.php:62
+#: modules/news-module-one/widgets/news-module-one.php:62
+#: modules/news-module-twelve/widgets/news-module-twelve.php:61
+#: modules/news-module-two/widgets/news-module-two.php:62
+#: modules/news-module-eight/widgets/news-module-eight.php:62
+#: modules/tile-module-three/widgets/tile-module-three.php:62
 msgid "Content Filter"
 msgstr ""
 
-#: modules/news-module-eight/widgets/news-module-eight.php:72
-#: modules/news-module-eleven/widgets/news-module-eleven.php:72
-#: modules/news-module-five/widgets/news-module-five.php:72
-#: modules/news-module-four/widgets/news-module-four.php:72
-#: modules/news-module-nine/widgets/news-module-nine.php:72
-#: modules/news-module-one/widgets/news-module-one.php:72
-#: modules/news-module-seven/widgets/news-module-seven.php:72
-#: modules/news-module-six/widgets/news-module-six.php:72
-#: modules/news-module-ten/widgets/news-module-ten.php:72
-#: modules/news-module-three/widgets/news-module-three.php:72
-#: modules/news-module-two/widgets/news-module-two.php:72
+#: modules/carousel-module-one/widgets/carousel-module-one.php:69
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:68
+#: modules/news-module-nine/widgets/news-module-nine.php:69
+#: modules/news-module-seven/widgets/news-module-seven.php:69
+#: modules/news-module-three/widgets/news-module-three.php:69
+#: modules/news-module-eleven/widgets/news-module-eleven.php:68
+#: modules/ticker-module/widgets/ticker-module.php:107
+#: modules/news-module-four/widgets/news-module-four.php:69
+#: modules/news-module-six/widgets/news-module-six.php:69
+#: modules/tile-module-two/widgets/tile-module-two.php:69
+#: modules/news-module-five/widgets/news-module-five.php:69
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:68
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:68
+#: modules/tile-module-one/widgets/tile-module-one.php:69
+#: modules/news-module-ten/widgets/news-module-ten.php:69
+#: modules/news-module-one/widgets/news-module-one.php:69
+#: modules/news-module-twelve/widgets/news-module-twelve.php:68
+#: modules/news-module-two/widgets/news-module-two.php:69
+#: modules/news-module-eight/widgets/news-module-eight.php:69
+#: modules/tile-module-three/widgets/tile-module-three.php:69
 msgid "Posts"
 msgstr ""
 
-#: modules/news-module-eight/widgets/news-module-eight.php:81
-#: modules/news-module-five/widgets/news-module-five.php:81
-#: modules/news-module-four/widgets/news-module-four.php:81
-#: modules/news-module-nine/widgets/news-module-nine.php:81
-#: modules/news-module-one/widgets/news-module-one.php:81
-#: modules/news-module-seven/widgets/news-module-seven.php:81
-#: modules/news-module-six/widgets/news-module-six.php:81
-#: modules/news-module-three/widgets/news-module-three.php:81
-#: modules/news-module-two/widgets/news-module-two.php:81
-msgid "Featured Block"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:96
-#: modules/news-module-eight/widgets/news-module-eight.php:177
-#: modules/news-module-eleven/widgets/news-module-eleven.php:95
-#: modules/news-module-five/widgets/news-module-five.php:96
-#: modules/news-module-five/widgets/news-module-five.php:177
-#: modules/news-module-four/widgets/news-module-four.php:96
-#: modules/news-module-four/widgets/news-module-four.php:171
-#: modules/news-module-nine/widgets/news-module-nine.php:96
-#: modules/news-module-nine/widgets/news-module-nine.php:170
-#: modules/news-module-one/widgets/news-module-one.php:96
-#: modules/news-module-one/widgets/news-module-one.php:177
-#: modules/news-module-seven/widgets/news-module-seven.php:96
-#: modules/news-module-seven/widgets/news-module-seven.php:177
-#: modules/news-module-six/widgets/news-module-six.php:96
-#: modules/news-module-six/widgets/news-module-six.php:170
-#: modules/news-module-ten/widgets/news-module-ten.php:96
-#: modules/news-module-three/widgets/news-module-three.php:96
-#: modules/news-module-three/widgets/news-module-three.php:169
-#: modules/news-module-two/widgets/news-module-two.php:96
-#: modules/news-module-two/widgets/news-module-two.php:177
-msgid "Image Height(%)"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:117
-#: modules/news-module-five/widgets/news-module-five.php:117
-#: modules/news-module-one/widgets/news-module-one.php:117
-#: modules/news-module-one/widgets/news-module-one.php:199
-#: modules/news-module-seven/widgets/news-module-seven.php:117
-#: modules/news-module-two/widgets/news-module-two.php:117
-msgid "Excerpt Length"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:127
-#: modules/news-module-eight/widgets/news-module-eight.php:140
-#: modules/news-module-eight/widgets/news-module-eight.php:151
-#: modules/news-module-eight/widgets/news-module-eight.php:201
-#: modules/news-module-eight/widgets/news-module-eight.php:213
-#: modules/news-module-eight/widgets/news-module-eight.php:223
-#: modules/news-module-eleven/widgets/news-module-eleven.php:157
-#: modules/news-module-eleven/widgets/news-module-eleven.php:169
-#: modules/news-module-eleven/widgets/news-module-eleven.php:179
-#: modules/news-module-eleven/widgets/news-module-eleven.php:190
-#: modules/news-module-eleven/widgets/news-module-eleven.php:200
-#: modules/news-module-five/widgets/news-module-five.php:127
-#: modules/news-module-five/widgets/news-module-five.php:140
-#: modules/news-module-five/widgets/news-module-five.php:151
-#: modules/news-module-five/widgets/news-module-five.php:201
-#: modules/news-module-five/widgets/news-module-five.php:213
-#: modules/news-module-five/widgets/news-module-five.php:223
-#: modules/news-module-four/widgets/news-module-four.php:121
-#: modules/news-module-four/widgets/news-module-four.php:134
-#: modules/news-module-four/widgets/news-module-four.php:145
-#: modules/news-module-four/widgets/news-module-four.php:198
-#: modules/news-module-four/widgets/news-module-four.php:210
-#: modules/news-module-four/widgets/news-module-four.php:220
-#: modules/news-module-nine/widgets/news-module-nine.php:120
-#: modules/news-module-nine/widgets/news-module-nine.php:133
-#: modules/news-module-nine/widgets/news-module-nine.php:144
-#: modules/news-module-nine/widgets/news-module-nine.php:194
-#: modules/news-module-nine/widgets/news-module-nine.php:206
-#: modules/news-module-nine/widgets/news-module-nine.php:216
-#: modules/news-module-one/widgets/news-module-one.php:127
-#: modules/news-module-one/widgets/news-module-one.php:140
-#: modules/news-module-one/widgets/news-module-one.php:151
-#: modules/news-module-one/widgets/news-module-one.php:209
-#: modules/news-module-one/widgets/news-module-one.php:221
-#: modules/news-module-one/widgets/news-module-one.php:231
-#: modules/news-module-seven/widgets/news-module-seven.php:127
-#: modules/news-module-seven/widgets/news-module-seven.php:140
-#: modules/news-module-seven/widgets/news-module-seven.php:151
-#: modules/news-module-seven/widgets/news-module-seven.php:201
-#: modules/news-module-seven/widgets/news-module-seven.php:213
-#: modules/news-module-seven/widgets/news-module-seven.php:223
-#: modules/news-module-six/widgets/news-module-six.php:120
-#: modules/news-module-six/widgets/news-module-six.php:133
-#: modules/news-module-six/widgets/news-module-six.php:144
-#: modules/news-module-six/widgets/news-module-six.php:194
-#: modules/news-module-six/widgets/news-module-six.php:206
-#: modules/news-module-six/widgets/news-module-six.php:216
-#: modules/news-module-ten/widgets/news-module-ten.php:120
-#: modules/news-module-ten/widgets/news-module-ten.php:132
-#: modules/news-module-ten/widgets/news-module-ten.php:142
-#: modules/news-module-three/widgets/news-module-three.php:119
-#: modules/news-module-three/widgets/news-module-three.php:132
-#: modules/news-module-three/widgets/news-module-three.php:143
-#: modules/news-module-three/widgets/news-module-three.php:192
-#: modules/news-module-three/widgets/news-module-three.php:204
-#: modules/news-module-three/widgets/news-module-three.php:214
-#: modules/news-module-two/widgets/news-module-two.php:127
-#: modules/news-module-two/widgets/news-module-two.php:140
-#: modules/news-module-two/widgets/news-module-two.php:151
-#: modules/news-module-two/widgets/news-module-two.php:202
-#: modules/news-module-two/widgets/news-module-two.php:214
-#: modules/news-module-two/widgets/news-module-two.php:224
-msgid "Yes"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:128
-#: modules/news-module-eight/widgets/news-module-eight.php:141
-#: modules/news-module-eight/widgets/news-module-eight.php:152
-#: modules/news-module-eight/widgets/news-module-eight.php:202
-#: modules/news-module-eight/widgets/news-module-eight.php:214
-#: modules/news-module-eight/widgets/news-module-eight.php:224
-#: modules/news-module-eleven/widgets/news-module-eleven.php:158
-#: modules/news-module-eleven/widgets/news-module-eleven.php:170
-#: modules/news-module-eleven/widgets/news-module-eleven.php:180
-#: modules/news-module-eleven/widgets/news-module-eleven.php:191
-#: modules/news-module-eleven/widgets/news-module-eleven.php:201
-#: modules/news-module-five/widgets/news-module-five.php:128
-#: modules/news-module-five/widgets/news-module-five.php:141
-#: modules/news-module-five/widgets/news-module-five.php:152
-#: modules/news-module-five/widgets/news-module-five.php:202
-#: modules/news-module-five/widgets/news-module-five.php:214
-#: modules/news-module-five/widgets/news-module-five.php:224
-#: modules/news-module-four/widgets/news-module-four.php:122
-#: modules/news-module-four/widgets/news-module-four.php:135
-#: modules/news-module-four/widgets/news-module-four.php:146
-#: modules/news-module-four/widgets/news-module-four.php:199
-#: modules/news-module-four/widgets/news-module-four.php:211
-#: modules/news-module-four/widgets/news-module-four.php:221
-#: modules/news-module-nine/widgets/news-module-nine.php:121
-#: modules/news-module-nine/widgets/news-module-nine.php:134
-#: modules/news-module-nine/widgets/news-module-nine.php:145
-#: modules/news-module-nine/widgets/news-module-nine.php:195
-#: modules/news-module-nine/widgets/news-module-nine.php:207
-#: modules/news-module-nine/widgets/news-module-nine.php:217
-#: modules/news-module-one/widgets/news-module-one.php:128
-#: modules/news-module-one/widgets/news-module-one.php:141
-#: modules/news-module-one/widgets/news-module-one.php:152
-#: modules/news-module-one/widgets/news-module-one.php:210
-#: modules/news-module-one/widgets/news-module-one.php:222
-#: modules/news-module-one/widgets/news-module-one.php:232
-#: modules/news-module-seven/widgets/news-module-seven.php:128
-#: modules/news-module-seven/widgets/news-module-seven.php:141
-#: modules/news-module-seven/widgets/news-module-seven.php:152
-#: modules/news-module-seven/widgets/news-module-seven.php:202
-#: modules/news-module-seven/widgets/news-module-seven.php:214
-#: modules/news-module-seven/widgets/news-module-seven.php:224
-#: modules/news-module-six/widgets/news-module-six.php:121
-#: modules/news-module-six/widgets/news-module-six.php:134
-#: modules/news-module-six/widgets/news-module-six.php:145
-#: modules/news-module-six/widgets/news-module-six.php:195
-#: modules/news-module-six/widgets/news-module-six.php:207
-#: modules/news-module-six/widgets/news-module-six.php:217
-#: modules/news-module-ten/widgets/news-module-ten.php:121
-#: modules/news-module-ten/widgets/news-module-ten.php:133
-#: modules/news-module-ten/widgets/news-module-ten.php:143
-#: modules/news-module-three/widgets/news-module-three.php:120
-#: modules/news-module-three/widgets/news-module-three.php:133
-#: modules/news-module-three/widgets/news-module-three.php:144
-#: modules/news-module-three/widgets/news-module-three.php:193
-#: modules/news-module-three/widgets/news-module-three.php:205
-#: modules/news-module-three/widgets/news-module-three.php:215
-#: modules/news-module-two/widgets/news-module-two.php:128
-#: modules/news-module-two/widgets/news-module-two.php:141
-#: modules/news-module-two/widgets/news-module-two.php:152
-#: modules/news-module-two/widgets/news-module-two.php:203
-#: modules/news-module-two/widgets/news-module-two.php:215
-#: modules/news-module-two/widgets/news-module-two.php:225
-msgid "No"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:137
-#: modules/news-module-eight/widgets/news-module-eight.php:210
-#: modules/news-module-eleven/widgets/news-module-eleven.php:166
-#: modules/news-module-eleven/widgets/news-module-eleven.php:187
-#: modules/news-module-five/widgets/news-module-five.php:137
-#: modules/news-module-five/widgets/news-module-five.php:210
-#: modules/news-module-four/widgets/news-module-four.php:131
-#: modules/news-module-four/widgets/news-module-four.php:207
-#: modules/news-module-nine/widgets/news-module-nine.php:130
-#: modules/news-module-nine/widgets/news-module-nine.php:203
-#: modules/news-module-one/widgets/news-module-one.php:137
-#: modules/news-module-one/widgets/news-module-one.php:218
-#: modules/news-module-seven/widgets/news-module-seven.php:137
-#: modules/news-module-seven/widgets/news-module-seven.php:210
-#: modules/news-module-six/widgets/news-module-six.php:130
-#: modules/news-module-six/widgets/news-module-six.php:203
-#: modules/news-module-ten/widgets/news-module-ten.php:129
-#: modules/news-module-three/widgets/news-module-three.php:129
-#: modules/news-module-three/widgets/news-module-three.php:201
-#: modules/news-module-two/widgets/news-module-two.php:137
-#: modules/news-module-two/widgets/news-module-two.php:211
-msgid "Show Post Date"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:149
-#: modules/news-module-eight/widgets/news-module-eight.php:221
-#: modules/news-module-eleven/widgets/news-module-eleven.php:177
-#: modules/news-module-eleven/widgets/news-module-eleven.php:198
-#: modules/news-module-five/widgets/news-module-five.php:149
-#: modules/news-module-five/widgets/news-module-five.php:221
-#: modules/news-module-four/widgets/news-module-four.php:143
-#: modules/news-module-four/widgets/news-module-four.php:218
-#: modules/news-module-nine/widgets/news-module-nine.php:142
-#: modules/news-module-nine/widgets/news-module-nine.php:214
-#: modules/news-module-one/widgets/news-module-one.php:149
-#: modules/news-module-one/widgets/news-module-one.php:229
-#: modules/news-module-seven/widgets/news-module-seven.php:149
-#: modules/news-module-seven/widgets/news-module-seven.php:221
-#: modules/news-module-six/widgets/news-module-six.php:142
-#: modules/news-module-six/widgets/news-module-six.php:214
-#: modules/news-module-ten/widgets/news-module-ten.php:140
-#: modules/news-module-three/widgets/news-module-three.php:141
-#: modules/news-module-three/widgets/news-module-three.php:212
-#: modules/news-module-two/widgets/news-module-two.php:149
-#: modules/news-module-two/widgets/news-module-two.php:222
-msgid "Show Post Comments"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:162
-#: modules/news-module-five/widgets/news-module-five.php:162
-#: modules/news-module-nine/widgets/news-module-nine.php:155
-#: modules/news-module-one/widgets/news-module-one.php:162
-#: modules/news-module-seven/widgets/news-module-seven.php:162
-#: modules/news-module-six/widgets/news-module-six.php:155
-#: modules/news-module-two/widgets/news-module-two.php:162
-msgid "Normal Post Block"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:233
-#: modules/news-module-eleven/widgets/news-module-eleven.php:210
-#: modules/news-module-five/widgets/news-module-five.php:233
-#: modules/news-module-four/widgets/news-module-four.php:230
-#: modules/news-module-nine/widgets/news-module-nine.php:226
-#: modules/news-module-one/widgets/news-module-one.php:241
-#: modules/news-module-seven/widgets/news-module-seven.php:233
-#: modules/news-module-six/widgets/news-module-six.php:226
-#: modules/news-module-ten/widgets/news-module-ten.php:152
-#: modules/news-module-three/widgets/news-module-three.php:224
-#: modules/news-module-two/widgets/news-module-two.php:234
-msgid "Additional Settings"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:239
-#: modules/news-module-eleven/widgets/news-module-eleven.php:216
-#: modules/news-module-five/widgets/news-module-five.php:239
-#: modules/news-module-four/widgets/news-module-four.php:236
-#: modules/news-module-nine/widgets/news-module-nine.php:232
-#: modules/news-module-one/widgets/news-module-one.php:247
-#: modules/news-module-seven/widgets/news-module-seven.php:239
-#: modules/news-module-six/widgets/news-module-six.php:232
-#: modules/news-module-ten/widgets/news-module-ten.php:158
-#: modules/news-module-three/widgets/news-module-three.php:230
-#: modules/news-module-two/widgets/news-module-two.php:240
-msgid "Date Format"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:242
-#: modules/news-module-eleven/widgets/news-module-eleven.php:219
-#: modules/news-module-five/widgets/news-module-five.php:242
-#: modules/news-module-four/widgets/news-module-four.php:239
-#: modules/news-module-nine/widgets/news-module-nine.php:235
-#: modules/news-module-one/widgets/news-module-one.php:250
-#: modules/news-module-seven/widgets/news-module-seven.php:242
-#: modules/news-module-six/widgets/news-module-six.php:235
-#: modules/news-module-ten/widgets/news-module-ten.php:161
-#: modules/news-module-three/widgets/news-module-three.php:233
-#: modules/news-module-two/widgets/news-module-two.php:243
-msgid "Relative Format (Ago)"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:243
-#: modules/news-module-eleven/widgets/news-module-eleven.php:220
-#: modules/news-module-five/widgets/news-module-five.php:243
-#: modules/news-module-four/widgets/news-module-four.php:240
-#: modules/news-module-nine/widgets/news-module-nine.php:236
-#: modules/news-module-one/widgets/news-module-one.php:251
-#: modules/news-module-seven/widgets/news-module-seven.php:243
-#: modules/news-module-six/widgets/news-module-six.php:236
-#: modules/news-module-ten/widgets/news-module-ten.php:162
-#: modules/news-module-three/widgets/news-module-three.php:234
-#: modules/news-module-two/widgets/news-module-two.php:244
-msgid "WordPress Default Format"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:244
-#: modules/news-module-eleven/widgets/news-module-eleven.php:221
-#: modules/news-module-five/widgets/news-module-five.php:244
-#: modules/news-module-four/widgets/news-module-four.php:241
-#: modules/news-module-nine/widgets/news-module-nine.php:237
-#: modules/news-module-one/widgets/news-module-one.php:252
-#: modules/news-module-seven/widgets/news-module-seven.php:244
-#: modules/news-module-six/widgets/news-module-six.php:237
-#: modules/news-module-ten/widgets/news-module-ten.php:163
-#: modules/news-module-three/widgets/news-module-three.php:235
-#: modules/news-module-two/widgets/news-module-two.php:245
-msgid "Custom Format"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:254
-#: modules/news-module-eleven/widgets/news-module-eleven.php:231
-#: modules/news-module-five/widgets/news-module-five.php:254
-#: modules/news-module-four/widgets/news-module-four.php:251
-#: modules/news-module-nine/widgets/news-module-nine.php:247
-#: modules/news-module-one/widgets/news-module-one.php:262
-#: modules/news-module-seven/widgets/news-module-seven.php:254
-#: modules/news-module-six/widgets/news-module-six.php:247
-#: modules/news-module-ten/widgets/news-module-ten.php:173
-#: modules/news-module-three/widgets/news-module-three.php:245
-#: modules/news-module-two/widgets/news-module-two.php:255
-msgid "Custom Date Format"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:257
-#: modules/news-module-eleven/widgets/news-module-eleven.php:234
-#: modules/news-module-five/widgets/news-module-five.php:257
-#: modules/news-module-four/widgets/news-module-four.php:254
-#: modules/news-module-nine/widgets/news-module-nine.php:250
-#: modules/news-module-one/widgets/news-module-one.php:265
-#: modules/news-module-seven/widgets/news-module-seven.php:257
-#: modules/news-module-six/widgets/news-module-six.php:250
-#: modules/news-module-ten/widgets/news-module-ten.php:176
-#: modules/news-module-three/widgets/news-module-three.php:248
-#: modules/news-module-two/widgets/news-module-two.php:258
-msgid "F j, Y"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:268
-#: modules/news-module-eleven/widgets/news-module-eleven.php:245
-#: modules/news-module-five/widgets/news-module-five.php:268
-#: modules/news-module-four/widgets/news-module-four.php:265
-#: modules/news-module-nine/widgets/news-module-nine.php:261
-#: modules/news-module-one/widgets/news-module-one.php:276
-#: modules/news-module-seven/widgets/news-module-seven.php:268
-#: modules/news-module-six/widgets/news-module-six.php:261
-#: modules/news-module-ten/widgets/news-module-ten.php:187
-#: modules/news-module-three/widgets/news-module-three.php:259
-#: modules/news-module-two/widgets/news-module-two.php:269
-msgid "Heading Text"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:275
-#: modules/news-module-eight/widgets/news-module-eight.php:433
-#: modules/news-module-eight/widgets/news-module-eight.php:463
-#: modules/news-module-eleven/widgets/news-module-eleven.php:252
-#: modules/news-module-eleven/widgets/news-module-eleven.php:364
-#: modules/news-module-five/widgets/news-module-five.php:275
-#: modules/news-module-five/widgets/news-module-five.php:430
-#: modules/news-module-five/widgets/news-module-five.php:462
-#: modules/news-module-four/widgets/news-module-four.php:272
-#: modules/news-module-four/widgets/news-module-four.php:510
-#: modules/news-module-nine/widgets/news-module-nine.php:268
-#: modules/news-module-one/widgets/news-module-one.php:283
-#: modules/news-module-one/widgets/news-module-one.php:516
-#: modules/news-module-one/widgets/news-module-one.php:548
-#: modules/news-module-seven/widgets/news-module-seven.php:275
-#: modules/news-module-seven/widgets/news-module-seven.php:429
-#: modules/news-module-seven/widgets/news-module-seven.php:461
-#: modules/news-module-six/widgets/news-module-six.php:268
-#: modules/news-module-ten/widgets/news-module-ten.php:194
-#: modules/news-module-ten/widgets/news-module-ten.php:310
-#: modules/news-module-three/widgets/news-module-three.php:266
-#: modules/news-module-two/widgets/news-module-two.php:276
-#: modules/news-module-two/widgets/news-module-two.php:508
-#: modules/news-module-two/widgets/news-module-two.php:540
-msgid "Color"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:290
-#: modules/news-module-eleven/widgets/news-module-eleven.php:267
-#: modules/news-module-five/widgets/news-module-five.php:290
-#: modules/news-module-four/widgets/news-module-four.php:287
-#: modules/news-module-nine/widgets/news-module-nine.php:283
-#: modules/news-module-one/widgets/news-module-one.php:298
-#: modules/news-module-seven/widgets/news-module-seven.php:290
-#: modules/news-module-six/widgets/news-module-six.php:283
-#: modules/news-module-ten/widgets/news-module-ten.php:209
-#: modules/news-module-three/widgets/news-module-three.php:280
-#: modules/news-module-two/widgets/news-module-two.php:290
-msgid "Underline Color"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:306
-#: modules/news-module-eight/widgets/news-module-eight.php:365
-#: modules/news-module-eight/widgets/news-module-eight.php:397
-#: modules/news-module-eight/widgets/news-module-eight.php:446
-#: modules/news-module-eight/widgets/news-module-eight.php:476
-#: modules/news-module-eleven/widgets/news-module-eleven.php:283
-#: modules/news-module-eleven/widgets/news-module-eleven.php:334
-#: modules/news-module-eleven/widgets/news-module-eleven.php:379
-#: modules/news-module-five/widgets/news-module-five.php:306
-#: modules/news-module-five/widgets/news-module-five.php:366
-#: modules/news-module-five/widgets/news-module-five.php:396
-#: modules/news-module-five/widgets/news-module-five.php:445
-#: modules/news-module-five/widgets/news-module-five.php:477
-#: modules/news-module-four/widgets/news-module-four.php:303
-#: modules/news-module-four/widgets/news-module-four.php:442
-#: modules/news-module-four/widgets/news-module-four.php:473
-#: modules/news-module-four/widgets/news-module-four.php:525
-#: modules/news-module-nine/widgets/news-module-nine.php:299
-#: modules/news-module-nine/widgets/news-module-nine.php:371
-#: modules/news-module-nine/widgets/news-module-nine.php:401
-#: modules/news-module-nine/widgets/news-module-nine.php:463
-#: modules/news-module-one/widgets/news-module-one.php:314
-#: modules/news-module-one/widgets/news-module-one.php:450
-#: modules/news-module-one/widgets/news-module-one.php:480
-#: modules/news-module-one/widgets/news-module-one.php:531
-#: modules/news-module-one/widgets/news-module-one.php:563
-#: modules/news-module-seven/widgets/news-module-seven.php:306
-#: modules/news-module-seven/widgets/news-module-seven.php:365
-#: modules/news-module-seven/widgets/news-module-seven.php:395
-#: modules/news-module-seven/widgets/news-module-seven.php:444
-#: modules/news-module-seven/widgets/news-module-seven.php:476
-#: modules/news-module-six/widgets/news-module-six.php:299
-#: modules/news-module-six/widgets/news-module-six.php:371
-#: modules/news-module-six/widgets/news-module-six.php:401
-#: modules/news-module-six/widgets/news-module-six.php:463
-#: modules/news-module-ten/widgets/news-module-ten.php:225
-#: modules/news-module-ten/widgets/news-module-ten.php:276
-#: modules/news-module-ten/widgets/news-module-ten.php:325
-#: modules/news-module-three/widgets/news-module-three.php:296
-#: modules/news-module-three/widgets/news-module-three.php:446
-#: modules/news-module-three/widgets/news-module-three.php:476
-#: modules/news-module-three/widgets/news-module-three.php:540
-#: modules/news-module-two/widgets/news-module-two.php:306
-#: modules/news-module-two/widgets/news-module-two.php:442
-#: modules/news-module-two/widgets/news-module-two.php:472
-#: modules/news-module-two/widgets/news-module-two.php:523
-#: modules/news-module-two/widgets/news-module-two.php:555
-msgid "Typography"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:317
-#: modules/news-module-eleven/widgets/news-module-eleven.php:296
-#: modules/news-module-five/widgets/news-module-five.php:317
-#: modules/news-module-four/widgets/news-module-four.php:393
-#: modules/news-module-nine/widgets/news-module-nine.php:310
-#: modules/news-module-one/widgets/news-module-one.php:403
-#: modules/news-module-seven/widgets/news-module-seven.php:317
-#: modules/news-module-six/widgets/news-module-six.php:310
-#: modules/news-module-ten/widgets/news-module-ten.php:236
-#: modules/news-module-three/widgets/news-module-three.php:385
-#: modules/news-module-two/widgets/news-module-two.php:395
-msgid "Title Block"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:324
-#: modules/news-module-eleven/widgets/news-module-eleven.php:303
-#: modules/news-module-seven/widgets/news-module-seven.php:324
-#: modules/news-module-ten/widgets/news-module-ten.php:243
-msgid "Title Color"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:339
-#: modules/news-module-eleven/widgets/news-module-eleven.php:318
-#: modules/news-module-seven/widgets/news-module-seven.php:339
-#: modules/news-module-ten/widgets/news-module-ten.php:258
-msgid "Title Hover Color"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:358
-#: modules/news-module-five/widgets/news-module-five.php:359
-#: modules/news-module-four/widgets/news-module-four.php:435
-#: modules/news-module-nine/widgets/news-module-nine.php:364
-#: modules/news-module-one/widgets/news-module-one.php:443
-#: modules/news-module-seven/widgets/news-module-seven.php:358
-#: modules/news-module-six/widgets/news-module-six.php:364
-#: modules/news-module-three/widgets/news-module-three.php:439
-#: modules/news-module-two/widgets/news-module-two.php:435
-msgid "Featured"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:375
-#: modules/news-module-eight/widgets/news-module-eight.php:406
-#: modules/news-module-five/widgets/news-module-five.php:374
-#: modules/news-module-five/widgets/news-module-five.php:404
-#: modules/news-module-four/widgets/news-module-four.php:450
-#: modules/news-module-four/widgets/news-module-four.php:481
-#: modules/news-module-nine/widgets/news-module-nine.php:379
-#: modules/news-module-nine/widgets/news-module-nine.php:409
-#: modules/news-module-one/widgets/news-module-one.php:458
-#: modules/news-module-one/widgets/news-module-one.php:489
-#: modules/news-module-seven/widgets/news-module-seven.php:373
-#: modules/news-module-seven/widgets/news-module-seven.php:403
-#: modules/news-module-six/widgets/news-module-six.php:379
-#: modules/news-module-six/widgets/news-module-six.php:409
-#: modules/news-module-ten/widgets/news-module-ten.php:285
-#: modules/news-module-three/widgets/news-module-three.php:454
-#: modules/news-module-three/widgets/news-module-three.php:485
-#: modules/news-module-two/widgets/news-module-two.php:450
-#: modules/news-module-two/widgets/news-module-two.php:481
-msgid "Margin"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:390
-#: modules/news-module-five/widgets/news-module-five.php:389
-#: modules/news-module-four/widgets/news-module-four.php:466
-#: modules/news-module-nine/widgets/news-module-nine.php:394
-#: modules/news-module-one/widgets/news-module-one.php:473
-#: modules/news-module-seven/widgets/news-module-seven.php:388
-#: modules/news-module-six/widgets/news-module-six.php:394
-#: modules/news-module-three/widgets/news-module-three.php:469
-#: modules/news-module-two/widgets/news-module-two.php:465
-msgid "Side Post"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:426
-#: modules/news-module-five/widgets/news-module-five.php:423
-#: modules/news-module-one/widgets/news-module-one.php:509
-#: modules/news-module-seven/widgets/news-module-seven.php:422
-#: modules/news-module-two/widgets/news-module-two.php:501
-msgid "Post Excerpt"
-msgstr ""
-
-#: modules/news-module-eight/widgets/news-module-eight.php:456
-#: modules/news-module-eleven/widgets/news-module-eleven.php:357
-#: modules/news-module-five/widgets/news-module-five.php:455
-#: modules/news-module-four/widgets/news-module-four.php:503
-#: modules/news-module-nine/widgets/news-module-nine.php:427
-#: modules/news-module-one/widgets/news-module-one.php:541
-#: modules/news-module-seven/widgets/news-module-seven.php:454
-#: modules/news-module-six/widgets/news-module-six.php:427
-#: modules/news-module-ten/widgets/news-module-ten.php:303
-#: modules/news-module-three/widgets/news-module-three.php:504
-#: modules/news-module-two/widgets/news-module-two.php:533
-msgid "Post Metas"
-msgstr ""
-
-#: modules/news-module-eleven/widgets/news-module-eleven.php:31
-msgid "News Module 11"
-msgstr ""
-
-#: modules/news-module-eleven/widgets/news-module-eleven.php:80
-#: modules/news-module-ten/widgets/news-module-ten.php:81
+#: modules/carousel-module-one/widgets/carousel-module-one.php:77
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:77
+#: modules/news-module-eleven/widgets/news-module-eleven.php:77
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:77
+#: modules/news-module-twelve/widgets/news-module-twelve.php:77
+#: modules/tile-module-three/widgets/tile-module-three.php:78
 msgid "Post Block"
 msgstr ""
 
-#: modules/news-module-eleven/widgets/news-module-eleven.php:117
+#: modules/carousel-module-one/widgets/carousel-module-one.php:92
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:92
+#: modules/news-module-nine/widgets/news-module-nine.php:93
+#: modules/news-module-nine/widgets/news-module-nine.php:178
+#: modules/news-module-seven/widgets/news-module-seven.php:93
+#: modules/news-module-seven/widgets/news-module-seven.php:186
+#: modules/news-module-three/widgets/news-module-three.php:156
+#: modules/news-module-eleven/widgets/news-module-eleven.php:92
+#: modules/news-module-four/widgets/news-module-four.php:93
+#: modules/news-module-four/widgets/news-module-four.php:179
+#: modules/news-module-six/widgets/news-module-six.php:93
+#: modules/news-module-six/widgets/news-module-six.php:178
+#: modules/news-module-five/widgets/news-module-five.php:93
+#: modules/news-module-five/widgets/news-module-five.php:186
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:92
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:92
+#: modules/news-module-ten/widgets/news-module-ten.php:93
+#: modules/news-module-one/widgets/news-module-one.php:93
+#: modules/news-module-one/widgets/news-module-one.php:186
+#: modules/news-module-twelve/widgets/news-module-twelve.php:92
+#: modules/news-module-two/widgets/news-module-two.php:93
+#: modules/news-module-two/widgets/news-module-two.php:186
+#: modules/news-module-eight/widgets/news-module-eight.php:93
+#: modules/news-module-eight/widgets/news-module-eight.php:186
+msgid "Image Height(%)"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:114
 msgid "No of Posts to Show"
 msgstr ""
 
-#: modules/news-module-eleven/widgets/news-module-eleven.php:136
-msgid "No of Slides to Show"
+#: modules/carousel-module-one/widgets/carousel-module-one.php:132
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:113
+#: modules/news-module-seven/widgets/news-module-seven.php:114
+#: modules/news-module-five/widgets/news-module-five.php:114
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:113
+#: modules/news-module-one/widgets/news-module-one.php:114
+#: modules/news-module-one/widgets/news-module-one.php:208
+#: modules/news-module-two/widgets/news-module-two.php:114
+#: modules/news-module-two/widgets/news-module-two.php:208
+#: modules/news-module-eight/widgets/news-module-eight.php:114
+msgid "Excerpt Length"
 msgstr ""
 
-#: modules/news-module-eleven/widgets/news-module-eleven.php:343
-msgid "Post Margin"
+#: modules/carousel-module-one/widgets/carousel-module-one.php:133
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:114
+#: modules/news-module-seven/widgets/news-module-seven.php:115
+#: modules/news-module-five/widgets/news-module-five.php:115
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:114
+#: modules/news-module-one/widgets/news-module-one.php:115
+#: modules/news-module-one/widgets/news-module-one.php:209
+#: modules/news-module-two/widgets/news-module-two.php:115
+#: modules/news-module-two/widgets/news-module-two.php:209
+#: modules/news-module-eight/widgets/news-module-eight.php:115
+msgid "Enter 0 to hide excerpt"
 msgstr ""
 
-#: modules/news-module-eleven/widgets/news-module-eleven.php:389
-msgid "Navigation Section"
+#: modules/carousel-module-one/widgets/carousel-module-one.php:143
+#: modules/carousel-module-one/widgets/carousel-module-one.php:155
+#: modules/carousel-module-one/widgets/carousel-module-one.php:165
+#: modules/carousel-module-one/widgets/carousel-module-one.php:175
+#: modules/carousel-module-one/widgets/carousel-module-one.php:195
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:124
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:137
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:148
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:159
+#: modules/news-module-nine/widgets/news-module-nine.php:117
+#: modules/news-module-nine/widgets/news-module-nine.php:130
+#: modules/news-module-nine/widgets/news-module-nine.php:141
+#: modules/news-module-nine/widgets/news-module-nine.php:152
+#: modules/news-module-nine/widgets/news-module-nine.php:202
+#: modules/news-module-nine/widgets/news-module-nine.php:214
+#: modules/news-module-nine/widgets/news-module-nine.php:224
+#: modules/news-module-nine/widgets/news-module-nine.php:234
+#: modules/news-module-seven/widgets/news-module-seven.php:125
+#: modules/news-module-seven/widgets/news-module-seven.php:138
+#: modules/news-module-seven/widgets/news-module-seven.php:149
+#: modules/news-module-seven/widgets/news-module-seven.php:160
+#: modules/news-module-seven/widgets/news-module-seven.php:210
+#: modules/news-module-seven/widgets/news-module-seven.php:222
+#: modules/news-module-seven/widgets/news-module-seven.php:232
+#: modules/news-module-seven/widgets/news-module-seven.php:242
+#: modules/news-module-three/widgets/news-module-three.php:95
+#: modules/news-module-three/widgets/news-module-three.php:108
+#: modules/news-module-three/widgets/news-module-three.php:119
+#: modules/news-module-three/widgets/news-module-three.php:130
+#: modules/news-module-three/widgets/news-module-three.php:178
+#: modules/news-module-three/widgets/news-module-three.php:190
+#: modules/news-module-three/widgets/news-module-three.php:200
+#: modules/news-module-three/widgets/news-module-three.php:210
+#: modules/news-module-eleven/widgets/news-module-eleven.php:116
+#: modules/news-module-eleven/widgets/news-module-eleven.php:129
+#: modules/news-module-eleven/widgets/news-module-eleven.php:140
+#: modules/news-module-eleven/widgets/news-module-eleven.php:151
+#: modules/ticker-module/widgets/ticker-module.php:67
+#: modules/news-module-four/widgets/news-module-four.php:118
+#: modules/news-module-four/widgets/news-module-four.php:131
+#: modules/news-module-four/widgets/news-module-four.php:142
+#: modules/news-module-four/widgets/news-module-four.php:153
+#: modules/news-module-four/widgets/news-module-four.php:206
+#: modules/news-module-four/widgets/news-module-four.php:218
+#: modules/news-module-four/widgets/news-module-four.php:228
+#: modules/news-module-four/widgets/news-module-four.php:238
+#: modules/news-module-six/widgets/news-module-six.php:117
+#: modules/news-module-six/widgets/news-module-six.php:130
+#: modules/news-module-six/widgets/news-module-six.php:141
+#: modules/news-module-six/widgets/news-module-six.php:152
+#: modules/news-module-six/widgets/news-module-six.php:202
+#: modules/news-module-six/widgets/news-module-six.php:214
+#: modules/news-module-six/widgets/news-module-six.php:224
+#: modules/news-module-six/widgets/news-module-six.php:234
+#: modules/tile-module-two/widgets/tile-module-two.php:95
+#: modules/tile-module-two/widgets/tile-module-two.php:108
+#: modules/tile-module-two/widgets/tile-module-two.php:119
+#: modules/tile-module-two/widgets/tile-module-two.php:130
+#: modules/tile-module-two/widgets/tile-module-two.php:158
+#: modules/tile-module-two/widgets/tile-module-two.php:170
+#: modules/tile-module-two/widgets/tile-module-two.php:181
+#: modules/tile-module-two/widgets/tile-module-two.php:191
+#: modules/news-module-five/widgets/news-module-five.php:125
+#: modules/news-module-five/widgets/news-module-five.php:138
+#: modules/news-module-five/widgets/news-module-five.php:149
+#: modules/news-module-five/widgets/news-module-five.php:160
+#: modules/news-module-five/widgets/news-module-five.php:210
+#: modules/news-module-five/widgets/news-module-five.php:222
+#: modules/news-module-five/widgets/news-module-five.php:232
+#: modules/news-module-five/widgets/news-module-five.php:242
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:117
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:130
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:141
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:152
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:124
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:137
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:148
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:159
+#: modules/tile-module-one/widgets/tile-module-one.php:95
+#: modules/tile-module-one/widgets/tile-module-one.php:108
+#: modules/tile-module-one/widgets/tile-module-one.php:119
+#: modules/tile-module-one/widgets/tile-module-one.php:130
+#: modules/tile-module-one/widgets/tile-module-one.php:182
+#: modules/tile-module-one/widgets/tile-module-one.php:194
+#: modules/tile-module-one/widgets/tile-module-one.php:205
+#: modules/tile-module-one/widgets/tile-module-one.php:215
+#: modules/news-module-ten/widgets/news-module-ten.php:117
+#: modules/news-module-ten/widgets/news-module-ten.php:129
+#: modules/news-module-ten/widgets/news-module-ten.php:139
+#: modules/news-module-ten/widgets/news-module-ten.php:149
+#: modules/news-module-one/widgets/news-module-one.php:125
+#: modules/news-module-one/widgets/news-module-one.php:138
+#: modules/news-module-one/widgets/news-module-one.php:149
+#: modules/news-module-one/widgets/news-module-one.php:160
+#: modules/news-module-one/widgets/news-module-one.php:219
+#: modules/news-module-one/widgets/news-module-one.php:231
+#: modules/news-module-one/widgets/news-module-one.php:241
+#: modules/news-module-one/widgets/news-module-one.php:251
+#: modules/news-module-twelve/widgets/news-module-twelve.php:116
+#: modules/news-module-twelve/widgets/news-module-twelve.php:129
+#: modules/news-module-twelve/widgets/news-module-twelve.php:140
+#: modules/news-module-twelve/widgets/news-module-twelve.php:151
+#: modules/news-module-two/widgets/news-module-two.php:125
+#: modules/news-module-two/widgets/news-module-two.php:138
+#: modules/news-module-two/widgets/news-module-two.php:149
+#: modules/news-module-two/widgets/news-module-two.php:160
+#: modules/news-module-two/widgets/news-module-two.php:219
+#: modules/news-module-two/widgets/news-module-two.php:231
+#: modules/news-module-two/widgets/news-module-two.php:241
+#: modules/news-module-two/widgets/news-module-two.php:251
+#: modules/news-module-eight/widgets/news-module-eight.php:125
+#: modules/news-module-eight/widgets/news-module-eight.php:138
+#: modules/news-module-eight/widgets/news-module-eight.php:149
+#: modules/news-module-eight/widgets/news-module-eight.php:160
+#: modules/news-module-eight/widgets/news-module-eight.php:210
+#: modules/news-module-eight/widgets/news-module-eight.php:222
+#: modules/news-module-eight/widgets/news-module-eight.php:232
+#: modules/news-module-eight/widgets/news-module-eight.php:242
+#: modules/tile-module-three/widgets/tile-module-three.php:95
+#: modules/tile-module-three/widgets/tile-module-three.php:108
+#: modules/tile-module-three/widgets/tile-module-three.php:119
+#: modules/tile-module-three/widgets/tile-module-three.php:130
+msgid "Yes"
 msgstr ""
 
-#: modules/news-module-eleven/widgets/news-module-eleven.php:401
-#: modules/news-module-four/widgets/news-module-four.php:326
-#: modules/news-module-one/widgets/news-module-one.php:336
-#: modules/news-module-three/widgets/news-module-three.php:318
-#: modules/news-module-two/widgets/news-module-two.php:328
-msgid "Normal"
+#: modules/carousel-module-one/widgets/carousel-module-one.php:144
+#: modules/carousel-module-one/widgets/carousel-module-one.php:156
+#: modules/carousel-module-one/widgets/carousel-module-one.php:166
+#: modules/carousel-module-one/widgets/carousel-module-one.php:176
+#: modules/carousel-module-one/widgets/carousel-module-one.php:196
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:125
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:138
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:149
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:160
+#: modules/news-module-nine/widgets/news-module-nine.php:118
+#: modules/news-module-nine/widgets/news-module-nine.php:131
+#: modules/news-module-nine/widgets/news-module-nine.php:142
+#: modules/news-module-nine/widgets/news-module-nine.php:153
+#: modules/news-module-nine/widgets/news-module-nine.php:203
+#: modules/news-module-nine/widgets/news-module-nine.php:215
+#: modules/news-module-nine/widgets/news-module-nine.php:225
+#: modules/news-module-nine/widgets/news-module-nine.php:235
+#: modules/news-module-seven/widgets/news-module-seven.php:126
+#: modules/news-module-seven/widgets/news-module-seven.php:139
+#: modules/news-module-seven/widgets/news-module-seven.php:150
+#: modules/news-module-seven/widgets/news-module-seven.php:161
+#: modules/news-module-seven/widgets/news-module-seven.php:211
+#: modules/news-module-seven/widgets/news-module-seven.php:223
+#: modules/news-module-seven/widgets/news-module-seven.php:233
+#: modules/news-module-seven/widgets/news-module-seven.php:243
+#: modules/news-module-three/widgets/news-module-three.php:96
+#: modules/news-module-three/widgets/news-module-three.php:109
+#: modules/news-module-three/widgets/news-module-three.php:120
+#: modules/news-module-three/widgets/news-module-three.php:131
+#: modules/news-module-three/widgets/news-module-three.php:179
+#: modules/news-module-three/widgets/news-module-three.php:191
+#: modules/news-module-three/widgets/news-module-three.php:201
+#: modules/news-module-three/widgets/news-module-three.php:211
+#: modules/news-module-eleven/widgets/news-module-eleven.php:117
+#: modules/news-module-eleven/widgets/news-module-eleven.php:130
+#: modules/news-module-eleven/widgets/news-module-eleven.php:141
+#: modules/news-module-eleven/widgets/news-module-eleven.php:152
+#: modules/ticker-module/widgets/ticker-module.php:68
+#: modules/news-module-four/widgets/news-module-four.php:119
+#: modules/news-module-four/widgets/news-module-four.php:132
+#: modules/news-module-four/widgets/news-module-four.php:143
+#: modules/news-module-four/widgets/news-module-four.php:154
+#: modules/news-module-four/widgets/news-module-four.php:207
+#: modules/news-module-four/widgets/news-module-four.php:219
+#: modules/news-module-four/widgets/news-module-four.php:229
+#: modules/news-module-four/widgets/news-module-four.php:239
+#: modules/news-module-six/widgets/news-module-six.php:118
+#: modules/news-module-six/widgets/news-module-six.php:131
+#: modules/news-module-six/widgets/news-module-six.php:142
+#: modules/news-module-six/widgets/news-module-six.php:153
+#: modules/news-module-six/widgets/news-module-six.php:203
+#: modules/news-module-six/widgets/news-module-six.php:215
+#: modules/news-module-six/widgets/news-module-six.php:225
+#: modules/news-module-six/widgets/news-module-six.php:235
+#: modules/tile-module-two/widgets/tile-module-two.php:96
+#: modules/tile-module-two/widgets/tile-module-two.php:109
+#: modules/tile-module-two/widgets/tile-module-two.php:120
+#: modules/tile-module-two/widgets/tile-module-two.php:131
+#: modules/tile-module-two/widgets/tile-module-two.php:159
+#: modules/tile-module-two/widgets/tile-module-two.php:171
+#: modules/tile-module-two/widgets/tile-module-two.php:182
+#: modules/tile-module-two/widgets/tile-module-two.php:192
+#: modules/news-module-five/widgets/news-module-five.php:126
+#: modules/news-module-five/widgets/news-module-five.php:139
+#: modules/news-module-five/widgets/news-module-five.php:150
+#: modules/news-module-five/widgets/news-module-five.php:161
+#: modules/news-module-five/widgets/news-module-five.php:211
+#: modules/news-module-five/widgets/news-module-five.php:223
+#: modules/news-module-five/widgets/news-module-five.php:233
+#: modules/news-module-five/widgets/news-module-five.php:243
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:118
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:131
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:142
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:153
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:125
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:138
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:149
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:160
+#: modules/tile-module-one/widgets/tile-module-one.php:96
+#: modules/tile-module-one/widgets/tile-module-one.php:109
+#: modules/tile-module-one/widgets/tile-module-one.php:120
+#: modules/tile-module-one/widgets/tile-module-one.php:131
+#: modules/tile-module-one/widgets/tile-module-one.php:183
+#: modules/tile-module-one/widgets/tile-module-one.php:195
+#: modules/tile-module-one/widgets/tile-module-one.php:206
+#: modules/tile-module-one/widgets/tile-module-one.php:216
+#: modules/news-module-ten/widgets/news-module-ten.php:118
+#: modules/news-module-ten/widgets/news-module-ten.php:130
+#: modules/news-module-ten/widgets/news-module-ten.php:140
+#: modules/news-module-ten/widgets/news-module-ten.php:150
+#: modules/news-module-one/widgets/news-module-one.php:126
+#: modules/news-module-one/widgets/news-module-one.php:139
+#: modules/news-module-one/widgets/news-module-one.php:150
+#: modules/news-module-one/widgets/news-module-one.php:161
+#: modules/news-module-one/widgets/news-module-one.php:220
+#: modules/news-module-one/widgets/news-module-one.php:232
+#: modules/news-module-one/widgets/news-module-one.php:242
+#: modules/news-module-one/widgets/news-module-one.php:252
+#: modules/news-module-twelve/widgets/news-module-twelve.php:117
+#: modules/news-module-twelve/widgets/news-module-twelve.php:130
+#: modules/news-module-twelve/widgets/news-module-twelve.php:141
+#: modules/news-module-twelve/widgets/news-module-twelve.php:152
+#: modules/news-module-two/widgets/news-module-two.php:126
+#: modules/news-module-two/widgets/news-module-two.php:139
+#: modules/news-module-two/widgets/news-module-two.php:150
+#: modules/news-module-two/widgets/news-module-two.php:161
+#: modules/news-module-two/widgets/news-module-two.php:220
+#: modules/news-module-two/widgets/news-module-two.php:232
+#: modules/news-module-two/widgets/news-module-two.php:242
+#: modules/news-module-two/widgets/news-module-two.php:252
+#: modules/news-module-eight/widgets/news-module-eight.php:126
+#: modules/news-module-eight/widgets/news-module-eight.php:139
+#: modules/news-module-eight/widgets/news-module-eight.php:150
+#: modules/news-module-eight/widgets/news-module-eight.php:161
+#: modules/news-module-eight/widgets/news-module-eight.php:211
+#: modules/news-module-eight/widgets/news-module-eight.php:223
+#: modules/news-module-eight/widgets/news-module-eight.php:233
+#: modules/news-module-eight/widgets/news-module-eight.php:243
+#: modules/tile-module-three/widgets/tile-module-three.php:96
+#: modules/tile-module-three/widgets/tile-module-three.php:109
+#: modules/tile-module-three/widgets/tile-module-three.php:120
+#: modules/tile-module-three/widgets/tile-module-three.php:131
+msgid "No"
 msgstr ""
 
-#: modules/news-module-eleven/widgets/news-module-eleven.php:407
-#: modules/news-module-eleven/widgets/news-module-eleven.php:445
-msgid "Background Color (Hover)"
+#: modules/carousel-module-one/widgets/carousel-module-one.php:152
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:134
+#: modules/news-module-nine/widgets/news-module-nine.php:127
+#: modules/news-module-nine/widgets/news-module-nine.php:211
+#: modules/news-module-seven/widgets/news-module-seven.php:135
+#: modules/news-module-seven/widgets/news-module-seven.php:219
+#: modules/news-module-three/widgets/news-module-three.php:105
+#: modules/news-module-three/widgets/news-module-three.php:187
+#: modules/news-module-eleven/widgets/news-module-eleven.php:126
+#: modules/news-module-four/widgets/news-module-four.php:128
+#: modules/news-module-four/widgets/news-module-four.php:215
+#: modules/news-module-six/widgets/news-module-six.php:127
+#: modules/news-module-six/widgets/news-module-six.php:211
+#: modules/tile-module-two/widgets/tile-module-two.php:105
+#: modules/tile-module-two/widgets/tile-module-two.php:167
+#: modules/news-module-five/widgets/news-module-five.php:135
+#: modules/news-module-five/widgets/news-module-five.php:219
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:127
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:134
+#: modules/tile-module-one/widgets/tile-module-one.php:105
+#: modules/tile-module-one/widgets/tile-module-one.php:191
+#: modules/news-module-ten/widgets/news-module-ten.php:126
+#: modules/news-module-one/widgets/news-module-one.php:135
+#: modules/news-module-one/widgets/news-module-one.php:228
+#: modules/news-module-twelve/widgets/news-module-twelve.php:126
+#: modules/news-module-two/widgets/news-module-two.php:135
+#: modules/news-module-two/widgets/news-module-two.php:228
+#: modules/news-module-eight/widgets/news-module-eight.php:135
+#: modules/news-module-eight/widgets/news-module-eight.php:219
+#: modules/tile-module-three/widgets/tile-module-three.php:105
+msgid "Show Post Date"
 msgstr ""
 
-#: modules/news-module-eleven/widgets/news-module-eleven.php:421
-#: modules/news-module-eleven/widgets/news-module-eleven.php:459
-msgid "Icon Color"
+#: modules/carousel-module-one/widgets/carousel-module-one.php:163
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:146
+#: modules/news-module-nine/widgets/news-module-nine.php:139
+#: modules/news-module-nine/widgets/news-module-nine.php:222
+#: modules/news-module-seven/widgets/news-module-seven.php:147
+#: modules/news-module-seven/widgets/news-module-seven.php:230
+#: modules/news-module-three/widgets/news-module-three.php:117
+#: modules/news-module-three/widgets/news-module-three.php:198
+#: modules/news-module-eleven/widgets/news-module-eleven.php:138
+#: modules/news-module-four/widgets/news-module-four.php:140
+#: modules/news-module-four/widgets/news-module-four.php:226
+#: modules/news-module-six/widgets/news-module-six.php:139
+#: modules/news-module-six/widgets/news-module-six.php:222
+#: modules/tile-module-two/widgets/tile-module-two.php:117
+#: modules/tile-module-two/widgets/tile-module-two.php:179
+#: modules/news-module-five/widgets/news-module-five.php:147
+#: modules/news-module-five/widgets/news-module-five.php:230
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:139
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:146
+#: modules/tile-module-one/widgets/tile-module-one.php:117
+#: modules/tile-module-one/widgets/tile-module-one.php:203
+#: modules/news-module-ten/widgets/news-module-ten.php:137
+#: modules/news-module-one/widgets/news-module-one.php:147
+#: modules/news-module-one/widgets/news-module-one.php:239
+#: modules/news-module-twelve/widgets/news-module-twelve.php:138
+#: modules/news-module-two/widgets/news-module-two.php:147
+#: modules/news-module-two/widgets/news-module-two.php:239
+#: modules/news-module-eight/widgets/news-module-eight.php:147
+#: modules/news-module-eight/widgets/news-module-eight.php:230
+#: modules/tile-module-three/widgets/tile-module-three.php:117
+msgid "Show Post Comments"
 msgstr ""
 
-#: modules/news-module-eleven/widgets/news-module-eleven.php:439
-#: modules/news-module-four/widgets/news-module-four.php:358
-#: modules/news-module-one/widgets/news-module-one.php:368
-#: modules/news-module-three/widgets/news-module-three.php:350
-#: modules/news-module-two/widgets/news-module-two.php:360
-msgid "Hover"
+#: modules/carousel-module-one/widgets/carousel-module-one.php:173
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:157
+#: modules/news-module-nine/widgets/news-module-nine.php:150
+#: modules/news-module-nine/widgets/news-module-nine.php:232
+#: modules/news-module-seven/widgets/news-module-seven.php:158
+#: modules/news-module-seven/widgets/news-module-seven.php:240
+#: modules/news-module-three/widgets/news-module-three.php:128
+#: modules/news-module-three/widgets/news-module-three.php:208
+#: modules/news-module-eleven/widgets/news-module-eleven.php:149
+#: modules/news-module-four/widgets/news-module-four.php:151
+#: modules/news-module-four/widgets/news-module-four.php:236
+#: modules/news-module-six/widgets/news-module-six.php:150
+#: modules/news-module-six/widgets/news-module-six.php:232
+#: modules/tile-module-two/widgets/tile-module-two.php:128
+#: modules/tile-module-two/widgets/tile-module-two.php:189
+#: modules/news-module-five/widgets/news-module-five.php:158
+#: modules/news-module-five/widgets/news-module-five.php:240
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:150
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:157
+#: modules/tile-module-one/widgets/tile-module-one.php:128
+#: modules/tile-module-one/widgets/tile-module-one.php:213
+#: modules/news-module-ten/widgets/news-module-ten.php:147
+#: modules/news-module-one/widgets/news-module-one.php:158
+#: modules/news-module-one/widgets/news-module-one.php:249
+#: modules/news-module-twelve/widgets/news-module-twelve.php:149
+#: modules/news-module-two/widgets/news-module-two.php:158
+#: modules/news-module-two/widgets/news-module-two.php:249
+#: modules/news-module-eight/widgets/news-module-eight.php:158
+#: modules/news-module-eight/widgets/news-module-eight.php:240
+#: modules/tile-module-three/widgets/tile-module-three.php:128
+msgid "Show Category"
 msgstr ""
 
-#: modules/news-module-five/widgets/news-module-five.php:31
-msgid "News Module 5"
+#: modules/carousel-module-one/widgets/carousel-module-one.php:186
+msgid "Carousel Settings"
 msgstr ""
 
+#: modules/carousel-module-one/widgets/carousel-module-one.php:193
+#: modules/ticker-module/widgets/ticker-module.php:65
+msgid "Autoplay"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:204
+msgid "Pause Duration"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:226
+msgid "No of Slides"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:252
+msgid "Spacing Between Slides"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:278
+msgid "Stage Padding"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:304
+msgid "Nav Arrow"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:306
+#: modules/carousel-module-one/widgets/carousel-module-one.php:317
+msgid "Show"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:307
+#: modules/carousel-module-one/widgets/carousel-module-one.php:318
+msgid "Hide"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:315
+msgid "Nav Dots"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:327
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:170
+#: modules/news-module-nine/widgets/news-module-nine.php:244
+#: modules/news-module-seven/widgets/news-module-seven.php:253
+#: modules/news-module-three/widgets/news-module-three.php:221
+#: modules/news-module-eleven/widgets/news-module-eleven.php:162
+#: modules/news-module-four/widgets/news-module-four.php:249
+#: modules/news-module-six/widgets/news-module-six.php:245
+#: modules/tile-module-two/widgets/tile-module-two.php:202
+#: modules/news-module-five/widgets/news-module-five.php:253
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:163
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:170
+#: modules/tile-module-one/widgets/tile-module-one.php:226
+#: modules/news-module-ten/widgets/news-module-ten.php:159
+#: modules/news-module-one/widgets/news-module-one.php:262
+#: modules/news-module-twelve/widgets/news-module-twelve.php:162
+#: modules/news-module-two/widgets/news-module-two.php:262
+#: modules/news-module-eight/widgets/news-module-eight.php:253
+#: modules/tile-module-three/widgets/tile-module-three.php:141
+msgid "Additional Settings"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:333
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:176
+#: modules/news-module-nine/widgets/news-module-nine.php:250
+#: modules/news-module-seven/widgets/news-module-seven.php:259
+#: modules/news-module-three/widgets/news-module-three.php:227
+#: modules/news-module-eleven/widgets/news-module-eleven.php:168
+#: modules/news-module-four/widgets/news-module-four.php:255
+#: modules/news-module-six/widgets/news-module-six.php:251
+#: modules/tile-module-two/widgets/tile-module-two.php:208
+#: modules/news-module-five/widgets/news-module-five.php:259
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:169
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:176
+#: modules/tile-module-one/widgets/tile-module-one.php:232
+#: modules/news-module-ten/widgets/news-module-ten.php:165
+#: modules/news-module-one/widgets/news-module-one.php:268
+#: modules/news-module-twelve/widgets/news-module-twelve.php:168
+#: modules/news-module-two/widgets/news-module-two.php:268
+#: modules/news-module-eight/widgets/news-module-eight.php:259
+#: modules/tile-module-three/widgets/tile-module-three.php:147
+msgid "Date Format"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:336
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:179
+#: modules/news-module-nine/widgets/news-module-nine.php:253
+#: modules/news-module-seven/widgets/news-module-seven.php:262
+#: modules/news-module-three/widgets/news-module-three.php:230
+#: modules/news-module-eleven/widgets/news-module-eleven.php:171
+#: modules/news-module-four/widgets/news-module-four.php:258
+#: modules/news-module-six/widgets/news-module-six.php:254
+#: modules/tile-module-two/widgets/tile-module-two.php:211
+#: modules/news-module-five/widgets/news-module-five.php:262
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:172
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:179
+#: modules/tile-module-one/widgets/tile-module-one.php:235
+#: modules/news-module-ten/widgets/news-module-ten.php:168
+#: modules/news-module-one/widgets/news-module-one.php:271
+#: modules/news-module-twelve/widgets/news-module-twelve.php:171
+#: modules/news-module-two/widgets/news-module-two.php:271
+#: modules/news-module-eight/widgets/news-module-eight.php:262
+#: modules/tile-module-three/widgets/tile-module-three.php:150
+msgid "Relative Format (Ago)"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:337
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:180
+#: modules/news-module-nine/widgets/news-module-nine.php:254
+#: modules/news-module-seven/widgets/news-module-seven.php:263
+#: modules/news-module-three/widgets/news-module-three.php:231
+#: modules/news-module-eleven/widgets/news-module-eleven.php:172
+#: modules/news-module-four/widgets/news-module-four.php:259
+#: modules/news-module-six/widgets/news-module-six.php:255
+#: modules/tile-module-two/widgets/tile-module-two.php:212
+#: modules/news-module-five/widgets/news-module-five.php:263
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:173
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:180
+#: modules/tile-module-one/widgets/tile-module-one.php:236
+#: modules/news-module-ten/widgets/news-module-ten.php:169
+#: modules/news-module-one/widgets/news-module-one.php:272
+#: modules/news-module-twelve/widgets/news-module-twelve.php:172
+#: modules/news-module-two/widgets/news-module-two.php:272
+#: modules/news-module-eight/widgets/news-module-eight.php:263
+#: modules/tile-module-three/widgets/tile-module-three.php:151
+msgid "WordPress Default Format"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:338
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:181
+#: modules/news-module-nine/widgets/news-module-nine.php:255
+#: modules/news-module-seven/widgets/news-module-seven.php:264
+#: modules/news-module-three/widgets/news-module-three.php:232
+#: modules/news-module-eleven/widgets/news-module-eleven.php:173
+#: modules/news-module-four/widgets/news-module-four.php:260
+#: modules/news-module-six/widgets/news-module-six.php:256
+#: modules/tile-module-two/widgets/tile-module-two.php:213
+#: modules/news-module-five/widgets/news-module-five.php:264
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:174
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:181
+#: modules/tile-module-one/widgets/tile-module-one.php:237
+#: modules/news-module-ten/widgets/news-module-ten.php:170
+#: modules/news-module-one/widgets/news-module-one.php:273
+#: modules/news-module-twelve/widgets/news-module-twelve.php:173
+#: modules/news-module-two/widgets/news-module-two.php:273
+#: modules/news-module-eight/widgets/news-module-eight.php:264
+#: modules/tile-module-three/widgets/tile-module-three.php:152
+msgid "Custom Format"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:348
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:191
+#: modules/news-module-nine/widgets/news-module-nine.php:265
+#: modules/news-module-seven/widgets/news-module-seven.php:274
+#: modules/news-module-three/widgets/news-module-three.php:242
+#: modules/news-module-eleven/widgets/news-module-eleven.php:183
+#: modules/news-module-four/widgets/news-module-four.php:270
+#: modules/news-module-six/widgets/news-module-six.php:266
+#: modules/tile-module-two/widgets/tile-module-two.php:223
+#: modules/news-module-five/widgets/news-module-five.php:274
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:184
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:191
+#: modules/tile-module-one/widgets/tile-module-one.php:247
+#: modules/news-module-ten/widgets/news-module-ten.php:180
+#: modules/news-module-one/widgets/news-module-one.php:283
+#: modules/news-module-twelve/widgets/news-module-twelve.php:183
+#: modules/news-module-two/widgets/news-module-two.php:283
+#: modules/news-module-eight/widgets/news-module-eight.php:274
+#: modules/tile-module-three/widgets/tile-module-three.php:162
+msgid "Custom Date Format"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:351
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:194
+#: modules/news-module-nine/widgets/news-module-nine.php:268
+#: modules/news-module-seven/widgets/news-module-seven.php:277
+#: modules/news-module-three/widgets/news-module-three.php:245
+#: modules/news-module-eleven/widgets/news-module-eleven.php:186
+#: modules/news-module-four/widgets/news-module-four.php:273
+#: modules/news-module-six/widgets/news-module-six.php:269
+#: modules/tile-module-two/widgets/tile-module-two.php:226
+#: modules/news-module-five/widgets/news-module-five.php:277
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:187
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:194
+#: modules/tile-module-one/widgets/tile-module-one.php:250
+#: modules/news-module-ten/widgets/news-module-ten.php:183
+#: modules/news-module-one/widgets/news-module-one.php:286
+#: modules/news-module-twelve/widgets/news-module-twelve.php:186
+#: modules/news-module-two/widgets/news-module-two.php:286
+#: modules/news-module-eight/widgets/news-module-eight.php:277
+#: modules/tile-module-three/widgets/tile-module-three.php:165
+msgid "F j, Y"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:362
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:206
+#: modules/news-module-nine/widgets/news-module-nine.php:279
+#: modules/news-module-seven/widgets/news-module-seven.php:288
+#: modules/news-module-three/widgets/news-module-three.php:256
+#: modules/news-module-eleven/widgets/news-module-eleven.php:197
+#: modules/news-module-four/widgets/news-module-four.php:284
+#: modules/news-module-six/widgets/news-module-six.php:280
+#: modules/tile-module-two/widgets/tile-module-two.php:259
+#: modules/news-module-five/widgets/news-module-five.php:288
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:198
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:206
+#: modules/tile-module-one/widgets/tile-module-one.php:283
+#: modules/news-module-ten/widgets/news-module-ten.php:194
+#: modules/news-module-one/widgets/news-module-one.php:297
+#: modules/news-module-twelve/widgets/news-module-twelve.php:198
+#: modules/news-module-two/widgets/news-module-two.php:297
+#: modules/news-module-eight/widgets/news-module-eight.php:288
+#: modules/tile-module-three/widgets/tile-module-three.php:198
+msgid "Header Title"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:369
+#: modules/carousel-module-one/widgets/carousel-module-one.php:589
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:213
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:457
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:490
+#: modules/news-module-nine/widgets/news-module-nine.php:286
+#: modules/news-module-seven/widgets/news-module-seven.php:295
+#: modules/news-module-seven/widgets/news-module-seven.php:557
+#: modules/news-module-seven/widgets/news-module-seven.php:589
+#: modules/news-module-three/widgets/news-module-three.php:263
+#: modules/news-module-eleven/widgets/news-module-eleven.php:204
+#: modules/news-module-eleven/widgets/news-module-eleven.php:426
+#: modules/news-module-four/widgets/news-module-four.php:291
+#: modules/news-module-four/widgets/news-module-four.php:557
+#: modules/news-module-six/widgets/news-module-six.php:287
+#: modules/tile-module-two/widgets/tile-module-two.php:266
+#: modules/tile-module-two/widgets/tile-module-two.php:544
+#: modules/news-module-five/widgets/news-module-five.php:295
+#: modules/news-module-five/widgets/news-module-five.php:558
+#: modules/news-module-five/widgets/news-module-five.php:590
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:205
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:426
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:213
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:434
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:467
+#: modules/tile-module-one/widgets/tile-module-one.php:290
+#: modules/tile-module-one/widgets/tile-module-one.php:571
+#: modules/news-module-ten/widgets/news-module-ten.php:201
+#: modules/news-module-ten/widgets/news-module-ten.php:427
+#: modules/news-module-one/widgets/news-module-one.php:304
+#: modules/news-module-one/widgets/news-module-one.php:566
+#: modules/news-module-one/widgets/news-module-one.php:598
+#: modules/news-module-twelve/widgets/news-module-twelve.php:205
+#: modules/news-module-twelve/widgets/news-module-twelve.php:426
+#: modules/news-module-two/widgets/news-module-two.php:304
+#: modules/news-module-two/widgets/news-module-two.php:566
+#: modules/news-module-two/widgets/news-module-two.php:598
+#: modules/news-module-eight/widgets/news-module-eight.php:295
+#: modules/news-module-eight/widgets/news-module-eight.php:561
+#: modules/news-module-eight/widgets/news-module-eight.php:591
+#: modules/tile-module-three/widgets/tile-module-three.php:205
+#: modules/tile-module-three/widgets/tile-module-three.php:440
+msgid "Color"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:383
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:227
+#: modules/news-module-nine/widgets/news-module-nine.php:300
+#: modules/news-module-seven/widgets/news-module-seven.php:309
+#: modules/news-module-three/widgets/news-module-three.php:277
+#: modules/news-module-eleven/widgets/news-module-eleven.php:218
+#: modules/news-module-four/widgets/news-module-four.php:305
+#: modules/news-module-six/widgets/news-module-six.php:301
+#: modules/tile-module-two/widgets/tile-module-two.php:280
+#: modules/news-module-five/widgets/news-module-five.php:309
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:219
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:227
+#: modules/tile-module-one/widgets/tile-module-one.php:304
+#: modules/news-module-ten/widgets/news-module-ten.php:215
+#: modules/news-module-one/widgets/news-module-one.php:318
+#: modules/news-module-twelve/widgets/news-module-twelve.php:219
+#: modules/news-module-two/widgets/news-module-two.php:318
+#: modules/news-module-eight/widgets/news-module-eight.php:309
+#: modules/tile-module-three/widgets/tile-module-three.php:219
+msgid "Short Border Color"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:398
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:242
+#: modules/news-module-nine/widgets/news-module-nine.php:315
+#: modules/news-module-seven/widgets/news-module-seven.php:324
+#: modules/news-module-three/widgets/news-module-three.php:292
+#: modules/news-module-eleven/widgets/news-module-eleven.php:233
+#: modules/news-module-four/widgets/news-module-four.php:320
+#: modules/news-module-six/widgets/news-module-six.php:316
+#: modules/tile-module-two/widgets/tile-module-two.php:295
 #: modules/news-module-five/widgets/news-module-five.php:324
-#: modules/news-module-four/widgets/news-module-four.php:400
-#: modules/news-module-one/widgets/news-module-one.php:410
-#: modules/news-module-two/widgets/news-module-two.php:402
-msgid "Text Color"
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:234
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:242
+#: modules/tile-module-one/widgets/tile-module-one.php:319
+#: modules/news-module-ten/widgets/news-module-ten.php:230
+#: modules/news-module-one/widgets/news-module-one.php:333
+#: modules/news-module-twelve/widgets/news-module-twelve.php:234
+#: modules/news-module-two/widgets/news-module-two.php:333
+#: modules/news-module-eight/widgets/news-module-eight.php:324
+#: modules/tile-module-three/widgets/tile-module-three.php:234
+msgid "Long Border Color"
 msgstr ""
 
-#: modules/news-module-five/widgets/news-module-five.php:339
-#: modules/news-module-four/widgets/news-module-four.php:415
-#: modules/news-module-one/widgets/news-module-one.php:424
-#: modules/news-module-two/widgets/news-module-two.php:416
-msgid "Text Hover Color"
-msgstr ""
-
-#: modules/news-module-four/widgets/news-module-four.php:31
-msgid "News Module 4"
-msgstr ""
-
-#: modules/news-module-four/widgets/news-module-four.php:156
-msgid "Normal Block"
-msgstr ""
-
-#: modules/news-module-four/widgets/news-module-four.php:314
-#: modules/news-module-one/widgets/news-module-one.php:324
-#: modules/news-module-three/widgets/news-module-three.php:306
-#: modules/news-module-two/widgets/news-module-two.php:316
-msgid "Categories Text"
-msgstr ""
-
-#: modules/news-module-four/widgets/news-module-four.php:332
-#: modules/news-module-one/widgets/news-module-one.php:342
-#: modules/news-module-three/widgets/news-module-three.php:324
-#: modules/news-module-two/widgets/news-module-two.php:334
-msgid "Categories Normal Color"
-msgstr ""
-
-#: modules/news-module-four/widgets/news-module-four.php:347
-#: modules/news-module-four/widgets/news-module-four.php:379
-#: modules/news-module-one/widgets/news-module-one.php:357
-#: modules/news-module-one/widgets/news-module-one.php:389
-#: modules/news-module-three/widgets/news-module-three.php:339
-#: modules/news-module-three/widgets/news-module-three.php:371
+#: modules/carousel-module-one/widgets/carousel-module-one.php:414
+#: modules/carousel-module-one/widgets/carousel-module-one.php:432
+#: modules/carousel-module-one/widgets/carousel-module-one.php:559
+#: modules/carousel-module-one/widgets/carousel-module-one.php:604
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:258
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:276
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:405
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:472
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:505
+#: modules/news-module-nine/widgets/news-module-nine.php:331
+#: modules/news-module-nine/widgets/news-module-nine.php:349
+#: modules/news-module-nine/widgets/news-module-nine.php:497
+#: modules/news-module-nine/widgets/news-module-nine.php:526
+#: modules/news-module-nine/widgets/news-module-nine.php:588
+#: modules/news-module-seven/widgets/news-module-seven.php:340
+#: modules/news-module-seven/widgets/news-module-seven.php:358
+#: modules/news-module-seven/widgets/news-module-seven.php:494
+#: modules/news-module-seven/widgets/news-module-seven.php:523
+#: modules/news-module-seven/widgets/news-module-seven.php:572
+#: modules/news-module-seven/widgets/news-module-seven.php:604
+#: modules/news-module-three/widgets/news-module-three.php:308
+#: modules/news-module-three/widgets/news-module-three.php:474
+#: modules/news-module-three/widgets/news-module-three.php:503
+#: modules/news-module-three/widgets/news-module-three.php:567
+#: modules/news-module-eleven/widgets/news-module-eleven.php:249
+#: modules/news-module-eleven/widgets/news-module-eleven.php:267
+#: modules/news-module-eleven/widgets/news-module-eleven.php:396
+#: modules/news-module-eleven/widgets/news-module-eleven.php:441
+#: modules/ticker-module/widgets/ticker-module.php:134
+#: modules/ticker-module/widgets/ticker-module.php:181
+#: modules/news-module-four/widgets/news-module-four.php:336
+#: modules/news-module-four/widgets/news-module-four.php:490
+#: modules/news-module-four/widgets/news-module-four.php:520
+#: modules/news-module-four/widgets/news-module-four.php:572
+#: modules/news-module-six/widgets/news-module-six.php:332
+#: modules/news-module-six/widgets/news-module-six.php:350
+#: modules/news-module-six/widgets/news-module-six.php:499
+#: modules/news-module-six/widgets/news-module-six.php:528
+#: modules/news-module-six/widgets/news-module-six.php:590
+#: modules/tile-module-two/widgets/tile-module-two.php:311
+#: modules/tile-module-two/widgets/tile-module-two.php:329
+#: modules/tile-module-two/widgets/tile-module-two.php:482
+#: modules/tile-module-two/widgets/tile-module-two.php:511
+#: modules/tile-module-two/widgets/tile-module-two.php:559
+#: modules/news-module-five/widgets/news-module-five.php:340
+#: modules/news-module-five/widgets/news-module-five.php:358
+#: modules/news-module-five/widgets/news-module-five.php:495
+#: modules/news-module-five/widgets/news-module-five.php:524
+#: modules/news-module-five/widgets/news-module-five.php:573
+#: modules/news-module-five/widgets/news-module-five.php:605
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:250
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:268
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:397
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:441
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:258
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:276
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:405
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:449
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:482
+#: modules/tile-module-one/widgets/tile-module-one.php:335
+#: modules/tile-module-one/widgets/tile-module-one.php:353
+#: modules/tile-module-one/widgets/tile-module-one.php:506
+#: modules/tile-module-one/widgets/tile-module-one.php:535
+#: modules/tile-module-one/widgets/tile-module-one.php:586
+#: modules/news-module-ten/widgets/news-module-ten.php:246
+#: modules/news-module-ten/widgets/news-module-ten.php:264
+#: modules/news-module-ten/widgets/news-module-ten.php:393
+#: modules/news-module-ten/widgets/news-module-ten.php:442
+#: modules/news-module-one/widgets/news-module-one.php:349
+#: modules/news-module-one/widgets/news-module-one.php:367
+#: modules/news-module-one/widgets/news-module-one.php:501
+#: modules/news-module-one/widgets/news-module-one.php:530
+#: modules/news-module-one/widgets/news-module-one.php:581
+#: modules/news-module-one/widgets/news-module-one.php:613
+#: modules/news-module-twelve/widgets/news-module-twelve.php:250
+#: modules/news-module-twelve/widgets/news-module-twelve.php:268
+#: modules/news-module-twelve/widgets/news-module-twelve.php:397
+#: modules/news-module-twelve/widgets/news-module-twelve.php:441
 #: modules/news-module-two/widgets/news-module-two.php:349
-#: modules/news-module-two/widgets/news-module-two.php:381
+#: modules/news-module-two/widgets/news-module-two.php:367
+#: modules/news-module-two/widgets/news-module-two.php:501
+#: modules/news-module-two/widgets/news-module-two.php:530
+#: modules/news-module-two/widgets/news-module-two.php:581
+#: modules/news-module-two/widgets/news-module-two.php:613
+#: modules/news-module-eight/widgets/news-module-eight.php:340
+#: modules/news-module-eight/widgets/news-module-eight.php:358
+#: modules/news-module-eight/widgets/news-module-eight.php:494
+#: modules/news-module-eight/widgets/news-module-eight.php:525
+#: modules/news-module-eight/widgets/news-module-eight.php:574
+#: modules/news-module-eight/widgets/news-module-eight.php:604
+#: modules/tile-module-three/widgets/tile-module-three.php:250
+#: modules/tile-module-three/widgets/tile-module-three.php:268
+#: modules/tile-module-three/widgets/tile-module-three.php:411
+#: modules/tile-module-three/widgets/tile-module-three.php:455
 msgid "Typography"
 msgstr ""
 
-#: modules/news-module-four/widgets/news-module-four.php:364
-#: modules/news-module-one/widgets/news-module-one.php:374
-#: modules/news-module-three/widgets/news-module-three.php:356
-#: modules/news-module-two/widgets/news-module-two.php:366
-msgid "Categories Hover Color"
+#: modules/carousel-module-one/widgets/carousel-module-one.php:424
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:268
+#: modules/news-module-nine/widgets/news-module-nine.php:341
+#: modules/news-module-seven/widgets/news-module-seven.php:350
+#: modules/news-module-three/widgets/news-module-three.php:318
+#: modules/news-module-eleven/widgets/news-module-eleven.php:259
+#: modules/news-module-four/widgets/news-module-four.php:346
+#: modules/news-module-six/widgets/news-module-six.php:342
+#: modules/tile-module-two/widgets/tile-module-two.php:321
+#: modules/news-module-five/widgets/news-module-five.php:350
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:260
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:268
+#: modules/tile-module-one/widgets/tile-module-one.php:345
+#: modules/news-module-ten/widgets/news-module-ten.php:256
+#: modules/news-module-one/widgets/news-module-one.php:359
+#: modules/news-module-twelve/widgets/news-module-twelve.php:260
+#: modules/news-module-two/widgets/news-module-two.php:359
+#: modules/news-module-eight/widgets/news-module-eight.php:350
+#: modules/tile-module-three/widgets/tile-module-three.php:260
+msgid "Category"
 msgstr ""
 
-#: modules/news-module-nine/widgets/news-module-nine.php:31
+#: modules/carousel-module-one/widgets/carousel-module-one.php:445
+#: modules/carousel-module-one/widgets/carousel-module-one.php:625
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:289
+#: modules/news-module-nine/widgets/news-module-nine.php:361
+#: modules/news-module-seven/widgets/news-module-seven.php:371
+#: modules/news-module-three/widgets/news-module-three.php:338
+#: modules/news-module-eleven/widgets/news-module-eleven.php:280
+#: modules/ticker-module/widgets/ticker-module.php:230
+#: modules/news-module-four/widgets/news-module-four.php:366
+#: modules/news-module-six/widgets/news-module-six.php:363
+#: modules/tile-module-two/widgets/tile-module-two.php:342
+#: modules/news-module-five/widgets/news-module-five.php:371
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:281
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:289
+#: modules/tile-module-one/widgets/tile-module-one.php:366
+#: modules/news-module-ten/widgets/news-module-ten.php:277
+#: modules/news-module-one/widgets/news-module-one.php:379
+#: modules/news-module-twelve/widgets/news-module-twelve.php:281
+#: modules/news-module-two/widgets/news-module-two.php:379
+#: modules/news-module-eight/widgets/news-module-eight.php:371
+#: modules/tile-module-three/widgets/tile-module-three.php:281
+msgid "Normal"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:451
+#: modules/carousel-module-one/widgets/carousel-module-one.php:631
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:295
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:434
+#: modules/news-module-nine/widgets/news-module-nine.php:367
+#: modules/news-module-seven/widgets/news-module-seven.php:377
+#: modules/news-module-three/widgets/news-module-three.php:344
+#: modules/news-module-eleven/widgets/news-module-eleven.php:286
+#: modules/ticker-module/widgets/ticker-module.php:142
+#: modules/ticker-module/widgets/ticker-module.php:189
+#: modules/ticker-module/widgets/ticker-module.php:236
+#: modules/news-module-four/widgets/news-module-four.php:372
+#: modules/news-module-six/widgets/news-module-six.php:369
+#: modules/tile-module-two/widgets/tile-module-two.php:348
+#: modules/news-module-five/widgets/news-module-five.php:377
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:287
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:295
+#: modules/tile-module-one/widgets/tile-module-one.php:372
+#: modules/news-module-ten/widgets/news-module-ten.php:283
+#: modules/news-module-one/widgets/news-module-one.php:385
+#: modules/news-module-twelve/widgets/news-module-twelve.php:287
+#: modules/news-module-two/widgets/news-module-two.php:385
+#: modules/news-module-eight/widgets/news-module-eight.php:377
+#: modules/tile-module-three/widgets/tile-module-three.php:287
+msgid "Background Color"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:465
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:310
+#: modules/news-module-nine/widgets/news-module-nine.php:381
+#: modules/news-module-seven/widgets/news-module-seven.php:391
+#: modules/news-module-three/widgets/news-module-three.php:358
+#: modules/news-module-eleven/widgets/news-module-eleven.php:301
+#: modules/ticker-module/widgets/ticker-module.php:157
+#: modules/ticker-module/widgets/ticker-module.php:203
+#: modules/news-module-four/widgets/news-module-four.php:386
+#: modules/news-module-six/widgets/news-module-six.php:383
+#: modules/tile-module-two/widgets/tile-module-two.php:363
+#: modules/news-module-five/widgets/news-module-five.php:391
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:302
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:310
+#: modules/tile-module-one/widgets/tile-module-one.php:387
+#: modules/news-module-ten/widgets/news-module-ten.php:297
+#: modules/news-module-one/widgets/news-module-one.php:399
+#: modules/news-module-twelve/widgets/news-module-twelve.php:302
+#: modules/news-module-two/widgets/news-module-two.php:399
+#: modules/news-module-eight/widgets/news-module-eight.php:391
+#: modules/tile-module-three/widgets/tile-module-three.php:302
+msgid "Text Color"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:481
+#: modules/carousel-module-one/widgets/carousel-module-one.php:676
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:327
+#: modules/news-module-nine/widgets/news-module-nine.php:397
+#: modules/news-module-seven/widgets/news-module-seven.php:407
+#: modules/news-module-three/widgets/news-module-three.php:374
+#: modules/news-module-eleven/widgets/news-module-eleven.php:318
+#: modules/ticker-module/widgets/ticker-module.php:266
+#: modules/news-module-four/widgets/news-module-four.php:402
+#: modules/news-module-six/widgets/news-module-six.php:399
+#: modules/tile-module-two/widgets/tile-module-two.php:380
+#: modules/news-module-five/widgets/news-module-five.php:407
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:319
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:327
+#: modules/tile-module-one/widgets/tile-module-one.php:404
+#: modules/news-module-ten/widgets/news-module-ten.php:313
+#: modules/news-module-one/widgets/news-module-one.php:415
+#: modules/news-module-twelve/widgets/news-module-twelve.php:319
+#: modules/news-module-two/widgets/news-module-two.php:415
+#: modules/news-module-eight/widgets/news-module-eight.php:407
+#: modules/tile-module-three/widgets/tile-module-three.php:319
+msgid "Hover"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:487
+#: modules/carousel-module-one/widgets/carousel-module-one.php:682
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:333
+#: modules/news-module-nine/widgets/news-module-nine.php:403
+#: modules/news-module-seven/widgets/news-module-seven.php:413
+#: modules/news-module-three/widgets/news-module-three.php:380
+#: modules/news-module-eleven/widgets/news-module-eleven.php:324
+#: modules/ticker-module/widgets/ticker-module.php:272
+#: modules/news-module-four/widgets/news-module-four.php:408
+#: modules/news-module-six/widgets/news-module-six.php:405
+#: modules/tile-module-two/widgets/tile-module-two.php:386
+#: modules/news-module-five/widgets/news-module-five.php:413
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:325
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:333
+#: modules/tile-module-one/widgets/tile-module-one.php:410
+#: modules/news-module-ten/widgets/news-module-ten.php:319
+#: modules/news-module-one/widgets/news-module-one.php:421
+#: modules/news-module-twelve/widgets/news-module-twelve.php:325
+#: modules/news-module-two/widgets/news-module-two.php:421
+#: modules/news-module-eight/widgets/news-module-eight.php:413
+#: modules/tile-module-three/widgets/tile-module-three.php:325
+msgid "Background Color (Hover)"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:501
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:348
+#: modules/news-module-nine/widgets/news-module-nine.php:417
+#: modules/news-module-seven/widgets/news-module-seven.php:427
+#: modules/news-module-three/widgets/news-module-three.php:394
+#: modules/news-module-eleven/widgets/news-module-eleven.php:339
+#: modules/news-module-four/widgets/news-module-four.php:422
+#: modules/news-module-six/widgets/news-module-six.php:419
+#: modules/tile-module-two/widgets/tile-module-two.php:401
+#: modules/news-module-five/widgets/news-module-five.php:427
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:340
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:348
+#: modules/tile-module-one/widgets/tile-module-one.php:425
+#: modules/news-module-ten/widgets/news-module-ten.php:333
+#: modules/news-module-one/widgets/news-module-one.php:435
+#: modules/news-module-twelve/widgets/news-module-twelve.php:340
+#: modules/news-module-two/widgets/news-module-two.php:435
+#: modules/news-module-eight/widgets/news-module-eight.php:427
+#: modules/tile-module-three/widgets/tile-module-three.php:340
+msgid "Text Color (Hover)"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:528
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:376
+#: modules/news-module-seven/widgets/news-module-seven.php:454
+#: modules/news-module-eleven/widgets/news-module-eleven.php:367
+#: modules/news-module-four/widgets/news-module-four.php:449
+#: modules/tile-module-two/widgets/tile-module-two.php:429
+#: modules/news-module-five/widgets/news-module-five.php:454
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:368
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:376
+#: modules/tile-module-one/widgets/tile-module-one.php:453
+#: modules/news-module-ten/widgets/news-module-ten.php:360
+#: modules/news-module-one/widgets/news-module-one.php:462
+#: modules/news-module-twelve/widgets/news-module-twelve.php:368
+#: modules/news-module-two/widgets/news-module-two.php:462
+#: modules/news-module-eight/widgets/news-module-eight.php:454
+#: modules/tile-module-three/widgets/tile-module-three.php:368
+msgid "Title Color"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:543
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:390
+#: modules/news-module-seven/widgets/news-module-seven.php:469
+#: modules/news-module-eleven/widgets/news-module-eleven.php:381
+#: modules/news-module-four/widgets/news-module-four.php:464
+#: modules/tile-module-two/widgets/tile-module-two.php:443
+#: modules/news-module-five/widgets/news-module-five.php:469
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:382
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:390
+#: modules/tile-module-one/widgets/tile-module-one.php:467
+#: modules/news-module-ten/widgets/news-module-ten.php:375
+#: modules/news-module-one/widgets/news-module-one.php:476
+#: modules/news-module-twelve/widgets/news-module-twelve.php:382
+#: modules/news-module-two/widgets/news-module-two.php:476
+#: modules/news-module-eight/widgets/news-module-eight.php:469
+#: modules/tile-module-three/widgets/tile-module-three.php:382
+msgid "Title Color (Hover)"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:568
+msgid "Post Margin"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:582
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:483
+#: modules/news-module-nine/widgets/news-module-nine.php:552
+#: modules/news-module-seven/widgets/news-module-seven.php:582
+#: modules/news-module-three/widgets/news-module-three.php:531
+#: modules/news-module-eleven/widgets/news-module-eleven.php:419
+#: modules/news-module-four/widgets/news-module-four.php:550
+#: modules/news-module-six/widgets/news-module-six.php:554
+#: modules/tile-module-two/widgets/tile-module-two.php:537
+#: modules/news-module-five/widgets/news-module-five.php:583
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:419
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:460
+#: modules/tile-module-one/widgets/tile-module-one.php:564
+#: modules/news-module-ten/widgets/news-module-ten.php:420
+#: modules/news-module-one/widgets/news-module-one.php:591
+#: modules/news-module-twelve/widgets/news-module-twelve.php:419
+#: modules/news-module-two/widgets/news-module-two.php:591
+#: modules/news-module-eight/widgets/news-module-eight.php:584
+#: modules/tile-module-three/widgets/tile-module-three.php:433
+msgid "Metas"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:614
+#: modules/ticker-module/widgets/ticker-module.php:219
+msgid "Navigation"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:645
+#: modules/ticker-module/widgets/ticker-module.php:250
+msgid "Icon Color"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:660
+msgid "Dots Color"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:696
+#: modules/ticker-module/widgets/ticker-module.php:286
+msgid "Icon Color (Hover)"
+msgstr ""
+
+#: modules/carousel-module-one/widgets/carousel-module-one.php:711
+msgid "Dots Color (Hover)"
+msgstr ""
+
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:28
+msgid "News Module 13"
+msgstr ""
+
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:413
+#: modules/news-module-nine/widgets/news-module-nine.php:505
+#: modules/news-module-nine/widgets/news-module-nine.php:534
+#: modules/news-module-seven/widgets/news-module-seven.php:502
+#: modules/news-module-seven/widgets/news-module-seven.php:531
+#: modules/news-module-three/widgets/news-module-three.php:482
+#: modules/news-module-three/widgets/news-module-three.php:512
+#: modules/news-module-eleven/widgets/news-module-eleven.php:404
+#: modules/news-module-four/widgets/news-module-four.php:498
+#: modules/news-module-four/widgets/news-module-four.php:528
+#: modules/news-module-six/widgets/news-module-six.php:507
+#: modules/news-module-six/widgets/news-module-six.php:536
+#: modules/tile-module-two/widgets/tile-module-two.php:490
+#: modules/tile-module-two/widgets/tile-module-two.php:519
+#: modules/news-module-five/widgets/news-module-five.php:503
+#: modules/news-module-five/widgets/news-module-five.php:532
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:405
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:413
+#: modules/tile-module-one/widgets/tile-module-one.php:514
+#: modules/tile-module-one/widgets/tile-module-one.php:544
+#: modules/news-module-ten/widgets/news-module-ten.php:402
+#: modules/news-module-one/widgets/news-module-one.php:509
+#: modules/news-module-one/widgets/news-module-one.php:539
+#: modules/news-module-twelve/widgets/news-module-twelve.php:405
+#: modules/news-module-two/widgets/news-module-two.php:509
+#: modules/news-module-two/widgets/news-module-two.php:539
+#: modules/news-module-eight/widgets/news-module-eight.php:504
+#: modules/news-module-eight/widgets/news-module-eight.php:534
+#: modules/tile-module-three/widgets/tile-module-three.php:419
+msgid "Margin"
+msgstr ""
+
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:427
+#: modules/ticker-module/widgets/ticker-module.php:173
+msgid "Content"
+msgstr ""
+
+#: modules/news-module-thirteen/widgets/news-module-thirteen.php:450
+#: modules/news-module-seven/widgets/news-module-seven.php:550
+#: modules/news-module-five/widgets/news-module-five.php:551
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:427
+#: modules/news-module-one/widgets/news-module-one.php:559
+#: modules/news-module-two/widgets/news-module-two.php:559
+#: modules/news-module-eight/widgets/news-module-eight.php:554
+msgid "Excerpt"
+msgstr ""
+
+#: modules/news-module-nine/widgets/news-module-nine.php:28
 msgid "News Module 9"
 msgstr ""
 
-#: modules/news-module-nine/widgets/news-module-nine.php:317
-#: modules/news-module-three/widgets/news-module-three.php:392
-msgid "Featured Title Color"
+#: modules/news-module-nine/widgets/news-module-nine.php:78
+#: modules/news-module-seven/widgets/news-module-seven.php:78
+#: modules/news-module-three/widgets/news-module-three.php:78
+#: modules/tile-module-two/widgets/tile-module-two.php:78
+#: modules/news-module-five/widgets/news-module-five.php:78
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:77
+#: modules/tile-module-one/widgets/tile-module-one.php:78
+#: modules/news-module-one/widgets/news-module-one.php:78
+#: modules/news-module-two/widgets/news-module-two.php:78
+#: modules/news-module-eight/widgets/news-module-eight.php:78
+msgid "Featured Block"
 msgstr ""
 
-#: modules/news-module-nine/widgets/news-module-nine.php:331
-msgid "Normal Post Title Color"
+#: modules/news-module-nine/widgets/news-module-nine.php:163
+#: modules/news-module-seven/widgets/news-module-seven.php:171
+#: modules/news-module-five/widgets/news-module-five.php:171
+#: modules/news-module-ten/widgets/news-module-ten.php:78
+msgid "Listing Block"
 msgstr ""
 
-#: modules/news-module-nine/widgets/news-module-nine.php:345
-msgid "Normal Post Title Hover Color"
+#: modules/news-module-nine/widgets/news-module-nine.php:444
+#: modules/news-module-three/widgets/news-module-three.php:421
+msgid "Featured Post Title Color"
 msgstr ""
 
-#: modules/news-module-nine/widgets/news-module-nine.php:434
+#: modules/news-module-nine/widgets/news-module-nine.php:458
+msgid "Listing Post Title Color"
+msgstr ""
+
+#: modules/news-module-nine/widgets/news-module-nine.php:472
+msgid "Listing Post Title Color (Hover)"
+msgstr ""
+
+#: modules/news-module-nine/widgets/news-module-nine.php:490
+#: modules/news-module-seven/widgets/news-module-seven.php:487
+#: modules/news-module-five/widgets/news-module-five.php:488
+#: modules/news-module-one/widgets/news-module-one.php:494
+#: modules/news-module-two/widgets/news-module-two.php:494
+#: modules/news-module-eight/widgets/news-module-eight.php:487
+msgid "Featured"
+msgstr ""
+
+#: modules/news-module-nine/widgets/news-module-nine.php:519
+#: modules/news-module-seven/widgets/news-module-seven.php:516
+#: modules/news-module-five/widgets/news-module-five.php:517
+msgid "Listing Post"
+msgstr ""
+
+#: modules/news-module-nine/widgets/news-module-nine.php:559
 msgid "Featured Meta Color"
 msgstr ""
 
-#: modules/news-module-nine/widgets/news-module-nine.php:448
-msgid "Normal Meta Color"
+#: modules/news-module-nine/widgets/news-module-nine.php:573
+msgid "Listing Post Meta Color"
 msgstr ""
 
-#: modules/news-module-one/widgets/news-module-one.php:31
-msgid "News module 1"
-msgstr ""
-
-#: modules/news-module-seven/widgets/news-module-seven.php:31
+#: modules/news-module-seven/widgets/news-module-seven.php:28
 msgid "News Module 7"
 msgstr ""
 
-#: modules/news-module-six/widgets/news-module-six.php:31
-msgid "News Module 6"
-msgstr ""
-
-#: modules/news-module-six/widgets/news-module-six.php:317
-msgid "Featured Text Color"
-msgstr ""
-
-#: modules/news-module-six/widgets/news-module-six.php:331
-msgid "Side Post Title Color"
-msgstr ""
-
-#: modules/news-module-six/widgets/news-module-six.php:345
-msgid "Side Title Hover Color"
-msgstr ""
-
-#: modules/news-module-six/widgets/news-module-six.php:434
-msgid "Featured Post Meta Color"
-msgstr ""
-
-#: modules/news-module-six/widgets/news-module-six.php:448
-msgid "Side  Post Meta Color"
-msgstr ""
-
-#: modules/news-module-ten/widgets/news-module-ten.php:31
-msgid "News Module 10"
-msgstr ""
-
-#: modules/news-module-three/widgets/news-module-three.php:31
+#: modules/news-module-three/widgets/news-module-three.php:28
 msgid "News Module 3"
 msgstr ""
 
-#: modules/news-module-three/widgets/news-module-three.php:154
+#: modules/news-module-three/widgets/news-module-three.php:141
+#: modules/tile-module-two/widgets/tile-module-two.php:141
+#: modules/tile-module-one/widgets/tile-module-one.php:141
+#: modules/news-module-one/widgets/news-module-one.php:171
+#: modules/news-module-two/widgets/news-module-two.php:171
+#: modules/news-module-eight/widgets/news-module-eight.php:171
 msgid "Side Block"
 msgstr ""
 
-#: modules/news-module-three/widgets/news-module-three.php:406
-msgid "Side Text Color"
+#: modules/news-module-three/widgets/news-module-three.php:326
+#: modules/news-module-four/widgets/news-module-four.php:354
+msgid "Category Typography"
 msgstr ""
 
-#: modules/news-module-three/widgets/news-module-three.php:420
-msgid "Side Text Hover Color"
+#: modules/news-module-three/widgets/news-module-three.php:435
+msgid "Side Post Title Color"
 msgstr ""
 
-#: modules/news-module-three/widgets/news-module-three.php:511
+#: modules/news-module-three/widgets/news-module-three.php:449
+msgid "Side Post Title Color (Hover)"
+msgstr ""
+
+#: modules/news-module-three/widgets/news-module-three.php:467
+#: modules/tile-module-two/widgets/tile-module-two.php:475
+#: modules/tile-module-one/widgets/tile-module-one.php:499
+msgid "Featured Post"
+msgstr ""
+
+#: modules/news-module-three/widgets/news-module-three.php:496
+#: modules/tile-module-two/widgets/tile-module-two.php:504
+#: modules/tile-module-one/widgets/tile-module-one.php:528
+#: modules/news-module-one/widgets/news-module-one.php:523
+#: modules/news-module-two/widgets/news-module-two.php:523
+#: modules/news-module-eight/widgets/news-module-eight.php:518
+msgid "Side Post"
+msgstr ""
+
+#: modules/news-module-three/widgets/news-module-three.php:538
 msgid "Featured Post Meta Color"
 msgstr ""
 
-#: modules/news-module-three/widgets/news-module-three.php:525
+#: modules/news-module-three/widgets/news-module-three.php:552
 msgid "Side Post Meta Color"
 msgstr ""
 
-#: modules/news-module-two/widgets/news-module-two.php:31
+#: modules/news-module-eleven/widgets/news-module-eleven.php:28
+msgid "News Module 11"
+msgstr ""
+
+#: modules/ticker-module/widgets/ticker-module.php:31
+msgid "Ticker Module"
+msgstr ""
+
+#: modules/ticker-module/widgets/ticker-module.php:49
+msgid "Ticker Block"
+msgstr ""
+
+#: modules/ticker-module/widgets/ticker-module.php:57
+msgid "Latest Posts"
+msgstr ""
+
+#: modules/ticker-module/widgets/ticker-module.php:58
+msgid "Type your title here"
+msgstr ""
+
+#: modules/ticker-module/widgets/ticker-module.php:76
+msgid "Ticker Pause Duration"
+msgstr ""
+
+#: modules/ticker-module/widgets/ticker-module.php:113
+msgid "No of Posts"
+msgstr ""
+
+#: modules/news-module-four/widgets/news-module-four.php:28
+msgid "News Module 4"
+msgstr ""
+
+#: modules/news-module-four/widgets/news-module-four.php:78
+#: modules/news-module-six/widgets/news-module-six.php:78
+#: modules/news-module-six/widgets/news-module-six.php:492
+msgid "Top Block"
+msgstr ""
+
+#: modules/news-module-four/widgets/news-module-four.php:164
+#: modules/news-module-six/widgets/news-module-six.php:163
+#: modules/news-module-six/widgets/news-module-six.php:521
+msgid "Bottom Block"
+msgstr ""
+
+#: modules/news-module-four/widgets/news-module-four.php:483
+msgid "Top Post"
+msgstr ""
+
+#: modules/news-module-four/widgets/news-module-four.php:513
+msgid "Bottom Post"
+msgstr ""
+
+#: modules/news-module-six/widgets/news-module-six.php:28
+msgid "News Module 6"
+msgstr ""
+
+#: modules/news-module-six/widgets/news-module-six.php:446
+msgid "Top Block Title Color"
+msgstr ""
+
+#: modules/news-module-six/widgets/news-module-six.php:460
+msgid "Bottom Block Title Color"
+msgstr ""
+
+#: modules/news-module-six/widgets/news-module-six.php:474
+msgid "Bottom Block Title Color (Hover)"
+msgstr ""
+
+#: modules/news-module-six/widgets/news-module-six.php:561
+msgid "Top Block Meta Color"
+msgstr ""
+
+#: modules/news-module-six/widgets/news-module-six.php:575
+msgid "Bottom Block Meta Color"
+msgstr ""
+
+#: modules/tile-module-two/widgets/tile-module-two.php:28
+msgid "Tile Module Two"
+msgstr ""
+
+#: modules/tile-module-two/widgets/tile-module-two.php:235
+#: modules/tile-module-one/widgets/tile-module-one.php:259
+#: modules/tile-module-three/widgets/tile-module-three.php:174
+msgid "Module Height (px)"
+msgstr ""
+
+#: modules/tile-module-two/widgets/tile-module-two.php:457
+#: modules/tile-module-one/widgets/tile-module-one.php:481
+#: modules/tile-module-three/widgets/tile-module-three.php:396
+msgid "Title Border"
+msgstr ""
+
+#: modules/news-module-five/widgets/news-module-five.php:28
+msgid "News Module 5"
+msgstr ""
+
+#: modules/news-module-fifteen/widgets/news-module-fifteen.php:28
+msgid "News Module 15"
+msgstr ""
+
+#: modules/news-module-fourteen/widgets/news-module-fourteen.php:28
+msgid "News Module 14"
+msgstr ""
+
+#: modules/tile-module-one/widgets/tile-module-one.php:28
+msgid "Tile Module One"
+msgstr ""
+
+#: modules/tile-module-one/widgets/tile-module-one.php:147
+msgid "Large Image"
+msgstr ""
+
+#: modules/tile-module-one/widgets/tile-module-one.php:163
+msgid "Small image"
+msgstr ""
+
+#: modules/news-module-ten/widgets/news-module-ten.php:28
+msgid "News Module 10"
+msgstr ""
+
+#: modules/news-module-one/widgets/news-module-one.php:28
+msgid "News module 1"
+msgstr ""
+
+#: modules/news-module-twelve/widgets/news-module-twelve.php:28
+msgid "News Module 12"
+msgstr ""
+
+#: modules/news-module-two/widgets/news-module-two.php:28
 msgid "News Module 2"
 msgstr ""
 
+#: modules/news-module-eight/widgets/news-module-eight.php:28
+msgid "News Module 8"
+msgstr ""
+
+#: modules/tile-module-three/widgets/tile-module-three.php:28
+msgid "Tile Module Three"
+msgstr ""
+
 #. Name of the plugin
-msgid "Hash Elements"
+msgid "Hash Elements - Addons for Elementor"
 msgstr ""
 
 #. Description of the plugin
-msgid "Elementor addons for Viral News Themes"
+msgid ""
+"Elementor addons for WordPress Themes developed by HashThemes https:"
+"//hashthemes.com"
 msgstr ""
 
 #. Author of the plugin

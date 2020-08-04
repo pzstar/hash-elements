@@ -23,10 +23,16 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 <li>Activate Plugin from "Plugins" menu in WordPress.</li>
 </ol>
 
-== Screenshots ==
-
 
 == Changelog ==
+= 1.0.3 =
+* Issued in News Module Nine Fixed
+
+= 1.0.2 =
+* More News Modules Added
+
+= 1.0.1 =
+* Icon font issue fixed
 
 = 1.0 =
 * Release

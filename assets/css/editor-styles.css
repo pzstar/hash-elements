@@ -1,37 +1,27 @@
-.he-news-module-one,
-.he-news-module-two,
-.he-news-module-three,
-.he-news-module-four,
-.he-news-module-five,
-.he-news-module-six,
-.he-news-module-seven,
-.he-news-module-eight,
-.he-news-module-nine,
-.he-news-module-ten,
-.he-news-module-eleven {
+.he-news-modules{
     background-repeat: no-repeat;
     width: 60px !important;
     height: 50px !important;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-image: url(../img/viral-news-layouts.png) !important;
+    background-image: url(../img/viral-layouts.png) !important;
 }
 
 .he-news-module-one {
-    background-position: -20px -13px;
+    background-position: -20px -15px;
 }
 
 .he-news-module-two {
-    background-position: -120px -13px;
+    background-position: -120px -15px;
 }
 
 .he-news-module-three {
-    background-position: -20px -94px;
+    background-position: -20px -95px;
 }
 
 .he-news-module-four {
-    background-position: -120px -94px;
+    background-position: -120px -95px;
 }
 
 .he-news-module-five {
@@ -43,23 +33,59 @@
 }
 
 .he-news-module-seven {
-    background-position: -20px -257px;
+    background-position: -20px -255px;
 }
 
 .he-news-module-eight {
-    background-position: -120px -257px;
+    background-position: -120px -255px;
 }
 
 .he-news-module-nine {
-    background-position: -20px -337px;
+    background-position: -20px -335px;
 }
 
 .he-news-module-ten {
-    background-position: -120px -339px;
+    background-position: -120px -335px;
 }
 
 .he-news-module-eleven {
-    background-position: -20px -418px;
+    background-position: -20px -415px;
+}
+
+.he-news-module-twelve {
+    background-position: -120px -415px;
+}
+
+.he-news-module-thirteen {
+    background-position: -20px -495px;
+}
+
+.he-news-module-fourteen {
+    background-position: -120px -495px;
+}
+
+.he-news-module-fifteen {
+    background-position: -20px -575px;
+}
+
+.he-carousel-module-one {
+    background-position: -120px -575px;
+}
+
+.he-tile-module-one {
+    background-position: -20px -655px;
+}
+
+.he-tile-module-two {
+    background-position: -120px -655px;
+}
+
+.he-tile-module-three {
+    background-position: -20px -735px;
+}
+
+.he-ticker-module {
+    background-position: -120px -735px;
 }
 
 .he-elementor-pro-no #elementor-panel-category-pro-elements,
