@@ -1,6 +1,6 @@
 <?php
 
-namespace HashElements\Modules\SquareModuleFive\Widgets;
+namespace HashElements\Modules\SquarePlusLogoCarousel\Widgets;
 
 // Elementor Classes
 use Elementor\Widget_Base;
@@ -11,8 +11,6 @@ use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
 use Elementor\Utils;
 use Elementor\Repeater;
-use HashElements\Group_Control_Query;
-use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -21,7 +19,7 @@ if (!defined('ABSPATH')) {
 /**
  * Tiled Posts Widget
  */
-class SquareModuleFive extends Widget_Base {
+class SquarePlusLogoCarousel extends Widget_Base {
 
     /** Widget Name */
     public function get_name() {
@@ -35,7 +33,7 @@ class SquareModuleFive extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'he-square-module-five';
+        return 'square-plus-logo-carousel';
     }
 
     /** Category */
@@ -52,20 +50,12 @@ class SquareModuleFive extends Widget_Base {
                 ]
         );
 
-        $this->add_control(
-            'header', [
-                'label' => __( 'Header', 'hash-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-            ]
-        );
-
         $repeater = new Repeater();
 
         $repeater->add_control(
                 'title', [
             'label' => __('Title', 'hash-elements'),
-            'type' => Controls_Manager::TEXT,
+            'type' => \Elementor\Controls_Manager::TEXT,
             'label_block' => true,
             'default' => 'Title'
                 ]
@@ -74,27 +64,38 @@ class SquareModuleFive extends Widget_Base {
         $repeater->add_control(
                 'image', [
             'label' => __('Choose Image', 'hash-elements'),
-            'type' => Controls_Manager::MEDIA,
+            'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
-                'url' => Utils::get_placeholder_image_src(),
+                'url' => \Elementor\Utils::get_placeholder_image_src(),
             ],
+                ]
+        );
+
+        $repeater->add_control(
+                'logo_link', [
+            'label' => __('Logo Link', 'hash-elements'),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'label_block' => true,
                 ]
         );
 
         $this->add_control(
                 'slides', [
             'label' => __('Slides', 'hash-elements'),
-            'type' => Controls_Manager::REPEATER,
+            'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $repeater->get_controls(),
             'title_field' => '{{{ title }}}',
                 ]
         );
 
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'section_settings', [
-            'label' => esc_html__('Settings', 'hash-elements'),
+        $this->add_control(
+                'link_new_tab', [
+            'label' => __('Open Link in New Tab', 'hash-elements'),
+            'type' => \Elementor\Controls_Manager::SWITCHER,
+            'label_on' => __('Yes', 'hash-elements'),
+            'label_off' => __('No', 'hash-elements'),
+            'return_value' => 'yes',
+            'default' => 'yes',
                 ]
         );
 
@@ -214,52 +215,6 @@ class SquareModuleFive extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'title_style', [
-            'label' => esc_html__('Title', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
-        );
-
-        $this->add_control(
-                'title_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} h2.he-section-title' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'title_border_color', [
-            'label' => esc_html__('Border Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .he-section-title:after' => 'background: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'title_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} h2.he-section-title',
-                ]
-        );
-
-        $this->end_controls_section(); 
-
-        $this->start_controls_section(
                 'dot_style', [
             'label' => esc_html__('Naviagation Dot Style', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
@@ -286,7 +241,7 @@ class SquareModuleFive extends Widget_Base {
             ],
             'default' => '#000000',
             'selectors' => [
-                '{{WRAPPER}} .owl-dots .owl-dot' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-client-logo-slider .owl-dots .owl-dot ' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -309,7 +264,7 @@ class SquareModuleFive extends Widget_Base {
             ],
             'default' => '#000000',
             'selectors' => [
-                '{{WRAPPER}} .owl-dots .owl-dot:hover' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-client-logo-slider .owl-dots .owl-dot:hover' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -339,33 +294,33 @@ class SquareModuleFive extends Widget_Base {
         );
         $params = json_encode($params);
         ?>
-
-        <section id="he-logo-section" class="he-section">
-            <div class="he-container">
-
-                <?php if(isset($settings['header']) && !empty($settings['header'])) { ?>
-                    <h2 class="he-section-title"><?php echo esc_html($settings['header']); ?></h2>
-                <?php } ?>
-
-                <div class="he_client_logo_slider owl-carousel" data-params='<?php echo $params ?>'>
-                    <?php
-                    foreach ($logo_images as $key => $logo) {
-                        $image_url = \Elementor\Group_Control_Image_Size::get_attachment_image_src($logo['image']['id'], 'thumb', $settings);
-                        if (!$image_url) {
-                            $image_url = \Elementor\Utils::get_placeholder_image_src();
-                        }
-                        
-                        $image_alt = get_post_meta(attachment_url_to_postid($logo['image']['id'] ), '_wp_attachment_image_alt', true);
-                        $image_alt_text = $image_alt ? $image_alt : esc_html__('Logo', 'hash-elements');
-                        ?>
-                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_html($image_alt_text) ?>">
-                        <?php
-                        
+        <div class="he-client-logo-slider owl-carousel" data-params='<?php echo $params ?>'>
+            <?php
+            if ($settings['slides']) {
+                foreach ($settings['slides'] as $item) {
+                    $image_url = \Elementor\Group_Control_Image_Size::get_attachment_image_src($item['image']['id'], 'thumb', $settings);
+                    if (!$image_url) {
+                        $image_url = \Elementor\Utils::get_placeholder_image_src();
                     }
-                    ?>
-                </div>
-            </div>
-        </section>
+                    $image_html = '<img src="' . esc_attr($image_url) . '" alt="' . esc_attr(\Elementor\Control_Media::get_image_alt($item['image'])) . '" />';
+
+                    echo '<div class="he-logo-slide">';
+
+                    if (!empty($item['logo_link'])) {
+                        ?>
+                        <a href="<?php echo esc_url($item['logo_link']) ?>" target="<?php echo esc_attr($target) ?>">
+                            <?php echo $image_html; ?>
+                        </a>
+                        <?php
+                    } else {
+                        echo $image_html;
+                    }
+                    echo '</div>';
+                }
+            }
+            ?>
+        </div>
         <?php
     }
+
 }

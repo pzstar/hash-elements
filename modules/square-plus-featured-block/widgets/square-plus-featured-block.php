@@ -5,13 +5,9 @@ namespace HashElements\Modules\SquarePlusFeaturedBlock\Widgets;
 // Elementor Classes
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
-use Elementor\Utils;
-use HashElements\Group_Control_Query;
-use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -121,7 +117,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'name' => 'box_background',
             'label' => __('Background', 'hash-elements'),
             'types' => ['classic', 'gradient'],
-            'selector' => '{{WRAPPER}} .he-featured-post-wrap',
+            'selector' => '{{WRAPPER}} .he-featured-post:before',
                 ]
         );
 
@@ -130,16 +126,8 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'label' => esc_html__('Padding', 'hash-elements'),
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => ['px', '%', 'em'],
-            'default' => [
-                'top' => '0',
-                'right' => '0',
-                'bottom' => '0',
-                'left' => '0',
-                'unit' => 'px',
-                'isLinked' => false,
-            ],
             'selectors' => [
-                '{{WRAPPER}} .he-featured-post-wrap' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .he-featured-post' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
                 ]
         );
@@ -168,8 +156,8 @@ class SquarePlusFeaturedBlock extends Widget_Base {
         );
 
         $this->add_control(
-                'header_icon_size', [
-            'label' => __('Header Icon Size', 'hash-elements'),
+                'icon_size', [
+            'label' => __('Icon Size', 'hash-elements'),
             'type' => Controls_Manager::SLIDER,
             'size_units' => ['px'],
             'range' => [
@@ -181,32 +169,10 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 30,
+                'size' => 38,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-featured-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'readmore_icon_size', [
-            'label' => __('Readmore Icon Size', 'hash-elements'),
-            'type' => Controls_Manager::SLIDER,
-            'size_units' => ['px'],
-            'range' => [
-                'px' => [
-                    'min' => 10,
-                    'max' => 80,
-                    'step' => 1,
-                ]
-            ],
-            'default' => [
-                'unit' => 'px',
-                'size' => 30,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .he-featured-readmore i' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .he-featured-post .he-featured-icon' => 'font-size: {{SIZE}}{{UNIT}};',
             ],
                 ]
         );
@@ -228,7 +194,6 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
-            'default' => '#000000',
             'selectors' => [
                 '{{WRAPPER}} .he-featured-post h4' => 'color: {{VALUE}}',
             ],
@@ -287,23 +252,8 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
-            'default' => '#333333',
             'selectors' => [
                 '{{WRAPPER}} .he-featured-excerpt' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'content_border_color', [
-            'label' => esc_html__('Border Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .he-featured-post' => 'border: 2px solid {{VALUE}}',
             ],
                 ]
         );
@@ -313,7 +263,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'name' => 'content_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-featured-post',
+            'selector' => '{{WRAPPER}} .he-featured-excerpt',
                 ]
         );
 
@@ -324,7 +274,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'allowed_dimensions' => 'vertical',
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .he-featured-post' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                '{{WRAPPER}} .he-featured-excerpt' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
                 ]
         );
@@ -338,12 +288,25 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 ]
         );
 
-        $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'link_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} a.he-featured-readmore i',
+        $this->add_control(
+                'link_icon_size', [
+            'label' => __('Icon Size', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 10,
+                    'max' => 80,
+                    'step' => 1,
+                ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 26,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-featured-readmore' => 'font-size: {{SIZE}}{{UNIT}};',
+            ],
                 ]
         );
 
@@ -355,7 +318,6 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
-            'default' => '#000000',
             'selectors' => [
                 '{{WRAPPER}} a.he-featured-readmore i' => 'color: {{VALUE}}',
             ],
@@ -370,20 +332,8 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
-            'default' => '#000000',
             'selectors' => [
-                '{{WRAPPER}} a.he-featured-readmore i' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'link_padding', [
-            'label' => esc_html__('Padding', 'hash-elements'),
-            'type' => Controls_Manager::DIMENSIONS,
-            'size_units' => ['px', '%', 'em'],
-            'selectors' => [
-                '{{WRAPPER}} a.he-featured-readmore' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} a.he-featured-readmore:hover i' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -422,8 +372,8 @@ class SquarePlusFeaturedBlock extends Widget_Base {
 
             <?php
             if (isset($settings['link']['url']) && !empty($settings['link']['url'])) {
-                $target = $settings['website_link']['is_external'] ? ' target="_blank"' : '';
-                $nofollow = $settings['website_link']['nofollow'] ? ' rel="nofollow"' : '';
+                $target = $settings['link']['is_external'] ? ' target="_blank"' : '';
+                $nofollow = $settings['link']['nofollow'] ? ' rel="nofollow"' : '';
                 ?>
                 <a href="<?php echo esc_url($settings['link']['url']); ?>" class="he-featured-readmore"<?php echo $target . $nofollow; ?>>
                     <?php \Elementor\Icons_Manager::render_icon($settings['link_icon'], ['aria-hidden' => 'true']); ?>

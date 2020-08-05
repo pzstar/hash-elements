@@ -1,6 +1,6 @@
 <?php
 
-namespace HashElements\Modules\SquareModuleFive;
+namespace HashElements\Modules\SquarePlusTabBlock;
 
 use HashElements\Base\Module_Base;
 
@@ -10,12 +10,12 @@ if (!defined('ABSPATH'))
 class Module extends Module_Base {
 
     public function get_name() {
-        return 'he-square-module-five';
+        return 'square-plus-tab-block';
     }
 
     public function get_widgets() {
         $widgets = [
-            'SquareModuleFive',
+            'SquarePlusTabBlock',
         ];
         return $widgets;
     }

@@ -62,7 +62,7 @@ if (!class_exists('Hash_Elements')) {
             }
 
             require( HASHELE_PATH . 'inc/helper-functions.php' );
-            require( HASHELE_PATH . 'inc/he-widget-loader.php' );
+            require( HASHELE_PATH . 'inc/widget-loader.php' );
 
             if ('yes' !== get_option('elementor_disable_color_schemes')) {
                 update_option('elementor_disable_color_schemes', 'yes');

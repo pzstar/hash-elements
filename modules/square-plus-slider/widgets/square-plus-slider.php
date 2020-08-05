@@ -11,8 +11,6 @@ use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
 use Elementor\Utils;
 use Elementor\Repeater;
-use HashElements\Group_Control_Query;
-use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.

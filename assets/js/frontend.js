@@ -1,5 +1,5 @@
 (function ($, elementor) {
-    "use strict";
+    'use strict';
     var HashElements = {
 
         init: function () {
@@ -8,9 +8,9 @@
                 'he-carousel-module-one.default': HashElements.carousel,
                 'he-ticker-module.default': HashElements.ticker,
                 'square-plus-slider.default': HashElements.squareSlider,
-                'he-square-module-three.default': HashElements.squareHomeAbout,
-                'square-plus-tab-block.default': HashElements.squareHomeTab,
-                'square-plus-logo-carousel.default': HashElements.squareClientLogoSlider,
+                'square-plus-elastic-gallery.default': HashElements.squareElasticGallery,
+                'square-plus-tab-block.default': HashElements.squareTab,
+                'square-plus-logo-carousel.default': HashElements.squareLogoCarousel,
             };
             $.each(widgets, function (widget, callback) {
                 elementor.hooks.addAction('frontend/element_ready/' + widget, callback);
@@ -68,47 +68,56 @@
                 });
             }
         },
-        squareClientLogoSlider: function ($scope) {
-            var $el = $scope.find(".he_client_logo_slider");
-            var params = JSON.parse($el.attr('data-params'));
-            $el.owlCarousel({
-                autoplay: JSON.parse(params.autoplay),
-                items: 5,
-                loop: true,
-                nav: false,
-                dots: JSON.parse(params.dots),
-                autoplayTimeout: params.pause,
-                responsive: {
-                    0: {
-                        items: params.items_mobile,
-                        margin: params.margin_mobile,
-                    },
-                    480: {
-                        items: params.items_tablet,
-                        margin: params.margin_tablet,
-                    },
-                    768: {
-                        items: params.items,
-                        margin: params.margin,
-                    }
-                }
-            });
+        squareLogoCarousel: function ($scope) {
+            var $element = $scope.find('.he-client-logo-slider');
+            if ($element.length > 0) {
+                $element.each(function () {
+                    var params = JSON.parse($(this).attr('data-params'));
+                    $element.owlCarousel({
+                        autoplay: JSON.parse(params.autoplay),
+                        loop: true,
+                        nav: false,
+                        dots: JSON.parse(params.dots),
+                        autoplayTimeout: params.pause,
+                        responsive: {
+                            0: {
+                                items: params.items_mobile,
+                                margin: params.margin_mobile,
+                            },
+                            480: {
+                                items: params.items_tablet,
+                                margin: params.margin_tablet,
+                            },
+                            768: {
+                                items: params.items,
+                                margin: params.margin,
+                            }
+                        }
+                    });
+                });
+            }
         },
-        squareHomeTab: function ($scope) {
-            $scope.find(".he-tab-pane:first").show();
-            $scope.find(".he-tab li:first").addClass('he-active');
-            $scope.find(".he-tab li a").on('click', function () {
-                var tab = $(this).attr('href');
-                $scope.find(".he-tab li").removeClass('he-active');
-                $(this).parent('li').addClass('he-active');
-                $scope.find(".he-tab-pane").hide();
-                $(tab).show();
-                return false;
-            });
+        squareTab: function ($scope) {
+            var $element = $scope.find('.he-tab-wrapper');
+            if ($element.length > 0) {
+                $element.each(function () {
+                    $(this).find('.he-tab-pane:first').show();
+                    $(this).find('.he-tab li:first').addClass('he-active');
+
+                    $('.he-tab li a').on('click', function () {
+                        var tab = $(this).attr('href');
+                        $(this).closest('.he-tab-wrapper').find('.he-tab li').removeClass('he-active');
+                        $(this).parent('li').addClass('he-active');
+                        $(this).closest('.he-tab-wrapper').find('.he-tab-pane').hide();
+                        $(this).closest('.he-tab-wrapper').find(tab).show();
+                        return false;
+                    });
+                });
+            }
         },
-        squareHomeAbout: function ($scope) {
-            var $el = $scope.find('#he-elasticstack');
-            if ($el.length > 0) {
+        squareElasticGallery: function ($scope) {
+            var $element = $scope.find('#he-elasticstack');
+            if ($element.length > 0) {
                 new ElastiStack(document.getElementById('he-elasticstack'), {
                     // distDragBack: if the user stops dragging the image in a area that does not exceed [distDragBack]px 
                     // for either x or y then the image goes back to the stack 

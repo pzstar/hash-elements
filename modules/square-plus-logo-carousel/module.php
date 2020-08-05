@@ -1,6 +1,6 @@
 <?php
 
-namespace HashElements\Modules\SquareModuleFour;
+namespace HashElements\Modules\SquarePlusLogoCarousel;
 
 use HashElements\Base\Module_Base;
 
@@ -10,12 +10,12 @@ if (!defined('ABSPATH'))
 class Module extends Module_Base {
 
     public function get_name() {
-        return 'he-square-module-four';
+        return 'square-plus-logo-carousel';
     }
 
     public function get_widgets() {
         $widgets = [
-            'SquareModuleFour',
+            'SquarePlusLogoCarousel',
         ];
         return $widgets;
     }
