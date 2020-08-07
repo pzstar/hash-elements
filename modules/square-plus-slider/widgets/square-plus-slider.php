@@ -465,47 +465,45 @@ class SquarePlusSlider extends Widget_Base {
         );
         $params = json_encode($params);
         ?>
-        <section id="he-home-slider-section">
-            <div id="he-bx-slider" class="owl-carousel" data-params='<?php echo $params ?>'>
-                <?php
-                if ($sliders) {
-                    foreach ($sliders as $slider) {
-                        ?>
-                        <div class="he-slide">
-                            <img src="<?php echo esc_url($slider['slider_image']['url']); ?>" alt="<?php echo esc_attr($slider['slider_title']); ?>">
+        <div class="he-bx-slider owl-carousel" data-params='<?php echo $params ?>'>
+            <?php
+            if ($sliders) {
+                foreach ($sliders as $slider) {
+                    ?>
+                    <div class="he-slide">
+                        <img src="<?php echo esc_url($slider['slider_image']['url']); ?>" alt="<?php echo esc_attr($slider['slider_title']); ?>">
 
-                            <?php if ($slider['slider_title'] || $slider['slider_description']) { ?>
-                                <div class="he-container">
-                                    <div class="he-slide-caption">
-                                        <div class="he-slide-cap-title">
-                                            <?php echo esc_html($slider['slider_title']); ?>
-                                        </div>
-
-                                        <div class="he-slide-cap-desc">
-                                            <?php echo esc_html($slider['slider_description']); ?>
-
-                                            <?php
-                                            if (!empty($slider['button_link']['url'])) {
-                                                $target = $slider['button_link']['is_external'] ? ' target="_blank"' : '';
-                                                $nofollow = $slider['button_link']['nofollow'] ? ' rel="nofollow"' : '';
-                                                ?>
-                                                <div class="he-slide-cap-button">
-                                                    <a href="<?php echo esc_url($slider['button_link']['url']); ?>"<?php echo $target . $nofollow; ?>><?php echo esc_html($slider['button_text']); ?></a>
-                                                </div>
-                                            <?php } ?>
-                                        </div>
-
+                        <?php if ($slider['slider_title'] || $slider['slider_description']) { ?>
+                            <div class="he-container">
+                                <div class="he-slide-caption">
+                                    <div class="he-slide-cap-title">
+                                        <?php echo esc_html($slider['slider_title']); ?>
                                     </div>
+
+                                    <div class="he-slide-cap-desc">
+                                        <?php echo esc_html($slider['slider_description']); ?>
+
+                                        <?php
+                                        if (!empty($slider['button_link']['url'])) {
+                                            $target = $slider['button_link']['is_external'] ? ' target="_blank"' : '';
+                                            $nofollow = $slider['button_link']['nofollow'] ? ' rel="nofollow"' : '';
+                                            ?>
+                                            <div class="he-slide-cap-button">
+                                                <a href="<?php echo esc_url($slider['button_link']['url']); ?>"<?php echo $target . $nofollow; ?>><?php echo esc_html($slider['button_text']); ?></a>
+                                            </div>
+                                        <?php } ?>
+                                    </div>
+
                                 </div>
-                            <?php } ?>
-                        </div>
-                        <?php
-                    }
+                            </div>
+                        <?php } ?>
+                    </div>
+                    <?php
                 }
-                ?>
-            </div>
-            <div class="he-banner-shadow"><img src="<?php echo esc_url(HASHELE_URL . '/assets/img/banner-shadow.png'); ?>" alt="<?php esc_attr_e('Banner Shadow', 'hash-elements'); ?>"></div>
-        </section>
+            }
+            ?>
+        </div>
+        <div class="he-banner-shadow"><img src="<?php echo esc_url(HASHELE_URL . '/assets/img/banner-shadow.png'); ?>" alt="<?php esc_attr_e('Banner Shadow', 'hash-elements'); ?>"></div>
         <?php
     }
 

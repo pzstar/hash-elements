@@ -53,7 +53,16 @@ final class HASHELE_Modules_Manager {
             'square-plus-elastic-gallery',
             'square-plus-tab-block',
             'square-plus-logo-carousel',
-            'square-module-six',
+            'total-slider',
+            'total-module-two',
+            'total-module-three',
+            'total-module-four',
+            'total-module-five',
+            'total-module-six',
+            'total-module-seven',
+            'total-module-eight',
+            'total-module-nine',
+            'total-module-ten',
         ];
 
         foreach ($modules as $module) {
