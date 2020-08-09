@@ -1,6 +1,6 @@
 <?php
 
-namespace HashElements\Modules\TotalModuleThree;
+namespace HashElements\Modules\TotalProgressbar;
 
 use HashElements\Base\Module_Base;
 
@@ -10,12 +10,12 @@ if (!defined('ABSPATH'))
 class Module extends Module_Base {
 
     public function get_name() {
-        return 'het-total-module-three';
+        return 'total-progressbar';
     }
 
     public function get_widgets() {
         $widgets = [
-            'TotalModuleThree',
+            'TotalProgressbar',
         ];
         return $widgets;
     }

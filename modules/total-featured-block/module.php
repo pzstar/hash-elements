@@ -1,6 +1,6 @@
 <?php
 
-namespace HashElements\Modules\TotalModuleFour;
+namespace HashElements\Modules\TotalFeaturedBlock;
 
 use HashElements\Base\Module_Base;
 
@@ -10,12 +10,12 @@ if (!defined('ABSPATH'))
 class Module extends Module_Base {
 
     public function get_name() {
-        return 'het-total-module-four';
+        return 'total-featured-block';
     }
 
     public function get_widgets() {
         $widgets = [
-            'TotalModuleFour',
+            'TotalFeaturedBlock',
         ];
         return $widgets;
     }

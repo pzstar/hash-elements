@@ -1,18 +1,14 @@
 <?php
 
-namespace HashElements\Modules\TotalModuleFive\Widgets;
+namespace HashElements\Modules\TotalServiceBlock\Widgets;
 
 // Elementor Classes
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
-use Elementor\Utils;
 use Elementor\Repeater;
-use HashElements\Group_Control_Query;
-use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -21,11 +17,11 @@ if (!defined('ABSPATH')) {
 /**
  * Tiled Posts Widget
  */
-class TotalModuleFive extends Widget_Base {
+class TotalServiceBlock extends Widget_Base {
 
     /** Widget Name */
     public function get_name() {
-        return 'het-total-module-five';
+        return 'total-service-block';
     }
 
     /** Widget Title */
@@ -35,7 +31,7 @@ class TotalModuleFive extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'het-total-module-five';
+        return 'total-service-block';
     }
 
     /** Category */
@@ -55,91 +51,77 @@ class TotalModuleFive extends Widget_Base {
         $repeater = new Repeater();
 
         $repeater->add_control(
-            'services_title', [
-                'label' => __( 'Title', 'hash-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-            ]
-        );
-
-        $repeater->add_control(
-            'services_description',
-            [
-                'label' => __( 'Description', 'hash-elements' ),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 10,
-                'default' => __( 'Ad has pertinax salutandi definitiones, quo ex omnis paulo equidem, minim alterum urbanitas eam et. ...', 'hash-elements' ),
-                'placeholder' => __( 'Type your description here', 'hash-elements' ),
-            ]
-        );
-
-        $repeater->add_control(
-            'button_text', [
-                'label' => __( 'Button Text', 'hash-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-                'default' => 'Read More'
-            ]
-        );
-
-        $repeater->add_control(
-            'button_link',
-            [
-                'label' => __( 'Button Link', 'hash-elements' ),
-                'type' => Controls_Manager::URL,
-                'placeholder' => __( 'Enter URL', 'hash-elements' ),
-                'show_external' => true,
-                'default' => [
-                    'url' => '',
-                    'is_external' => true,
-                    'nofollow' => true,
-                ],
-            ]
-        );
-        
-        $repeater->add_control(
-            'icon',
-            [
-                'label' => __( 'Icon', 'hash-elements' ),
-                'type' => Controls_Manager::ICONS,
-                'default' => [
-                    'value' => 'icon_target',
-                    'library' => 'solid',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'services_block',
-            [
-                'label' => __( 'Services', 'hash-elements' ),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [
-                    [
-                        'services_title' => __( 'Services #1', 'hash-elements' ),
-                    ]
-                ],
-                'title_field' => '{{{ services_title }}}',
-            ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'additional_settings', [
-            'label' => esc_html__('Additional Settings', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_CONTENT,
+                'icon', [
+            'label' => __('Icon', 'hash-elements'),
+            'type' => Controls_Manager::ICONS,
+            'default' => [
+                'value' => 'fas fa-star',
+                'library' => 'solid',
+            ],
                 ]
         );
 
-        $this->add_control('excerpt_length', [
-            'label' => esc_html__('Excerpt Length', 'hash-elements'),
-            'description' => esc_html__('Enter 0 to hide excerpt', 'hash-elements'),
-            'type' => Controls_Manager::NUMBER,
-            'min' => 0,
-            'default' => 100
-        ]);
+        $repeater->add_control(
+                'services_title', [
+            'label' => __('Title', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+            'default' => 'Heading'
+                ]
+        );
+
+        $repeater->add_control(
+                'services_description', [
+            'label' => __('Description', 'hash-elements'),
+            'type' => Controls_Manager::TEXTAREA,
+            'rows' => 8,
+            'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
+                ]
+        );
+
+        $repeater->add_control(
+                'button_text', [
+            'label' => __('Button Text', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+            'default' => __('Read More', 'hash-elements')
+                ]
+        );
+
+        $repeater->add_control(
+                'button_link', [
+            'label' => __('Button Link', 'hash-elements'),
+            'type' => Controls_Manager::URL,
+            'placeholder' => __('Enter URL', 'hash-elements'),
+            'show_external' => true,
+            'default' => [
+                'url' => '#',
+                'is_external' => false,
+                'nofollow' => true,
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'services_block', [
+            'label' => __('Services', 'hash-elements'),
+            'type' => Controls_Manager::REPEATER,
+            'fields' => $repeater->get_controls(),
+            'default' => [
+                [
+                    'services_title' => __('Heading', 'hash-elements'),
+                    'services_description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    'button_link' => [
+                        'url' => '#',
+                        'is_external' => false,
+                        'nofollow' => true,
+                    ],
+                    'button_text' => __('Read More', 'hash-elements')
+                ]
+            ],
+            'title_field' => '{{{ services_title }}}',
+                ]
+        );
 
         $this->end_controls_section();
 
@@ -151,20 +133,6 @@ class TotalModuleFive extends Widget_Base {
         );
 
         $this->add_control(
-                'icon_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .het-service-icon i' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
                 'icon_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
@@ -172,39 +140,25 @@ class TotalModuleFive extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
-            'default' => '#009dea',
+            'default' => '#000',
             'selectors' => [
-                '{{WRAPPER}} .het-service-icon' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .het-service-icon, {{WRAPPER}} .het-service-post-wrap:after' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .het-active .het-service-icon' => 'box-shadow: 0px 0px 0px 2px #FFF, 0px 0px 0px 4px {{VALUE}}'
             ],
                 ]
         );
 
         $this->add_control(
-                'icon_border_color', [
-            'label' => esc_html__('Border Color', 'hash-elements'),
+                'icon_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
-            'default' => '#009dea',
+            'default' => '#FFF',
             'selectors' => [
-                '{{WRAPPER}} .het-active .het-service-icon' => 'box-shadow: 0px 0px 0px 2px #FFF, 0px 0px 0px 4px {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'line_color', [
-            'label' => esc_html__('Line Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'default' => '#009dea',
-            'selectors' => [
-                '{{WRAPPER}} .het-service-post-wrap:after' => 'background: {{VALUE}}',
+                '{{WRAPPER}} .het-service-icon i' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -241,7 +195,7 @@ class TotalModuleFive extends Widget_Base {
                 ]
         );
 
-        $this->end_controls_section();     
+        $this->end_controls_section();
 
         $this->start_controls_section(
                 'description_style', [
@@ -273,7 +227,7 @@ class TotalModuleFive extends Widget_Base {
                 ]
         );
 
-        $this->end_controls_section();  
+        $this->end_controls_section();
 
         $this->start_controls_section(
                 'link_style', [
@@ -325,7 +279,7 @@ class TotalModuleFive extends Widget_Base {
 
         $this->add_control(
                 'hover_link_icon_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
+            'label' => esc_html__('Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
@@ -341,39 +295,53 @@ class TotalModuleFive extends Widget_Base {
 
         $this->end_controls_tabs();
 
-        $this->end_controls_section();  
+        $this->end_controls_section();
     }
 
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        // echo '<pre>';print_r($settings);echo '</pre>';return false;
         ?>
         <div class="het-service-post-wrap">
             <?php
             foreach ($settings['services_block'] as $key => $service) {
-            ?>
-                <div class="het-service-post het-clearfix">
-                    <div class="het-service-icon"><i class="<?php echo esc_attr($service['icon']['value']); ?>"></i></div>
+                ?>
+                <div class="het-service-post he-clearfix">
+                    <div class="het-service-icon">
+                        <?php \Elementor\Icons_Manager::render_icon($service['icon'], ['aria-hidden' => 'true']); ?>
+                    </div>
+
                     <div class="het-service-excerpt">
                         <h5><?php echo esc_attr($service['services_title']); ?></h5>
+
                         <div class="het-service-text">
                             <div class="het-service-excerpt-text">
                                 <?php
                                 if (isset($service['services_description']) && !empty($service['services_description'])) {
-                                    echo esc_html(hash_elements_total_excerpt($service['services_description'], $settings['excerpt_length']));
+                                    echo esc_html($service['services_description']);
                                 }
                                 ?>
-                                <br/>
                             </div>
-                            <a href="<?php echo esc_url($service['button_link']['url']); ?>"><?php echo esc_html($service['button_text']); ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+
+                            <?php
+                            if (!empty($service['button_link']['url'])) {
+                                $target = $service['button_link']['is_external'] ? ' target="_blank"' : '';
+                                $nofollow = $service['button_link']['nofollow'] ? ' rel="nofollow"' : '';
+                                ?>
+                                <div class="het-service-link">
+                                    <a href="<?php echo esc_url($service['button_link']['url']); ?>" <?php echo $target . $nofollow; ?>>
+                                        <?php echo esc_html($service['button_text']); ?> <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
-            <?php
-             }
+                <?php
+            }
             ?>
         </div>
         <?php
     }
+
 }

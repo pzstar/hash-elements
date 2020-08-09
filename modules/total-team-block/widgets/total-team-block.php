@@ -1,6 +1,6 @@
 <?php
 
-namespace HashElements\Modules\TotalModuleSix\Widgets;
+namespace HashElements\Modules\TotalTeamBlock\Widgets;
 
 // Elementor Classes
 use Elementor\Widget_Base;
@@ -11,8 +11,6 @@ use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
 use Elementor\Utils;
 use Elementor\Repeater;
-use HashElements\Group_Control_Query;
-use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -21,21 +19,21 @@ if (!defined('ABSPATH')) {
 /**
  * Tiled Posts Widget
  */
-class TotalModuleSix extends Widget_Base {
+class TotalTeamBlock extends Widget_Base {
 
     /** Widget Name */
     public function get_name() {
-        return 'het-total-module-six';
+        return 'total-team-block';
     }
 
     /** Widget Title */
     public function get_title() {
-        return esc_html__('Team Section', 'hash-elements');
+        return esc_html__('Team Block', 'hash-elements');
     }
 
     /** Icon */
     public function get_icon() {
-        return 'het-total-module-six';
+        return 'total-team-block';
     }
 
     /** Category */
@@ -53,131 +51,136 @@ class TotalModuleSix extends Widget_Base {
         );
 
         $this->add_control(
-            'member_name', [
-                'label' => __( 'Name', 'hash-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-                'default' => __( 'Name', 'hash-elements' ),
-            ]
+                'member_image', [
+            'label' => __('Choose Photo', 'hash-elements'),
+            'type' => Controls_Manager::MEDIA,
+            'default' => [
+                'url' => Utils::get_placeholder_image_src(),
+            ],
+                ]
         );
 
         $this->add_control(
-            'member_designation', [
-                'label' => __( 'Designations', 'hash-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-            ]
+                'member_name', [
+            'label' => __('Name', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+            'default' => __('John Doe', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'member_description',
-            [
-                'label' => __( 'Description', 'hash-elements' ),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 10,
-                'placeholder' => __( 'Type your description here', 'hash-elements' ),
-            ]
+                'member_designation', [
+            'label' => __('Designations', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+            'default' => __('Engineer', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'member_image',
-            [
-                'label' => __( 'Choose Photo', 'hash-elements' ),
-                'type' => Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-            ]
+                'member_description', [
+            'label' => __('Description', 'hash-elements'),
+            'type' => Controls_Manager::TEXTAREA,
+            'rows' => 10,
+            'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
+                ]
+        );
+
+
+        $this->add_control(
+                'button_text', [
+            'label' => __('Button Text', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+            'default' => __('Read More', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'button_text', [
-                'label' => __( 'Button Text', 'hash-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-                'default' => 'Detail'
-            ]
+                'button_link', [
+            'label' => __('Button Link', 'hash-elements'),
+            'type' => Controls_Manager::URL,
+            'placeholder' => __('Enter URL', 'hash-elements'),
+            'show_external' => true,
+            'default' => [
+                'url' => '#',
+                'is_external' => false,
+                'nofollow' => true,
+            ],
+                ]
         );
 
-        $this->add_control(
-            'button_link',
-            [
-                'label' => __( 'Button Link', 'hash-elements' ),
-                'type' => Controls_Manager::URL,
-                'placeholder' => __( 'Enter URL', 'hash-elements' ),
-                'show_external' => true,
-                'default' => [
-                    'url' => '',
-                    'is_external' => true,
-                    'nofollow' => true,
-                ],
-            ]
-        );
-        
         $repeater = new Repeater();
 
         $repeater->add_control(
-            'social_icon_name', [
-                'label' => __( 'Social Icon Name', 'hash-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-            ]
-        );
-        
-        $repeater->add_control(
-            'icon',
-            [
-                'label' => __( 'Social Icon', 'hash-elements' ),
-                'type' => Controls_Manager::ICONS,
-            ]
+                'social_icon_title', [
+            'label' => __('Title', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+                ]
         );
 
         $repeater->add_control(
-            'social_icon_link',
-            [
-                'label' => __( 'Button Link', 'hash-elements' ),
-                'type' => Controls_Manager::URL,
-                'placeholder' => __( 'Enter URL', 'hash-elements' ),
-                'show_external' => true,
-                'default' => [
-                    'url' => '',
-                    'is_external' => true,
-                    'nofollow' => true,
-                ],
-            ]
+                'social_icon', [
+            'label' => __('Social Icon', 'hash-elements'),
+            'type' => Controls_Manager::ICONS,
+                ]
+        );
+
+        $repeater->add_control(
+                'social_icon_link', [
+            'label' => __('Button Link', 'hash-elements'),
+            'type' => Controls_Manager::URL,
+            'placeholder' => __('Enter URL', 'hash-elements'),
+            'show_external' => true,
+            'default' => [
+                'url' => '',
+                'is_external' => true,
+                'nofollow' => true,
+            ],
+                ]
         );
 
         $this->add_control(
-            'social_icons_block',
-            [
-                'label' => __( 'Social Icons', 'hash-elements' ),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [
-                    [
-                        'services_title' => __( 'Icon #1', 'hash-elements' ),
+                'social_icons_block', [
+            'label' => __('Add Social Icons', 'hash-elements'),
+            'type' => Controls_Manager::REPEATER,
+            'fields' => $repeater->get_controls(),
+            'default' => [
+                [
+                    'social_icon_title' => __('Facebook', 'hash-elements'),
+                    'social_icon' => [
+                        'value' => 'fab fa-facebook-f',
+                        'library' => 'brand',
+                    ],
+                    'social_icon_link' => [
+                        'url' => '#',
+                        'is_external' => true,
+                        'nofollow' => true,
                     ]
-                ],
-                'title_field' => '{{{ social_icon_name }}}',
-            ]
+                ]
+            ],
+            'title_field' => '{{{ social_icon_title }}}',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'additional_settings', [
+                'additional Settings', [
             'label' => esc_html__('Additional Settings', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_CONTENT,
                 ]
         );
 
-        $this->add_control('excerpt_length', [
-            'label' => esc_html__('Excerpt Length', 'hash-elements'),
-            'description' => esc_html__('Enter 0 to hide excerpt', 'hash-elements'),
-            'type' => Controls_Manager::NUMBER,
-            'min' => 0,
-            'default' => 100
-        ]);
+        $this->add_group_control(
+                \Elementor\Group_Control_Image_Size::get_type(), [
+            'name' => 'thumbnail',
+            'exclude' => ['custom'],
+            'include' => [],
+            'default' => 'large',
+                ]
+        );
 
         $this->end_controls_section();
 
@@ -226,7 +229,7 @@ class TotalModuleSix extends Widget_Base {
                 ]
         );
 
-        $this->end_controls_section(); 
+        $this->end_controls_section();
 
         $this->start_controls_section(
                 'designation_style', [
@@ -314,7 +317,7 @@ class TotalModuleSix extends Widget_Base {
                 ]
         );
 
-        $this->end_controls_section();  
+        $this->end_controls_section();
 
         $this->start_controls_section(
                 'button_style', [
@@ -404,7 +407,7 @@ class TotalModuleSix extends Widget_Base {
 
         $this->end_controls_tabs();
 
-        $this->end_controls_section();  
+        $this->end_controls_section();
 
         $this->start_controls_section(
                 'social_icon_style', [
@@ -509,64 +512,70 @@ class TotalModuleSix extends Widget_Base {
 
         $this->end_controls_tabs();
 
-        $this->end_controls_section();  
+        $this->end_controls_section();
     }
 
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        // echo '<pre>';print_r($settings);echo '</pre>';return false;
         $social_icons_block = $settings['social_icons_block'];
+        $target = $settings['button_link']['is_external'] ? ' target="_blank"' : '';
+        $nofollow = $settings['button_link']['nofollow'] ? ' rel="nofollow"' : '';
         ?>
         <div class="het-team-member">
 
             <div class="het-team-member-image">
                 <?php
-                if ($settings['member_image']['url']) {
-                    $image_url = $settings['member_image']['url'];
-                } else {
-                    $image_url = HASHELE_URL . 'assets/img/team-thumb.png';
-                }
+                echo Group_Control_Image_Size::get_attachment_image_html($settings, 'thumbnail', 'member_image');
                 ?>
 
-                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($settings['member_name']); ?>" />
                 <div class="het-title-wrap">
                     <h6><?php echo esc_attr($settings['member_name']); ?></h6>
                 </div>
 
-                <a href="<?php echo esc_attr($settings['button_link']['url']); ?>" class="het-team-member-excerpt">
+                <div class="het-team-member-excerpt">
                     <div class="het-team-member-excerpt-wrap">
                         <div class="het-team-member-span">
                             <h6><?php echo esc_attr($settings['member_name']); ?></h6>
 
-                            <?php 
-                            if ($settings['member_designation']) { ?>
+                            <?php if ($settings['member_designation']) { ?>
                                 <div class="het-team-designation"><?php echo esc_html($settings['member_designation']); ?></div>
                             <?php } ?>
 
                             <?php
                             if (isset($settings['member_description']) && !empty($settings['member_description'])) {
                                 echo '<div class="het-member-description-text">';
-                                echo esc_html(hash_elements_total_excerpt($settings['member_description'], $settings['excerpt_length']));
+                                echo esc_html($settings['member_description']);
                                 echo '</div>';
                             }
                             ?>
-                            <div class="het-team-detail"><?php esc_html_e('Detail', 'total') ?></div>
+                            <div class="het-team-detail">
+                                <a href="<?php echo esc_attr($settings['button_link']['url']); ?>"<?php echo $target . $nofollow; ?>>
+                                    <?php esc_html_e($settings['button_text']) ?>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>  
 
-            <?php 
-            if(isset($settings['social_icons_block']) && !empty($settings['social_icons_block'])) { 
+            <?php
+            if (isset($social_icons_block) && !empty($social_icons_block)) {
                 ?>
                 <div class="het-team-social-id">
-                <?php foreach ($social_icons_block as $key => $icon_block) { ?>
-                    <a target="_blank" href="<?php echo esc_url($icon_block['social_icon_link']['url']) ?>"><i class="<?php echo esc_attr($icon_block['icon']['value']); ?>"></i></a>
-                <?php } ?>
+                    <?php
+                    foreach ($social_icons_block as $key => $icon_block) {
+                        $target = $icon_block['social_icon_link']['is_external'] ? ' target="_blank"' : '';
+                        $nofollow = $icon_block['social_icon_link']['nofollow'] ? ' rel="nofollow"' : '';
+                        ?>
+                        <a target="_blank" href="<?php echo esc_url($icon_block['social_icon_link']['url']) ?>"<?php echo $target . $nofollow; ?>>
+                            <?php \Elementor\Icons_Manager::render_icon($icon_block['social_icon'], ['aria-hidden' => 'true']); ?>
+                        </a>
+                    <?php } ?>
                 </div>
             <?php } ?>
         </div>
         <?php
     }
+
 }

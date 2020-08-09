@@ -460,8 +460,7 @@ class SquarePlusSlider extends Widget_Base {
         $params = array(
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,
             'pause' => (int) $pause_duration,
-            'nav' => $settings['nav'] == 'yes' ? true : false,
-            'dots' => $settings['dots'] == 'yes' ? true : false
+            'nav' => $settings['nav'] == 'yes' ? true : false
         );
         $params = json_encode($params);
         ?>

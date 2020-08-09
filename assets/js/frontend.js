@@ -12,11 +12,11 @@
                 'square-plus-tab-block.default': HashElements.squareTab,
                 'square-plus-logo-carousel.default': HashElements.squareLogoCarousel,
                 'total-slider.default': HashElements.totalSlider,
-                'het-total-module-five.default': HashElements.totalServices,
+                'total-service-block.default': HashElements.totalServices,
+                'total-portfolio-masonary.default': HashElements.totalPortfolio,
                 'het-total-module-seven.default': HashElements.totalCounter,
                 'het-total-module-eight.default': HashElements.totalTestimonialSlider,
-                'het-total-module-ten.default': HashElements.totalLogoSlider,
-                'het-total-module-four.default': HashElements.totalPortfolio,
+                'het-total-module-ten.default': HashElements.totalLogoSlider
             };
             $.each(widgets, function (widget, callback) {
                 elementor.hooks.addAction('frontend/element_ready/' + widget, callback);
@@ -150,8 +150,7 @@
                         nav: JSON.parse(params.nav),
                         dots: false,
                         autoplayTimeout: params.pause,
-                        animateOut: 'fadeOut',
-                        navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>']
+                        animateOut: 'fadeOut'
                     });
                 });
             }

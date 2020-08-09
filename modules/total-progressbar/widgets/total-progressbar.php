@@ -1,18 +1,14 @@
 <?php
 
-namespace HashElements\Modules\TotalModuleTwo\Widgets;
+namespace HashElements\Modules\TotalProgressbar\Widgets;
 
 // Elementor Classes
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
-use Elementor\Utils;
 use Elementor\Repeater;
-use HashElements\Group_Control_Query;
-use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -21,21 +17,21 @@ if (!defined('ABSPATH')) {
 /**
  * Tiled Posts Widget
  */
-class TotalModuleTwo extends Widget_Base {
+class TotalProgressbar extends Widget_Base {
 
     /** Widget Name */
     public function get_name() {
-        return 'het-total-module-two';
+        return 'total-progressbar';
     }
 
     /** Widget Title */
     public function get_title() {
-        return esc_html__('About Section', 'hash-elements');
+        return esc_html__('Progress Bar', 'hash-elements');
     }
 
     /** Icon */
     public function get_icon() {
-        return 'het-total-module-two';
+        return 'total-progressbar';
     }
 
     /** Category */
@@ -48,45 +44,94 @@ class TotalModuleTwo extends Widget_Base {
 
         $this->start_controls_section(
                 'progressbar', [
-            'label' => esc_html__('Progress Bar', 'hash-elements'),
+            'label' => esc_html__('Progress Bars', 'hash-elements'),
                 ]
         );
 
         $repeater = new Repeater();
 
         $repeater->add_control(
-            'progressbar_title', [
-                'label' => __( 'Title', 'hash-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-            ]
+                'progressbar_title', [
+            'label' => __('Title', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+                ]
         );
 
         $repeater->add_control(
-            'progressbar_percentage',
-            [
-                'label' => __( 'Percentage', 'hash-elements' ),
-                'type' => Controls_Manager::NUMBER,
-                'min' => 0,
-                'max' => 100,
-                'step' => 1,
-                'default' => 90,
-            ]
+                'progressbar_percentage', [
+            'label' => __('Percentage', 'hash-elements'),
+            'type' => Controls_Manager::NUMBER,
+            'min' => 0,
+            'max' => 100,
+            'step' => 1,
+            'default' => 90,
+                ]
         );
 
         $this->add_control(
-            'progressbar_block',
-            [
-                'label' => __( 'Progress Bars', 'hash-elements' ),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [
-                    [
-                        'progressbar_title' => __( 'Progress Bar #1', 'hash-elements' ),
-                    ]
-                ],
-                'title_field' => '{{{ progressbar_title }}}',
-            ]
+                'progressbar_block', [
+            'label' => __('Progress Bars', 'hash-elements'),
+            'type' => Controls_Manager::REPEATER,
+            'fields' => $repeater->get_controls(),
+            'default' => [
+                [
+                    'progressbar_title' => __('Progress Bar #1', 'hash-elements'),
+                ]
+            ],
+            'title_field' => '{{{ progressbar_title }}}',
+                ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+                'progressbar_style', [
+            'label' => esc_html__('Progress Bar', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
+        $this->add_control(
+                'progressbar_bg_color', [
+            'label' => esc_html__('Background Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .het-progress-bar' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'progressbar_active_bg_color', [
+            'label' => esc_html__('Active Background Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .het-progress-bar-length' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'progressbar_spacing', [
+            'label' => __('Spacing between Progress bars (px)', 'hash-elements'),
+            'type' => Controls_Manager::NUMBER,
+            'min' => 0,
+            'max' => 100,
+            'step' => 1,
+            'default' => 20,
+                    'selectors' => [
+                '{{WRAPPER}} .het-progress' => 'margin-bottom: {{VALUE}}px',
+            ],
+                ]
         );
 
         $this->end_controls_section();
@@ -121,7 +166,7 @@ class TotalModuleTwo extends Widget_Base {
                 ]
         );
 
-        $this->end_controls_section();     
+        $this->end_controls_section();
 
         $this->start_controls_section(
                 'percentage_style', [
@@ -153,43 +198,19 @@ class TotalModuleTwo extends Widget_Base {
                 ]
         );
 
-        $this->end_controls_section();  
-
-        $this->start_controls_section(
-                'progressbar_style', [
-            'label' => esc_html__('Progress Bar', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
-        );
-
-        $this->add_control(
-                'progressbar_bg_color', [
-            'label' => esc_html__('Background Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .het-progress-bar-length' => 'background-color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->end_controls_section();  
+        $this->end_controls_section();
     }
 
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        // echo '<pre>';print_r($settings);echo '</pre>';return false;
         $progressbars = $settings['progressbar_block'];
         ?>
         <div class="het-about-sec">
             <div class="het-progress-bar-sec">
                 <?php
                 foreach ($progressbars as $key => $progressbar) {
-                ?>
+                    ?>
                     <div class="het-progress">
                         <h6><?php echo esc_html($progressbar['progressbar_title']); ?></h6>
                         <div class="het-progress-bar">
@@ -198,11 +219,12 @@ class TotalModuleTwo extends Widget_Base {
                             </div>
                         </div>
                     </div>
-                <?php 
+                    <?php
                 }
                 ?>
             </div>
         </div>          
         <?php
     }
+
 }

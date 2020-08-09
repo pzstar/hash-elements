@@ -1,6 +1,6 @@
 <?php
 
-namespace HashElements\Modules\TotalModuleFour\Widgets;
+namespace HashElements\Modules\TotalPortfolioMasonary\Widgets;
 
 // Elementor Classes
 use Elementor\Widget_Base;
@@ -10,9 +10,7 @@ use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
 use Elementor\Utils;
-use Elementor\Repeater;
 use HashElements\Group_Control_Query;
-use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -21,11 +19,11 @@ if (!defined('ABSPATH')) {
 /**
  * Tiled Posts Widget
  */
-class TotalModuleFour extends Widget_Base {
+class TotalPortfolioMasonary extends Widget_Base {
 
     /** Widget Name */
     public function get_name() {
-        return 'het-total-module-four';
+        return 'total-portfolio-masonary';
     }
 
     /** Widget Title */
@@ -35,7 +33,7 @@ class TotalModuleFour extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'het-total-module-four';
+        return 'total-portfolio-masonary';
     }
 
     /** Category */
