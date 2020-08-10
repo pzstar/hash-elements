@@ -1,18 +1,14 @@
 <?php
 
-namespace HashElements\Modules\TotalModuleTen\Widgets;
+namespace HashElements\Modules\TotalLogoCarousel\Widgets;
 
 // Elementor Classes
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
-use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
 use Elementor\Utils;
 use Elementor\Repeater;
-use HashElements\Group_Control_Query;
-use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -21,11 +17,11 @@ if (!defined('ABSPATH')) {
 /**
  * Tiled Posts Widget
  */
-class TotalModuleTen extends Widget_Base {
+class TotalLogoCarousel extends Widget_Base {
 
     /** Widget Name */
     public function get_name() {
-        return 'het-total-module-ten';
+        return 'total-logo-carousel';
     }
 
     /** Widget Title */
@@ -35,7 +31,7 @@ class TotalModuleTen extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'het-total-module-ten';
+        return 'total-logo-carousel';
     }
 
     /** Category */
@@ -55,56 +51,76 @@ class TotalModuleTen extends Widget_Base {
         $repeater = new Repeater();
 
         $repeater->add_control(
-            'title',
-            [
-                'label' => __( 'Title', 'hash-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-                'placeholder' => __( 'Type your title here', 'hash-elements' ),
-            ]
+                'title', [
+            'label' => __('Title', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+            'default' => 'Title'
+                ]
         );
 
         $repeater->add_control(
-            'logo_image',
-            [
-                'label' => __( 'Choose Logo', 'hash-elements' ),
-                'type' => Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-            ]
+                'image', [
+            'label' => __('Choose Image', 'hash-elements'),
+            'type' => Controls_Manager::MEDIA,
+            'default' => [
+                'url' => Utils::get_placeholder_image_src(),
+            ],
+                ]
+        );
+
+        $repeater->add_control(
+                'logo_link', [
+            'label' => __('Logo Link', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+                ]
         );
 
         $this->add_control(
-            'logo_block',
-            [
-                'label' => __( 'Logo', 'hash-elements' ),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [
-                    [
-                        'title' => __( 'Logo 1', 'hash-elements' ),
-                    ]
-                ],
-                'title_field' => '{{{ title }}}',
-            ]
+                'slides', [
+            'label' => __('Slides', 'hash-elements'),
+            'type' => Controls_Manager::REPEATER,
+            'fields' => $repeater->get_controls(),
+            'title_field' => '{{{ title }}}',
+                ]
+        );
+
+        $this->add_control(
+                'link_new_tab', [
+            'label' => __('Open Link in New Tab', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => __('Yes', 'hash-elements'),
+            'label_off' => __('No', 'hash-elements'),
+            'return_value' => 'yes',
+            'default' => 'yes',
+                ]
+        );
+
+        $this->add_group_control(
+                Group_Control_Image_Size::get_type(), [
+            'name' => 'thumb',
+            'exclude' => ['custom'],
+            'include' => [],
+            'default' => 'full',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
                 'carousel_section', [
-            'label' => esc_html__('Carousel Settings', 'viral-pro'),
+            'label' => esc_html__('Carousel Settings', 'hash-elements'),
             'tab' => Controls_Manager::TAB_CONTENT,
                 ]
         );
 
         $this->add_control(
                 'autoplay', [
-            'label' => esc_html__('Autoplay', 'viral-pro'),
+            'label' => esc_html__('Autoplay', 'hash-elements'),
             'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Yes', 'viral-pro'),
-            'label_off' => esc_html__('No', 'viral-pro'),
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
             'return_value' => 'yes',
             'default' => 'yes',
                 ]
@@ -112,7 +128,7 @@ class TotalModuleTen extends Widget_Base {
 
         $this->add_control(
                 'pause_duration', [
-            'label' => esc_html__('Pause Duration', 'viral-pro'),
+            'label' => esc_html__('Pause Duration', 'hash-elements'),
             'type' => Controls_Manager::SLIDER,
             'size_units' => ['s'],
             'range' => [
@@ -134,7 +150,7 @@ class TotalModuleTen extends Widget_Base {
 
         $this->add_responsive_control(
                 'no_of_slides', [
-            'label' => esc_html__('No of Slides', 'viral-pro'),
+            'label' => esc_html__('No of Slides', 'hash-elements'),
             'type' => Controls_Manager::SLIDER,
             'range' => [
                 'px' => [
@@ -160,7 +176,7 @@ class TotalModuleTen extends Widget_Base {
 
         $this->add_responsive_control(
                 'slides_margin', [
-            'label' => esc_html__('Spacing Between Slides', 'viral-pro'),
+            'label' => esc_html__('Spacing Between Slides', 'hash-elements'),
             'type' => Controls_Manager::SLIDER,
             'range' => [
                 'px' => [
@@ -185,22 +201,11 @@ class TotalModuleTen extends Widget_Base {
         );
 
         $this->add_control(
-                'nav', [
-            'label' => esc_html__('Nav Arrow', 'viral-pro'),
-            'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Show', 'viral-pro'),
-            'label_off' => esc_html__('Hide', 'viral-pro'),
-            'return_value' => 'yes',
-            'default' => 'yes'
-                ]
-        );
-
-        $this->add_control(
                 'dots', [
-            'label' => esc_html__('Nav Dots', 'viral-pro'),
+            'label' => esc_html__('Nav Dots', 'hash-elements'),
             'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Show', 'viral-pro'),
-            'label_off' => esc_html__('Hide', 'viral-pro'),
+            'label_on' => esc_html__('Show', 'hash-elements'),
+            'label_off' => esc_html__('Hide', 'hash-elements'),
             'return_value' => 'yes',
                 ]
         );
@@ -225,34 +230,6 @@ class TotalModuleTen extends Widget_Base {
         );
 
         $this->add_control(
-                'nav_normal_bg_color', [
-            'label' => esc_html__('Background Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .owl-carousel .owl-nav button' => 'background-color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'nav_normal_nav_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .owl-carousel .owl-nav button i' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
                 'dot_bg_color', [
             'label' => esc_html__('Dots Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
@@ -261,7 +238,7 @@ class TotalModuleTen extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .owl-carousel button.owl-dot' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .het-client-logo-slider .owl-dots .owl-dot' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -275,34 +252,6 @@ class TotalModuleTen extends Widget_Base {
         );
 
         $this->add_control(
-                'nav_hover_bg_color', [
-            'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'nav_hover_nav_color', [
-            'label' => esc_html__('Color (Hover)', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .owl-carousel .owl-nav button:hover i' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
                 'dot_bg_color_hover', [
             'label' => esc_html__('Dots Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
@@ -311,7 +260,7 @@ class TotalModuleTen extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .owl-carousel button.owl-dot:hover' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .het-client-logo-slider .owl-dots .owl-dot:hover' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -326,8 +275,6 @@ class TotalModuleTen extends Widget_Base {
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        // echo '<pre>';print_r($settings);echo '</pre>';return false;
-        $logo_images = $settings['logo_block'];
         $params = array(
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,
             'pause' => (int) $settings['pause_duration']['size'] * 1000,
@@ -337,25 +284,37 @@ class TotalModuleTen extends Widget_Base {
             'margin' => (int) $settings['slides_margin']['size'],
             'margin_tablet' => (int) $settings['slides_margin_tablet']['size'],
             'margin_mobile' => (int) $settings['slides_margin_mobile']['size'],
-            'nav' => $settings['nav'] == 'yes' ? true : false,
             'dots' => $settings['dots'] == 'yes' ? true : false
         );
         $params = json_encode($params);
         ?>
-        <div class="het_client_logo_slider owl-carousel" data-params='<?php echo $params ?>'>
+        <div class="het-client-logo-slider owl-carousel" data-params='<?php echo $params ?>'>
             <?php
-            foreach ($logo_images as $key => $logo) {
-                $image = wp_get_attachment_image_src( attachment_url_to_postid($logo['logo_image']['url'] ), 'full');
-                if ($image) {
-                    echo '<img class="no-lazyload" src="'. esc_url($image[0]) .'" alt="' .$logo['title']. '">';
-                } else {
-                    ?>
-                    <img src="<?php echo esc_url(Utils::get_placeholder_image_src()) ?>">
-                    <?php
+            if ($settings['slides']) {
+                foreach ($settings['slides'] as $item) {
+                    $image_url = Group_Control_Image_Size::get_attachment_image_src($item['image']['id'], 'thumb', $settings);
+                    if (!$image_url) {
+                        $image_url = Utils::get_placeholder_image_src();
+                    }
+                    $image_html = '<img src="' . esc_attr($image_url) . '" alt="' . esc_attr(\Elementor\Control_Media::get_image_alt($item['image'])) . '" />';
+
+                    echo '<div class="het-logo-slide">';
+
+                    if (!empty($item['logo_link'])) {
+                        ?>
+                        <a href="<?php echo esc_url($item['logo_link']) ?>" target="<?php echo esc_attr($target) ?>">
+                            <?php echo $image_html; ?>
+                        </a>
+                        <?php
+                    } else {
+                        echo $image_html;
+                    }
+                    echo '</div>';
                 }
             }
             ?>
         </div>
         <?php
     }
+
 }

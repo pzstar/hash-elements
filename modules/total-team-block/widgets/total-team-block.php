@@ -178,7 +178,7 @@ class TotalTeamBlock extends Widget_Base {
             'name' => 'thumbnail',
             'exclude' => ['custom'],
             'include' => [],
-            'default' => 'large',
+            'default' => 'full',
                 ]
         );
 
@@ -192,14 +192,14 @@ class TotalTeamBlock extends Widget_Base {
         );
 
         $this->add_control(
-                'header_bg_color', [
+                'title_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
-            'default' => '#009dea',
+            'default' => '#000',
             'selectors' => [
                 '{{WRAPPER}} .het-title-wrap' => 'background: {{VALUE}}',
             ],
@@ -214,8 +214,9 @@ class TotalTeamBlock extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
+            'default' => '#FFF',
             'selectors' => [
-                '{{WRAPPER}} .het-team-member h6' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .het-team-member .het-title-wrap h6' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -225,69 +226,72 @@ class TotalTeamBlock extends Widget_Base {
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .het-team-member h6',
+            'selector' => '{{WRAPPER}} .het-team-member .het-title-wrap h6',
                 ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'designation_style', [
-            'label' => esc_html__('Designation', 'hash-elements'),
+                'overlay_style', [
+            'label' => esc_html__('Hover Overlay', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
                 ]
         );
 
         $this->add_control(
-                'designation_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
+                'overlay_bg_color', [
+            'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
+            'default' => '#000000',
             'selectors' => [
-                '{{WRAPPER}} .het-team-member .het-team-designation' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .het-team-member-excerpt' => 'background-color: {{VALUE}}',
             ],
+                ]
+        );
+
+        $this->add_control(
+                'overlay_text_color', [
+            'label' => esc_html__('Text Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'default' => '#FFFFFF',
+            'selectors' => [
+                '{{WRAPPER}} .het-team-member-excerpt *' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .het-team-member .het-team-member-excerpt h6:after' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_group_control(
+                Group_Control_Typography::get_type(), [
+            'name' => 'overlay_title_typography',
+            'label' => esc_html__('Title Typography', 'hash-elements'),
+            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'selector' => '{{WRAPPER}} .het-team-member-excerpt h6',
                 ]
         );
 
         $this->add_group_control(
                 Group_Control_Typography::get_type(), [
             'name' => 'designation_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
+            'label' => esc_html__('Designation Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-team-member .het-team-designation',
-                ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'description_style', [
-            'label' => esc_html__('Description', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
-        );
-
-        $this->add_control(
-                'description_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .het-member-description-text' => 'color: {{VALUE}}',
-            ],
                 ]
         );
 
         $this->add_group_control(
                 Group_Control_Typography::get_type(), [
             'name' => 'description_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
+            'label' => esc_html__('Description Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-member-description-text',
                 ]
@@ -296,33 +300,29 @@ class TotalTeamBlock extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'overlay_style', [
-            'label' => esc_html__('Overlay', 'hash-elements'),
+                'button_style', [
+            'label' => esc_html__('Read More Button', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
+        $this->add_group_control(
+                Group_Control_Typography::get_type(), [
+            'name' => 'button_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'selector' => '{{WRAPPER}} .het-team-detail a',
                 ]
         );
 
         $this->add_control(
-                'overlay_color', [
-            'label' => esc_html__('Background Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'default' => '#009dea',
+                'button_padding', [
+            'label' => esc_html__('Padding', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'size_units' => ['px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .het-team-member-excerpt' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .het-team-detail a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
-                ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'button_style', [
-            'label' => esc_html__('Button', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
                 ]
         );
 
@@ -337,21 +337,6 @@ class TotalTeamBlock extends Widget_Base {
         );
 
         $this->add_control(
-                'normal_button_text_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'default' => '#009dea',
-            'selectors' => [
-                '{{WRAPPER}} .het-team-detail' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
                 'normal_button_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
@@ -359,8 +344,24 @@ class TotalTeamBlock extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
+            'default' => '#FFFFFF',
             'selectors' => [
-                '{{WRAPPER}} .het-team-detail' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .het-team-detail a' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'normal_button_text_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'default' => '#333333',
+            'selectors' => [
+                '{{WRAPPER}} .het-team-detail a' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -374,23 +375,8 @@ class TotalTeamBlock extends Widget_Base {
         );
 
         $this->add_control(
-                'hover_button_text_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'default' => '#fff',
-            'selectors' => [
-                '{{WRAPPER}} .het-team-detail:hover' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
                 'hover_button_bg_color', [
-            'label' => esc_html__('Background Color', 'hash-elements'),
+            'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
@@ -398,7 +384,22 @@ class TotalTeamBlock extends Widget_Base {
             ],
             'default' => '#333',
             'selectors' => [
-                '{{WRAPPER}} .het-team-detail:hover' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .het-team-detail a:hover' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'hover_button_text_color', [
+            'label' => esc_html__('Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'default' => '#FFF',
+            'selectors' => [
+                '{{WRAPPER}} .het-team-detail a:hover' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -416,21 +417,6 @@ class TotalTeamBlock extends Widget_Base {
                 ]
         );
 
-        $this->add_control(
-                'social_icon_main_bg_color', [
-            'label' => esc_html__('Main Background Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .het-team-member' => 'background-color: {{VALUE}}',
-            ],
-            'default' => '#fff'
-                ]
-        );
-
         $this->start_controls_tabs(
                 'social_icon_style_tabs'
         );
@@ -442,20 +428,6 @@ class TotalTeamBlock extends Widget_Base {
         );
 
         $this->add_control(
-                'normal_social_btn_icon_color', [
-            'label' => esc_html__('Icon Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .het-team-social-id a' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
                 'normal_social_btn_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
@@ -463,9 +435,24 @@ class TotalTeamBlock extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
-            'default' => '#009dea',
+            'default' => '#000000',
             'selectors' => [
                 '{{WRAPPER}} .het-team-social-id a' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'normal_social_btn_icon_color', [
+            'label' => esc_html__('Icon Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'default' => '#FFFFFF',
+            'selectors' => [
+                '{{WRAPPER}} .het-team-social-id a' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -479,23 +466,8 @@ class TotalTeamBlock extends Widget_Base {
         );
 
         $this->add_control(
-                'hover_social_btn_icon_color', [
-            'label' => esc_html__('Icon Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'default' => '#fff',
-            'selectors' => [
-                '{{WRAPPER}} .het-team-social-id a:hover' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
                 'hover_social_btn_bg_color', [
-            'label' => esc_html__('Background Color', 'hash-elements'),
+            'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
@@ -504,6 +476,21 @@ class TotalTeamBlock extends Widget_Base {
             'default' => '#333',
             'selectors' => [
                 '{{WRAPPER}} .het-team-social-id a:hover' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'hover_social_btn_icon_color', [
+            'label' => esc_html__('Icon Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'default' => '#FFFFFF',
+            'selectors' => [
+                '{{WRAPPER}} .het-team-social-id a:hover' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -535,25 +522,23 @@ class TotalTeamBlock extends Widget_Base {
 
                 <div class="het-team-member-excerpt">
                     <div class="het-team-member-excerpt-wrap">
-                        <div class="het-team-member-span">
-                            <h6><?php echo esc_attr($settings['member_name']); ?></h6>
+                        <h6><?php echo esc_attr($settings['member_name']); ?></h6>
 
-                            <?php if ($settings['member_designation']) { ?>
-                                <div class="het-team-designation"><?php echo esc_html($settings['member_designation']); ?></div>
-                            <?php } ?>
+                        <?php if ($settings['member_designation']) { ?>
+                            <div class="het-team-designation"><?php echo esc_html($settings['member_designation']); ?></div>
+                        <?php } ?>
 
-                            <?php
-                            if (isset($settings['member_description']) && !empty($settings['member_description'])) {
-                                echo '<div class="het-member-description-text">';
-                                echo esc_html($settings['member_description']);
-                                echo '</div>';
-                            }
-                            ?>
-                            <div class="het-team-detail">
-                                <a href="<?php echo esc_attr($settings['button_link']['url']); ?>"<?php echo $target . $nofollow; ?>>
-                                    <?php esc_html_e($settings['button_text']) ?>
-                                </a>
-                            </div>
+                        <?php
+                        if (isset($settings['member_description']) && !empty($settings['member_description'])) {
+                            echo '<div class="het-member-description-text">';
+                            echo esc_html($settings['member_description']);
+                            echo '</div>';
+                        }
+                        ?>
+                        <div class="het-team-detail">
+                            <a href="<?php echo esc_attr($settings['button_link']['url']); ?>"<?php echo $target . $nofollow; ?>>
+                                <?php esc_html_e($settings['button_text']) ?>
+                            </a>
                         </div>
                     </div>
                 </div>

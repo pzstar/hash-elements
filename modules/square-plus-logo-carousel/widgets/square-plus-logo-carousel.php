@@ -112,14 +112,14 @@ class SquarePlusLogoCarousel extends Widget_Base {
 
         $this->start_controls_section(
                 'carousel_settings', [
-            'label' => esc_html__('Carousel Settings', 'viral-pro'),
+            'label' => esc_html__('Carousel Settings', 'hash-elements'),
             'tab' => Controls_Manager::TAB_CONTENT,
                 ]
         );
 
         $this->add_responsive_control(
                 'slides_to_show', [
-            'label' => esc_html__('No of Slides', 'viral-pro'),
+            'label' => esc_html__('No of Slides', 'hash-elements'),
             'type' => Controls_Manager::SLIDER,
             'range' => [
                 'px' => [
@@ -145,7 +145,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
 
         $this->add_responsive_control(
                 'slides_margin', [
-            'label' => esc_html__('Spacing Between Slides', 'viral-pro'),
+            'label' => esc_html__('Spacing Between Slides', 'hash-elements'),
             'type' => Controls_Manager::SLIDER,
             'range' => [
                 'px' => [
@@ -171,7 +171,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
 
         $this->add_control(
                 'autoplay_speed', [
-            'label' => esc_html__('Pause Duration', 'viral-pro'),
+            'label' => esc_html__('Pause Duration', 'hash-elements'),
             'type' => Controls_Manager::SLIDER,
             'size_units' => ['s'],
             'range' => [
@@ -193,10 +193,10 @@ class SquarePlusLogoCarousel extends Widget_Base {
 
         $this->add_control(
                 'autoplay', [
-            'label' => esc_html__('Autoplay', 'viral-pro'),
+            'label' => esc_html__('Autoplay', 'hash-elements'),
             'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Yes', 'viral-pro'),
-            'label_off' => esc_html__('No', 'viral-pro'),
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
             'return_value' => 'yes',
             'default' => 'yes',
                 ]
@@ -204,10 +204,10 @@ class SquarePlusLogoCarousel extends Widget_Base {
 
         $this->add_control(
                 'dots', [
-            'label' => esc_html__('Nav Dots', 'viral-pro'),
+            'label' => esc_html__('Nav Dots', 'hash-elements'),
             'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Show', 'viral-pro'),
-            'label_off' => esc_html__('Hide', 'viral-pro'),
+            'label_on' => esc_html__('Show', 'hash-elements'),
+            'label_off' => esc_html__('Hide', 'hash-elements'),
             'return_value' => 'yes',
                 ]
         );
@@ -279,7 +279,6 @@ class SquarePlusLogoCarousel extends Widget_Base {
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        // echo '<pre>';print_r($settings);echo '</pre>';return false;
         $logo_images = $settings['slides'];
         $params = array(
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,

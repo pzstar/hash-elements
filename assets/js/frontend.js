@@ -14,9 +14,9 @@
                 'total-slider.default': HashElements.totalSlider,
                 'total-service-block.default': HashElements.totalServices,
                 'total-portfolio-masonary.default': HashElements.totalPortfolio,
-                'het-total-module-seven.default': HashElements.totalCounter,
-                'het-total-module-eight.default': HashElements.totalTestimonialSlider,
-                'het-total-module-ten.default': HashElements.totalLogoSlider
+                'total-counter-block.default': HashElements.totalCounter,
+                'total-testimonial-slider.default': HashElements.totalTestimonialSlider,
+                'total-logo-carousel.default': HashElements.totalLogoSlider
             };
             $.each(widgets, function (widget, callback) {
                 elementor.hooks.addAction('frontend/element_ready/' + widget, callback);
@@ -156,18 +156,20 @@
             }
         },
         totalSlider: function ($scope) {
-            var $el = $scope.find('.het-bx-slider');
-            var params = JSON.parse($el.attr('data-params'));
-            if ($el.find('.het-slide').length > 0) {
-                $el.owlCarousel({
-                    autoplay: JSON.parse(params.autoplay),
-                    items: 1,
-                    loop: true,
-                    nav: JSON.parse(params.nav),
-                    dots: JSON.parse(params.dots),
-                    autoplayTimeout: params.pause,
-                    animateOut: 'fadeOut',
-                    navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>']
+            var $element = $scope.find('.het-bx-slider');
+            if ($element.length > 0) {
+                $element.each(function () {
+                    var params = JSON.parse($(this).attr('data-params'));
+                    $(this).owlCarousel({
+                        autoplay: JSON.parse(params.autoplay),
+                        items: 1,
+                        loop: true,
+                        nav: JSON.parse(params.nav),
+                        dots: JSON.parse(params.dots),
+                        autoplayTimeout: params.pause,
+                        animateOut: 'fadeOut',
+                        navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>']
+                    });
                 });
             }
         },
@@ -275,74 +277,75 @@
         },
 
         totalLogoSlider: function ($scope) {
-            var $el = $scope.find(".het_client_logo_slider");
-            var params = JSON.parse($el.attr('data-params'));
-            $el.owlCarousel({
-                autoplay: JSON.parse(params.autoplay),
-                loop: true,
-                nav: JSON.parse(params.nav),
-                dots: JSON.parse(params.dots),
-                autoplayTimeout: params.pause,
-                navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-                responsive: {
-                    0: {
-                        items: params.items_mobile,
-                        margin: params.margin_mobile,
-                    },
-                    480: {
-                        items: params.items_tablet,
-                        margin: params.margin_tablet,
-                    },
-                    768: {
-                        items: params.items,
-                        margin: params.margin,
-                    }
-                }
-            });
+            var $element = $scope.find(".het-client-logo-slider");
+            if ($element.length > 0) {
+                $element.each(function () {
+                    var params = JSON.parse($(this).attr('data-params'));
+                    $(this).owlCarousel({
+                        autoplay: JSON.parse(params.autoplay),
+                        loop: true,
+                        nav: false,
+                        dots: JSON.parse(params.dots),
+                        autoplayTimeout: params.pause,
+                        navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>'],
+                        responsive: {
+                            0: {
+                                items: params.items_mobile,
+                                margin: params.margin_mobile,
+                            },
+                            480: {
+                                items: params.items_tablet,
+                                margin: params.margin_tablet,
+                            },
+                            768: {
+                                items: params.items,
+                                margin: params.margin,
+                            }
+                        }
+                    });
+                });
+            }
         },
 
         totalTestimonialSlider: function ($scope) {
-            var $el = $scope.find('.het-testimonial-slider');
-            var params = JSON.parse($el.attr('data-params'));
-            $el.owlCarousel({
-                autoplay: JSON.parse(params.autoplay),
-                loop: true,
-                nav: JSON.parse(params.nav),
-                dots: JSON.parse(params.dots),
-                autoplayTimeout: params.pause,
-                navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-                responsive: {
-                    0: {
-                        items: params.items_mobile,
-                    },
-                    480: {
-                        items: params.items_tablet,
-                    },
-                    768: {
-                        items: params.items,
-                    }
-                }
-            });
+            var $element = $scope.find('.het-testimonial-slider');
+            if ($element.length > 0) {
+                $element.each(function () {
+                    var params = JSON.parse($(this).attr('data-params'));
+                    $(this).owlCarousel({
+                        items: 1,
+                        autoplay: JSON.parse(params.autoplay),
+                        loop: true,
+                        nav: JSON.parse(params.nav),
+                        dots: JSON.parse(params.dots),
+                        autoplayTimeout: params.pause,
+                        navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>']
+                    });
+                });
+            }
         },
 
         totalCounter: function ($scope) {
-            var $el = $scope.find('.het-team-counter-wrap');
+            var $element = $scope.find('.het-counter');
+            if ($element.length > 0) {
+                $element.each(function () {
+                    $(this).waypoint(function () {
+                        $(this).find('.odometer').each(function () {
 
-            $el.waypoint(function () {
-                $el.find('.odometer').each(function () {
+                            var $eachCounter = $(this);
+                            var $count = $eachCounter.data('count');
 
-                    var $eachCounter = $(this);
-                    var $count = $eachCounter.data('count');
+                            setTimeout(function () {
+                                $eachCounter.html($count);
+                            }, 500);
 
-                    setTimeout(function () {
-                        $eachCounter.html($count);
-                    }, 500);
-
+                        });
+                    }, {
+                        offset: 800,
+                        triggerOnce: true
+                    });
                 });
-            }, {
-                offset: 800,
-                triggerOnce: true
-            });
+            }
         },
 
         totalServices: function ($scope) {
@@ -356,7 +359,7 @@
                 $(this).parent('.het-service-post').toggleClass('het-active');
             });
         },
-        
+
     };
     $(window).on('elementor/frontend/init', HashElements.init);
 }(jQuery, window.elementorFrontend));

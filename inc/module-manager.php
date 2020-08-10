@@ -59,10 +59,14 @@ final class HASHELE_Modules_Manager {
             'total-portfolio-masonary',
             'total-service-block',
             'total-team-block',
-            'total-module-seven',
-            'total-module-eight',
-            'total-module-nine',
-            'total-module-ten',
+            'total-counter-block',
+            'total-testimonial-slider',
+            'total-blog-module',
+            'total-logo-carousel',
+            'advertisement-module',
+            'contact-info-module',
+            'personal-info-module',
+            'timeline-module',
         ];
 
         foreach ($modules as $module) {

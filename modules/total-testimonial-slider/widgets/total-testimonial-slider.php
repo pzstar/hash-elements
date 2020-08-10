@@ -1,6 +1,6 @@
 <?php
 
-namespace HashElements\Modules\TotalModuleEight\Widgets;
+namespace HashElements\Modules\TotalTestimonialSlider\Widgets;
 
 // Elementor Classes
 use Elementor\Widget_Base;
@@ -11,8 +11,6 @@ use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
 use Elementor\Repeater;
 use Elementor\Utils;
-use HashElements\Group_Control_Query;
-use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -21,21 +19,21 @@ if (!defined('ABSPATH')) {
 /**
  * Tiled Posts Widget
  */
-class TotalModuleEight extends Widget_Base {
+class TotalTestimonialSlider extends Widget_Base {
 
     /** Widget Name */
     public function get_name() {
-        return 'het-total-module-eight';
+        return 'total-testimonial-slider';
     }
 
     /** Widget Title */
     public function get_title() {
-        return esc_html__('Testimonial Carousel', 'hash-elements');
+        return esc_html__('Testimonial Slider', 'hash-elements');
     }
 
     /** Icon */
     public function get_icon() {
-        return 'het-total-module-eight';
+        return 'total-testimonial-slider';
     }
 
     /** Category */
@@ -55,64 +53,66 @@ class TotalModuleEight extends Widget_Base {
         $repeater = new Repeater();
 
         $repeater->add_control(
-            'testimonial_name', [
-                'label' => __( 'Name', 'hash-elements' ),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-            ]
+                'name', [
+            'label' => __('Name', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+            'default' => __('John Doe', 'hash-elements'),
+                ]
         );
 
         $repeater->add_control(
-            'testimonial_image',
-            [
-                'label' => __( 'Choose Photo', 'hash-elements' ),
-                'type' => Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-            ]
+                'designation', [
+            'label' => __('Designation', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+            'default' => __('CEO - ABC Corp.', 'hash-elements'),
+                ]
         );
-        
+
         $repeater->add_control(
-            'testimonial_text',
-            [
-                'label' => __( 'Testimonial Text', 'hash-elements' ),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 10,
-                'placeholder' => __( 'Type your description here', 'hash-elements' ),
-            ]
+                'image', [
+            'label' => __('Choose Image', 'hash-elements'),
+            'type' => Controls_Manager::MEDIA,
+            'default' => [
+                'url' => Utils::get_placeholder_image_src(),
+            ],
+                ]
+        );
+
+        $repeater->add_control(
+                'testimonial', [
+            'label' => __('Testimonial', 'hash-elements'),
+            'type' => Controls_Manager::TEXTAREA,
+            'rows' => 10,
+            'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                ]
         );
 
         $this->add_control(
-            'testimonial_block',
-            [
-                'label' => __( 'Testimonials', 'hash-elements' ),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [
-                    [
-                        'testimonial_name' => __( 'Testimonial 1', 'hash-elements' ),
-                    ]
-                ],
-                'title_field' => '{{{ testimonial_name }}}',
-            ]
+                'testimonial_block', [
+            'label' => __('Testimonials', 'hash-elements'),
+            'type' => Controls_Manager::REPEATER,
+            'fields' => $repeater->get_controls(),
+            'title_field' => '{{{ name }}}',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'carousel_section', [
-            'label' => esc_html__('Carousel Settings', 'viral-pro'),
+                'slider_section', [
+            'label' => esc_html__('Slider Settings', 'hash-elements'),
             'tab' => Controls_Manager::TAB_CONTENT,
                 ]
         );
 
         $this->add_control(
                 'autoplay', [
-            'label' => esc_html__('Autoplay', 'viral-pro'),
+            'label' => esc_html__('Autoplay', 'hash-elements'),
             'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Yes', 'viral-pro'),
-            'label_off' => esc_html__('No', 'viral-pro'),
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
             'return_value' => 'yes',
             'default' => 'yes',
                 ]
@@ -120,7 +120,7 @@ class TotalModuleEight extends Widget_Base {
 
         $this->add_control(
                 'pause_duration', [
-            'label' => esc_html__('Pause Duration', 'viral-pro'),
+            'label' => esc_html__('Pause Duration', 'hash-elements'),
             'type' => Controls_Manager::SLIDER,
             'size_units' => ['s'],
             'range' => [
@@ -140,38 +140,12 @@ class TotalModuleEight extends Widget_Base {
                 ]
         );
 
-        $this->add_responsive_control(
-                'no_of_slides', [
-            'label' => esc_html__('No of Slides', 'viral-pro'),
-            'type' => Controls_Manager::SLIDER,
-            'range' => [
-                'px' => [
-                    'min' => 1,
-                    'max' => 10,
-                ],
-            ],
-            'devices' => ['desktop', 'tablet', 'mobile'],
-            'desktop_default' => [
-                'size' => 1,
-                'unit' => 'px',
-            ],
-            'tablet_default' => [
-                'size' => 1,
-                'unit' => 'px',
-            ],
-            'mobile_default' => [
-                'size' => 1,
-                'unit' => 'px',
-            ],
-                ]
-        );
-
         $this->add_control(
                 'nav', [
-            'label' => esc_html__('Nav Arrow', 'viral-pro'),
+            'label' => esc_html__('Nav Arrow', 'hash-elements'),
             'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Show', 'viral-pro'),
-            'label_off' => esc_html__('Hide', 'viral-pro'),
+            'label_on' => esc_html__('Show', 'hash-elements'),
+            'label_off' => esc_html__('Hide', 'hash-elements'),
             'return_value' => 'yes',
             'default' => 'yes'
                 ]
@@ -179,10 +153,10 @@ class TotalModuleEight extends Widget_Base {
 
         $this->add_control(
                 'dots', [
-            'label' => esc_html__('Nav Dots', 'viral-pro'),
+            'label' => esc_html__('Nav Dots', 'hash-elements'),
             'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Show', 'viral-pro'),
-            'label_off' => esc_html__('Hide', 'viral-pro'),
+            'label_on' => esc_html__('Show', 'hash-elements'),
+            'label_off' => esc_html__('Hide', 'hash-elements'),
             'return_value' => 'yes',
                 ]
         );
@@ -196,25 +170,26 @@ class TotalModuleEight extends Widget_Base {
                 ]
         );
 
-        $this->add_control('excerpt_length', [
-            'label' => esc_html__('Excerpt Length', 'hash-elements'),
-            'description' => esc_html__('Enter 0 to hide excerpt', 'hash-elements'),
-            'type' => Controls_Manager::NUMBER,
-            'min' => 0,
-            'default' => 100
-        ]);
+        $this->add_group_control(
+                \Elementor\Group_Control_Image_Size::get_type(), [
+            'name' => 'thumbnail',
+            'exclude' => ['custom'],
+            'include' => [],
+            'default' => 'full',
+                ]
+        );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'member_name_style', [
-            'label' => esc_html__('Title', 'hash-elements'),
+                'name_style', [
+            'label' => esc_html__('Name', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
                 ]
         );
 
         $this->add_control(
-                'member_name_color', [
+                'name_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
@@ -229,24 +204,56 @@ class TotalModuleEight extends Widget_Base {
 
         $this->add_group_control(
                 Group_Control_Typography::get_type(), [
-            'name' => 'member_name_typography',
+            'name' => 'name_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-testimonial h6',
                 ]
         );
 
-        $this->end_controls_section();     
+        $this->end_controls_section();
 
         $this->start_controls_section(
-                'excerpt_style', [
-            'label' => esc_html__('Excerpt', 'hash-elements'),
+                'designation_style', [
+            'label' => esc_html__('Designation', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
                 ]
         );
 
         $this->add_control(
-                'excerpt_color', [
+                'designation_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .het-testimonial .het-testimonial-designation' => 'color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_group_control(
+                Group_Control_Typography::get_type(), [
+            'name' => 'designation_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'selector' => '{{WRAPPER}} .het-testimonial .het-testimonial-designation',
+                ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+                'testimonial_style', [
+            'label' => esc_html__('Testimonial', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
+        $this->add_control(
+                'testimonial_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
@@ -261,33 +268,33 @@ class TotalModuleEight extends Widget_Base {
 
         $this->add_group_control(
                 Group_Control_Typography::get_type(), [
-            'name' => 'excerpt_typography',
+            'name' => 'testimonial_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-testimonial-excerpt ',
                 ]
         );
 
-        $this->end_controls_section();  
+        $this->end_controls_section();
 
         $this->start_controls_section(
-                'photo_style', [
-            'label' => esc_html__('Photo', 'hash-elements'),
+                'thumb_style', [
+            'label' => esc_html__('Thumbnail', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
                 ]
         );
 
         $this->add_control(
-                'photo_outline_color', [
+                'thumb_outline_color', [
             'label' => esc_html__('Outline Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
-            'default' => '#009dea',
+            'default' => '#000000',
             'selectors' => [
-                '{{WRAPPER}} .het-testimonial-wrap .owl-carousel .owl-item img' => 'border-color: {{VALUE}}',
+                '{{WRAPPER}} .het-testimonial-slider.owl-carousel .owl-item img' => 'border-color: {{VALUE}}',
             ],
                 ]
         );
@@ -313,30 +320,31 @@ class TotalModuleEight extends Widget_Base {
 
         $this->add_control(
                 'nav_normal_bg_color', [
-            'label' => esc_html__('Background Color', 'hash-elements'),
+            'label' => esc_html__('Navigation Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
+            'default' => '#000000',
             'selectors' => [
-                '{{WRAPPER}} .owl-carousel .owl-nav button' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .het-testimonial-slider.owl-carousel .owl-nav button' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
 
         $this->add_control(
-                'nav_icon_normal_color', [
-            'label' => esc_html__('Icon Color', 'hash-elements'),
+                'nav_icon_color', [
+            'label' => esc_html__('Navigation Icon Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .owl-carousel .owl-nav button.owl-next' => 'color: {{VALUE}}',
-                '{{WRAPPER}} .owl-carousel .owl-nav button.owl-prev' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .het-testimonial-slider.owl-carousel .owl-nav button' => 'color: {{VALUE}}'
             ],
+            'default' => '#FFFFFF',
                 ]
         );
 
@@ -348,8 +356,9 @@ class TotalModuleEight extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
+            'default' => '#000000',
             'selectors' => [
-                '{{WRAPPER}} .owl-carousel button.owl-dot' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .het-testimonial-slider .owl-dots .owl-dot' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -370,8 +379,9 @@ class TotalModuleEight extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
+            'default' => '#000000',
             'selectors' => [
-                '{{WRAPPER}} .owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .het-testimonial-slider.owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -384,9 +394,9 @@ class TotalModuleEight extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
+            'default' => '#FFFFFF',
             'selectors' => [
-                '{{WRAPPER}} .owl-carousel .owl-nav button.owl-next:hover' => 'color: {{VALUE}}',
-                '{{WRAPPER}} .owl-carousel .owl-nav button.owl-prev:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .het-testimonial-slider.owl-carousel .owl-nav button:hover' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -399,8 +409,9 @@ class TotalModuleEight extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
+            'default' => '#000000',
             'selectors' => [
-                '{{WRAPPER}} .owl-carousel button.owl-dot:hover' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .het-testimonial-slider .owl-dots .owl-dot:hover' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -409,56 +420,57 @@ class TotalModuleEight extends Widget_Base {
 
         $this->end_controls_tabs();
 
-        $this->end_controls_section(); 
+        $this->end_controls_section();
     }
 
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        // echo '<pre>';print_r($settings);echo '</pre>';return false;
         $testimonials = $settings['testimonial_block'];
         $params = array(
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,
             'pause' => (int) $settings['pause_duration']['size'] * 1000,
-            'items' => (int) $settings['no_of_slides']['size'],
-            'items_tablet' => (int) $settings['no_of_slides_tablet']['size'],
-            'items_mobile' => (int) $settings['no_of_slides_mobile']['size'],
             'nav' => $settings['nav'] == 'yes' ? true : false,
             'dots' => $settings['dots'] == 'yes' ? true : false
         );
         $params = json_encode($params);
         ?>
-        <div class="het-testimonial-wrap">
-            <div class="het-testimonial-slider owl-carousel" data-params='<?php echo $params ?>'>
-                <?php
-                foreach($testimonials as $key => $testimonial) {
-                    $total_image = wp_get_attachment_image_src(attachment_url_to_postid( $testimonial['testimonial_image']['url'] ), 'total-thumb');
-                    ?>
-                    <div class="het-testimonial">
-                        <div class="het-testimonial-excerpt">
-                            <i class="fa fa-quote-left"></i>
-                            <?php
-                            if (isset($testimonial['testimonial_text']) && !empty($testimonial['testimonial_text'])) {
-                                echo esc_html(hash_elements_total_excerpt($testimonial['testimonial_text'], $settings['excerpt_length']));
-                            }
-                            ?>
-                        </div>
+        <div class="het-testimonial-slider owl-carousel" data-params='<?php echo $params ?>'>
+            <?php
+            foreach ($testimonials as $key => $testimonial) {
+                ?>
+                <div class="het-testimonial">
+                    <div class="het-testimonial-excerpt">
+                        <i class="fa fa-quote-left"></i>
                         <?php
-                        if ($total_image) {
-                            ?>
-                            <img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php echo esc_attr($testimonial['testimonial_name']); ?>">
-                            <?php
-                        } else {
-                        ?>
-                            <img src="<?php echo esc_url(Utils::get_placeholder_image_src()); ?>">
-                        <?php    
+                        if (isset($testimonial['testimonial']) && !empty($testimonial['testimonial'])) {
+                            echo esc_html($testimonial['testimonial']);
                         }
                         ?>
-                        <h6><?php echo esc_attr($testimonial['testimonial_name']); ?></h6>
                     </div>
-                <?php } ?>
-            </div>
+
+                    <?php
+                    $image_url = \Elementor\Group_Control_Image_Size::get_attachment_image_src($testimonial['image']['id'], 'thumbnail', $settings);
+                    if (!$image_url) {
+                        $image_url = \Elementor\Utils::get_placeholder_image_src();
+                    }
+                    echo '<img src="' . esc_attr($image_url) . '" alt="' . esc_attr(\Elementor\Control_Media::get_image_alt($testimonial['image'])) . '" />';
+                    ?>
+
+                    <h6><?php echo esc_html($testimonial['name']); ?></h6>
+
+                    <?php if (isset($testimonial['designation']) && !empty($testimonial['designation'])) { ?>
+                        <div class="het-testimonial-designation">
+                            <?php echo esc_html($testimonial['designation']); ?>
+                        </div>
+                    <?php }
+                    ?>
+                </div>
+                <?php
+            }
+            ?>
         </div>
         <?php
     }
+
 }

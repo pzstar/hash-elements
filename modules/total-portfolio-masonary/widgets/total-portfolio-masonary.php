@@ -58,7 +58,7 @@ class TotalPortfolioMasonary extends Widget_Base {
         );
 
         $this->end_controls_section();
-   
+
 
         $this->start_controls_section(
                 'title_style', [
@@ -90,7 +90,7 @@ class TotalPortfolioMasonary extends Widget_Base {
                 ]
         );
 
-        $this->end_controls_section();   
+        $this->end_controls_section();
 
         $this->start_controls_section(
                 'overlay_style', [
@@ -114,7 +114,7 @@ class TotalPortfolioMasonary extends Widget_Base {
                 ]
         );
 
-        $this->end_controls_section();  
+        $this->end_controls_section();
 
         $this->start_controls_section(
                 'button_style', [
@@ -202,7 +202,7 @@ class TotalPortfolioMasonary extends Widget_Base {
 
         $this->end_controls_tabs();
 
-        $this->end_controls_section();  
+        $this->end_controls_section();
 
 
         $this->start_controls_section(
@@ -251,7 +251,7 @@ class TotalPortfolioMasonary extends Widget_Base {
                 ]
         );
 
-        
+
 
         $this->end_controls_tab();
 
@@ -287,90 +287,87 @@ class TotalPortfolioMasonary extends Widget_Base {
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        // echo '<pre>';print_r($settings);echo '</pre>';return false;
         ?>
-        <section id="het-portfolio-section" class="het-section">
-            <div class="het-container">
-                <?php                
-                $total_portfolio_cat = $settings['posts_category_ids'];
+        <div class="het-portfolio-container">
+            <?php
+            $total_portfolio_cat = $settings['posts_category_ids'];
 
-                if ($total_portfolio_cat) {
-                    ?>  
-                    <div class="het-portfolio-cat-name-list">
-                        <i class="fa fa-th-large" aria-hidden="true"></i>
-                        <?php
-                        foreach ($total_portfolio_cat as $total_portfolio_cat_single) {
-                            $category_slug = "";
-                            $category_slug = get_category($total_portfolio_cat_single);
-                            if (is_object($category_slug)) {
-                                $category_slug = 'total-portfolio-' . $category_slug->term_id;
-                                ?>
-                                <div class="het-portfolio-cat-name" data-filter=".<?php echo esc_attr($category_slug); ?>">
-                                    <?php echo esc_html(get_cat_name($total_portfolio_cat_single)); ?>
-                                </div>
-                                <?php
-                            }
+            if ($total_portfolio_cat) {
+                ?>  
+                <div class="het-portfolio-cat-name-list">
+                    <i class="fa fa-th-large" aria-hidden="true"></i>
+                    <?php
+                    foreach ($total_portfolio_cat as $total_portfolio_cat_single) {
+                        $category_slug = "";
+                        $category_slug = get_category($total_portfolio_cat_single);
+                        if (is_object($category_slug)) {
+                            $category_slug = 'total-portfolio-' . $category_slug->term_id;
+                            ?>
+                            <div class="het-portfolio-cat-name" data-filter=".<?php echo esc_attr($category_slug); ?>">
+                                <?php echo esc_html(get_cat_name($total_portfolio_cat_single)); ?>
+                            </div>
+                            <?php
                         }
-                        ?>
-                    </div>
-                <?php } ?>
+                    }
+                    ?>
+                </div>
+            <?php } ?>
 
-                <div class="het-portfolio-post-wrap">
-                    <div class="het-portfolio-posts het-clearfix">
-                        <?php
-                        if ($total_portfolio_cat) {
-                            $count = 1;
-                            $args = $this->query_args();
-                            $query = new \WP_Query($args);
-                            if ($query->have_posts()):
-                                while ($query->have_posts()): $query->the_post();
-                                    $categories = get_the_category();
-                                    $category_slug = "";
-                                    $cat_slug = array();
+            <div class="het-portfolio-post-wrap">
+                <div class="het-portfolio-posts het-clearfix">
+                    <?php
+                    if ($total_portfolio_cat) {
+                        $count = 1;
+                        $args = $this->query_args();
+                        $query = new \WP_Query($args);
+                        if ($query->have_posts()):
+                            while ($query->have_posts()): $query->the_post();
+                                $categories = get_the_category();
+                                $category_slug = "";
+                                $cat_slug = array();
 
-                                    foreach ($categories as $category) {
-                                        $cat_slug[] = 'total-portfolio-' . $category->term_id;
-                                    }
+                                foreach ($categories as $category) {
+                                    $cat_slug[] = 'total-portfolio-' . $category->term_id;
+                                }
 
-                                    $category_slug = implode(" ", $cat_slug);
+                                $category_slug = implode(" ", $cat_slug);
 
-                                    if (has_post_thumbnail()) {
-                                        $image_url = HASHELE_URL . 'assets/img/portfolio-small-blank.png';
-                                        $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-portfolio-thumb');
-                                        $total_image_large = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
-                                    } else {
-                                        $image_url = HASHELE_URL . 'assets/img/portfolio-small.png';
-                                        $total_image = "";
-                                    }
-                                    ?>
-                                    <div class="het-portfolio <?php echo esc_attr($category_slug); ?>">
-                                        <div class="het-portfolio-outer-wrap">
-                                            <div class="het-portfolio-wrap" style="background-image: url(<?php echo esc_url($total_image[0]) ?>);">
+                                if (has_post_thumbnail()) {
+                                    $image_url = HASHELE_URL . 'assets/img/portfolio-small-blank.png';
+                                    $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-portfolio-thumb');
+                                    $total_image_large = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
+                                } else {
+                                    $image_url = HASHELE_URL . 'assets/img/portfolio-small.png';
+                                    $total_image = "";
+                                }
+                                ?>
+                                <div class="het-portfolio <?php echo esc_attr($category_slug); ?>">
+                                    <div class="het-portfolio-outer-wrap">
+                                        <div class="het-portfolio-wrap" style="background-image: url(<?php echo esc_url($total_image[0]) ?>);">
 
-                                                <img  class="no-lazyload" src="<?php echo esc_url($image_url); ?>" alt="<?php esc_attr(get_the_title()); ?>">
+                                            <img  class="no-lazyload" src="<?php echo esc_url($image_url); ?>" alt="<?php esc_attr(get_the_title()); ?>">
 
-                                                <div class="het-portfolio-caption">
-                                                    <h5><?php the_title(); ?></h5>
-                                                    <a class="het-portfolio-link" href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-link"></i></a>
+                                            <div class="het-portfolio-caption">
+                                                <h5><?php the_title(); ?></h5>
+                                                <a class="het-portfolio-link" href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-link"></i></a>
 
-                                                    <?php if (has_post_thumbnail()) { ?>
-                                                        <a class="het-portfolio-image" data-lightbox-gallery="gallery1" href="<?php echo esc_url($total_image_large[0]) ?>"><i class="fa fa-search"></i></a>
-                                                        <?php } ?>
-                                                </div>
+                                                <?php if (has_post_thumbnail()) { ?>
+                                                    <a class="het-portfolio-image" data-lightbox-gallery="gallery1" href="<?php echo esc_url($total_image_large[0]) ?>"><i class="fa fa-search"></i></a>
+                                                    <?php } ?>
                                             </div>
                                         </div>
                                     </div>
-                                    <?php
-                                endwhile;
-                            endif;
-                            wp_reset_postdata();
-                        }
-                        ?>
-                    </div>
-                    <?php ?>
+                                </div>
+                                <?php
+                            endwhile;
+                        endif;
+                        wp_reset_postdata();
+                    }
+                    ?>
                 </div>
+                <?php ?>
             </div>
-        </section>
+        </div>
         <?php
     }
 
@@ -405,4 +402,5 @@ class TotalPortfolioMasonary extends Widget_Base {
 
         return $args;
     }
+
 }

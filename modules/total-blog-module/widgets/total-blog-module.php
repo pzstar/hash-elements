@@ -1,6 +1,6 @@
 <?php
 
-namespace HashElements\Modules\TotalModuleNine\Widgets;
+namespace HashElements\Modules\TotalBlogModule\Widgets;
 
 // Elementor Classes
 use Elementor\Widget_Base;
@@ -10,9 +10,7 @@ use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
 use Elementor\Utils;
-use Elementor\Repeater;
 use HashElements\Group_Control_Query;
-use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -21,21 +19,21 @@ if (!defined('ABSPATH')) {
 /**
  * Tiled Posts Widget
  */
-class TotalModuleNine extends Widget_Base {
+class TotalBlogModule extends Widget_Base {
 
     /** Widget Name */
     public function get_name() {
-        return 'het-total-module-nine';
+        return 'total-blog-module';
     }
 
     /** Widget Title */
     public function get_title() {
-        return esc_html__('Blog Section', 'hash-elements');
+        return esc_html__('Blog Module', 'hash-elements');
     }
 
     /** Icon */
     public function get_icon() {
-        return 'het-total-module-nine';
+        return 'total-blog-module';
     }
 
     /** Category */
@@ -62,21 +60,20 @@ class TotalModuleNine extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'blogs', [
-            'label' => esc_html__('Blogs', 'hash-elements'),
+                'settings', [
+            'label' => esc_html__('Settings', 'hash-elements'),
                 ]
         );
 
         $this->add_control(
-            'post_count',
-            [
-                'label' => __( 'Number of Blogs', 'plugin-domain' ),
-                'type' => Controls_Manager::NUMBER,
-                'min' => 3,
-                'max' => 50,
-                'step' => 1,
-                'default' => 3,
-            ]
+                'post_count', [
+            'label' => __('Number of Posts', 'plugin-domain'),
+            'type' => Controls_Manager::NUMBER,
+            'min' => 3,
+            'max' => 50,
+            'step' => 1,
+            'default' => 3,
+                ]
         );
 
         $this->add_control('excerpt_length', [
@@ -86,6 +83,43 @@ class TotalModuleNine extends Widget_Base {
             'min' => 0,
             'default' => 190
         ]);
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+                'blog_style', [
+            'label' => esc_html__('Blog Style', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
+        $this->add_control(
+                'blog_bg_color', [
+            'label' => esc_html__('Background Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-box' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'bottom_border_color', [
+            'label' => esc_html__('Bottom Border Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-box' => 'border-color: {{VALUE}}',
+            ],
+                ]
+        );
 
         $this->end_controls_section();
 
@@ -126,7 +160,7 @@ class TotalModuleNine extends Widget_Base {
 
         $this->add_group_control(
                 Group_Control_Typography::get_type(), [
-            'name' => 'featured_title_typography',
+            'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-blog-excerpt h5 a',
@@ -134,7 +168,7 @@ class TotalModuleNine extends Widget_Base {
         );
 
         $this->add_control(
-                'featured_title_margin', [
+                'title_margin', [
             'label' => esc_html__('Margin', 'hash-elements'),
             'type' => Controls_Manager::DIMENSIONS,
             'allowed_dimensions' => 'vertical',
@@ -142,76 +176,6 @@ class TotalModuleNine extends Widget_Base {
             'selectors' => [
                 '{{WRAPPER}} .het-blog-excerpt h5' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
-                ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'post_style', [
-            'label' => esc_html__('Post', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
-        );
-
-        $this->add_control(
-                'post_bg_color', [
-            'label' => esc_html__('Background Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .het-blog-post' => 'background-color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'post_border_color', [
-            'label' => esc_html__('Border Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'default' => '#009dea',
-            'selectors' => [
-                '{{WRAPPER}} .het-blog-post' => 'border-color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'excerpt_style', [
-            'label' => esc_html__('Excerpt', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
-        );
-
-        $this->add_control(
-                'excerpt_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .het-blog-excerpt .het-blog-excerpt-text' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'excerpt_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .het-blog-excerpt .het-blog-excerpt-text',
                 ]
         );
 
@@ -250,9 +214,61 @@ class TotalModuleNine extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
+                'excerpt_style', [
+            'label' => esc_html__('Excerpt', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
+        $this->add_control(
+                'excerpt_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-excerpt .het-blog-excerpt-text' => 'color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_group_control(
+                Group_Control_Typography::get_type(), [
+            'name' => 'excerpt_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'selector' => '{{WRAPPER}} .het-blog-excerpt .het-blog-excerpt-text',
+                ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
                 'button_style', [
             'label' => esc_html__('Button', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
+        $this->add_group_control(
+                Group_Control_Typography::get_type(), [
+            'name' => 'button_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'selector' => '{{WRAPPER}} .het-blog-read-more a',
+                ]
+        );
+
+        $this->add_control(
+                'button_padding', [
+            'label' => esc_html__('Padding', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-read-more a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
                 ]
         );
 
@@ -288,7 +304,7 @@ class TotalModuleNine extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
-            'default' => '#009dea',
+            'default' => '#000000',
             'selectors' => [
                 '{{WRAPPER}} .het-blog-read-more a' => 'background-color: {{VALUE}}',
             ],
@@ -337,13 +353,12 @@ class TotalModuleNine extends Widget_Base {
 
         $this->end_controls_tabs();
 
-        $this->end_controls_section(); 
+        $this->end_controls_section();
     }
 
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        // echo '<pre>';print_r($settings);echo '</pre>';return false;
         ?>
         <div class="het-blog-wrap het-clearfix">
             <?php
@@ -353,34 +368,36 @@ class TotalModuleNine extends Widget_Base {
                 while ($query->have_posts()): $query->the_post();
                     $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-blog-thumb');
                     ?>
-                    <div class="het-blog-post het-clearfix">
-                        <?php
-                        if (has_post_thumbnail()) {
-                            ?> 
-                            <div class="het-blog-thumbnail">
-                                <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title(); ?>"></a>
-                            </div>
+                    <div class="het-blog-post">
+                        <div class="het-blog-box">
                             <?php
-                        }
-                        ?>
-                        <div class="het-blog-excerpt">
-                            <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                            <div class="het-blog-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><?php echo get_the_date(); ?></div>
-                            <?php
-                            if (has_excerpt() && '' != trim(get_the_excerpt())) {
-                                echo '<div class="het-blog-excerpt-text">';
-                                the_excerpt();
-                                echo '</div>';
-                            } else {
-                                echo '<div class="het-blog-excerpt-text">';
-                                echo esc_html(hash_elements_total_excerpt(get_the_content(), $settings['excerpt_length']));
-                                echo '</div>';
+                            if (has_post_thumbnail()) {
+                                ?> 
+                                <div class="het-blog-thumbnail">
+                                    <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title(); ?>"></a>
+                                </div>
+                                <?php
                             }
                             ?>
-                        </div>
+                            <div class="het-blog-excerpt">
+                                <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                                <div class="het-blog-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><?php echo get_the_date(); ?></div>
+                                <?php
+                                if (has_excerpt() && '' != trim(get_the_excerpt())) {
+                                    echo '<div class="het-blog-excerpt-text">';
+                                    the_excerpt();
+                                    echo '</div>';
+                                } else {
+                                    echo '<div class="het-blog-excerpt-text">';
+                                    echo esc_html(hash_elements_custom_excerpt($settings['excerpt_length']));
+                                    echo '</div>';
+                                }
+                                ?>
+                            </div>
 
-                        <div class="het-blog-read-more">
-                            <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'hash-elements'); ?></a>
+                            <div class="het-blog-read-more">
+                                <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'hash-elements'); ?></a>
+                            </div>
                         </div>
                     </div>
                     <?php
@@ -423,4 +440,5 @@ class TotalModuleNine extends Widget_Base {
 
         return $args;
     }
+
 }
