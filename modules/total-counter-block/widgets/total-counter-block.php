@@ -13,9 +13,6 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class TotalCounterBlock extends Widget_Base {
 
     /** Widget Name */
@@ -30,7 +27,7 @@ class TotalCounterBlock extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'total-counter-block';
+        return 'eicon-counter';
     }
 
     /** Category */
@@ -105,7 +102,7 @@ class TotalCounterBlock extends Widget_Base {
 
         $this->add_control(
                 'icon_size', [
-            'label' => __('Icon Size', 'square-plus'),
+            'label' => __('Icon Size', 'hash-elements'),
             'type' => Controls_Manager::SLIDER,
             'size_units' => ['px'],
             'range' => [

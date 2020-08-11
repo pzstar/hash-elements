@@ -8,6 +8,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
+use Elementor\Utils;
 use Elementor\Group_Control_Image_Size;
 use HashElements\Group_Control_Header;
 
@@ -65,7 +66,7 @@ class PersonalInformation extends Widget_Base {
         $this->add_control(
                 'name', [
             'label' => __('Name', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::TEXT,
+            'type' => Controls_Manager::TEXT,
             'default' => __('John Doe', 'hash-elements'),
             'label_block' => true
                 ]
@@ -74,9 +75,9 @@ class PersonalInformation extends Widget_Base {
         $this->add_control(
                 'image', [
             'label' => __('Choose Image', 'plugin-domain'),
-            'type' => \Elementor\Controls_Manager::MEDIA,
+            'type' => Controls_Manager::MEDIA,
             'default' => [
-                'url' => \Elementor\Utils::get_placeholder_image_src(),
+                'url' => Utils::get_placeholder_image_src(),
             ],
                 ]
         );
@@ -84,7 +85,7 @@ class PersonalInformation extends Widget_Base {
         $this->add_control(
                 'short_intro', [
             'label' => __('Short Intro', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::TEXTAREA,
+            'type' => Controls_Manager::TEXTAREA,
             'rows' => 5,
             'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
                 ]
@@ -112,7 +113,7 @@ class PersonalInformation extends Widget_Base {
         );
 
         $this->add_group_control(
-                \Elementor\Group_Control_Image_Size::get_type(), [
+                Group_Control_Image_Size::get_type(), [
             'name' => 'thumbnail',
             'exclude' => ['custom'],
             'include' => [],

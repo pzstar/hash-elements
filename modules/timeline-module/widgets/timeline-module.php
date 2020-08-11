@@ -5,7 +5,6 @@ namespace HashElements\Modules\TimelineModule\Widgets;
 // Elementor Classes
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
@@ -73,7 +72,7 @@ class TimelineModule extends Widget_Base {
         $this->add_control(
                 'posts_number', [
             'label' => __('No of Posts', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::NUMBER,
+            'type' => Controls_Manager::NUMBER,
             'min' => 5,
             'max' => 20,
             'step' => 1,

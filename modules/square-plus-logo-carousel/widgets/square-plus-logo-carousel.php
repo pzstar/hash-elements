@@ -5,20 +5,15 @@ namespace HashElements\Modules\SquarePlusLogoCarousel\Widgets;
 // Elementor Classes
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Image_Size;
-use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
-use Elementor\Utils;
 use Elementor\Repeater;
+use Elementor\Utils;
+use Elementor\Group_Control_Image_Size;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class SquarePlusLogoCarousel extends Widget_Base {
 
     /** Widget Name */
@@ -33,7 +28,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'square-plus-logo-carousel';
+        return 'eicon-carousel';
     }
 
     /** Category */
@@ -55,7 +50,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
         $repeater->add_control(
                 'title', [
             'label' => __('Title', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::TEXT,
+            'type' => Controls_Manager::TEXT,
             'label_block' => true,
             'default' => 'Title'
                 ]
@@ -64,9 +59,9 @@ class SquarePlusLogoCarousel extends Widget_Base {
         $repeater->add_control(
                 'image', [
             'label' => __('Choose Image', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::MEDIA,
+            'type' => Controls_Manager::MEDIA,
             'default' => [
-                'url' => \Elementor\Utils::get_placeholder_image_src(),
+                'url' => Utils::get_placeholder_image_src(),
             ],
                 ]
         );
@@ -74,7 +69,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
         $repeater->add_control(
                 'logo_link', [
             'label' => __('Logo Link', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::TEXT,
+            'type' => Controls_Manager::TEXT,
             'label_block' => true,
                 ]
         );
@@ -82,7 +77,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
         $this->add_control(
                 'slides', [
             'label' => __('Slides', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::REPEATER,
+            'type' => Controls_Manager::REPEATER,
             'fields' => $repeater->get_controls(),
             'title_field' => '{{{ title }}}',
                 ]
@@ -91,7 +86,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
         $this->add_control(
                 'link_new_tab', [
             'label' => __('Open Link in New Tab', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::SWITCHER,
+            'type' => Controls_Manager::SWITCHER,
             'label_on' => __('Yes', 'hash-elements'),
             'label_off' => __('No', 'hash-elements'),
             'return_value' => 'yes',
@@ -100,7 +95,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
         );
 
         $this->add_group_control(
-                \Elementor\Group_Control_Image_Size::get_type(), [
+                Group_Control_Image_Size::get_type(), [
             'name' => 'thumb',
             'exclude' => ['custom'],
             'include' => [],
@@ -297,9 +292,9 @@ class SquarePlusLogoCarousel extends Widget_Base {
             <?php
             if ($settings['slides']) {
                 foreach ($settings['slides'] as $item) {
-                    $image_url = \Elementor\Group_Control_Image_Size::get_attachment_image_src($item['image']['id'], 'thumb', $settings);
+                    $image_url = Group_Control_Image_Size::get_attachment_image_src($item['image']['id'], 'thumb', $settings);
                     if (!$image_url) {
-                        $image_url = \Elementor\Utils::get_placeholder_image_src();
+                        $image_url = Utils::get_placeholder_image_src();
                     }
                     $image_html = '<img src="' . esc_attr($image_url) . '" alt="' . esc_attr(\Elementor\Control_Media::get_image_alt($item['image'])) . '" />';
 

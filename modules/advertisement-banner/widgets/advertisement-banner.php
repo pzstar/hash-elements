@@ -6,6 +6,7 @@ namespace HashElements\Modules\AdvertisementBanner\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
+use Elementor\Utils;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -45,9 +46,9 @@ class AdvertisementBanner extends Widget_Base {
         $this->add_control(
                 'image', [
             'label' => __('Advertisement Image', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::MEDIA,
+            'type' => Controls_Manager::MEDIA,
             'default' => [
-                'url' => \Elementor\Utils::get_placeholder_image_src(),
+                'url' => Utils::get_placeholder_image_src(),
             ],
                 ]
         );
@@ -55,7 +56,7 @@ class AdvertisementBanner extends Widget_Base {
         $this->add_control(
                 'link', [
             'label' => __('Advertisement Link', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::URL,
+            'type' => Controls_Manager::URL,
             'placeholder' => __('https://your-link.com', 'hash-elements'),
             'show_external' => true,
             'default' => [
@@ -68,7 +69,7 @@ class AdvertisementBanner extends Widget_Base {
         );
 
         $this->add_group_control(
-                \Elementor\Group_Control_Image_Size::get_type(), [
+                Group_Control_Image_Size::get_type(), [
             'name' => 'thumbnail',
             'exclude' => ['custom'],
             'include' => [],

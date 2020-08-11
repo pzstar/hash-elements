@@ -14,9 +14,6 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class TotalProgressbar extends Widget_Base {
 
     /** Widget Name */
@@ -31,7 +28,7 @@ class TotalProgressbar extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'total-progressbar';
+        return 'eicon-skill-bar';
     }
 
     /** Category */
@@ -128,7 +125,7 @@ class TotalProgressbar extends Widget_Base {
             'max' => 100,
             'step' => 1,
             'default' => 20,
-                    'selectors' => [
+            'selectors' => [
                 '{{WRAPPER}} .het-progress' => 'margin-bottom: {{VALUE}}px',
             ],
                 ]

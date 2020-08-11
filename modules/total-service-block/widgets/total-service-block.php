@@ -14,9 +14,6 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class TotalServiceBlock extends Widget_Base {
 
     /** Widget Name */
@@ -31,7 +28,7 @@ class TotalServiceBlock extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'total-service-block';
+        return 'eicon-toggle';
     }
 
     /** Category */

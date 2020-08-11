@@ -8,14 +8,12 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
+use Elementor\Group_Control_Background;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class SquarePlusFeaturedBlock extends Widget_Base {
 
     /** Widget Name */
@@ -30,7 +28,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'square-plus-featured-block';
+        return 'eicon-icon-box';
     }
 
     /** Category */
@@ -113,7 +111,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
         );
 
         $this->add_group_control(
-                \Elementor\Group_Control_Background::get_type(), [
+                Group_Control_Background::get_type(), [
             'name' => 'box_background',
             'label' => __('Background', 'hash-elements'),
             'types' => ['classic', 'gradient'],

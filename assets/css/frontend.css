@@ -110,18 +110,6 @@
     font-size: 1rem;
 }
 
-/* Widget Title */
-.he-viral .elementor-widget h5,
-.he-viral-news .elementor-widget h5{
-    font-size: 20px;
-    text-transform: uppercase;
-    border-bottom: 3px solid #EEE;
-    margin-bottom: 30px;
-    font-weight: normal;
-    line-height: 20px;
-    padding-bottom: 10px;
-}
-
 /* Post Meta */
 .he-post-meta{
     font-size: 12px;
@@ -1876,6 +1864,21 @@ h3.he-big-title{
     display: none;
 }
 
+@keyframes HezoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(.9,.9,.9)
+    }
+
+    50% {
+        opacity: 1
+    }
+}
+
+.he-tab-pane.zoomIn {
+    animation-name: HezoomIn
+}
+
 /*--------------------------------------------------------------
 ## Logo Section
 --------------------------------------------------------------*/
@@ -2714,9 +2717,22 @@ h3.he-big-title{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-.het-blog-thumbnail a{
-    display: block;
+.het-blog-thumbnail{
     position: relative;
+    padding-bottom: 72%;
+}
+
+.het-blog-thumbnail img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.het-blog-thumbnail > a{
+    display: block;
+    height: 100%;
+    width: 100%;
 }
 
 .het-blog-thumbnail a:after{

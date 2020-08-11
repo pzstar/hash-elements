@@ -16,9 +16,6 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class TotalTeamBlock extends Widget_Base {
 
     /** Widget Name */
@@ -33,7 +30,7 @@ class TotalTeamBlock extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'total-team-block';
+        return 'eicon-image-box';
     }
 
     /** Category */
@@ -174,7 +171,7 @@ class TotalTeamBlock extends Widget_Base {
         );
 
         $this->add_group_control(
-                \Elementor\Group_Control_Image_Size::get_type(), [
+                Group_Control_Image_Size::get_type(), [
             'name' => 'thumbnail',
             'exclude' => ['custom'],
             'include' => [],
@@ -508,7 +505,7 @@ class TotalTeamBlock extends Widget_Base {
         $social_icons_block = $settings['social_icons_block'];
         $target = $settings['button_link']['is_external'] ? ' target="_blank"' : '';
         $nofollow = $settings['button_link']['nofollow'] ? ' rel="nofollow"' : '';
-?>
+        ?>
         <div class="het-team-member">
 
             <div class="het-team-member-image">

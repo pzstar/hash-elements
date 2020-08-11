@@ -92,9 +92,9 @@ class HASHELE_Widget_Loader {
     function add_elementor_widget_categories() {
 
         $groups = array(
-            'he-magazine-elements' => esc_html__('Magazine Block', 'hash-elements'),
-            'he-square-elements' => esc_html__('Square Block', 'hash-elements'),
-            'he-total-elements' => esc_html__('Total Block', 'hash-elements'),
+            'he-magazine-elements' => esc_html__('Magazine Blocks', 'hash-elements'),
+            'he-square-elements' => esc_html__('Square Blocks', 'hash-elements'),
+            'he-total-elements' => esc_html__('Total Blocks', 'hash-elements'),
         );
 
         foreach ($groups as $key => $value) {
@@ -125,8 +125,8 @@ class HASHELE_Widget_Loader {
         wp_enqueue_script('hash-elements-owl-carousel-script', HASHELE_URL . 'assets/lib/owl-carousel/js/owl.carousel.min.js', array('jquery'), HASHELE_VERSION, true);
         wp_enqueue_script('hash-elements-slick-script', HASHELE_URL . 'assets/lib/slick/slick.min.js', array('jquery'), HASHELE_VERSION, true);
         wp_enqueue_script('modernizr', HASHELE_URL . 'assets/js/modernizr.js', array(), HASHELE_VERSION, true);
-        wp_enqueue_script('square-draggabilly', HASHELE_URL . 'assets/js/draggabilly.pkgd.js', array('jquery'), HASHELE_VERSION, true);
-        wp_enqueue_script('square-elastiStack', HASHELE_URL . 'assets/js/elastiStack.js', array('jquery'), HASHELE_VERSION, true);
+        wp_enqueue_script('draggabilly', HASHELE_URL . 'assets/js/draggabilly.pkgd.js', array('jquery'), HASHELE_VERSION, true);
+        wp_enqueue_script('elastiStack', HASHELE_URL . 'assets/js/elastiStack.js', array('jquery'), HASHELE_VERSION, true);
 
         wp_enqueue_script('hash-elements-frontend-script', HASHELE_URL . 'assets/js/frontend.js', array('jquery'), HASHELE_VERSION, true);
     }

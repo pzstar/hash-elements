@@ -16,9 +16,6 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class TotalSlider extends Widget_Base {
 
     /** Widget Name */
@@ -33,7 +30,7 @@ class TotalSlider extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'total-slider';
+        return 'eicon-post-slider';
     }
 
     /** Category */

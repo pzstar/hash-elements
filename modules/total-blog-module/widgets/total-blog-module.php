@@ -9,16 +9,12 @@ use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
-use Elementor\Utils;
 use HashElements\Group_Control_Query;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class TotalBlogModule extends Widget_Base {
 
     /** Widget Name */
@@ -33,7 +29,7 @@ class TotalBlogModule extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'total-blog-module';
+        return 'eicon-posts-grid';
     }
 
     /** Category */
@@ -83,6 +79,15 @@ class TotalBlogModule extends Widget_Base {
             'min' => 0,
             'default' => 190
         ]);
+
+        $this->add_group_control(
+                Group_Control_Image_Size::get_type(), [
+            'name' => 'thumbnail',
+            'exclude' => ['custom'],
+            'include' => [],
+            'default' => 'full',
+                ]
+        );
 
         $this->end_controls_section();
 
@@ -366,7 +371,7 @@ class TotalBlogModule extends Widget_Base {
             $query = new \WP_Query($args);
             if ($query->have_posts()):
                 while ($query->have_posts()): $query->the_post();
-                    $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-blog-thumb');
+                    $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), $settings['thumbnail_size']);
                     ?>
                     <div class="het-blog-post">
                         <div class="het-blog-box">

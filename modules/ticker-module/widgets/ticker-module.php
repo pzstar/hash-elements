@@ -5,20 +5,15 @@ namespace HashElements\Modules\TickerModule\Widgets;
 // Elementor Classes
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
 use HashElements\Group_Control_Query;
-use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class TickerModule extends Widget_Base {
 
     /** Widget Name */

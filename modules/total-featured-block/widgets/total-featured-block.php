@@ -8,15 +8,11 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
-use Elementor\Utils;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class TotalFeaturedBlock extends Widget_Base {
 
     /** Widget Name */
@@ -31,7 +27,7 @@ class TotalFeaturedBlock extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'total-featured-block';
+        return 'eicon-icon-box';
     }
 
     /** Category */
@@ -127,7 +123,7 @@ class TotalFeaturedBlock extends Widget_Base {
 
         $this->add_control(
                 'box_padding', [
-            'label' => esc_html__('Padding', 'square-plus'),
+            'label' => esc_html__('Padding', 'hash-elements'),
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => ['px', '%', 'em'],
             'default' => [
@@ -171,7 +167,7 @@ class TotalFeaturedBlock extends Widget_Base {
 
         $this->add_control(
                 'icon_size', [
-            'label' => __('Icon Size', 'square-plus'),
+            'label' => __('Icon Size', 'hash-elements'),
             'type' => Controls_Manager::SLIDER,
             'size_units' => ['px'],
             'range' => [

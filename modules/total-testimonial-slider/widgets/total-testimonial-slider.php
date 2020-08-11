@@ -33,7 +33,7 @@ class TotalTestimonialSlider extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'total-testimonial-slider';
+        return 'eicon-testimonial-carousel';
     }
 
     /** Category */
@@ -171,7 +171,7 @@ class TotalTestimonialSlider extends Widget_Base {
         );
 
         $this->add_group_control(
-                \Elementor\Group_Control_Image_Size::get_type(), [
+                Group_Control_Image_Size::get_type(), [
             'name' => 'thumbnail',
             'exclude' => ['custom'],
             'include' => [],
@@ -450,9 +450,9 @@ class TotalTestimonialSlider extends Widget_Base {
                     </div>
 
                     <?php
-                    $image_url = \Elementor\Group_Control_Image_Size::get_attachment_image_src($testimonial['image']['id'], 'thumbnail', $settings);
+                    $image_url = Group_Control_Image_Size::get_attachment_image_src($testimonial['image']['id'], 'thumbnail', $settings);
                     if (!$image_url) {
-                        $image_url = \Elementor\Utils::get_placeholder_image_src();
+                        $image_url = Utils::get_placeholder_image_src();
                     }
                     echo '<img src="' . esc_attr($image_url) . '" alt="' . esc_attr(\Elementor\Control_Media::get_image_alt($testimonial['image'])) . '" />';
                     ?>

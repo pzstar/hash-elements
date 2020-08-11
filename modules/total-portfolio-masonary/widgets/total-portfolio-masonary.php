@@ -33,7 +33,7 @@ class TotalPortfolioMasonary extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'total-portfolio-masonary';
+        return 'eicon-gallery-masonry';
     }
 
     /** Category */

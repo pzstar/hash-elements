@@ -11,9 +11,6 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class SquarePlusElasticGallery extends Widget_Base {
 
     /** Widget Name */
@@ -28,7 +25,7 @@ class SquarePlusElasticGallery extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'square-plus-elastic-gallery';
+        return 'eicon-photo-library';
     }
 
     /** Category */
@@ -48,7 +45,7 @@ class SquarePlusElasticGallery extends Widget_Base {
         $this->add_control(
                 'notice', [
             'label' => __('NOTICE: THIS GALLERY CAN BE USED ONLY ONCE PER PAGE', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::HEADING,
+            'type' => Controls_Manager::HEADING,
                 ]
         );
 
@@ -165,7 +162,7 @@ class SquarePlusElasticGallery extends Widget_Base {
                 <ul id="he-elasticstack" class="he-elasticstack">
                     <?php
                     foreach ($gallery as $image) {
-                        $image_url = \Elementor\Group_Control_Image_Size::get_attachment_image_src($image['id'], 'image', $settings);
+                        $image_url = Group_Control_Image_Size::get_attachment_image_src($image['id'], 'image', $settings);
                         $image_html = '<img src="' . esc_attr($image_url) . '" alt="' . esc_attr(\Elementor\Control_Media::get_image_alt($image)) . '" />';
                         ?>
                         <li><?php echo $image_html; ?></li>

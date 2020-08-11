@@ -37,13 +37,13 @@ class Group_Control_Header extends Group_Control_Base {
         ];
 
         $fields['style'] = [
-            'label' => __('Style', 'viral-pro'),
+            'label' => __('Style', 'hash-elements'),
             'type' => Controls_Manager::SELECT,
             'default' => 'he-title-style1',
             'options' => [
-                'he-title-style1' => __('Style 1', 'viral-pro'),
-                'he-title-style2' => __('Style 2', 'viral-pro'),
-                'he-title-style3' => __('Style 3', 'viral-pro')
+                'he-title-style1' => __('Style 1', 'hash-elements'),
+                'he-title-style2' => __('Style 2', 'hash-elements'),
+                'he-title-style3' => __('Style 3', 'hash-elements')
             ],
         ];
 
