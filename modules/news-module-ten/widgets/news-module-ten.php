@@ -364,8 +364,7 @@ class NewsModuleTen extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-ten .he-post-item .he-post-content h3, 
-                     {{WRAPPER}} .he-news-module-ten .he-post-item .he-post-content h3 a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-ten .he-post-item .he-post-content h3' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -379,21 +378,17 @@ class NewsModuleTen extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-ten .he-post-item .he-post-content h3:hover, 
-                     {{WRAPPER}} .he-news-module-ten .he-post-item .he-post-content h3 a:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-ten .he-post-item .he-post-content h3 a:hover' => 'color: {{VALUE}}',
             ],
                 ]
         );
-
-
 
         $this->add_group_control(
                 Group_Control_Typography::get_type(), [
             'name' => 'listing_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-news-module-ten .he-post-item .he-post-content h3, 
-                               {{WRAPPER}} .he-news-module-ten .he-post-item .he-post-content h3 a',
+            'selector' => '{{WRAPPER}} .he-news-module-ten .he-post-item .he-post-content h3',
                 ]
         );
 
@@ -404,16 +399,12 @@ class NewsModuleTen extends Widget_Base {
             'allowed_dimensions' => 'vertical',
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-ten .he-post-item' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                '{{WRAPPER}} .he-news-module-ten .he-post-item .he-post-content h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
                 ]
         );
 
-
         $this->end_controls_section();
-
-
-
 
         $this->start_controls_section(
                 'post_metas', [
@@ -463,7 +454,6 @@ class NewsModuleTen extends Widget_Base {
                 $args = $this->query_args();
                 $query = new \WP_Query($args);
                 while ($query->have_posts()): $query->the_post();
-                    $index = $query->current_post + 1;
                     $last = $query->post_count;
                     ?>
                     <div class="he-post-item he-clearfix">
@@ -487,7 +477,7 @@ class NewsModuleTen extends Widget_Base {
                                 he_get_the_primary_category();
                             ?>
                             <h3 class="he-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <?php $this->get_post_meta($index); ?>
+                            <?php $this->get_post_meta(); ?>
                         </div>
                     </div>
                     <?php
@@ -566,7 +556,7 @@ class NewsModuleTen extends Widget_Base {
     }
 
     /** Get Post Metas */
-    protected function get_post_meta($count) {
+    protected function get_post_meta() {
         $settings = $this->get_settings_for_display();
         $post_author = $settings['listing_post_author'];
         $post_date = $settings['listing_post_date'];

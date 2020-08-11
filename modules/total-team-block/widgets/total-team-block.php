@@ -508,7 +508,7 @@ class TotalTeamBlock extends Widget_Base {
         $social_icons_block = $settings['social_icons_block'];
         $target = $settings['button_link']['is_external'] ? ' target="_blank"' : '';
         $nofollow = $settings['button_link']['nofollow'] ? ' rel="nofollow"' : '';
-        ?>
+?>
         <div class="het-team-member">
 
             <div class="het-team-member-image">
@@ -536,7 +536,7 @@ class TotalTeamBlock extends Widget_Base {
                         }
                         ?>
                         <div class="het-team-detail">
-                            <a href="<?php echo esc_attr($settings['button_link']['url']); ?>"<?php echo $target . $nofollow; ?>>
+                            <a href="<?php echo esc_url($settings['button_link']['url']); ?>"<?php echo $target . $nofollow; ?>>
                                 <?php esc_html_e($settings['button_text']) ?>
                             </a>
                         </div>

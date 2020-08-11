@@ -40,6 +40,18 @@
     clear: both;
 }
 
+.he-align-left{
+    text-align: left;
+}
+
+.he-align-center{
+    text-align: center;
+}
+
+.he-align-right{
+    text-align: right;
+}
+
 /* Block Title */
 .he-viral-news .he-block-title{
     font-size: 20px;
@@ -2788,4 +2800,73 @@ h3.he-big-title{
 
 .het-client-logo-slider .owl-dots .owl-dot.active {
     width: 30px
+}
+
+
+/* Contact Information */
+.he-contact-information ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.he-contact-information ul li{
+    padding: 0;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.he-contact-information ul li i{
+    margin-right: 10px;
+}
+
+.he-contact-information p{
+    margin: 0;
+}
+
+/* Personal Info Widget */
+.he-personal-information .he-pi-image{
+    margin-bottom: 20px;
+}
+
+.he-personal-information .he-pi-image img{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.he-personal-information .he-pi-name{
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+
+/* Timeline Widget */
+.he-timeline{
+    border-left: 8px solid #F0F0F0;
+    padding-left: 25px;
+}
+
+.he-timeline .he-post-item{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.he-timeline .he-post-item:after{
+    content: "";
+    position: absolute;
+    left: -39px;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    background: #FFF;
+    border-radius: 50%;
+    border: 5px solid #F0F0F0;
+}
+
+.he-timeline .he-post-item:hover:after{
+    background: #000;
 }

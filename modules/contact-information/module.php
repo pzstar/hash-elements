@@ -1,6 +1,6 @@
 <?php
 
-namespace HashElements\Modules\PersonalInfoModule;
+namespace HashElements\Modules\ContactInformation;
 
 use HashElements\Base\Module_Base;
 
@@ -10,12 +10,12 @@ if (!defined('ABSPATH'))
 class Module extends Module_Base {
 
     public function get_name() {
-        return 'he-personal-info-module';
+        return 'he-contact-information';
     }
 
     public function get_widgets() {
         $widgets = [
-            'PersonalInfoModule',
+            'ContactInformation',
         ];
         return $widgets;
     }

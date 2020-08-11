@@ -1,36 +1,35 @@
 <?php
 
-namespace HashElements\Modules\PersonalInfoModule\Widgets;
+namespace HashElements\Modules\PersonalInformation\Widgets;
 
 // Elementor Classes
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
-use HashElements\Group_Control_Query;
+use Elementor\Group_Control_Image_Size;
 use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-class PersonalInfoModule extends Widget_Base {
+class PersonalInformation extends Widget_Base {
 
     /** Widget Name */
     public function get_name() {
-        return 'he-personal-info-module';
+        return 'he-personal-informtion';
     }
 
     /** Widget Title */
     public function get_title() {
-        return esc_html__('Personal Info', 'hash-elements');
+        return esc_html__('Personal Information', 'hash-elements');
     }
 
     /** Icon */
     public function get_icon() {
-        return 'he-carousel-module-one he-news-modules';
+        return 'he-personal-informtion he-news-modules';
     }
 
     /** Category */
@@ -44,7 +43,7 @@ class PersonalInfoModule extends Widget_Base {
 
         $this->start_controls_section(
                 'header', [
-            'label' => esc_html__('Header', 'hash-elements'),
+            'label' => esc_html__('Title', 'hash-elements'),
                 ]
         );
 
@@ -64,34 +63,83 @@ class PersonalInfoModule extends Widget_Base {
         );
 
         $this->add_control(
-            'image',
-            [
-                'label' => __( 'Choose Image', 'plugin-domain' ),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                'name', [
+            'label' => __('Name', 'hash-elements'),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'default' => __('John Doe', 'hash-elements'),
+            'label_block' => true
+                ]
+        );
+
+        $this->add_control(
+                'image', [
+            'label' => __('Choose Image', 'plugin-domain'),
+            'type' => \Elementor\Controls_Manager::MEDIA,
+            'default' => [
+                'url' => \Elementor\Utils::get_placeholder_image_src(),
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'short_intro', [
+            'label' => __('Short Intro', 'hash-elements'),
+            'type' => \Elementor\Controls_Manager::TEXTAREA,
+            'rows' => 5,
+            'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
+                ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+                'additional Settings', [
+            'label' => esc_html__('Additional Settings', 'hash-elements'),
+                ]
+        );
+
+        $this->add_control(
+                'content_alignment', [
+            'label' => esc_html__('Content Alignment', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'options' => [
+                'left' => esc_html__('Left', 'hash-elements'),
+                'center' => esc_html__('Center', 'hash-elements'),
+                'right' => esc_html__('Right', 'hash-elements'),
+            ],
+            'default' => 'center',
+                ]
+        );
+
+        $this->add_group_control(
+                \Elementor\Group_Control_Image_Size::get_type(), [
+            'name' => 'thumbnail',
+            'exclude' => ['custom'],
+            'include' => [],
+            'default' => 'full',
+                ]
+        );
+
+        $this->add_control(
+                'image_dimension', [
+            'label' => esc_html__('Image Dimension (px)', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 50,
+                    'max' => 300,
+                    'step' => 1
                 ],
-            ]
-        );
-
-        $this->add_control(
-            'short_intro',
-            [
-                'label' => __( 'Short Intro', 'hash-elements' ),
-                'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'rows' => 5,
-                'placeholder' => __( 'Type your short intro here', 'hash-elements' ),
-            ]
-        );
-
-        $this->add_control(
-            'name',
-            [
-                'label' => __( 'Name', 'hash-elements' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => __( 'Type your name here', 'hash-elements' ),
-                'label_block' => true
-            ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 150,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-personal-information .he-pi-image img' => 'height: {{SIZE}}{{UNIT}};width: {{SIZE}}{{UNIT}};',
+            ],
+                ]
         );
 
         $this->end_controls_section();
@@ -159,38 +207,6 @@ class PersonalInfoModule extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'intro_style', [
-            'label' => esc_html__('Intro', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
-        );
-
-        $this->add_control(
-                'intro_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .vl-pi-intro' => 'color: {{VALUE}}'
-            ],
-                ]
-        );
-
-        $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'intro_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .vl-pi-intro'
-                ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
                 'name_style', [
             'label' => esc_html__('Name', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
@@ -206,22 +222,7 @@ class PersonalInfoModule extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .vl-pi-name' => 'color: {{VALUE}}'
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'dash_color', [
-            'label' => esc_html__('Dash Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .vl-personal-info .vl-pi-name span:before,
-                {{WRAPPER}} .vl-personal-info .vl-pi-name span:after' => 'background: {{VALUE}}'
+                '{{WRAPPER}} .he-personal-information .he-pi-name' => 'color: {{VALUE}}'
             ],
                 ]
         );
@@ -231,7 +232,51 @@ class PersonalInfoModule extends Widget_Base {
             'name' => 'name_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .vl-pi-name'
+            'selector' => '{{WRAPPER}} .he-personal-information .he-pi-name'
+                ]
+        );
+
+        $this->add_control(
+                'name_margin', [
+            'label' => esc_html__('Margin', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'allowed_dimensions' => 'vertical',
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .he-personal-information .he-pi-name' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+            ],
+                ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+                'intro_style', [
+            'label' => esc_html__('Intro', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
+        $this->add_control(
+                'intro_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-personal-information .he-pi-intro' => 'color: {{VALUE}}'
+            ],
+                ]
+        );
+
+        $this->add_group_control(
+                Group_Control_Typography::get_type(), [
+            'name' => 'intro_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'selector' => '{{WRAPPER}} .he-personal-information .he-pi-intro'
                 ]
         );
 
@@ -241,33 +286,23 @@ class PersonalInfoModule extends Widget_Base {
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        
-        $title = $settings['title'];
-        $image = $settings['image']['url'];
-        $intro = $settings['short_intro'];
-        $name = $settings['name'];
 
+        $this->render_header();
         ?>
-        <div class="vl-personal-info">
+        <div class="he-personal-information he-align-<?php echo esc_attr($settings['content_alignment']); ?>">
+            <div class="he-pi-image">
+                <?php
+                echo Group_Control_Image_Size::get_attachment_image_html($settings, 'thumbnail', 'image');
+                ?>
+            </div>
+
             <?php
-            $this->render_header();
-
-            if (!empty($image)):
-                $image_id = attachment_url_to_postid($image);
-                if ($image_id) {
-                    $image_array = wp_get_attachment_image_src($image_id, 'thumbnail');
-                    echo '<div class="vl-pi-image"><img alt="' . esc_html($title) . '" src="' . esc_url($image_array[0]) . '"/></div>';
-                }else{
-                    echo '<div class="vl-pi-image"><img alt="' . esc_html($title) . '" src="' . esc_url($image) . '"/></div>';
-                }
+            if (!empty($settings['name'])):
+                echo '<div class="he-pi-name"><span>' . esc_html($settings['name']) . '</span></div>';
             endif;
 
-            if (!empty($name)):
-                echo '<div class="vl-pi-name"><span>' . esc_html($name) . '</span></div>';
-            endif;
-
-            if (!empty($intro)):
-                echo '<div class="vl-pi-intro">' . esc_html($intro) . '</div>';
+            if (!empty($settings['short_intro'])):
+                echo '<div class="he-pi-intro">' . esc_html($settings['short_intro']) . '</div>';
             endif;
             ?>
         </div>

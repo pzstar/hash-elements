@@ -71,20 +71,100 @@ class TimelineModule extends Widget_Base {
         );
 
         $this->add_control(
-            'posts_number',
-            [
-                'label' => __( 'Posts Number', 'hash-elements' ),
-                'type' => \Elementor\Controls_Manager::NUMBER,
-                'min' => 5,
-                'max' => 20,
-                'step' => 1,
-                'default' => 5,
-            ]
+                'posts_number', [
+            'label' => __('Posts Number', 'hash-elements'),
+            'type' => \Elementor\Controls_Manager::NUMBER,
+            'min' => 5,
+            'max' => 20,
+            'step' => 1,
+            'default' => 5,
+                ]
         );
 
         $this->end_controls_section();
 
+        $this->start_controls_section(
+                'section_post_block', [
+            'label' => esc_html__('Post Block', 'hash-elements'),
+                ]
+        );
 
+        $this->add_control('post_excerpt_length', [
+            'label' => esc_html__('Excerpt Length', 'hash-elements'),
+            'description' => esc_html__('Enter 0 to hide excerpt', 'hash-elements'),
+            'type' => Controls_Manager::NUMBER,
+            'min' => 0,
+            'default' => 0
+        ]);
+
+        $this->add_control(
+                'post_author', [
+            'label' => esc_html__('Show Post Author', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
+            'return_value' => 'yes',
+            'separator' => 'before'
+                ]
+        );
+
+        $this->add_control(
+                'post_date', [
+            'label' => esc_html__('Show Post Date', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'default' => 'yes',
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
+            'return_value' => 'yes',
+                ]
+        );
+
+        $this->add_control(
+                'post_comment', [
+            'label' => esc_html__('Show Post Comments', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
+            'return_value' => 'yes',
+                ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+                'additional_settings', [
+            'label' => esc_html__('Additional Settings', 'hash-elements'),
+                ]
+        );
+
+        $this->add_control(
+                'date_format', [
+            'label' => esc_html__('Date Format', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'options' => [
+                'relative_format' => esc_html__('Relative Format (Ago)', 'hash-elements'),
+                'default' => esc_html__('WordPress Default Format', 'hash-elements'),
+                'custom' => esc_html__('Custom Format', 'hash-elements'),
+            ],
+            'default' => 'default',
+            'separator' => 'before',
+            'label_block' => true
+                ]
+        );
+
+        $this->add_control(
+                'custom_date_format', [
+            'label' => esc_html__('Custom Date Format', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'default' => 'F j, Y',
+            'placeholder' => esc_html__('F j, Y', 'hash-elements'),
+            'condition' => [
+                'date_format' => 'custom'
+            ]
+                ]
+        );
+
+        $this->end_controls_section();
 
         $this->start_controls_section(
                 'header_style', [
@@ -149,14 +229,72 @@ class TimelineModule extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'date_style', [
-            'label' => esc_html__('Date', 'hash-elements'),
+                'post_title_style', [
+            'label' => esc_html__('Title', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
                 ]
         );
 
         $this->add_control(
-                'content_text_color', [
+                'title_color', [
+            'label' => esc_html__('Title Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline .he-post-item h3' => 'color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'title_hover_color', [
+            'label' => esc_html__('Title Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline .he-post-item h3 a:hover' => 'color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_group_control(
+                Group_Control_Typography::get_type(), [
+            'name' => 'title_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'selector' => '{{WRAPPER}} .he-timeline .he-post-item h3',
+                ]
+        );
+
+        $this->add_control(
+                'title_margin', [
+            'label' => esc_html__('Margin', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'allowed_dimensions' => 'vertical',
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline .he-post-item h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+            ],
+                ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+                'post_metas', [
+            'label' => esc_html__('Metas', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
+        $this->add_control(
+                'post_metas_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
@@ -164,87 +302,102 @@ class TimelineModule extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '.he-post-meta' => 'color: {{VALUE}}'
+                '{{WRAPPER}} .he-timeline .he-post-item .he-post-meta' => 'color: {{VALUE}}',
             ],
                 ]
         );
 
         $this->add_group_control(
                 Group_Control_Typography::get_type(), [
-            'name' => 'content_typography',
+            'name' => 'post_metas_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-post-meta span'
+            'selector' => '{{WRAPPER}} .he-timeline .he-post-item .he-post-meta',
                 ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'post_title_style', [
-            'label' => esc_html__('Post Title', 'hash-elements'),
+                'excerpt_style', [
+            'label' => esc_html__('Excerpt', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
+        $this->add_control(
+                'excerpt_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline  .he-post-item .he-excerpt' => 'color: {{VALUE}}',
+            ],
                 ]
         );
 
         $this->add_group_control(
                 Group_Control_Typography::get_type(), [
-            'name' => 'post_title_typography',
+            'name' => 'excerpt_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .vl-post-item h3'
+            'selector' => '{{WRAPPER}} .he-timeline .he-post-item .he-excerpt',
                 ]
         );
 
-        $this->start_controls_tabs(
-                'post_title_style_tabs'
-        );
+        $this->end_controls_section();
 
-        $this->start_controls_tab(
-                'post_title_normal_tab', [
-            'label' => __('Normal', 'hash-elements'),
+        $this->start_controls_section(
+                'timeline_style', [
+            'label' => esc_html__('Time Line', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
                 ]
         );
 
         $this->add_control(
-                'post_title_normal_text_color', [
-            'label' => esc_html__('Text Color', 'hash-elements'),
+                'timeline_border_color', [
+            'label' => esc_html__('Line Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .vl-post-item h3 a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-timeline, {{WRAPPER}} .he-timeline .he-post-item:after' => 'border-color: {{VALUE}}',
             ],
                 ]
         );
 
-        $this->end_controls_tab();
-
-        $this->start_controls_tab(
-                'post_title_hover_tab', [
-            'label' => __('Hover', 'hash-elements'),
-                ]
-        );
-
         $this->add_control(
-                'post_title_hover_text_color', [
-            'label' => esc_html__('Text Color (Hover)', 'hash-elements'),
+                'timeline_dot_color', [
+            'label' => esc_html__('Dot Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .vl-post-item h3:hover a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-timeline .he-post-item:after' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
 
-        $this->end_controls_tab();
-
-        $this->end_controls_tabs();
+        $this->add_control(
+                'timeline_dot_hover_color', [
+            'label' => esc_html__('Dot Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline .he-post-item:hover:after' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
 
         $this->end_controls_section();
     }
@@ -252,18 +405,19 @@ class TimelineModule extends Widget_Base {
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        
+
         $this->render_header();
         ?>
-        <div class="vl-timeline">
+        <div class="he-timeline">
             <?php
             $args = $this->query_args();
             $query = new \WP_Query($args);
             while ($query->have_posts()): $query->the_post();
                 ?>
-                <div class="vl-post-item">
-                    <div class="he-post-meta"><?php echo hash_elements_post_date(); ?></div>
-                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <div class="he-post-item">
+                    <?php $this->get_post_meta(); ?>
+                    <h3 class="he-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <?php $this->get_post_excerpt(); ?>
                 </div>
                 <?php
             endwhile;
@@ -334,6 +488,54 @@ class TimelineModule extends Widget_Base {
                 echo $link_close;
                 ?>
             </h2>
+            <?php
+        }
+    }
+
+    /** Get Post Metas */
+    protected function get_post_meta() {
+        $settings = $this->get_settings_for_display();
+        $post_author = $settings['post_author'];
+        $post_date = $settings['post_date'];
+        $post_comment = $settings['post_comment'];
+
+        if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
+            ?>
+            <div class="he-post-meta">
+                <?php
+                if ($post_author == 'yes') {
+                    hash_elements_author_name();
+                }
+
+                if ($post_date == 'yes') {
+                    $date_format = $settings['date_format'];
+
+                    if ($date_format == 'relative_format') {
+                        hash_elements_time_ago();
+                    } else if ($date_format == 'default') {
+                        hash_elements_post_date();
+                    } else if ($date_format == 'custom') {
+                        $format = $settings['custom_date_format'];
+                        hash_elements_post_date($format);
+                    }
+                }
+
+                if ($post_comment == 'yes') {
+                    hash_elements_comment_count();
+                }
+                ?>
+            </div>
+            <?php
+        }
+    }
+
+    /** Get Post Excerpt */
+    protected function get_post_excerpt() {
+        $settings = $this->get_settings_for_display();
+        $excerpt_length = $settings['post_excerpt_length'];
+        if ($excerpt_length) {
+            ?>
+            <div class="he-excerpt"><?php echo hash_elements_custom_excerpt($excerpt_length); ?></div>
             <?php
         }
     }

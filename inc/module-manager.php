@@ -63,9 +63,9 @@ final class HASHELE_Modules_Manager {
             'total-testimonial-slider',
             'total-blog-module',
             'total-logo-carousel',
-            'advertisement-module',
-            'contact-info-module',
-            'personal-info-module',
+            'advertisement-banner',
+            'contact-information',
+            'personal-information',
             'timeline-module',
         ];
 
