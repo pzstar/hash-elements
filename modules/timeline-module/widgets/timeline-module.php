@@ -30,7 +30,7 @@ class TimelineModule extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'he-carousel-module-one he-news-modules';
+        return 'he-timeline-module he-news-modules';
     }
 
     /** Category */

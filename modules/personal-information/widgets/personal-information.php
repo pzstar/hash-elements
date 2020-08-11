@@ -19,7 +19,7 @@ class PersonalInformation extends Widget_Base {
 
     /** Widget Name */
     public function get_name() {
-        return 'he-personal-informtion';
+        return 'he-personal-information';
     }
 
     /** Widget Title */
@@ -29,7 +29,7 @@ class PersonalInformation extends Widget_Base {
 
     /** Icon */
     public function get_icon() {
-        return 'he-personal-informtion he-news-modules';
+        return 'he-personal-information he-news-modules';
     }
 
     /** Category */
