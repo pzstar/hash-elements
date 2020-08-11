@@ -192,9 +192,9 @@ class NewsModuleTwelve extends Widget_Base {
 
         $this->end_controls_section();
 
-        
+
         $this->start_controls_section(
-                'header_style', [
+                'header_title_style', [
             'label' => esc_html__('Header Title', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
                 ]
@@ -223,8 +223,8 @@ class NewsModuleTwelve extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '.he-viral {{WRAPPER}} .he-block-title' => 'border-color: {{VALUE}}',
-                '.he-viral-news {{WRAPPER}} .he-block-title span:before' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
+                '{{WRAPPER}} .he-title-style2.he-block-title span:before' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -238,8 +238,8 @@ class NewsModuleTwelve extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '.he-viral {{WRAPPER}} .he-block-title:after' => 'background-color: {{VALUE}}',
-                '.he-viral-news {{WRAPPER}} .he-block-title' => 'border-color: {{VALUE}}',
+                '{{WRAPPER}} .he-title-style3.he-block-title:after' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
             ],
                 ]
         );
@@ -495,7 +495,6 @@ class NewsModuleTwelve extends Widget_Base {
             </div>
         </div>
         <?php
-                
     }
 
     /** Render Header */
@@ -503,7 +502,8 @@ class NewsModuleTwelve extends Widget_Base {
         $settings = $this->get_settings();
 
         $this->add_render_attribute('header_attr', 'class', [
-            'he-block-title'
+            'he-block-title',
+            $settings['header_style']
                 ]
         );
 

@@ -53,55 +53,57 @@
 }
 
 /* Block Title */
-.he-viral-news .he-block-title{
+.he-block-title{
     font-size: 20px;
-    text-transform: uppercase;
-    border-bottom: 3px solid #EEE;
     margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.he-block-title a,
+.he-block-title span{
+    color: inherit;
+}
+
+.he-title-style2.he-block-title{
+    border-bottom: 3px solid #EEE;
     font-weight: normal;
     line-height: 1;
 }
 
-.he-viral-news .he-block-title span{
+.he-title-style2.he-block-title span{
     position: relative;
     display: inline-block;
     padding-bottom: 10px;
 }
 
-.he-viral-news .he-block-title span:before{
+.he-title-style2.he-block-title span:before{
     content: "";
     position: absolute;
     height: 3px;
     top: 100%;
     left: 0;
     width: 100%;
+    background: #000;
 }
 
-.he-viral .he-block-title{
+.he-title-style3.he-block-title{
     position: relative;
     display: flex;
-    font-size: 20px;
-    text-transform: uppercase;
-    border-left: 10px solid #0078af;
-    margin-bottom: 30px;
+    border-left: 10px solid #000;
     font-weight: bold;
     line-height: 1;
 }
 
-.he-viral .he-block-title span{
+.he-title-style3.he-block-title span{
     padding: 0 20px 0 15px;
     display: inline-block;
 }
 
-.he-viral .he-block-title:after{
+.he-title-style3.he-block-title:after{
     content: "";
     flex-grow: 1;
     background: rgba(0,0,0,0.03);
-}
-
-.he-block-title a,
-.he-block-title span{
-    color: inherit;
 }
 
 .he-excerpt{
