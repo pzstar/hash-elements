@@ -1602,6 +1602,9 @@ h3.he-big-title{
     height: 40px;
     width: 40px;
     text-indent: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .he-bx-slider.owl-carousel .owl-nav button.owl-prev:hober, 
@@ -1609,11 +1612,9 @@ h3.he-big-title{
     background: #4EA3AD
 }
 
-.he-bx-slider.owl-carousel .owl-nav button .fa{
+.he-bx-slider.owl-carousel .owl-nav button i{
     font-size: 24px;
-    line-height: 40px;
-    width: 40px;
-    text-align: center;
+    line-height: 1;
     color: #FFF;
 }
 
@@ -2114,7 +2115,7 @@ h3.he-big-title{
     border-left:2px solid #333;
     border-right:2px solid #333;
     border-bottom:2px solid #333;
-    padding: 30px;
+    padding: 30px 30px 60px 30px;
 }
 
 .het-featured-post:before,
@@ -2123,7 +2124,7 @@ h3.he-big-title{
     position: absolute;
     top: 0;
     height: 2px;
-    width: calc( 50% - 60px );
+    width: calc( 50% - 90px );
     background: #333;
 }
 
@@ -2167,7 +2168,7 @@ h3.he-big-title{
     line-height: 1.2;
     background: #333;
     color: #FFF;
-    margin-top: 30px;
+    margin-top: 60px;
     transition: none;
     font-size: 0.9em;
 }
@@ -2181,8 +2182,20 @@ h3.he-big-title{
 ## Portfolio Section
 --------------------------------------------------------------*/
 .het-portfolio-cat-name-list{
-    text-align: center;
     margin-bottom: 30px;
+    text-align: right;
+    line-height: 1;
+}
+
+.het-portfolio-cat-name-list.tab-align-left{
+    text-align: left;
+}
+
+.het-portfolio-cat-name-list.tab-align-center{
+    text-align: center;
+}
+
+.het-portfolio-cat-name-list.tab-align-right{
     text-align: right;
 }
 
@@ -2197,7 +2210,7 @@ h3.he-big-title{
     padding-left: 10px;
     margin-left: 10px;
     border-left: 1px solid #BBB;
-    line-height: 1;
+    line-height: inherit;
     transition:all 0.3s ease-in-out;
     -moz-transition:all 0.3s ease-in-out;
     -webkit-transition:all 0.3s ease-in-out;
@@ -2233,14 +2246,6 @@ h3.he-big-title{
     background-repeat: no-repeat;
     overflow: hidden;
     background-color: #f9f9f9;
-}
-
-.het-portfolio-wrap img{
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
 }
 
 .het-portfolio-caption{

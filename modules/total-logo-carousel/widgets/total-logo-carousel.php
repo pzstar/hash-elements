@@ -157,15 +157,15 @@ class TotalLogoCarousel extends Widget_Base {
             ],
             'devices' => ['desktop', 'tablet', 'mobile'],
             'desktop_default' => [
-                'size' => 3,
+                'size' => 5,
                 'unit' => 'px',
             ],
             'tablet_default' => [
-                'size' => 2,
+                'size' => 3,
                 'unit' => 'px',
             ],
             'mobile_default' => [
-                'size' => 1,
+                'size' => 2,
                 'unit' => 'px',
             ],
                 ]

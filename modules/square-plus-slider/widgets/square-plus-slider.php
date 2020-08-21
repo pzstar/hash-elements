@@ -386,7 +386,7 @@ class SquarePlusSlider extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} #he-home-slider-section .owl-carousel .owl-nav button' => 'background: {{VALUE}}',
+                '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button' => 'background: {{VALUE}}',
             ],
                 ]
         );
@@ -400,7 +400,7 @@ class SquarePlusSlider extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} #he-home-slider-section .owl-carousel .owl-nav button i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button i' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -422,7 +422,7 @@ class SquarePlusSlider extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} #he-home-slider-section .owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -436,7 +436,7 @@ class SquarePlusSlider extends Widget_Base {
                 'value' => Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} #he-home-slider-section .owl-carousel .owl-nav button:hover i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button:hover i' => 'color: {{VALUE}}',
             ],
                 ]
         );

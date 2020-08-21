@@ -398,17 +398,17 @@ class SquarePlusTabBlock extends Widget_Base {
                                     $siteorigin = get_post_meta($get_id, 'panels_data', true);
 
                                     // If Elementor
-                                    if ($elementor) {
+                                    if (class_exists('Elementor\Plugin') && $elementor) {
                                         echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($get_id);
                                     }
 
                                     // If Beaver Builder
-                                    else if (!empty($get_id)) {
+                                    else if (class_exists('FLBuilder') && !empty($get_id)) {
                                         echo do_shortcode('[fl_builder_insert_layout id="' . $get_id . '"]');
                                     }
 
                                     // If Site Origin
-                                    else if ($siteorigin) {
+                                    else if (class_exists('SiteOrigin_Panels') && $siteorigin) {
                                         echo SiteOrigin_Panels::renderer()->render($get_id);
                                     } else {
                                         // Get template content

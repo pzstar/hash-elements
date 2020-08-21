@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hash Elements\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-11 10:19+0000\n"
+"POT-Creation-Date: 2020-08-21 18:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -94,7 +94,7 @@ msgstr ""
 #: modules/total-blog-module/widgets/total-blog-module.php:133
 #: modules/news-module-twelve/widgets/news-module-twelve.php:361
 #: modules/news-module-two/widgets/news-module-two.php:455
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:65
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:75
 #: modules/news-module-eight/widgets/news-module-eight.php:447
 #: modules/tile-module-three/widgets/tile-module-three.php:361
 msgid "Title"
@@ -127,30 +127,37 @@ msgid "Source"
 msgstr ""
 
 #: inc/controls/groups/group-control-query.php:68
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:59
 msgid "Exclude Posts"
 msgstr ""
 
 #: inc/controls/groups/group-control-query.php:79
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:68
 msgid "Order By"
 msgstr ""
 
 #: inc/controls/groups/group-control-query.php:82
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:71
 msgid "Date"
 msgstr ""
 
 #: inc/controls/groups/group-control-query.php:83
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:72
 msgid "Last Modified Date"
 msgstr ""
 
 #: inc/controls/groups/group-control-query.php:84
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:73
 msgid "Rand"
 msgstr ""
 
 #: inc/controls/groups/group-control-query.php:85
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:74
 msgid "Comment Count"
 msgstr ""
 
 #: inc/controls/groups/group-control-query.php:87
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:76
 msgid "Post ID"
 msgstr ""
 
@@ -183,6 +190,7 @@ msgstr ""
 #: modules/news-module-twelve/widgets/news-module-twelve.php:114
 #: modules/news-module-two/widgets/news-module-two.php:123
 #: modules/news-module-two/widgets/news-module-two.php:217
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:77
 #: modules/news-module-eight/widgets/news-module-eight.php:123
 #: modules/news-module-eight/widgets/news-module-eight.php:208
 #: modules/tile-module-three/widgets/tile-module-three.php:93
@@ -190,14 +198,17 @@ msgid "Show Post Author"
 msgstr ""
 
 #: inc/controls/groups/group-control-query.php:94
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:84
 msgid "Order"
 msgstr ""
 
 #: inc/controls/groups/group-control-query.php:97
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:87
 msgid "Descending"
 msgstr ""
 
 #: inc/controls/groups/group-control-query.php:98
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:88
 msgid "Ascending"
 msgstr ""
 
@@ -367,7 +378,6 @@ msgstr ""
 #: modules/news-module-two/widgets/news-module-two.php:304
 #: modules/news-module-two/widgets/news-module-two.php:566
 #: modules/news-module-two/widgets/news-module-two.php:598
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:72
 #: modules/square-plus-tab-block/widgets/square-plus-tab-block.php:313
 #: modules/news-module-eight/widgets/news-module-eight.php:295
 #: modules/news-module-eight/widgets/news-module-eight.php:561
@@ -510,7 +520,7 @@ msgstr ""
 #: modules/news-module-two/widgets/news-module-two.php:530
 #: modules/news-module-two/widgets/news-module-two.php:581
 #: modules/news-module-two/widgets/news-module-two.php:613
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:87
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:179
 #: modules/square-plus-tab-block/widgets/square-plus-tab-block.php:154
 #: modules/square-plus-tab-block/widgets/square-plus-tab-block.php:328
 #: modules/news-module-eight/widgets/news-module-eight.php:340
@@ -657,9 +667,7 @@ msgstr ""
 #: modules/total-blog-module/widgets/total-blog-module.php:344
 #: modules/news-module-twelve/widgets/news-module-twelve.php:287
 #: modules/news-module-two/widgets/news-module-two.php:385
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:104
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:153
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:189
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:282
 #: modules/news-module-eight/widgets/news-module-eight.php:377
 #: modules/tile-module-three/widgets/tile-module-three.php:287
 msgid "Background Color"
@@ -696,8 +704,7 @@ msgstr ""
 #: modules/total-testimonial-slider/widgets/total-testimonial-slider.php:317
 #: modules/news-module-twelve/widgets/news-module-twelve.php:281
 #: modules/news-module-two/widgets/news-module-two.php:379
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:132
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:236
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:261
 #: modules/square-plus-tab-block/widgets/square-plus-tab-block.php:202
 #: modules/news-module-eight/widgets/news-module-eight.php:371
 #: modules/tile-module-three/widgets/tile-module-three.php:281
@@ -735,8 +742,7 @@ msgstr ""
 #: modules/total-testimonial-slider/widgets/total-testimonial-slider.php:370
 #: modules/news-module-twelve/widgets/news-module-twelve.php:319
 #: modules/news-module-two/widgets/news-module-two.php:415
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:169
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:260
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:299
 #: modules/news-module-eight/widgets/news-module-eight.php:407
 #: modules/tile-module-three/widgets/tile-module-three.php:319
 msgid "Hover"
@@ -819,7 +825,7 @@ msgstr ""
 #: modules/total-blog-module/widgets/total-blog-module.php:45
 #: modules/news-module-twelve/widgets/news-module-twelve.php:61
 #: modules/news-module-two/widgets/news-module-two.php:62
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:49
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:44
 #: modules/news-module-eight/widgets/news-module-eight.php:62
 #: modules/tile-module-three/widgets/tile-module-three.php:62
 msgid "Content Filter"
@@ -845,7 +851,6 @@ msgstr ""
 #: modules/total-blog-module/widgets/total-blog-module.php:52
 #: modules/news-module-twelve/widgets/news-module-twelve.php:68
 #: modules/news-module-two/widgets/news-module-two.php:69
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:56
 #: modules/news-module-eight/widgets/news-module-eight.php:69
 #: modules/tile-module-three/widgets/tile-module-three.php:69
 msgid "Posts"
@@ -1045,6 +1050,7 @@ msgstr ""
 #: modules/news-module-two/widgets/news-module-two.php:231
 #: modules/news-module-two/widgets/news-module-two.php:241
 #: modules/news-module-two/widgets/news-module-two.php:251
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:116
 #: modules/news-module-eight/widgets/news-module-eight.php:125
 #: modules/news-module-eight/widgets/news-module-eight.php:138
 #: modules/news-module-eight/widgets/news-module-eight.php:149
@@ -1183,6 +1189,7 @@ msgstr ""
 #: modules/news-module-two/widgets/news-module-two.php:232
 #: modules/news-module-two/widgets/news-module-two.php:242
 #: modules/news-module-two/widgets/news-module-two.php:252
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:117
 #: modules/news-module-eight/widgets/news-module-eight.php:126
 #: modules/news-module-eight/widgets/news-module-eight.php:139
 #: modules/news-module-eight/widgets/news-module-eight.php:150
@@ -1637,7 +1644,6 @@ msgstr ""
 #: modules/news-module-one/widgets/news-module-one.php:359
 #: modules/news-module-twelve/widgets/news-module-twelve.php:260
 #: modules/news-module-two/widgets/news-module-two.php:359
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:210
 #: modules/news-module-eight/widgets/news-module-eight.php:350
 #: modules/tile-module-three/widgets/tile-module-three.php:260
 msgid "Category"
@@ -1695,6 +1701,7 @@ msgstr ""
 #: modules/total-testimonial-slider/widgets/total-testimonial-slider.php:376
 #: modules/news-module-twelve/widgets/news-module-twelve.php:325
 #: modules/news-module-two/widgets/news-module-two.php:421
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:319
 #: modules/news-module-eight/widgets/news-module-eight.php:413
 #: modules/tile-module-three/widgets/tile-module-three.php:325
 msgid "Background Color (Hover)"
@@ -1740,6 +1747,7 @@ msgstr ""
 #: modules/total-blog-module/widgets/total-blog-module.php:140
 #: modules/news-module-twelve/widgets/news-module-twelve.php:368
 #: modules/news-module-two/widgets/news-module-two.php:462
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:209
 #: modules/square-plus-tab-block/widgets/square-plus-tab-block.php:208
 #: modules/news-module-eight/widgets/news-module-eight.php:454
 #: modules/tile-module-three/widgets/tile-module-three.php:368
@@ -1817,9 +1825,8 @@ msgstr ""
 #: modules/square-plus-slider/widgets/square-plus-slider.php:396
 #: modules/ticker-module/widgets/ticker-module.php:245
 #: modules/total-team-block/widgets/total-team-block.php:444
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:138
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:175
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:217
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:134
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:267
 #: modules/square-plus-tab-block/widgets/square-plus-tab-block.php:222
 msgid "Icon Color"
 msgstr ""
@@ -1836,6 +1843,7 @@ msgstr ""
 #: modules/ticker-module/widgets/ticker-module.php:281
 #: modules/total-team-block/widgets/total-team-block.php:482
 #: modules/total-testimonial-slider/widgets/total-testimonial-slider.php:391
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:305
 msgid "Icon Color (Hover)"
 msgstr ""
 
@@ -1923,6 +1931,7 @@ msgstr ""
 
 #: modules/square-plus-slider/widgets/square-plus-slider.php:210
 #: modules/total-team-block/widgets/total-team-block.php:273
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:224
 msgid "Title Typography"
 msgstr ""
 
@@ -1938,7 +1947,6 @@ msgstr ""
 #: modules/total-featured-block/widgets/total-featured-block.php:259
 #: modules/total-slider/widgets/total-slider.php:263
 #: modules/total-blog-module/widgets/total-blog-module.php:255
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:121
 msgid "Button"
 msgstr ""
 
@@ -2462,6 +2470,7 @@ msgid "Blog Module"
 msgstr ""
 
 #: modules/total-blog-module/widgets/total-blog-module.php:60
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:98
 msgid "Settings"
 msgstr ""
 
@@ -2516,20 +2525,49 @@ msgstr ""
 msgid "News Module 2"
 msgstr ""
 
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:31
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:26
 msgid "Portfolio Masonary"
 msgstr ""
 
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:97
-msgid "Overlay"
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:49
+msgid "Choose Category "
 msgstr ""
 
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:242
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:104
+msgid "Active Category"
+msgstr ""
+
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:108
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:357
+msgid "All"
+msgstr ""
+
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:114
+msgid "Display All Tab"
+msgstr ""
+
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:127
+msgid "Category Tab"
+msgstr ""
+
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:149
 msgid "Category Color"
 msgstr ""
 
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:266
-msgid "Category Color(Active & Hover)"
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:163
+msgid "Category Color (Hover & Active)"
+msgstr ""
+
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:202
+msgid "Portfolio Block"
+msgstr ""
+
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:232
+msgid "Overlay Color on Hover"
+msgstr ""
+
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:250
+msgid "Zoom & Link Button"
 msgstr ""
 
 #: modules/square-plus-tab-block/widgets/square-plus-tab-block.php:26

@@ -122,11 +122,14 @@ class HASHELE_Widget_Loader {
      * Enqueue Frontend Scripts
      */
     public function enqueue_frontend_scripts() {
-        wp_enqueue_script('hash-elements-owl-carousel-script', HASHELE_URL . 'assets/lib/owl-carousel/js/owl.carousel.min.js', array('jquery'), HASHELE_VERSION, true);
-        wp_enqueue_script('hash-elements-slick-script', HASHELE_URL . 'assets/lib/slick/slick.min.js', array('jquery'), HASHELE_VERSION, true);
+        wp_enqueue_script('owl-carousel', HASHELE_URL . 'assets/js/owl.carousel.js', array('jquery'), HASHELE_VERSION, true);
         wp_enqueue_script('modernizr', HASHELE_URL . 'assets/js/modernizr.js', array(), HASHELE_VERSION, true);
         wp_enqueue_script('draggabilly', HASHELE_URL . 'assets/js/draggabilly.pkgd.js', array('jquery'), HASHELE_VERSION, true);
         wp_enqueue_script('elastiStack', HASHELE_URL . 'assets/js/elastiStack.js', array('jquery'), HASHELE_VERSION, true);
+        wp_enqueue_script('nivo-lightbox', HASHELE_URL . 'assets/js/nivo-lightbox.js', array('jquery'), HASHELE_VERSION, true);
+        wp_enqueue_script('odometer', HASHELE_URL . 'assets/js/odometer.js', array('jquery'), HASHELE_VERSION, true);
+        wp_enqueue_script('waypoint', HASHELE_URL . 'assets/js/waypoint.js', array('jquery'), HASHELE_VERSION, true);
+        wp_enqueue_script('isotope-pkgd', HASHELE_URL . 'assets/js/isotope.pkgd.js', array('jquery', 'imagesloaded'), HASHELE_VERSION, true);
 
         wp_enqueue_script('hash-elements-frontend-script', HASHELE_URL . 'assets/js/frontend.js', array('jquery'), HASHELE_VERSION, true);
     }
@@ -142,8 +145,8 @@ class HASHELE_Widget_Loader {
      * Enqueue Frontend Styles
      */
     public function enqueue_frontend_styles() {
-        wp_enqueue_style('materialdesignicons', HASHELE_URL . 'assets/lib/materialdesignicons/materialdesignicons.css', array(), HASHELE_VERSION);
-        wp_enqueue_style('owl-carousel', HASHELE_URL . 'assets/lib/owl-carousel/css/owl.carousel.min.css', array(), HASHELE_VERSION);
+        wp_enqueue_style('materialdesignicons', HASHELE_URL . 'assets/fonts/materialdesignicons/materialdesignicons.css', array(), HASHELE_VERSION);
+        wp_enqueue_style('owl-carousel', HASHELE_URL . 'assets/css/owl.carousel.css', array(), HASHELE_VERSION);
         wp_enqueue_style('hash-elements-frontend-style', HASHELE_URL . 'assets/css/frontend.css', array(), HASHELE_VERSION);
     }
 

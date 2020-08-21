@@ -9,16 +9,11 @@ use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Scheme_Color;
-use Elementor\Utils;
-use HashElements\Group_Control_Query;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Tiled Posts Widget
- */
 class TotalPortfolioMasonary extends Widget_Base {
 
     /** Widget Name */
@@ -50,26 +45,168 @@ class TotalPortfolioMasonary extends Widget_Base {
                 ]
         );
 
-        $this->add_group_control(
-                Group_Control_Query::get_type(), [
-            'name' => 'posts',
-            'label' => esc_html__('Posts', 'hash-elements'),
+        $this->add_control('category_ids', [
+            'label' => esc_html__('Choose Category ', 'hash-elements') . $object->label,
+            'type' => Controls_Manager::SELECT2,
+            'label_block' => true,
+            'multiple' => true,
+            'options' => $this->get_portfolio_category(),
+                ]
+        );
+
+        $this->add_control(
+                'exclude_posts', [
+            'label' => __('Exclude Posts', 'hash-elements'),
+            'type' => Controls_Manager::SELECT2,
+            'label_block' => true,
+            'multiple' => true,
+            'options' => $this->get_posts(),
+                ]
+        );
+
+        $this->add_control('orderby', [
+            'label' => esc_html__('Order By', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'options' => [
+                'date' => esc_html__('Date', 'hash-elements'),
+                'modified' => esc_html__('Last Modified Date', 'hash-elements'),
+                'rand' => esc_html__('Rand', 'hash-elements'),
+                'comment_count' => esc_html__('Comment Count', 'hash-elements'),
+                'title' => esc_html__('Title', 'hash-elements'),
+                'ID' => esc_html__('Post ID', 'hash-elements'),
+                'author' => esc_html__('Show Post Author', 'hash-elements'),
+            ],
+            'default' => 'date'
+                ]
+        );
+
+        $this->add_control('order', [
+            'label' => esc_html__('Order', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'options' => [
+                'DESC' => esc_html__('Descending', 'hash-elements'),
+                'ASC' => esc_html__('Ascending', 'hash-elements'),
+            ],
+            'default' => 'DESC'
                 ]
         );
 
         $this->end_controls_section();
 
+        $this->start_controls_section(
+                'section_settings', [
+            'label' => esc_html__('Settings', 'hash-elements'),
+                ]
+        );
+
+        $this->add_control(
+                'active_cat', [
+            'label' => esc_html__('Active Category', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'label_block' => true,
+            'default' => '*',
+            'options' => array_merge(['*' => esc_html__('All', 'hash-elements')], $this->get_portfolio_category())
+                ]
+        );
+
+        $this->add_control(
+                'display_all_tab', [
+            'label' => __('Display All Tab', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => __('Yes', 'hash-elements'),
+            'label_off' => __('No', 'hash-elements'),
+            'return_value' => 'yes',
+            'default' => 'yes',
+                ]
+        );
+
+        $this->end_controls_section();
 
         $this->start_controls_section(
-                'title_style', [
-            'label' => esc_html__('Title', 'hash-elements'),
+                'tab_style', [
+            'label' => esc_html__('Category Tab', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
+        $this->add_control(
+                'tab_icon_color', [
+            'label' => esc_html__('Icon Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'default' => '#000000',
+            'selectors' => [
+                '{{WRAPPER}} .het-portfolio-cat-name-list i' => 'color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'tab_category_color', [
+            'label' => esc_html__('Category Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .het-portfolio-cat-name' => 'color: {{VALUE}}; border-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'tab_category_hover_color', [
+            'label' => esc_html__('Category Color (Hover & Active)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Scheme_Color::get_type(),
+                'value' => Scheme_Color::COLOR_1,
+            ],
+            'default' => '#009dea',
+            'selectors' => [
+                '{{WRAPPER}} .het-portfolio-cat-name.active, {{WRAPPER}} .het-portfolio-cat-name:hover' => 'color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_group_control(
+                Group_Control_Typography::get_type(), [
+            'name' => 'tab_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'selector' => '{{WRAPPER}} .het-portfolio-cat-name-list',
+                ]
+        );
+
+        $this->add_control(
+                'tab_alignment', [
+            'label' => __('Tab Alignment', 'square-plus'),
+            'type' => \Elementor\Controls_Manager::SELECT,
+            'default' => 'tab-align-right',
+            'options' => [
+                'tab-align-left' => __('Left', 'square-plus'),
+                'tab-align-center' => __('Center', 'square-plus'),
+                'tab-align-right' => __('Right', 'square-plus')
+            ],
+                ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+                'portfolio_style_tab', [
+            'label' => esc_html__('Portfolio Block', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
                 ]
         );
 
         $this->add_control(
                 'title_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
+            'label' => esc_html__('Title Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
@@ -84,33 +221,25 @@ class TotalPortfolioMasonary extends Widget_Base {
         $this->add_group_control(
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
+            'label' => esc_html__('Title Typography', 'hash-elements'),
             'scheme' => Scheme_Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-portfolio-caption h5',
                 ]
         );
 
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'overlay_style', [
-            'label' => esc_html__('Overlay', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
-        );
-
         $this->add_control(
-                'overlay_color', [
-            'label' => esc_html__('Background Color', 'hash-elements'),
+                'portfolio_hover_bg', [
+            'label' => esc_html__('Overlay Color on Hover', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
-            'default' => '#009dea',
+            'default' => '#000000',
             'selectors' => [
                 '{{WRAPPER}} .het-portfolio-caption' => 'background-color: {{VALUE}}',
             ],
+            'separator' => 'before'
                 ]
         );
 
@@ -118,7 +247,7 @@ class TotalPortfolioMasonary extends Widget_Base {
 
         $this->start_controls_section(
                 'button_style', [
-            'label' => esc_html__('Button', 'hash-elements'),
+            'label' => esc_html__('Zoom & Link Button', 'hash-elements'),
             'tab' => Controls_Manager::TAB_STYLE,
                 ]
         );
@@ -141,7 +270,7 @@ class TotalPortfolioMasonary extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
-            'default' => '#009dea',
+            'default' => '#000000',
             'selectors' => [
                 '{{WRAPPER}} .het-portfolio-caption a' => 'color: {{VALUE}}',
             ],
@@ -156,6 +285,7 @@ class TotalPortfolioMasonary extends Widget_Base {
                 'type' => Scheme_Color::get_type(),
                 'value' => Scheme_Color::COLOR_1,
             ],
+            'default' => '#FFFFFF',
             'selectors' => [
                 '{{WRAPPER}} .het-portfolio-caption a' => 'background-color: {{VALUE}}',
             ],
@@ -172,7 +302,7 @@ class TotalPortfolioMasonary extends Widget_Base {
 
         $this->add_control(
                 'hover_button_icon_color', [
-            'label' => esc_html__('Icon Color', 'hash-elements'),
+            'label' => esc_html__('Icon Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
@@ -186,7 +316,7 @@ class TotalPortfolioMasonary extends Widget_Base {
 
         $this->add_control(
                 'hover_button_bg_color', [
-            'label' => esc_html__('Background Color', 'hash-elements'),
+            'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Scheme_Color::get_type(),
@@ -203,108 +333,40 @@ class TotalPortfolioMasonary extends Widget_Base {
         $this->end_controls_tabs();
 
         $this->end_controls_section();
-
-
-        $this->start_controls_section(
-                'category_style', [
-            'label' => esc_html__('Category', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
-        );
-
-        $this->add_control(
-                'icon_color', [
-            'label' => esc_html__('Icon Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'default' => '#009dea',
-            'selectors' => [
-                '{{WRAPPER}} .het-portfolio-cat-name-list i' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->start_controls_tabs(
-                'category_style_tabs'
-        );
-
-        $this->start_controls_tab(
-                'category_button_tab', [
-            'label' => __('Normal', 'hash-elements'),
-                ]
-        );
-
-        $this->add_control(
-                'category_color', [
-            'label' => esc_html__('Category Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .het-portfolio-cat-name' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-
-
-        $this->end_controls_tab();
-
-        $this->start_controls_tab(
-                'category_hover_tab', [
-            'label' => __('Hover', 'hash-elements'),
-                ]
-        );
-
-        $this->add_control(
-                'category_hover_color', [
-            'label' => esc_html__('Category Color(Active & Hover)', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
-            ],
-            'default' => '#009dea',
-            'selectors' => [
-                '{{WRAPPER}} .het-portfolio-cat-name.active,
-                {{WRAPPER}} .het-portfolio-cat-name:hover' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->end_controls_tab();
-
-        $this->end_controls_tabs();
-
-        $this->end_controls_section();
     }
 
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
+        $id = $this->get_id();
         ?>
         <div class="het-portfolio-container">
             <?php
-            $total_portfolio_cat = $settings['posts_category_ids'];
+            $portfolio_cat = $settings['category_ids'];
+            $portfolio_active_cat = $settings['active_cat'];
+            $active_tab = ($portfolio_active_cat == '*') ? '*' : '.hash-portfolio-' . $portfolio_active_cat;
+            $show_all = $settings['display_all_tab'];
+            $tab_alignment = $settings['tab_alignment'];
 
-            if ($total_portfolio_cat) {
+            if ($portfolio_cat) {
                 ?>  
-                <div class="het-portfolio-cat-name-list">
+                <div class="het-portfolio-cat-name-list <?php echo esc_attr($tab_alignment); ?>" data-active="<?php echo $active_tab; ?>">
                     <i class="fa fa-th-large" aria-hidden="true"></i>
-                    <?php
-                    foreach ($total_portfolio_cat as $total_portfolio_cat_single) {
+                    <?php if ($show_all) { ?>
+                        <div class="het-portfolio-cat-name" data-filter="*">
+                            <?php _e('All', 'hash-elements'); ?>
+                        </div>
+                        <?php
+                    }
+                    foreach ($portfolio_cat as $portfolio_cat_single) {
                         $category_slug = "";
-                        $category_slug = get_category($total_portfolio_cat_single);
+                        $category_slug = get_category($portfolio_cat_single);
+
                         if (is_object($category_slug)) {
-                            $category_slug = 'total-portfolio-' . $category_slug->term_id;
+                            $category_slug = 'hash-portfolio-' . $category_slug->term_id;
                             ?>
                             <div class="het-portfolio-cat-name" data-filter=".<?php echo esc_attr($category_slug); ?>">
-                                <?php echo esc_html(get_cat_name($total_portfolio_cat_single)); ?>
+                                <?php echo esc_html(get_cat_name($portfolio_cat_single)); ?>
                             </div>
                             <?php
                         }
@@ -314,9 +376,9 @@ class TotalPortfolioMasonary extends Widget_Base {
             <?php } ?>
 
             <div class="het-portfolio-post-wrap">
-                <div class="het-portfolio-posts het-clearfix">
+                <div class="het-portfolio-posts-<?php echo $id; ?>">
                     <?php
-                    if ($total_portfolio_cat) {
+                    if ($portfolio_cat) {
                         $count = 1;
                         $args = $this->query_args();
                         $query = new \WP_Query($args);
@@ -327,7 +389,7 @@ class TotalPortfolioMasonary extends Widget_Base {
                                 $cat_slug = array();
 
                                 foreach ($categories as $category) {
-                                    $cat_slug[] = 'total-portfolio-' . $category->term_id;
+                                    $cat_slug[] = 'hash-portfolio-' . $category->term_id;
                                 }
 
                                 $category_slug = implode(" ", $cat_slug);
@@ -375,21 +437,20 @@ class TotalPortfolioMasonary extends Widget_Base {
     protected function query_args() {
         $settings = $this->get_settings();
 
-        $post_type = $args['post_type'] = $settings['posts_post_type'];
-        $args['orderby'] = $settings['posts_orderby'];
-        $args['order'] = $settings['posts_order'];
+        $post_type = $args['post_type'] = 'post';
+        $args['orderby'] = $settings['orderby'];
+        $args['order'] = $settings['order'];
         $args['ignore_sticky_posts'] = 1;
         $args['post_status'] = 'publish';
-        $args['offset'] = $settings['posts_offset'];
         $args['posts_per_page'] = -1;
-        $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : [];
+        $args['post__not_in'] = $post_type == 'post' ? $settings['exclude_posts'] : [];
 
         $args['tax_query'] = [];
 
         $taxonomies = get_object_taxonomies($post_type, 'objects');
 
         foreach ($taxonomies as $object) {
-            $setting_key = 'posts_' . $object->name . '_ids';
+            $setting_key = $object->name . '_ids';
 
             if (!empty($settings[$setting_key])) {
                 $args['tax_query'][] = [
@@ -401,6 +462,36 @@ class TotalPortfolioMasonary extends Widget_Base {
         }
 
         return $args;
+    }
+
+    private function get_posts() {
+        /** Get All Posts */
+        $post_list = get_posts(array(
+            'post_type' => 'post',
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'posts_per_page' => -1,
+        ));
+
+        $posts = array();
+
+        if (!empty($post_list) && !is_wp_error($post_list)) {
+            foreach ($post_list as $post) {
+                $posts[$post->ID] = $post->post_title;
+            }
+        }
+
+        return $posts;
+    }
+
+    protected function get_portfolio_category() {
+        $portfolio_categories = get_categories(array('taxonomy' => 'category', 'hide_empty' => 0));
+        $portfolio_cat = array();
+        foreach ($portfolio_categories as $portfolio_category) {
+            $portfolio_cat[$portfolio_category->term_id] = $portfolio_category->cat_name;
+        }
+
+        return $portfolio_cat;
     }
 
 }

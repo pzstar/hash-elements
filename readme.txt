@@ -2,7 +2,7 @@
 Contributors: Hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 5.0
-Tested up to: 5.4.2
+Tested up to: 5.5
 Stable tag: 1.0
 Requires PHP: 5.0
 License: GPLv2 or later
@@ -25,8 +25,11 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.0.4 =
+* Elementor Widget added for Total and Square Theme
+
 = 1.0.3 =
-* Issued in News Module Nine Fixed
+* Issues in News Module Nine Fixed
 
 = 1.0.2 =
 * More News Modules Added

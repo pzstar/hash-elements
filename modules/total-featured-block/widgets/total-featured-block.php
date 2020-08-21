@@ -129,7 +129,7 @@ class TotalFeaturedBlock extends Widget_Base {
             'default' => [
                 'top' => '30',
                 'right' => '30',
-                'bottom' => '30',
+                'bottom' => '60',
                 'left' => '30',
                 'unit' => 'px',
                 'isLinked' => false,
