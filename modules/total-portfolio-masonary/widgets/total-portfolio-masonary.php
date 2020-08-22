@@ -46,7 +46,7 @@ class TotalPortfolioMasonary extends Widget_Base {
         );
 
         $this->add_control('category_ids', [
-            'label' => esc_html__('Choose Category ', 'hash-elements') . $object->label,
+            'label' => esc_html__('Choose Category ', 'hash-elements'),
             'type' => Controls_Manager::SELECT2,
             'label_block' => true,
             'multiple' => true,
