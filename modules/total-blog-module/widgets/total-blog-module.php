@@ -63,7 +63,7 @@ class TotalBlogModule extends Widget_Base {
 
         $this->add_control(
                 'post_count', [
-            'label' => __('Number of Posts', 'plugin-domain'),
+            'label' => __('Number of Posts', 'hash-elements'),
             'type' => Controls_Manager::NUMBER,
             'min' => 3,
             'max' => 50,

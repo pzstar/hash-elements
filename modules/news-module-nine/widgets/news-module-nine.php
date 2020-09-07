@@ -187,7 +187,7 @@ class NewsModuleNine extends Widget_Base {
             ],
             'default' => [
                 'unit' => '%',
-                'size' => 70,
+                'size' => 80,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-nine .he-post-item .he-thumb-container' => 'padding-bottom: {{SIZE}}{{UNIT}};',
@@ -724,7 +724,7 @@ class NewsModuleNine extends Widget_Base {
         $args['ignore_sticky_posts'] = 1;
         $args['post_status'] = 'publish';
         $args['offset'] = $settings['posts_offset'];
-        $args['posts_per_page'] = 4;
+        $args['posts_per_page'] = 5;
         $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : [];
 
         $args['tax_query'] = [];

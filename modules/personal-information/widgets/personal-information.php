@@ -74,7 +74,7 @@ class PersonalInformation extends Widget_Base {
 
         $this->add_control(
                 'image', [
-            'label' => __('Choose Image', 'plugin-domain'),
+            'label' => __('Choose Image', 'hash-elements'),
             'type' => Controls_Manager::MEDIA,
             'default' => [
                 'url' => Utils::get_placeholder_image_src(),

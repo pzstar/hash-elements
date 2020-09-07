@@ -74,7 +74,7 @@ class NewsModuleFourteen extends Widget_Base {
 
         $this->start_controls_section(
                 'section_post_block', [
-            'label' => esc_html__('Featured Block', 'hash-elements'),
+            'label' => esc_html__('Post Block', 'hash-elements'),
                 ]
         );
 

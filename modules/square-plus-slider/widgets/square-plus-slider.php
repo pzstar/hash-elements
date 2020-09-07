@@ -49,10 +49,21 @@ class SquarePlusSlider extends Widget_Base {
         $repeater = new Repeater();
 
         $repeater->add_control(
+                'slider_image', [
+            'label' => __('Choose Image', 'hash-elements'),
+            'type' => Controls_Manager::MEDIA,
+            'default' => [
+                'url' => Utils::get_placeholder_image_src(),
+            ],
+                ]
+        );
+
+        $repeater->add_control(
                 'slider_title', [
             'label' => __('Title', 'hash-elements'),
             'type' => Controls_Manager::TEXT,
             'label_block' => true,
+            'default' => __('Slider Title', 'hash-elements'),
                 ]
         );
 
@@ -60,9 +71,8 @@ class SquarePlusSlider extends Widget_Base {
                 'slider_description', [
             'label' => __('Description', 'hash-elements'),
             'type' => Controls_Manager::TEXTAREA,
-            'rows' => 10,
-            'default' => __('Default description', 'hash-elements'),
-            'placeholder' => __('Type your description here', 'hash-elements'),
+            'rows' => 5,
+            'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'hash-elements'),
                 ]
         );
 
@@ -89,16 +99,6 @@ class SquarePlusSlider extends Widget_Base {
                 ]
         );
 
-        $repeater->add_control(
-                'slider_image', [
-            'label' => __('Choose Image', 'plugin-domain'),
-            'type' => Controls_Manager::MEDIA,
-            'default' => [
-                'url' => Utils::get_placeholder_image_src(),
-            ],
-                ]
-        );
-
         $this->add_control(
                 'slider_block', [
             'label' => __('Sliders', 'hash-elements'),
@@ -116,8 +116,8 @@ class SquarePlusSlider extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'carousel_section', [
-            'label' => esc_html__('Carousel Settings', 'hash-elements'),
+                'slider_settings', [
+            'label' => esc_html__('Slider Settings', 'hash-elements'),
             'tab' => Controls_Manager::TAB_CONTENT,
                 ]
         );
@@ -135,7 +135,7 @@ class SquarePlusSlider extends Widget_Base {
 
         $this->add_control(
                 'pause_duration', [
-            'label' => esc_html__('Pause Duration', 'hash-elements'),
+            'label' => esc_html__('Pause Duration (In Seconds)', 'hash-elements'),
             'type' => Controls_Manager::SLIDER,
             'size_units' => ['s'],
             'range' => [

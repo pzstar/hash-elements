@@ -70,6 +70,17 @@ class NewsModuleTen extends Widget_Base {
                 ]
         );
 
+        $this->add_control(
+                'posts_number', [
+            'label' => __('No of Posts', 'hash-elements'),
+            'type' => Controls_Manager::NUMBER,
+            'min' => 1,
+            'max' => 20,
+            'step' => 1,
+            'default' => 5,
+                ]
+        );
+
         $this->end_controls_section();
 
 
@@ -534,7 +545,7 @@ class NewsModuleTen extends Widget_Base {
         $args['ignore_sticky_posts'] = 1;
         $args['post_status'] = 'publish';
         $args['offset'] = $settings['posts_offset'];
-        $args['posts_per_page'] = 4;
+        $args['posts_per_page'] = $settings['posts_number'];
         $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : [];
 
         $args['tax_query'] = [];

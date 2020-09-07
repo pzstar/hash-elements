@@ -43,13 +43,6 @@ class SquarePlusElasticGallery extends Widget_Base {
         );
 
         $this->add_control(
-                'notice', [
-            'label' => __('NOTICE: THIS GALLERY CAN BE USED ONLY ONCE PER PAGE', 'hash-elements'),
-            'type' => Controls_Manager::HEADING,
-                ]
-        );
-
-        $this->add_control(
                 'gallery', [
             'label' => __('Add Images', 'hash-elements'),
             'type' => Controls_Manager::GALLERY,
@@ -154,12 +147,13 @@ class SquarePlusElasticGallery extends Widget_Base {
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
+        $id = $this->get_id();
         $gallery = $settings['gallery'];
         $alignment = $settings['alignment'];
         if ($gallery) {
             ?>
             <div class="he-image-stack he-elastic-<?php echo esc_attr($alignment); ?>">
-                <ul id="he-elasticstack" class="he-elasticstack">
+                <ul id="he-elasticstack-<?php echo $id; ?>" class="he-elasticstack">
                     <?php
                     foreach ($gallery as $image) {
                         $image_url = Group_Control_Image_Size::get_attachment_image_src($image['id'], 'image', $settings);

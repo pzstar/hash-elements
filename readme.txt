@@ -25,6 +25,12 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.0.5 =
+* Image hover issue fixed for Viral and Viral News theme
+* Elastic Gallery can be used multiple times now
+* Added Option to select no of post in News Module 10
+* Added Editor/Page option in tab
+
 = 1.0.4 =
 * Elementor Widget added for Total and Square Theme
 

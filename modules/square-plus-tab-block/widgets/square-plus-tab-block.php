@@ -348,6 +348,7 @@ class SquarePlusTabBlock extends Widget_Base {
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
+        $id = $this->get_id();
         $tabs = $settings['tabs'];
         ?>
         <div class="he-tab-wrapper he-clearfix">
@@ -355,11 +356,13 @@ class SquarePlusTabBlock extends Widget_Base {
                 <?php
                 foreach ($tabs as $key => $tab) {
                     $square_tab_title = $tab['title'];
+                    $tab_count = $key + 1;
+                    $tab_id = 'he-' . $id . $tab_count;
 
                     if ($square_tab_title) {
                         ?>
                         <li class="he-tab-list<?php echo intval($key + 1); ?>">
-                            <a href="#<?php echo 'he-tab' . intval($key + 1); ?>">
+                            <a href="#<?php echo $tab_id; ?>">
                                 <?php
                                 ob_start();
                                 \Elementor\Icons_Manager::render_icon($tab['icon'], ['aria-hidden' => 'true']);
@@ -378,8 +381,10 @@ class SquarePlusTabBlock extends Widget_Base {
             <div class="he-tab-content">
                 <?php
                 foreach ($tabs as $key => $tab) {
+                    $tab_count = $key + 1;
+                    $tab_id = 'he-' . $id . $tab_count;
                     ?>
-                    <div class="he-tab-pane animated zoomIn" id="<?php echo 'he-tab' . intval($key + 1); ?>">
+                    <div class="he-tab-pane animated zoomIn" id="<?php echo $tab_id; ?>">
                         <?php
                         if ($tab['content_from'] == 'wisiwyg') {
                             ?>

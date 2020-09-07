@@ -246,22 +246,22 @@ h3.he-big-title{
     position: relative
 }
 
-.he-viral .he-post-thumb img{
+.he-viral-news .he-post-thumb img{
     transform: scale(1);
     transition: all 0.3s ease;
 }
 
-.he-viral .he-post-thumb:hover img{
+.he-viral-news .he-post-thumb:hover img{
     transform: scale(1.2);
 }
 
-.he-viral-news .he-post-thumb > a{
+.he-viral .he-post-thumb > a{
     position: relative;
     display: block;
     overflow: hidden;
 }
 
-.he-viral-news .he-post-thumb > a:before{
+.he-viral .he-post-thumb > a:before{
     position: absolute;
     top: 0;
     left: -75%;
@@ -276,7 +276,7 @@ h3.he-big-title{
     transform: skewX(-25deg);
 }
 
-.he-viral-news .he-post-thumb > a:hover:before{
+.he-viral .he-post-thumb > a:hover:before{
     -webkit-animation: shine .75s;
     animation: shine .75s;
 }
@@ -689,7 +689,6 @@ h3.he-big-title{
 .he-big-post-item h3{
     font-size: 18px;
     margin-bottom: 10px;
-    font-weight: 500;
 }
 
 .he-big-post-item .he-post-thumb .post-categories{
@@ -985,9 +984,8 @@ h3.he-big-title{
     height: 12px;
     width: 12px;
     background: #000;
-    border-radius: 0;
     margin: 0 5px;
-    border-radius: 0;
+    padding: 0;
     box-shadow: none;
     outline: 0;
     border-radius: 20px;

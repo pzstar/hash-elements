@@ -113,9 +113,10 @@
             }
         },
         squareElasticGallery: function ($scope) {
-            var $element = $scope.find('#he-elasticstack');
+            var $id = $scope.data('id');
+            var $element = $scope.find('#he-elasticstack-' + $id);
             if ($element.length > 0) {
-                new ElastiStack(document.getElementById('he-elasticstack'), {
+                new ElastiStack(document.getElementById('he-elasticstack-' + $id), {
                     // distDragBack: if the user stops dragging the image in a area that does not exceed [distDragBack]px 
                     // for either x or y then the image goes back to the stack 
                     distDragBack: 200,
@@ -184,12 +185,10 @@
 
                     HashSetMasonary($container);
 
-                    setTimeout(function () {
-                        $container.isotope({
-                            itemSelector: '.het-portfolio',
-                            filter: active_tab,
-                        });
-                    }, 1000);
+                    $container.isotope({
+                        itemSelector: '.het-portfolio',
+                        filter: active_tab,
+                    });
 
                     $(window).on('resize', function () {
                         HashGetMasonary($container);
@@ -203,7 +202,6 @@
                     HashSetMasonary($container);
                     HashGetMasonary($container);
 
-                    var filterValue = $(this).attr('data-filter');
                     $container.isotope({filter: filterValue});
 
                     $element.find('.het-portfolio-cat-name').removeClass('active');
