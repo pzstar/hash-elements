@@ -376,7 +376,7 @@ class TotalPortfolioMasonary extends Widget_Base {
             <?php } ?>
 
             <div class="het-portfolio-post-wrap">
-                <div class="het-portfolio-posts-<?php echo $id; ?>">
+                <div class="het-portfolio-posts-<?php echo $id; ?> het-portfolio-posts">
                     <?php
                     if ($portfolio_cat) {
                         $count = 1;
@@ -395,20 +395,15 @@ class TotalPortfolioMasonary extends Widget_Base {
                                 $category_slug = implode(" ", $cat_slug);
 
                                 if (has_post_thumbnail()) {
-                                    $image_url = HASHELE_URL . 'assets/img/portfolio-small-blank.png';
                                     $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-portfolio-thumb');
                                     $total_image_large = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
                                 } else {
-                                    $image_url = HASHELE_URL . 'assets/img/portfolio-small.png';
                                     $total_image = "";
                                 }
                                 ?>
                                 <div class="het-portfolio <?php echo esc_attr($category_slug); ?>">
                                     <div class="het-portfolio-outer-wrap">
                                         <div class="het-portfolio-wrap" style="background-image: url(<?php echo esc_url($total_image[0]) ?>);">
-
-                                            <img  class="no-lazyload" src="<?php echo esc_url($image_url); ?>" alt="<?php esc_attr(get_the_title()); ?>">
-
                                             <div class="het-portfolio-caption">
                                                 <h5><?php the_title(); ?></h5>
                                                 <a class="het-portfolio-link" href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-link"></i></a>

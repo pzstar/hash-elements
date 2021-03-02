@@ -166,8 +166,6 @@
             var $element = $scope.find('.het-portfolio-container');
             var $id = $scope.data('id');
 
-            //$element.find('.het-portfolio-image').nivoLightbox();
-
             if ($element.length > 0) {
 
                 var active_tab = $element.find('.het-portfolio-cat-name-list').data('active');
@@ -185,14 +183,14 @@
 
                     HashSetMasonary($container);
 
+                    $(window).on('resize', function () {
+                        HashGetMasonary($element, $container);
+                    }).resize();
+                    
                     $container.isotope({
                         itemSelector: '.het-portfolio',
                         filter: active_tab,
                     });
-
-                    $(window).on('resize', function () {
-                        HashGetMasonary($container);
-                    }).resize();
                 });
 
                 $element.find('.het-portfolio-cat-name-list').on('click', '.het-portfolio-cat-name', function () {
@@ -200,7 +198,7 @@
                     $container.isotope({filter: filterValue});
 
                     HashSetMasonary($container);
-                    HashGetMasonary($container);
+                    HashGetMasonary($element, $container);
 
                     $container.isotope({filter: filterValue});
 
@@ -278,26 +276,29 @@
     $(window).on('elementor/frontend/init', HashElements.init);
 }(jQuery, window.elementorFrontend));
 
-function HashGetMasonary($container) {
+function HashGetMasonary($element, $container) {
     var winWidth = window.innerWidth;
+    var containerWidth = $element.find('.het-portfolio-posts').width();
+    var three_col_image = containerWidth / 3;
+
     if (winWidth > 580) {
         $container.find('.het-portfolio').each(function () {
-            var image_width = jQuery(this).find('img').width();
             if (jQuery(this).hasClass('wide')) {
-                jQuery(this).find('.het-portfolio-wrap').css({
-                    height: (image_width * 2) + 15 + 'px'
+                jQuery(this).css({
+                    height: three_col_image * 2 + 'px',
+                    width: three_col_image + 'px'
                 });
             } else {
-                jQuery(this).find('.het-portfolio-wrap').css({
-                    height: image_width + 'px'
+                jQuery(this).css({
+                    height: three_col_image + 'px',
+                    width: three_col_image + 'px'
                 });
             }
         });
     } else {
         $container.find('.het-portfolio').each(function () {
-            var image_width = jQuery(this).find('img').width();
-            jQuery(this).find('.het-portfolio-wrap').css({
-                height: image_width + 'px'
+            jQuery(this).css({
+                height: containerWidth + 'px'
             });
         });
     }
@@ -308,8 +309,6 @@ function HashSetMasonary($container) {
     elems.forEach(function (item, index) {
         if (index == 0 || index == 4) {
             jQuery(item).addClass('wide');
-            var bg = jQuery(item).find('.het-portfolio-image').attr('href');
-            jQuery(item).find('.het-portfolio-wrap').css('background-image', 'url(' + bg + ')');
         } else {
             jQuery(item).removeClass('wide');
         }

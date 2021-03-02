@@ -2224,18 +2224,23 @@ h3.he-big-title{
     color: #FFC107;
 }
 
-.het-portfolio-post-wrap{
-    margin: 0 -7.5px;
+.het-portfolio-posts{
+    margin-left: -7.5px;
+    margin-right: -7.5px;
 }
 
 .het-portfolio{
     width: 33.33%;
     float: left;
-    padding: 7.5px;
 }
 
 .het-portfolio-outer-wrap{
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 7.5px;
 }
 
 .het-portfolio-wrap{
@@ -2244,6 +2249,11 @@ h3.he-big-title{
     background-repeat: no-repeat;
     overflow: hidden;
     background-color: #f9f9f9;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .het-portfolio-caption{
@@ -2703,7 +2713,7 @@ h3.he-big-title{
 --------------------------------------------------------------*/
 
 .het-blog-wrap{
-    margin: 0 15px;
+    margin: 0 -15px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -2890,4 +2900,11 @@ h3.he-big-title{
 
 .he-timeline .he-post-item:hover:after{
     background: #000;
+}
+
+
+@media screen and (max-width:768px){
+    .het-blog-post{
+        width: 100%;
+    }
 }
