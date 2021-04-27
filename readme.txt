@@ -2,7 +2,7 @@
 Contributors: Hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 5.0
-Tested up to: 5.6.2
+Tested up to: 5.7.1
 Stable tag: 1.0
 Requires PHP: 5.0
 License: GPLv2 or later
@@ -25,6 +25,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.0.6 =
+* Elementor depreciated error fixed
+
 = 1.0.5 =
 * Image hover issue fixed for Viral and Viral News theme
 * Elastic Gallery can be used multiple times now
