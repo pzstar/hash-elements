@@ -7,8 +7,8 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
-use Elementor\Scheme_Color;
+use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Schemes\Color;
 use HashElements\Group_Control_Query;
 use HashElements\Group_Control_Header;
 
@@ -290,8 +290,8 @@ class TileModuleOne extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
@@ -304,8 +304,8 @@ class TileModuleOne extends Widget_Base {
             'label' => esc_html__('Short Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
@@ -319,8 +319,8 @@ class TileModuleOne extends Widget_Base {
             'label' => esc_html__('Long Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title:after' => 'background-color: {{VALUE}}',
@@ -333,7 +333,7 @@ class TileModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'header_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .he-block-title'
                 ]
         );
@@ -351,7 +351,7 @@ class TileModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'category_normal_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .he-primary-cat,
                             {{WRAPPER}} .post-categories li a',
                 ]
@@ -372,8 +372,8 @@ class TileModuleOne extends Widget_Base {
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat,
@@ -387,8 +387,8 @@ class TileModuleOne extends Widget_Base {
             'label' => esc_html__('Text Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat,
@@ -410,8 +410,8 @@ class TileModuleOne extends Widget_Base {
             'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat:hover,
@@ -425,8 +425,8 @@ class TileModuleOne extends Widget_Base {
             'label' => esc_html__('Text Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat:hover,
@@ -453,8 +453,8 @@ class TileModuleOne extends Widget_Base {
             'label' => esc_html__('Title Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-container h3' => 'color: {{VALUE}}',
@@ -467,8 +467,8 @@ class TileModuleOne extends Widget_Base {
             'label' => esc_html__('Title Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-container h3:hover' => 'color: {{VALUE}}',
@@ -481,8 +481,8 @@ class TileModuleOne extends Widget_Base {
             'label' => esc_html__('Title Border', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-container h3:after' => 'background: {{VALUE}}',
@@ -504,7 +504,7 @@ class TileModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'featured_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .he-big-thumb .he-title-container h3',
                 ]
         );
@@ -533,7 +533,7 @@ class TileModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'side_post_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .he-medium-thumb .he-title-container h3,
                             {{WRAPPER}} .he-small-thumb .he-title-container h3',
                 ]
@@ -571,8 +571,8 @@ class TileModuleOne extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-post-meta' => 'color: {{VALUE}}',
@@ -584,7 +584,7 @@ class TileModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'post_metas_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .he-post-meta'
                 ]
         );

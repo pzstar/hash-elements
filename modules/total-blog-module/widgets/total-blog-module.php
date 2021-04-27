@@ -7,8 +7,8 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
-use Elementor\Scheme_Color;
+use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Schemes\Color;
 use HashElements\Group_Control_Query;
 
 if (!defined('ABSPATH')) {
@@ -103,8 +103,8 @@ class TotalBlogModule extends Widget_Base {
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-box' => 'background-color: {{VALUE}}',
@@ -117,8 +117,8 @@ class TotalBlogModule extends Widget_Base {
             'label' => esc_html__('Bottom Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-box' => 'border-color: {{VALUE}}',
@@ -140,8 +140,8 @@ class TotalBlogModule extends Widget_Base {
             'label' => esc_html__('Title Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-excerpt h5 a' => 'color: {{VALUE}}',
@@ -154,8 +154,8 @@ class TotalBlogModule extends Widget_Base {
             'label' => esc_html__('Title Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-excerpt h5 a:hover' => 'color: {{VALUE}}',
@@ -167,7 +167,7 @@ class TotalBlogModule extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-blog-excerpt h5 a',
                 ]
         );
@@ -198,8 +198,8 @@ class TotalBlogModule extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-date' => 'color: {{VALUE}}',
@@ -211,7 +211,7 @@ class TotalBlogModule extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'post_metas_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-blog-date'
                 ]
         );
@@ -230,8 +230,8 @@ class TotalBlogModule extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-excerpt .het-blog-excerpt-text' => 'color: {{VALUE}}',
@@ -243,7 +243,7 @@ class TotalBlogModule extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'excerpt_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-blog-excerpt .het-blog-excerpt-text',
                 ]
         );
@@ -261,7 +261,7 @@ class TotalBlogModule extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'button_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-blog-read-more a',
                 ]
         );
@@ -292,8 +292,8 @@ class TotalBlogModule extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-read-more a' => 'color: {{VALUE}}',
@@ -306,8 +306,8 @@ class TotalBlogModule extends Widget_Base {
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'default' => '#000000',
             'selectors' => [
@@ -329,8 +329,8 @@ class TotalBlogModule extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'default' => '#fff',
             'selectors' => [
@@ -344,8 +344,8 @@ class TotalBlogModule extends Widget_Base {
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'default' => '#333',
             'selectors' => [

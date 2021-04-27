@@ -6,8 +6,8 @@ namespace HashElements\Modules\SquarePlusFeaturedBlock\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
-use Elementor\Scheme_Color;
+use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Schemes\Color;
 use Elementor\Group_Control_Background;
 
 if (!defined('ABSPATH')) {
@@ -144,8 +144,8 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-featured-icon i' => 'color: {{VALUE}}',
@@ -189,8 +189,8 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-featured-post h4' => 'color: {{VALUE}}',
@@ -203,8 +203,8 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'label' => esc_html__('Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-featured-post h4:after' => 'background: {{VALUE}}',
@@ -216,7 +216,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .he-featured-post h4',
                 ]
         );
@@ -247,8 +247,8 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-featured-excerpt' => 'color: {{VALUE}}',
@@ -260,7 +260,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'content_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .he-featured-excerpt',
                 ]
         );
@@ -313,8 +313,8 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} a.he-featured-readmore i' => 'color: {{VALUE}}',
@@ -327,8 +327,8 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'label' => esc_html__('Hover Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} a.he-featured-readmore:hover i' => 'color: {{VALUE}}',

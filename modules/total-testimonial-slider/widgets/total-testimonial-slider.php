@@ -7,8 +7,8 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
-use Elementor\Scheme_Color;
+use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Schemes\Color;
 use Elementor\Repeater;
 use Elementor\Utils;
 
@@ -193,8 +193,8 @@ class TotalTestimonialSlider extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-testimonial h6' => 'color: {{VALUE}}',
@@ -206,7 +206,7 @@ class TotalTestimonialSlider extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'name_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-testimonial h6',
                 ]
         );
@@ -225,8 +225,8 @@ class TotalTestimonialSlider extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-testimonial .het-testimonial-designation' => 'color: {{VALUE}}',
@@ -238,7 +238,7 @@ class TotalTestimonialSlider extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'designation_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-testimonial .het-testimonial-designation',
                 ]
         );
@@ -257,8 +257,8 @@ class TotalTestimonialSlider extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-testimonial-excerpt ' => 'color: {{VALUE}}',
@@ -270,7 +270,7 @@ class TotalTestimonialSlider extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'testimonial_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .het-testimonial-excerpt ',
                 ]
         );
@@ -289,8 +289,8 @@ class TotalTestimonialSlider extends Widget_Base {
             'label' => esc_html__('Outline Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'default' => '#000000',
             'selectors' => [
@@ -323,8 +323,8 @@ class TotalTestimonialSlider extends Widget_Base {
             'label' => esc_html__('Navigation Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'default' => '#000000',
             'selectors' => [
@@ -338,8 +338,8 @@ class TotalTestimonialSlider extends Widget_Base {
             'label' => esc_html__('Navigation Icon Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-testimonial-slider.owl-carousel .owl-nav button' => 'color: {{VALUE}}'
@@ -353,8 +353,8 @@ class TotalTestimonialSlider extends Widget_Base {
             'label' => esc_html__('Dots Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'default' => '#000000',
             'selectors' => [
@@ -376,8 +376,8 @@ class TotalTestimonialSlider extends Widget_Base {
             'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'default' => '#000000',
             'selectors' => [
@@ -391,8 +391,8 @@ class TotalTestimonialSlider extends Widget_Base {
             'label' => esc_html__('Icon Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -406,8 +406,8 @@ class TotalTestimonialSlider extends Widget_Base {
             'label' => esc_html__('Dots Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'default' => '#000000',
             'selectors' => [

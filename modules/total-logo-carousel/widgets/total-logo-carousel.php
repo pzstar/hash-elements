@@ -6,7 +6,7 @@ namespace HashElements\Modules\TotalLogoCarousel\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
-use Elementor\Scheme_Color;
+use Elementor\Core\Schemes\Color;
 use Elementor\Utils;
 use Elementor\Repeater;
 
@@ -231,8 +231,8 @@ class TotalLogoCarousel extends Widget_Base {
             'label' => esc_html__('Dots Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-client-logo-slider .owl-dots .owl-dot' => 'background-color: {{VALUE}}',
@@ -253,8 +253,8 @@ class TotalLogoCarousel extends Widget_Base {
             'label' => esc_html__('Dots Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-client-logo-slider .owl-dots .owl-dot:hover' => 'background-color: {{VALUE}}',

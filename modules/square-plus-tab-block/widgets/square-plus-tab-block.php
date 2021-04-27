@@ -6,8 +6,8 @@ namespace HashElements\Modules\SquarePlusTabBlock\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
-use Elementor\Scheme_Color;
+use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Schemes\Color;
 use Elementor\Repeater;
 
 if (!defined('ABSPATH')) {
@@ -152,7 +152,7 @@ class SquarePlusTabBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} ul.he-tab li a',
                 ]
         );
@@ -208,8 +208,8 @@ class SquarePlusTabBlock extends Widget_Base {
             'label' => esc_html__('Title Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} ul.he-tab li a span' => 'color: {{VALUE}}',
@@ -222,8 +222,8 @@ class SquarePlusTabBlock extends Widget_Base {
             'label' => esc_html__('Icon Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} ul.he-tab li a i' => 'color: {{VALUE}}',
@@ -236,8 +236,8 @@ class SquarePlusTabBlock extends Widget_Base {
             'label' => esc_html__('Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-tab' => 'border-right: 1px solid {{VALUE}}',
@@ -258,8 +258,8 @@ class SquarePlusTabBlock extends Widget_Base {
             'label' => esc_html__('Title Color (Active)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} ul.he-tab li.he-active a span' => 'color: {{VALUE}}',
@@ -272,8 +272,8 @@ class SquarePlusTabBlock extends Widget_Base {
             'label' => esc_html__('Icon Color (Active)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} ul.he-tab li.he-active a i' => 'color: {{VALUE}}',
@@ -286,8 +286,8 @@ class SquarePlusTabBlock extends Widget_Base {
             'label' => esc_html__('Border Color (Active)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-tab li.he-active:after' => 'background: {{VALUE}}',
@@ -313,8 +313,8 @@ class SquarePlusTabBlock extends Widget_Base {
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-tab-content .he-tab-pane' => 'color: {{VALUE}}',
@@ -326,7 +326,7 @@ class SquarePlusTabBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'tab_content_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .he-tab-content .he-tab-pane',
                 ]
         );

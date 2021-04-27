@@ -6,8 +6,8 @@ namespace HashElements\Modules\TickerModule\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
-use Elementor\Scheme_Color;
+use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Schemes\Color;
 use HashElements\Group_Control_Query;
 
 if (!defined('ABSPATH')) {
@@ -127,7 +127,7 @@ class TickerModule extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'ticker_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .he-ticker .he-ticker-title'
                 ]
         );
@@ -137,8 +137,8 @@ class TickerModule extends Widget_Base {
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .he-ticker-title' => 'background-color: {{VALUE}}',
@@ -152,8 +152,8 @@ class TickerModule extends Widget_Base {
             'label' => esc_html__('Text Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .he-ticker-title' => 'color: {{VALUE}}',
@@ -174,7 +174,7 @@ class TickerModule extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'ticker_content_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+            'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .he-ticker .owl-item a'
                 ]
         );
@@ -184,8 +184,8 @@ class TickerModule extends Widget_Base {
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker' => 'background-color: {{VALUE}}',
@@ -198,8 +198,8 @@ class TickerModule extends Widget_Base {
             'label' => esc_html__('Text Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-item a' => 'color: {{VALUE}}',
@@ -231,8 +231,8 @@ class TickerModule extends Widget_Base {
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-carousel .owl-nav button' => 'background-color: {{VALUE}}',
@@ -245,8 +245,8 @@ class TickerModule extends Widget_Base {
             'label' => esc_html__('Icon Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-carousel .owl-nav button' => 'color: {{VALUE}}'
@@ -267,8 +267,8 @@ class TickerModule extends Widget_Base {
             'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
@@ -281,8 +281,8 @@ class TickerModule extends Widget_Base {
             'label' => esc_html__('Icon Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'scheme' => [
-                'type' => Scheme_Color::get_type(),
-                'value' => Scheme_Color::COLOR_1,
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-carousel .owl-nav button:hover' => 'color: {{VALUE}}'
