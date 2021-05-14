@@ -155,7 +155,7 @@ class HASHELE_Widget_Loader {
      */
     public function enqueue_editor_scripts() {
         wp_enqueue_script('hash-elements-editor', HASHELE_URL . 'assets/js/editor.js', array('jquery'), HASHELE_VERSION, true);
-        wp_localize_script('hash-elements-editor', 'is_elementor_pro_installed', $this->is_elementor_pro_installed());
+        wp_localize_script('hash-elements-editor', 'hash_element_elementor_params', array('is_elementor_pro_installed' => $this->is_elementor_pro_installed()));
     }
 
     /**

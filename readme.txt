@@ -25,6 +25,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.0.7, May 15 2021 =
+* Localization error fixed
+
 = 1.0.6 =
 * Elementor depreciated error fixed
 
