@@ -123,9 +123,6 @@ class HASHELE_Widget_Loader {
      */
     public function enqueue_frontend_scripts() {
         wp_enqueue_script('owl-carousel', HASHELE_URL . 'assets/js/owl.carousel.js', array('jquery'), HASHELE_VERSION, true);
-        wp_enqueue_script('modernizr', HASHELE_URL . 'assets/js/modernizr.js', array(), HASHELE_VERSION, true);
-        wp_enqueue_script('draggabilly', HASHELE_URL . 'assets/js/draggabilly.pkgd.js', array('jquery'), HASHELE_VERSION, true);
-        wp_enqueue_script('elastiStack', HASHELE_URL . 'assets/js/elastiStack.js', array('jquery'), HASHELE_VERSION, true);
         wp_enqueue_script('nivo-lightbox', HASHELE_URL . 'assets/js/nivo-lightbox.js', array('jquery'), HASHELE_VERSION, true);
         wp_enqueue_script('odometer', HASHELE_URL . 'assets/js/odometer.js', array('jquery'), HASHELE_VERSION, true);
         wp_enqueue_script('waypoint', HASHELE_URL . 'assets/js/waypoint.js', array('jquery'), HASHELE_VERSION, true);

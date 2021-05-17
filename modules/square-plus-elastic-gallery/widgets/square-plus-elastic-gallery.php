@@ -33,6 +33,12 @@ class SquarePlusElasticGallery extends Widget_Base {
         return ['he-square-elements'];
     }
 
+    public function enqueue() {
+        wp_enqueue_script('modernizr', HASHELE_URL . 'assets/js/modernizr.js', array(), HASHELE_VERSION, true);
+        wp_enqueue_script('draggabilly', HASHELE_URL . 'assets/js/draggabilly.pkgd.js', array('jquery'), HASHELE_VERSION, true);
+        wp_enqueue_script('elastiStack', HASHELE_URL . 'assets/js/elastiStack.js', array('jquery'), HASHELE_VERSION, true);
+    }
+
     /** Controls */
     protected function _register_controls() {
 
