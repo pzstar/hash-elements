@@ -141,3 +141,41 @@ if (!function_exists('hash_elements_get_post_primary_category')) {
     }
 
 }
+
+/** Get All Categories */
+if (!function_exists('hash_elements_get_categories')) {
+
+    function hash_elements_get_categories() {
+        $cats = array();
+
+        $terms = get_categories(array(
+            'hide_empty' => true
+        ));
+
+        foreach ($terms as $term) {
+            $cats[$term->term_id] = $term->name;
+        }
+
+        return $cats;
+    }
+
+}
+
+/** Get All Tags */
+if (!function_exists('hash_elements_get_tags')) {
+
+    function hash_elements_get_tags() {
+        $tags = array();
+
+        $terms = get_tags(array(
+            'hide_empty' => true
+        ));
+
+        foreach ($terms as $term) {
+            $tags[$term->term_id] = $term->name;
+        }
+
+        return $tags;
+    }
+
+}

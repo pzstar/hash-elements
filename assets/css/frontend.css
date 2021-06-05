@@ -1173,6 +1173,45 @@ h3.he-big-title{
 }
 
 
+/* Single News One */
+.he-single-post-one .he-post-content {
+    padding-top: 20px;
+    position: relative;
+}
+
+.he-single-post-one .he-post-excerpt{
+    margin-top: 20px;
+}
+
+/* Single News Two */
+.he-single-post-two .he-post-title{
+    font-size: 1.3rem;
+}
+
+/** Gradient Background **/
+.he-post-graident-title{
+    position: relative;
+}
+
+.he-post-graident-title .he-post-content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0px, rgba(0, 0, 0, 0.45) 34%, transparent 100%);
+}
+
+.he-post-graident-title .he-post-title a,
+.he-post-graident-title .he-post-meta span,
+.he-post-graident-title .he-post-excerpt{
+    color: #FFF;
+}
+
+.he-post-graident-title .he-post-excerpt{
+    margin-top: 15px;
+}
+
 /* Ticker Module */
 .he-ticker{
     position: relative;

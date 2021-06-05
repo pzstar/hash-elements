@@ -25,6 +25,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.0.9, June 5 2021 =
+* Single News One and Single News Two Module added
+
 = 1.0.8, May 18 2021 =
 * JS error for Elastic gallery fixed
 

@@ -44,6 +44,8 @@ final class HASHELE_Modules_Manager {
             'news-module-thirteen',
             'news-module-fourteen',
             'news-module-fifteen',
+            'single-news-one',
+            'single-news-two',
             'carousel-module-one',
             'tile-module-one',
             'tile-module-two',
