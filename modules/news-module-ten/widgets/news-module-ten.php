@@ -100,6 +100,29 @@ class NewsModuleTen extends Widget_Base {
         );
 
         $this->add_control(
+                'listing_block_thumb_width', [
+            'label' => esc_html__('Image Width(px)', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 50,
+                    'max' => 300,
+                    'step' => 1
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 120,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-news-module-ten .he-post-item .he-post-thumb' => 'width: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .he-news-module-ten .he-post-item .he-post-content' => 'margin-left: calc({{SIZE}}{{UNIT}} + 20{{UNIT}});',
+            ],
+                ]
+        );
+
+        $this->add_control(
                 'listing_block_thumb_height', [
             'label' => esc_html__('Image Height(%)', 'hash-elements'),
             'type' => Controls_Manager::SLIDER,
@@ -245,7 +268,7 @@ class NewsModuleTen extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-title-style3.he-block-title:after' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
                 '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
             ],
                 ]

@@ -25,6 +25,16 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.1.2, June 8 2021 =
+* Sticky Column Refined
+
+= 1.1.1, June 7 2021 =
+* Added Sticky Column Option
+
+= 1.1.0, June 6 2021 =
+* Added New Title Style for News Module
+* Added Column option for New Module 14
+
 = 1.0.9, June 5 2021 =
 * Single News One and Single News Two Module added
 

@@ -78,6 +78,44 @@ class NewsModuleFourteen extends Widget_Base {
                 ]
         );
 
+        $this->add_control(
+                'post_column', [
+            'label' => esc_html__('No of Columns', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['%'],
+            'range' => [
+                '%' => [
+                    'min' => 1,
+                    'max' => 4,
+                    'step' => 1
+                ],
+            ],
+            'default' => [
+                'unit' => '%',
+                'size' => 4,
+            ]
+                ]
+        );
+
+        $this->add_control(
+                'post_count', [
+            'label' => esc_html__('No of Posts', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['%'],
+            'range' => [
+                '%' => [
+                    'min' => 1,
+                    'max' => 20,
+                    'step' => 1
+                ],
+            ],
+            'default' => [
+                'unit' => '%',
+                'size' => 4,
+            ]
+                ]
+        );
+
         $this->add_group_control(
                 Group_Control_Image_Size::get_type(), [
             'name' => 'post_image',
@@ -246,7 +284,7 @@ class NewsModuleFourteen extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-title-style3.he-block-title:after' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
                 '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
             ],
                 ]
@@ -494,18 +532,17 @@ class NewsModuleFourteen extends Widget_Base {
 
         $display_cat = $settings['post_category'];
         $post_image_size = $settings['post_image_size'];
+        $post_column = $settings['post_column']['size'];
         ?>
         <div class="he-news-module-fourteen">
 
             <?php $this->render_header(); ?>
 
-            <div class="he-four-column-block">
+            <div class="he-four-column-block he-col-<?php echo esc_attr($post_column) ?>">
                 <?php
                 $args = $this->query_args();
                 $query = new \WP_Query($args);
                 while ($query->have_posts()): $query->the_post();
-                    $index = $query->current_post + 1;
-                    $last = $query->post_count;
                     ?>
                     <div class="he-post-item">
                         <div class="he-post-thumb">
@@ -529,9 +566,9 @@ class NewsModuleFourteen extends Widget_Base {
 
                         <div class="he-post-content">
                             <h3 class="he-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <?php $this->get_post_meta($index) ?>
+                            <?php $this->get_post_meta() ?>
 
-                            <?php $this->get_post_excerpt($index); ?>
+                            <?php $this->get_post_excerpt(); ?>
                         </div>
                     </div>
                     <?php
@@ -586,7 +623,7 @@ class NewsModuleFourteen extends Widget_Base {
         $args['ignore_sticky_posts'] = 1;
         $args['post_status'] = 'publish';
         $args['offset'] = $settings['posts_offset'];
-        $args['posts_per_page'] = 4;
+        $args['posts_per_page'] = $settings['post_count']['size'];
         $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : [];
 
         $args['tax_query'] = [];
@@ -609,7 +646,7 @@ class NewsModuleFourteen extends Widget_Base {
     }
 
     /** Get Post Excerpt */
-    protected function get_post_excerpt($count) {
+    protected function get_post_excerpt() {
         $settings = $this->get_settings_for_display();
         $excerpt_length = $settings['post_excerpt_length'];
         if ($excerpt_length) {
@@ -620,7 +657,7 @@ class NewsModuleFourteen extends Widget_Base {
     }
 
     /** Get Post Metas */
-    protected function get_post_meta($count) {
+    protected function get_post_meta() {
         $settings = $this->get_settings_for_display();
         $post_author = $settings['post_author'];
         $post_date = $settings['post_date'];

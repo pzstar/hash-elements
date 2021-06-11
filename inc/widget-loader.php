@@ -127,6 +127,8 @@ class HASHELE_Widget_Loader {
         wp_enqueue_script('odometer', HASHELE_URL . 'assets/js/odometer.js', array('jquery'), HASHELE_VERSION, true);
         wp_enqueue_script('waypoint', HASHELE_URL . 'assets/js/waypoint.js', array('jquery'), HASHELE_VERSION, true);
         wp_enqueue_script('isotope-pkgd', HASHELE_URL . 'assets/js/isotope.pkgd.js', array('jquery', 'imagesloaded'), HASHELE_VERSION, true);
+        wp_enqueue_script('ResizeSensor', HASHELE_URL . 'assets/js/ResizeSensor.js', array('jquery'), HASHELE_VERSION, true);
+        wp_enqueue_script('theia-sticky-sidebarr', HASHELE_URL . 'assets/js/theia-sticky-sidebar.js', array('jquery'), HASHELE_VERSION, true);
 
         wp_enqueue_script('hash-elements-frontend-script', HASHELE_URL . 'assets/js/frontend.js', array('jquery'), HASHELE_VERSION, true);
     }

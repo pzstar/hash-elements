@@ -1,7 +1,6 @@
 (function ($, elementor) {
     'use strict';
     var HashElements = {
-
         init: function () {
 
             var widgets = {
@@ -21,6 +20,9 @@
             $.each(widgets, function (widget, callback) {
                 elementor.hooks.addAction('frontend/element_ready/' + widget, callback);
             });
+
+            elementor.hooks.addAction('frontend/element_ready/column', HashElements.elementorColumn);
+            //elementorFrontend.hooks.addAction('frontend/element_ready/section', HashElements.setStickySection);
         },
         ticker: function ($scope) {
             var $element = $scope.find('.he-ticker');
@@ -186,7 +188,7 @@
                     $(window).on('resize', function () {
                         HashGetMasonary($element, $container);
                     }).resize();
-                    
+
                     $container.isotope({
                         itemSelector: '.het-portfolio',
                         filter: active_tab,
@@ -272,8 +274,159 @@
                 $(this).parent('.het-service-post').toggleClass('het-active');
             });
         },
+        elementorColumn: function ($scope) {
+            var columnId = $scope.data('id');
+            var editMode = Boolean(elementor.isEditMode());
+            var stickyInstanceOptions = {
+                topSpacing: 50,
+                bottomSpacing: 50,
+                innerWrapperSelector: '.elementor-widget-wrap'
+            };
+            if (!editMode) {
+                if ($scope.hasClass('he-elementor-sticky-column')) {
+                    var adminbarHeight = 0;
+                    if ($('body').hasClass('admin-bar')) {
+                        adminbarHeight = 32;
+                    }
+                    var $stickywrap = $scope.find('> .elementor-column-wrap');
+                    $scope.find('> .elementor-column-wrap,> .elementor-widget-wrap').addClass('ht-clearfix');
+                    if ($stickywrap.length > 0) {
+                        stickyInstanceOptions.innerWrapperSelector = '.elementor-column-wrap';
+                    } else {
+                        stickyInstanceOptions.innerWrapperSelector = '.elementor-widget-wrap';
+                    }
+                    $scope.css({display: 'block'});
+                    stickyInstanceOptions.topSpacing = parseInt($scope.attr('data-top-spacing')) + adminbarHeight;
+                    stickyInstanceOptions.bottomSpacing = parseInt($scope.attr('data-bottom-spacing'));
+                    stickyInstanceOptions.containerSelector = '.elementor-container';
+
+                    var stickyInstance = new StickySidebar($scope[0], stickyInstanceOptions);
+                    $scope.attr('data-sticky-column', 'true');
+
+                    $(window).resize(function () {
+                        var currentDeviceMode = elementorFrontend.getCurrentDeviceMode(),
+                                availableDevices = ['desktop', 'tablet'],
+                                isInit = $scope.attr('data-sticky-column');
+
+                        if (-1 !== availableDevices.indexOf(currentDeviceMode)) {
+                            if (isInit === 'false') {
+                                $scope.attr('data-sticky-column', 'true');
+                                stickyInstance = new StickySidebar($scope[0], stickyInstanceOptions);
+                                stickyInstance.updateSticky();
+                            }
+                        } else {
+                            $scope.attr('data-sticky-column', 'false');
+                            stickyInstance.destroy();
+                        }
+                    }).resize();
+                }
+            } else {
+                var settings = HashElements.columnEditorSettings(columnId);
+                if ('true' === settings['sticky']) {
+                    $scope.addClass('he-elementor-sticky-column');
+                    var $stickywrap = $scope.find('> .elementor-column-wrap');
+                    $scope.find('> .elementor-column-wrap,> .elementor-widget-wrap').addClass('ht-clearfix');
+                    if ($stickywrap.length > 0) {
+                        stickyInstanceOptions.innerWrapperSelector = '.elementor-column-wrap';
+                    } else {
+                        stickyInstanceOptions.innerWrapperSelector = '.elementor-widget-wrap';
+                    }
+                    $scope.css({display: 'block'});
+
+                    stickyInstanceOptions.topSpacing = settings['topSpacing'];
+                    stickyInstanceOptions.bottomSpacing = settings['bottomSpacing'];
+
+                    var stickyInstance = new StickySidebar($scope[0], stickyInstanceOptions);
+                    $scope.attr('data-sticky-column', 'true');
+                    stickyInstance.updateSticky();
+
+                    $(window).resize(function () {
+                        var currentDeviceMode = elementorFrontend.getCurrentDeviceMode(),
+                                availableDevices = ['desktop', 'tablet'],
+                                isInit = $scope.attr('data-sticky-column');
+
+                        if (-1 !== availableDevices.indexOf(currentDeviceMode)) {
+                            if (isInit === 'false') {
+                                $scope.attr('data-sticky-column', 'true');
+                                stickyInstance = new StickySidebar($scope[0], stickyInstanceOptions);
+                                stickyInstance.updateSticky();
+                            }
+                        } else {
+                            $scope.attr('data-sticky-column', 'false');
+                            stickyInstance.destroy();
+                        }
+                    }).resize();
+                } else {
+                    $scope.removeClass('he-elementor-sticky-column');
+                }
+            }
+
+
+
+        },
+        columnEditorSettings: function (columnId) {
+            var editorElements = null,
+                    columnData = {};
+
+            if (!window.elementor.hasOwnProperty('elements')) {
+                return false;
+            }
+
+            editorElements = window.elementor.elements;
+
+            if (!editorElements.models) {
+                return false;
+            }
+
+            $.each(editorElements.models, function (index, obj) {
+
+                $.each(obj.attributes.elements.models, function (index, obj) {
+                    if (columnId == obj.id) {
+                        columnData = obj.attributes.settings.attributes;
+                    }
+                });
+
+            });
+
+            return {
+                'sticky': columnData['hash_elements_sidebar_sticky'] || false,
+                'topSpacing': columnData['hash_elements_sidebar_sticky_top_spacing'] || 50,
+                'bottomSpacing': columnData['hash_elements_sidebar_sticky_bottom_spacing'] || 50,
+            }
+        },
+        resizeSticky: function ($target) {
+            var currentDeviceMode = elementorFrontend.getCurrentDeviceMode();
+
+            if (-1 !== availableDevices.indexOf(currentDeviceMode)) {
+                $target.data('stickyColumnInit', true);
+                stickyInstance = new StickySidebar($target[0], stickyInstanceOptions);
+                stickyInstance.updateSticky();
+            } else {
+                $target.data('stickyColumnInit', false);
+                stickyInstance.destroy();
+            }
+        }
     };
     $(window).on('elementor/frontend/init', HashElements.init);
+
+    var JetStickyTools = {
+        debounce: function (threshold, callback) {
+            var timeout;
+
+            return function debounced($event) {
+                function delayed() {
+                    callback.call(this, $event);
+                    timeout = null;
+                }
+
+                if (timeout) {
+                    clearTimeout(timeout);
+                }
+
+                timeout = setTimeout(delayed, threshold);
+            };
+        }
+    }
 }(jQuery, window.elementorFrontend));
 
 function HashGetMasonary($element, $container) {

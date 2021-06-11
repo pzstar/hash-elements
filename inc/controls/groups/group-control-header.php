@@ -43,7 +43,8 @@ class Group_Control_Header extends Group_Control_Base {
             'options' => [
                 'he-title-style1' => __('Style 1', 'hash-elements'),
                 'he-title-style2' => __('Style 2', 'hash-elements'),
-                'he-title-style3' => __('Style 3', 'hash-elements')
+                'he-title-style3' => __('Style 3', 'hash-elements'),
+                'he-title-style4' => __('Style 4', 'hash-elements')
             ],
         ];
 
