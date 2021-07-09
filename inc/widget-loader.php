@@ -115,7 +115,9 @@ class HASHELE_Widget_Loader {
      * Register Frontend Scripts
      */
     public function register_frontend_scripts() {
-        
+        wp_register_script('modernizr', HASHELE_URL . 'assets/js/modernizr.js', array(), HASHELE_VERSION, true);
+        wp_register_script('draggabilly', HASHELE_URL . 'assets/js/draggabilly.pkgd.js', array('jquery'), HASHELE_VERSION, true);
+        wp_register_script('elastiStack', HASHELE_URL . 'assets/js/elastiStack.js', array('jquery'), HASHELE_VERSION, true);
     }
 
     /**
