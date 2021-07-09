@@ -25,6 +25,10 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.1.3, July 9 2021 =
+* Elastic Gallery Module issue fixed
+* Odometer Module issue fixed
+
 = 1.1.2, June 8 2021 =
 * Sticky Column Refined
 
