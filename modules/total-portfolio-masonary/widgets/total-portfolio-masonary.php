@@ -105,7 +105,7 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::SELECT,
             'label_block' => true,
             'default' => '*',
-            'options' => array_merge(['*' => esc_html__('All', 'hash-elements')], $this->get_portfolio_category())
+            'options' => array('*' => esc_html__('All', 'hash-elements')) + $this->get_portfolio_category()
                 ]
         );
 

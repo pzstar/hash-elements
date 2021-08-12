@@ -95,7 +95,7 @@ class TotalCounterBlock extends Widget_Base {
             ],
             'default' => '#000000',
             'selectors' => [
-                '{{WRAPPER}} .het-counter-icon' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .het-counter-icon' => 'color: {{VALUE}}; fill: {{VALUE}}',
             ],
                 ]
         );
@@ -117,7 +117,7 @@ class TotalCounterBlock extends Widget_Base {
                 'size' => 36,
             ],
             'selectors' => [
-                '{{WRAPPER}} .het-counter-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .het-counter-icon' => 'font-size: {{SIZE}}{{UNIT}};',
             ],
                 ]
         );

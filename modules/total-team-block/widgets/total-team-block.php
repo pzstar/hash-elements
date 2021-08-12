@@ -144,6 +144,7 @@ class TotalTeamBlock extends Widget_Base {
             'label' => __('Add Social Icons', 'hash-elements'),
             'type' => Controls_Manager::REPEATER,
             'fields' => $repeater->get_controls(),
+            'prevent_empty' => false,
             'default' => [
                 [
                     'social_icon_title' => __('Facebook', 'hash-elements'),

@@ -1753,6 +1753,13 @@ h3.he-big-title{
     margin-bottom: 10px;
 }
 
+.he-featured-post .he-featured-icon i,
+.he-featured-post .he-featured-icon svg{
+    height: 1em;
+    width: 1em;
+    display: block;
+}
+
 .he-featured-post h4{
     position: relative;
     margin-bottom: 30px;
@@ -1781,8 +1788,13 @@ h3.he-big-title{
     color: #333;
     opacity: 0;
     transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.he-featured-readmore i,
+.he-featured-readmore svg{
+    height: 1em;
+    width: 1em;
+    display: block;
 }
 
 .he-featured-post:hover .he-featured-readmore,
@@ -1909,14 +1921,20 @@ h3.he-big-title{
     padding: 15px 0;
 }
 
-.he-tab li i{
+.he-tab li i,
+.he-tab li svg{
     float: left;
     line-height: 1.2;
     margin-right: 10px;
+    height: 1em;
+    width: 1em;
+    display: block;
 }
 
-.he-tab li.he-active i{
+.he-tab li.he-active i,
+.he-tab li.he-active svg{
     color: #000;
+    fill: #000;
 }
 
 .he-tab-content{
@@ -2216,7 +2234,11 @@ h3.he-big-title{
     transform: translateY(-35px); 
 }
 
-.het-featured-icon i{
+.het-featured-icon i,
+.het-featured-icon svg{
+    height: 1em;
+    width: 1em;
+    display: block;
     vertical-align: bottom;
 }
 
@@ -2436,12 +2458,21 @@ h3.he-big-title{
     width: 50px;
     text-align: center;
     color: #FFF;
-    line-height: 50px;
+    fill: #FFF;
+    height: 50px;
     cursor: pointer;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition:all 0.3s ease;
-    -moz-transition:all 0.3s ease;
-    -webkit-transition:all 0.3s ease;
+}
+
+.het-service-icon i,
+.het-service-icon svg{
+    height: 1em;
+    width: 1em;
+    display: block;
 }
 
 .het-active .het-service-icon{
@@ -2542,6 +2573,10 @@ h3.he-big-title{
     align-items: center;
 }
 
+.het-team-member-excerpt .het-team-member-excerpt-wrap{
+    width: 100%;
+}
+
 .het-team-member:hover .het-team-member-excerpt{
     opacity: 1;
     -ms-transform: scale(1); 
@@ -2568,8 +2603,6 @@ h3.he-big-title{
 }
 
 .het-team-member h6{
-    text-transform: uppercase;
-    font-weight: 400;
     position: relative;
     padding-bottom: 10px;
 }
@@ -2655,8 +2688,6 @@ h3.he-big-title{
     line-height: 1;
     margin-bottom: 25px;
     letter-spacing: 3px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 400;
 }
 
 .het-counter-icon{
@@ -2668,6 +2699,13 @@ h3.he-big-title{
     -webkit-transform: translate(0, -17px);
     transform: translate(0, -17px);
     line-height: 36px;
+}
+
+.het-counter-icon i,
+.het-counter-icon svg{
+    height: 1em;
+    width: 1em;
+    display: block;
 }
 
 .het-counter-title{
@@ -2706,8 +2744,9 @@ h3.he-big-title{
     top: 0;
     left: -65px;
     font-size: 60px;
-    color: #EEE;
+    color: #000;
     z-index: -1;
+    opacity: 0.1;
 }
 
 .het-testimonial h6{

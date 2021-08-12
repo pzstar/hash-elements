@@ -261,7 +261,7 @@ class TotalTestimonialSlider extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .het-testimonial-excerpt ' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .het-testimonial-excerpt, {{WRAPPER}} .het-testimonial-excerpt .fa-quote-left' => 'color: {{VALUE}}',
             ],
                 ]
         );

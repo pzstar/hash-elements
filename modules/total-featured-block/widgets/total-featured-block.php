@@ -160,7 +160,7 @@ class TotalFeaturedBlock extends Widget_Base {
             ],
             'default' => '#333',
             'selectors' => [
-                '{{WRAPPER}} .het-featured-icon i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .het-featured-icon' => 'color: {{VALUE}}; fill: {{VALUE}}',
             ],
                 ]
         );
@@ -182,7 +182,7 @@ class TotalFeaturedBlock extends Widget_Base {
                 'size' => 46,
             ],
             'selectors' => [
-                '{{WRAPPER}} .het-featured-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .het-featured-icon' => 'font-size: {{SIZE}}{{UNIT}};',
             ],
                 ]
         );

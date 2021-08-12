@@ -148,7 +148,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-featured-icon i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-featured-icon' => 'color: {{VALUE}};fill: {{VALUE}}',
             ],
                 ]
         );
@@ -317,7 +317,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} a.he-featured-readmore i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} a.he-featured-readmore' => 'color: {{VALUE}}; fill: {{VALUE}}',
             ],
                 ]
         );
@@ -331,7 +331,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} a.he-featured-readmore:hover i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} a.he-featured-readmore:hover' => 'color: {{VALUE}}; fill: {{VALUE}}',
             ],
                 ]
         );

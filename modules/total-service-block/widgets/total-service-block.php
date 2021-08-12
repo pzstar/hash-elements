@@ -155,7 +155,7 @@ class TotalServiceBlock extends Widget_Base {
             ],
             'default' => '#FFF',
             'selectors' => [
-                '{{WRAPPER}} .het-service-icon i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .het-service-icon' => 'color: {{VALUE}}; fill: {{VALUE}}',
             ],
                 ]
         );

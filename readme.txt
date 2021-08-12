@@ -25,6 +25,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.1.4, Aug 12 2021 =
+* Added support for svg icons
+
 = 1.1.3, July 9 2021 =
 * Elastic Gallery Module issue fixed
 * Odometer Module issue fixed

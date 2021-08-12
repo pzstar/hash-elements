@@ -170,7 +170,7 @@ class SquarePlusTabBlock extends Widget_Base {
                 ]
             ],
             'selectors' => [
-                '{{WRAPPER}} ul.he-tab li a i' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} ul.he-tab li a i, {{WRAPPER}} ul.he-tab li a svg' => 'font-size: {{SIZE}}{{UNIT}};',
             ],
                 ]
         );
@@ -188,7 +188,7 @@ class SquarePlusTabBlock extends Widget_Base {
                 ]
             ],
             'selectors' => [
-                '{{WRAPPER}} ul.he-tab li a i' => 'margin-right: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} ul.he-tab li a i, {{WRAPPER}} ul.he-tab li a svg' => 'margin-right: {{SIZE}}{{UNIT}};',
             ],
                 ]
         );
@@ -226,7 +226,7 @@ class SquarePlusTabBlock extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} ul.he-tab li a i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} ul.he-tab li a i, {{WRAPPER}} ul.he-tab li a svg' => 'color: {{VALUE}}; fill: {{VALUE}}',
             ],
                 ]
         );
@@ -276,7 +276,7 @@ class SquarePlusTabBlock extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} ul.he-tab li.he-active a i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} ul.he-tab li.he-active a i, {{WRAPPER}} ul.he-tab li.he-active a svg' => 'color: {{VALUE}}; fill: {{VALUE}}',
             ],
                 ]
         );
