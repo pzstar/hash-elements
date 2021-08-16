@@ -2448,7 +2448,7 @@ h3.he-big-title{
 .het-service-post{
     margin-bottom: 25px;
     position: relative;
-    z-index: 99;
+    z-index: 9;
 }
 
 .het-service-post:last-child{
