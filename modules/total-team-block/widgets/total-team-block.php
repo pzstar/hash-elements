@@ -532,12 +532,14 @@ class TotalTeamBlock extends Widget_Base {
                             echo esc_html($settings['member_description']);
                             echo '</div>';
                         }
-                        ?>
-                        <div class="het-team-detail">
-                            <a href="<?php echo esc_url($settings['button_link']['url']); ?>"<?php echo $target . $nofollow; ?>>
-                                <?php esc_html_e($settings['button_text']) ?>
-                            </a>
-                        </div>
+                        if ($settings['button_link']['url']) {
+                            ?>
+                            <div class="het-team-detail">
+                                <a href="<?php echo esc_url($settings['button_link']['url']); ?>"<?php echo $target . $nofollow; ?>>
+                                    <?php esc_html_e($settings['button_text']) ?>
+                                </a>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>  
