@@ -688,5 +688,3 @@ exports.__moduleExports = stickySidebar;
 Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-
-//# sourceMappingURL=sticky-sidebar.js.map
