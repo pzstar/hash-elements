@@ -24,16 +24,6 @@
     margin: -30px;
 }
 
-@media screen and (max-width:1200px){
-    .elementor-section.elementor-section-boxed.elementor-section-stretched>.elementor-container{
-        padding: 0 5%;
-    }
-    
-    .elementor-template-full-width .elementor-section.elementor-section-boxed>.elementor-container{
-        padding: 0 5%;
-    }
-}
-
 .he-clearfix:before,
 .he-clearfix:after{
     content: "";
