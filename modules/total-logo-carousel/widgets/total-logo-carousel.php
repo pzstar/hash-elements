@@ -276,11 +276,11 @@ class TotalLogoCarousel extends Widget_Base {
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,
             'pause' => (int) $settings['pause_duration']['size'] * 1000,
             'items' => (int) $settings['no_of_slides']['size'],
-            'items_tablet' => (int) $settings['no_of_slides_tablet']['size'],
-            'items_mobile' => (int) $settings['no_of_slides_mobile']['size'],
+            'items_tablet' => (int) isset($settings['no_of_slides_tablet']['size']) ? $settings['no_of_slides_tablet']['size'] : 3,
+            'items_mobile' => (int) isset($settings['no_of_slides_mobile']['size']) ? $settings['no_of_slides_mobile']['size'] : 2,
             'margin' => (int) $settings['slides_margin']['size'],
-            'margin_tablet' => (int) $settings['slides_margin_tablet']['size'],
-            'margin_mobile' => (int) $settings['slides_margin_mobile']['size'],
+            'margin_tablet' => (int) isset($settings['slides_margin_tablet']['size']) ? $settings['slides_margin_tablet']['size'] : 30,
+            'margin_mobile' => (int) isset($settings['slides_margin_mobile']['size']) ? $settings['slides_margin_mobile']['size'] : 30,
             'dots' => $settings['dots'] == 'yes' ? true : false
         );
         $params = json_encode($params);

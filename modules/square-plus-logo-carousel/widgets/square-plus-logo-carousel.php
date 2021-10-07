@@ -279,11 +279,11 @@ class SquarePlusLogoCarousel extends Widget_Base {
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,
             'pause' => (int) $settings['autoplay_speed']['size'] * 1000,
             'items' => (int) $settings['slides_to_show']['size'],
-            'items_tablet' => (int) $settings['slides_to_show_tablet']['size'],
-            'items_mobile' => (int) $settings['slides_to_show_mobile']['size'],
+            'items_tablet' => (int) isset($settings['slides_to_show_tablet']['size']) ? $settings['slides_to_show_tablet']['size'] : 2,
+            'items_mobile' => (int) isset($settings['slides_to_show_mobile']['size']) ? $settings['slides_to_show_mobile']['size'] : 1,
             'margin' => (int) $settings['slides_margin']['size'],
-            'margin_tablet' => (int) $settings['slides_margin_tablet']['size'],
-            'margin_mobile' => (int) $settings['slides_margin_mobile']['size'],
+            'margin_tablet' => (int) isset($settings['slides_margin_tablet']['size']) ? $settings['slides_margin_tablet']['size'] : 30,
+            'margin_mobile' => (int) isset($settings['slides_margin_mobile']['size']) ? $settings['slides_margin_mobile']['size'] : 30,
             'dots' => $settings['dots'] == 'yes' ? true : false
         );
         $params = json_encode($params);
