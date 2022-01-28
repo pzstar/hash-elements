@@ -24,6 +24,7 @@ class Sticky_Column {
     public function init() {
         add_filter('elementor/element/column/layout/after_section_start', [$this, 'add_controls']);
         add_action('elementor/frontend/column/before_render', [$this, 'render_attribute'], 10);
+        add_action('elementor/column/print_template', [$this, 'print_template'], 10, 2);
     }
 
     public function add_controls($section) {
@@ -86,6 +87,25 @@ class Sticky_Column {
                     )
             );
         }
+    }
+
+    public function print_template($template, $widget) {
+        ob_start();
+        $old_template = $template;
+        ?>
+        <#
+        if ( 'true' === settings.hash_elements_sidebar_sticky ) {
+        view.addRenderAttribute( '_column_wrapper', 'class', 'he-elementor-sticky-column' );
+        view.addRenderAttribute( '_column_wrapper', 'data-top-spacing', settings.hash_elements_sidebar_sticky_top_spacing );
+        view.addRenderAttribute( '_column_wrapper', 'data-bottom-spacing', settings.hash_elements_sidebar_sticky_bottom_spacing );
+        #>
+        <div {{{ view.getRenderAttributeString( '_column_wrapper' ) }}}></div>
+        <# } #>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+
+        return $content . $old_template;
     }
 
 }

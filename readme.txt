@@ -2,8 +2,8 @@
 Contributors: Hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 5.0
-Tested up to: 5.8
-Stable tag: 1.1.7
+Tested up to: 5.9
+Stable tag: 1.1.8
 Requires PHP: 5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -25,6 +25,10 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.1.8, Jan 28 2021 =
+* Compatibility issue check with the latest WordPress 5.9
+* Code refinement & optmization for sticky sidebar
+
 = 1.1.7, Dec 12 2021 =
 * Material Design font icon updated and optimized
 
