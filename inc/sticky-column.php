@@ -69,7 +69,7 @@ class Sticky_Column {
         );
 
         $section->add_control(
-                'hr', [
+                'hash_elements_hr', [
             'type' => \Elementor\Controls_Manager::DIVIDER,
                 ]
         );
