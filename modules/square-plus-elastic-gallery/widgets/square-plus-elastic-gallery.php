@@ -75,7 +75,7 @@ class SquarePlusElasticGallery extends Widget_Base {
                 ],
             ],
             'devices' => ['desktop', 'tablet', 'mobile'],
-            'desktop_default' => [
+            'default' => [
                 'size' => 400,
                 'unit' => 'px',
             ],
@@ -98,7 +98,7 @@ class SquarePlusElasticGallery extends Widget_Base {
                 ],
             ],
             'devices' => ['desktop', 'tablet', 'mobile'],
-            'desktop_default' => [
+            'default' => [
                 'size' => 400,
                 'unit' => 'px',
             ],
@@ -135,7 +135,7 @@ class SquarePlusElasticGallery extends Widget_Base {
                 ],
             ],
             'devices' => ['desktop', 'tablet', 'mobile'],
-            'desktop_default' => [
+            'default' => [
                 'size' => 20,
                 'unit' => 'px',
             ],

@@ -123,7 +123,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
                 ],
             ],
             'devices' => ['desktop', 'tablet', 'mobile'],
-            'desktop_default' => [
+            'default' => [
                 'size' => 5,
                 'unit' => 'px',
             ],
@@ -149,7 +149,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
                 ],
             ],
             'devices' => ['desktop', 'tablet', 'mobile'],
-            'desktop_default' => [
+            'default' => [
                 'size' => 30,
                 'unit' => 'px',
             ],
