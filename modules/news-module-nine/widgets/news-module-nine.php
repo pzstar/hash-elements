@@ -507,7 +507,7 @@ class NewsModuleNine extends Widget_Base {
             'allowed_dimensions' => 'vertical',
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-nine .he-big-post-item' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                '{{WRAPPER}} .he-news-module-nine .he-big-post-item .he-post-content h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
                 ]
         );
@@ -536,7 +536,7 @@ class NewsModuleNine extends Widget_Base {
             'allowed_dimensions' => 'vertical',
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-nine .he-post-item' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                '{{WRAPPER}} .he-news-module-nine .he-post-item .he-post-content h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
                 ]
         );
@@ -607,7 +607,7 @@ class NewsModuleNine extends Widget_Base {
 
             <?php $this->render_header(); ?>
 
-            <div class="hhe-news-module-nine-wrap">
+            <div class="he-news-module-nine-wrap">
                 <?php
                 $args = $this->query_args();
                 $query = new \WP_Query($args);

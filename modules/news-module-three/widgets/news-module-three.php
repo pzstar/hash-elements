@@ -484,7 +484,7 @@ class NewsModuleThree extends Widget_Base {
             'allowed_dimensions' => 'vertical',
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-three .col1 .he-post-item' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                '{{WRAPPER}} .he-news-module-three .col1 .he-post-item .he-post-content h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
                 ]
         );
@@ -502,8 +502,7 @@ class NewsModuleThree extends Widget_Base {
             'name' => 'side_post_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-news-module-three .col2 .he-post-item .he-post-content h3, 
-                                       {{WRAPPER}} .he-news-module-three .col2 .he-post-item .he-post-content h3',
+            'selector' => '{{WRAPPER}} .he-news-module-three .col2 .he-post-item .he-post-content h3',
                 ]
         );
 
@@ -514,8 +513,7 @@ class NewsModuleThree extends Widget_Base {
             'allowed_dimensions' => 'vertical',
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-three .col2 .he-post-item, 
-                             {{WRAPPER}} .he-news-module-three .col2 .he-post-item' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                '{{WRAPPER}} .he-news-module-three .col2 .he-post-item .he-post-content h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
                 ]
         );

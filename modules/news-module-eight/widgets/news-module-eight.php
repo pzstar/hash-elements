@@ -494,8 +494,7 @@ class NewsModuleEight extends Widget_Base {
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Typography::TYPOGRAPHY_1,
             'selector' =>
-            '{{WRAPPER}} .he-news-module-eight .he-big-block .he-post-item .he-post-content h3.he-big-title.he-post-title, 
-                             {{WRAPPER}} .he-news-module-eight .he-small-block .he-post-item .he-post-content h3.he-post-title'
+            '{{WRAPPER}} .he-news-module-eight .he-big-block .he-post-item .he-post-content h3.he-big-title.he-post-title'
                 ]
         );
 
@@ -506,7 +505,7 @@ class NewsModuleEight extends Widget_Base {
             'allowed_dimensions' => 'vertical',
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-eight .he-big-block .he-post-item' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                '{{WRAPPER}} .he-news-module-eight .he-big-block .he-post-item .he-post-content h3.he-big-title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
                 ]
         );
@@ -524,8 +523,7 @@ class NewsModuleEight extends Widget_Base {
             'name' => 'side_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-news-module-eight .he-small-block .he-post-item .he-post-content h3, 
-                                       {{WRAPPER}} .he-news-module-eight .he-small-block .he-post-item .he-post-content h3',
+            'selector' => '{{WRAPPER}} .he-news-module-eight .he-small-block .he-post-item .he-post-content h3.he-post-title',
                 ]
         );
 
@@ -536,8 +534,7 @@ class NewsModuleEight extends Widget_Base {
             'allowed_dimensions' => 'vertical',
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-eight .he-small-block .he-post-item, 
-                             {{WRAPPER}} .he-news-module-eight .he-small-block .he-post-item' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                '{{WRAPPER}} .he-news-module-eight .he-small-block .he-post-item .he-post-content h3.he-post-title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
                 ]
         );
