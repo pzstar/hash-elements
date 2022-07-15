@@ -1576,13 +1576,15 @@ h3.he-big-title{
 
 .he-slide .he-container{
     position: absolute;
+    width: 80%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .he-slide-caption{
-    width: 650px;
+    max-width: 650px;
+    width: 100%;
     background: rgba(0,0,0,0.2);
     padding: 40px;
     border-left: 3px solid #5BC2CE;
@@ -1979,11 +1981,9 @@ h3.he-big-title{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 1170px;
-    margin-left: -585px;
-    -ms-transform: translateY(-50%); 
-    -webkit-transform: translateY(-50%); 
-    transform: translateY(-50%);
+    max-width: 1170px;
+    width: 90%;
+    transform: translateY(-50%) translateX(-50%);
 }
 
 .het-slide-cap-title{
