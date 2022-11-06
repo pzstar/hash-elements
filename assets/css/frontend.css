@@ -185,12 +185,14 @@ h3.he-post-title a{
     color: inherit;
 }
 
-h3.he-large-title{
-    font-size: 26px;
+h3.he-large-title span,
+h3.he-large-title a{
+    font-size: 1.5em;
 }
 
-h3.he-big-title{
-    font-size: 22px;
+h3.he-big-title span,
+h3.he-big-title a{
+    font-size: 1.3em;
 }
 
 /* Post Items */
