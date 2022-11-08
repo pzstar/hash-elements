@@ -431,8 +431,8 @@ class CarouselModuleOne extends Widget_Base {
             'name' => 'category_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-carousel-block ul.post-categories li a,
-                           {{WRAPPER}} .he-carousel-block .post-content ul.post-categories li a',
+            'selector' => '{{WRAPPER}} .he-carousel-block ul.he-post-categories li a,
+                           {{WRAPPER}} .he-carousel-block .post-content ul.he-post-categories li a',
                 ]
         );
 
@@ -455,7 +455,7 @@ class CarouselModuleOne extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-carousel-block ul.post-categories li  a' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-carousel-block ul.he-post-categories li  a' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -469,7 +469,7 @@ class CarouselModuleOne extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-carousel-block ul.post-categories li  a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-carousel-block ul.he-post-categories li  a' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -491,7 +491,7 @@ class CarouselModuleOne extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-carousel-block ul.post-categories li:hover a' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-carousel-block ul.he-post-categories li:hover a' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -505,7 +505,7 @@ class CarouselModuleOne extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-carousel-block ul.post-categories li:hover a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-carousel-block ul.he-post-categories li:hover a' => 'color: {{VALUE}}',
             ],
                 ]
         );

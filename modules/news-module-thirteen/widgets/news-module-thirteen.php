@@ -276,7 +276,7 @@ class NewsModuleThirteen extends Widget_Base {
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Typography::TYPOGRAPHY_1,
             'selector' => '{{WRAPPER}} .he-primary-cat,
-                            {{WRAPPER}} .post-categories li a',
+                            {{WRAPPER}} .he-post-categories li a',
                 ]
         );
 
@@ -300,7 +300,7 @@ class NewsModuleThirteen extends Widget_Base {
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat,
-                {{WRAPPER}} .post-categories li a' => 'background-color: {{VALUE}}',
+                {{WRAPPER}} .he-post-categories li a' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -315,7 +315,7 @@ class NewsModuleThirteen extends Widget_Base {
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat,
-                {{WRAPPER}} .post-categories li a' => 'color: {{VALUE}}',
+                {{WRAPPER}} .he-post-categories li a' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -338,7 +338,7 @@ class NewsModuleThirteen extends Widget_Base {
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat:hover,
-                {{WRAPPER}} .post-categories li a:hover' => 'background-color: {{VALUE}}',
+                {{WRAPPER}} .he-post-categories li a:hover' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -353,7 +353,7 @@ class NewsModuleThirteen extends Widget_Base {
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat:hover,
-                {{WRAPPER}} .post-categories li a:hover' => 'color: {{VALUE}}',
+                {{WRAPPER}} .he-post-categories li a:hover' => 'color: {{VALUE}}',
             ],
                 ]
         );

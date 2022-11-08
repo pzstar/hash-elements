@@ -110,7 +110,7 @@
 }
 
 /* Post Categories in Thumbnail */
-.he-post-thumb .post-categories{
+.he-post-thumb .he-post-categories{
     position: absolute;
     bottom: 10px;
     left: 15px;
@@ -120,11 +120,11 @@
     font-size: 0;
 }
 
-.he-post-thumb .post-categories li{
+.he-post-thumb .he-post-categories li{
     display: inline-block;
 }
 
-.he-post-thumb .post-categories li a{
+.he-post-thumb .he-post-categories li a{
     display: block;
     background: #0E0E0E;
     color: #F0F0F0;
@@ -136,22 +136,18 @@
     margin-bottom: 5px;
 }
 
-.he-post-thumb .post-categories li a:hover{
-    background: #0078af;
-}
-
 /* Post Categories in excerpt */
-.he-post-content .post-categories{
+.he-post-content .he-post-categories{
     margin: 0 0 5px;
     padding: 0;
     font-size: 0;
 }
 
-.he-post-content .post-categories li{
+.he-post-content .he-post-categories li{
     display: inline-block;
 }
 
-.he-post-content .post-categories li a{
+.he-post-content .he-post-categories li a{
     display: block;
     background: #0E0E0E;
     color: #F0F0F0;
@@ -163,12 +159,8 @@
     margin-bottom: 4px;
 }
 
-.he-post-content .post-categories li a:hover{
-    background: #0078af;
-}
-
 /* Post Categories Tile */
-.he-tile-block .post-categories {
+.he-tile-block .he-post-categories {
     top: 25px;
     left: 25px;
     bottom: auto;
@@ -417,7 +409,7 @@ h3.he-big-title a{
     height: 100%
 }
 
-.he-news-module-three .col1 .he-post-thumb .post-categories {
+.he-news-module-three .col1 .he-post-thumb .he-post-categories {
     left: 30px;
     right: 30px;
     bottom: auto;
@@ -528,11 +520,12 @@ h3.he-big-title a{
     margin-bottom: 30px;
 }
 
-.he-news-module-six .he-big-block .he-post-thumb .post-categories {
+.he-news-module-six .he-big-block .he-post-thumb .he-post-categories {
     position: absolute;
     left: 30px;
     top: 30px;
     right: 30px;
+    bottom: auto;
 }
 
 .he-news-module-six .he-big-block .he-thumb-container {
@@ -672,7 +665,7 @@ h3.he-big-title a{
     margin-bottom: 10px;
 }
 
-.he-big-post-item .he-post-thumb .post-categories{
+.he-big-post-item .he-post-thumb .he-post-categories{
     top: 20px;
     left: 20px;
     bottom: auto;
@@ -753,7 +746,7 @@ h3.he-big-title a{
     max-height: 30px;
 }
 
-.he-grid-block .he-post-thumb .post-categories{
+.he-grid-block .he-post-thumb .he-post-categories{
     bottom: auto;
     top: 15px;
 }
@@ -878,7 +871,7 @@ h3.he-big-title a{
 
 .he-four-column-block .he-post-item{
     padding: 0 15px;
-    margin-bottom: 30;
+    margin-bottom: 30px;
 }
 
 .he-four-column-block .he-post-thumb{

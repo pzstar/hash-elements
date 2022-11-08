@@ -353,7 +353,7 @@ class NewsModuleFour extends Widget_Base {
             'name' => 'category_typography',
             'label' => esc_html__('Category Typography', 'hash-elements'),
             'scheme' => Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-news-module-four ul.post-categories li a',
+            'selector' => '{{WRAPPER}} .he-news-module-four ul.he-post-categories li a',
                 ]
         );
 
@@ -376,7 +376,7 @@ class NewsModuleFour extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-four ul.post-categories li  a' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-four ul.he-post-categories li  a' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -390,7 +390,7 @@ class NewsModuleFour extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-four ul.post-categories li  a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-four ul.he-post-categories li  a' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -412,7 +412,7 @@ class NewsModuleFour extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-four ul.post-categories li:hover a' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-four ul.he-post-categories li:hover a' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -426,7 +426,7 @@ class NewsModuleFour extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-four ul.post-categories li:hover a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-four ul.he-post-categories li:hover a' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -613,7 +613,7 @@ class NewsModuleFour extends Widget_Base {
                             <?php
                             if ($index == 1 || $index == 2) {
                                 if ($settings['top_block_post_category'] == 'yes')
-                                    echo get_the_category_list();
+                                    echo hash_elements_get_the_category_list();
                             } else {
                                 if ($settings['bottom_block_post_category'] == 'yes')
                                     echo he_get_the_primary_category();

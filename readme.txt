@@ -3,7 +3,7 @@ Contributors: Hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 5.0
 Tested up to: 6.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 Requires PHP: 5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -25,7 +25,7 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
-= 1.2.2, Nov 07 2022 =
+= 1.2.3, Nov 07 2022 =
 * CSS fixes
 
 = 1.2.1, Jul 15 2022 =

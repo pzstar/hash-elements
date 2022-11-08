@@ -90,7 +90,7 @@ if (!function_exists('hash_elements_get_posts')) {
 
 if (!function_exists('he_get_the_primary_category')) {
 
-    function he_get_the_primary_category($class = "post-categories") {
+    function he_get_the_primary_category($class = "he-post-categories") {
         $post_categories = hash_elements_get_post_primary_category(get_the_ID());
 
         if (!empty($post_categories)) {
@@ -98,6 +98,23 @@ if (!function_exists('he_get_the_primary_category')) {
             $category_link = get_category_link($category_obj->term_id);
             echo '<ul class="' . esc_attr($class) . '">';
             echo '<li><a class="he-primary-cat he-category-' . esc_attr($category_obj->term_id) . '" href="' . esc_url($category_link) . '">' . esc_html($category_obj->name) . '</a></li>';
+            echo '</ul>';
+        }
+    }
+
+}
+
+if (!function_exists('hash_elements_get_the_category_list')) {
+
+    function hash_elements_get_the_category_list() {
+        $post_categories = hash_elements_get_post_primary_category(get_the_ID(), 'category', true);
+
+        if (!empty($post_categories)) {
+            echo '<ul class="he-post-categories">';
+            $category_ids = $post_categories['all_categories'];
+            foreach ($category_ids as $category_id) {
+                echo '<li><a class="he-category he-category-' . esc_attr($category_id) . '" href="' . esc_url(get_category_link($category_id)) . '">' . esc_html(get_cat_name($category_id)) . '</a></li>';
+            }
             echo '</ul>';
         }
     }

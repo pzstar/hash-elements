@@ -366,7 +366,7 @@ class NewsModuleTwo extends Widget_Base {
             'name' => 'category_normal_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-news-module-two ul.post-categories li a',
+            'selector' => '{{WRAPPER}} .he-news-module-two ul.he-post-categories li a',
                 ]
         );
 
@@ -389,7 +389,7 @@ class NewsModuleTwo extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-two ul.post-categories li  a' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-two ul.he-post-categories li  a' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -403,7 +403,7 @@ class NewsModuleTwo extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-two ul.post-categories li  a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-two ul.he-post-categories li  a' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -425,7 +425,7 @@ class NewsModuleTwo extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-two ul.post-categories li:hover a' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-two ul.he-post-categories li:hover a' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -439,7 +439,7 @@ class NewsModuleTwo extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-two ul.post-categories li:hover a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-two ul.he-post-categories li:hover a' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -663,7 +663,7 @@ class NewsModuleTwo extends Widget_Base {
                             <?php
                             if ($index == 1) {
                                 if ($settings['featured_post_category'] == 'yes')
-                                    echo get_the_category_list();
+                                    echo hash_elements_get_the_category_list();
                             } else {
                                 if ($settings['side_post_category'] == 'yes')
                                     he_get_the_primary_category();

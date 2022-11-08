@@ -325,7 +325,7 @@ class NewsModuleThree extends Widget_Base {
             'name' => 'category_typography',
             'label' => esc_html__('Category Typography', 'hash-elements'),
             'scheme' => Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-news-module-three .post-categories li a',
+            'selector' => '{{WRAPPER}} .he-news-module-three .he-post-categories li a',
                 ]
         );
 
@@ -348,7 +348,7 @@ class NewsModuleThree extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-three .post-categories li a' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-three .he-post-categories li a' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -362,7 +362,7 @@ class NewsModuleThree extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-three .post-categories li a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-three .he-post-categories li a' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -384,7 +384,7 @@ class NewsModuleThree extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-three .post-categories li:hover a' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-three .he-post-categories li:hover a' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -398,7 +398,7 @@ class NewsModuleThree extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-three .post-categories li:hover a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-three .he-post-categories li:hover a' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -617,7 +617,7 @@ class NewsModuleThree extends Widget_Base {
                                 </a>
                                 <?php
                                 if ($settings['featured_post_category'] == 'yes')
-                                    echo get_the_category_list();
+                                    echo hash_elements_get_the_category_list();
                                 ?>
                             </div>
                         </div>

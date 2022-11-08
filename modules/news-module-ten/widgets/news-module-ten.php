@@ -297,8 +297,8 @@ class NewsModuleTen extends Widget_Base {
             'name' => 'category_normal_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
             'scheme' => Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .he-news-module-ten ul.post-categories li a,
-                           {{WRAPPER}} .he-news-module-ten .post-content ul.post-categories li a',
+            'selector' => '{{WRAPPER}} .he-news-module-ten ul.he-post-categories li a,
+                           {{WRAPPER}} .he-news-module-ten .post-content ul.he-post-categories li a',
                 ]
         );
 
@@ -321,7 +321,7 @@ class NewsModuleTen extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-ten ul.post-categories li  a' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-ten ul.he-post-categories li  a' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -335,7 +335,7 @@ class NewsModuleTen extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-ten ul.post-categories li  a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-ten ul.he-post-categories li  a' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -357,7 +357,7 @@ class NewsModuleTen extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-ten ul.post-categories li:hover a' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-ten ul.he-post-categories li:hover a' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
@@ -371,7 +371,7 @@ class NewsModuleTen extends Widget_Base {
                 'value' => Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .he-news-module-ten ul.post-categories li:hover a' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-news-module-ten ul.he-post-categories li:hover a' => 'color: {{VALUE}}',
             ],
                 ]
         );
