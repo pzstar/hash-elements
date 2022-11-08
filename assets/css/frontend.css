@@ -35,7 +35,6 @@
 
 .he-title-style2.he-block-title{
     border-bottom: 3px solid #EEE;
-    font-weight: normal;
     line-height: 1;
 }
 
@@ -59,7 +58,6 @@
     position: relative;
     display: flex;
     border-left: 10px solid #000;
-    font-weight: bold;
     line-height: 1;
 }
 
