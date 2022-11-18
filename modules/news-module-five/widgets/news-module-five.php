@@ -180,6 +180,29 @@ class NewsModuleFive extends Widget_Base {
             'default' => 'large',
                 ]
         );
+        
+        $this->add_control(
+                'listing_thumb_width', [
+            'label' => esc_html__('Image Width(px)', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 50,
+                    'max' => 300,
+                    'step' => 1
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 120,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-news-module-five .he-small-block .he-post-thumb' => 'width: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .he-news-module-five .he-small-block .he-post-content' => 'margin-left: calc({{SIZE}}{{UNIT}} + 20px);'
+            ],
+                ]
+        );
 
         $this->add_control(
                 'listing_thumb_height', [
@@ -251,6 +274,28 @@ class NewsModuleFive extends Widget_Base {
         $this->start_controls_section(
                 'additional_settings', [
             'label' => esc_html__('Additional Settings', 'hash-elements'),
+                ]
+        );
+        
+        $this->add_control(
+                'image_border_radius', [
+            'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 30,
+                    'step' => 1
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 0,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-post-thumb' => 'border-radius: {{SIZE}}{{UNIT}};'
+            ],
                 ]
         );
 

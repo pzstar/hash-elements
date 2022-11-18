@@ -264,6 +264,28 @@ class NewsModuleOne extends Widget_Base {
         );
 
         $this->add_control(
+                'image_border_radius', [
+            'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 30,
+                    'step' => 1
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 0,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-post-thumb' => 'border-radius: {{SIZE}}{{UNIT}};'
+            ],
+                ]
+        );
+
+        $this->add_control(
                 'date_format', [
             'label' => esc_html__('Date Format', 'hash-elements'),
             'type' => Controls_Manager::SELECT,

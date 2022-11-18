@@ -69,6 +69,25 @@ class NewsModuleEleven extends Widget_Base {
                 ]
         );
 
+        $this->add_control(
+                'post_number', [
+            'label' => esc_html__('No of Posts', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['%'],
+            'range' => [
+                '%' => [
+                    'min' => 3,
+                    'max' => 15,
+                    'step' => 3
+                ],
+            ],
+            'default' => [
+                'unit' => '%',
+                'size' => 6,
+            ],
+                ]
+        );
+
         $this->end_controls_section();
 
 
@@ -160,6 +179,28 @@ class NewsModuleEleven extends Widget_Base {
         $this->start_controls_section(
                 'additional_settings', [
             'label' => esc_html__('Additional Settings', 'hash-elements'),
+                ]
+        );
+        
+        $this->add_control(
+                'image_border_radius', [
+            'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 30,
+                    'step' => 1
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 0,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-post-thumb' => 'border-radius: {{SIZE}}{{UNIT}};'
+            ],
                 ]
         );
 
@@ -542,7 +583,7 @@ class NewsModuleEleven extends Widget_Base {
         $args['ignore_sticky_posts'] = 1;
         $args['post_status'] = 'publish';
         $args['offset'] = $settings['posts_offset'];
-        $args['posts_per_page'] = 6;
+        $args['posts_per_page'] = $settings['post_number']['size'];
         $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : [];
 
         $args['tax_query'] = [];

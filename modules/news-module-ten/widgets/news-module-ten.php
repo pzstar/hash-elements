@@ -117,7 +117,8 @@ class NewsModuleTen extends Widget_Base {
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-ten .he-post-item .he-post-thumb' => 'width: {{SIZE}}{{UNIT}};',
-                '{{WRAPPER}} .he-news-module-ten .he-post-item .he-post-content' => 'margin-left: calc({{SIZE}}{{UNIT}} + 20{{UNIT}});',
+                '{{WRAPPER}} .he-news-module-ten .he-post-item.he-thumb-left .he-post-content' => 'margin-left: calc({{SIZE}}{{UNIT}} + 20{{UNIT}});',
+                '{{WRAPPER}} .he-news-module-ten .he-post-item.he-thumb-right .he-post-content' => 'margin-right: calc({{SIZE}}{{UNIT}} + 20{{UNIT}});',
             ],
                 ]
         );
@@ -141,6 +142,18 @@ class NewsModuleTen extends Widget_Base {
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-ten .he-thumb-container' => 'padding-bottom: {{SIZE}}{{UNIT}};',
             ],
+                ]
+        );
+
+        $this->add_control(
+                'image_position', [
+            'label' => esc_html__('Image Position', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'options' => [
+                'left' => esc_html__('Left', 'hash-elements'),
+                'right' => esc_html__('Right', 'hash-elements'),
+            ],
+            'default' => 'left'
                 ]
         );
 
@@ -191,6 +204,28 @@ class NewsModuleTen extends Widget_Base {
         $this->start_controls_section(
                 'additional_settings', [
             'label' => esc_html__('Additional Settings', 'hash-elements'),
+                ]
+        );
+        
+        $this->add_control(
+                'image_border_radius', [
+            'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 500,
+                    'step' => 1
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 0,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-post-thumb' => 'border-radius: {{SIZE}}{{UNIT}};'
+            ],
                 ]
         );
 
@@ -478,6 +513,7 @@ class NewsModuleTen extends Widget_Base {
         $settings = $this->get_settings_for_display();
 
         $listing_post_image_size = $settings['listing_post_image_size'];
+        $image_position = 'he-thumb-' . $settings['image_position'];
         ?>
         <div class="he-news-module-ten">
 
@@ -490,7 +526,7 @@ class NewsModuleTen extends Widget_Base {
                 while ($query->have_posts()): $query->the_post();
                     $last = $query->post_count;
                     ?>
-                    <div class="he-post-item he-clearfix">
+                    <div class="he-post-item he-clearfix <?php echo esc_attr($image_position); ?>">
                         <div class="he-post-thumb">
                             <a href="<?php the_permalink(); ?>">
                                 <div class="he-thumb-container">

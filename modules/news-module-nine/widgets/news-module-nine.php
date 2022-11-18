@@ -69,6 +69,17 @@ class NewsModuleNine extends Widget_Base {
             'label' => esc_html__('Posts', 'hash-elements'),
                 ]
         );
+        
+        $this->add_control(
+                'posts_number', [
+            'label' => __('No of Posts', 'hash-elements'),
+            'type' => Controls_Manager::NUMBER,
+            'min' => 1,
+            'max' => 20,
+            'step' => 1,
+            'default' => 5,
+                ]
+        );
 
         $this->end_controls_section();
 
@@ -172,6 +183,29 @@ class NewsModuleNine extends Widget_Base {
             'default' => 'large',
                 ]
         );
+        
+        $this->add_control(
+                'listing_thumb_width', [
+            'label' => esc_html__('Image Width(px)', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 50,
+                    'max' => 300,
+                    'step' => 1
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 120,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-news-module-nine .he-post-item .he-post-thumb' => 'width: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .he-news-module-nine .he-post-item .he-post-content' => 'margin-left: calc({{SIZE}}{{UNIT}} + 20px);'
+            ],
+                ]
+        );
 
         $this->add_control(
                 'listing_thumb_height', [
@@ -242,6 +276,28 @@ class NewsModuleNine extends Widget_Base {
         $this->start_controls_section(
                 'additional_settings', [
             'label' => esc_html__('Additional Settings', 'hash-elements'),
+                ]
+        );
+        
+        $this->add_control(
+                'image_border_radius', [
+            'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 30,
+                    'step' => 1
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 0,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-post-thumb' => 'border-radius: {{SIZE}}{{UNIT}};'
+            ],
                 ]
         );
 
@@ -724,7 +780,7 @@ class NewsModuleNine extends Widget_Base {
         $args['ignore_sticky_posts'] = 1;
         $args['post_status'] = 'publish';
         $args['offset'] = $settings['posts_offset'];
-        $args['posts_per_page'] = 5;
+        $args['posts_per_page'] = $settings['posts_number'];
         $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : [];
 
         $args['tax_query'] = [];
