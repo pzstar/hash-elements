@@ -165,6 +165,8 @@
 /* Title Font Size */
 h3.he-post-title{
     font-size: 16px;
+    margin: 0 0 10px;
+    clear: none;
 }
 
 h3.he-post-title a{
