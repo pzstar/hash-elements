@@ -69,7 +69,7 @@ class HASHELE_Widget_Loader {
         add_action('elementor/init', [$this, 'add_elementor_widget_categories']);
 
         // Fires after Elementor controls are registered.
-        add_action('elementor/controls/controls_registered', [$this, 'register_controls']);
+        add_action('elementor/controls/register', [$this, 'register_controls']);
 
         //FrontEnd Scripts
         add_action('elementor/frontend/before_register_scripts', [$this, 'register_frontend_scripts']);
@@ -102,13 +102,13 @@ class HASHELE_Widget_Loader {
         }
     }
 
-    function register_controls() {
+    function register_controls($controls_manager) {
         require_once HASHELE_PATH . 'inc/controls/groups/group-control-query.php';
         require_once HASHELE_PATH . 'inc/controls/groups/group-control-header.php';
 
         // Register Group
-        \Elementor\Plugin::instance()->controls_manager->add_group_control('hash-elements-query', new Group_Control_Query());
-        \Elementor\Plugin::instance()->controls_manager->add_group_control('hash-elements-header', new Group_Control_Header());
+        $controls_manager->add_group_control('hash-elements-query', new Group_Control_Query());
+        $controls_manager->add_group_control('hash-elements-header', new Group_Control_Header());
     }
 
     /**
