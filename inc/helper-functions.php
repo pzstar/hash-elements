@@ -7,7 +7,7 @@
 if (!function_exists('hash_elements_author_name')) {
 
     function hash_elements_author_name() {
-        echo '<span class="he-post-author"><i class="mdi mdi-account"></i>' . get_the_author() . '</span>';
+        echo '<span class="he-post-author"><i class="mdi-account"></i>' . get_the_author() . '</span>';
     }
 
 }
@@ -16,7 +16,7 @@ if (!function_exists('hash_elements_author_name')) {
 if (!function_exists('hash_elements_comment_count')) {
 
     function hash_elements_comment_count() {
-        echo '<span class="he-post-comment"><i class="mdi mdi-comment-outline"></i>' . get_comments_number() . '</span>';
+        echo '<span class="he-post-comment"><i class="mdi-comment-outline"></i>' . get_comments_number() . '</span>';
     }
 
 }
@@ -26,9 +26,9 @@ if (!function_exists('hash_elements_post_date')) {
     function hash_elements_post_date($format = '') {
 
         if ($format) {
-            echo '<span class="he-post-date"><i class="mdi mdi-clock-time-four-outline"></i>' . get_the_date($format) . '</span>';
+            echo '<span class="he-post-date"><i class="mdi-clock-time-four-outline"></i>' . get_the_date($format) . '</span>';
         } else {
-            echo '<span class="he-post-date"><i class="mdi mdi-clock-time-four-outline"></i>' . get_the_date() . '</span>';
+            echo '<span class="he-post-date"><i class="mdi-clock-time-four-outline"></i>' . get_the_date() . '</span>';
         }
     }
 
@@ -38,7 +38,7 @@ if (!function_exists('hash_elements_post_date')) {
 if (!function_exists('hash_elements_time_ago')) {
 
     function hash_elements_time_ago() {
-        echo '<span class="he-post-date"><i class="mdi mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'hash-elements') . '</span>';
+        echo '<span class="he-post-date"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'hash-elements') . '</span>';
     }
 
 }

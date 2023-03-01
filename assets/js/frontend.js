@@ -36,7 +36,7 @@
                     autoplayTimeout: parseInt(params.pause) * 1000,
                     nav: true,
                     dots: false,
-                    navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>']
+                    navText: ['<i class="mdi-chevron-left"></i>', '<i class="mdi-chevron-right"></i>']
                 });
             }
         },
@@ -50,7 +50,7 @@
                     autoplayTimeout: params.pause,
                     nav: JSON.parse(params.nav),
                     dots: JSON.parse(params.dots),
-                    navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>'],
+                    navText: ['<i class="mdi-chevron-left"></i>', '<i class="mdi-chevron-right"></i>'],
                     responsive: {
                         0: {
                             items: params.items_mobile,
@@ -143,7 +143,7 @@
                     dots: false,
                     autoplayTimeout: params.pause,
                     animateOut: 'fadeOut',
-                    navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>']
+                    navText: ['<i class="mdi-chevron-left"></i>', '<i class="mdi-chevron-right"></i>']
                 });
             }
         },
@@ -159,7 +159,7 @@
                     dots: JSON.parse(params.dots),
                     autoplayTimeout: params.pause,
                     animateOut: 'fadeOut',
-                    navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>']
+                    navText: ['<i class="mdi-chevron-left"></i>', '<i class="mdi-chevron-right"></i>']
                 });
             }
         },
@@ -218,7 +218,7 @@
                     nav: false,
                     dots: JSON.parse(params.dots),
                     autoplayTimeout: params.pause,
-                    navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>'],
+                    navText: ['<i class="mdi-chevron-left"></i>', '<i class="mdi-chevron-right"></i>'],
                     responsive: {
                         0: {
                             items: params.items_mobile,
@@ -247,7 +247,7 @@
                     nav: JSON.parse(params.nav),
                     dots: JSON.parse(params.dots),
                     autoplayTimeout: params.pause,
-                    navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>']
+                    navText: ['<i class="mdi-chevron-left"></i>', '<i class="mdi-chevron-right"></i>']
                 });
             }
         },

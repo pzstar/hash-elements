@@ -3,7 +3,7 @@ Contributors: Hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 5.0
 Tested up to: 6.1
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 Requires PHP: 5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -25,6 +25,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.2.6, Mar 1 2023 =
+* Font Icons updated to latest version
+
 = 1.2.5, Jan 10 2023 =
 * Deprecated: Function Elementor\Widgets_Manager::register_widget_type is deprecated since version 3.5.0!  - Fixed
 

@@ -285,7 +285,7 @@ class ContactInformation extends Widget_Base {
             <ul>
                 <?php if (!empty($settings['phone'])): ?>
                     <li>
-                        <i class="mdi mdi-cellphone-iphone"></i>
+                        <i class="mdi-cellphone-iphone"></i>
                         <span>
                             <?php
                             if ($settings['link_phone']) {
@@ -304,7 +304,7 @@ class ContactInformation extends Widget_Base {
 
                 <?php if (!empty($settings['email'])): ?>
                     <li>
-                        <i class="mdi mdi-email"></i>
+                        <i class="mdi-email"></i>
                         <span>
                             <?php
                             if ($settings['link_email']) {
@@ -323,7 +323,7 @@ class ContactInformation extends Widget_Base {
 
                 <?php if (!empty($settings['website'])): ?>
                     <li>
-                        <i class="mdi mdi-earth"></i>
+                        <i class="mdi-earth"></i>
                         <span>
                             <?php
                             if ($settings['link_website']) {
@@ -342,14 +342,14 @@ class ContactInformation extends Widget_Base {
 
                 <?php if (!empty($settings['contact_address'])): ?>
                     <li>
-                        <i class="mdi mdi-map-marker"></i>
+                        <i class="mdi-map-marker"></i>
                         <span><?php echo wpautop(esc_html($settings['contact_address'])); ?></span>
                     </li>
                 <?php endif; ?>
 
                 <?php if (!empty($settings['contact_time'])): ?>
                     <li>
-                        <i class="mdi mdi-clock-time-three"></i>
+                        <i class="mdi-clock-time-three"></i>
                         <span><?php echo wpautop(esc_html($settings['contact_time'])); ?></span>
                     </li>
                 <?php endif; ?>
