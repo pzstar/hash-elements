@@ -241,7 +241,7 @@ class Single_News_One extends Widget_Base {
             ],
                 ]
         );
-        
+
         $this->add_control(
                 'image_border_radius', [
             'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),
@@ -264,6 +264,15 @@ class Single_News_One extends Widget_Base {
                 ]
         );
 
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+                'content_style', [
+            'label' => esc_html__('Content', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
         $this->add_control(
                 'content_alignment', [
             'label' => esc_html__('Content Alignment', 'hash-elements'),
@@ -274,15 +283,6 @@ class Single_News_One extends Widget_Base {
                 'right' => esc_html__('Right', 'hash-elements'),
             ],
             'default' => 'left'
-                ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'content_style', [
-            'label' => esc_html__('Content', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
                 ]
         );
 
@@ -498,7 +498,7 @@ class Single_News_One extends Widget_Base {
                             <?php $this->get_post_meta(); ?>
 
                             <?php if ($excerpt_length) { ?>
-                            <div class="he-post-excerpt"><?php echo hash_elements_custom_excerpt($excerpt_length); ?></div>
+                                <div class="he-post-excerpt"><?php echo hash_elements_custom_excerpt($excerpt_length); ?></div>
                             <?php } ?>
                         </div>
                         <?php

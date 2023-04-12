@@ -241,7 +241,7 @@ class Single_News_Two extends Widget_Base {
             ],
                 ]
         );
-        
+
         $this->add_control(
                 'image_border_radius', [
             'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),
@@ -264,6 +264,16 @@ class Single_News_Two extends Widget_Base {
                 ]
         );
 
+        $this->end_controls_section();
+
+
+        $this->start_controls_section(
+                'content_style', [
+            'label' => esc_html__('Content', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
+        );
+
         $this->add_control(
                 'content_alignment', [
             'label' => esc_html__('Content Alignment', 'hash-elements'),
@@ -274,6 +284,15 @@ class Single_News_Two extends Widget_Base {
                 'right' => esc_html__('Right', 'hash-elements'),
             ],
             'default' => 'left'
+                ]
+        );
+
+        $this->add_group_control(
+                \Elementor\Group_Control_Background::get_type(), [
+            'name' => 'background',
+            'label' => __('Overlay Background', 'hash-elements'),
+            'types' => ['gradient'],
+            'selector' => '{{WRAPPER}} .he-post-graident-title .he-post-content',
                 ]
         );
 
@@ -296,23 +315,6 @@ class Single_News_Two extends Widget_Base {
             'selectors' => [
                 '{{WRAPPER}} .he-post-graident-title .he-post-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
-                ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'overlay_background_section', [
-            'label' => esc_html__('Overlay Background', 'hash-elements'),
-                ]
-        );
-
-        $this->add_group_control(
-                \Elementor\Group_Control_Background::get_type(), [
-            'name' => 'background',
-            'label' => __('Overlay Background', 'hash-elements'),
-            'types' => ['gradient'],
-            'selector' => '{{WRAPPER}} .he-post-graident-title .he-post-content',
                 ]
         );
 
