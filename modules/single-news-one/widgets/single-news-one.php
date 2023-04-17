@@ -313,7 +313,7 @@ class Single_News_One extends Widget_Base {
 
         $this->add_control(
                 'content_margin', [
-            'label' => esc_html__('Content Padding', 'hash-elements'),
+            'label' => esc_html__('Content Margin', 'hash-elements'),
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
