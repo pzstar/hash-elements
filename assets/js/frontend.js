@@ -28,6 +28,7 @@
             if ($element.length > 0) {
                 var params = JSON.parse($element.find('.owl-carousel').attr('data-params'));
                 $element.find('.owl-carousel').owlCarousel({
+                    rtl: JSON.parse(hash_element_params.is_rtl),
                     items: 1,
                     margin: 10,
                     loop: true,
@@ -45,6 +46,7 @@
             if ($element.length > 0) {
                 var params = JSON.parse($element.attr('data-params'));
                 $element.owlCarousel({
+                    rtl: JSON.parse(hash_element_params.is_rtl),
                     loop: true,
                     autoplay: JSON.parse(params.autoplay),
                     autoplayTimeout: params.pause,
@@ -76,6 +78,7 @@
             if ($element.length > 0) {
                 var params = JSON.parse($element.attr('data-params'));
                 $element.owlCarousel({
+                    rtl: JSON.parse(hash_element_params.is_rtl),
                     autoplay: JSON.parse(params.autoplay),
                     loop: true,
                     nav: false,
@@ -136,6 +139,7 @@
             if ($element.length > 0) {
                 var params = JSON.parse($element.attr('data-params'));
                 $element.owlCarousel({
+                    rtl: JSON.parse(hash_element_params.is_rtl),
                     autoplay: JSON.parse(params.autoplay),
                     items: 1,
                     loop: true,
@@ -152,6 +156,7 @@
             if ($element.length > 0) {
                 var params = JSON.parse($element.attr('data-params'));
                 $element.owlCarousel({
+                    rtl: JSON.parse(hash_element_params.is_rtl),
                     autoplay: JSON.parse(params.autoplay),
                     items: 1,
                     loop: true,
@@ -213,6 +218,7 @@
             if ($element.length > 0) {
                 var params = JSON.parse($element.attr('data-params'));
                 $element.owlCarousel({
+                    rtl: JSON.parse(hash_element_params.is_rtl),
                     autoplay: JSON.parse(params.autoplay),
                     loop: true,
                     nav: false,
@@ -241,6 +247,7 @@
             if ($element.length > 0) {
                 var params = JSON.parse($element.attr('data-params'));
                 $element.owlCarousel({
+                    rtl: JSON.parse(hash_element_params.is_rtl),
                     items: 1,
                     autoplay: JSON.parse(params.autoplay),
                     loop: true,
