@@ -92,6 +92,7 @@
 }
 
 .he-post-meta > span {
+    display: inline-block;
     margin-right: 20px;
 }
 
@@ -100,6 +101,7 @@
 }
 
 .he-post-meta i{
+    display: inline-block;
     margin-right: 5px;
     font-size: 0.88em;
     font-weight: bold;

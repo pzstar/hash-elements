@@ -100,6 +100,7 @@
 }
 
 .he-post-meta i{
+    display: inline-block;
     margin-left: 5px;
     font-size: 0.88em;
     font-weight: bold;
@@ -3087,4 +3088,9 @@ h3.he-big-title a{
     .het-blog-post{
         width: 100%;
     }
+}
+
+/* New CSS */
+.he-ticker .owl-nav{
+    direction: ltr;
 }
