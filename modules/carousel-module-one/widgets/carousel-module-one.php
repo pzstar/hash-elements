@@ -327,7 +327,7 @@ class CarouselModuleOne extends Widget_Base {
             'label' => esc_html__('Additional Settings', 'hash-elements'),
                 ]
         );
-        
+
         $this->add_control(
                 'image_border_radius', [
             'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),
@@ -776,14 +776,14 @@ class CarouselModuleOne extends Widget_Base {
 
         $params = array(
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,
-            'pause' => (int) $settings['pause_duration']['size'] * 1000,
-            'items' => (int) $settings['no_of_slides']['size'],
+            'pause' => (int) (isset($settings['pause_duration']['size']) ? $settings['pause_duration']['size'] : 5) * 1000,
+            'items' => (int) isset($settings['no_of_slides']['size']) ? $settings['no_of_slides']['size'] : 3,
             'items_tablet' => (int) isset($settings['no_of_slides_tablet']['size']) ? $settings['no_of_slides_tablet']['size'] : 2,
             'items_mobile' => (int) isset($settings['no_of_slides_mobile']['size']) ? $settings['no_of_slides_mobile']['size'] : 1,
-            'margin' => (int) $settings['slides_margin']['size'],
+            'margin' => (int) isset($settings['slides_margin']['size']) ? $settings['slides_margin']['size'] : 30,
             'margin_tablet' => (int) isset($settings['slides_margin_tablet']['size']) ? $settings['slides_margin_tablet']['size'] : 30,
             'margin_mobile' => (int) isset($settings['slides_margin_mobile']['size']) ? $settings['slides_margin_mobile']['size'] : 30,
-            'stagepadding' => (int) $settings['slides_stagepadding']['size'],
+            'stagepadding' => (int) isset($settings['slides_stagepadding']['size']) ? $settings['slides_stagepadding']['size'] : 0,
             'stagepadding_tablet' => (int) isset($settings['slides_stagepadding_tablet']['size']) ? $settings['slides_stagepadding_tablet']['size'] : 0,
             'stagepadding_mobile' => (int) isset($settings['slides_stagepadding_mobile']['size']) ? $settings['slides_stagepadding_mobile']['size'] : 0,
             'nav' => $settings['nav'] == 'yes' ? true : false,

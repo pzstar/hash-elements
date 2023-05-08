@@ -166,6 +166,7 @@
 
 /* Title Font Size */
 h3.he-post-title{
+    color: inherit;
     font-size: 16px;
     margin: 0 0 10px;
     clear: none;
@@ -511,7 +512,7 @@ h3.he-big-title a{
 }
 
 .he-news-module-five .he-small-block .he-post-content {
-    margin-left: 140px;
+    margin-left: calc(var(--he-image-width, 120px) + 20px);
 }
 
 /* News Module Six */
@@ -588,7 +589,7 @@ h3.he-big-title a{
 }
 
 .he-news-module-seven .he-small-block .he-post-content {
-    margin-left: 140px;
+    margin-left: calc(var(--he-image-width, 120px) + 20px);
 }
 
 /* News Module Eight*/
@@ -660,6 +661,7 @@ h3.he-big-title a{
 }
 
 .he-big-post-item h3{
+    color: inherit;
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -676,7 +678,7 @@ h3.he-big-title a{
 }
 
 .he-news-module-nine .he-post-item .he-post-content{
-    margin-left: 140px;
+    margin-left: calc(var(--he-image-width, 120px) + 20px);
 }
 
 /* News Module Ten */
@@ -687,7 +689,7 @@ h3.he-big-title a{
 }
 
 .he-news-module-ten .he-post-item.he-thumb-left .he-post-content{
-    margin-left: 140px;
+    margin-left: calc(var(--he-image-width, 120px) + 20px);
 }
 
 .he-news-module-ten .he-post-item.he-thumb-right .he-post-thumb{
@@ -786,7 +788,7 @@ h3.he-big-title a{
 }
 
 .he-double-small-block .he-post-content{
-    margin-left: 140px;
+    margin-left: calc(var(--he-image-width, 120px) + 20px);
 }
 
 
@@ -921,7 +923,7 @@ h3.he-big-title a{
 }
 
 .he-mini-news .he-post-item .he-post-content{
-    margin-left: 140px;
+    margin-left: calc(var(--he-image-width, 120px) + 20px);
 }
 
 /* Carousel Section */

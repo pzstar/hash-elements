@@ -92,6 +92,7 @@
 }
 
 .he-post-meta > span {
+    display: inline-block;
     margin-left: 20px;
 }
 
@@ -510,7 +511,7 @@ h3.he-big-title a{
 }
 
 .he-news-module-five .he-small-block .he-post-content {
-    margin-right: 140px;
+    margin-right: calc(var(--he-image-width, 120px) + 20px);
 }
 
 /* News Module Six */
@@ -587,7 +588,7 @@ h3.he-big-title a{
 }
 
 .he-news-module-seven .he-small-block .he-post-content {
-    margin-right: 140px;
+    margin-right: calc(var(--he-image-width, 120px) + 20px);
 }
 
 /* News Module Eight*/
@@ -675,7 +676,7 @@ h3.he-big-title a{
 }
 
 .he-news-module-nine .he-post-item .he-post-content{
-    margin-right: 140px;
+    margin-right: calc(var(--he-image-width, 120px) + 20px);
 }
 
 /* News Module Ten */
@@ -686,7 +687,7 @@ h3.he-big-title a{
 }
 
 .he-news-module-ten .he-post-item.he-thumb-left .he-post-content{
-    margin-right: 140px;
+    margin-right: calc(var(--he-image-width, 120px) + 20px);
 }
 
 .he-news-module-ten .he-post-item.he-thumb-right .he-post-thumb{
@@ -785,7 +786,7 @@ h3.he-big-title a{
 }
 
 .he-double-small-block .he-post-content{
-    margin-right: 140px;
+    margin-right: calc(var(--he-image-width, 120px) + 20px);
 }
 
 
@@ -920,7 +921,7 @@ h3.he-big-title a{
 }
 
 .he-mini-news .he-post-item .he-post-content{
-    margin-right: 140px;
+    margin-right: calc(var(--he-image-width, 120px) + 20px);
 }
 
 /* Carousel Section */
@@ -3093,4 +3094,34 @@ h3.he-big-title a{
 /* New CSS */
 .he-ticker .owl-nav{
     direction: ltr;
+}
+
+.he-carousel-block .owl-carousel .owl-nav button.owl-prev,
+.het-testimonial-slider.owl-carousel .owl-nav .owl-prev{
+    left: 0;
+    right: auto;
+}
+
+.he-carousel-block .owl-carousel .owl-nav button.owl-next,
+.het-testimonial-slider.owl-carousel .owl-nav .owl-next{
+    right: 0;
+    left: auto;
+}
+
+.het-service-link a i.fa-chevron-right:before{
+    content: "\f053";
+}
+
+.he-bx-slider.owl-carousel .owl-nav button.owl-prev {
+    left: 50%;
+    margin-left: -42px;
+    right: auto;
+    margin-right: 0;
+}
+
+.he-bx-slider.owl-carousel .owl-nav button.owl-next {
+    right: 50%;
+    margin-right: -42px;
+    left: auto;
+    margin-left: 0;
 }

@@ -180,7 +180,7 @@ class NewsModuleSeven extends Widget_Base {
             'default' => 'large',
                 ]
         );
-        
+
         $this->add_control(
                 'listing_thumb_width', [
             'label' => esc_html__('Image Width(px)', 'hash-elements'),
@@ -199,7 +199,7 @@ class NewsModuleSeven extends Widget_Base {
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-seven .he-small-block .he-post-thumb' => 'width: {{SIZE}}{{UNIT}};',
-                '{{WRAPPER}} .he-news-module-seven .he-small-block .he-post-content' => 'margin-left: calc({{SIZE}}{{UNIT}} + 20px);'
+                '{{WRAPPER}}' => '--he-image-width: {{SIZE}}{{UNIT}};'
             ],
                 ]
         );
@@ -276,7 +276,7 @@ class NewsModuleSeven extends Widget_Base {
             'label' => esc_html__('Additional Settings', 'hash-elements'),
                 ]
         );
-        
+
         $this->add_control(
                 'image_border_radius', [
             'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),

@@ -285,7 +285,7 @@ class ContactInformation extends Widget_Base {
             <ul>
                 <?php if (!empty($settings['phone'])): ?>
                     <li>
-                        <i class="mdi-cellphone-iphone"></i>
+                        <i class="mdi-cellphone"></i>
                         <span>
                             <?php
                             if ($settings['link_phone']) {
