@@ -371,17 +371,19 @@ class TotalBlogModule extends Widget_Base {
             $query = new \WP_Query($args);
             if ($query->have_posts()):
                 while ($query->have_posts()): $query->the_post();
-                    $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), $settings['thumbnail_size']);
                     ?>
                     <div class="het-blog-post">
                         <div class="het-blog-box">
                             <?php
                             if (has_post_thumbnail()) {
-                                ?> 
-                                <div class="het-blog-thumbnail">
-                                    <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title(); ?>"></a>
-                                </div>
-                                <?php
+                                $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), $settings['thumbnail_size']);
+                                if (isset($total_image[0])) {
+                                    ?> 
+                                    <div class="het-blog-thumbnail">
+                                        <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title(); ?>"></a>
+                                    </div>
+                                    <?php
+                                }
                             }
                             ?>
                             <div class="het-blog-excerpt">
