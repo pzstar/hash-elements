@@ -209,13 +209,15 @@ if (!function_exists('he_elementor_get_posts_by_query')) {
         $post_type = isset($_POST['post_type']) ? $_POST['post_type'] : 'post'; // phpcs:ignore
         $results = array();
 
-        $query = new WP_Query(
-                array(
-            's' => $search_string,
+        add_filter('posts_where', 'he_title_filter', 10, 2);
+
+        $query = new WP_Query(array(
             'post_type' => $post_type,
-            'posts_per_page' => - 1,
-                )
-        );
+            'posts_per_page' => -1,
+            'title_filter' => $search_string,
+            'post_status' => 'publish',
+        ));
+        remove_filter('posts_where', 'he_title_filter', 10, 2);
 
         wp_reset_postdata();
 
@@ -271,4 +273,15 @@ if (!function_exists('he_elementor_get_posts_title_by_id')) {
 
     add_action('wp_ajax_he_elementor_get_posts_title_by_id', 'he_elementor_get_posts_title_by_id');
     add_action('wp_ajax_nopriv_he_elementor_get_posts_title_by_id', 'he_elementor_get_posts_title_by_id');
+}
+
+if (!function_exists('he_title_filter')) {
+
+    function he_title_filter($where, &$wp_query) {
+        global $wpdb;
+        if ($search_term = $wp_query->get('title_filter')) {
+            $where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'%' . esc_sql($wpdb->esc_like($search_term)) . '%\'';
+        }
+        return $where;
+    }
 }
