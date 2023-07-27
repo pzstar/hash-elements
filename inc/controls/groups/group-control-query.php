@@ -4,6 +4,7 @@ namespace HashElements;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Base;
+use HashElements\HashElements_Ajax_Select2;
 
 if (!defined('ABSPATH'))
     exit; // Exit if accessed directly
@@ -66,10 +67,12 @@ class Group_Control_Query extends Group_Control_Base {
 
         $fields['exclude_posts'] = [
             'label' => esc_html__('Exclude Posts', 'hash-elements'),
-            'type' => Controls_Manager::SELECT2,
+            'type' => HashElements_Ajax_Select2::AJAXSELECT2,
+            'search' => 'he_elementor_get_posts_by_query',
+            'render' => 'he_elementor_get_posts_title_by_id',
+            'post_type' => 'post',
             'label_block' => true,
             'multiple' => true,
-            'options' => hash_elements_get_posts(),
             'condition' => [
                 'post_type' => 'post'
             ]
