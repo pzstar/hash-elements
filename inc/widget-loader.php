@@ -103,14 +103,14 @@ class HASHELE_Widget_Loader {
     }
 
     function register_controls($controls_manager) {
-        require_once HASHELE_PATH . 'inc/controls/ajaxselect2.php';
+        require_once HASHELE_PATH . 'inc/controls/class-ajaxselect-control.php';
         require_once HASHELE_PATH . 'inc/controls/groups/group-control-query.php';
         require_once HASHELE_PATH . 'inc/controls/groups/group-control-header.php';
 
         // Register Group
         $controls_manager->add_group_control('hash-elements-query', new Group_Control_Query());
         $controls_manager->add_group_control('hash-elements-header', new Group_Control_Header());
-        $controls_manager->register(new HashElements_Ajax_Select2());
+        $controls_manager->register(new AjaxSelect_Control());
     }
 
     /**

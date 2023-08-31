@@ -1,5 +1,5 @@
 jQuery(window).on('elementor:init', function ($) {
-    var ControlAjaxselect2ItemView = elementor.modules.controls.BaseData.extend({
+    var AjaxSelectItemView = elementor.modules.controls.BaseData.extend({
         isSearch: false,
 
         resultsRender: function () {
@@ -46,7 +46,7 @@ jQuery(window).on('elementor:init', function ($) {
             this.ui.select.select2({
                 placeholder: 'Search',
                 allowClear: true,
-                minimumInputLength: 2,
+                minimumInputLength: 3,
                 ajax: {
                     url: ajaxurl,
                     dataType: 'json',
@@ -81,5 +81,5 @@ jQuery(window).on('elementor:init', function ($) {
             this.$el.remove();
         },
     });
-    elementor.addControlView('ajaxselect2', ControlAjaxselect2ItemView);
+    elementor.addControlView('hash-elements-ajax-select', AjaxSelectItemView);
 });

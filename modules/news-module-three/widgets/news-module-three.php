@@ -221,7 +221,7 @@ class NewsModuleThree extends Widget_Base {
             'label' => esc_html__('Additional Settings', 'hash-elements'),
                 ]
         );
-        
+
         $this->add_control(
                 'image_border_radius', [
             'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),

@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Hash Elements - Addons for Elementor
  * Description: Elementor addons for WordPress Themes developed by HashThemes https://hashthemes.com
- * Version: 1.3.0
+ * Version: 1.3.1
  * Author: HashThemes
  * Author URI: https://hashthemes.com/
  * Text Domain: hash-elements
@@ -17,7 +17,7 @@ if (!defined('WPINC')) {
     die();
 }
 
-define('HASHELE_VERSION', '1.3.0');
+define('HASHELE_VERSION', '1.3.1');
 
 define('HASHELE_FILE', __FILE__);
 define('HASHELE_PLUGIN_BASENAME', plugin_basename(HASHELE_FILE));
@@ -61,9 +61,10 @@ if (!class_exists('Hash_Elements')) {
                 return;
             }
 
-            require( HASHELE_PATH . 'inc/helper-functions.php' );
-            require( HASHELE_PATH . 'inc/widget-loader.php' );
-            require( HASHELE_PATH . 'inc/sticky-column.php' );
+            require(HASHELE_PATH . 'inc/helper-functions.php');
+            require(HASHELE_PATH . 'inc/widget-loader.php');
+            require(HASHELE_PATH . 'inc/sticky-column.php');
+            require(HASHELE_PATH . 'inc/ajax-select.php');
         }
 
         public function required_plugins_notice() {

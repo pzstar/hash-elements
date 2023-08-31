@@ -123,3 +123,8 @@
 .he-elementor-pro-no .elementor-context-menu-list__group.elementor-context-menu-list__group-save{
     display: none !important;
 }
+
+/* Ajax Select */
+.elementor-control-type-hash-elements-ajax-select .select2-container.select2-container--default .select2-selection--multiple {
+    padding: 4px;
+}

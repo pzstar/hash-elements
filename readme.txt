@@ -1,9 +1,9 @@
 ===Hash Elements===
-Contributors: Hashthemes
+Contributors: HashThemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 5.0
-Tested up to: 6.2
-Stable tag: 1.3.0
+Tested up to: 6.3
+Stable tag: 1.3.1
 Requires PHP: 5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,23 @@ Hash Elements provides additional capability with 30+ elementor blocks to build 
 
 ==Description==
 
-Hash Elements provides additional capability with 30+ elementor blocks to build your website.
+Hash Elements is a robust plugin that extends the functionality of the Elementor page builder by introducing over 40 additional modules, each offering unique features and design options to enhance your website building experience. These modules can be seamlessly integrated into your Elementor projects, allowing you to create highly customized and visually appealing web pages.
+
+<h3>Key Features of the Hash Element Plugin for Elementor</h3>
+
+<ul>
+<li><strong>Diverse Module Library:</strong> Hash Elements expands the Elementor module library with an extensive collection of 40+ modules, offering a wide range of design and functional possibilities.</li>
+<li><strong>Versatile Design Elements:</strong> The plugin introduces new design elements and functionalities, such as sliders, carousels, gallaries, timeline, news listings and many more.</li>
+<li><strong>Elementor Integration:</strong> Hash Element is exclusively designed for use with Elementor, ensuring a smooth and integrated experience for users of this popular page builder.</li>
+<li><strong>Responsive Design:</strong> Hash Element ensures that the design you create retain their responsiveness when used within Elementor-designed pages. This maintains a consistent and visually appealing experience across various devices.</li>
+<li><strong>Styling Options:</strong> Enjoy comprehensive styling options for each module, giving you the freedom to match the design of your modules with the overall look of your website.</li>
+<li><strong>User-Friendly Interface:</strong> The plugin seamlessly integrates with Elementor's intuitive interface, making it easy for users of all skill levels to add, edit, and manage hash elements within their Elementor projects.</li>
+<li><strong>Compatibility:</strong> Hash Element is built to work flawlessly with the Elementor page builder, ensuring compatibility with your existing Elementor-powered website.</li>
+<li><strong>Regular Updates:</strong> Hash Elements is likely to provide regular updates to its module library, ensuring that you have access to the latest design trends and features.</li>
+<li><strong>Documentation and Support:</strong> The plugin likely includes comprehensive documentation and support resources to assist you in effectively utilizing its modules.</li>
+</ul>
+
+In summary, whether you're creating a news portal, magazine site, business homepage, corporate website, or a versatile multipurpose platform, Hash Element offers the tools necessary to build a visually striking, engaging, and functional website that caters to your specific needs and objectives.
 
 == Installation ==
 The easy way to install the plugin is via WordPress.org plugin directory.
@@ -25,6 +41,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.3.1, Aug 30 2023 =
+* Ajax Select added for post selection on Elementor - Added
+
 = 1.3.0, May 08 2023 =
 * RTL Ready Issues - Fixed
 

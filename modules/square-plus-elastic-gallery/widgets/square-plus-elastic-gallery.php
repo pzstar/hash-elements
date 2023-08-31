@@ -34,7 +34,7 @@ class SquarePlusElasticGallery extends Widget_Base {
     }
 
     public function get_script_depends() {
-        return [ 'modernizr', 'draggabilly', 'elastiStack'];
+        return ['modernizr', 'draggabilly', 'elastiStack'];
     }
 
     /** Controls */
