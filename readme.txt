@@ -3,7 +3,7 @@ Contributors: HashThemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 5.0
 Tested up to: 6.3
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 Requires PHP: 5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -41,6 +41,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.3.2, Oct 10 2023 =
+* New Module 3 bug fixed
+
 = 1.3.1, Aug 30 2023 =
 * Ajax Select added for post selection on Elementor - Added
 
