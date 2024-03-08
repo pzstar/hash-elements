@@ -494,7 +494,7 @@ class Single_News_One extends Widget_Base {
                             </a>
                         </div>
 
-                        <div class="he-post-content he-align-<?php echo $settings['content_alignment']; ?>">
+                        <div class="he-post-content he-align-<?php echo esc_attr($settings['content_alignment']); ?>">
 
                             <h3 class="he-post-title"><a href="<?php the_permalink(); ?>"><?php echo esc_html(get_the_title()); ?></a></h3>
 
