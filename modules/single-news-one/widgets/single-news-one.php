@@ -348,6 +348,20 @@ class Single_News_One extends Widget_Base {
                 ]
         );
 
+        $this->add_control(
+                'title_color_hover', [
+            'label' => esc_html__('Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'scheme' => [
+                'type' => Color::get_type(),
+                'value' => Color::COLOR_1,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-post-title a:hover' => 'color: {{VALUE}}',
+            ],
+                ]
+        );
+
         $this->add_group_control(
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
