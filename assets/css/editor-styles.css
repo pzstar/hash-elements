@@ -119,8 +119,15 @@
 .he-elementor-pro-no .elementor-control-dynamic-switcher,
 .he-elementor-pro-no .elementor-control-section_custom_css_pro,
 .he-elementor-pro-no .elementor-control-section_custom_attributes_pro,
+.he-elementor-pro-no .elementor-control-display_conditions_pro,
+.he-elementor-pro-no .elementor-control-scrolling_effects_pro,
+.he-elementor-pro-no .elementor-control-mouse_effects_pro,
+.he-elementor-pro-no .elementor-control-sticky_pro,
 .he-elementor-pro-no [data-tab="global"],
-.he-elementor-pro-no .elementor-context-menu-list__group.elementor-context-menu-list__group-save{
+.he-elementor-pro-no .elementor-context-menu-list__group.elementor-context-menu-list__group-save,
+.he-elementor-pro-no #elementor-panel-get-pro-elements-sticky,
+.he-elementor-pro-no #elementor-navigator__footer__promotion,
+.he-elementor-pro-no #e-notice-bar{
     display: none !important;
 }
 
