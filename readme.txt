@@ -1,9 +1,9 @@
 ===Hash Elements===
-Contributors: HashThemes
+Contributors: hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 5.0
-Tested up to: 6.4
-Stable tag: 1.3.5
+Tested up to: 6.5
+Stable tag: 1.3.6
 Requires PHP: 5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -41,6 +41,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.3.6, May 13 2024 =
+* CSS fixes
+
 = 1.3.5, Mar 25 2024 =
 * Title hover color added in Single News One Elementor Module
 
