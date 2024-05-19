@@ -3121,3 +3121,8 @@ h3.he-big-title a{
     left: auto;
     margin-left: 0;
 }
+
+.e-con.he-sticky-container-yes{
+    position: sticky;
+    top: var(--he-sticky-top-spacing, 0);
+}

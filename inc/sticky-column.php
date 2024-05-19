@@ -2,8 +2,6 @@
 
 namespace HashElements\Inc;
 
-use \Elementor\Controls_Manager;
-
 // Exit if accessed directly
 if (!defined('ABSPATH'))
     exit;
@@ -25,11 +23,8 @@ class Sticky_Column {
 
     public function init() {
         add_filter('elementor/element/column/layout/after_section_start', [$this, 'add_controls']);
-        add_action('elementor/element/container/section_effects/before_section_end', [$this, 'add_controls']);
         add_action('elementor/frontend/column/before_render', [$this, 'render_attribute'], 10);
-        add_action('elementor/frontend/container/before_render', [$this, 'render_container_attribute'], 10);
         add_action('elementor/column/print_template', [$this, 'print_template'], 10, 2);
-        add_action('elementor/container/print_template', [$this, 'print_container_template'], 10, 2);
     }
 
     public function add_controls($section) {
@@ -94,19 +89,6 @@ class Sticky_Column {
         }
     }
 
-    public function render_container_attribute($widget) {
-        $settings = $widget->get_settings_for_display();
-        if ('true' === $settings['hash_elements_sidebar_sticky']) {
-            $top_spacing = $settings['hash_elements_sidebar_sticky_top_spacing'] ? $settings['hash_elements_sidebar_sticky_top_spacing'] : 0;
-            $bottom_spacing = $settings['hash_elements_sidebar_sticky_bottom_spacing'] ? $settings['hash_elements_sidebar_sticky_bottom_spacing'] : 0;
-            $widget->add_render_attribute('_wrapper', array(
-                'class' => 'he-elementor-sticky-column',
-                'style' => '--he-data-top-spacing:' . absint($top_spacing) . 'px;--he-data-bottom-spacing:' . absint($bottom_spacing) . 'px'
-                    )
-            );
-        }
-    }
-
     public function print_template($template, $widget) {
         ob_start();
         $old_template = $template;
@@ -118,24 +100,6 @@ class Sticky_Column {
         view.addRenderAttribute( '_column_wrapper', 'data-bottom-spacing', settings.hash_elements_sidebar_sticky_bottom_spacing );
         #>
         <div {{{ view.getRenderAttributeString( '_column_wrapper' ) }}}></div>
-        <# } #>
-        <?php
-        $content = ob_get_contents();
-        ob_end_clean();
-
-        return $content . $old_template;
-    }
-
-    public function print_container_template($template, $widget) {
-        ob_start();
-        $old_template = $template;
-        ?>
-        <#
-        if ( 'true' === settings.hash_elements_sidebar_sticky ) {
-        view.addRenderAttribute( '_container_wrapper', 'class', 'he-elementor-sticky-column' );
-        view.addRenderAttribute( '_container_wrapper', 'style', '--he-data-top-spacing:' + settings.hash_elements_sidebar_sticky_top_spacing + 'px;--he-data-bottom-spacing:' + settings.hash_elements_sidebar_sticky_bottom_spacing + 'px');
-        #>
-        <div {{{ view.getRenderAttributeString( '_container_wrapper' ) }}}></div>
         <# } #>
         <?php
         $content = ob_get_contents();
