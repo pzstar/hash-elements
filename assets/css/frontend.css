@@ -1372,7 +1372,7 @@ h3.he-big-title a{
     .he-tile-block.style1,
     .he-tile-block.style2,
     .he-tile-block.style3 {
-        height: auto;
+        height: auto !important;
     }
 
     .he-width-25,
@@ -1382,6 +1382,7 @@ h3.he-big-title a{
     .he-width-65,
     .he-width-100 {
         width: 100%;
+        float: none;
     }
 
     .he-height-33,
