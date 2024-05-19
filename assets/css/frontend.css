@@ -3088,3 +3088,8 @@ h3.he-big-title a{
         width: 100%;
     }
 }
+
+.e-con.he-elementor-sticky-column{
+    position: sticky;
+    top: var(--he-data-top-spacing);
+}

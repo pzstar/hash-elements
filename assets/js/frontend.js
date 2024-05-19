@@ -323,7 +323,7 @@
                     additionalMarginBottom: parseInt(bottomSpacing)
                 });
             }
-        },
+        }
     };
     $(window).on('elementor/frontend/init', HashElements.init);
 
