@@ -29,7 +29,7 @@ class Sticky_Container {
 
     public function add_controls($section) {
         $section->add_control(
-                'hash_elements_sidebar_sticky', [
+                'hash_elements_sticky_container', [
             'label' => esc_html__('Enable Sticky', 'hash-elements'),
             'description' => esc_html__('Container must be nested inside another container.', 'hash-elements'),
             'type' => \Elementor\Controls_Manager::SWITCHER,
@@ -40,7 +40,7 @@ class Sticky_Container {
         );
 
         $section->add_control(
-                'hash_elements_sidebar_sticky_top_spacing', array(
+                'hash_elements_sticky_container_top_spacing', array(
             'label' => esc_html__('Top Spacing(px)', 'hash-elements'),
             'type' => \Elementor\Controls_Manager::NUMBER,
             'default' => 50,
@@ -48,7 +48,7 @@ class Sticky_Container {
             'max' => 500,
             'step' => 1,
             'condition' => array(
-                'hash_elements_sidebar_sticky' => 'yes',
+                'hash_elements_sticky_container' => 'yes',
             ),
             'selectors' => array(
                 '{{WRAPPER}}' => '--he-sticky-top-spacing: {{VALUE}}px',
