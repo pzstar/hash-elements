@@ -728,7 +728,7 @@ class NewsModuleTwo extends Widget_Base {
         $nofollow = $settings['header_link']['nofollow'] ? ' rel="nofollow"' : '';
 
         if ($settings['header_link']['url']) {
-            $link_open = '<a href="' . $settings['header_link']['url'] . '"' . $target . $nofollow . '>';
+            $link_open = '<a href="' . esc_url($settings['header_link']['url']) . '"' . $target . $nofollow . '>';
             $link_close = '</a>';
         }
 
@@ -738,7 +738,7 @@ class NewsModuleTwo extends Widget_Base {
                 <?php
                 echo $link_open;
                 echo '<span>';
-                echo $settings['header_title'];
+                echo wp_kses_post($settings['header_title']);
                 echo '</span>';
                 echo $link_close;
                 ?>
