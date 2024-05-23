@@ -528,7 +528,7 @@ class NewsModuleTwelve extends Widget_Base {
                     $index = $query->current_post + 1;
                     ?>
                     <div class="he-post-item he-clearfix">
-                        <div class="he-post-thumb">
+                        <div class="he-post-thumb he-aligned-block">
                             <a href="<?php the_permalink(); ?>">
                                 <div class="he-thumb-container">
                                     <?php

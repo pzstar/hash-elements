@@ -711,7 +711,7 @@ class NewsModuleSeven extends Widget_Base {
                             <div class="he-small-block">
                             <?php } ?>
                             <div class="he-post-item he-clearfix">
-                                <div class="he-post-thumb">
+                                <div class="he-post-thumb he-aligned-block">
                                     <a href="<?php the_permalink(); ?>">
                                         <div class="he-thumb-container">
                                             <?php

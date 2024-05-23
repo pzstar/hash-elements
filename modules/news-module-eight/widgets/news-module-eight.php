@@ -649,7 +649,7 @@ class NewsModuleEight extends Widget_Base {
                     if ($index == 1) {
                         ?>
                         <div class="he-big-block">
-                            <div class="he-post-item he-clearfix">
+                            <div class="he-post-item">
                                 <div class="he-post-thumb">
                                     <a href="<?php the_permalink(); ?>">
                                         <div class="he-thumb-container">
@@ -685,7 +685,7 @@ class NewsModuleEight extends Widget_Base {
                             <div class="he-small-block">
                                 <div class="he-small-block-wrap">
                                 <?php } ?>
-                                <div class="he-post-item he-clearfix">
+                                <div class="he-post-item">
                                     <div class="he-post-thumb">
                                         <a href="<?php the_permalink(); ?>">
                                             <div class="he-thumb-container">

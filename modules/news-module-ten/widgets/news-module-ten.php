@@ -526,7 +526,7 @@ class NewsModuleTen extends Widget_Base {
                     $last = $query->post_count;
                     ?>
                     <div class="he-post-item he-clearfix <?php echo esc_attr($image_position); ?>">
-                        <div class="he-post-thumb">
+                        <div class="he-post-thumb he-aligned-block">
                             <a href="<?php the_permalink(); ?>">
                                 <div class="he-thumb-container">
                                     <?php
