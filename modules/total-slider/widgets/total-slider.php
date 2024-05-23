@@ -189,7 +189,7 @@ class TotalSlider extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-slide-cap-title',
                 ]
         );
@@ -200,7 +200,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#009dea',
             'selectors' => [
@@ -215,7 +215,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -237,7 +237,7 @@ class TotalSlider extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'description_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-slide-cap-desc ',
                 ]
         );
@@ -248,7 +248,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-slide-cap-desc ' => 'color: {{VALUE}}',
@@ -269,7 +269,7 @@ class TotalSlider extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'button_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-slide-cap-button a',
                 ]
         );
@@ -301,7 +301,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -316,7 +316,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-slide-cap-button a' => 'color: {{VALUE}}',
@@ -339,7 +339,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-slide-cap-button a:hover' => 'background-color: {{VALUE}}',
@@ -353,7 +353,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-slide-cap-button a:hover' => 'color: {{VALUE}}',
@@ -390,7 +390,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-bx-slider.owl-carousel .owl-nav button' => 'background-color: {{VALUE}}',
@@ -404,7 +404,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-bx-slider .owl-nav [class*=owl-]:before, .het-bx-slider .owl-nav [class*=owl-]:after' => 'background-color: {{VALUE}}',
@@ -418,7 +418,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-bx-slider .owl-dots .owl-dot' => 'border-color: {{VALUE}}',
@@ -441,7 +441,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-bx-slider.owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
@@ -455,7 +455,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-bx-slider .owl-nav [class*=owl-]:hover:before, .het-bx-slider .owl-nav [class*=owl-]:hover:after' => 'background-color: {{VALUE}}',
@@ -469,7 +469,7 @@ class TotalSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-bx-slider .owl-dots .owl-dot:hover' => 'background-color: {{VALUE}};border-color: {{VALUE}}',

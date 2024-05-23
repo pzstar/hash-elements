@@ -343,7 +343,7 @@ class NewsModuleNine extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
@@ -357,7 +357,7 @@ class NewsModuleNine extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
@@ -372,7 +372,7 @@ class NewsModuleNine extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
@@ -385,7 +385,7 @@ class NewsModuleNine extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'header_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-block-title'
                 ]
         );
@@ -403,7 +403,7 @@ class NewsModuleNine extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'category_normal_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-news-module-nine ul.he-post-categories li a',
                 ]
         );
@@ -424,7 +424,7 @@ class NewsModuleNine extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-nine ul.he-post-categories li  a' => 'background-color: {{VALUE}}',
@@ -438,7 +438,7 @@ class NewsModuleNine extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-nine ul.he-post-categories li  a' => 'color: {{VALUE}}',
@@ -460,7 +460,7 @@ class NewsModuleNine extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-nine ul.he-post-categories li:hover a' => 'background-color: {{VALUE}}',
@@ -474,7 +474,7 @@ class NewsModuleNine extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-nine ul.he-post-categories li:hover a' => 'color: {{VALUE}}',
@@ -501,7 +501,7 @@ class NewsModuleNine extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-nine .he-big-post-item .he-post-content h3' => 'color: {{VALUE}}',
@@ -515,7 +515,7 @@ class NewsModuleNine extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-nine .he-post-item .he-post-content h3 a' => 'color: {{VALUE}}',
@@ -529,7 +529,7 @@ class NewsModuleNine extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-nine .he-post-item .he-post-content h3 a:hover' => 'color: {{VALUE}}',
@@ -551,7 +551,7 @@ class NewsModuleNine extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'featured_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-news-module-nine .he-big-post-item .he-post-content h3',
                 ]
         );
@@ -580,7 +580,7 @@ class NewsModuleNine extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'listing_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-news-module-nine .he-post-item .he-post-content h3',
                 ]
         );
@@ -616,7 +616,7 @@ class NewsModuleNine extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-nine .he-big-post-item .he-post-content .he-post-meta' => 'color: {{VALUE}}',
@@ -630,7 +630,7 @@ class NewsModuleNine extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-nine .he-post-item .he-post-content .he-post-meta' => 'color: {{VALUE}}',
@@ -642,7 +642,7 @@ class NewsModuleNine extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'post_metas_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-news-module-nine .he-big-post-item .he-post-content .he-post-meta, 
                            {{WRAPPER}} .he-news-module-nine .he-post-item .he-post-content .he-post-meta'
                 ]

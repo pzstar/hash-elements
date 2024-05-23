@@ -181,7 +181,7 @@ class SquarePlusSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-caption' => 'background: {{VALUE}}',
@@ -195,7 +195,7 @@ class SquarePlusSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-caption' => 'border-left: 3px solid {{VALUE}}; border-right: 3px solid {{VALUE}}',
@@ -208,7 +208,7 @@ class SquarePlusSlider extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Title Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-slide-cap-title',
                 ]
         );
@@ -219,7 +219,7 @@ class SquarePlusSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-cap-title' => 'color: {{VALUE}}',
@@ -232,7 +232,7 @@ class SquarePlusSlider extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'description_typography',
             'label' => esc_html__('SubTitle Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-slide-cap-desc',
                 ]
         );
@@ -243,7 +243,7 @@ class SquarePlusSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-cap-desc' => 'color: {{VALUE}}',
@@ -264,7 +264,7 @@ class SquarePlusSlider extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'button_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-slide-cap-button a',
                 ]
         );
@@ -296,7 +296,7 @@ class SquarePlusSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-cap-button a' => 'background-color: {{VALUE}}',
@@ -310,7 +310,7 @@ class SquarePlusSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-cap-button a' => 'color: {{VALUE}}',
@@ -332,7 +332,7 @@ class SquarePlusSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-cap-button a:hover' => 'background: {{VALUE}}',
@@ -346,7 +346,7 @@ class SquarePlusSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-cap-button a:hover' => 'color: {{VALUE}}',
@@ -383,7 +383,7 @@ class SquarePlusSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button' => 'background: {{VALUE}}',
@@ -397,7 +397,7 @@ class SquarePlusSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button i' => 'color: {{VALUE}}',
@@ -419,7 +419,7 @@ class SquarePlusSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
@@ -433,7 +433,7 @@ class SquarePlusSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button:hover i' => 'color: {{VALUE}}',

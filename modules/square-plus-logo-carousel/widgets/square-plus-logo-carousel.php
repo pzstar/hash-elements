@@ -232,7 +232,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -255,7 +255,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000000',
             'selectors' => [

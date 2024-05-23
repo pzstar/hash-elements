@@ -195,7 +195,7 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000',
             'selectors' => [
@@ -210,7 +210,7 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#FFF',
             'selectors' => [
@@ -223,7 +223,7 @@ class TotalTeamBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-team-member .het-title-wrap h6',
                 ]
         );
@@ -243,7 +243,7 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -258,7 +258,7 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -272,7 +272,7 @@ class TotalTeamBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'overlay_title_typography',
             'label' => esc_html__('Title Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-team-member-excerpt h6',
                 ]
         );
@@ -281,7 +281,7 @@ class TotalTeamBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'designation_typography',
             'label' => esc_html__('Designation Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-team-member .het-team-designation',
                 ]
         );
@@ -290,7 +290,7 @@ class TotalTeamBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'description_typography',
             'label' => esc_html__('Description Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-member-description-text',
                 ]
         );
@@ -308,7 +308,7 @@ class TotalTeamBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'button_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-team-detail a',
                 ]
         );
@@ -340,7 +340,7 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -355,7 +355,7 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#333333',
             'selectors' => [
@@ -378,7 +378,7 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#333',
             'selectors' => [
@@ -393,7 +393,7 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#FFF',
             'selectors' => [
@@ -431,7 +431,7 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -446,7 +446,7 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -469,7 +469,7 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#333',
             'selectors' => [
@@ -484,7 +484,7 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#FFFFFF',
             'selectors' => [

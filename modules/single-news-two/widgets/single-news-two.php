@@ -336,7 +336,7 @@ class Single_News_Two extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-post-title a' => 'color: {{VALUE}}',
@@ -348,7 +348,7 @@ class Single_News_Two extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-post-title a',
                 ]
         );
@@ -380,7 +380,7 @@ class Single_News_Two extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-post-meta span' => 'color: {{VALUE}}',
@@ -392,7 +392,7 @@ class Single_News_Two extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'meta_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-post-meta span',
                 ]
         );
@@ -424,7 +424,7 @@ class Single_News_Two extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-post-content .he-post-excerpt' => 'color: {{VALUE}}',
@@ -436,7 +436,7 @@ class Single_News_Two extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'excerpt_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-post-content .he-post-excerpt',
                 ]
         );

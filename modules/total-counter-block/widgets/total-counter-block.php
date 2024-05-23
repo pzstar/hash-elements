@@ -91,7 +91,7 @@ class TotalCounterBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -128,7 +128,7 @@ class TotalCounterBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -153,7 +153,7 @@ class TotalCounterBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -166,7 +166,7 @@ class TotalCounterBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'number_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-counter-count',
                 ]
         );
@@ -186,7 +186,7 @@ class TotalCounterBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -199,7 +199,7 @@ class TotalCounterBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-counter-title',
                 ]
         );

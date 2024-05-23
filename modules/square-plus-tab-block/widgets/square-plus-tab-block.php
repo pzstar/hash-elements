@@ -152,7 +152,7 @@ class SquarePlusTabBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} ul.he-tab li a',
                 ]
         );
@@ -209,7 +209,7 @@ class SquarePlusTabBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} ul.he-tab li a span' => 'color: {{VALUE}}',
@@ -223,7 +223,7 @@ class SquarePlusTabBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} ul.he-tab li a i, {{WRAPPER}} ul.he-tab li a svg' => 'color: {{VALUE}}; fill: {{VALUE}}',
@@ -237,7 +237,7 @@ class SquarePlusTabBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-tab' => 'border-right: 1px solid {{VALUE}}',
@@ -259,7 +259,7 @@ class SquarePlusTabBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} ul.he-tab li.he-active a span' => 'color: {{VALUE}}',
@@ -273,7 +273,7 @@ class SquarePlusTabBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} ul.he-tab li.he-active a i, {{WRAPPER}} ul.he-tab li.he-active a svg' => 'color: {{VALUE}}; fill: {{VALUE}}',
@@ -287,7 +287,7 @@ class SquarePlusTabBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-tab li.he-active:after' => 'background: {{VALUE}}',
@@ -314,7 +314,7 @@ class SquarePlusTabBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-tab-content .he-tab-pane' => 'color: {{VALUE}}',
@@ -326,7 +326,7 @@ class SquarePlusTabBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'tab_content_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-tab-content .he-tab-pane',
                 ]
         );

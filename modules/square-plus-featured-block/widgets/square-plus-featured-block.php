@@ -145,7 +145,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-featured-icon' => 'color: {{VALUE}};fill: {{VALUE}}',
@@ -190,7 +190,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-featured-post h4' => 'color: {{VALUE}}',
@@ -204,7 +204,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-featured-post h4:after' => 'background: {{VALUE}}',
@@ -216,7 +216,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-featured-post h4',
                 ]
         );
@@ -248,7 +248,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-featured-excerpt' => 'color: {{VALUE}}',
@@ -260,7 +260,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'content_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-featured-excerpt',
                 ]
         );
@@ -314,7 +314,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} a.he-featured-readmore' => 'color: {{VALUE}}; fill: {{VALUE}}',
@@ -328,7 +328,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} a.he-featured-readmore:hover' => 'color: {{VALUE}}; fill: {{VALUE}}',

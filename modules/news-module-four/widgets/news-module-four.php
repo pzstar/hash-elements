@@ -314,7 +314,7 @@ class NewsModuleFour extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
@@ -328,7 +328,7 @@ class NewsModuleFour extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
@@ -343,7 +343,7 @@ class NewsModuleFour extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
@@ -356,7 +356,7 @@ class NewsModuleFour extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'header_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-block-title'
                 ]
         );
@@ -374,7 +374,7 @@ class NewsModuleFour extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'category_typography',
             'label' => esc_html__('Category Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-news-module-four ul.he-post-categories li a',
                 ]
         );
@@ -395,7 +395,7 @@ class NewsModuleFour extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-four ul.he-post-categories li  a' => 'background-color: {{VALUE}}',
@@ -409,7 +409,7 @@ class NewsModuleFour extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-four ul.he-post-categories li  a' => 'color: {{VALUE}}',
@@ -431,7 +431,7 @@ class NewsModuleFour extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-four ul.he-post-categories li:hover a' => 'background-color: {{VALUE}}',
@@ -445,7 +445,7 @@ class NewsModuleFour extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-four ul.he-post-categories li:hover a' => 'color: {{VALUE}}',
@@ -472,7 +472,7 @@ class NewsModuleFour extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-four .he-post-item .he-post-content h3, 
@@ -487,7 +487,7 @@ class NewsModuleFour extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-four .he-post-item .he-post-content h3:hover, 
@@ -510,7 +510,7 @@ class NewsModuleFour extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'top_post_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-news-module-four .he-post-item .he-post-title.he-big-title'
                 ]
         );
@@ -539,7 +539,7 @@ class NewsModuleFour extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'bottom_post_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-news-module-four .he-post-item .he-post-title:not(.he-big-title)',
                 ]
         );
@@ -578,7 +578,7 @@ class NewsModuleFour extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-four .he-post-item .he-post-content .he-post-meta' => 'color: {{VALUE}}',
@@ -590,7 +590,7 @@ class NewsModuleFour extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'post_metas_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-news-module-four .he-post-item .he-post-content .he-post-meta'
                 ]
         );

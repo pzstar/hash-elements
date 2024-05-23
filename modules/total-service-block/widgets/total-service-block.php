@@ -135,7 +135,7 @@ class TotalServiceBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000',
             'selectors' => [
@@ -151,7 +151,7 @@ class TotalServiceBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#FFF',
             'selectors' => [
@@ -175,7 +175,7 @@ class TotalServiceBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-service-excerpt h5' => 'color: {{VALUE}}',
@@ -187,7 +187,7 @@ class TotalServiceBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-service-excerpt h5',
                 ]
         );
@@ -207,7 +207,7 @@ class TotalServiceBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-service-excerpt-text' => 'color: {{VALUE}}',
@@ -219,7 +219,7 @@ class TotalServiceBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'description_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-service-excerpt-text',
                 ]
         );
@@ -237,7 +237,7 @@ class TotalServiceBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'link_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-service-text a',
                 ]
         );
@@ -258,7 +258,7 @@ class TotalServiceBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-service-text a' => 'color: {{VALUE}}',
@@ -280,7 +280,7 @@ class TotalServiceBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-service-text a:hover' => 'color: {{VALUE}}',

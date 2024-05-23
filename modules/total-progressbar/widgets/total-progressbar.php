@@ -95,7 +95,7 @@ class TotalProgressbar extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-progress-bar' => 'background-color: {{VALUE}}',
@@ -109,7 +109,7 @@ class TotalProgressbar extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-progress-bar-length' => 'background-color: {{VALUE}}',
@@ -146,7 +146,7 @@ class TotalProgressbar extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-progress h6' => 'color: {{VALUE}}',
@@ -158,7 +158,7 @@ class TotalProgressbar extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-progress h6',
                 ]
         );
@@ -178,7 +178,7 @@ class TotalProgressbar extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-progress-bar-length span' => 'color: {{VALUE}}',
@@ -190,7 +190,7 @@ class TotalProgressbar extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'progressbar_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-progress-bar-length span',
                 ]
         );

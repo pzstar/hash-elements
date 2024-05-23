@@ -232,7 +232,7 @@ class TotalLogoCarousel extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-client-logo-slider .owl-dots .owl-dot' => 'background-color: {{VALUE}}',
@@ -254,7 +254,7 @@ class TotalLogoCarousel extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-client-logo-slider .owl-dots .owl-dot:hover' => 'background-color: {{VALUE}}',

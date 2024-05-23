@@ -392,7 +392,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
@@ -406,7 +406,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
@@ -421,7 +421,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
@@ -434,7 +434,7 @@ class CarouselModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'header_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-block-title'
                 ]
         );
@@ -452,7 +452,7 @@ class CarouselModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'category_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-carousel-block ul.he-post-categories li a,
                            {{WRAPPER}} .he-carousel-block .post-content ul.he-post-categories li a',
                 ]
@@ -474,7 +474,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block ul.he-post-categories li  a' => 'background-color: {{VALUE}}',
@@ -488,7 +488,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block ul.he-post-categories li  a' => 'color: {{VALUE}}',
@@ -510,7 +510,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block ul.he-post-categories li:hover a' => 'background-color: {{VALUE}}',
@@ -524,7 +524,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block ul.he-post-categories li:hover a' => 'color: {{VALUE}}',
@@ -551,7 +551,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block .he-block-title h3, 
@@ -566,7 +566,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block .he-block-title h3:hover, 
@@ -579,7 +579,7 @@ class CarouselModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'post_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-carousel-block .he-block-title h3, 
                                {{WRAPPER}} .he-carousel-block h3 a',
                 ]
@@ -600,7 +600,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block .he-carousel-block-wrap .owl-item .he-post-meta' => 'color: {{VALUE}}',
@@ -612,7 +612,7 @@ class CarouselModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'post_metas_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-carousel-block .he-post-content .he-post-meta'
                 ]
         );
@@ -632,7 +632,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-excerpt' => 'color: {{VALUE}}',
@@ -644,7 +644,7 @@ class CarouselModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'post_excerpt_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .he-excerpt'
                 ]
         );
@@ -674,7 +674,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block .owl-carousel .owl-nav button' => 'background-color: {{VALUE}}',
@@ -688,7 +688,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block .owl-carousel .owl-nav button.owl-next' => 'color: {{VALUE}}',
@@ -703,7 +703,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block .owl-carousel button.owl-dot' => 'background-color: {{VALUE}}',
@@ -725,7 +725,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block .owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
@@ -739,7 +739,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block .owl-carousel .owl-nav button.owl-next:hover' => 'color: {{VALUE}}',
@@ -754,7 +754,7 @@ class CarouselModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-carousel-block .owl-carousel button.owl-dot:hover' => 'background-color: {{VALUE}}',

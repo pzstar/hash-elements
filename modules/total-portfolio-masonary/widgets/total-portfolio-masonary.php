@@ -135,7 +135,7 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -150,7 +150,7 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-portfolio-cat-name' => 'color: {{VALUE}}; border-color: {{VALUE}}',
@@ -164,7 +164,7 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#009dea',
             'selectors' => [
@@ -177,7 +177,7 @@ class TotalPortfolioMasonary extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'tab_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-portfolio-cat-name-list',
                 ]
         );
@@ -210,7 +210,7 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-portfolio-caption h5' => 'color: {{VALUE}}',
@@ -222,7 +222,7 @@ class TotalPortfolioMasonary extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Title Typography', 'hash-elements'),
-            'scheme' => Typography::TYPOGRAPHY_1,
+            
             'selector' => '{{WRAPPER}} .het-portfolio-caption h5',
                 ]
         );
@@ -233,7 +233,7 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -268,7 +268,7 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -283,7 +283,7 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -306,7 +306,7 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-portfolio-caption a:hover' => 'color: {{VALUE}}',
@@ -320,7 +320,7 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                'value' => Color::COLOR_1,
+                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-portfolio-caption a:hover' => 'background-color: {{VALUE}}',
