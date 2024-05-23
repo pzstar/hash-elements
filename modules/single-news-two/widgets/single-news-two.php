@@ -336,7 +336,6 @@ class Single_News_Two extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-post-title a' => 'color: {{VALUE}}',
@@ -348,7 +347,6 @@ class Single_News_Two extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-post-title a',
                 ]
         );
@@ -380,7 +378,6 @@ class Single_News_Two extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-post-meta span' => 'color: {{VALUE}}',
@@ -392,7 +389,6 @@ class Single_News_Two extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'meta_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-post-meta span',
                 ]
         );
@@ -424,7 +420,6 @@ class Single_News_Two extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-post-content .he-post-excerpt' => 'color: {{VALUE}}',
@@ -436,7 +431,6 @@ class Single_News_Two extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'excerpt_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-post-content .he-post-excerpt',
                 ]
         );
@@ -462,28 +456,28 @@ class Single_News_Two extends Widget_Base {
         ?>
         <div class="he-single-post">
 
-            <?php
-            $args = $this->query_args();
-            $post_query = new \WP_Query($args);
+        <?php
+        $args = $this->query_args();
+        $post_query = new \WP_Query($args);
 
-            if ($post_query->have_posts()) {
-                ?>
+        if ($post_query->have_posts()) {
+            ?>
                 <div class="he-single-post-two">
-                    <?php
-                    while ($post_query->have_posts()) {
-                        $post_query->the_post();
-                        $image_size = $settings['image_size'];
-                        $excerpt_length = $settings['excerpt_length'];
-                        ?>
+                <?php
+                while ($post_query->have_posts()) {
+                    $post_query->the_post();
+                    $image_size = $settings['image_size'];
+                    $excerpt_length = $settings['excerpt_length'];
+                    ?>
 
                         <div class="he-post-image he-post-graident-title">
                             <div class="he-post-thumb">
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="he-thumb-container">
-                                        <?php
-                                        if (has_post_thumbnail()) {
-                                            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
-                                            ?>
+                        <?php
+                        if (has_post_thumbnail()) {
+                            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
+                            ?>
                                             <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
                                         <?php }
                                         ?>
@@ -494,99 +488,100 @@ class Single_News_Two extends Widget_Base {
                             <div class="he-post-content he-align-<?php echo esc_attr($settings['content_alignment']); ?>">
                                 <h3 class="he-post-title"><a href="<?php the_permalink(); ?>"><?php echo esc_html(get_the_title()); ?></a></h3>
 
-                                <?php $this->get_post_meta(); ?>
+                <?php $this->get_post_meta(); ?>
 
-                                <?php if ($excerpt_length) { ?>
+                <?php if ($excerpt_length) { ?>
                                     <div class="he-post-excerpt"><?php echo hash_elements_custom_excerpt($excerpt_length); ?></div>
-                                <?php } ?>
+                <?php } ?>
                             </div>
                         </div>
-                        <?php
-                    }
-                    wp_reset_postdata();
-                    ?>
+                                <?php
+                            }
+                            wp_reset_postdata();
+                            ?>
                 </div>
-                <?php
-            }
-            ?>
-
-        </div>
-        <?php
-    }
-
-    /** Get Post Metas */
-    protected function get_post_meta() {
-        $settings = $this->get_settings_for_display();
-        $post_author = $settings['post_author'];
-        $post_date = $settings['post_date'];
-        $post_comment = $settings['post_comment'];
-
-        if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
-            ?>
-            <div class="he-post-meta">
-                <?php
-                if ($post_author == 'yes') {
-                    hash_elements_author_name();
-                }
-
-                if ($post_date == 'yes') {
-                    $date_format = $settings['date_format'];
-
-                    if ($date_format == 'relative_format') {
-                        hash_elements_time_ago();
-                    } else if ($date_format == 'default') {
-                        hash_elements_post_date();
-                    } else if ($date_format == 'custom') {
-                        $format = $settings['custom_date_format'];
-                        hash_elements_post_date($format);
-                    }
-                }
-
-                if ($post_comment == 'yes') {
-                    hash_elements_comment_count();
+                    <?php
                 }
                 ?>
-            </div>
+
+        </div>
             <?php
         }
-    }
 
-    /** Query Args */
-    protected function query_args() {
-        $settings = $this->get_settings_for_display();
+        /** Get Post Metas */
+        protected function get_post_meta() {
+            $settings = $this->get_settings_for_display();
+            $post_author = $settings['post_author'];
+            $post_date = $settings['post_date'];
+            $post_comment = $settings['post_comment'];
 
-        $filter_option = $settings['filter_option'];
-        if ($filter_option == 'single-post') {
-            if (!empty($settings['post_id'])) {
-                $args['p'] = $settings['post_id'];
+            if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
+                ?>
+            <div class="he-post-meta">
+            <?php
+            if ($post_author == 'yes') {
+                hash_elements_author_name();
             }
-        } elseif ($filter_option == 'categories') {
-            if (!empty($settings['categories'])) {
-                $args['tax_query'][] = [
-                    'taxonomy' => 'category',
-                    'field' => 'term_id',
-                    'terms' => $settings['categories'],
-                ];
+
+            if ($post_date == 'yes') {
+                $date_format = $settings['date_format'];
+
+                if ($date_format == 'relative_format') {
+                    hash_elements_time_ago();
+                } else if ($date_format == 'default') {
+                    hash_elements_post_date();
+                } else if ($date_format == 'custom') {
+                    $format = $settings['custom_date_format'];
+                    hash_elements_post_date($format);
+                }
             }
-        } elseif ($filter_option == 'tags') {
-            if (!empty($settings['tags'])) {
-                $args['tax_query'][] = [
-                    'taxonomy' => 'post_tag',
-                    'field' => 'term_id',
-                    'terms' => $settings['tags'],
-                ];
+
+            if ($post_comment == 'yes') {
+                hash_elements_comment_count();
+            }
+            ?>
+            </div>
+                <?php
             }
         }
 
-        if ($settings['offset']) {
-            $args['offset'] = $settings['offset'];
+        /** Query Args */
+        protected function query_args() {
+            $settings = $this->get_settings_for_display();
+
+            $filter_option = $settings['filter_option'];
+            if ($filter_option == 'single-post') {
+                if (!empty($settings['post_id'])) {
+                    $args['p'] = $settings['post_id'];
+                }
+            } elseif ($filter_option == 'categories') {
+                if (!empty($settings['categories'])) {
+                    $args['tax_query'][] = [
+                        'taxonomy' => 'category',
+                        'field' => 'term_id',
+                        'terms' => $settings['categories'],
+                    ];
+                }
+            } elseif ($filter_option == 'tags') {
+                if (!empty($settings['tags'])) {
+                    $args['tax_query'][] = [
+                        'taxonomy' => 'post_tag',
+                        'field' => 'term_id',
+                        'terms' => $settings['tags'],
+                    ];
+                }
+            }
+
+            if ($settings['offset']) {
+                $args['offset'] = $settings['offset'];
+            }
+
+            $args['ignore_sticky_posts'] = 1;
+            $args['post_status'] = 'publish';
+            $args['posts_per_page'] = 1;
+
+            return $args;
         }
 
-        $args['ignore_sticky_posts'] = 1;
-        $args['post_status'] = 'publish';
-        $args['posts_per_page'] = 1;
-
-        return $args;
     }
-
-}
+    

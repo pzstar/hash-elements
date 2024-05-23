@@ -286,7 +286,6 @@ class NewsModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
@@ -300,7 +299,6 @@ class NewsModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
@@ -315,7 +313,6 @@ class NewsModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
@@ -328,7 +325,6 @@ class NewsModuleThree extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'header_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-block-title'
                 ]
         );
@@ -346,7 +342,6 @@ class NewsModuleThree extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'category_typography',
             'label' => esc_html__('Category Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-news-module-three .he-post-categories li a',
                 ]
         );
@@ -367,7 +362,6 @@ class NewsModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-three .he-post-categories li a' => 'background-color: {{VALUE}}',
@@ -381,7 +375,6 @@ class NewsModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-three .he-post-categories li a' => 'color: {{VALUE}}',
@@ -403,7 +396,6 @@ class NewsModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-three .he-post-categories li:hover a' => 'background-color: {{VALUE}}',
@@ -417,7 +409,6 @@ class NewsModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-three .he-post-categories li:hover a' => 'color: {{VALUE}}',
@@ -444,7 +435,6 @@ class NewsModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-three .col1 .he-post-item .he-post-content h3' => 'color: {{VALUE}}',
@@ -458,7 +448,6 @@ class NewsModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-three .col2 .he-post-item .he-post-content h3' => 'color: {{VALUE}}',
@@ -472,7 +461,6 @@ class NewsModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-three .col2 .he-post-item .he-post-content h3 a:hover' => 'color: {{VALUE}}',
@@ -494,7 +482,6 @@ class NewsModuleThree extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'featured_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-news-module-three .col1 .he-post-item .he-post-content h3',
                 ]
         );
@@ -523,7 +510,6 @@ class NewsModuleThree extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'side_post_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-news-module-three .col2 .he-post-item .he-post-content h3',
                 ]
         );
@@ -559,7 +545,6 @@ class NewsModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-three .col1 .he-post-content.he-gradient-overlay' => 'color: {{VALUE}}',
@@ -573,7 +558,6 @@ class NewsModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-three .col2 .he-post-content .he-post-meta' => 'color: {{VALUE}}',
@@ -585,7 +569,6 @@ class NewsModuleThree extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'post_metas_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-news-module-three .he-post-content .he-post-meta'
                 ]
         );
@@ -602,50 +585,50 @@ class NewsModuleThree extends Widget_Base {
         $side_post_image_size = $settings['side_post_image_size'];
         ?>
         <div class="he-news-module-three">
-            <?php $this->render_header(); ?>
+        <?php $this->render_header(); ?>
 
             <div class="he-news-module-three-wrap">
-                <?php
-                $args = $this->query_args();
-                $query = new \WP_Query($args);
-                while ($query->have_posts()): $query->the_post();
-                    $index = $query->current_post + 1;
-                    $last = $query->post_count;
-                    if ($index == 1) {
-                        echo '<div class="col1">';
-                    } elseif ($index == 2) {
-                        echo '<div class="col2">';
-                        echo '<div class="col2-wrap">';
-                    }
-                    if ($index == 1) {
-                        ?>
+        <?php
+        $args = $this->query_args();
+        $query = new \WP_Query($args);
+        while ($query->have_posts()): $query->the_post();
+            $index = $query->current_post + 1;
+            $last = $query->post_count;
+            if ($index == 1) {
+                echo '<div class="col1">';
+            } elseif ($index == 2) {
+                echo '<div class="col2">';
+                echo '<div class="col2-wrap">';
+            }
+            if ($index == 1) {
+                ?>
                         <div class="he-post-item">
                             <div class="he-post-thumb">
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="he-thumb-container">
-                                        <?php
-                                        if (has_post_thumbnail()) {
-                                            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $featured_post_image_size);
-                                            ?>
+                        <?php
+                        if (has_post_thumbnail()) {
+                            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $featured_post_image_size);
+                            ?>
                                             <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
-                                        <?php }
-                                        ?>
+                        <?php }
+                        ?>
                                     </div>
 
                                     <div class="he-post-content he-gradient-overlay">
                                         <h3 class="he-post-title he-large-title"><span><?php the_title(); ?></span></h3>
-                                        <?php $this->get_post_meta($index); ?>
+                        <?php $this->get_post_meta($index); ?>
                                     </div>
                                 </a>
-                                <?php
-                                if ($settings['featured_post_category'] == 'yes')
-                                    echo hash_elements_get_the_category_list();
-                                ?>
+                <?php
+                if ($settings['featured_post_category'] == 'yes')
+                    echo hash_elements_get_the_category_list();
+                ?>
                             </div>
                         </div>
-                        <?php
-                    } else {
-                        ?>
+                                        <?php
+                                    } else {
+                                        ?>
                         <div class="he-post-item">
                             <div class="he-post-thumb">
                                 <a href="<?php the_permalink(); ?>">
@@ -655,31 +638,31 @@ class NewsModuleThree extends Widget_Base {
                                             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $side_post_image_size);
                                             ?>
                                             <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
-                                        <?php }
-                                        ?>
+                                <?php }
+                                ?>
                                     </div>
                                 </a>
-                                <?php
-                                if ($settings['side_post_category'] == 'yes')
-                                    he_get_the_primary_category();
-                                ?>
+                        <?php
+                        if ($settings['side_post_category'] == 'yes')
+                            he_get_the_primary_category();
+                        ?>
                             </div>
 
                             <div class="he-post-content">
                                 <h3 class="he-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                <?php $this->get_post_meta($index); ?>
+                                        <?php $this->get_post_meta($index); ?>
                             </div>
                         </div>
-                        <?php
-                    }
-                    if ($index == 1) {
-                        echo '</div>';
-                    } elseif ($index == 5 || $index == $last) {
-                        echo '</div></div>';
-                    }
-                endwhile;
-                wp_reset_postdata();
-                ?>
+                                        <?php
+                                    }
+                                    if ($index == 1) {
+                                        echo '</div>';
+                                    } elseif ($index == 5 || $index == $last) {
+                                        echo '</div></div>';
+                                    }
+                                endwhile;
+                                wp_reset_postdata();
+                                ?>
             </div>
         </div>
         <?php
@@ -707,13 +690,13 @@ class NewsModuleThree extends Widget_Base {
         if ($settings['header_title']) {
             ?>
             <h2 <?php echo $this->get_render_attribute_string('header_attr'); ?>>
-                <?php
-                echo $link_open;
-                echo '<span>';
-                echo wp_kses_post($settings['header_title']);
-                echo '</span>';
-                echo $link_close;
-                ?>
+            <?php
+            echo $link_open;
+            echo '<span>';
+            echo wp_kses_post($settings['header_title']);
+            echo '</span>';
+            echo $link_close;
+            ?>
             </h2>
             <?php
         }
@@ -761,31 +744,32 @@ class NewsModuleThree extends Widget_Base {
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
             ?>
             <div class="he-post-meta">
-                <?php
-                if ($post_author == 'yes') {
-                    hash_elements_author_name();
-                }
-
-                if ($post_date == 'yes') {
-                    $date_format = $settings['date_format'];
-
-                    if ($date_format == 'relative_format') {
-                        hash_elements_time_ago();
-                    } else if ($date_format == 'default') {
-                        hash_elements_post_date();
-                    } else if ($date_format == 'custom') {
-                        $format = $settings['custom_date_format'];
-                        hash_elements_post_date($format);
-                    }
-                }
-
-                if ($post_comment == 'yes') {
-                    hash_elements_comment_count();
-                }
-                ?>
-            </div>
             <?php
-        }
-    }
+            if ($post_author == 'yes') {
+                hash_elements_author_name();
+            }
 
-}
+            if ($post_date == 'yes') {
+                $date_format = $settings['date_format'];
+
+                if ($date_format == 'relative_format') {
+                    hash_elements_time_ago();
+                } else if ($date_format == 'default') {
+                    hash_elements_post_date();
+                } else if ($date_format == 'custom') {
+                    $format = $settings['custom_date_format'];
+                    hash_elements_post_date($format);
+                }
+            }
+
+            if ($post_comment == 'yes') {
+                hash_elements_comment_count();
+            }
+            ?>
+            </div>
+                <?php
+            }
+        }
+
+    }
+    

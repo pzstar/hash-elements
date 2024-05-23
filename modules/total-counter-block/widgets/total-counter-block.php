@@ -91,7 +91,6 @@ class TotalCounterBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -128,7 +127,6 @@ class TotalCounterBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -153,7 +151,6 @@ class TotalCounterBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -166,7 +163,6 @@ class TotalCounterBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'number_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-counter-count',
                 ]
         );
@@ -186,7 +182,6 @@ class TotalCounterBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -199,7 +194,6 @@ class TotalCounterBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-counter-title',
                 ]
         );
@@ -213,7 +207,7 @@ class TotalCounterBlock extends Widget_Base {
         ?>
         <div class="het-counter">
             <div class="het-counter-icon">
-                <?php \Elementor\Icons_Manager::render_icon($settings['counter_icon'], ['aria-hidden' => 'true']); ?>
+        <?php \Elementor\Icons_Manager::render_icon($settings['counter_icon'], ['aria-hidden' => 'true']); ?>
             </div>
 
             <div class="het-counter-count odometer" data-count="<?php echo absint($settings['counter_number']); ?>">
@@ -221,7 +215,7 @@ class TotalCounterBlock extends Widget_Base {
             </div>
 
             <h6 class="het-counter-title">
-                <?php echo esc_html($settings['counter_title']); ?>
+        <?php echo esc_html($settings['counter_title']); ?>
             </h6>
         </div>
         <?php

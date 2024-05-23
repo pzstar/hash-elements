@@ -127,7 +127,6 @@ class TickerModule extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'ticker_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-ticker .he-ticker-title'
                 ]
         );
@@ -138,7 +137,6 @@ class TickerModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .he-ticker-title' => 'background-color: {{VALUE}}',
@@ -153,7 +151,6 @@ class TickerModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .he-ticker-title' => 'color: {{VALUE}}',
@@ -174,7 +171,6 @@ class TickerModule extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'ticker_content_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-ticker .owl-item a'
                 ]
         );
@@ -185,7 +181,6 @@ class TickerModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker' => 'background-color: {{VALUE}}',
@@ -199,7 +194,6 @@ class TickerModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-item a' => 'color: {{VALUE}}',
@@ -232,7 +226,6 @@ class TickerModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-carousel .owl-nav button' => 'background-color: {{VALUE}}',
@@ -246,7 +239,6 @@ class TickerModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-carousel .owl-nav button' => 'color: {{VALUE}}'
@@ -268,7 +260,6 @@ class TickerModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
@@ -282,7 +273,6 @@ class TickerModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-carousel .owl-nav button:hover' => 'color: {{VALUE}}'
@@ -318,59 +308,61 @@ class TickerModule extends Widget_Base {
             <div class="he-ticker">
                 <div class="he-container">
                     <span class="he-ticker-title">
-                        <?php
-                        $ticker_title = isset($settings['ticker_title']) ? $settings['ticker_title'] : null;
-                        if ($ticker_title) {
-                            echo esc_html($ticker_title);
-                        }
-                        ?>
-                    </span>
-                    <div class="owl-carousel" data-params='<?php echo esc_attr($parameters_json); ?>'>
-                        <?php
-                        while ($query->have_posts()): $query->the_post();
-                            echo '<a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a>';
-                        endwhile;
-                        wp_reset_postdata();
-                        ?>
-                    </div>
-                </div>  
-            </div>
             <?php
-        endif;
-        ?>
-        <?php
-    }
+            $ticker_title = isset($settings['ticker_title']) ? $settings['ticker_title'] : null;
+                    if ($ticker_title) {
+                    echo esc_html($ticker_title);
+                    }
+                    ?>
+                            </span>
+                            <div class="owl-carousel" data-params='<?php echo esc_attr($parameters_json); ?>'>
+                    <?php
+                    while ($query->have_posts()): $query->the_post();
+                    echo '<a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a>';
+                    endwhile;
+                    wp_reset_postdata();
+                    ?>
+                            </div>
+                        </div>  
+                    </div>
+                                <?php
+                                endif;
+                                ?>
+                                <?php
+                                }
 
-    /** Query Args */
-    protected function query_args() {
-        $settings = $this->get_settings();
+                                /** Query Args */
+                                protected function query_args() {
+                                $settings = $this->get_settings();
 
-        $post_type = $args['post_type'] = $settings['posts_post_type'];
-        $args['orderby'] = $settings['posts_orderby'];
-        $args['order'] = $settings['posts_order'];
-        $args['ignore_sticky_posts'] = 1;
-        $args['post_status'] = 'publish';
-        $args['offset'] = $settings['posts_offset'];
-        $args['posts_per_page'] = $settings['ticker_post_count'];
-        $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : [];
+                                $post_type = $args['post_type'] = $settings['posts_post_type'];
+                                $args['orderby'] = $settings['posts_orderby'];
+                                $args['order'] = $settings['posts_order'];
+                                $args['ignore_sticky_posts'] = 1;
+                                $args['post_status'] = 'publish';
+                                $args['offset'] = $settings['posts_offset'];
+                                $args['posts_per_page'] = $settings['ticker_post_count'];
+                                $args['post__not_in'] = $post_type == 'post' ?  $settings['posts_exclude_posts'] :  [] 
 
-        $args['tax_query'] = [];
+;
 
-        $taxonomies = get_object_taxonomies($post_type, 'objects');
+                    $args['tax_query'] = [];
 
-        foreach ($taxonomies as $object) {
-            $setting_key = 'posts_' . $object->name . '_ids';
+                    $taxonomies = get_object_taxonomies($post_type, 'objects');
 
-            if (!empty($settings[$setting_key])) {
-                $args['tax_query'][] = [
-                    'taxonomy' => $object->name,
-                    'field' => 'term_id',
-                    'terms' => $settings[$setting_key],
-                ];
-            }
-        }
+                            foreach ($taxonomies as $object) {
+                            $setting_key = 'posts_' . $object->name . '_ids';
 
-        return $args;
-    }
+                            if (!empty($settings[$setting_key])) {
+                            $args['tax_query'][] = [
+                            'taxonomy' => $object->name,
+                             'field' => 'term_id',
+                            'terms' => $settings[$setting_key],
+                            ];
+                            }
+                            }
 
-}
+                            return $args;
+                            }
+
+                            }  

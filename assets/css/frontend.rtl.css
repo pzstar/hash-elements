@@ -1546,7 +1546,7 @@ h3.he-big-title a{
     .he-ticker-title:after{
         display: none;
     }
-    
+
     .he-post-thumb:not(.he-aligned-block) .he-thumb-container,
     .he-thumb-inner.he-post-thumb>a{
         padding-bottom: 0 !important;

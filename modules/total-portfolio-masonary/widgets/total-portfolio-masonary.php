@@ -135,7 +135,6 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -150,7 +149,6 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-portfolio-cat-name' => 'color: {{VALUE}}; border-color: {{VALUE}}',
@@ -164,7 +162,6 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#009dea',
             'selectors' => [
@@ -177,7 +174,6 @@ class TotalPortfolioMasonary extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'tab_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-portfolio-cat-name-list',
                 ]
         );
@@ -210,7 +206,6 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-portfolio-caption h5' => 'color: {{VALUE}}',
@@ -222,7 +217,6 @@ class TotalPortfolioMasonary extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Title Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-portfolio-caption h5',
                 ]
         );
@@ -233,7 +227,6 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -268,7 +261,6 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -283,7 +275,6 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -306,7 +297,6 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-portfolio-caption a:hover' => 'color: {{VALUE}}',
@@ -320,7 +310,6 @@ class TotalPortfolioMasonary extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-portfolio-caption a:hover' => 'background-color: {{VALUE}}',
@@ -341,39 +330,39 @@ class TotalPortfolioMasonary extends Widget_Base {
         $id = $this->get_id();
         ?>
         <div class="het-portfolio-container">
-            <?php
-            $portfolio_cat = $settings['category_ids'];
-            $portfolio_active_cat = $settings['active_cat'];
-            $active_tab = ($portfolio_active_cat == '*') ? '*' : '.hash-portfolio-' . $portfolio_active_cat;
-            $show_all = $settings['display_all_tab'];
-            $tab_alignment = $settings['tab_alignment'];
+        <?php
+        $portfolio_cat = $settings['category_ids'];
+        $portfolio_active_cat = $settings['active_cat'];
+        $active_tab = ($portfolio_active_cat == '*') ? '*' : '.hash-portfolio-' . $portfolio_active_cat;
+        $show_all = $settings['display_all_tab'];
+        $tab_alignment = $settings['tab_alignment'];
 
-            if ($portfolio_cat) {
-                ?>  
+        if ($portfolio_cat) {
+            ?>  
                 <div class="het-portfolio-cat-name-list <?php echo esc_attr($tab_alignment); ?>" data-active="<?php echo $active_tab; ?>">
                     <i class="fa fa-th-large" aria-hidden="true"></i>
-                    <?php if ($show_all) { ?>
+                <?php if ($show_all) { ?>
                         <div class="het-portfolio-cat-name" data-filter="*">
-                            <?php _e('All', 'hash-elements'); ?>
+                    <?php _e('All', 'hash-elements'); ?>
                         </div>
-                        <?php
-                    }
-                    foreach ($portfolio_cat as $portfolio_cat_single) {
-                        $category_slug = "";
-                        $category_slug = get_category($portfolio_cat_single);
+                    <?php
+                }
+                foreach ($portfolio_cat as $portfolio_cat_single) {
+                    $category_slug = "";
+                    $category_slug = get_category($portfolio_cat_single);
 
-                        if (is_object($category_slug)) {
-                            $category_slug = 'hash-portfolio-' . $category_slug->term_id;
-                            ?>
+                    if (is_object($category_slug)) {
+                        $category_slug = 'hash-portfolio-' . $category_slug->term_id;
+                        ?>
                             <div class="het-portfolio-cat-name" data-filter=".<?php echo esc_attr($category_slug); ?>">
-                                <?php echo esc_html(get_cat_name($portfolio_cat_single)); ?>
+                            <?php echo esc_html(get_cat_name($portfolio_cat_single)); ?>
                             </div>
                             <?php
                         }
                     }
                     ?>
                 </div>
-            <?php } ?>
+                <?php } ?>
 
             <div class="het-portfolio-post-wrap">
                 <div class="het-portfolio-posts-<?php echo $id; ?> het-portfolio-posts">
@@ -408,85 +397,86 @@ class TotalPortfolioMasonary extends Widget_Base {
                                                 <h5><?php the_title(); ?></h5>
                                                 <a class="het-portfolio-link" href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-link"></i></a>
 
-                                                <?php if (has_post_thumbnail()) { ?>
+                                <?php if (has_post_thumbnail()) { ?>
                                                     <a class="het-portfolio-image" data-lightbox-gallery="gallery1" href="<?php echo esc_url($total_image_large[0]) ?>"><i class="fa fa-search"></i></a>
-                                                    <?php } ?>
+                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <?php
-                            endwhile;
-                        endif;
-                        wp_reset_postdata();
-                    }
-                    ?>
+                    <?php
+                endwhile;
+            endif;
+            wp_reset_postdata();
+        }
+        ?>
                 </div>
-                <?php ?>
+        <?php ?>
             </div>
         </div>
-        <?php
-    }
+                    <?php
+                }
 
-    /** Query Args */
-    protected function query_args() {
-        $settings = $this->get_settings();
+                /** Query Args */
+                protected function query_args() {
+                    $settings = $this->get_settings();
 
-        $post_type = $args['post_type'] = 'post';
-        $args['orderby'] = $settings['orderby'];
-        $args['order'] = $settings['order'];
-        $args['ignore_sticky_posts'] = 1;
-        $args['post_status'] = 'publish';
-        $args['posts_per_page'] = -1;
-        $args['post__not_in'] = $post_type == 'post' ? $settings['exclude_posts'] : [];
+                    $post_type = $args['post_type'] = 'post';
+                    $args['orderby'] = $settings['orderby'];
+                    $args['order'] = $settings['order'];
+                    $args['ignore_sticky_posts'] = 1;
+                    $args['post_status'] = 'publish';
+                    $args['posts_per_page'] = -1;
+                    $args['post__not_in'] = $post_type == 'post' ? $settings['exclude_posts'] : [];
 
-        $args['tax_query'] = [];
+                    $args['tax_query'] = [];
 
-        $taxonomies = get_object_taxonomies($post_type, 'objects');
+                    $taxonomies = get_object_taxonomies($post_type, 'objects');
 
-        foreach ($taxonomies as $object) {
-            $setting_key = $object->name . '_ids';
+                    foreach ($taxonomies as $object) {
+                        $setting_key = $object->name . '_ids';
 
-            if (!empty($settings[$setting_key])) {
-                $args['tax_query'][] = [
-                    'taxonomy' => $object->name,
-                    'field' => 'term_id',
-                    'terms' => $settings[$setting_key],
-                ];
+                        if (!empty($settings[$setting_key])) {
+                            $args['tax_query'][] = [
+                                'taxonomy' => $object->name,
+                                'field' => 'term_id',
+                                'terms' => $settings[$setting_key],
+                            ];
+                        }
+                    }
+
+                    return $args;
+                }
+
+                private function get_posts() {
+                    /** Get All Posts */
+                    $post_list = get_posts(array(
+                        'post_type' => 'post',
+                        'orderby' => 'date',
+                        'order' => 'DESC',
+                        'posts_per_page' => -1,
+                    ));
+
+                    $posts = array();
+
+                    if (!empty($post_list) && !is_wp_error($post_list)) {
+                        foreach ($post_list as $post) {
+                            $posts[$post->ID] = $post->post_title;
+                        }
+                    }
+
+                    return $posts;
+                }
+
+                protected function get_portfolio_category() {
+                    $portfolio_categories = get_categories(array('taxonomy' => 'category', 'hide_empty' => 0));
+                    $portfolio_cat = array();
+                    foreach ($portfolio_categories as $portfolio_category) {
+                        $portfolio_cat[$portfolio_category->term_id] = $portfolio_category->cat_name;
+                    }
+
+                    return $portfolio_cat;
+                }
+
             }
-        }
-
-        return $args;
-    }
-
-    private function get_posts() {
-        /** Get All Posts */
-        $post_list = get_posts(array(
-            'post_type' => 'post',
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'posts_per_page' => -1,
-        ));
-
-        $posts = array();
-
-        if (!empty($post_list) && !is_wp_error($post_list)) {
-            foreach ($post_list as $post) {
-                $posts[$post->ID] = $post->post_title;
-            }
-        }
-
-        return $posts;
-    }
-
-    protected function get_portfolio_category() {
-        $portfolio_categories = get_categories(array('taxonomy' => 'category', 'hide_empty' => 0));
-        $portfolio_cat = array();
-        foreach ($portfolio_categories as $portfolio_category) {
-            $portfolio_cat[$portfolio_category->term_id] = $portfolio_category->cat_name;
-        }
-
-        return $portfolio_cat;
-    }
-
-}
+            

@@ -313,7 +313,6 @@ class TileModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
@@ -327,7 +326,6 @@ class TileModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
@@ -342,7 +340,6 @@ class TileModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
@@ -355,7 +352,6 @@ class TileModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'header_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-block-title'
                 ]
         );
@@ -373,7 +369,6 @@ class TileModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'category_normal_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-primary-cat,
                             {{WRAPPER}} .he-post-categories li a',
                 ]
@@ -395,7 +390,6 @@ class TileModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat,
@@ -410,7 +404,6 @@ class TileModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat,
@@ -433,7 +426,6 @@ class TileModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat:hover,
@@ -448,7 +440,6 @@ class TileModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat:hover,
@@ -476,7 +467,6 @@ class TileModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-container h3' => 'color: {{VALUE}}',
@@ -490,7 +480,6 @@ class TileModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-container h3:hover' => 'color: {{VALUE}}',
@@ -504,7 +493,6 @@ class TileModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-container h3:after' => 'background: {{VALUE}}',
@@ -526,7 +514,6 @@ class TileModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'featured_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-big-thumb .he-title-container h3',
                 ]
         );
@@ -555,7 +542,6 @@ class TileModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'side_post_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-medium-thumb .he-title-container h3,
                             {{WRAPPER}} .he-small-thumb .he-title-container h3',
                 ]
@@ -594,7 +580,6 @@ class TileModuleOne extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-post-meta' => 'color: {{VALUE}}',
@@ -606,7 +591,6 @@ class TileModuleOne extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'post_metas_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-post-meta'
                 ]
         );
@@ -626,144 +610,144 @@ class TileModuleOne extends Widget_Base {
         ?>
 
         <div class="he-tile-block-wrap">
-            <?php $this->render_header(); ?>
+        <?php $this->render_header(); ?>
             <div class="he-tile-block ht-clearfix style1 space-10">
-                <?php
-                $args = $this->query_args();
-                $query = new \WP_Query($args);
-                while ($query->have_posts()): $query->the_post();
-                    $index = $query->current_post + 1;
-                    $last = $query->post_count;
+        <?php
+        $args = $this->query_args();
+        $query = new \WP_Query($args);
+        while ($query->have_posts()): $query->the_post();
+            $index = $query->current_post + 1;
+            $last = $query->post_count;
 
-                    if ($index == 1) {
-                        ?>
+            if ($index == 1) {
+                ?>
                         <div class="he-width-50 he-height-100 he-thumb he-left-col">
                             <div class="he-thumb-inner he-post-thumb">
                                 <a href="<?php the_permalink(); ?>">
-                                    <?php
-                                    if (has_post_thumbnail()) {
-                                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $featured_image_size);
-                                        ?>
+                <?php
+                if (has_post_thumbnail()) {
+                    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $featured_image_size);
+                    ?>
                                         <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
-                                    <?php }
-                                    ?>
+                        <?php }
+                        ?>
                                 </a>
 
-                                <?php
-                                if ($featured_display_cat == 'yes') {
-                                    echo hash_elements_get_the_category_list();
-                                }
-                                ?>
+                        <?php
+                        if ($featured_display_cat == 'yes') {
+                            echo hash_elements_get_the_category_list();
+                        }
+                        ?>
 
                                 <div class="he-title-container">
                                     <a href="<?php the_permalink(); ?>">
                                         <h3 class="he-large-title he-post-title"><span><?php the_title(); ?></span></h3>
-                                        <?php $this->get_post_meta($index) ?>
+                                    <?php $this->get_post_meta($index) ?>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <?php
-                    } else {
-                        if ($index == 2) {
-                            ?>
+                <?php
+            } else {
+                if ($index == 2) {
+                    ?>
                             <div class="he-width-50 he-height-100 he-parent he-right-col">
                                 <div class="he-width-100 he-height-50 he-thumb">
                                     <div class="he-thumb-inner he-post-thumb">
                                         <a href="<?php the_permalink(); ?>">
-                                            <?php
-                                            if (has_post_thumbnail()) {
-                                                $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $side_large_image_size);
-                                                ?>
+                    <?php
+                    if (has_post_thumbnail()) {
+                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $side_large_image_size);
+                        ?>
                                                 <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
-                                            <?php }
-                                            ?>
+                    <?php }
+                    ?>
                                         </a>
 
-                                        <?php
-                                        if ($side_display_cat == 'yes') {
-                                            he_get_the_primary_category();
-                                        }
-                                        ?>
+                            <?php
+                            if ($side_display_cat == 'yes') {
+                                he_get_the_primary_category();
+                            }
+                            ?>
 
                                         <div class="he-title-container">
                                             <a href="<?php the_permalink(); ?>">
                                                 <h3 class="he-mid-title he-post-title"><span><?php the_title(); ?></span></h3>
-                                                <?php $this->get_post_meta($index) ?>
+                                            <?php $this->get_post_meta($index) ?>
                                             </a>
                                         </div>
                                     </div>
                                 </div> 
-                            <?php } ?>
+                <?php } ?>
 
-                            <?php if ($index > 2) { ?>
+                                    <?php if ($index > 2) { ?>
                                 <div class="he-width-50 he-height-50 he-thumb">
                                     <div class="he-thumb-inner he-post-thumb">
                                         <a href="<?php the_permalink(); ?>">
-                                            <?php
-                                            if (has_post_thumbnail()) {
-                                                $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $side_image_size);
-                                                ?>
-                                                <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
-                                            <?php }
+                                        <?php
+                                        if (has_post_thumbnail()) {
+                                            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $side_image_size);
                                             ?>
+                                                <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
+                                                <?php }
+                                                ?>
                                         </a>
 
-                                        <?php
-                                        if ($side_display_cat == 'yes') {
-                                            he_get_the_primary_category();
-                                        }
-                                        ?>
+                                <?php
+                                if ($side_display_cat == 'yes') {
+                                    he_get_the_primary_category();
+                                }
+                                ?>
 
                                         <div class="he-title-container">
                                             <a href="<?php the_permalink(); ?>">
                                                 <h3 class="he-post-title"><span><?php the_title(); ?></span></h3>
-                                                <?php $this->get_post_meta($index) ?>
+                                            <?php $this->get_post_meta($index) ?>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                            <?php } ?>
-                            <?php if ($index == $last) echo '</div>'; ?>
-                        <?php } ?>
-                        <?php
-                    endwhile;
-                    wp_reset_postdata();
-                    ?>
+                <?php } ?>
+                                    <?php if ($index == $last) echo '</div>'; ?>
+                                <?php } ?>
+                                <?php
+                            endwhile;
+                            wp_reset_postdata();
+                            ?>
                 </div>
             </div>
-            <?php
+        <?php
+    }
+
+    /** Render Header */
+    protected function render_header() {
+        $settings = $this->get_settings();
+
+        $this->add_render_attribute('header_attr', 'class', [
+            'he-block-title',
+            $settings['header_style']
+                ]
+        );
+
+        $link_open = $link_close = "";
+        $target = $settings['header_link']['is_external'] ? ' target="_blank"' : '';
+        $nofollow = $settings['header_link']['nofollow'] ? ' rel="nofollow"' : '';
+
+        if ($settings['header_link']['url']) {
+            $link_open = '<a href="' . esc_url($settings['header_link']['url']) . '"' . $target . $nofollow . '>';
+            $link_close = '</a>';
         }
 
-        /** Render Header */
-        protected function render_header() {
-            $settings = $this->get_settings();
-
-            $this->add_render_attribute('header_attr', 'class', [
-                'he-block-title',
-                $settings['header_style']
-                    ]
-            );
-
-            $link_open = $link_close = "";
-            $target = $settings['header_link']['is_external'] ? ' target="_blank"' : '';
-            $nofollow = $settings['header_link']['nofollow'] ? ' rel="nofollow"' : '';
-
-            if ($settings['header_link']['url']) {
-                $link_open = '<a href="' . esc_url($settings['header_link']['url']) . '"' . $target . $nofollow . '>';
-                $link_close = '</a>';
-            }
-
-            if ($settings['header_title']) {
-                ?>
+        if ($settings['header_title']) {
+            ?>
                 <h2 <?php echo $this->get_render_attribute_string('header_attr'); ?>>
-                    <?php
-                    echo $link_open;
-                    echo '<span>';
-                    echo wp_kses_post($settings['header_title']);
-                    echo '</span>';
-                    echo $link_close;
-                    ?>
+                <?php
+                echo $link_open;
+                echo '<span>';
+                echo wp_kses_post($settings['header_title']);
+                echo '</span>';
+                echo $link_close;
+                ?>
                 </h2>
                 <?php
             }
@@ -811,32 +795,32 @@ class TileModuleOne extends Widget_Base {
             if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
                 ?>
                 <div class="he-post-meta">
-                    <?php
-                    if ($post_author == 'yes') {
-                        hash_elements_author_name();
-                    }
-
-                    if ($post_date == 'yes') {
-                        $date_format = $settings['date_format'];
-
-                        if ($date_format == 'relative_format') {
-                            hash_elements_time_ago();
-                        } else if ($date_format == 'default') {
-                            hash_elements_post_date();
-                        } else if ($date_format == 'custom') {
-                            $format = $settings['custom_date_format'];
-                            hash_elements_post_date($format);
-                        }
-                    }
-
-                    if ($post_comment == 'yes') {
-                        hash_elements_comment_count();
-                    }
-                    ?>
-                </div>
                 <?php
-            }
-        }
+                if ($post_author == 'yes') {
+                    hash_elements_author_name();
+                }
 
-    }
-    
+                if ($post_date == 'yes') {
+                    $date_format = $settings['date_format'];
+
+                    if ($date_format == 'relative_format') {
+                        hash_elements_time_ago();
+                    } else if ($date_format == 'default') {
+                        hash_elements_post_date();
+                    } else if ($date_format == 'custom') {
+                        $format = $settings['custom_date_format'];
+                        hash_elements_post_date($format);
+                    }
+                }
+
+                if ($post_comment == 'yes') {
+                    hash_elements_comment_count();
+                }
+                ?>
+                </div>
+                    <?php
+                }
+            }
+
+        }
+        

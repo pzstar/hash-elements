@@ -112,7 +112,6 @@ class TotalFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-featured-post' => 'border-color: {{VALUE}}',
@@ -156,7 +155,6 @@ class TotalFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#333',
             'selectors' => [
@@ -202,7 +200,6 @@ class TotalFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-featured-post h5' => 'color: {{VALUE}}',
@@ -214,7 +211,6 @@ class TotalFeaturedBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-featured-post h5',
                 ]
         );
@@ -235,7 +231,6 @@ class TotalFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-featured-excerpt' => 'color: {{VALUE}}',
@@ -247,7 +242,6 @@ class TotalFeaturedBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'description_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-featured-excerpt',
                 ]
         );
@@ -265,7 +259,6 @@ class TotalFeaturedBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'button_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-featured-link a',
                 ]
         );
@@ -297,7 +290,6 @@ class TotalFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#333',
             'selectors' => [
@@ -312,7 +304,6 @@ class TotalFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#FFF',
             'selectors' => [
@@ -335,7 +326,6 @@ class TotalFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#333',
             'selectors' => [
@@ -350,7 +340,6 @@ class TotalFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#FFF',
             'selectors' => [
@@ -375,24 +364,25 @@ class TotalFeaturedBlock extends Widget_Base {
         <div class="het-featured-post">
 
             <div class="het-featured-icon">
-                <?php \Elementor\Icons_Manager::render_icon($settings['icon'], ['aria-hidden' => 'true']); ?>
+        <?php \Elementor\Icons_Manager::render_icon($settings['icon'], ['aria-hidden' => 'true']); ?>
             </div>
 
             <h5><?php echo esc_html($settings['featured_title']); ?></h5>
 
             <div class="het-featured-excerpt">
-                <?php echo wp_kses_post($settings['featured_description']); ?>
+        <?php echo wp_kses_post($settings['featured_description']); ?>
             </div>
 
-            <?php if (!empty($settings['button_link']['url'])) { ?>
+        <?php if (!empty($settings['button_link']['url'])) { ?>
                 <div class="het-featured-link">
                     <a href="<?php echo esc_url($settings['button_link']['url']); ?>" <?php echo $target . $nofollow; ?>>
-                        <?php echo esc_html($settings['button_text']); ?>
+            <?php echo esc_html($settings['button_text']); ?>
                     </a>
                 </div>
-            <?php } ?>
+        <?php } ?>
         </div>
-        <?php
-    }
+                <?php
+            }
 
-}
+        }
+        

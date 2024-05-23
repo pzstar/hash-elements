@@ -135,7 +135,6 @@ class TotalServiceBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000',
             'selectors' => [
@@ -151,7 +150,6 @@ class TotalServiceBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#FFF',
             'selectors' => [
@@ -175,7 +173,6 @@ class TotalServiceBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-service-excerpt h5' => 'color: {{VALUE}}',
@@ -187,7 +184,6 @@ class TotalServiceBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-service-excerpt h5',
                 ]
         );
@@ -207,7 +203,6 @@ class TotalServiceBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-service-excerpt-text' => 'color: {{VALUE}}',
@@ -219,7 +214,6 @@ class TotalServiceBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'description_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-service-excerpt-text',
                 ]
         );
@@ -237,7 +231,6 @@ class TotalServiceBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'link_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-service-text a',
                 ]
         );
@@ -258,7 +251,6 @@ class TotalServiceBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-service-text a' => 'color: {{VALUE}}',
@@ -280,7 +272,6 @@ class TotalServiceBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-service-text a:hover' => 'color: {{VALUE}}',
@@ -300,12 +291,12 @@ class TotalServiceBlock extends Widget_Base {
         $settings = $this->get_settings_for_display();
         ?>
         <div class="het-service-post-wrap">
-            <?php
-            foreach ($settings['services_block'] as $key => $service) {
-                ?>
+        <?php
+        foreach ($settings['services_block'] as $key => $service) {
+            ?>
                 <div class="het-service-post he-clearfix">
                     <div class="het-service-icon">
-                        <?php \Elementor\Icons_Manager::render_icon($service['icon'], ['aria-hidden' => 'true']); ?>
+            <?php \Elementor\Icons_Manager::render_icon($service['icon'], ['aria-hidden' => 'true']); ?>
                     </div>
 
                     <div class="het-service-excerpt">
@@ -313,32 +304,33 @@ class TotalServiceBlock extends Widget_Base {
 
                         <div class="het-service-text">
                             <div class="het-service-excerpt-text">
-                                <?php
-                                if (isset($service['services_description']) && !empty($service['services_description'])) {
-                                    echo esc_html($service['services_description']);
-                                }
-                                ?>
+                        <?php
+                        if (isset($service['services_description']) && !empty($service['services_description'])) {
+                            echo esc_html($service['services_description']);
+                        }
+                        ?>
                             </div>
 
-                            <?php
-                            if (!empty($service['button_link']['url'])) {
-                                $target = $service['button_link']['is_external'] ? ' target="_blank"' : '';
-                                $nofollow = $service['button_link']['nofollow'] ? ' rel="nofollow"' : '';
-                                ?>
+            <?php
+            if (!empty($service['button_link']['url'])) {
+                $target = $service['button_link']['is_external'] ? ' target="_blank"' : '';
+                $nofollow = $service['button_link']['nofollow'] ? ' rel="nofollow"' : '';
+                ?>
                                 <div class="het-service-link">
                                     <a href="<?php echo esc_url($service['button_link']['url']); ?>" <?php echo $target . $nofollow; ?>>
-                                        <?php echo esc_html($service['button_text']); ?> <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                <?php echo esc_html($service['button_text']); ?> <i class="fas fa-chevron-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             <?php } ?>
                         </div>
                     </div>
                 </div>
-                <?php
-            }
-            ?>
+            <?php
+        }
+        ?>
         </div>
-        <?php
-    }
+                        <?php
+                    }
 
-}
+                }
+                

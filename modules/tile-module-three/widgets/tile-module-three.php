@@ -228,7 +228,6 @@ class TileModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
@@ -242,7 +241,6 @@ class TileModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
@@ -257,7 +255,6 @@ class TileModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
@@ -270,7 +267,6 @@ class TileModuleThree extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'header_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-block-title'
                 ]
         );
@@ -288,7 +284,6 @@ class TileModuleThree extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'category_normal_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-primary-cat,
                             {{WRAPPER}} .he-post-categories li a',
                 ]
@@ -310,7 +305,6 @@ class TileModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat,
@@ -325,7 +319,6 @@ class TileModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat,
@@ -348,7 +341,6 @@ class TileModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat:hover,
@@ -363,7 +355,6 @@ class TileModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-primary-cat:hover,
@@ -391,7 +382,6 @@ class TileModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-big-thumb .he-title-container h3' => 'color: {{VALUE}}',
@@ -405,7 +395,6 @@ class TileModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-big-thumb .he-title-container h3:hover' => 'color: {{VALUE}}',
@@ -419,7 +408,6 @@ class TileModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-container h3:after' => 'background: {{VALUE}}',
@@ -431,7 +419,6 @@ class TileModuleThree extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-big-thumb .he-title-container h3',
                 ]
         );
@@ -463,7 +450,6 @@ class TileModuleThree extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-post-meta' => 'color: {{VALUE}}',
@@ -475,7 +461,6 @@ class TileModuleThree extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'post_metas_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-post-meta'
                 ]
         );
@@ -491,45 +476,45 @@ class TileModuleThree extends Widget_Base {
         $image_size = $settings['post_image_size'];
         ?>
         <div class="he-tile-block-wrap">
-            <?php $this->render_header(); ?>
+        <?php $this->render_header(); ?>
             <div class="he-tile-block ht-clearfix style3 space-10">
-                <?php
-                $args = $this->query_args();
-                $query = new \WP_Query($args);
-                while ($query->have_posts()): $query->the_post();
-                    $index = $query->current_post + 1;
-                    $last = $query->post_count;
-                    ?>
+        <?php
+        $args = $this->query_args();
+        $query = new \WP_Query($args);
+        while ($query->have_posts()): $query->the_post();
+            $index = $query->current_post + 1;
+            $last = $query->post_count;
+            ?>
                     <div class="he-width-25 he-height-100 he-thumb">
                         <div class="he-thumb-inner he-post-thumb">
                             <a href="<?php the_permalink(); ?>">
-                                <?php
-                                if (has_post_thumbnail()) {
-                                    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
-                                    ?>
+            <?php
+            if (has_post_thumbnail()) {
+                $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
+                ?>
                                     <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
-                                <?php }
-                                ?>
+                    <?php }
+                    ?>
                             </a>
 
-                            <?php
-                            if ($display_cat == 'yes') {
-                                he_get_the_primary_category();
-                            }
-                            ?>
+                    <?php
+                    if ($display_cat == 'yes') {
+                        he_get_the_primary_category();
+                    }
+                    ?>
 
                             <div class="he-title-container">
                                 <a href="<?php the_permalink(); ?>">
                                     <h3 class="he-post-title"><span><?php the_title(); ?></span></h3>
-                                    <?php $this->get_post_meta($index) ?>
+                                <?php $this->get_post_meta($index) ?>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <?php
-                endwhile;
-                wp_reset_postdata();
-                ?>
+                            <?php
+                        endwhile;
+                        wp_reset_postdata();
+                        ?>
             </div> 
         </div>
         <?php
@@ -557,13 +542,13 @@ class TileModuleThree extends Widget_Base {
         if ($settings['header_title']) {
             ?>
             <h2 <?php echo $this->get_render_attribute_string('header_attr'); ?>>
-                <?php
-                echo $link_open;
-                echo '<span>';
-                echo wp_kses_post($settings['header_title']);
-                echo '</span>';
-                echo $link_close;
-                ?>
+            <?php
+            echo $link_open;
+            echo '<span>';
+            echo wp_kses_post($settings['header_title']);
+            echo '</span>';
+            echo $link_close;
+            ?>
             </h2>
             <?php
         }
@@ -611,31 +596,32 @@ class TileModuleThree extends Widget_Base {
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
             ?>
             <div class="he-post-meta">
-                <?php
-                if ($post_author == 'yes') {
-                    hash_elements_author_name();
-                }
-
-                if ($post_date == 'yes') {
-                    $date_format = $settings['date_format'];
-
-                    if ($date_format == 'relative_format') {
-                        hash_elements_time_ago();
-                    } else if ($date_format == 'default') {
-                        hash_elements_post_date();
-                    } else if ($date_format == 'custom') {
-                        $format = $settings['custom_date_format'];
-                        hash_elements_post_date($format);
-                    }
-                }
-
-                if ($post_comment == 'yes') {
-                    hash_elements_comment_count();
-                }
-                ?>
-            </div>
             <?php
-        }
-    }
+            if ($post_author == 'yes') {
+                hash_elements_author_name();
+            }
 
-}
+            if ($post_date == 'yes') {
+                $date_format = $settings['date_format'];
+
+                if ($date_format == 'relative_format') {
+                    hash_elements_time_ago();
+                } else if ($date_format == 'default') {
+                    hash_elements_post_date();
+                } else if ($date_format == 'custom') {
+                    $format = $settings['custom_date_format'];
+                    hash_elements_post_date($format);
+                }
+            }
+
+            if ($post_comment == 'yes') {
+                hash_elements_comment_count();
+            }
+            ?>
+            </div>
+                <?php
+            }
+        }
+
+    }
+    

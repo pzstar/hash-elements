@@ -232,7 +232,6 @@ class SquarePlusLogoCarousel extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -255,7 +254,6 @@ class SquarePlusLogoCarousel extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -289,32 +287,33 @@ class SquarePlusLogoCarousel extends Widget_Base {
         $params = json_encode($params);
         ?>
         <div class="he-client-logo-slider owl-carousel" data-params='<?php echo $params ?>'>
-            <?php
-            if ($settings['slides']) {
-                foreach ($settings['slides'] as $item) {
-                    $image_url = Group_Control_Image_Size::get_attachment_image_src($item['image']['id'], 'thumb', $settings);
-                    if (!$image_url) {
-                        $image_url = Utils::get_placeholder_image_src();
-                    }
-                    $image_html = '<img src="' . esc_attr($image_url) . '" alt="' . esc_attr(\Elementor\Control_Media::get_image_alt($item['image'])) . '" />';
-
-                    echo '<div class="he-logo-slide">';
-
-                    if (!empty($item['logo_link'])) {
-                        ?>
-                        <a href="<?php echo esc_url($item['logo_link']) ?>" target="<?php echo esc_attr($target) ?>">
-                            <?php echo $image_html; ?>
-                        </a>
-                        <?php
-                    } else {
-                        echo $image_html;
-                    }
-                    echo '</div>';
-                }
-            }
-            ?>
-        </div>
         <?php
-    }
+        if ($settings['slides']) {
+            foreach ($settings['slides'] as $item) {
+                $image_url = Group_Control_Image_Size::get_attachment_image_src($item['image']['id'], 'thumb', $settings);
+                if (!$image_url) {
+                    $image_url = Utils::get_placeholder_image_src();
+                }
+                $image_html = '<img src="' . esc_attr($image_url) . '" alt="' . esc_attr(\Elementor\Control_Media::get_image_alt($item['image'])) . '" />';
 
-}
+                echo '<div class="he-logo-slide">';
+
+                if (!empty($item['logo_link'])) {
+                    ?>
+                        <a href="<?php echo esc_url($item['logo_link']) ?>" target="<?php echo esc_attr($target) ?>">
+                        <?php echo $image_html; ?>
+                        </a>
+                            <?php
+                        } else {
+                            echo $image_html;
+                        }
+                        echo '</div>';
+                    }
+                }
+                ?>
+        </div>
+            <?php
+        }
+
+    }
+    

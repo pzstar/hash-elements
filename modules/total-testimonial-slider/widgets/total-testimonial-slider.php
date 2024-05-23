@@ -194,7 +194,6 @@ class TotalTestimonialSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-testimonial h6' => 'color: {{VALUE}}',
@@ -206,7 +205,6 @@ class TotalTestimonialSlider extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'name_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-testimonial h6',
                 ]
         );
@@ -226,7 +224,6 @@ class TotalTestimonialSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-testimonial .het-testimonial-designation' => 'color: {{VALUE}}',
@@ -238,7 +235,6 @@ class TotalTestimonialSlider extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'designation_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-testimonial .het-testimonial-designation',
                 ]
         );
@@ -258,7 +254,6 @@ class TotalTestimonialSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-testimonial-excerpt, {{WRAPPER}} .het-testimonial-excerpt .fa-quote-left' => 'color: {{VALUE}}',
@@ -270,7 +265,6 @@ class TotalTestimonialSlider extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'testimonial_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-testimonial-excerpt ',
                 ]
         );
@@ -290,7 +284,6 @@ class TotalTestimonialSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -324,7 +317,6 @@ class TotalTestimonialSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -339,7 +331,6 @@ class TotalTestimonialSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-testimonial-slider.owl-carousel .owl-nav button' => 'color: {{VALUE}}'
@@ -354,7 +345,6 @@ class TotalTestimonialSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -377,7 +367,6 @@ class TotalTestimonialSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -392,7 +381,6 @@ class TotalTestimonialSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -407,7 +395,6 @@ class TotalTestimonialSlider extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -436,39 +423,39 @@ class TotalTestimonialSlider extends Widget_Base {
         $params = json_encode($params);
         ?>
         <div class="het-testimonial-slider owl-carousel" data-params='<?php echo $params ?>'>
-            <?php
-            foreach ($testimonials as $key => $testimonial) {
-                ?>
+        <?php
+        foreach ($testimonials as $key => $testimonial) {
+            ?>
                 <div class="het-testimonial">
                     <div class="het-testimonial-excerpt">
                         <i class="fa fa-quote-left"></i>
-                        <?php
-                        if (isset($testimonial['testimonial']) && !empty($testimonial['testimonial'])) {
-                            echo esc_html($testimonial['testimonial']);
-                        }
-                        ?>
+            <?php
+            if (isset($testimonial['testimonial']) && !empty($testimonial['testimonial'])) {
+                echo esc_html($testimonial['testimonial']);
+            }
+            ?>
                     </div>
 
-                    <?php
-                    $image_url = Group_Control_Image_Size::get_attachment_image_src($testimonial['image']['id'], 'thumbnail', $settings);
-                    if (!$image_url) {
-                        $image_url = Utils::get_placeholder_image_src();
-                    }
-                    echo '<img src="' . esc_attr($image_url) . '" alt="' . esc_attr(\Elementor\Control_Media::get_image_alt($testimonial['image'])) . '" />';
-                    ?>
+                <?php
+                $image_url = Group_Control_Image_Size::get_attachment_image_src($testimonial['image']['id'], 'thumbnail', $settings);
+                if (!$image_url) {
+                    $image_url = Utils::get_placeholder_image_src();
+                }
+                echo '<img src="' . esc_attr($image_url) . '" alt="' . esc_attr(\Elementor\Control_Media::get_image_alt($testimonial['image'])) . '" />';
+                ?>
 
                     <h6><?php echo esc_html($testimonial['name']); ?></h6>
 
-                    <?php if (isset($testimonial['designation']) && !empty($testimonial['designation'])) { ?>
+                        <?php if (isset($testimonial['designation']) && !empty($testimonial['designation'])) { ?>
                         <div class="het-testimonial-designation">
-                            <?php echo esc_html($testimonial['designation']); ?>
+                        <?php echo esc_html($testimonial['designation']); ?>
                         </div>
                     <?php }
                     ?>
                 </div>
-                <?php
-            }
-            ?>
+                    <?php
+                }
+                ?>
         </div>
         <?php
     }

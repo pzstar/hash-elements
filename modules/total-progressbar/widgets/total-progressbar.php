@@ -95,7 +95,6 @@ class TotalProgressbar extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-progress-bar' => 'background-color: {{VALUE}}',
@@ -109,7 +108,6 @@ class TotalProgressbar extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-progress-bar-length' => 'background-color: {{VALUE}}',
@@ -146,7 +144,6 @@ class TotalProgressbar extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-progress h6' => 'color: {{VALUE}}',
@@ -158,7 +155,6 @@ class TotalProgressbar extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-progress h6',
                 ]
         );
@@ -178,7 +174,6 @@ class TotalProgressbar extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-progress-bar-length span' => 'color: {{VALUE}}',
@@ -190,7 +185,6 @@ class TotalProgressbar extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'progressbar_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-progress-bar-length span',
                 ]
         );
@@ -205,9 +199,9 @@ class TotalProgressbar extends Widget_Base {
         ?>
         <div class="het-about-sec">
             <div class="het-progress-bar-sec">
-                <?php
-                foreach ($progressbars as $key => $progressbar) {
-                    ?>
+        <?php
+        foreach ($progressbars as $key => $progressbar) {
+            ?>
                     <div class="het-progress">
                         <h6><?php echo esc_html($progressbar['progressbar_title']); ?></h6>
                         <div class="het-progress-bar">
@@ -216,12 +210,13 @@ class TotalProgressbar extends Widget_Base {
                             </div>
                         </div>
                     </div>
-                    <?php
-                }
-                ?>
+            <?php
+        }
+        ?>
             </div>
         </div>          
-        <?php
-    }
+                <?php
+            }
 
-}
+        }
+        

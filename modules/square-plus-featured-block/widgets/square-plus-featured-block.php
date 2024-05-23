@@ -145,7 +145,6 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-featured-icon' => 'color: {{VALUE}};fill: {{VALUE}}',
@@ -190,7 +189,6 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-featured-post h4' => 'color: {{VALUE}}',
@@ -204,7 +202,6 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-featured-post h4:after' => 'background: {{VALUE}}',
@@ -216,7 +213,6 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-featured-post h4',
                 ]
         );
@@ -248,7 +244,6 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-featured-excerpt' => 'color: {{VALUE}}',
@@ -260,7 +255,6 @@ class SquarePlusFeaturedBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'content_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-featured-excerpt',
                 ]
         );
@@ -314,7 +308,6 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} a.he-featured-readmore' => 'color: {{VALUE}}; fill: {{VALUE}}',
@@ -328,7 +321,6 @@ class SquarePlusFeaturedBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} a.he-featured-readmore:hover' => 'color: {{VALUE}}; fill: {{VALUE}}',
@@ -345,42 +337,43 @@ class SquarePlusFeaturedBlock extends Widget_Base {
         ?>
         <div class="he-featured-post">
             <div class="he-featured-icon">
-                <?php \Elementor\Icons_Manager::render_icon($settings['icon'], ['aria-hidden' => 'true']); ?>
+        <?php \Elementor\Icons_Manager::render_icon($settings['icon'], ['aria-hidden' => 'true']); ?>
             </div>
 
-            <?php
-            if (isset($settings['title']) && !empty($settings['title'])) {
-                ?>
-                <h4><?php echo esc_html($settings['title']); ?></h4>
-                <?php
-            }
+        <?php
+        if (isset($settings['title']) && !empty($settings['title'])) {
             ?>
+                <h4><?php echo esc_html($settings['title']); ?></h4>
+                    <?php
+                }
+                ?>
 
             <?php
             if (isset($settings['content']) && !empty($settings['content'])) {
                 ?>
                 <div class="he-featured-excerpt">
-                    <?php
-                    echo esc_html($settings['content']);
-                    ?>
+                <?php
+                echo esc_html($settings['content']);
+                ?>
                 </div>
                 <?php
             }
             ?>
 
-            <?php
-            if (isset($settings['link']['url']) && !empty($settings['link']['url'])) {
-                $target = $settings['link']['is_external'] ? ' target="_blank"' : '';
-                $nofollow = $settings['link']['nofollow'] ? ' rel="nofollow"' : '';
-                ?>
+                <?php
+                if (isset($settings['link']['url']) && !empty($settings['link']['url'])) {
+                    $target = $settings['link']['is_external'] ? ' target="_blank"' : '';
+                    $nofollow = $settings['link']['nofollow'] ? ' rel="nofollow"' : '';
+                    ?>
                 <a href="<?php echo esc_url($settings['link']['url']); ?>" class="he-featured-readmore"<?php echo $target . $nofollow; ?>>
-                    <?php \Elementor\Icons_Manager::render_icon($settings['link_icon'], ['aria-hidden' => 'true']); ?>
+                <?php \Elementor\Icons_Manager::render_icon($settings['link_icon'], ['aria-hidden' => 'true']); ?>
                 </a>
                 <?php
             }
             ?>
         </div>
-        <?php
-    }
+            <?php
+        }
 
-}
+    }
+    

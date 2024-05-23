@@ -104,7 +104,6 @@ class TotalBlogModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-box' => 'background-color: {{VALUE}}',
@@ -118,7 +117,6 @@ class TotalBlogModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-box' => 'border-color: {{VALUE}}',
@@ -141,7 +139,6 @@ class TotalBlogModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-excerpt h5 a' => 'color: {{VALUE}}',
@@ -155,7 +152,6 @@ class TotalBlogModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-excerpt h5 a:hover' => 'color: {{VALUE}}',
@@ -167,7 +163,6 @@ class TotalBlogModule extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-blog-excerpt h5 a',
                 ]
         );
@@ -199,7 +194,6 @@ class TotalBlogModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-date' => 'color: {{VALUE}}',
@@ -211,7 +205,6 @@ class TotalBlogModule extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'post_metas_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-blog-date'
                 ]
         );
@@ -231,7 +224,6 @@ class TotalBlogModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-excerpt .het-blog-excerpt-text' => 'color: {{VALUE}}',
@@ -243,7 +235,6 @@ class TotalBlogModule extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'excerpt_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-blog-excerpt .het-blog-excerpt-text',
                 ]
         );
@@ -261,7 +252,6 @@ class TotalBlogModule extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'button_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-blog-read-more a',
                 ]
         );
@@ -293,7 +283,6 @@ class TotalBlogModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .het-blog-read-more a' => 'color: {{VALUE}}',
@@ -307,7 +296,6 @@ class TotalBlogModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -330,7 +318,6 @@ class TotalBlogModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#fff',
             'selectors' => [
@@ -345,7 +332,6 @@ class TotalBlogModule extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#333',
             'selectors' => [
@@ -366,40 +352,40 @@ class TotalBlogModule extends Widget_Base {
         $settings = $this->get_settings_for_display();
         ?>
         <div class="het-blog-wrap het-clearfix">
-            <?php
-            $args = $this->query_args();
-            $query = new \WP_Query($args);
-            if ($query->have_posts()):
-                while ($query->have_posts()): $query->the_post();
-                    ?>
+        <?php
+        $args = $this->query_args();
+        $query = new \WP_Query($args);
+        if ($query->have_posts()):
+            while ($query->have_posts()): $query->the_post();
+                ?>
                     <div class="het-blog-post">
                         <div class="het-blog-box">
-                            <?php
-                            if (has_post_thumbnail()) {
-                                $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), $settings['thumbnail_size']);
-                                if (isset($total_image[0])) {
-                                    ?> 
+                <?php
+                if (has_post_thumbnail()) {
+                    $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), $settings['thumbnail_size']);
+                    if (isset($total_image[0])) {
+                        ?> 
                                     <div class="het-blog-thumbnail">
                                         <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title(); ?>"></a>
                                     </div>
-                                    <?php
-                                }
-                            }
-                            ?>
+                            <?php
+                        }
+                    }
+                    ?>
                             <div class="het-blog-excerpt">
                                 <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
                                 <div class="het-blog-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><?php echo get_the_date(); ?></div>
-                                <?php
-                                if (has_excerpt() && '' != trim(get_the_excerpt())) {
-                                    echo '<div class="het-blog-excerpt-text">';
-                                    the_excerpt();
-                                    echo '</div>';
-                                } else {
-                                    echo '<div class="het-blog-excerpt-text">';
-                                    echo esc_html(hash_elements_custom_excerpt($settings['excerpt_length']));
-                                    echo '</div>';
-                                }
-                                ?>
+                            <?php
+                            if (has_excerpt() && '' != trim(get_the_excerpt())) {
+                                echo '<div class="het-blog-excerpt-text">';
+                                the_excerpt();
+                                echo '</div>';
+                            } else {
+                                echo '<div class="het-blog-excerpt-text">';
+                                echo esc_html(hash_elements_custom_excerpt($settings['excerpt_length']));
+                                echo '</div>';
+                            }
+                            ?>
                             </div>
 
                             <div class="het-blog-read-more">
@@ -407,45 +393,46 @@ class TotalBlogModule extends Widget_Base {
                             </div>
                         </div>
                     </div>
-                    <?php
-                endwhile;
-            endif;
-            wp_reset_postdata();
-            ?>
+                                <?php
+                            endwhile;
+                        endif;
+                        wp_reset_postdata();
+                        ?>
         </div>
-        <?php
-    }
+                        <?php
+                    }
 
-    /** Query Args */
-    protected function query_args() {
-        $settings = $this->get_settings();
+                    /** Query Args */
+                    protected function query_args() {
+                        $settings = $this->get_settings();
 
-        $post_type = $args['post_type'] = $settings['posts_post_type'];
-        $args['orderby'] = $settings['posts_orderby'];
-        $args['order'] = $settings['posts_order'];
-        $args['ignore_sticky_posts'] = 1;
-        $args['post_status'] = 'publish';
-        $args['offset'] = $settings['posts_offset'];
-        $args['posts_per_page'] = $settings['post_count'];
-        $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : [];
+                        $post_type = $args['post_type'] = $settings['posts_post_type'];
+                        $args['orderby'] = $settings['posts_orderby'];
+                        $args['order'] = $settings['posts_order'];
+                        $args['ignore_sticky_posts'] = 1;
+                        $args['post_status'] = 'publish';
+                        $args['offset'] = $settings['posts_offset'];
+                        $args['posts_per_page'] = $settings['post_count'];
+                        $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : [];
 
-        $args['tax_query'] = [];
+                        $args['tax_query'] = [];
 
-        $taxonomies = get_object_taxonomies($post_type, 'objects');
+                        $taxonomies = get_object_taxonomies($post_type, 'objects');
 
-        foreach ($taxonomies as $object) {
-            $setting_key = 'posts_' . $object->name . '_ids';
+                        foreach ($taxonomies as $object) {
+                            $setting_key = 'posts_' . $object->name . '_ids';
 
-            if (!empty($settings[$setting_key])) {
-                $args['tax_query'][] = [
-                    'taxonomy' => $object->name,
-                    'field' => 'term_id',
-                    'terms' => $settings[$setting_key],
-                ];
-            }
-        }
+                            if (!empty($settings[$setting_key])) {
+                                $args['tax_query'][] = [
+                                    'taxonomy' => $object->name,
+                                    'field' => 'term_id',
+                                    'terms' => $settings[$setting_key],
+                                ];
+                            }
+                        }
 
-        return $args;
-    }
+                        return $args;
+                    }
 
-}
+                }
+                

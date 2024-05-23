@@ -195,7 +195,6 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000',
             'selectors' => [
@@ -210,7 +209,6 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#FFF',
             'selectors' => [
@@ -223,7 +221,6 @@ class TotalTeamBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-team-member .het-title-wrap h6',
                 ]
         );
@@ -243,7 +240,6 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -258,7 +254,6 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -272,7 +267,6 @@ class TotalTeamBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'overlay_title_typography',
             'label' => esc_html__('Title Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-team-member-excerpt h6',
                 ]
         );
@@ -281,7 +275,6 @@ class TotalTeamBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'designation_typography',
             'label' => esc_html__('Designation Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-team-member .het-team-designation',
                 ]
         );
@@ -290,7 +283,6 @@ class TotalTeamBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'description_typography',
             'label' => esc_html__('Description Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-member-description-text',
                 ]
         );
@@ -308,7 +300,6 @@ class TotalTeamBlock extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'button_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .het-team-detail a',
                 ]
         );
@@ -340,7 +331,6 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -355,7 +345,6 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#333333',
             'selectors' => [
@@ -378,7 +367,6 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#333',
             'selectors' => [
@@ -393,7 +381,6 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#FFF',
             'selectors' => [
@@ -431,7 +418,6 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#000000',
             'selectors' => [
@@ -446,7 +432,6 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -469,7 +454,6 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#333',
             'selectors' => [
@@ -484,7 +468,6 @@ class TotalTeamBlock extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'default' => '#FFFFFF',
             'selectors' => [
@@ -510,9 +493,9 @@ class TotalTeamBlock extends Widget_Base {
         <div class="het-team-member">
 
             <div class="het-team-member-image">
-                <?php
-                echo Group_Control_Image_Size::get_attachment_image_html($settings, 'thumbnail', 'member_image');
-                ?>
+        <?php
+        echo Group_Control_Image_Size::get_attachment_image_html($settings, 'thumbnail', 'member_image');
+        ?>
 
                 <div class="het-title-wrap">
                     <h6><?php echo esc_attr($settings['member_name']); ?></h6>
@@ -522,21 +505,21 @@ class TotalTeamBlock extends Widget_Base {
                     <div class="het-team-member-excerpt-wrap">
                         <h6><?php echo esc_attr($settings['member_name']); ?></h6>
 
-                        <?php if ($settings['member_designation']) { ?>
+        <?php if ($settings['member_designation']) { ?>
                             <div class="het-team-designation"><?php echo esc_html($settings['member_designation']); ?></div>
-                        <?php } ?>
+        <?php } ?>
 
-                        <?php
-                        if (isset($settings['member_description']) && !empty($settings['member_description'])) {
-                            echo '<div class="het-member-description-text">';
-                            echo esc_html($settings['member_description']);
-                            echo '</div>';
-                        }
-                        if ($settings['button_link']['url']) {
-                            ?>
+                <?php
+                if (isset($settings['member_description']) && !empty($settings['member_description'])) {
+                    echo '<div class="het-member-description-text">';
+                    echo esc_html($settings['member_description']);
+                    echo '</div>';
+                }
+                if ($settings['button_link']['url']) {
+                    ?>
                             <div class="het-team-detail">
                                 <a href="<?php echo esc_url($settings['button_link']['url']); ?>"<?php echo $target . $nofollow; ?>>
-                                    <?php esc_html_e($settings['button_text']) ?>
+            <?php esc_html_e($settings['button_text']) ?>
                                 </a>
                             </div>
                         <?php } ?>
@@ -544,23 +527,24 @@ class TotalTeamBlock extends Widget_Base {
                 </div>
             </div>  
 
-            <?php
-            if (isset($social_icons_block) && !empty($social_icons_block)) {
-                ?>
+                        <?php
+                        if (isset($social_icons_block) && !empty($social_icons_block)) {
+                            ?>
                 <div class="het-team-social-id">
-                    <?php
-                    foreach ($social_icons_block as $key => $icon_block) {
-                        $target = $icon_block['social_icon_link']['is_external'] ? ' target="_blank"' : '';
-                        $nofollow = $icon_block['social_icon_link']['nofollow'] ? ' rel="nofollow"' : '';
-                        ?>
+                            <?php
+                            foreach ($social_icons_block as $key => $icon_block) {
+                                $target = $icon_block['social_icon_link']['is_external'] ? ' target="_blank"' : '';
+                                $nofollow = $icon_block['social_icon_link']['nofollow'] ? ' rel="nofollow"' : '';
+                                ?>
                         <a target="_blank" href="<?php echo esc_url($icon_block['social_icon_link']['url']) ?>"<?php echo $target . $nofollow; ?>>
-                            <?php \Elementor\Icons_Manager::render_icon($icon_block['social_icon'], ['aria-hidden' => 'true']); ?>
+                <?php \Elementor\Icons_Manager::render_icon($icon_block['social_icon'], ['aria-hidden' => 'true']); ?>
                         </a>
-                    <?php } ?>
+                            <?php } ?>
                 </div>
-            <?php } ?>
+        <?php } ?>
         </div>
-        <?php
-    }
+            <?php
+        }
 
-}
+    }
+    

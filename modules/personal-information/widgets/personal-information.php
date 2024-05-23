@@ -158,7 +158,6 @@ class PersonalInformation extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
@@ -172,7 +171,6 @@ class PersonalInformation extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
@@ -187,7 +185,6 @@ class PersonalInformation extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
@@ -200,7 +197,6 @@ class PersonalInformation extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'header_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-block-title'
                 ]
         );
@@ -220,7 +216,6 @@ class PersonalInformation extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-personal-information .he-pi-name' => 'color: {{VALUE}}'
@@ -232,7 +227,6 @@ class PersonalInformation extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'name_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-personal-information .he-pi-name'
                 ]
         );
@@ -264,7 +258,6 @@ class PersonalInformation extends Widget_Base {
             'type' => Controls_Manager::COLOR,
             'scheme' => [
                 'type' => Color::get_type(),
-                
             ],
             'selectors' => [
                 '{{WRAPPER}} .he-personal-information .he-pi-intro' => 'color: {{VALUE}}'
@@ -276,7 +269,6 @@ class PersonalInformation extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'intro_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            
             'selector' => '{{WRAPPER}} .he-personal-information .he-pi-intro'
                 ]
         );
@@ -292,46 +284,47 @@ class PersonalInformation extends Widget_Base {
         ?>
         <div class="he-personal-information he-align-<?php echo esc_attr($settings['content_alignment']); ?>">
             <div class="he-pi-image">
-                <?php
-                echo Group_Control_Image_Size::get_attachment_image_html($settings, 'thumbnail', 'image');
-                ?>
+        <?php
+        echo Group_Control_Image_Size::get_attachment_image_html($settings, 'thumbnail', 'image'); 
+        ?>
             </div>
 
-            <?php
-            if (!empty($settings['name'])):
-                echo '<div class="he-pi-name"><span>' . esc_html($settings['name']) . '</span></div>';
-            endif;
-
-            if (!empty($settings['short_intro'])):
-                echo '<div class="he-pi-intro">' . esc_html($settings['short_intro']) . '</div>';
-            endif;
-            ?>
-        </div>
         <?php
-    }
+        if (!empty($settings['name'])):
+                        echo '<div class="he-pi-name"><span>' . esc_html($settings['name'] ) . '</span></div>';
+            endif;
 
-    /** Render Header */
-    protected function render_header() {
-        $settings = $this->get_settings();
+        if (!empty($settings['short_intro'])):
+                        echo '<div class="he-pi-intro">' . esc_html($settings['short_intro'] ) . '</div>';
+            endif;
+        ?>
+        </div>
+            <?php
+            }
 
-        $this->add_render_attribute('header_attr', 'class', [
-            'he-block-title',
-            $settings['header_style']
+            /** Render Header */
+            protected function render_header
+
+() {
+            $settings = $this->get_settings();
+
+                    $this->add_render_attribute('header_attr', 'class', [
+                     'he-block-title', $settings['header_style']
                 ]
-        );
+                );
 
-        $link_open = $link_close = "";
-        $target = $settings['header_link']['is_external'] ? ' target="_blank"' : '';
-        $nofollow = $settings['header_link']['nofollow'] ? ' rel="nofollow"' : '';
+                    $link_open = $link_close = "";
+                    $target = $settings['header_link']['is_external'] ? ' target="_blank"' : '';
+                    $nofollow = $settings['header_link']['nofollow'] ?  ' rel="nofollow"' :  '';
 
-        if ($settings['header_link']['url']) {
-            $link_open = '<a href="' . esc_url($settings['header_link']['url']) . '"' . $target . $nofollow . '>';
-            $link_close = '</a>';
-        }
+                    if ($settings['header_link']['url']) {
+                    $link_open = '<a href="' . esc_url($settings['header_link']['url']) . '"' . $target . $nofollow . '>';
+                    $link_close = '</a>';
+                    }
 
-        if ($settings['header_title']) {
-            ?>
-            <h2 <?php echo $this->get_render_attribute_string('header_attr'); ?>>
+                    if ($settings['header_title']) {
+                    ?>
+                <h2 <?php echo $this->get_render_attribute_string('header_attr'); ?>>
                 <?php
                 echo $link_open;
                 echo '<span>';
@@ -339,9 +332,9 @@ class PersonalInformation extends Widget_Base {
                 echo '</span>';
                 echo $link_close;
                 ?>
-            </h2>
-            <?php
-        }
-    }
+                </h2>
+                    <?php
+                    }
+                    }
 
-}
+                    }  
