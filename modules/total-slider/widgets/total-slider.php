@@ -7,8 +7,6 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Core\Schemes\Color;
 use Elementor\Utils;
 use Elementor\Repeater;
 
@@ -197,9 +195,6 @@ class TotalSlider extends Widget_Base {
                 'title_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#009dea',
             'selectors' => [
                 '{{WRAPPER}} .het-slide-cap-title span' => 'background-color: {{VALUE}}',
@@ -211,9 +206,6 @@ class TotalSlider extends Widget_Base {
                 'title_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#FFFFFF',
             'selectors' => [
                 '{{WRAPPER}} .het-slide-cap-title' => 'color: {{VALUE}}',
@@ -242,9 +234,6 @@ class TotalSlider extends Widget_Base {
                 'description_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-slide-cap-desc ' => 'color: {{VALUE}}',
             ],
@@ -293,9 +282,6 @@ class TotalSlider extends Widget_Base {
                 'button_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#FFFFFF',
             'selectors' => [
                 '{{WRAPPER}} .het-slide-cap-button a' => 'background-color: {{VALUE}}',
@@ -307,9 +293,6 @@ class TotalSlider extends Widget_Base {
                 'button_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-slide-cap-button a' => 'color: {{VALUE}}',
             ],
@@ -329,9 +312,6 @@ class TotalSlider extends Widget_Base {
                 'button_bg_hover_color', [
             'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-slide-cap-button a:hover' => 'background-color: {{VALUE}}',
             ],
@@ -342,9 +322,6 @@ class TotalSlider extends Widget_Base {
                 'button_hover_color', [
             'label' => esc_html__('Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-slide-cap-button a:hover' => 'color: {{VALUE}}',
             ],
@@ -378,9 +355,6 @@ class TotalSlider extends Widget_Base {
                 'nav_normal_bg_color', [
             'label' => esc_html__('Navigation Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-bx-slider.owl-carousel .owl-nav button' => 'background-color: {{VALUE}}',
             ],
@@ -391,9 +365,6 @@ class TotalSlider extends Widget_Base {
                 'nav_normal_icon_color', [
             'label' => esc_html__('Navigation Icon Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-bx-slider .owl-nav [class*=owl-]:before, .het-bx-slider .owl-nav [class*=owl-]:after' => 'background-color: {{VALUE}}',
             ],
@@ -404,9 +375,6 @@ class TotalSlider extends Widget_Base {
                 'dot_color', [
             'label' => esc_html__('Dots Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-bx-slider .owl-dots .owl-dot' => 'border-color: {{VALUE}}',
                 '{{WRAPPER}} .het-bx-slider .owl-dots .owl-dot.active' => 'background-color: {{VALUE}}',
@@ -426,9 +394,6 @@ class TotalSlider extends Widget_Base {
                 'nav_hover_bg_color', [
             'label' => esc_html__('Navigation Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-bx-slider.owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
             ],
@@ -439,9 +404,6 @@ class TotalSlider extends Widget_Base {
                 'nav_hover_icon_color', [
             'label' => esc_html__('Navigation Icon Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-bx-slider .owl-nav [class*=owl-]:hover:before, .het-bx-slider .owl-nav [class*=owl-]:hover:after' => 'background-color: {{VALUE}}',
             ],
@@ -452,9 +414,6 @@ class TotalSlider extends Widget_Base {
                 'dot_bg_color_hover', [
             'label' => esc_html__('Dots Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-bx-slider .owl-dots .owl-dot:hover' => 'background-color: {{VALUE}};border-color: {{VALUE}}',
             ],
@@ -481,45 +440,45 @@ class TotalSlider extends Widget_Base {
         $params = json_encode($params);
         ?>
         <div class="het-bx-slider owl-carousel" data-params='<?php echo $params ?>'>
-        <?php
-        foreach ($sliders as $key => $slider) {
-            ?>
+            <?php
+            foreach ($sliders as $key => $slider) {
+                ?>
                 <div class="het-slide">
                     <div class="het-slide-overlay"></div>
 
-                    <img class="no-lazyload" src="<?php echo esc_url($slider['slider_image']['url']); ?>" alt="<?php echo esc_attr($slider['slider_title']); ?>">
+                    <img class="no-lazyload" src="<?php echo esc_url($slider['slider_image']['url']); ?>"
+                         alt="<?php echo esc_attr($slider['slider_title']); ?>">
 
                     <div class="het-slide-caption">
 
-            <?php if (!empty($slider['slider_title'])) { ?>
+                        <?php if (!empty($slider['slider_title'])) { ?>
                             <div class="het-slide-cap-title">
                                 <span><?php echo esc_html($slider['slider_title']); ?></span>
                             </div>
-            <?php } ?>
+                        <?php } ?>
 
-                <?php if (!empty($slider['slider_description'])) { ?>
+                        <?php if (!empty($slider['slider_description'])) { ?>
                             <div class="het-slide-cap-desc">
-                    <?php echo esc_html($slider['slider_description']); ?>
+                                <?php echo esc_html($slider['slider_description']); ?>
                             </div>
-            <?php } ?>
+                        <?php } ?>
 
-            <?php
-            if (!empty($slider['button_link']['url'])) {
-                $target = $slider['button_link']['is_external'] ? ' target="_blank"' : '';
-                $nofollow = $slider['button_link']['nofollow'] ? ' rel="nofollow"' : '';
-                ?>
+                        <?php
+                        if (!empty($slider['button_link']['url'])) {
+                            $target = $slider['button_link']['is_external'] ? ' target="_blank"' : '';
+                            $nofollow = $slider['button_link']['nofollow'] ? ' rel="nofollow"' : '';
+                            ?>
                             <div class="het-slide-cap-button">
-                                <a href="<?php echo esc_url($slider['button_link']['url']); ?>"<?php echo $target . $nofollow; ?>><?php echo esc_html($slider['button_text']); ?></a>
+                                <a href="<?php echo esc_url($slider['button_link']['url']); ?>" <?php echo $target . $nofollow; ?>><?php echo esc_html($slider['button_text']); ?></a>
                             </div>
                         <?php } ?>
                     </div>
                 </div>
-                            <?php
-                        }
-                        ?>
-        </div>
-                    <?php
-                }
-
+                <?php
             }
-            
+            ?>
+        </div>
+        <?php
+    }
+
+}

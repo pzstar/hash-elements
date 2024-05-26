@@ -6,8 +6,6 @@ namespace HashElements\Modules\TotalProgressbar\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Core\Schemes\Color;
 use Elementor\Repeater;
 
 if (!defined('ABSPATH')) {
@@ -93,9 +91,6 @@ class TotalProgressbar extends Widget_Base {
                 'progressbar_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-progress-bar' => 'background-color: {{VALUE}}',
             ],
@@ -106,9 +101,6 @@ class TotalProgressbar extends Widget_Base {
                 'progressbar_active_bg_color', [
             'label' => esc_html__('Active Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-progress-bar-length' => 'background-color: {{VALUE}}',
             ],
@@ -142,9 +134,6 @@ class TotalProgressbar extends Widget_Base {
                 'title_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-progress h6' => 'color: {{VALUE}}',
             ],
@@ -172,9 +161,6 @@ class TotalProgressbar extends Widget_Base {
                 'progressbar_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-progress-bar-length span' => 'color: {{VALUE}}',
             ],
@@ -199,24 +185,24 @@ class TotalProgressbar extends Widget_Base {
         ?>
         <div class="het-about-sec">
             <div class="het-progress-bar-sec">
-        <?php
-        foreach ($progressbars as $key => $progressbar) {
-            ?>
+                <?php
+                foreach ($progressbars as $key => $progressbar) {
+                    ?>
                     <div class="het-progress">
                         <h6><?php echo esc_html($progressbar['progressbar_title']); ?></h6>
                         <div class="het-progress-bar">
-                            <div class="het-progress-bar-length" style="width:<?php echo absint($progressbar['progressbar_percentage']); ?>%">
+                            <div class="het-progress-bar-length"
+                                 style="width:<?php echo absint($progressbar['progressbar_percentage']); ?>%">
                                 <span><?php echo absint($progressbar['progressbar_percentage']) . "%"; ?></span>
                             </div>
                         </div>
                     </div>
-            <?php
-        }
-        ?>
+                    <?php
+                }
+                ?>
             </div>
-        </div>          
-                <?php
-            }
+        </div>
+        <?php
+    }
 
-        }
-        
+}

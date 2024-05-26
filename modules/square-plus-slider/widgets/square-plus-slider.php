@@ -6,8 +6,6 @@ namespace HashElements\Modules\SquarePlusSlider\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Core\Schemes\Color;
 use Elementor\Utils;
 use Elementor\Repeater;
 
@@ -179,9 +177,6 @@ class SquarePlusSlider extends Widget_Base {
                 'caption_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-caption' => 'background: {{VALUE}}',
             ],
@@ -192,9 +187,6 @@ class SquarePlusSlider extends Widget_Base {
                 'caption_border_color', [
             'label' => esc_html__('Side Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-caption' => 'border-left: 3px solid {{VALUE}}; border-right: 3px solid {{VALUE}}',
             ],
@@ -214,9 +206,6 @@ class SquarePlusSlider extends Widget_Base {
                 'title_color', [
             'label' => esc_html__('Title Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-cap-title' => 'color: {{VALUE}}',
             ],
@@ -236,9 +225,6 @@ class SquarePlusSlider extends Widget_Base {
                 'description_color', [
             'label' => esc_html__('SubTitle Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-cap-desc' => 'color: {{VALUE}}',
             ],
@@ -287,9 +273,6 @@ class SquarePlusSlider extends Widget_Base {
                 'button_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-cap-button a' => 'background-color: {{VALUE}}',
             ],
@@ -300,9 +283,6 @@ class SquarePlusSlider extends Widget_Base {
                 'button_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-cap-button a' => 'color: {{VALUE}}',
             ],
@@ -321,9 +301,6 @@ class SquarePlusSlider extends Widget_Base {
                 'button_bg_hover_color', [
             'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-cap-button a:hover' => 'background: {{VALUE}}',
             ],
@@ -334,9 +311,6 @@ class SquarePlusSlider extends Widget_Base {
                 'button_hover_color', [
             'label' => esc_html__('Text Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-slide-cap-button a:hover' => 'color: {{VALUE}}',
             ],
@@ -370,9 +344,6 @@ class SquarePlusSlider extends Widget_Base {
                 'nav_normal_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button' => 'background: {{VALUE}}',
             ],
@@ -383,9 +354,6 @@ class SquarePlusSlider extends Widget_Base {
                 'nav_normal_color', [
             'label' => esc_html__('Icon Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button i' => 'color: {{VALUE}}',
             ],
@@ -404,9 +372,6 @@ class SquarePlusSlider extends Widget_Base {
                 'nav_hover_bg_color', [
             'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
             ],
@@ -417,9 +382,6 @@ class SquarePlusSlider extends Widget_Base {
                 'nav_hover_color', [
             'label' => esc_html__('Icon Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button:hover i' => 'color: {{VALUE}}',
             ],
@@ -436,7 +398,7 @@ class SquarePlusSlider extends Widget_Base {
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        $pause_duration = ( isset($settings['pause_duration']['size']) ) ? $settings['pause_duration']['size'] * 1000 : 5000;
+        $pause_duration = (isset($settings['pause_duration']['size'])) ? $settings['pause_duration']['size'] * 1000 : 5000;
         $sliders = $settings['slider_block'];
         $params = array(
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,
@@ -446,44 +408,46 @@ class SquarePlusSlider extends Widget_Base {
         $params = json_encode($params);
         ?>
         <div class="he-bx-slider owl-carousel" data-params='<?php echo $params ?>'>
-        <?php
-        if ($sliders) {
-            foreach ($sliders as $slider) {
-                ?>
+            <?php
+            if ($sliders) {
+                foreach ($sliders as $slider) {
+                    ?>
                     <div class="he-slide">
-                        <img src="<?php echo esc_url($slider['slider_image']['url']); ?>" alt="<?php echo esc_attr($slider['slider_title']); ?>">
+                        <img src="<?php echo esc_url($slider['slider_image']['url']); ?>"
+                             alt="<?php echo esc_attr($slider['slider_title']); ?>">
 
-                <?php if ($slider['slider_title'] || $slider['slider_description']) { ?>
+                        <?php if ($slider['slider_title'] || $slider['slider_description']) { ?>
                             <div class="he-container">
                                 <div class="he-slide-caption">
                                     <div class="he-slide-cap-title">
-                    <?php echo esc_html($slider['slider_title']); ?>
+                                        <?php echo esc_html($slider['slider_title']); ?>
                                     </div>
 
                                     <div class="he-slide-cap-desc">
-                        <?php echo esc_html($slider['slider_description']); ?>
+                                        <?php echo esc_html($slider['slider_description']); ?>
 
-                        <?php
-                        if (!empty($slider['button_link']['url'])) {
-                            $target = $slider['button_link']['is_external'] ? ' target="_blank"' : '';
-                            $nofollow = $slider['button_link']['nofollow'] ? ' rel="nofollow"' : '';
-                            ?>
+                                        <?php
+                                        if (!empty($slider['button_link']['url'])) {
+                                            $target = $slider['button_link']['is_external'] ? ' target="_blank"' : '';
+                                            $nofollow = $slider['button_link']['nofollow'] ? ' rel="nofollow"' : '';
+                                            ?>
                                             <div class="he-slide-cap-button">
-                                                <a href="<?php echo esc_url($slider['button_link']['url']); ?>"<?php echo $target . $nofollow; ?>><?php echo esc_html($slider['button_text']); ?></a>
+                                                <a href="<?php echo esc_url($slider['button_link']['url']); ?>" <?php echo $target . $nofollow; ?>><?php echo esc_html($slider['button_text']); ?></a>
                                             </div>
                                         <?php } ?>
                                     </div>
 
                                 </div>
                             </div>
-                                    <?php } ?>
+                        <?php } ?>
                     </div>
-                                    <?php
-                                }
-                            }
-                            ?>
+                    <?php
+                }
+            }
+            ?>
         </div>
-        <div class="he-banner-shadow"><img src="<?php echo esc_url(HASHELE_URL . '/assets/img/banner-shadow.png'); ?>" alt="<?php esc_attr_e('Banner Shadow', 'hash-elements'); ?>"></div>
+        <div class="he-banner-shadow"><img src="<?php echo esc_url(HASHELE_URL . '/assets/img/banner-shadow.png'); ?>"
+                                           alt="<?php esc_attr_e('Banner Shadow', 'hash-elements'); ?>"></div>
         <?php
     }
 

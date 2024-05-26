@@ -6,8 +6,6 @@ namespace HashElements\Modules\TickerModule\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Core\Schemes\Color;
 use HashElements\Group_Control_Query;
 
 if (!defined('ABSPATH')) {
@@ -135,9 +133,6 @@ class TickerModule extends Widget_Base {
                 'ticker_title_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .he-ticker-title' => 'background-color: {{VALUE}}',
                 '{{WRAPPER}} .he-ticker .he-ticker-title:after' => 'border-color: transparent transparent transparent {{VALUE}}',
@@ -149,9 +144,6 @@ class TickerModule extends Widget_Base {
                 'ticker_title_color', [
             'label' => esc_html__('Text Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .he-ticker-title' => 'color: {{VALUE}}',
             ],
@@ -179,9 +171,6 @@ class TickerModule extends Widget_Base {
                 'ticker_content_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker' => 'background-color: {{VALUE}}',
             ],
@@ -192,9 +181,6 @@ class TickerModule extends Widget_Base {
                 'ticker_content_color', [
             'label' => esc_html__('Text Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-item a' => 'color: {{VALUE}}',
             ],
@@ -224,9 +210,6 @@ class TickerModule extends Widget_Base {
                 'nav_normal_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-carousel .owl-nav button' => 'background-color: {{VALUE}}',
             ],
@@ -237,9 +220,6 @@ class TickerModule extends Widget_Base {
                 'nav_icon_normal_color', [
             'label' => esc_html__('Icon Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-carousel .owl-nav button' => 'color: {{VALUE}}'
             ],
@@ -258,9 +238,6 @@ class TickerModule extends Widget_Base {
                 'nav_hover_bg_color', [
             'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
             ],
@@ -271,9 +248,6 @@ class TickerModule extends Widget_Base {
                 'nav_icon_hover_color', [
             'label' => esc_html__('Icon Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-ticker .owl-carousel .owl-nav button:hover' => 'color: {{VALUE}}'
             ],
@@ -308,61 +282,62 @@ class TickerModule extends Widget_Base {
             <div class="he-ticker">
                 <div class="he-container">
                     <span class="he-ticker-title">
-            <?php
-            $ticker_title = isset($settings['ticker_title']) ? $settings['ticker_title'] : null;
-                    if ($ticker_title) {
-                    echo esc_html($ticker_title);
-                    }
-                    ?>
-                            </span>
-                            <div class="owl-carousel" data-params='<?php echo esc_attr($parameters_json); ?>'>
-                    <?php
-                    while ($query->have_posts()): $query->the_post();
-                    echo '<a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a>';
-                    endwhile;
-                    wp_reset_postdata();
-                    ?>
-                            </div>
-                        </div>  
+                        <?php
+                        $ticker_title = isset($settings['ticker_title']) ? $settings['ticker_title'] : null;
+                        if ($ticker_title) {
+                            echo esc_html($ticker_title);
+                        }
+                        ?>
+                    </span>
+                    <div class="owl-carousel" data-params='<?php echo esc_attr($parameters_json); ?>'>
+                        <?php
+                        while ($query->have_posts()):
+                            $query->the_post();
+                            echo '<a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a>';
+                        endwhile;
+                        wp_reset_postdata();
+                        ?>
                     </div>
-                                <?php
-                                endif;
-                                ?>
-                                <?php
-                                }
+                </div>
+            </div>
+            <?php
+        endif;
+        ?>
+        <?php
+    }
 
-                                /** Query Args */
-                                protected function query_args() {
-                                $settings = $this->get_settings();
+    /** Query Args */
+    protected function query_args() {
+        $settings = $this->get_settings();
 
-                                $post_type = $args['post_type'] = $settings['posts_post_type'];
-                                $args['orderby'] = $settings['posts_orderby'];
-                                $args['order'] = $settings['posts_order'];
-                                $args['ignore_sticky_posts'] = 1;
-                                $args['post_status'] = 'publish';
-                                $args['offset'] = $settings['posts_offset'];
-                                $args['posts_per_page'] = $settings['ticker_post_count'];
-                                $args['post__not_in'] = $post_type == 'post' ?  $settings['posts_exclude_posts'] :  [] 
+        $post_type = $args['post_type'] = $settings['posts_post_type'];
+        $args['orderby'] = $settings['posts_orderby'];
+        $args['order'] = $settings['posts_order'];
+        $args['ignore_sticky_posts'] = 1;
+        $args['post_status'] = 'publish';
+        $args['offset'] = $settings['posts_offset'];
+        $args['posts_per_page'] = $settings['ticker_post_count'];
+        $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : []
 
-;
+        ;
 
-                    $args['tax_query'] = [];
+        $args['tax_query'] = [];
 
-                    $taxonomies = get_object_taxonomies($post_type, 'objects');
+        $taxonomies = get_object_taxonomies($post_type, 'objects');
 
-                            foreach ($taxonomies as $object) {
-                            $setting_key = 'posts_' . $object->name . '_ids';
+        foreach ($taxonomies as $object) {
+            $setting_key = 'posts_' . $object->name . '_ids';
 
-                            if (!empty($settings[$setting_key])) {
-                            $args['tax_query'][] = [
-                            'taxonomy' => $object->name,
-                             'field' => 'term_id',
-                            'terms' => $settings[$setting_key],
-                            ];
-                            }
-                            }
+            if (!empty($settings[$setting_key])) {
+                $args['tax_query'][] = [
+                    'taxonomy' => $object->name,
+                    'field' => 'term_id',
+                    'terms' => $settings[$setting_key],
+                ];
+            }
+        }
 
-                            return $args;
-                            }
+        return $args;
+    }
 
-                            }  
+}

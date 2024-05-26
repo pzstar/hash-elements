@@ -6,8 +6,6 @@ namespace HashElements\Modules\TotalCounterBlock\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Core\Schemes\Color;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -89,9 +87,6 @@ class TotalCounterBlock extends Widget_Base {
                 'icon_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#000000',
             'selectors' => [
                 '{{WRAPPER}} .het-counter-icon' => 'color: {{VALUE}}; fill: {{VALUE}}',
@@ -125,9 +120,6 @@ class TotalCounterBlock extends Widget_Base {
                 'border_color', [
             'label' => esc_html__('Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#000000',
             'selectors' => [
                 '{{WRAPPER}} .het-counter' => 'border-color: {{VALUE}}',
@@ -149,9 +141,6 @@ class TotalCounterBlock extends Widget_Base {
                 'number_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#000000',
             'selectors' => [
                 '{{WRAPPER}} .het-counter-count' => 'color: {{VALUE}}',
@@ -180,9 +169,6 @@ class TotalCounterBlock extends Widget_Base {
                 'title_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#000000',
             'selectors' => [
                 '{{WRAPPER}} .het-counter-title' => 'color: {{VALUE}}',
@@ -207,7 +193,7 @@ class TotalCounterBlock extends Widget_Base {
         ?>
         <div class="het-counter">
             <div class="het-counter-icon">
-        <?php \Elementor\Icons_Manager::render_icon($settings['counter_icon'], ['aria-hidden' => 'true']); ?>
+                <?php \Elementor\Icons_Manager::render_icon($settings['counter_icon'], ['aria-hidden' => 'true']); ?>
             </div>
 
             <div class="het-counter-count odometer" data-count="<?php echo absint($settings['counter_number']); ?>">
@@ -215,7 +201,7 @@ class TotalCounterBlock extends Widget_Base {
             </div>
 
             <h6 class="het-counter-title">
-        <?php echo esc_html($settings['counter_title']); ?>
+                <?php echo esc_html($settings['counter_title']); ?>
             </h6>
         </div>
         <?php

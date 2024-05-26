@@ -7,8 +7,6 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Core\Schemes\Color;
 use HashElements\Group_Control_Query;
 use HashElements\Group_Control_Header;
 
@@ -316,9 +314,6 @@ class NewsModuleEight extends Widget_Base {
                 'header_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
             ],
@@ -329,9 +324,6 @@ class NewsModuleEight extends Widget_Base {
                 'header_short_border_color', [
             'label' => esc_html__('Short Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
                 '{{WRAPPER}} .he-title-style2.he-block-title span:before' => 'background-color: {{VALUE}}',
@@ -343,9 +335,6 @@ class NewsModuleEight extends Widget_Base {
                 'header_long_border_color', [
             'label' => esc_html__('Long Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
                 '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
@@ -393,9 +382,6 @@ class NewsModuleEight extends Widget_Base {
                 'category_background_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-eight ul.he-post-categories li  a' => 'background-color: {{VALUE}}',
             ],
@@ -406,9 +392,6 @@ class NewsModuleEight extends Widget_Base {
                 'category_text_color', [
             'label' => esc_html__('Text Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-eight ul.he-post-categories li  a' => 'color: {{VALUE}}',
             ],
@@ -427,9 +410,6 @@ class NewsModuleEight extends Widget_Base {
                 'category_background_hover_color', [
             'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-eight ul.he-post-categories li:hover a' => 'background-color: {{VALUE}}',
             ],
@@ -440,9 +420,6 @@ class NewsModuleEight extends Widget_Base {
                 'category_text_hover_color', [
             'label' => esc_html__('Text Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-eight ul.he-post-categories li:hover a' => 'color: {{VALUE}}',
             ],
@@ -466,9 +443,6 @@ class NewsModuleEight extends Widget_Base {
                 'title_color', [
             'label' => esc_html__('Title Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-eight .he-big-block .he-post-item .he-post-content h3.he-big-title, 
                      {{WRAPPER}} .he-news-module-eight .he-small-block .he-post-item .he-post-content h3' => 'color: {{VALUE}}',
@@ -480,9 +454,6 @@ class NewsModuleEight extends Widget_Base {
                 'title_hover_color', [
             'label' => esc_html__('Title Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-news-module-eight .he-post-item h3 a:hover' => 'color: {{VALUE}}',
             ],
@@ -566,9 +537,6 @@ class NewsModuleEight extends Widget_Base {
                 'post_excerpt_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => ['{{WRAPPER}} .he-news-module-eight .he-post-item .he-post-content .he-excerpt' => 'color: {{VALUE}}'],
                 ]
         );
@@ -594,9 +562,6 @@ class NewsModuleEight extends Widget_Base {
                 'post_metas_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => ['{{WRAPPER}} .he-news-module-eight .he-post-item .he-post-content .he-post-meta' => 'color: {{VALUE}}'],
                 ]
         );
@@ -619,88 +584,89 @@ class NewsModuleEight extends Widget_Base {
         $side_post_image_size = $settings['side_post_image_size'];
         ?>
         <div class="he-news-module-eight">
-        <?php $this->render_header(); ?>
+            <?php $this->render_header(); ?>
 
             <div class="he-news-module-eight-wrap">
-        <?php
-        $args = $this->query_args();
-        $query = new \WP_Query($args);
-        while ($query->have_posts()): $query->the_post();
-            $index = $query->current_post + 1;
-            $last = $query->post_count;
+                <?php
+                $args = $this->query_args();
+                $query = new \WP_Query($args);
+                while ($query->have_posts()):
+                    $query->the_post();
+                    $index = $query->current_post + 1;
+                    $last = $query->post_count;
 
-            if ($index == 1) {
-                ?>
+                    if ($index == 1) {
+                        ?>
                         <div class="he-big-block">
                             <div class="he-post-item">
                                 <div class="he-post-thumb">
                                     <a href="<?php the_permalink(); ?>">
                                         <div class="he-thumb-container">
-                    <?php
-                    if (has_post_thumbnail()) {
-                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $featured_post_image_size);
-                        ?>
+                                            <?php
+                                            if (has_post_thumbnail()) {
+                                                $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $featured_post_image_size);
+                                                ?>
                                                 <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
-                        <?php }
-                        ?>
+                                            <?php }
+                                            ?>
                                         </div>
                                     </a>
-                        <?php
-                        if ($settings['featured_post_category'] == 'yes')
-                            echo hash_elements_get_the_category_list();
-                        ?>
+                                    <?php
+                                    if ($settings['featured_post_category'] == 'yes')
+                                        echo hash_elements_get_the_category_list();
+                                    ?>
                                 </div>
 
                                 <div class="he-post-content">
-                                    <h3 class="he-big-title he-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                            <?php $this->get_post_meta($index); ?>
+                                    <h3 class="he-big-title he-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    </h3>
+                                    <?php $this->get_post_meta($index); ?>
                                     <div class="he-excerpt">
-                                            <?php $this->get_post_excerpt($index); ?>
+                                        <?php $this->get_post_excerpt($index); ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                <?php
-            }
-            else {
-                ?>
-                                    <?php if ($index == 2) { ?>
+                        <?php
+                    } else {
+                        ?>
+                        <?php if ($index == 2) { ?>
                             <div class="he-small-block">
                                 <div class="he-small-block-wrap">
-                <?php } ?>
+                                <?php } ?>
                                 <div class="he-post-item">
                                     <div class="he-post-thumb">
                                         <a href="<?php the_permalink(); ?>">
                                             <div class="he-thumb-container">
-                                        <?php
-                                        if (has_post_thumbnail()) {
-                                            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $side_post_image_size);
-                                            ?>
+                                                <?php
+                                                if (has_post_thumbnail()) {
+                                                    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $side_post_image_size);
+                                                    ?>
                                                     <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
-                        <?php }
-                        ?>
+                                                <?php }
+                                                ?>
                                             </div>
                                         </a>
-                        <?php
-                        if ($settings['side_post_category'] == 'yes')
-                            he_get_the_primary_category();
-                        ?>
+                                        <?php
+                                        if ($settings['side_post_category'] == 'yes')
+                                            he_get_the_primary_category();
+                                        ?>
                                     </div>
 
                                     <div class="he-post-content">
                                         <h3 class="he-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                                <?php $this->get_post_meta($index); ?>
+                                        <?php $this->get_post_meta($index); ?>
                                     </div>
                                 </div>
-                                                <?php if ($index == $last) { ?>
+                                <?php if ($index == $last) { ?>
                                 </div>
-                            </div> 
-                                                <?php } ?>
-            <?php } ?>
-                                    <?php
-                                endwhile;
-                                wp_reset_postdata();
-                                ?>
+                            </div>
+                        <?php } ?>
+                    <?php } ?>
+                    <?php
+                endwhile;
+                wp_reset_postdata();
+                ?>
             </div>
         </div>
         <?php
@@ -710,7 +676,8 @@ class NewsModuleEight extends Widget_Base {
     protected function render_header() {
         $settings = $this->get_settings();
 
-        $this->add_render_attribute('header_attr', 'class', [
+        $this->add_render_attribute(
+                'header_attr', 'class', [
             'he-block-title',
             $settings['header_style']
                 ]
@@ -728,13 +695,13 @@ class NewsModuleEight extends Widget_Base {
         if ($settings['header_title']) {
             ?>
             <h2 <?php echo $this->get_render_attribute_string('header_attr'); ?>>
-            <?php
-            echo $link_open;
-            echo '<span>';
-            echo wp_kses_post($settings['header_title']);
-            echo '</span>';
-            echo $link_close;
-            ?>
+                <?php
+                echo $link_open;
+                echo '<span>';
+                echo wp_kses_post($settings['header_title']);
+                echo '</span>';
+                echo $link_close;
+                ?>
             </h2>
             <?php
         }
@@ -793,32 +760,31 @@ class NewsModuleEight extends Widget_Base {
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
             ?>
             <div class="he-post-meta">
-            <?php
-            if ($post_author == 'yes') {
-                hash_elements_author_name();
-            }
-
-            if ($post_date == 'yes') {
-                $date_format = $settings['date_format'];
-
-                if ($date_format == 'relative_format') {
-                    hash_elements_time_ago();
-                } else if ($date_format == 'default') {
-                    hash_elements_post_date();
-                } else if ($date_format == 'custom') {
-                    $format = $settings['custom_date_format'];
-                    hash_elements_post_date($format);
-                }
-            }
-
-            if ($post_comment == 'yes') {
-                hash_elements_comment_count();
-            }
-            ?>
-            </div>
                 <?php
-            }
-        }
+                if ($post_author == 'yes') {
+                    hash_elements_author_name();
+                }
 
+                if ($post_date == 'yes') {
+                    $date_format = $settings['date_format'];
+
+                    if ($date_format == 'relative_format') {
+                        hash_elements_time_ago();
+                    } else if ($date_format == 'default') {
+                        hash_elements_post_date();
+                    } else if ($date_format == 'custom') {
+                        $format = $settings['custom_date_format'];
+                        hash_elements_post_date($format);
+                    }
+                }
+
+                if ($post_comment == 'yes') {
+                    hash_elements_comment_count();
+                }
+                ?>
+            </div>
+            <?php
+        }
     }
-    
+
+}

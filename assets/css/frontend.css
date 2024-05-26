@@ -1722,7 +1722,8 @@ h3.he-big-title a{
 
 .he-featured-post .he-featured-icon{
     font-size: 38px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    line-height: 1;
 }
 
 .he-featured-post .he-featured-icon i,
@@ -3086,5 +3087,31 @@ h3.he-big-title a{
 @media screen and (max-width:768px){
     .het-blog-post{
         width: 100%;
+    }
+    .he-tab{
+        margin-bottom: 25px;
+        padding: 0;
+        border: 0;
+        width: auto;
+        float: none;
+    }
+    .he-tab li{
+        background: #FFF;
+        margin-bottom: 10px;
+        padding-left: 50px;
+        border-bottom: 2px solid transparent;
+    }
+    .he-tab li i{
+        margin-left: -30px;
+    }
+    .he-tab li.he-active:after{
+        display: none;
+    }
+    .he-tab li.he-active{
+        border-bottom: 2px solid var(--square-template-color, #5bc2ce);
+    }
+    .he-tab-content{
+        padding: 0;
+        width: auto;
     }
 }

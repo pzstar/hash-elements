@@ -6,8 +6,6 @@ namespace HashElements\Modules\TotalServiceBlock\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Core\Schemes\Color;
 use Elementor\Repeater;
 
 if (!defined('ABSPATH')) {
@@ -133,9 +131,6 @@ class TotalServiceBlock extends Widget_Base {
                 'icon_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#000',
             'selectors' => [
                 '{{WRAPPER}} .het-service-icon, {{WRAPPER}} .het-service-post-wrap:after' => 'background-color: {{VALUE}}',
@@ -148,9 +143,6 @@ class TotalServiceBlock extends Widget_Base {
                 'icon_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#FFF',
             'selectors' => [
                 '{{WRAPPER}} .het-service-icon' => 'color: {{VALUE}}; fill: {{VALUE}}',
@@ -171,9 +163,6 @@ class TotalServiceBlock extends Widget_Base {
                 'title_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-service-excerpt h5' => 'color: {{VALUE}}',
             ],
@@ -201,9 +190,6 @@ class TotalServiceBlock extends Widget_Base {
                 'description_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-service-excerpt-text' => 'color: {{VALUE}}',
             ],
@@ -249,9 +235,6 @@ class TotalServiceBlock extends Widget_Base {
                 'normal_link_icon_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-service-text a' => 'color: {{VALUE}}',
             ],
@@ -270,9 +253,6 @@ class TotalServiceBlock extends Widget_Base {
                 'hover_link_icon_color', [
             'label' => esc_html__('Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-service-text a:hover' => 'color: {{VALUE}}',
             ],
@@ -291,12 +271,12 @@ class TotalServiceBlock extends Widget_Base {
         $settings = $this->get_settings_for_display();
         ?>
         <div class="het-service-post-wrap">
-        <?php
-        foreach ($settings['services_block'] as $key => $service) {
-            ?>
+            <?php
+            foreach ($settings['services_block'] as $key => $service) {
+                ?>
                 <div class="het-service-post he-clearfix">
                     <div class="het-service-icon">
-            <?php \Elementor\Icons_Manager::render_icon($service['icon'], ['aria-hidden' => 'true']); ?>
+                        <?php \Elementor\Icons_Manager::render_icon($service['icon'], ['aria-hidden' => 'true']); ?>
                     </div>
 
                     <div class="het-service-excerpt">
@@ -304,33 +284,33 @@ class TotalServiceBlock extends Widget_Base {
 
                         <div class="het-service-text">
                             <div class="het-service-excerpt-text">
-                        <?php
-                        if (isset($service['services_description']) && !empty($service['services_description'])) {
-                            echo esc_html($service['services_description']);
-                        }
-                        ?>
+                                <?php
+                                if (isset($service['services_description']) && !empty($service['services_description'])) {
+                                    echo esc_html($service['services_description']);
+                                }
+                                ?>
                             </div>
 
-            <?php
-            if (!empty($service['button_link']['url'])) {
-                $target = $service['button_link']['is_external'] ? ' target="_blank"' : '';
-                $nofollow = $service['button_link']['nofollow'] ? ' rel="nofollow"' : '';
-                ?>
+                            <?php
+                            if (!empty($service['button_link']['url'])) {
+                                $target = $service['button_link']['is_external'] ? ' target="_blank"' : '';
+                                $nofollow = $service['button_link']['nofollow'] ? ' rel="nofollow"' : '';
+                                ?>
                                 <div class="het-service-link">
                                     <a href="<?php echo esc_url($service['button_link']['url']); ?>" <?php echo $target . $nofollow; ?>>
-                <?php echo esc_html($service['button_text']); ?> <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                        <?php echo esc_html($service['button_text']); ?> <i class="fas fa-chevron-right"
+                                           aria-hidden="true"></i>
                                     </a>
                                 </div>
                             <?php } ?>
                         </div>
                     </div>
                 </div>
-            <?php
-        }
-        ?>
+                <?php
+            }
+            ?>
         </div>
-                        <?php
-                    }
+        <?php
+    }
 
-                }
-                
+}

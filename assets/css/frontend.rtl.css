@@ -1722,7 +1722,8 @@ h3.he-big-title a{
 
 .he-featured-post .he-featured-icon{
     font-size: 38px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    line-height: 1;
 }
 
 .he-featured-post .he-featured-icon i,

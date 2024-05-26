@@ -6,8 +6,6 @@ namespace HashElements\Modules\ContactInformation\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Core\Schemes\Color;
 use HashElements\Group_Control_Header;
 
 if (!defined('ABSPATH')) {
@@ -153,9 +151,6 @@ class ContactInformation extends Widget_Base {
                 'header_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
             ],
@@ -166,9 +161,6 @@ class ContactInformation extends Widget_Base {
                 'header_short_border_color', [
             'label' => esc_html__('Short Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
                 '{{WRAPPER}} .he-title-style2.he-block-title span:before' => 'background-color: {{VALUE}}',
@@ -180,9 +172,6 @@ class ContactInformation extends Widget_Base {
                 'header_long_border_color', [
             'label' => esc_html__('Long Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
                 '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
@@ -241,9 +230,6 @@ class ContactInformation extends Widget_Base {
                 'content_text_color', [
             'label' => esc_html__('Text Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-contact-information ul li' => 'color: {{VALUE}}'
             ],
@@ -254,9 +240,6 @@ class ContactInformation extends Widget_Base {
                 'content_anchor_color', [
             'label' => esc_html__('Anchor Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-contact-information ul li a' => 'color: {{VALUE}}'
             ],
@@ -355,7 +338,8 @@ class ContactInformation extends Widget_Base {
     protected function render_header() {
         $settings = $this->get_settings();
 
-        $this->add_render_attribute('header_attr', 'class', [
+        $this->add_render_attribute(
+                'header_attr', 'class', [
             'he-block-title',
             $settings['header_style']
                 ]

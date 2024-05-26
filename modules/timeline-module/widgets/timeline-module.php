@@ -6,8 +6,6 @@ namespace HashElements\Modules\TimelineModule\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Core\Schemes\Color;
 use HashElements\Group_Control_Query;
 use HashElements\Group_Control_Header;
 
@@ -176,9 +174,6 @@ class TimelineModule extends Widget_Base {
                 'header_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
             ],
@@ -189,9 +184,6 @@ class TimelineModule extends Widget_Base {
                 'header_short_border_color', [
             'label' => esc_html__('Short Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
                 '{{WRAPPER}} .he-title-style2.he-block-title span:before' => 'background-color: {{VALUE}}',
@@ -203,9 +195,6 @@ class TimelineModule extends Widget_Base {
                 'header_long_border_color', [
             'label' => esc_html__('Long Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
                 '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
@@ -234,9 +223,6 @@ class TimelineModule extends Widget_Base {
                 'title_color', [
             'label' => esc_html__('Title Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-timeline .he-post-item h3' => 'color: {{VALUE}}',
             ],
@@ -247,9 +233,6 @@ class TimelineModule extends Widget_Base {
                 'title_hover_color', [
             'label' => esc_html__('Title Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-timeline .he-post-item h3 a:hover' => 'color: {{VALUE}}',
             ],
@@ -289,9 +272,6 @@ class TimelineModule extends Widget_Base {
                 'post_metas_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-timeline .he-post-item .he-post-meta' => 'color: {{VALUE}}',
             ],
@@ -319,9 +299,6 @@ class TimelineModule extends Widget_Base {
                 'excerpt_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-timeline  .he-post-item .he-excerpt' => 'color: {{VALUE}}',
             ],
@@ -349,9 +326,6 @@ class TimelineModule extends Widget_Base {
                 'timeline_border_color', [
             'label' => esc_html__('Line Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-timeline, {{WRAPPER}} .he-timeline .he-post-item:after' => 'border-color: {{VALUE}}',
             ],
@@ -362,9 +336,6 @@ class TimelineModule extends Widget_Base {
                 'timeline_dot_color', [
             'label' => esc_html__('Dot Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-timeline .he-post-item:after' => 'background-color: {{VALUE}}',
             ],
@@ -375,9 +346,6 @@ class TimelineModule extends Widget_Base {
                 'timeline_dot_hover_color', [
             'label' => esc_html__('Dot Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-timeline .he-post-item:hover:after' => 'background-color: {{VALUE}}',
             ],
@@ -394,85 +362,87 @@ class TimelineModule extends Widget_Base {
         $this->render_header();
         ?>
         <div class="he-timeline">
-        <?php
-        $args = $this->query_args();
-        $query = new \WP_Query($args);
-        while ($query->have_posts()): $query->the_post();
-            ?>
-                <div class="he-post-item">
-            <?php $this->get_post_meta(); ?>
-                    <h3 class="he-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-            <?php $this->get_post_excerpt(); ?>
-                </div>
             <?php
-        endwhile;
-        wp_reset_postdata();
-        ?>
-        </div>
-            <?php
-        }
-
-        /** Query Args */
-        protected function query_args() {
-            $settings = $this->get_settings();
-
-            $post_type = $args['post_type'] = $settings['posts_post_type'];
-            $args['orderby'] = $settings['posts_orderby'];
-            $args['order'] = $settings['posts_order'];
-            $args['ignore_sticky_posts'] = 1;
-            $args['post_status'] = 'publish';
-            $args['offset'] = $settings['posts_offset'];
-            $args['posts_per_page'] = $settings['posts_number'];
-            $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : [];
-
-            $args['tax_query'] = [];
-
-            $taxonomies = get_object_taxonomies($post_type, 'objects');
-
-            foreach ($taxonomies as $object) {
-                $setting_key = 'posts_' . $object->name . '_ids';
-
-                if (!empty($settings[$setting_key])) {
-                    $args['tax_query'][] = [
-                        'taxonomy' => $object->name,
-                        'field' => 'term_id',
-                        'terms' => $settings[$setting_key],
-                    ];
-                }
-            }
-
-            return $args;
-        }
-
-        /** Render Header */
-        protected function render_header() {
-            $settings = $this->get_settings();
-
-            $this->add_render_attribute('header_attr', 'class', [
-                'he-block-title',
-                $settings['header_style']
-                    ]
-            );
-
-            $link_open = $link_close = "";
-            $target = $settings['header_link']['is_external'] ? ' target="_blank"' : '';
-            $nofollow = $settings['header_link']['nofollow'] ? ' rel="nofollow"' : '';
-
-            if ($settings['header_link']['url']) {
-                $link_open = '<a href="' . esc_url($settings['header_link']['url']) . '"' . $target . $nofollow . '>';
-                $link_close = '</a>';
-            }
-
-            if ($settings['header_title']) {
+            $args = $this->query_args();
+            $query = new \WP_Query($args);
+            while ($query->have_posts()):
+                $query->the_post();
                 ?>
-            <h2 <?php echo $this->get_render_attribute_string('header_attr'); ?>>
-            <?php
-            echo $link_open;
-            echo '<span>';
-            echo wp_kses_post($settings['header_title']);
-            echo '</span>';
-            echo $link_close;
+                <div class="he-post-item">
+                    <?php $this->get_post_meta(); ?>
+                    <h3 class="he-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <?php $this->get_post_excerpt(); ?>
+                </div>
+                <?php
+            endwhile;
+            wp_reset_postdata();
             ?>
+        </div>
+        <?php
+    }
+
+    /** Query Args */
+    protected function query_args() {
+        $settings = $this->get_settings();
+
+        $post_type = $args['post_type'] = $settings['posts_post_type'];
+        $args['orderby'] = $settings['posts_orderby'];
+        $args['order'] = $settings['posts_order'];
+        $args['ignore_sticky_posts'] = 1;
+        $args['post_status'] = 'publish';
+        $args['offset'] = $settings['posts_offset'];
+        $args['posts_per_page'] = $settings['posts_number'];
+        $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : [];
+
+        $args['tax_query'] = [];
+
+        $taxonomies = get_object_taxonomies($post_type, 'objects');
+
+        foreach ($taxonomies as $object) {
+            $setting_key = 'posts_' . $object->name . '_ids';
+
+            if (!empty($settings[$setting_key])) {
+                $args['tax_query'][] = [
+                    'taxonomy' => $object->name,
+                    'field' => 'term_id',
+                    'terms' => $settings[$setting_key],
+                ];
+            }
+        }
+
+        return $args;
+    }
+
+    /** Render Header */
+    protected function render_header() {
+        $settings = $this->get_settings();
+
+        $this->add_render_attribute(
+                'header_attr', 'class', [
+            'he-block-title',
+            $settings['header_style']
+                ]
+        );
+
+        $link_open = $link_close = "";
+        $target = $settings['header_link']['is_external'] ? ' target="_blank"' : '';
+        $nofollow = $settings['header_link']['nofollow'] ? ' rel="nofollow"' : '';
+
+        if ($settings['header_link']['url']) {
+            $link_open = '<a href="' . esc_url($settings['header_link']['url']) . '"' . $target . $nofollow . '>';
+            $link_close = '</a>';
+        }
+
+        if ($settings['header_title']) {
+            ?>
+            <h2 <?php echo $this->get_render_attribute_string('header_attr'); ?>>
+                <?php
+                echo $link_open;
+                echo '<span>';
+                echo wp_kses_post($settings['header_title']);
+                echo '</span>';
+                echo $link_close;
+                ?>
             </h2>
             <?php
         }
@@ -488,43 +458,42 @@ class TimelineModule extends Widget_Base {
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
             ?>
             <div class="he-post-meta">
-            <?php
-            if ($post_author == 'yes') {
-                hash_elements_author_name();
-            }
-
-            if ($post_date == 'yes') {
-                $date_format = $settings['date_format'];
-
-                if ($date_format == 'relative_format') {
-                    hash_elements_time_ago();
-                } else if ($date_format == 'default') {
-                    hash_elements_post_date();
-                } else if ($date_format == 'custom') {
-                    $format = $settings['custom_date_format'];
-                    hash_elements_post_date($format);
+                <?php
+                if ($post_author == 'yes') {
+                    hash_elements_author_name();
                 }
-            }
 
-            if ($post_comment == 'yes') {
-                hash_elements_comment_count();
-            }
-            ?>
-            </div>
-                <?php
-            }
-        }
+                if ($post_date == 'yes') {
+                    $date_format = $settings['date_format'];
 
-        /** Get Post Excerpt */
-        protected function get_post_excerpt() {
-            $settings = $this->get_settings_for_display();
-            $excerpt_length = $settings['post_excerpt_length'];
-            if ($excerpt_length) {
+                    if ($date_format == 'relative_format') {
+                        hash_elements_time_ago();
+                    } else if ($date_format == 'default') {
+                        hash_elements_post_date();
+                    } else if ($date_format == 'custom') {
+                        $format = $settings['custom_date_format'];
+                        hash_elements_post_date($format);
+                    }
+                }
+
+                if ($post_comment == 'yes') {
+                    hash_elements_comment_count();
+                }
                 ?>
-            <div class="he-excerpt"><?php echo hash_elements_custom_excerpt($excerpt_length); ?></div>
-                <?php
-            }
+            </div>
+            <?php
         }
-
     }
-    
+
+    /** Get Post Excerpt */
+    protected function get_post_excerpt() {
+        $settings = $this->get_settings_for_display();
+        $excerpt_length = $settings['post_excerpt_length'];
+        if ($excerpt_length) {
+            ?>
+            <div class="he-excerpt"><?php echo hash_elements_custom_excerpt($excerpt_length); ?></div>
+            <?php
+        }
+    }
+
+}

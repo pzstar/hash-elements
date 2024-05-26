@@ -6,8 +6,6 @@ namespace HashElements\Modules\SquarePlusTabBlock\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Core\Schemes\Color;
 use Elementor\Repeater;
 
 if (!defined('ABSPATH')) {
@@ -92,7 +90,8 @@ class SquarePlusTabBlock extends Widget_Base {
                 ]
         );
 
-        $repeater->add_control('select_page', [
+        $repeater->add_control(
+                'select_page', [
             'label' => 'Select Page',
             'type' => Controls_Manager::SELECT,
             'label_block' => true,
@@ -206,9 +205,6 @@ class SquarePlusTabBlock extends Widget_Base {
                 'title_text_color', [
             'label' => esc_html__('Title Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} ul.he-tab li a span' => 'color: {{VALUE}}',
             ],
@@ -219,9 +215,6 @@ class SquarePlusTabBlock extends Widget_Base {
                 'title_icon_color', [
             'label' => esc_html__('Icon Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} ul.he-tab li a i, {{WRAPPER}} ul.he-tab li a svg' => 'color: {{VALUE}}; fill: {{VALUE}}',
             ],
@@ -232,9 +225,6 @@ class SquarePlusTabBlock extends Widget_Base {
                 'title_border_color', [
             'label' => esc_html__('Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-tab' => 'border-right: 1px solid {{VALUE}}',
             ],
@@ -253,9 +243,6 @@ class SquarePlusTabBlock extends Widget_Base {
                 'title_text_color_hover', [
             'label' => esc_html__('Title Color (Active)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} ul.he-tab li.he-active a span' => 'color: {{VALUE}}',
             ],
@@ -266,9 +253,6 @@ class SquarePlusTabBlock extends Widget_Base {
                 'title_icon_color_hover', [
             'label' => esc_html__('Icon Color (Active)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} ul.he-tab li.he-active a i, {{WRAPPER}} ul.he-tab li.he-active a svg' => 'color: {{VALUE}}; fill: {{VALUE}}',
             ],
@@ -279,9 +263,6 @@ class SquarePlusTabBlock extends Widget_Base {
                 'title_border_color_hover', [
             'label' => esc_html__('Border Color (Active)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-tab li.he-active:after' => 'background: {{VALUE}}',
             ],
@@ -305,9 +286,6 @@ class SquarePlusTabBlock extends Widget_Base {
                 'tab_content_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .he-tab-content .he-tab-pane' => 'color: {{VALUE}}',
             ],
@@ -344,105 +322,106 @@ class SquarePlusTabBlock extends Widget_Base {
         ?>
         <div class="he-tab-wrapper he-clearfix">
             <ul class="he-tab">
-        <?php
-        foreach ($tabs as $key => $tab) {
-            $square_tab_title = $tab['title'];
-            $tab_count = $key + 1;
-            $tab_id = 'he-' . $id . $tab_count;
+                <?php
+                foreach ($tabs as $key => $tab) {
+                    $square_tab_title = $tab['title'];
+                    $tab_count = $key + 1;
+                    $tab_id = 'he-' . $id . $tab_count;
 
-            if ($square_tab_title) {
-                ?>
+                    if ($square_tab_title) {
+                        ?>
                         <li class="he-tab-list<?php echo intval($key + 1); ?>">
                             <a href="#<?php echo $tab_id; ?>">
-                        <?php
-                        ob_start();
-                        \Elementor\Icons_Manager::render_icon($tab['icon'], ['aria-hidden' => 'true']);
-                        $icon_html = ob_get_clean();
+                                <?php
+                                ob_start();
+                                \Elementor\Icons_Manager::render_icon($tab['icon'], ['aria-hidden' => 'true']);
+                                $icon_html = ob_get_clean();
 
-                        echo $icon_html . '<span>' . esc_html($square_tab_title) . '</span>';
-                        ?>
+                                echo $icon_html . '<span>' . esc_html($square_tab_title) . '</span>';
+                                ?>
                             </a>
                         </li>
-                                <?php
-                            }
-                        }
-                        ?>
+                        <?php
+                    }
+                }
+                ?>
             </ul>
 
             <div class="he-tab-content">
-        <?php
-        foreach ($tabs as $key => $tab) {
-            $tab_count = $key + 1;
-            $tab_id = 'he-' . $id . $tab_count;
-            ?>
+                <?php
+                foreach ($tabs as $key => $tab) {
+                    $tab_count = $key + 1;
+                    $tab_id = 'he-' . $id . $tab_count;
+                    ?>
                     <div class="he-tab-pane animated zoomIn" id="<?php echo $tab_id; ?>">
-            <?php
-            if ($tab['content_from'] == 'wisiwyg') {
-                ?>
-                            <div class="he-content"><?php echo do_shortcode($tab['content']); ?></div>
                         <?php
-                    } else if ($tab['content_from'] == 'page') {
-                        $square_tab_page = $tab['select_page'];
-                        if ($square_tab_page) {
+                        if ($tab['content_from'] == 'wisiwyg') {
                             ?>
-                                <div class="he-content">
-                                <?php
-                                // Get ID
-                                $get_id = $square_tab_page;
-                                // Check if page is Elementor page
-                                $elementor = get_post_meta($get_id, '_elementor_edit_mode', true);
-                                $siteorigin = get_post_meta($get_id, 'panels_data', true);
-
-                                // If Elementor
-                                if (class_exists('Elementor\Plugin') && $elementor) {
-                                    echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($get_id);
-                                }
-
-                                // If Beaver Builder
-                                else if (class_exists('FLBuilder') && !empty($get_id)) {
-                                    echo do_shortcode('[fl_builder_insert_layout id="' . $get_id . '"]');
-                                }
-
-                                // If Site Origin
-                                else if (class_exists('SiteOrigin_Panels') && $siteorigin) {
-                                    echo SiteOrigin_Panels::renderer()->render($get_id);
-                                } else {
-                                    // Get template content
-                                    $template_id = get_post($get_id);
-
-                                    if ($template_id && !is_wp_error($template_id)) {
-                                        $content = $template_id->post_content;
-                                    }
-                                    // Display template content
-                                    echo apply_filters('the_content', $content);
-                                }
-                                ?>
-                                </div>
-                                    <?php
-                                }
-                            }
-                            ?>
-                    </div>
+                            <div class="he-content"><?php echo do_shortcode($tab['content']); ?></div>
                             <?php
+                        } else if ($tab['content_from'] == 'page') {
+                            $square_tab_page = $tab['select_page'];
+                            if ($square_tab_page) {
+                                ?>
+                                <div class="he-content">
+                                    <?php
+                                    // Get ID
+                                    $get_id = $square_tab_page;
+                                    // Check if page is Elementor page
+                                    $elementor = get_post_meta($get_id, '_elementor_edit_mode', true);
+                                    $siteorigin = get_post_meta($get_id, 'panels_data', true);
+
+                                    // If Elementor
+                                    if (class_exists('Elementor\Plugin') && $elementor) {
+                                        echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($get_id);
+                                    }
+
+                                    // If Beaver Builder
+                                    else if (class_exists('FLBuilder') && !empty($get_id)) {
+                                        echo do_shortcode('[fl_builder_insert_layout id="' . $get_id . '"]');
+                                    }
+
+                                    // If Site Origin
+                                    else if (class_exists('SiteOrigin_Panels') && $siteorigin) {
+                                        echo SiteOrigin_Panels::renderer()->render($get_id);
+                                    } else {
+                                        // Get template content
+                                        $template_id = get_post($get_id);
+
+                                        if ($template_id && !is_wp_error($template_id)) {
+                                            $content = $template_id->post_content;
+                                            // Display template content
+                                            echo $content;
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                                <?php
+                            }
                         }
                         ?>
-            </div>
-        </div>
+                    </div>
                     <?php
                 }
+                ?>
+            </div>
+        </div>
+        <?php
+    }
 
-                private function he_get_pages() {
-                    $pages = get_pages(array(
-                        'order' => 'ASC'
-                    ));
-                    $_pages = [];
+    private function he_get_pages() {
+        $pages = get_pages(
+                array(
+                    'order' => 'ASC'
+                )
+        );
+        $_pages = [];
 
-                    foreach ($pages as $key => $object) {
-                        $_pages[$object->ID] = ucfirst($object->post_title);
-                    }
+        foreach ($pages as $key => $object) {
+            $_pages[$object->ID] = ucfirst($object->post_title);
+        }
 
-                    return $_pages;
-                }
+        return $_pages;
+    }
 
-            }
-            
+}

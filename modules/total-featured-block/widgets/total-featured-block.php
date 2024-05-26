@@ -6,8 +6,6 @@ namespace HashElements\Modules\TotalFeaturedBlock\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Core\Schemes\Color;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -110,9 +108,6 @@ class TotalFeaturedBlock extends Widget_Base {
                 'box_border_color', [
             'label' => esc_html__('Border Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-featured-post' => 'border-color: {{VALUE}}',
                 '{{WRAPPER}} .het-featured-post:before, {{WRAPPER}} .het-featured-post:after' => 'background-color: {{VALUE}}',
@@ -153,9 +148,6 @@ class TotalFeaturedBlock extends Widget_Base {
                 'icon_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#333',
             'selectors' => [
                 '{{WRAPPER}} .het-featured-icon' => 'color: {{VALUE}}; fill: {{VALUE}}',
@@ -198,9 +190,6 @@ class TotalFeaturedBlock extends Widget_Base {
                 'title_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-featured-post h5' => 'color: {{VALUE}}',
             ],
@@ -229,9 +218,6 @@ class TotalFeaturedBlock extends Widget_Base {
                 'description_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'selectors' => [
                 '{{WRAPPER}} .het-featured-excerpt' => 'color: {{VALUE}}',
             ],
@@ -288,9 +274,6 @@ class TotalFeaturedBlock extends Widget_Base {
                 'button_bg_color', [
             'label' => esc_html__('Background Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#333',
             'selectors' => [
                 '{{WRAPPER}} .het-featured-link a' => 'background: {{VALUE}}',
@@ -302,9 +285,6 @@ class TotalFeaturedBlock extends Widget_Base {
                 'button_color', [
             'label' => esc_html__('Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#FFF',
             'selectors' => [
                 '{{WRAPPER}} .het-featured-link a' => 'color: {{VALUE}}',
@@ -324,9 +304,6 @@ class TotalFeaturedBlock extends Widget_Base {
                 'button_hover_bg_color', [
             'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#333',
             'selectors' => [
                 '{{WRAPPER}} .het-featured-link a:hover' => 'background: {{VALUE}}',
@@ -338,9 +315,6 @@ class TotalFeaturedBlock extends Widget_Base {
                 'button_hover_color', [
             'label' => esc_html__('Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
-            'scheme' => [
-                'type' => Color::get_type(),
-            ],
             'default' => '#FFF',
             'selectors' => [
                 '{{WRAPPER}} .het-featured-link a:hover' => 'color: {{VALUE}}',
@@ -364,25 +338,24 @@ class TotalFeaturedBlock extends Widget_Base {
         <div class="het-featured-post">
 
             <div class="het-featured-icon">
-        <?php \Elementor\Icons_Manager::render_icon($settings['icon'], ['aria-hidden' => 'true']); ?>
+                <?php \Elementor\Icons_Manager::render_icon($settings['icon'], ['aria-hidden' => 'true']); ?>
             </div>
 
             <h5><?php echo esc_html($settings['featured_title']); ?></h5>
 
             <div class="het-featured-excerpt">
-        <?php echo wp_kses_post($settings['featured_description']); ?>
+                <?php echo wp_kses_post($settings['featured_description']); ?>
             </div>
 
-        <?php if (!empty($settings['button_link']['url'])) { ?>
+            <?php if (!empty($settings['button_link']['url'])) { ?>
                 <div class="het-featured-link">
                     <a href="<?php echo esc_url($settings['button_link']['url']); ?>" <?php echo $target . $nofollow; ?>>
-            <?php echo esc_html($settings['button_text']); ?>
+                        <?php echo esc_html($settings['button_text']); ?>
                     </a>
                 </div>
-        <?php } ?>
+            <?php } ?>
         </div>
-                <?php
-            }
+        <?php
+    }
 
-        }
-        
+}
