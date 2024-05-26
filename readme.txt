@@ -1,4 +1,4 @@
-===Hash Elements===
+=== Hash Elements ===
 Contributors: hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 5.0
