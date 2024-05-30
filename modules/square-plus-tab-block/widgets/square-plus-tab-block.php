@@ -389,7 +389,7 @@ class SquarePlusTabBlock extends Widget_Base {
                                         $template_id = get_post($get_id);
 
                                         if ($template_id && !is_wp_error($template_id)) {
-                                            $content = $template_id->post_content;
+                                            $content = apply_filters('the_content', $template_id->post_content);
                                             // Display template content
                                             echo $content;
                                         }
