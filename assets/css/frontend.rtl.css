@@ -3083,9 +3083,39 @@ h3.he-big-title a{
     text-align: center;
 }
 
+.e-con.he-sticky-container-yes{
+    position: sticky;
+    top: var(--he-sticky-top-spacing, 0);
+}
 
 @media screen and (max-width:768px){
     .het-blog-post{
         width: 100%;
+    }
+    .he-tab{
+        margin-bottom: 25px;
+        padding: 0;
+        border: 0;
+        width: auto;
+        float: none;
+    }
+    .he-tab li{
+        background: #FFF;
+        margin-bottom: 10px;
+        padding-right: 50px;
+        border-bottom: 2px solid transparent;
+    }
+    .he-tab li i{
+        margin-right: -30px;
+    }
+    .he-tab li.he-active:after{
+        display: none;
+    }
+    .he-tab li.he-active{
+        border-bottom: 2px solid var(--square-template-color, #5bc2ce);
+    }
+    .he-tab-content{
+        padding: 0;
+        width: auto;
     }
 }

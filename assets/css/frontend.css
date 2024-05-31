@@ -3083,6 +3083,10 @@ h3.he-big-title a{
     text-align: center;
 }
 
+.e-con.he-sticky-container-yes{
+    position: sticky;
+    top: var(--he-sticky-top-spacing, 0);
+}
 
 @media screen and (max-width:768px){
     .het-blog-post{
