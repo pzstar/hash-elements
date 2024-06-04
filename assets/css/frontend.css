@@ -3088,6 +3088,11 @@ h3.he-big-title a{
     top: var(--he-sticky-top-spacing, 0);
 }
 
+body.admin-bar .e-con.he-sticky-container-yes {
+    position: sticky;
+    top: calc( 32px + var(--he-sticky-top-spacing,0));
+}
+
 @media screen and (max-width:768px){
     .het-blog-post{
         width: 100%;
