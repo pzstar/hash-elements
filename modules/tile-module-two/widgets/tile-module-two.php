@@ -458,7 +458,7 @@ class TileModuleTwo extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'featured_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-big-thumb .he-title-container h3',
+            'selector' => '{{WRAPPER}} .he-left-col .he-title-container h3',
                 ]
         );
 
@@ -469,7 +469,7 @@ class TileModuleTwo extends Widget_Base {
             'allowed_dimensions' => 'vertical',
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .he-big-thumb .he-title-container h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                '{{WRAPPER}} .he-left-col .he-title-container h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
                 ]
         );
@@ -486,7 +486,7 @@ class TileModuleTwo extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'side_post_title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-small-thumb .he-title-container h3',
+            'selector' => '{{WRAPPER}} .he-right-col .he-title-container h3',
                 ]
         );
 
@@ -497,7 +497,7 @@ class TileModuleTwo extends Widget_Base {
             'allowed_dimensions' => 'vertical',
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .he-small-thumb .he-title-container h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                '{{WRAPPER}} .he-right-col .he-title-container h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
                 ]
         );

@@ -358,7 +358,7 @@ class TileModuleThree extends Widget_Base {
             'label' => esc_html__('Title Color', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .he-big-thumb .he-title-container h3' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-title-container h3' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -368,7 +368,7 @@ class TileModuleThree extends Widget_Base {
             'label' => esc_html__('Title Color (Hover)', 'hash-elements'),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .he-big-thumb .he-title-container h3:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .he-title-container h3:hover' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -387,7 +387,7 @@ class TileModuleThree extends Widget_Base {
                 Group_Control_Typography::get_type(), [
             'name' => 'title_typography',
             'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-big-thumb .he-title-container h3',
+            'selector' => '{{WRAPPER}} .he-title-container h3',
                 ]
         );
 
@@ -398,7 +398,7 @@ class TileModuleThree extends Widget_Base {
             'allowed_dimensions' => 'vertical',
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .he-big-thumb .he-title-container h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                '{{WRAPPER}} .he-title-container h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
                 ]
         );
