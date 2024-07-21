@@ -39,39 +39,35 @@ class TotalBlogModule extends Widget_Base {
     protected function register_controls() {
 
         $this->start_controls_section(
-            'section_post_query',
-            [
-                'label' => esc_html__('Content Filter', 'hash-elements'),
-            ]
+                'section_post_query', [
+            'label' => esc_html__('Content Filter', 'hash-elements'),
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Query::get_type(),
-            [
-                'name' => 'posts',
-                'label' => esc_html__('Posts', 'hash-elements'),
-            ]
+                Group_Control_Query::get_type(), [
+            'name' => 'posts',
+            'label' => esc_html__('Posts', 'hash-elements'),
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'settings',
-            [
-                'label' => esc_html__('Settings', 'hash-elements'),
-            ]
+                'settings', [
+            'label' => esc_html__('Settings', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'post_count',
-            [
-                'label' => __('Number of Posts', 'hash-elements'),
-                'type' => Controls_Manager::NUMBER,
-                'min' => 3,
-                'max' => 50,
-                'step' => 1,
-                'default' => 3,
-            ]
+                'post_count', [
+            'label' => __('Number of Posts', 'hash-elements'),
+            'type' => Controls_Manager::NUMBER,
+            'min' => 3,
+            'max' => 50,
+            'step' => 1,
+            'default' => 3,
+                ]
         );
 
         $this->add_control('excerpt_length', [
@@ -83,257 +79,233 @@ class TotalBlogModule extends Widget_Base {
         ]);
 
         $this->add_group_control(
-            Group_Control_Image_Size::get_type(),
-            [
-                'name' => 'thumbnail',
-                'exclude' => ['custom'],
-                'include' => [],
-                'default' => 'full',
-            ]
+                Group_Control_Image_Size::get_type(), [
+            'name' => 'thumbnail',
+            'exclude' => ['custom'],
+            'include' => [],
+            'default' => 'full',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'blog_style',
-            [
-                'label' => esc_html__('Blog Style', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'blog_style', [
+            'label' => esc_html__('Blog Style', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'blog_bg_color',
-            [
-                'label' => esc_html__('Background Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-blog-box' => 'background-color: {{VALUE}}',
-                ],
-            ]
+                'blog_bg_color', [
+            'label' => esc_html__('Background Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-box' => 'background-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'bottom_border_color',
-            [
-                'label' => esc_html__('Bottom Border Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-blog-box' => 'border-color: {{VALUE}}',
-                ],
-            ]
+                'bottom_border_color', [
+            'label' => esc_html__('Bottom Border Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-box' => 'border-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'post_title_style',
-            [
-                'label' => esc_html__('Title', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'post_title_style', [
+            'label' => esc_html__('Title', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'title_color',
-            [
-                'label' => esc_html__('Title Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-blog-excerpt h5 a' => 'color: {{VALUE}}',
-                ],
-            ]
+                'title_color', [
+            'label' => esc_html__('Title Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-excerpt h5 a' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'title_hover_color',
-            [
-                'label' => esc_html__('Title Color (Hover)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-blog-excerpt h5 a:hover' => 'color: {{VALUE}}',
-                ],
-            ]
+                'title_hover_color', [
+            'label' => esc_html__('Title Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-excerpt h5 a:hover' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'title_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .het-blog-excerpt h5 a',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'title_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .het-blog-excerpt h5 a',
+                ]
         );
 
         $this->add_control(
-            'title_margin',
-            [
-                'label' => esc_html__('Margin', 'hash-elements'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'allowed_dimensions' => 'vertical',
-                'size_units' => ['px', '%', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .het-blog-excerpt h5' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
-                ],
-            ]
+                'title_margin', [
+            'label' => esc_html__('Margin', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'allowed_dimensions' => 'vertical',
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-excerpt h5' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'post_metas',
-            [
-                'label' => esc_html__('Metas', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'post_metas', [
+            'label' => esc_html__('Metas', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'post_metas_color',
-            [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-blog-date' => 'color: {{VALUE}}',
-                ],
-            ]
+                'post_metas_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-date' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'post_metas_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .het-blog-date'
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'post_metas_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .het-blog-date'
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'excerpt_style',
-            [
-                'label' => esc_html__('Excerpt', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'excerpt_style', [
+            'label' => esc_html__('Excerpt', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'excerpt_color',
-            [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-blog-excerpt .het-blog-excerpt-text' => 'color: {{VALUE}}',
-                ],
-            ]
+                'excerpt_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-excerpt .het-blog-excerpt-text' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'excerpt_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .het-blog-excerpt .het-blog-excerpt-text',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'excerpt_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .het-blog-excerpt .het-blog-excerpt-text',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'button_style',
-            [
-                'label' => esc_html__('Button', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'button_style', [
+            'label' => esc_html__('Button', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'button_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .het-blog-read-more a',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'button_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .het-blog-read-more a',
+                ]
         );
 
         $this->add_control(
-            'button_padding',
-            [
-                'label' => esc_html__('Padding', 'hash-elements'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .het-blog-read-more a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
+                'button_padding', [
+            'label' => esc_html__('Padding', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-read-more a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+                ]
         );
 
         $this->start_controls_tabs(
-            'button_style_tabs'
+                'button_style_tabs'
         );
 
         $this->start_controls_tab(
-            'normal_button_tab',
-            [
-                'label' => __('Normal', 'hash-elements'),
-            ]
+                'normal_button_tab', [
+            'label' => __('Normal', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'normal_button_text_color',
-            [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-blog-read-more a' => 'color: {{VALUE}}',
-                ],
-            ]
+                'normal_button_text_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-read-more a' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'normal_button_bg_color',
-            [
-                'label' => esc_html__('Background Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#000000',
-                'selectors' => [
-                    '{{WRAPPER}} .het-blog-read-more a' => 'background-color: {{VALUE}}',
-                ],
-            ]
+                'normal_button_bg_color', [
+            'label' => esc_html__('Background Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#000000',
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-read-more a' => 'background-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_tab();
 
         $this->start_controls_tab(
-            'hover_button_tab',
-            [
-                'label' => __('Hover', 'hash-elements'),
-            ]
+                'hover_button_tab', [
+            'label' => __('Hover', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'hover_button_text_color',
-            [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#fff',
-                'selectors' => [
-                    '{{WRAPPER}} .het-blog-read-more a:hover' => 'color: {{VALUE}}',
-                ],
-            ]
+                'hover_button_text_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#fff',
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-read-more a:hover' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'hover_button_bg_color',
-            [
-                'label' => esc_html__('Background Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#333',
-                'selectors' => [
-                    '{{WRAPPER}} .het-blog-read-more a:hover' => 'background-color: {{VALUE}}',
-                ],
-            ]
+                'hover_button_bg_color', [
+            'label' => esc_html__('Background Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#333',
+            'selectors' => [
+                '{{WRAPPER}} .het-blog-read-more a:hover' => 'background-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_tab();
@@ -352,8 +324,7 @@ class TotalBlogModule extends Widget_Base {
             $args = $this->query_args();
             $query = new \WP_Query($args);
             if ($query->have_posts()):
-                while ($query->have_posts()):
-                    $query->the_post();
+                while ($query->have_posts()): $query->the_post();
                     ?>
                     <div class="het-blog-post">
                         <div class="het-blog-box">
@@ -361,7 +332,7 @@ class TotalBlogModule extends Widget_Base {
                             if (has_post_thumbnail()) {
                                 $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), $settings['thumbnail_size']);
                                 if (isset($total_image[0])) {
-                                    ?>
+                                    ?> 
                                     <div class="het-blog-thumbnail">
                                         <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title(); ?>"></a>
                                     </div>

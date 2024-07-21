@@ -301,7 +301,7 @@
                 }(o));
                 $(window).on('resize.' + o.options.namespace, function (o) {
                     return function () {
-                        o.stickySidebar.css({ 'position': 'static' });
+                        o.stickySidebar.css({'position': 'static'});
                         o.onScroll(o);
                     };
                 }(o));

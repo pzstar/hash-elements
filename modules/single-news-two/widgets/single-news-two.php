@@ -42,171 +42,158 @@ class Single_News_Two extends Widget_Base {
     protected function register_controls() {
 
         $this->start_controls_section(
-            'section_post_query',
-            [
-                'label' => esc_html__('Content Filter', 'hash-elements'),
-            ]
-        );
-
-        $this->add_control(
-            'filter_option',
-            [
-                'label' => esc_html__('Select Filter', 'hash-elements'),
-                'type' => Controls_Manager::SELECT,
-                'options' => array(
-                    'single-post' => esc_html__('By Post Title', 'hash-elements'),
-                    'categories' => esc_html__('By Categories', 'hash-elements'),
-                    'tags' => esc_html__('By Tags', 'hash-elements'),
-                ),
-                'default' => 'categories',
-                'label_block' => true,
-                'description' => esc_html__('Displays only one post', 'hash-elements')
-            ]
-        );
-
-        $this->add_control(
-            'post_id',
-            [
-                'label' => esc_html__('Select Post', 'hash-elements'),
-                'type' => AjaxSelect_Control::AJAXSELECT,
-                'search' => 'hash_elements_get_posts_by_query',
-                'render' => 'hash_elements_get_posts_title_by_id',
-                'post_type' => 'post',
-                'label_block' => true,
-                'condition' => [
-                    'filter_option' => 'single-post'
+                'section_post_query', [
+            'label' => esc_html__('Content Filter', 'hash-elements'),
                 ]
-            ]
         );
 
         $this->add_control(
-            'categories',
-            [
-                'label' => esc_html__('Select Categories', 'hash-elements'),
-                'type' => Controls_Manager::SELECT2,
-                'options' => hash_elements_get_categories(),
-                'label_block' => true,
-                'multiple' => true,
-                'condition' => [
-                    'filter_option' => 'categories'
-                ],
-                'description' => esc_html__('Displays latest post from the selected categories', 'hash-elements')
-            ]
+                'filter_option', [
+            'label' => esc_html__('Select Filter', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'options' => array(
+                'single-post' => esc_html__('By Post Title', 'hash-elements'),
+                'categories' => esc_html__('By Categories', 'hash-elements'),
+                'tags' => esc_html__('By Tags', 'hash-elements'),
+            ),
+            'default' => 'categories',
+            'label_block' => true,
+            'description' => esc_html__('Displays only one post', 'hash-elements')
+                ]
         );
 
         $this->add_control(
-            'tags',
-            [
-                'label' => esc_html__('Select Tags', 'hash-elements'),
-                'type' => Controls_Manager::SELECT2,
-                'options' => hash_elements_get_tags(),
-                'multiple' => true,
-                'label_block' => true,
-                'condition' => [
-                    'filter_option' => 'tags'
-                ],
-                'description' => esc_html__('Displays latest post from the selected tags', 'hash-elements')
+                'post_id', [
+            'label' => esc_html__('Select Post', 'hash-elements'),
+            'type' => AjaxSelect_Control::AJAXSELECT,
+            'search' => 'hash_elements_get_posts_by_query',
+            'render' => 'hash_elements_get_posts_title_by_id',
+            'post_type' => 'post',
+            'label_block' => true,
+            'condition' => [
+                'filter_option' => 'single-post'
             ]
+                ]
         );
 
         $this->add_control(
-            'offset',
-            [
-                'label' => esc_html__('Offset', 'hash-elements'),
-                'type' => Controls_Manager::NUMBER,
-                'min' => 1,
-                'max' => 50,
-                'condition' => [
-                    'filter_option' => ['categories', 'tags']
-                ],
-            ]
+                'categories', [
+            'label' => esc_html__('Select Categories', 'hash-elements'),
+            'type' => Controls_Manager::SELECT2,
+            'options' => hash_elements_get_categories(),
+            'label_block' => true,
+            'multiple' => true,
+            'condition' => [
+                'filter_option' => 'categories'
+            ],
+            'description' => esc_html__('Displays latest post from the selected categories', 'hash-elements')
+                ]
+        );
+
+        $this->add_control(
+                'tags', [
+            'label' => esc_html__('Select Tags', 'hash-elements'),
+            'type' => Controls_Manager::SELECT2,
+            'options' => hash_elements_get_tags(),
+            'multiple' => true,
+            'label_block' => true,
+            'condition' => [
+                'filter_option' => 'tags'
+            ],
+            'description' => esc_html__('Displays latest post from the selected tags', 'hash-elements')
+                ]
+        );
+
+        $this->add_control(
+                'offset', [
+            'label' => esc_html__('Offset', 'hash-elements'),
+            'type' => Controls_Manager::NUMBER,
+            'min' => 1,
+            'max' => 50,
+            'condition' => [
+                'filter_option' => ['categories', 'tags']
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'section_post_meta',
-            [
-                'label' => esc_html__('Post Meta', 'hash-elements'),
-            ]
-        );
-
-        $this->add_control(
-            'post_author',
-            [
-                'label' => esc_html__('Post Author', 'hash-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Yes', 'hash-elements'),
-                'label_off' => esc_html__('No', 'hash-elements'),
-                'return_value' => 'yes',
-                'default' => 'yes'
-            ]
-        );
-
-        $this->add_control(
-            'post_date',
-            [
-                'label' => esc_html__('Post Date', 'hash-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Yes', 'hash-elements'),
-                'label_off' => esc_html__('No', 'hash-elements'),
-                'return_value' => 'yes',
-                'default' => 'yes'
-            ]
-        );
-
-        $this->add_control(
-            'post_comment',
-            [
-                'label' => esc_html__('Post Comments', 'hash-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Yes', 'hash-elements'),
-                'label_off' => esc_html__('No', 'hash-elements'),
-                'return_value' => 'yes',
-                'default' => 'yes'
-            ]
-        );
-
-        $this->add_control(
-            'date_format',
-            [
-                'label' => esc_html__('Date Format', 'hash-elements'),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    'relative_format' => esc_html__('Relative Format (Ago)', 'hash-elements'),
-                    'default' => esc_html__('WordPress Default Format', 'hash-elements'),
-                    'custom' => esc_html__('Custom Format', 'hash-elements'),
-                ],
-                'default' => 'default',
-                'separator' => 'before',
-                'label_block' => true,
-                'condition' => [
-                    'post_date' => 'yes'
+                'section_post_meta', [
+            'label' => esc_html__('Post Meta', 'hash-elements'),
                 ]
-            ]
         );
 
         $this->add_control(
-            'custom_date_format',
-            [
-                'label' => esc_html__('Custom Date Format', 'hash-elements'),
-                'type' => Controls_Manager::TEXT,
-                'default' => 'F j, Y',
-                'placeholder' => esc_html__('F j, Y', 'hash-elements'),
-                'condition' => [
-                    'date_format' => 'custom',
-                    'post_date' => 'yes'
+                'post_author', [
+            'label' => esc_html__('Post Author', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
+            'return_value' => 'yes',
+            'default' => 'yes'
                 ]
+        );
+
+        $this->add_control(
+                'post_date', [
+            'label' => esc_html__('Post Date', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
+            'return_value' => 'yes',
+            'default' => 'yes'
+                ]
+        );
+
+        $this->add_control(
+                'post_comment', [
+            'label' => esc_html__('Post Comments', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
+            'return_value' => 'yes',
+            'default' => 'yes'
+                ]
+        );
+
+        $this->add_control(
+                'date_format', [
+            'label' => esc_html__('Date Format', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'options' => [
+                'relative_format' => esc_html__('Relative Format (Ago)', 'hash-elements'),
+                'default' => esc_html__('WordPress Default Format', 'hash-elements'),
+                'custom' => esc_html__('Custom Format', 'hash-elements'),
+            ],
+            'default' => 'default',
+            'separator' => 'before',
+            'label_block' => true,
+            'condition' => [
+                'post_date' => 'yes'
             ]
+                ]
+        );
+
+        $this->add_control(
+                'custom_date_format', [
+            'label' => esc_html__('Custom Date Format', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'default' => 'F j, Y',
+            'placeholder' => esc_html__('F j, Y', 'hash-elements'),
+            'condition' => [
+                'date_format' => 'custom',
+                'post_date' => 'yes'
+            ]
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'section_post_excerpt',
-            [
-                'label' => esc_html__('Post Excerpt', 'hash-elements'),
-            ]
+                'section_post_excerpt', [
+            'label' => esc_html__('Post Excerpt', 'hash-elements'),
+                ]
         );
 
         $this->add_control('excerpt_length', [
@@ -220,254 +207,233 @@ class Single_News_Two extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'section_post_image',
-            [
-                'label' => esc_html__('Image Settings', 'hash-elements'),
-            ]
+                'section_post_image', [
+            'label' => esc_html__('Image Settings', 'hash-elements'),
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Image_Size::get_type(),
-            [
-                'name' => 'image',
-                'exclude' => ['custom'],
-                'include' => [],
-                'default' => 'large',
-            ]
+                Group_Control_Image_Size::get_type(), [
+            'name' => 'image',
+            'exclude' => ['custom'],
+            'include' => [],
+            'default' => 'large',
+                ]
         );
 
         $this->add_control(
-            'image_height',
-            [
-                'label' => esc_html__('Image Height (%)', 'hash-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['%'],
-                'range' => [
-                    '%' => [
-                        'min' => 30,
-                        'max' => 150,
-                        'step' => 1
-                    ],
+                'image_height', [
+            'label' => esc_html__('Image Height (%)', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['%'],
+            'range' => [
+                '%' => [
+                    'min' => 30,
+                    'max' => 150,
+                    'step' => 1
                 ],
-                'default' => [
-                    'unit' => '%',
-                    'size' => 100,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .he-post-thumb .he-thumb-container' => 'padding-bottom: {{SIZE}}{{UNIT}};',
-                ],
-            ]
+            ],
+            'default' => [
+                'unit' => '%',
+                'size' => 100,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-post-thumb .he-thumb-container' => 'padding-bottom: {{SIZE}}{{UNIT}};',
+            ],
+                ]
         );
 
         $this->add_control(
-            'image_border_radius',
-            [
-                'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['px'],
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 30,
-                        'step' => 1
-                    ],
+                'image_border_radius', [
+            'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 30,
+                    'step' => 1
                 ],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 0,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .he-post-image' => 'border-radius: {{SIZE}}{{UNIT}};'
-                ],
-            ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 0,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .he-post-image' => 'border-radius: {{SIZE}}{{UNIT}};'
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
 
         $this->start_controls_section(
-            'content_style',
-            [
-                'label' => esc_html__('Content', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'content_style', [
+            'label' => esc_html__('Content', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'content_alignment',
-            [
-                'label' => esc_html__('Content Alignment', 'hash-elements'),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    'left' => esc_html__('Left', 'hash-elements'),
-                    'center' => esc_html__('Center', 'hash-elements'),
-                    'right' => esc_html__('Right', 'hash-elements'),
-                ],
-                'default' => 'left'
-            ]
+                'content_alignment', [
+            'label' => esc_html__('Content Alignment', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'options' => [
+                'left' => esc_html__('Left', 'hash-elements'),
+                'center' => esc_html__('Center', 'hash-elements'),
+                'right' => esc_html__('Right', 'hash-elements'),
+            ],
+            'default' => 'left'
+                ]
         );
 
         $this->add_group_control(
-            \Elementor\Group_Control_Background::get_type(),
-            [
-                'name' => 'background',
-                'label' => __('Overlay Background', 'hash-elements'),
-                'types' => ['gradient'],
-                'selector' => '{{WRAPPER}} .he-post-graident-title .he-post-content',
-            ]
+                \Elementor\Group_Control_Background::get_type(), [
+            'name' => 'background',
+            'label' => __('Overlay Background', 'hash-elements'),
+            'types' => ['gradient'],
+            'selector' => '{{WRAPPER}} .he-post-graident-title .he-post-content',
+                ]
         );
 
         $this->add_control(
-            'content_padding',
-            [
-                'label' => esc_html__('Content Padding', 'hash-elements'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .he-post-graident-title .he-post-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
+                'content_padding', [
+            'label' => esc_html__('Content Padding', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .he-post-graident-title .he-post-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+                ]
         );
 
         $this->add_control(
-            'content_margin',
-            [
-                'label' => esc_html__('Content Margin', 'hash-elements'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .he-post-graident-title .he-post-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
+                'content_margin', [
+            'label' => esc_html__('Content Margin', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .he-post-graident-title .he-post-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'title_style',
-            [
-                'label' => esc_html__('Post Title', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'title_style', [
+            'label' => esc_html__('Post Title', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'title_color',
-            [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-post-title a' => 'color: {{VALUE}}',
-                ],
-            ]
+                'title_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-post-title a' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'title_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .he-post-title a',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'title_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .he-post-title a',
+                ]
         );
 
         $this->add_control(
-            'title_margin',
-            [
-                'label' => esc_html__('Margin', 'hash-elements'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'allowed_dimensions' => 'vertical',
-                'size_units' => ['px', '%', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} h3.he-post-title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
-                ],
-            ]
+                'title_margin', [
+            'label' => esc_html__('Margin', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'allowed_dimensions' => 'vertical',
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} h3.he-post-title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'meta_style',
-            [
-                'label' => esc_html__('Post Metas', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'meta_style', [
+            'label' => esc_html__('Post Metas', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'meta_color',
-            [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-post-meta span' => 'color: {{VALUE}}',
-                ],
-            ]
+                'meta_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-post-meta span' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'meta_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .he-post-meta span',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'meta_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .he-post-meta span',
+                ]
         );
 
         $this->add_control(
-            'meta_margin',
-            [
-                'label' => esc_html__('Margin', 'hash-elements'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'allowed_dimensions' => 'vertical',
-                'size_units' => ['px', '%', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .he-post-meta' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
-                ],
-            ]
+                'meta_margin', [
+            'label' => esc_html__('Margin', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'allowed_dimensions' => 'vertical',
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .he-post-meta' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'excerpt_style',
-            [
-                'label' => esc_html__('Post Excerpt', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'excerpt_style', [
+            'label' => esc_html__('Post Excerpt', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'excerpt_color',
-            [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-post-content .he-post-excerpt' => 'color: {{VALUE}}',
-                ],
-            ]
+                'excerpt_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-post-content .he-post-excerpt' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'excerpt_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .he-post-content .he-post-excerpt',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'excerpt_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .he-post-content .he-post-excerpt',
+                ]
         );
 
         $this->add_control(
-            'excerpt_margin',
-            [
-                'label' => esc_html__('Margin', 'hash-elements'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'allowed_dimensions' => 'vertical',
-                'size_units' => ['px', '%', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .he-post-content .he-post-excerpt' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
-                ],
-            ]
+                'excerpt_margin', [
+            'label' => esc_html__('Margin', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'allowed_dimensions' => 'vertical',
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .he-post-content .he-post-excerpt' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+            ],
+                ]
         );
 
         $this->end_controls_section();
@@ -509,7 +475,8 @@ class Single_News_Two extends Widget_Base {
                             </div>
 
                             <div class="he-post-content he-align-<?php echo esc_attr($settings['content_alignment']); ?>">
-                                <h3 class="he-post-title"><a href="<?php the_permalink(); ?>"><?php echo esc_html(get_the_title()); ?></a></h3>
+                                <h3 class="he-post-title"><a
+                                        href="<?php the_permalink(); ?>"><?php echo esc_html(get_the_title()); ?></a></h3>
 
                                 <?php $this->get_post_meta(); ?>
 

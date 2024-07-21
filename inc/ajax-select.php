@@ -20,14 +20,12 @@ class Ajax_Select {
         $post_type = isset($_POST['post_type']) ? wp_unslash($_POST['post_type']) : 'post'; // phpcs:ignore
         $results = array();
         add_filter('posts_where', array($this, 'title_filter'), 10, 2);
-        $query = new \WP_Query(
-            array(
-                'post_type' => $post_type,
-                'posts_per_page' => -1,
-                'title_filter' => $search_string,
-                'post_status' => 'publish',
-            )
-        );
+        $query = new \WP_Query(array(
+            'post_type' => $post_type,
+            'posts_per_page' => -1,
+            'title_filter' => $search_string,
+            'post_status' => 'publish',
+        ));
         remove_filter('posts_where', array($this, 'title_filter'), 10, 2);
         wp_reset_postdata();
         if (!isset($query->posts)) {
@@ -47,12 +45,12 @@ class Ajax_Select {
         $post_type = isset($_POST['post_type']) ? wp_unslash($_POST['post_type']) : 'post'; // phpcs:ignore
         $results = array();
         $query = new \WP_Query(
-            array(
-                'post_type' => $post_type,
-                'post__in' => $ids,
-                'posts_per_page' => -1,
-                'orderby' => 'post__in',
-            )
+                array(
+            'post_type' => $post_type,
+            'post__in' => $ids,
+            'posts_per_page' => - 1,
+            'orderby' => 'post__in',
+                )
         );
         wp_reset_postdata();
         if (!isset($query->posts)) {

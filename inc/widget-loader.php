@@ -7,10 +7,10 @@ if (!defined('ABSPATH'))
 
 class HASHELE_Widget_Loader {
 
-    private static $instance = NULL;
+    private static $instance = null;
 
     public static function get_instance() {
-        if (self::$instance == NULL) {
+        if (self::$instance == null) {
             self::$instance = new self;
         }
         return self::$instance;
@@ -42,17 +42,15 @@ class HASHELE_Widget_Loader {
         if (!class_exists($class_to_load)) {
 
             $filename = strtolower(
-                preg_replace(
-                    ['/^' . __NAMESPACE__ . '\\\/', '/([a-z])([A-Z])/', '/_/', '/\\\/'],
-                    ['', '$1-$2', '-', DIRECTORY_SEPARATOR],
-                    $class_to_load
-                )
+                    preg_replace(
+                            ['/^' . __NAMESPACE__ . '\\\/', '/([a-z])([A-Z])/', '/_/', '/\\\/'], ['', '$1-$2', '-', DIRECTORY_SEPARATOR], $class_to_load
+                    )
             );
 
             $filename = HASHELE_PATH . $filename . '.php';
 
             if (is_readable($filename)) {
-                include ($filename);
+                include( $filename );
             }
         }
 
@@ -139,15 +137,14 @@ class HASHELE_Widget_Loader {
         wp_enqueue_script('hash-elements-frontend-script', HASHELE_URL . 'assets/js/frontend.js', array('jquery'), HASHELE_VERSION, true);
         wp_localize_script('hash-elements-frontend-script', 'hash_element_params', array(
             'is_rtl' => is_rtl() ? 'true' : 'false'
-        )
-        );
+        ));
     }
 
     /**
      * Register Frontend Styles
      */
     public function register_frontend_styles() {
-
+        
     }
 
     /**
@@ -182,7 +179,7 @@ class HASHELE_Widget_Loader {
      * Preview Styles
      */
     public function enqueue_preview_styles() {
-
+        
     }
 
     /**

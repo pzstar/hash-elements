@@ -40,56 +40,50 @@ class TimelineModule extends Widget_Base {
 
 
         $this->start_controls_section(
-            'header',
-            [
-                'label' => esc_html__('Header', 'hash-elements'),
-            ]
+                'header', [
+            'label' => esc_html__('Header', 'hash-elements'),
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Header::get_type(),
-            [
-                'name' => 'header',
-                'label' => esc_html__('Header', 'hash-elements'),
-            ]
+                Group_Control_Header::get_type(), [
+            'name' => 'header',
+            'label' => esc_html__('Header', 'hash-elements'),
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'section_post_query',
-            [
-                'label' => esc_html__('Content Filter', 'hash-elements'),
-            ]
+                'section_post_query', [
+            'label' => esc_html__('Content Filter', 'hash-elements'),
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Query::get_type(),
-            [
-                'name' => 'posts',
-                'label' => esc_html__('Posts', 'hash-elements'),
-            ]
+                Group_Control_Query::get_type(), [
+            'name' => 'posts',
+            'label' => esc_html__('Posts', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'posts_number',
-            [
-                'label' => __('No of Posts', 'hash-elements'),
-                'type' => Controls_Manager::NUMBER,
-                'min' => 5,
-                'max' => 20,
-                'step' => 1,
-                'default' => 5,
-            ]
+                'posts_number', [
+            'label' => __('No of Posts', 'hash-elements'),
+            'type' => Controls_Manager::NUMBER,
+            'min' => 5,
+            'max' => 20,
+            'step' => 1,
+            'default' => 5,
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'section_post_block',
-            [
-                'label' => esc_html__('Post Block', 'hash-elements'),
-            ]
+                'section_post_block', [
+            'label' => esc_html__('Post Block', 'hash-elements'),
+                ]
         );
 
         $this->add_control('post_excerpt_length', [
@@ -101,287 +95,261 @@ class TimelineModule extends Widget_Base {
         ]);
 
         $this->add_control(
-            'post_author',
-            [
-                'label' => esc_html__('Show Post Author', 'hash-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Yes', 'hash-elements'),
-                'label_off' => esc_html__('No', 'hash-elements'),
-                'return_value' => 'yes',
-                'separator' => 'before'
-            ]
-        );
-
-        $this->add_control(
-            'post_date',
-            [
-                'label' => esc_html__('Show Post Date', 'hash-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'default' => 'yes',
-                'label_on' => esc_html__('Yes', 'hash-elements'),
-                'label_off' => esc_html__('No', 'hash-elements'),
-                'return_value' => 'yes',
-            ]
-        );
-
-        $this->add_control(
-            'post_comment',
-            [
-                'label' => esc_html__('Show Post Comments', 'hash-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Yes', 'hash-elements'),
-                'label_off' => esc_html__('No', 'hash-elements'),
-                'return_value' => 'yes',
-            ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-            'additional_settings',
-            [
-                'label' => esc_html__('Additional Settings', 'hash-elements'),
-            ]
-        );
-
-        $this->add_control(
-            'date_format',
-            [
-                'label' => esc_html__('Date Format', 'hash-elements'),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    'relative_format' => esc_html__('Relative Format (Ago)', 'hash-elements'),
-                    'default' => esc_html__('WordPress Default Format', 'hash-elements'),
-                    'custom' => esc_html__('Custom Format', 'hash-elements'),
-                ],
-                'default' => 'default',
-                'separator' => 'before',
-                'label_block' => true
-            ]
-        );
-
-        $this->add_control(
-            'custom_date_format',
-            [
-                'label' => esc_html__('Custom Date Format', 'hash-elements'),
-                'type' => Controls_Manager::TEXT,
-                'default' => 'F j, Y',
-                'placeholder' => esc_html__('F j, Y', 'hash-elements'),
-                'condition' => [
-                    'date_format' => 'custom'
+                'post_author', [
+            'label' => esc_html__('Show Post Author', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
+            'return_value' => 'yes',
+            'separator' => 'before'
                 ]
-            ]
+        );
+
+        $this->add_control(
+                'post_date', [
+            'label' => esc_html__('Show Post Date', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'default' => 'yes',
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
+            'return_value' => 'yes',
+                ]
+        );
+
+        $this->add_control(
+                'post_comment', [
+            'label' => esc_html__('Show Post Comments', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
+            'return_value' => 'yes',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'header_title_style',
-            [
-                'label' => esc_html__('Header Title', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'additional_settings', [
+            'label' => esc_html__('Additional Settings', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'header_color',
-            [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
-                ],
-            ]
+                'date_format', [
+            'label' => esc_html__('Date Format', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'options' => [
+                'relative_format' => esc_html__('Relative Format (Ago)', 'hash-elements'),
+                'default' => esc_html__('WordPress Default Format', 'hash-elements'),
+                'custom' => esc_html__('Custom Format', 'hash-elements'),
+            ],
+            'default' => 'default',
+            'separator' => 'before',
+            'label_block' => true
+                ]
         );
 
         $this->add_control(
-            'header_short_border_color',
-            [
-                'label' => esc_html__('Short Border Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
-                    '{{WRAPPER}} .he-title-style2.he-block-title span:before' => 'background-color: {{VALUE}}',
-                ],
+                'custom_date_format', [
+            'label' => esc_html__('Custom Date Format', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'default' => 'F j, Y',
+            'placeholder' => esc_html__('F j, Y', 'hash-elements'),
+            'condition' => [
+                'date_format' => 'custom'
             ]
+                ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+                'header_title_style', [
+            'label' => esc_html__('Header Title', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'header_long_border_color',
-            [
-                'label' => esc_html__('Long Border Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
-                    '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
-                ],
-            ]
+                'header_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'header_short_border_color', [
+            'label' => esc_html__('Short Border Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
+                '{{WRAPPER}} .he-title-style2.he-block-title span:before' => 'background-color: {{VALUE}}',
+            ],
+                ]
+        );
+
+        $this->add_control(
+                'header_long_border_color', [
+            'label' => esc_html__('Long Border Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'header_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .he-block-title'
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'header_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .he-block-title'
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'post_title_style',
-            [
-                'label' => esc_html__('Title', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'post_title_style', [
+            'label' => esc_html__('Title', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'title_color',
-            [
-                'label' => esc_html__('Title Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-timeline .he-post-item h3' => 'color: {{VALUE}}',
-                ],
-            ]
+                'title_color', [
+            'label' => esc_html__('Title Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline .he-post-item h3' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'title_hover_color',
-            [
-                'label' => esc_html__('Title Color (Hover)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-timeline .he-post-item h3 a:hover' => 'color: {{VALUE}}',
-                ],
-            ]
+                'title_hover_color', [
+            'label' => esc_html__('Title Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline .he-post-item h3 a:hover' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'title_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .he-timeline .he-post-item h3',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'title_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .he-timeline .he-post-item h3',
+                ]
         );
 
         $this->add_control(
-            'title_margin',
-            [
-                'label' => esc_html__('Margin', 'hash-elements'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'allowed_dimensions' => 'vertical',
-                'size_units' => ['px', '%', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .he-timeline .he-post-item h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
-                ],
-            ]
+                'title_margin', [
+            'label' => esc_html__('Margin', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'allowed_dimensions' => 'vertical',
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline .he-post-item h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'post_metas',
-            [
-                'label' => esc_html__('Metas', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'post_metas', [
+            'label' => esc_html__('Metas', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'post_metas_color',
-            [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-timeline .he-post-item .he-post-meta' => 'color: {{VALUE}}',
-                ],
-            ]
+                'post_metas_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline .he-post-item .he-post-meta' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'post_metas_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .he-timeline .he-post-item .he-post-meta',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'post_metas_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .he-timeline .he-post-item .he-post-meta',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'excerpt_style',
-            [
-                'label' => esc_html__('Excerpt', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'excerpt_style', [
+            'label' => esc_html__('Excerpt', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'excerpt_color',
-            [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-timeline  .he-post-item .he-excerpt' => 'color: {{VALUE}}',
-                ],
-            ]
+                'excerpt_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline  .he-post-item .he-excerpt' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'excerpt_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .he-timeline .he-post-item .he-excerpt',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'excerpt_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .he-timeline .he-post-item .he-excerpt',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'timeline_style',
-            [
-                'label' => esc_html__('Time Line', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'timeline_style', [
+            'label' => esc_html__('Time Line', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'timeline_border_color',
-            [
-                'label' => esc_html__('Line Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-timeline, {{WRAPPER}} .he-timeline .he-post-item:after' => 'border-color: {{VALUE}}',
-                ],
-            ]
+                'timeline_border_color', [
+            'label' => esc_html__('Line Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline, {{WRAPPER}} .he-timeline .he-post-item:after' => 'border-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'timeline_dot_color',
-            [
-                'label' => esc_html__('Dot Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-timeline .he-post-item:after' => 'background-color: {{VALUE}}',
-                ],
-            ]
+                'timeline_dot_color', [
+            'label' => esc_html__('Dot Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline .he-post-item:after' => 'background-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'timeline_dot_hover_color',
-            [
-                'label' => esc_html__('Dot Color (Hover)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-timeline .he-post-item:hover:after' => 'background-color: {{VALUE}}',
-                ],
-            ]
+                'timeline_dot_hover_color', [
+            'label' => esc_html__('Dot Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-timeline .he-post-item:hover:after' => 'background-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_section();
@@ -450,12 +418,10 @@ class TimelineModule extends Widget_Base {
         $settings = $this->get_settings();
 
         $this->add_render_attribute(
-            'header_attr',
-            'class',
-            [
-                'he-block-title',
-                $settings['header_style']
-            ]
+                'header_attr', 'class', [
+            'he-block-title',
+            $settings['header_style']
+                ]
         );
 
         $link_open = $link_close = "";
