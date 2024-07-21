@@ -137,9 +137,12 @@ class HASHELE_Widget_Loader {
         wp_enqueue_script('theia-sticky-sidebarr', HASHELE_URL . 'assets/js/theia-sticky-sidebar.js', array('jquery'), HASHELE_VERSION, true);
 
         wp_enqueue_script('hash-elements-frontend-script', HASHELE_URL . 'assets/js/frontend.js', array('jquery'), HASHELE_VERSION, true);
-        wp_localize_script('hash-elements-frontend-script', 'hash_element_params', array(
-            'is_rtl' => is_rtl() ? 'true' : 'false'
-        )
+        wp_localize_script(
+            'hash-elements-frontend-script',
+            'hash_element_params',
+            array(
+                'is_rtl' => is_rtl() ? 'true' : 'false'
+            )
         );
     }
 
