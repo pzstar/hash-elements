@@ -8,7 +8,7 @@ if (!defined('ABSPATH'))
 
 class Sticky_Column {
 
-    private static $instance = null;
+    private static $instance = NULL;
 
     public static function instance() {
         if (is_null(self::$instance)) {
@@ -29,49 +29,53 @@ class Sticky_Column {
 
     public function add_controls($section) {
         $section->add_control(
-                'hash_elements_sidebar_sticky', [
-            'label' => esc_html__('Enable Sticky Sidebar', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::SWITCHER,
-            'default' => '',
-            'render_type' => 'template',
-            'return_value' => 'true',
-                ]
+            'hash_elements_sidebar_sticky',
+            [
+                'label' => esc_html__('Enable Sticky Sidebar', 'hash-elements'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'default' => '',
+                'render_type' => 'template',
+                'return_value' => 'true',
+            ]
         );
 
         $section->add_control(
-                'hash_elements_sidebar_sticky_top_spacing', array(
-            'label' => esc_html__('Top Spacing(px)', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::NUMBER,
-            'default' => 50,
-            'min' => 0,
-            'max' => 500,
-            'step' => 1,
-            'condition' => array(
-                'hash_elements_sidebar_sticky' => 'true',
-            ),
-            'render_type' => 'template',
-                )
+            'hash_elements_sidebar_sticky_top_spacing',
+            array(
+                'label' => esc_html__('Top Spacing(px)', 'hash-elements'),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'default' => 50,
+                'min' => 0,
+                'max' => 500,
+                'step' => 1,
+                'condition' => array(
+                    'hash_elements_sidebar_sticky' => 'true',
+                ),
+                'render_type' => 'template',
+            )
         );
 
         $section->add_control(
-                'hash_elements_sidebar_sticky_bottom_spacing', array(
-            'label' => esc_html__('Bottom Spacing(px)', 'hash-elements'),
-            'type' => \Elementor\Controls_Manager::NUMBER,
-            'default' => 50,
-            'min' => 0,
-            'max' => 500,
-            'step' => 1,
-            'condition' => array(
-                'hash_elements_sidebar_sticky' => 'true',
-            ),
-            'render_type' => 'template',
-                )
+            'hash_elements_sidebar_sticky_bottom_spacing',
+            array(
+                'label' => esc_html__('Bottom Spacing(px)', 'hash-elements'),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'default' => 50,
+                'min' => 0,
+                'max' => 500,
+                'step' => 1,
+                'condition' => array(
+                    'hash_elements_sidebar_sticky' => 'true',
+                ),
+                'render_type' => 'template',
+            )
         );
 
         $section->add_control(
-                'hash_elements_hr', [
-            'type' => \Elementor\Controls_Manager::DIVIDER,
-                ]
+            'hash_elements_hr',
+            [
+                'type' => \Elementor\Controls_Manager::DIVIDER,
+            ]
         );
     }
 
@@ -80,11 +84,13 @@ class Sticky_Column {
         if ('true' === $settings['hash_elements_sidebar_sticky']) {
             $top_spacing = $settings['hash_elements_sidebar_sticky_top_spacing'] ? $settings['hash_elements_sidebar_sticky_top_spacing'] : 0;
             $bottom_spacing = $settings['hash_elements_sidebar_sticky_bottom_spacing'] ? $settings['hash_elements_sidebar_sticky_bottom_spacing'] : 0;
-            $widget->add_render_attribute('_wrapper', array(
-                'class' => 'he-elementor-sticky-column',
-                'data-top-spacing' => absint($top_spacing),
-                'data-bottom-spacing' => absint($bottom_spacing)
-                    )
+            $widget->add_render_attribute(
+                '_wrapper',
+                array(
+                    'class' => 'he-elementor-sticky-column',
+                    'data-top-spacing' => absint($top_spacing),
+                    'data-bottom-spacing' => absint($bottom_spacing)
+                )
             );
         }
     }
@@ -93,19 +99,14 @@ class Sticky_Column {
         ob_start();
         $old_template = $template;
         ?>
-        <#
-        if ( 'true' === settings.hash_elements_sidebar_sticky ) {
-        view.addRenderAttribute( '_column_wrapper', 'class', 'he-elementor-sticky-column' );
-        view.addRenderAttribute( '_column_wrapper', 'data-top-spacing', settings.hash_elements_sidebar_sticky_top_spacing );
-        view.addRenderAttribute( '_column_wrapper', 'data-bottom-spacing', settings.hash_elements_sidebar_sticky_bottom_spacing );
-        #>
-        <div {{{ view.getRenderAttributeString( '_column_wrapper' ) }}}></div>
-        <# } #>
-        <?php
-        $content = ob_get_contents();
-        ob_end_clean();
+        <# if ( 'true'===settings.hash_elements_sidebar_sticky ) { view.addRenderAttribute( '_column_wrapper' , 'class' , 'he-elementor-sticky-column' ); view.addRenderAttribute( '_column_wrapper' , 'data-top-spacing' , settings.hash_elements_sidebar_sticky_top_spacing ); view.addRenderAttribute( '_column_wrapper' , 'data-bottom-spacing' , settings.hash_elements_sidebar_sticky_bottom_spacing ); #>
+            <div {{{ view.getRenderAttributeString( '_column_wrapper' ) }}}></div>
+            <# } #>
+                <?php
+                $content = ob_get_contents();
+                ob_end_clean();
 
-        return $content . $old_template;
+                return $content . $old_template;
     }
 
 }

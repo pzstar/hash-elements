@@ -201,12 +201,12 @@
 
                 $element.find('.het-portfolio-cat-name-list').on('click', '.het-portfolio-cat-name', function () {
                     var filterValue = $(this).attr('data-filter');
-                    $container.isotope({filter: filterValue});
+                    $container.isotope({ filter: filterValue });
 
                     HashSetMasonary($container);
                     HashGetMasonary($element, $container);
 
-                    $container.isotope({filter: filterValue});
+                    $container.isotope({ filter: filterValue });
 
                     $element.find('.het-portfolio-cat-name').removeClass('active');
                     $(this).addClass('active');
@@ -316,7 +316,7 @@
 
             if (enable_sticky) {
                 $scope.find('.elementor-column-wrap').addClass('theiaStickySidebar');
-                $scope.css({display: 'block'});
+                $scope.css({ display: 'block' });
 
                 $scope.theiaStickySidebar({
                     additionalMarginTop: parseInt(topSpacing) + adminbarHeight,

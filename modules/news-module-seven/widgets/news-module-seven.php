@@ -41,71 +41,78 @@ class NewsModuleSeven extends Widget_Base {
 
 
         $this->start_controls_section(
-                'header', [
-            'label' => esc_html__('Header', 'hash-elements'),
-                ]
+            'header',
+            [
+                'label' => esc_html__('Header', 'hash-elements'),
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Header::get_type(), [
-            'name' => 'header',
-            'label' => esc_html__('Header', 'hash-elements'),
-                ]
+            Group_Control_Header::get_type(),
+            [
+                'name' => 'header',
+                'label' => esc_html__('Header', 'hash-elements'),
+            ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'section_post_query', [
-            'label' => esc_html__('Content Filter', 'hash-elements'),
-                ]
+            'section_post_query',
+            [
+                'label' => esc_html__('Content Filter', 'hash-elements'),
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Query::get_type(), [
-            'name' => 'posts',
-            'label' => esc_html__('Posts', 'hash-elements'),
-                ]
+            Group_Control_Query::get_type(),
+            [
+                'name' => 'posts',
+                'label' => esc_html__('Posts', 'hash-elements'),
+            ]
         );
 
         $this->end_controls_section();
 
 
         $this->start_controls_section(
-                'section_featured_block', [
-            'label' => esc_html__('Featured Block', 'hash-elements'),
-                ]
+            'section_featured_block',
+            [
+                'label' => esc_html__('Featured Block', 'hash-elements'),
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Image_Size::get_type(), [
-            'name' => 'featured_post_image',
-            'exclude' => ['custom'],
-            'include' => [],
-            'default' => 'large',
-                ]
+            Group_Control_Image_Size::get_type(),
+            [
+                'name' => 'featured_post_image',
+                'exclude' => ['custom'],
+                'include' => [],
+                'default' => 'large',
+            ]
         );
 
         $this->add_control(
-                'featured_thumb_height', [
-            'label' => esc_html__('Image Height(%)', 'hash-elements'),
-            'type' => Controls_Manager::SLIDER,
-            'size_units' => ['%'],
-            'range' => [
-                '%' => [
-                    'min' => 30,
-                    'max' => 150,
-                    'step' => 1
+            'featured_thumb_height',
+            [
+                'label' => esc_html__('Image Height(%)', 'hash-elements'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['%'],
+                'range' => [
+                    '%' => [
+                        'min' => 30,
+                        'max' => 150,
+                        'step' => 1
+                    ],
                 ],
-            ],
-            'default' => [
-                'unit' => '%',
-                'size' => 70,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven .he-big-block .he-post-item .he-thumb-container' => 'padding-bottom: {{SIZE}}{{UNIT}};',
-            ],
-                ]
+                'default' => [
+                    'unit' => '%',
+                    'size' => 70,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven .he-big-block .he-post-item .he-thumb-container' => 'padding-bottom: {{SIZE}}{{UNIT}};',
+                ],
+            ]
         );
 
         $this->add_control('featured_excerpt_length', [
@@ -117,336 +124,365 @@ class NewsModuleSeven extends Widget_Base {
         ]);
 
         $this->add_control(
-                'featured_post_author', [
-            'label' => esc_html__('Show Post Author', 'hash-elements'),
-            'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Yes', 'hash-elements'),
-            'label_off' => esc_html__('No', 'hash-elements'),
-            'return_value' => 'yes',
-            'separator' => 'before',
-            'default' => 'yes'
-                ]
-        );
-
-        $this->add_control(
-                'featured_post_date', [
-            'label' => esc_html__('Show Post Date', 'hash-elements'),
-            'type' => Controls_Manager::SWITCHER,
-            'default' => 'yes',
-            'label_on' => esc_html__('Yes', 'hash-elements'),
-            'label_off' => esc_html__('No', 'hash-elements'),
-            'return_value' => 'yes',
-            'default' => 'yes'
-                ]
-        );
-
-        $this->add_control(
-                'featured_post_comment', [
-            'label' => esc_html__('Show Post Comments', 'hash-elements'),
-            'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Yes', 'hash-elements'),
-            'label_off' => esc_html__('No', 'hash-elements'),
-            'return_value' => 'yes',
-            'default' => 'yes'
-                ]
-        );
-
-        $this->add_control(
-                'featured_post_category', [
-            'label' => esc_html__('Show Category', 'hash-elements'),
-            'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Yes', 'hash-elements'),
-            'label_off' => esc_html__('No', 'hash-elements'),
-            'return_value' => 'yes',
-            'default' => 'yes'
-                ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'section_listing_block', [
-            'label' => esc_html__('Listing Block', 'hash-elements'),
-                ]
-        );
-
-        $this->add_group_control(
-                Group_Control_Image_Size::get_type(), [
-            'name' => 'listing_post_image',
-            'exclude' => ['custom'],
-            'include' => [],
-            'default' => 'large',
-                ]
-        );
-
-        $this->add_control(
-                'listing_thumb_width', [
-            'label' => esc_html__('Image Width(px)', 'hash-elements'),
-            'type' => Controls_Manager::SLIDER,
-            'size_units' => ['px'],
-            'range' => [
-                'px' => [
-                    'min' => 50,
-                    'max' => 300,
-                    'step' => 1
-                ],
-            ],
-            'default' => [
-                'unit' => 'px',
-                'size' => 120,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven .he-small-block .he-post-thumb' => 'width: {{SIZE}}{{UNIT}};',
-                '{{WRAPPER}}' => '--he-image-width: {{SIZE}}{{UNIT}};'
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'listing_thumb_height', [
-            'label' => esc_html__('Image Height(%)', 'hash-elements'),
-            'type' => Controls_Manager::SLIDER,
-            'size_units' => ['%'],
-            'range' => [
-                '%' => [
-                    'min' => 30,
-                    'max' => 150,
-                    'step' => 1
-                ],
-            ],
-            'default' => [
-                'unit' => '%',
-                'size' => 80,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven .he-small-block .he-post-item .he-thumb-container' => 'padding-bottom: {{SIZE}}{{UNIT}};',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'listing_post_author', [
-            'label' => esc_html__('Show Post Author', 'hash-elements'),
-            'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Yes', 'hash-elements'),
-            'label_off' => esc_html__('No', 'hash-elements'),
-            'return_value' => 'yes',
-            'separator' => 'before'
-                ]
-        );
-
-        $this->add_control(
-                'listing_post_date', [
-            'label' => esc_html__('Show Post Date', 'hash-elements'),
-            'type' => Controls_Manager::SWITCHER,
-            'default' => 'yes',
-            'label_on' => esc_html__('Yes', 'hash-elements'),
-            'label_off' => esc_html__('No', 'hash-elements'),
-            'return_value' => 'yes',
-                ]
-        );
-
-        $this->add_control(
-                'listing_post_comment', [
-            'label' => esc_html__('Show Post Comments', 'hash-elements'),
-            'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Yes', 'hash-elements'),
-            'label_off' => esc_html__('No', 'hash-elements'),
-            'return_value' => 'yes',
-                ]
-        );
-
-        $this->add_control(
-                'listing_post_category', [
-            'label' => esc_html__('Show Category', 'hash-elements'),
-            'type' => Controls_Manager::SWITCHER,
-            'label_on' => esc_html__('Yes', 'hash-elements'),
-            'label_off' => esc_html__('No', 'hash-elements'),
-            'return_value' => 'yes',
-            'default' => 'yes'
-                ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'additional_settings', [
-            'label' => esc_html__('Additional Settings', 'hash-elements'),
-                ]
-        );
-
-        $this->add_control(
-                'image_border_radius', [
-            'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),
-            'type' => Controls_Manager::SLIDER,
-            'size_units' => ['px'],
-            'range' => [
-                'px' => [
-                    'min' => 0,
-                    'max' => 30,
-                    'step' => 1
-                ],
-            ],
-            'default' => [
-                'unit' => 'px',
-                'size' => 0,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .he-post-thumb' => 'border-radius: {{SIZE}}{{UNIT}};'
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'date_format', [
-            'label' => esc_html__('Date Format', 'hash-elements'),
-            'type' => Controls_Manager::SELECT,
-            'options' => [
-                'relative_format' => esc_html__('Relative Format (Ago)', 'hash-elements'),
-                'default' => esc_html__('WordPress Default Format', 'hash-elements'),
-                'custom' => esc_html__('Custom Format', 'hash-elements'),
-            ],
-            'default' => 'default',
-            'separator' => 'before',
-            'label_block' => true
-                ]
-        );
-
-        $this->add_control(
-                'custom_date_format', [
-            'label' => esc_html__('Custom Date Format', 'hash-elements'),
-            'type' => Controls_Manager::TEXT,
-            'default' => 'F j, Y',
-            'placeholder' => esc_html__('F j, Y', 'hash-elements'),
-            'condition' => [
-                'date_format' => 'custom'
+            'featured_post_author',
+            [
+                'label' => esc_html__('Show Post Author', 'hash-elements'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
+                'return_value' => 'yes',
+                'separator' => 'before',
+                'default' => 'yes'
             ]
-                ]
+        );
+
+        $this->add_control(
+            'featured_post_date',
+            [
+                'label' => esc_html__('Show Post Date', 'hash-elements'),
+                'type' => Controls_Manager::SWITCHER,
+                'default' => 'yes',
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
+                'return_value' => 'yes',
+                'default' => 'yes'
+            ]
+        );
+
+        $this->add_control(
+            'featured_post_comment',
+            [
+                'label' => esc_html__('Show Post Comments', 'hash-elements'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
+                'return_value' => 'yes',
+                'default' => 'yes'
+            ]
+        );
+
+        $this->add_control(
+            'featured_post_category',
+            [
+                'label' => esc_html__('Show Category', 'hash-elements'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
+                'return_value' => 'yes',
+                'default' => 'yes'
+            ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'header_title_style', [
-            'label' => esc_html__('Header Title', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
-        );
-
-        $this->add_control(
-                'header_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'header_short_border_color', [
-            'label' => esc_html__('Short Border Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
-                '{{WRAPPER}} .he-title-style2.he-block-title span:before' => 'background-color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'header_long_border_color', [
-            'label' => esc_html__('Long Border Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
-                '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
-            ],
-                ]
+            'section_listing_block',
+            [
+                'label' => esc_html__('Listing Block', 'hash-elements'),
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'header_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-block-title'
-                ]
+            Group_Control_Image_Size::get_type(),
+            [
+                'name' => 'listing_post_image',
+                'exclude' => ['custom'],
+                'include' => [],
+                'default' => 'large',
+            ]
+        );
+
+        $this->add_control(
+            'listing_thumb_width',
+            [
+                'label' => esc_html__('Image Width(px)', 'hash-elements'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 50,
+                        'max' => 300,
+                        'step' => 1
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 120,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven .he-small-block .he-post-thumb' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}}' => '--he-image-width: {{SIZE}}{{UNIT}};'
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'listing_thumb_height',
+            [
+                'label' => esc_html__('Image Height(%)', 'hash-elements'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['%'],
+                'range' => [
+                    '%' => [
+                        'min' => 30,
+                        'max' => 150,
+                        'step' => 1
+                    ],
+                ],
+                'default' => [
+                    'unit' => '%',
+                    'size' => 80,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven .he-small-block .he-post-item .he-thumb-container' => 'padding-bottom: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'listing_post_author',
+            [
+                'label' => esc_html__('Show Post Author', 'hash-elements'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
+                'return_value' => 'yes',
+                'separator' => 'before'
+            ]
+        );
+
+        $this->add_control(
+            'listing_post_date',
+            [
+                'label' => esc_html__('Show Post Date', 'hash-elements'),
+                'type' => Controls_Manager::SWITCHER,
+                'default' => 'yes',
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
+                'return_value' => 'yes',
+            ]
+        );
+
+        $this->add_control(
+            'listing_post_comment',
+            [
+                'label' => esc_html__('Show Post Comments', 'hash-elements'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
+                'return_value' => 'yes',
+            ]
+        );
+
+        $this->add_control(
+            'listing_post_category',
+            [
+                'label' => esc_html__('Show Category', 'hash-elements'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
+                'return_value' => 'yes',
+                'default' => 'yes'
+            ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'category_style', [
-            'label' => esc_html__('Category', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
+            'additional_settings',
+            [
+                'label' => esc_html__('Additional Settings', 'hash-elements'),
+            ]
+        );
+
+        $this->add_control(
+            'image_border_radius',
+            [
+                'label' => esc_html__('Image Border Radius(px)', 'hash-elements'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 30,
+                        'step' => 1
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 0,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .he-post-thumb' => 'border-radius: {{SIZE}}{{UNIT}};'
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'date_format',
+            [
+                'label' => esc_html__('Date Format', 'hash-elements'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'relative_format' => esc_html__('Relative Format (Ago)', 'hash-elements'),
+                    'default' => esc_html__('WordPress Default Format', 'hash-elements'),
+                    'custom' => esc_html__('Custom Format', 'hash-elements'),
+                ],
+                'default' => 'default',
+                'separator' => 'before',
+                'label_block' => true
+            ]
+        );
+
+        $this->add_control(
+            'custom_date_format',
+            [
+                'label' => esc_html__('Custom Date Format', 'hash-elements'),
+                'type' => Controls_Manager::TEXT,
+                'default' => 'F j, Y',
+                'placeholder' => esc_html__('F j, Y', 'hash-elements'),
+                'condition' => [
+                    'date_format' => 'custom'
                 ]
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'header_title_style',
+            [
+                'label' => esc_html__('Header Title', 'hash-elements'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'header_color',
+            [
+                'label' => esc_html__('Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'header_short_border_color',
+            [
+                'label' => esc_html__('Short Border Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
+                    '{{WRAPPER}} .he-title-style2.he-block-title span:before' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'header_long_border_color',
+            [
+                'label' => esc_html__('Long Border Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
+                ],
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'category_normal_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-news-module-seven ul.he-post-categories li a,
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'header_typography',
+                'label' => esc_html__('Typography', 'hash-elements'),
+                'selector' => '{{WRAPPER}} .he-block-title'
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'category_style',
+            [
+                'label' => esc_html__('Category', 'hash-elements'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'category_normal_typography',
+                'label' => esc_html__('Typography', 'hash-elements'),
+                'selector' => '{{WRAPPER}} .he-news-module-seven ul.he-post-categories li a,
                            {{WRAPPER}} .he-news-module-seven .post-content ul.he-post-categories li a',
-                ]
+            ]
         );
 
         $this->start_controls_tabs(
-                'category_style_tabs'
+            'category_style_tabs'
         );
 
         $this->start_controls_tab(
-                'category_normal_tab', [
-            'label' => __('Normal', 'hash-elements'),
-                ]
+            'category_normal_tab',
+            [
+                'label' => __('Normal', 'hash-elements'),
+            ]
         );
 
         $this->add_control(
-                'category_background_color', [
-            'label' => esc_html__('Background Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven ul.he-post-categories li  a' => 'background-color: {{VALUE}}',
-            ],
-                ]
+            'category_background_color',
+            [
+                'label' => esc_html__('Background Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven ul.he-post-categories li  a' => 'background-color: {{VALUE}}',
+                ],
+            ]
         );
 
         $this->add_control(
-                'category_text_color', [
-            'label' => esc_html__('Text Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven ul.he-post-categories li  a' => 'color: {{VALUE}}',
-            ],
-                ]
+            'category_text_color',
+            [
+                'label' => esc_html__('Text Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven ul.he-post-categories li  a' => 'color: {{VALUE}}',
+                ],
+            ]
         );
 
         $this->end_controls_tab();
 
         $this->start_controls_tab(
-                'category_hover_tab', [
-            'label' => __('Hover', 'hash-elements'),
-                ]
+            'category_hover_tab',
+            [
+                'label' => __('Hover', 'hash-elements'),
+            ]
         );
 
         $this->add_control(
-                'category_background_hover_color', [
-            'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven ul.he-post-categories li:hover a' => 'background-color: {{VALUE}}',
-            ],
-                ]
+            'category_background_hover_color',
+            [
+                'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven ul.he-post-categories li:hover a' => 'background-color: {{VALUE}}',
+                ],
+            ]
         );
 
         $this->add_control(
-                'category_text_hover_color', [
-            'label' => esc_html__('Text Color (Hover)', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven ul.he-post-categories li:hover a' => 'color: {{VALUE}}',
-            ],
-                ]
+            'category_text_hover_color',
+            [
+                'label' => esc_html__('Text Color (Hover)', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven ul.he-post-categories li:hover a' => 'color: {{VALUE}}',
+                ],
+            ]
         );
 
         $this->end_controls_tab();
@@ -456,89 +492,98 @@ class NewsModuleSeven extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'post_title_style', [
-            'label' => esc_html__('Title', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
+            'post_title_style',
+            [
+                'label' => esc_html__('Title', 'hash-elements'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
         );
 
         $this->add_control(
-                'post_title_color', [
-            'label' => esc_html__('Title Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven .he-big-block .he-post-item .he-post-content h3.he-big-title, 
+            'post_title_color',
+            [
+                'label' => esc_html__('Title Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven .he-big-block .he-post-item .he-post-content h3.he-big-title, 
                      {{WRAPPER}} .he-news-module-seven .he-small-block .he-post-item .he-post-content h3' => 'color: {{VALUE}}',
-            ],
-                ]
+                ],
+            ]
         );
 
         $this->add_control(
-                'post_title_hover_color', [
-            'label' => esc_html__('Title Color (Hover)', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven .he-post-item h3 a:hover' => 'color: {{VALUE}}',
-            ],
-                ]
+            'post_title_hover_color',
+            [
+                'label' => esc_html__('Title Color (Hover)', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven .he-post-item h3 a:hover' => 'color: {{VALUE}}',
+                ],
+            ]
         );
 
         $this->start_controls_tabs(
-                'post_title_style_tabs'
+            'post_title_style_tabs'
         );
 
         $this->start_controls_tab(
-                'featured_title_tab', [
-            'label' => __('Featured', 'hash-elements'),
-                ]
+            'featured_title_tab',
+            [
+                'label' => __('Featured', 'hash-elements'),
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'featured_title_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-news-module-seven .he-big-block .he-post-item .he-post-content h3.he-big-title',
-                ]
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'featured_title_typography',
+                'label' => esc_html__('Typography', 'hash-elements'),
+                'selector' => '{{WRAPPER}} .he-news-module-seven .he-big-block .he-post-item .he-post-content h3.he-big-title',
+            ]
         );
 
         $this->add_control(
-                'featured_title_margin', [
-            'label' => esc_html__('Margin', 'hash-elements'),
-            'type' => Controls_Manager::DIMENSIONS,
-            'allowed_dimensions' => 'vertical',
-            'size_units' => ['px', '%', 'em'],
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven .he-big-block .he-post-item .he-post-content h3.he-big-title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
-            ],
-                ]
+            'featured_title_margin',
+            [
+                'label' => esc_html__('Margin', 'hash-elements'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'allowed_dimensions' => 'vertical',
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven .he-big-block .he-post-item .he-post-content h3.he-big-title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                ],
+            ]
         );
 
         $this->end_controls_tab();
 
         $this->start_controls_tab(
-                'listing_title_tab', [
-            'label' => __('Listing Post', 'hash-elements'),
-                ]
+            'listing_title_tab',
+            [
+                'label' => __('Listing Post', 'hash-elements'),
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'listing_title_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-news-module-seven .he-small-block .he-post-item .he-post-content h3',
-                ]
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'listing_title_typography',
+                'label' => esc_html__('Typography', 'hash-elements'),
+                'selector' => '{{WRAPPER}} .he-news-module-seven .he-small-block .he-post-item .he-post-content h3',
+            ]
         );
 
         $this->add_control(
-                'listing_title_margin', [
-            'label' => esc_html__('Margin', 'hash-elements'),
-            'type' => Controls_Manager::DIMENSIONS,
-            'allowed_dimensions' => 'vertical',
-            'size_units' => ['px', '%', 'em'],
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven .he-small-block .he-post-item .he-post-content h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
-            ],
-                ]
+            'listing_title_margin',
+            [
+                'label' => esc_html__('Margin', 'hash-elements'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'allowed_dimensions' => 'vertical',
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven .he-small-block .he-post-item .he-post-content h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                ],
+            ]
         );
 
         $this->end_controls_tab();
@@ -549,55 +594,61 @@ class NewsModuleSeven extends Widget_Base {
 
 
         $this->start_controls_section(
-                'excerpt_style', [
-            'label' => esc_html__('Excerpt', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
+            'excerpt_style',
+            [
+                'label' => esc_html__('Excerpt', 'hash-elements'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
         );
 
         $this->add_control(
-                'excerpt_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven .he-big-block .he-post-item .he-post-content .he-excerpt' => 'color: {{VALUE}}',
-            ],
-                ]
+            'excerpt_color',
+            [
+                'label' => esc_html__('Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven .he-big-block .he-post-item .he-post-content .he-excerpt' => 'color: {{VALUE}}',
+                ],
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'excerpt_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-news-module-seven .he-big-block .he-post-item .he-post-content .he-excerpt',
-                ]
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'excerpt_typography',
+                'label' => esc_html__('Typography', 'hash-elements'),
+                'selector' => '{{WRAPPER}} .he-news-module-seven .he-big-block .he-post-item .he-post-content .he-excerpt',
+            ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'post_metas', [
-            'label' => esc_html__('Metas', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
+            'post_metas',
+            [
+                'label' => esc_html__('Metas', 'hash-elements'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
         );
 
         $this->add_control(
-                'post_metas_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-news-module-seven .he-post-item .he-post-content .he-post-meta' => 'color: {{VALUE}}',
-            ],
-                ]
+            'post_metas_color',
+            [
+                'label' => esc_html__('Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-news-module-seven .he-post-item .he-post-content .he-post-meta' => 'color: {{VALUE}}',
+                ],
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'post_metas_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-news-module-seven .he-post-content .he-post-meta'
-                ]
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'post_metas_typography',
+                'label' => esc_html__('Typography', 'hash-elements'),
+                'selector' => '{{WRAPPER}} .he-news-module-seven .he-post-content .he-post-meta'
+            ]
         );
 
         $this->end_controls_section();
@@ -705,10 +756,12 @@ class NewsModuleSeven extends Widget_Base {
         $settings = $this->get_settings();
 
         $this->add_render_attribute(
-                'header_attr', 'class', [
-            'he-block-title',
-            $settings['header_style']
-                ]
+            'header_attr',
+            'class',
+            [
+                'he-block-title',
+                $settings['header_style']
+            ]
         );
 
         $link_open = $link_close = "";
@@ -785,7 +838,7 @@ class NewsModuleSeven extends Widget_Base {
         $settings = $this->get_settings_for_display();
         $post_author = $count == 1 ? $settings['featured_post_author'] : $settings['listing_post_author'];
         $post_date = $count == 1 ? $settings['featured_post_date'] : $settings[
-                'listing_post_date'];
+            'listing_post_date'];
         $post_comment = $count == 1 ? $settings['featured_post_comment'] : $settings['listing_post_comment'];
 
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {

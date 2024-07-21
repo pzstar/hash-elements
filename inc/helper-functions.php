@@ -68,12 +68,14 @@ if (!function_exists('hash_elements_get_posts')) {
 
     function hash_elements_get_posts() {
 
-        $post_list = get_posts(array(
-            'post_type' => 'post',
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'posts_per_page' => -1,
-        ));
+        $post_list = get_posts(
+            array(
+                'post_type' => 'post',
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'posts_per_page' => -1,
+            )
+        );
 
         $posts = array();
 
@@ -165,9 +167,11 @@ if (!function_exists('hash_elements_get_categories')) {
     function hash_elements_get_categories() {
         $cats = array();
 
-        $terms = get_categories(array(
-            'hide_empty' => true
-        ));
+        $terms = get_categories(
+            array(
+                'hide_empty' => true
+            )
+        );
 
         foreach ($terms as $term) {
             $cats[$term->term_id] = $term->name;
@@ -184,9 +188,11 @@ if (!function_exists('hash_elements_get_tags')) {
     function hash_elements_get_tags() {
         $tags = array();
 
-        $terms = get_tags(array(
-            'hide_empty' => true
-        ));
+        $terms = get_tags(
+            array(
+                'hide_empty' => true
+            )
+        );
 
         foreach ($terms as $term) {
             $tags[$term->term_id] = $term->name;
