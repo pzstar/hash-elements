@@ -7,10 +7,10 @@ if (!defined('ABSPATH'))
 
 class HASHELE_Widget_Loader {
 
-    private static $instance = null;
+    private static $instance = NULL;
 
     public static function get_instance() {
-        if (self::$instance == null) {
+        if (self::$instance == NULL) {
             self::$instance = new self;
         }
         return self::$instance;
@@ -42,15 +42,15 @@ class HASHELE_Widget_Loader {
         if (!class_exists($class_to_load)) {
 
             $filename = strtolower(
-                    preg_replace(
-                            ['/^' . __NAMESPACE__ . '\\\/', '/([a-z])([A-Z])/', '/_/', '/\\\/'], ['', '$1-$2', '-', DIRECTORY_SEPARATOR], $class_to_load
-                    )
+                preg_replace(
+                    ['/^' . __NAMESPACE__ . '\\\/', '/([a-z])([A-Z])/', '/_/', '/\\\/'], ['', '$1-$2', '-', DIRECTORY_SEPARATOR], $class_to_load
+                )
             );
 
             $filename = HASHELE_PATH . $filename . '.php';
 
             if (is_readable($filename)) {
-                include( $filename );
+                include ($filename);
             }
         }
 
@@ -144,7 +144,7 @@ class HASHELE_Widget_Loader {
      * Register Frontend Styles
      */
     public function register_frontend_styles() {
-        
+
     }
 
     /**
@@ -179,7 +179,7 @@ class HASHELE_Widget_Loader {
      * Preview Styles
      */
     public function enqueue_preview_styles() {
-        
+
     }
 
     /**

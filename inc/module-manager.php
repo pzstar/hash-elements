@@ -6,7 +6,7 @@ if (!defined('ABSPATH'))
     exit; // Exit if accessed directly
 
 if (!function_exists('is_plugin_active')) {
-    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    include_once (ABSPATH . 'wp-admin/includes/plugin.php');
 }
 
 final class HASHELE_Modules_Manager {
@@ -23,7 +23,7 @@ final class HASHELE_Modules_Manager {
     }
 
     private function require_files() {
-        require( HASHELE_PATH . 'base/module-base.php' );
+        require (HASHELE_PATH . 'base/module-base.php');
     }
 
     public function register_modules() {
