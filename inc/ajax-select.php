@@ -45,12 +45,12 @@ class Ajax_Select {
         $post_type = isset($_POST['post_type']) ? wp_unslash($_POST['post_type']) : 'post'; // phpcs:ignore
         $results = array();
         $query = new \WP_Query(
-            array(
-                'post_type' => $post_type,
-                'post__in' => $ids,
-                'posts_per_page' => -1,
-                'orderby' => 'post__in',
-            )
+                array(
+            'post_type' => $post_type,
+            'post__in' => $ids,
+            'posts_per_page' => - 1,
+            'orderby' => 'post__in',
+                )
         );
         wp_reset_postdata();
         if (!isset($query->posts)) {

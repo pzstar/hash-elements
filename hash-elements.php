@@ -30,11 +30,11 @@ if (!class_exists('Hash_Elements')) {
 
     class Hash_Elements {
 
-        private static $instance = NULL;
+        private static $instance = null;
 
         public static function get_instance() {
             // If the single instance hasn't been set, set it now.
-            if (self::$instance == NULL) {
+            if (self::$instance == null) {
                 self::$instance = new self;
             }
             return self::$instance;
@@ -61,11 +61,11 @@ if (!class_exists('Hash_Elements')) {
                 return;
             }
 
-            require (HASHELE_PATH . 'inc/helper-functions.php');
-            require (HASHELE_PATH . 'inc/widget-loader.php');
-            require (HASHELE_PATH . 'inc/sticky-column.php');
-            require (HASHELE_PATH . 'inc/sticky-container.php');
-            require (HASHELE_PATH . 'inc/ajax-select.php');
+            require(HASHELE_PATH . 'inc/helper-functions.php');
+            require(HASHELE_PATH . 'inc/widget-loader.php');
+            require(HASHELE_PATH . 'inc/sticky-column.php');
+            require(HASHELE_PATH . 'inc/sticky-container.php');
+            require(HASHELE_PATH . 'inc/ajax-select.php');
         }
 
         public function required_plugins_notice() {

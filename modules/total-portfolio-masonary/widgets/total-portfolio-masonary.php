@@ -38,257 +38,257 @@ class TotalPortfolioMasonary extends Widget_Base {
     protected function register_controls() {
 
         $this->start_controls_section(
-            'section_post_query', [
-                'label' => esc_html__('Content Filter', 'hash-elements'),
-            ]
+                'section_post_query', [
+            'label' => esc_html__('Content Filter', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'category_ids', [
-                'label' => esc_html__('Choose Category ', 'hash-elements'),
-                'type' => Controls_Manager::SELECT2,
-                'label_block' => true,
-                'multiple' => true,
-                'options' => $this->get_portfolio_category(),
-            ]
+                'category_ids', [
+            'label' => esc_html__('Choose Category ', 'hash-elements'),
+            'type' => Controls_Manager::SELECT2,
+            'label_block' => true,
+            'multiple' => true,
+            'options' => $this->get_portfolio_category(),
+                ]
         );
 
         $this->add_control(
-            'exclude_posts', [
-                'label' => __('Exclude Posts', 'hash-elements'),
-                'type' => Controls_Manager::SELECT2,
-                'label_block' => true,
-                'multiple' => true,
-                'options' => $this->get_posts(),
-            ]
+                'exclude_posts', [
+            'label' => __('Exclude Posts', 'hash-elements'),
+            'type' => Controls_Manager::SELECT2,
+            'label_block' => true,
+            'multiple' => true,
+            'options' => $this->get_posts(),
+                ]
         );
 
         $this->add_control(
-            'orderby', [
-                'label' => esc_html__('Order By', 'hash-elements'),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    'date' => esc_html__('Date', 'hash-elements'),
-                    'modified' => esc_html__('Last Modified Date', 'hash-elements'),
-                    'rand' => esc_html__('Rand', 'hash-elements'),
-                    'comment_count' => esc_html__('Comment Count', 'hash-elements'),
-                    'title' => esc_html__('Title', 'hash-elements'),
-                    'ID' => esc_html__('Post ID', 'hash-elements'),
-                    'author' => esc_html__('Show Post Author', 'hash-elements'),
-                ],
-                'default' => 'date'
-            ]
+                'orderby', [
+            'label' => esc_html__('Order By', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'options' => [
+                'date' => esc_html__('Date', 'hash-elements'),
+                'modified' => esc_html__('Last Modified Date', 'hash-elements'),
+                'rand' => esc_html__('Rand', 'hash-elements'),
+                'comment_count' => esc_html__('Comment Count', 'hash-elements'),
+                'title' => esc_html__('Title', 'hash-elements'),
+                'ID' => esc_html__('Post ID', 'hash-elements'),
+                'author' => esc_html__('Show Post Author', 'hash-elements'),
+            ],
+            'default' => 'date'
+                ]
         );
 
         $this->add_control(
-            'order', [
-                'label' => esc_html__('Order', 'hash-elements'),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    'DESC' => esc_html__('Descending', 'hash-elements'),
-                    'ASC' => esc_html__('Ascending', 'hash-elements'),
-                ],
-                'default' => 'DESC'
-            ]
+                'order', [
+            'label' => esc_html__('Order', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'options' => [
+                'DESC' => esc_html__('Descending', 'hash-elements'),
+                'ASC' => esc_html__('Ascending', 'hash-elements'),
+            ],
+            'default' => 'DESC'
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'section_settings', [
-                'label' => esc_html__('Settings', 'hash-elements'),
-            ]
+                'section_settings', [
+            'label' => esc_html__('Settings', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'active_cat', [
-                'label' => esc_html__('Active Category', 'hash-elements'),
-                'type' => Controls_Manager::SELECT,
-                'label_block' => true,
-                'default' => '*',
-                'options' => array('*' => esc_html__('All', 'hash-elements')) + $this->get_portfolio_category()
-            ]
+                'active_cat', [
+            'label' => esc_html__('Active Category', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'label_block' => true,
+            'default' => '*',
+            'options' => array('*' => esc_html__('All', 'hash-elements')) + $this->get_portfolio_category()
+                ]
         );
 
         $this->add_control(
-            'display_all_tab', [
-                'label' => __('Display All Tab', 'hash-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'hash-elements'),
-                'label_off' => __('No', 'hash-elements'),
-                'return_value' => 'yes',
-                'default' => 'yes',
-            ]
+                'display_all_tab', [
+            'label' => __('Display All Tab', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => __('Yes', 'hash-elements'),
+            'label_off' => __('No', 'hash-elements'),
+            'return_value' => 'yes',
+            'default' => 'yes',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'tab_style', [
-                'label' => esc_html__('Category Tab', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'tab_style', [
+            'label' => esc_html__('Category Tab', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'tab_icon_color', [
-                'label' => esc_html__('Icon Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#000000',
-                'selectors' => [
-                    '{{WRAPPER}} .het-portfolio-cat-name-list i' => 'color: {{VALUE}}',
-                ],
-            ]
+                'tab_icon_color', [
+            'label' => esc_html__('Icon Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#000000',
+            'selectors' => [
+                '{{WRAPPER}} .het-portfolio-cat-name-list i' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'tab_category_color', [
-                'label' => esc_html__('Category Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-portfolio-cat-name' => 'color: {{VALUE}}; border-color: {{VALUE}}',
-                ],
-            ]
+                'tab_category_color', [
+            'label' => esc_html__('Category Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-portfolio-cat-name' => 'color: {{VALUE}}; border-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'tab_category_hover_color', [
-                'label' => esc_html__('Category Color (Hover & Active)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#009dea',
-                'selectors' => [
-                    '{{WRAPPER}} .het-portfolio-cat-name.active, {{WRAPPER}} .het-portfolio-cat-name:hover' => 'color: {{VALUE}}',
-                ],
-            ]
+                'tab_category_hover_color', [
+            'label' => esc_html__('Category Color (Hover & Active)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#009dea',
+            'selectors' => [
+                '{{WRAPPER}} .het-portfolio-cat-name.active, {{WRAPPER}} .het-portfolio-cat-name:hover' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'tab_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .het-portfolio-cat-name-list',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'tab_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .het-portfolio-cat-name-list',
+                ]
         );
 
         $this->add_control(
-            'tab_alignment', [
-                'label' => __('Tab Alignment', 'square-plus'),
-                'type' => \Elementor\Controls_Manager::SELECT,
-                'default' => 'tab-align-right',
-                'options' => [
-                    'tab-align-left' => __('Left', 'square-plus'),
-                    'tab-align-center' => __('Center', 'square-plus'),
-                    'tab-align-right' => __('Right', 'square-plus')
-                ],
-            ]
+                'tab_alignment', [
+            'label' => __('Tab Alignment', 'square-plus'),
+            'type' => \Elementor\Controls_Manager::SELECT,
+            'default' => 'tab-align-right',
+            'options' => [
+                'tab-align-left' => __('Left', 'square-plus'),
+                'tab-align-center' => __('Center', 'square-plus'),
+                'tab-align-right' => __('Right', 'square-plus')
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'portfolio_style_tab', [
-                'label' => esc_html__('Portfolio Block', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'portfolio_style_tab', [
+            'label' => esc_html__('Portfolio Block', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'title_color', [
-                'label' => esc_html__('Title Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-portfolio-caption h5' => 'color: {{VALUE}}',
-                ],
-            ]
+                'title_color', [
+            'label' => esc_html__('Title Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-portfolio-caption h5' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'title_typography',
-                'label' => esc_html__('Title Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .het-portfolio-caption h5',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'title_typography',
+            'label' => esc_html__('Title Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .het-portfolio-caption h5',
+                ]
         );
 
         $this->add_control(
-            'portfolio_hover_bg', [
-                'label' => esc_html__('Overlay Color on Hover', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#000000',
-                'selectors' => [
-                    '{{WRAPPER}} .het-portfolio-caption' => 'background-color: {{VALUE}}',
-                ],
-                'separator' => 'before'
-            ]
+                'portfolio_hover_bg', [
+            'label' => esc_html__('Overlay Color on Hover', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#000000',
+            'selectors' => [
+                '{{WRAPPER}} .het-portfolio-caption' => 'background-color: {{VALUE}}',
+            ],
+            'separator' => 'before'
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'button_style', [
-                'label' => esc_html__('Zoom & Link Button', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'button_style', [
+            'label' => esc_html__('Zoom & Link Button', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->start_controls_tabs(
-            'button_style_tabs'
+                'button_style_tabs'
         );
 
         $this->start_controls_tab(
-            'normal_button_tab', [
-                'label' => __('Normal', 'hash-elements'),
-            ]
+                'normal_button_tab', [
+            'label' => __('Normal', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'normal_button_icon_color', [
-                'label' => esc_html__('Icon Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#000000',
-                'selectors' => [
-                    '{{WRAPPER}} .het-portfolio-caption a' => 'color: {{VALUE}}',
-                ],
-            ]
+                'normal_button_icon_color', [
+            'label' => esc_html__('Icon Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#000000',
+            'selectors' => [
+                '{{WRAPPER}} .het-portfolio-caption a' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'normal_button_bg_color', [
-                'label' => esc_html__('Background Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#FFFFFF',
-                'selectors' => [
-                    '{{WRAPPER}} .het-portfolio-caption a' => 'background-color: {{VALUE}}',
-                ],
-            ]
+                'normal_button_bg_color', [
+            'label' => esc_html__('Background Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#FFFFFF',
+            'selectors' => [
+                '{{WRAPPER}} .het-portfolio-caption a' => 'background-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_tab();
 
         $this->start_controls_tab(
-            'hover_button_tab', [
-                'label' => __('Hover', 'hash-elements'),
-            ]
+                'hover_button_tab', [
+            'label' => __('Hover', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'hover_button_icon_color', [
-                'label' => esc_html__('Icon Color (Hover)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-portfolio-caption a:hover' => 'color: {{VALUE}}',
-                ],
-            ]
+                'hover_button_icon_color', [
+            'label' => esc_html__('Icon Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-portfolio-caption a:hover' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'hover_button_bg_color', [
-                'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-portfolio-caption a:hover' => 'background-color: {{VALUE}}',
-                ],
-            ]
+                'hover_button_bg_color', [
+            'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-portfolio-caption a:hover' => 'background-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_tab();
@@ -313,7 +313,8 @@ class TotalPortfolioMasonary extends Widget_Base {
 
             if ($portfolio_cat) {
                 ?>
-                <div class="het-portfolio-cat-name-list <?php echo esc_attr($tab_alignment); ?>" data-active="<?php echo $active_tab; ?>">
+                <div class="het-portfolio-cat-name-list <?php echo esc_attr($tab_alignment); ?>"
+                     data-active="<?php echo $active_tab; ?>">
                     <i class="fa fa-th-large" aria-hidden="true"></i>
                     <?php if ($show_all) { ?>
                         <div class="het-portfolio-cat-name" data-filter="*">
@@ -367,14 +368,17 @@ class TotalPortfolioMasonary extends Widget_Base {
                                 ?>
                                 <div class="het-portfolio <?php echo esc_attr($category_slug); ?>">
                                     <div class="het-portfolio-outer-wrap">
-                                        <div class="het-portfolio-wrap" style="background-image: url(<?php echo esc_url($total_image[0]) ?>);">
+                                        <div class="het-portfolio-wrap"
+                                             style="background-image: url(<?php echo esc_url($total_image[0]) ?>);">
                                             <div class="het-portfolio-caption">
                                                 <h5><?php the_title(); ?></h5>
-                                                <a class="het-portfolio-link" href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-link"></i></a>
+                                                <a class="het-portfolio-link" href="<?php echo esc_url(get_permalink()); ?>"><i
+                                                        class="fa fa-link"></i></a>
 
                                                 <?php if (has_post_thumbnail()) { ?>
-                                                    <a class="het-portfolio-image" data-lightbox-gallery="gallery1" href="<?php echo esc_url($total_image_large[0]) ?>"><i class="fa fa-search"></i></a>
-                                                <?php } ?>
+                                                    <a class="het-portfolio-image" data-lightbox-gallery="gallery1"
+                                                       href="<?php echo esc_url($total_image_large[0]) ?>"><i class="fa fa-search"></i></a>
+                                                    <?php } ?>
                                             </div>
                                         </div>
                                     </div>
@@ -426,12 +430,12 @@ class TotalPortfolioMasonary extends Widget_Base {
     private function get_posts() {
         /** Get All Posts */
         $post_list = get_posts(
-            array(
-                'post_type' => 'post',
-                'orderby' => 'date',
-                'order' => 'DESC',
-                'posts_per_page' => -1,
-            )
+                array(
+                    'post_type' => 'post',
+                    'orderby' => 'date',
+                    'order' => 'DESC',
+                    'posts_per_page' => -1,
+                )
         );
 
         $posts = array();

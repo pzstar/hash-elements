@@ -39,282 +39,282 @@ class SquarePlusSlider extends Widget_Base {
     protected function register_controls() {
 
         $this->start_controls_section(
-            'slider', [
-                'label' => esc_html__('Slider', 'hash-elements'),
-            ]
+                'slider', [
+            'label' => esc_html__('Slider', 'hash-elements'),
+                ]
         );
 
         $repeater = new Repeater();
 
         $repeater->add_control(
-            'slider_image', [
-                'label' => __('Choose Image', 'hash-elements'),
-                'type' => Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-            ]
+                'slider_image', [
+            'label' => __('Choose Image', 'hash-elements'),
+            'type' => Controls_Manager::MEDIA,
+            'default' => [
+                'url' => Utils::get_placeholder_image_src(),
+            ],
+                ]
         );
 
         $repeater->add_control(
-            'slider_title', [
-                'label' => __('Title', 'hash-elements'),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-                'default' => __('Slider Title', 'hash-elements'),
-            ]
+                'slider_title', [
+            'label' => __('Title', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+            'default' => __('Slider Title', 'hash-elements'),
+                ]
         );
 
         $repeater->add_control(
-            'slider_description', [
-                'label' => __('Description', 'hash-elements'),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 5,
-                'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'hash-elements'),
-            ]
+                'slider_description', [
+            'label' => __('Description', 'hash-elements'),
+            'type' => Controls_Manager::TEXTAREA,
+            'rows' => 5,
+            'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'hash-elements'),
+                ]
         );
 
         $repeater->add_control(
-            'button_text', [
-                'label' => __('Button Text', 'hash-elements'),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-                'default' => __('Read More', 'hash-elements'),
-            ]
+                'button_text', [
+            'label' => __('Button Text', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+            'default' => __('Read More', 'hash-elements'),
+                ]
         );
 
         $repeater->add_control(
-            'button_link', [
-                'label' => __('Button Link', 'hash-elements'),
-                'type' => Controls_Manager::URL,
-                'placeholder' => __('Enter URL', 'hash-elements'),
-                'show_external' => true,
-                'default' => [
-                    'url' => '',
-                    'is_external' => true,
-                    'nofollow' => true,
-                ],
-            ]
+                'button_link', [
+            'label' => __('Button Link', 'hash-elements'),
+            'type' => Controls_Manager::URL,
+            'placeholder' => __('Enter URL', 'hash-elements'),
+            'show_external' => true,
+            'default' => [
+                'url' => '',
+                'is_external' => true,
+                'nofollow' => true,
+            ],
+                ]
         );
 
         $this->add_control(
-            'slider_block', [
-                'label' => __('Sliders', 'hash-elements'),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [
-                    [
-                        'slider_title' => __('Title', 'hash-elements'),
-                    ]
-                ],
-                'title_field' => '{{{ slider_title }}}',
-            ]
+                'slider_block', [
+            'label' => __('Sliders', 'hash-elements'),
+            'type' => Controls_Manager::REPEATER,
+            'fields' => $repeater->get_controls(),
+            'default' => [
+                [
+                    'slider_title' => __('Title', 'hash-elements'),
+                ]
+            ],
+            'title_field' => '{{{ slider_title }}}',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'slider_settings', [
-                'label' => esc_html__('Slider Settings', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_CONTENT,
-            ]
+                'slider_settings', [
+            'label' => esc_html__('Slider Settings', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_CONTENT,
+                ]
         );
 
         $this->add_control(
-            'autoplay', [
-                'label' => esc_html__('Autoplay', 'hash-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Yes', 'hash-elements'),
-                'label_off' => esc_html__('No', 'hash-elements'),
-                'return_value' => 'yes',
-                'default' => 'yes',
-            ]
+                'autoplay', [
+            'label' => esc_html__('Autoplay', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
+            'return_value' => 'yes',
+            'default' => 'yes',
+                ]
         );
 
         $this->add_control(
-            'pause_duration', [
-                'label' => esc_html__('Pause Duration (In Seconds)', 'hash-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['s'],
-                'range' => [
-                    's' => [
-                        'min' => 1,
-                        'max' => 20,
-                        'step' => 1
-                    ],
+                'pause_duration', [
+            'label' => esc_html__('Pause Duration (In Seconds)', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['s'],
+            'range' => [
+                's' => [
+                    'min' => 1,
+                    'max' => 20,
+                    'step' => 1
                 ],
-                'default' => [
-                    'unit' => 's',
-                    'size' => 5,
-                ],
-                'condition' => [
-                    'autoplay' => 'yes',
-                ],
-            ]
+            ],
+            'default' => [
+                'unit' => 's',
+                'size' => 5,
+            ],
+            'condition' => [
+                'autoplay' => 'yes',
+            ],
+                ]
         );
 
         $this->add_control(
-            'nav', [
-                'label' => esc_html__('Nav Arrow', 'hash-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'hash-elements'),
-                'label_off' => esc_html__('Hide', 'hash-elements'),
-                'return_value' => 'yes',
-                'default' => 'yes'
-            ]
+                'nav', [
+            'label' => esc_html__('Nav Arrow', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => esc_html__('Show', 'hash-elements'),
+            'label_off' => esc_html__('Hide', 'hash-elements'),
+            'return_value' => 'yes',
+            'default' => 'yes'
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'caption_style', [
-                'label' => esc_html__('Caption', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'caption_style', [
+            'label' => esc_html__('Caption', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'caption_bg_color', [
-                'label' => esc_html__('Background Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-slide-caption' => 'background: {{VALUE}}',
-                ],
-            ]
+                'caption_bg_color', [
+            'label' => esc_html__('Background Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-slide-caption' => 'background: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'caption_border_color', [
-                'label' => esc_html__('Side Border Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-slide-caption' => 'border-left: 3px solid {{VALUE}}; border-right: 3px solid {{VALUE}}',
-                ],
-                'separator' => 'after'
-            ]
+                'caption_border_color', [
+            'label' => esc_html__('Side Border Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-slide-caption' => 'border-left: 3px solid {{VALUE}}; border-right: 3px solid {{VALUE}}',
+            ],
+            'separator' => 'after'
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'title_typography',
-                'label' => esc_html__('Title Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .he-slide-cap-title',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'title_typography',
+            'label' => esc_html__('Title Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .he-slide-cap-title',
+                ]
         );
 
         $this->add_control(
-            'title_color', [
-                'label' => esc_html__('Title Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-slide-cap-title' => 'color: {{VALUE}}',
-                ],
-                'separator' => 'after'
-            ]
+                'title_color', [
+            'label' => esc_html__('Title Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-slide-cap-title' => 'color: {{VALUE}}',
+            ],
+            'separator' => 'after'
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'description_typography',
-                'label' => esc_html__('SubTitle Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .he-slide-cap-desc',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'description_typography',
+            'label' => esc_html__('SubTitle Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .he-slide-cap-desc',
+                ]
         );
 
         $this->add_control(
-            'description_color', [
-                'label' => esc_html__('SubTitle Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-slide-cap-desc' => 'color: {{VALUE}}',
-                ],
-            ]
+                'description_color', [
+            'label' => esc_html__('SubTitle Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-slide-cap-desc' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'button_style', [
-                'label' => esc_html__('Button', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'button_style', [
+            'label' => esc_html__('Button', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'button_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .he-slide-cap-button a',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'button_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .he-slide-cap-button a',
+                ]
         );
 
         $this->add_control(
-            'button_padding', [
-                'label' => esc_html__('Padding', 'hash-elements'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .he-slide-cap-button a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
+                'button_padding', [
+            'label' => esc_html__('Padding', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .he-slide-cap-button a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+                ]
         );
 
         $this->start_controls_tabs(
-            'button_style_tabs'
+                'button_style_tabs'
         );
 
         $this->start_controls_tab(
-            'button_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
-            ]
+                'button_normal_tab', [
+            'label' => __('Normal', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'button_bg_color', [
-                'label' => esc_html__('Background Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-slide-cap-button a' => 'background-color: {{VALUE}}',
-                ],
-            ]
+                'button_bg_color', [
+            'label' => esc_html__('Background Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-slide-cap-button a' => 'background-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'button_color', [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-slide-cap-button a' => 'color: {{VALUE}}',
-                ],
-            ]
+                'button_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-slide-cap-button a' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_tab();
 
         $this->start_controls_tab(
-            'button_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
-            ]
+                'button_hover_tab', [
+            'label' => __('Hover', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'button_bg_hover_color', [
-                'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-slide-cap-button a:hover' => 'background: {{VALUE}}',
-                ],
-            ]
+                'button_bg_hover_color', [
+            'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-slide-cap-button a:hover' => 'background: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'button_hover_color', [
-                'label' => esc_html__('Text Color (Hover)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-slide-cap-button a:hover' => 'color: {{VALUE}}',
-                ],
-            ]
+                'button_hover_color', [
+            'label' => esc_html__('Text Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-slide-cap-button a:hover' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_tab();
@@ -324,68 +324,68 @@ class SquarePlusSlider extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'navigation_style', [
-                'label' => esc_html__('Navigation', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'navigation_style', [
+            'label' => esc_html__('Navigation', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->start_controls_tabs(
-            'nav_style_tabs'
+                'nav_style_tabs'
         );
 
         $this->start_controls_tab(
-            'nav_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
-            ]
+                'nav_normal_tab', [
+            'label' => __('Normal', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'nav_normal_bg_color', [
-                'label' => esc_html__('Background Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button' => 'background: {{VALUE}}',
-                ],
-            ]
+                'nav_normal_bg_color', [
+            'label' => esc_html__('Background Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button' => 'background: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'nav_normal_color', [
-                'label' => esc_html__('Icon Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button i' => 'color: {{VALUE}}',
-                ],
-            ]
+                'nav_normal_color', [
+            'label' => esc_html__('Icon Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button i' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_tab();
 
         $this->start_controls_tab(
-            'nav_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
-            ]
+                'nav_hover_tab', [
+            'label' => __('Hover', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'nav_hover_bg_color', [
-                'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
-                ],
-            ]
+                'nav_hover_bg_color', [
+            'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button:hover' => 'background-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'nav_hover_color', [
-                'label' => esc_html__('Icon Color (Hover)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button:hover i' => 'color: {{VALUE}}',
-                ],
-            ]
+                'nav_hover_color', [
+            'label' => esc_html__('Icon Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .he-bx-slider.owl-carousel .owl-nav button:hover i' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_tab();
@@ -413,7 +413,8 @@ class SquarePlusSlider extends Widget_Base {
                 foreach ($sliders as $slider) {
                     ?>
                     <div class="he-slide">
-                        <img src="<?php echo esc_url($slider['slider_image']['url']); ?>" alt="<?php echo esc_attr($slider['slider_title']); ?>">
+                        <img src="<?php echo esc_url($slider['slider_image']['url']); ?>"
+                             alt="<?php echo esc_attr($slider['slider_title']); ?>">
 
                         <?php if ($slider['slider_title'] || $slider['slider_description']) { ?>
                             <div class="he-container">
@@ -445,7 +446,8 @@ class SquarePlusSlider extends Widget_Base {
             }
             ?>
         </div>
-        <div class="he-banner-shadow"><img src="<?php echo esc_url(HASHELE_URL . '/assets/img/banner-shadow.png'); ?>" alt="<?php esc_attr_e('Banner Shadow', 'hash-elements'); ?>"></div>
+        <div class="he-banner-shadow"><img src="<?php echo esc_url(HASHELE_URL . '/assets/img/banner-shadow.png'); ?>"
+                                           alt="<?php esc_attr_e('Banner Shadow', 'hash-elements'); ?>"></div>
         <?php
     }
 

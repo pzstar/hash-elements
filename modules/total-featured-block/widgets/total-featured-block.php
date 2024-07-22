@@ -37,289 +37,289 @@ class TotalFeaturedBlock extends Widget_Base {
     protected function register_controls() {
 
         $this->start_controls_section(
-            'featured', [
-                'label' => esc_html__('Featured Block', 'hash-elements'),
-            ]
+                'featured', [
+            'label' => esc_html__('Featured Block', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'icon', [
-                'label' => __('Icon', 'hash-elements'),
-                'type' => Controls_Manager::ICONS,
-                'default' => [
-                    'value' => 'fas fa-star',
-                    'library' => 'solid',
-                ],
-            ]
+                'icon', [
+            'label' => __('Icon', 'hash-elements'),
+            'type' => Controls_Manager::ICONS,
+            'default' => [
+                'value' => 'fas fa-star',
+                'library' => 'solid',
+            ],
+                ]
         );
 
         $this->add_control(
-            'featured_title', [
-                'label' => __('Title', 'hash-elements'),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-                'default' => 'Heading'
-            ]
+                'featured_title', [
+            'label' => __('Title', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+            'default' => 'Heading'
+                ]
         );
 
         $this->add_control(
-            'featured_description', [
-                'label' => __('Description', 'hash-elements'),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 8,
-                'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
-                'label_block' => true
-            ]
+                'featured_description', [
+            'label' => __('Description', 'hash-elements'),
+            'type' => Controls_Manager::TEXTAREA,
+            'rows' => 8,
+            'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+            'label_block' => true
+                ]
         );
 
         $this->add_control(
-            'button_text', [
-                'label' => __('Button Text', 'hash-elements'),
-                'type' => Controls_Manager::TEXT,
-                'default' => __('Read More', 'hash-elements'),
-                'label_block' => true,
-            ]
+                'button_text', [
+            'label' => __('Button Text', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'default' => __('Read More', 'hash-elements'),
+            'label_block' => true,
+                ]
         );
 
         $this->add_control(
-            'button_link', [
-                'label' => __('Button Link', 'hash-elements'),
-                'type' => Controls_Manager::URL,
-                'placeholder' => __('Enter URL', 'hash-elements'),
-                'show_external' => true,
-                'default' => [
-                    'url' => '#',
-                    'is_external' => false,
-                    'nofollow' => false,
-                ],
-            ]
+                'button_link', [
+            'label' => __('Button Link', 'hash-elements'),
+            'type' => Controls_Manager::URL,
+            'placeholder' => __('Enter URL', 'hash-elements'),
+            'show_external' => true,
+            'default' => [
+                'url' => '#',
+                'is_external' => false,
+                'nofollow' => false,
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'box_style', [
-                'label' => esc_html__('Box Style', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'box_style', [
+            'label' => esc_html__('Box Style', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'box_border_color', [
-                'label' => esc_html__('Border Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-featured-post' => 'border-color: {{VALUE}}',
-                    '{{WRAPPER}} .het-featured-post:before, {{WRAPPER}} .het-featured-post:after' => 'background-color: {{VALUE}}',
-                ],
-            ]
+                'box_border_color', [
+            'label' => esc_html__('Border Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-featured-post' => 'border-color: {{VALUE}}',
+                '{{WRAPPER}} .het-featured-post:before, {{WRAPPER}} .het-featured-post:after' => 'background-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'box_padding', [
-                'label' => esc_html__('Padding', 'hash-elements'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%', 'em'],
-                'default' => [
-                    'top' => '30',
-                    'right' => '30',
-                    'bottom' => '60',
-                    'left' => '30',
-                    'unit' => 'px',
-                    'isLinked' => false,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .het-featured-post' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .het-featured-link a' => 'margin-top: {{BOTTOM}}{{UNIT}};',
-                ],
-            ]
+                'box_padding', [
+            'label' => esc_html__('Padding', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'size_units' => ['px', '%', 'em'],
+            'default' => [
+                'top' => '30',
+                'right' => '30',
+                'bottom' => '60',
+                'left' => '30',
+                'unit' => 'px',
+                'isLinked' => false,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .het-featured-post' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .het-featured-link a' => 'margin-top: {{BOTTOM}}{{UNIT}};',
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'icon_style', [
-                'label' => esc_html__('Icon', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'icon_style', [
+            'label' => esc_html__('Icon', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'icon_color', [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#333',
-                'selectors' => [
-                    '{{WRAPPER}} .het-featured-icon' => 'color: {{VALUE}}; fill: {{VALUE}}',
-                ],
-            ]
+                'icon_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#333',
+            'selectors' => [
+                '{{WRAPPER}} .het-featured-icon' => 'color: {{VALUE}}; fill: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'icon_size', [
-                'label' => __('Icon Size', 'hash-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['px'],
-                'range' => [
-                    'px' => [
-                        'min' => 10,
-                        'max' => 80,
-                        'step' => 1,
-                    ]
-                ],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 46,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .het-featured-icon' => 'font-size: {{SIZE}}{{UNIT}};',
-                ],
-            ]
+                'icon_size', [
+            'label' => __('Icon Size', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 10,
+                    'max' => 80,
+                    'step' => 1,
+                ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 46,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .het-featured-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'title_style', [
-                'label' => esc_html__('Title', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'title_style', [
+            'label' => esc_html__('Title', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'title_color', [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-featured-post h5' => 'color: {{VALUE}}',
-                ],
-            ]
+                'title_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-featured-post h5' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'title_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .het-featured-post h5',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'title_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .het-featured-post h5',
+                ]
         );
 
         $this->end_controls_section();
 
 
         $this->start_controls_section(
-            'description_style', [
-                'label' => esc_html__('Description', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'description_style', [
+            'label' => esc_html__('Description', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'description_color', [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-featured-excerpt' => 'color: {{VALUE}}',
-                ],
-            ]
+                'description_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-featured-excerpt' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'description_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .het-featured-excerpt',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'description_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .het-featured-excerpt',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'button_style', [
-                'label' => esc_html__('Button', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'button_style', [
+            'label' => esc_html__('Button', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'button_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .het-featured-link a',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'button_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .het-featured-link a',
+                ]
         );
 
         $this->add_control(
-            'button_padding', [
-                'label' => esc_html__('Padding', 'hash-elements'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .het-featured-link a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
+                'button_padding', [
+            'label' => esc_html__('Padding', 'hash-elements'),
+            'type' => Controls_Manager::DIMENSIONS,
+            'size_units' => ['px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .het-featured-link a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+                ]
         );
 
         $this->start_controls_tabs(
-            'button_style_tabs'
+                'button_style_tabs'
         );
 
         $this->start_controls_tab(
-            'button_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
-            ]
+                'button_normal_tab', [
+            'label' => __('Normal', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'button_bg_color', [
-                'label' => esc_html__('Background Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#333',
-                'selectors' => [
-                    '{{WRAPPER}} .het-featured-link a' => 'background: {{VALUE}}',
-                ],
-            ]
+                'button_bg_color', [
+            'label' => esc_html__('Background Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#333',
+            'selectors' => [
+                '{{WRAPPER}} .het-featured-link a' => 'background: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'button_color', [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#FFF',
-                'selectors' => [
-                    '{{WRAPPER}} .het-featured-link a' => 'color: {{VALUE}}',
-                ],
-            ]
+                'button_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#FFF',
+            'selectors' => [
+                '{{WRAPPER}} .het-featured-link a' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_tab();
 
         $this->start_controls_tab(
-            'button_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
-            ]
+                'button_hover_tab', [
+            'label' => __('Hover', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'button_hover_bg_color', [
-                'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#333',
-                'selectors' => [
-                    '{{WRAPPER}} .het-featured-link a:hover' => 'background: {{VALUE}}',
-                ],
-            ]
+                'button_hover_bg_color', [
+            'label' => esc_html__('Background Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#333',
+            'selectors' => [
+                '{{WRAPPER}} .het-featured-link a:hover' => 'background: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'button_hover_color', [
-                'label' => esc_html__('Color (Hover)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#FFF',
-                'selectors' => [
-                    '{{WRAPPER}} .het-featured-link a:hover' => 'color: {{VALUE}}',
-                ],
-            ]
+                'button_hover_color', [
+            'label' => esc_html__('Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#FFF',
+            'selectors' => [
+                '{{WRAPPER}} .het-featured-link a:hover' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_tab();

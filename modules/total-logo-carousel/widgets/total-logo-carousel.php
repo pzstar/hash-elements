@@ -39,218 +39,218 @@ class TotalLogoCarousel extends Widget_Base {
     protected function register_controls() {
 
         $this->start_controls_section(
-            'logo_section', [
-                'label' => esc_html__('Logo Section', 'hash-elements'),
-            ]
+                'logo_section', [
+            'label' => esc_html__('Logo Section', 'hash-elements'),
+                ]
         );
 
         $repeater = new Repeater();
 
         $repeater->add_control(
-            'title', [
-                'label' => __('Title', 'hash-elements'),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-                'default' => 'Title'
-            ]
+                'title', [
+            'label' => __('Title', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+            'default' => 'Title'
+                ]
         );
 
         $repeater->add_control(
-            'image', [
-                'label' => __('Choose Image', 'hash-elements'),
-                'type' => Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-            ]
+                'image', [
+            'label' => __('Choose Image', 'hash-elements'),
+            'type' => Controls_Manager::MEDIA,
+            'default' => [
+                'url' => Utils::get_placeholder_image_src(),
+            ],
+                ]
         );
 
         $repeater->add_control(
-            'logo_link', [
-                'label' => __('Logo Link', 'hash-elements'),
-                'type' => Controls_Manager::TEXT,
-                'label_block' => true,
-            ]
+                'logo_link', [
+            'label' => __('Logo Link', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'label_block' => true,
+                ]
         );
 
         $this->add_control(
-            'slides', [
-                'label' => __('Slides', 'hash-elements'),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'title_field' => '{{{ title }}}',
-            ]
+                'slides', [
+            'label' => __('Slides', 'hash-elements'),
+            'type' => Controls_Manager::REPEATER,
+            'fields' => $repeater->get_controls(),
+            'title_field' => '{{{ title }}}',
+                ]
         );
 
         $this->add_control(
-            'link_new_tab', [
-                'label' => __('Open Link in New Tab', 'hash-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'hash-elements'),
-                'label_off' => __('No', 'hash-elements'),
-                'return_value' => 'yes',
-                'default' => 'yes',
-            ]
+                'link_new_tab', [
+            'label' => __('Open Link in New Tab', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => __('Yes', 'hash-elements'),
+            'label_off' => __('No', 'hash-elements'),
+            'return_value' => 'yes',
+            'default' => 'yes',
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Image_Size::get_type(), [
-                'name' => 'thumb',
-                'exclude' => ['custom'],
-                'include' => [],
-                'default' => 'full',
-            ]
+                Group_Control_Image_Size::get_type(), [
+            'name' => 'thumb',
+            'exclude' => ['custom'],
+            'include' => [],
+            'default' => 'full',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'carousel_section', [
-                'label' => esc_html__('Carousel Settings', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_CONTENT,
-            ]
+                'carousel_section', [
+            'label' => esc_html__('Carousel Settings', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_CONTENT,
+                ]
         );
 
         $this->add_control(
-            'autoplay', [
-                'label' => esc_html__('Autoplay', 'hash-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Yes', 'hash-elements'),
-                'label_off' => esc_html__('No', 'hash-elements'),
-                'return_value' => 'yes',
-                'default' => 'yes',
-            ]
+                'autoplay', [
+            'label' => esc_html__('Autoplay', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => esc_html__('Yes', 'hash-elements'),
+            'label_off' => esc_html__('No', 'hash-elements'),
+            'return_value' => 'yes',
+            'default' => 'yes',
+                ]
         );
 
         $this->add_control(
-            'pause_duration', [
-                'label' => esc_html__('Pause Duration', 'hash-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['s'],
-                'range' => [
-                    's' => [
-                        'min' => 1,
-                        'max' => 20,
-                        'step' => 1
-                    ],
+                'pause_duration', [
+            'label' => esc_html__('Pause Duration', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['s'],
+            'range' => [
+                's' => [
+                    'min' => 1,
+                    'max' => 20,
+                    'step' => 1
                 ],
-                'default' => [
-                    'unit' => 's',
-                    'size' => 5,
-                ],
-                'condition' => [
-                    'autoplay' => 'yes',
-                ],
-            ]
+            ],
+            'default' => [
+                'unit' => 's',
+                'size' => 5,
+            ],
+            'condition' => [
+                'autoplay' => 'yes',
+            ],
+                ]
         );
 
         $this->add_responsive_control(
-            'no_of_slides', [
-                'label' => esc_html__('No of Slides', 'hash-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => 1,
-                        'max' => 10,
-                    ],
+                'no_of_slides', [
+            'label' => esc_html__('No of Slides', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'range' => [
+                'px' => [
+                    'min' => 1,
+                    'max' => 10,
                 ],
-                'devices' => ['desktop', 'tablet', 'mobile'],
-                'default' => [
-                    'size' => 5,
-                    'unit' => 'px',
-                ],
-                'tablet_default' => [
-                    'size' => 3,
-                    'unit' => 'px',
-                ],
-                'mobile_default' => [
-                    'size' => 2,
-                    'unit' => 'px',
-                ],
-            ]
+            ],
+            'devices' => ['desktop', 'tablet', 'mobile'],
+            'default' => [
+                'size' => 5,
+                'unit' => 'px',
+            ],
+            'tablet_default' => [
+                'size' => 3,
+                'unit' => 'px',
+            ],
+            'mobile_default' => [
+                'size' => 2,
+                'unit' => 'px',
+            ],
+                ]
         );
 
         $this->add_responsive_control(
-            'slides_margin', [
-                'label' => esc_html__('Spacing Between Slides', 'hash-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
+                'slides_margin', [
+            'label' => esc_html__('Spacing Between Slides', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 100,
                 ],
-                'devices' => ['desktop', 'tablet', 'mobile'],
-                'default' => [
-                    'size' => 30,
-                    'unit' => 'px',
-                ],
-                'tablet_default' => [
-                    'size' => 30,
-                    'unit' => 'px',
-                ],
-                'mobile_default' => [
-                    'size' => 30,
-                    'unit' => 'px',
-                ],
-            ]
+            ],
+            'devices' => ['desktop', 'tablet', 'mobile'],
+            'default' => [
+                'size' => 30,
+                'unit' => 'px',
+            ],
+            'tablet_default' => [
+                'size' => 30,
+                'unit' => 'px',
+            ],
+            'mobile_default' => [
+                'size' => 30,
+                'unit' => 'px',
+            ],
+                ]
         );
 
         $this->add_control(
-            'dots', [
-                'label' => esc_html__('Nav Dots', 'hash-elements'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'hash-elements'),
-                'label_off' => esc_html__('Hide', 'hash-elements'),
-                'return_value' => 'yes',
-            ]
+                'dots', [
+            'label' => esc_html__('Nav Dots', 'hash-elements'),
+            'type' => Controls_Manager::SWITCHER,
+            'label_on' => esc_html__('Show', 'hash-elements'),
+            'label_off' => esc_html__('Hide', 'hash-elements'),
+            'return_value' => 'yes',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'navigation_style', [
-                'label' => esc_html__('Navigation', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'navigation_style', [
+            'label' => esc_html__('Navigation', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->start_controls_tabs(
-            'nav_style_tabs'
+                'nav_style_tabs'
         );
 
         $this->start_controls_tab(
-            'nav_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
-            ]
+                'nav_normal_tab', [
+            'label' => __('Normal', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'dot_bg_color', [
-                'label' => esc_html__('Dots Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-client-logo-slider .owl-dots .owl-dot' => 'background-color: {{VALUE}}',
-                ],
-            ]
+                'dot_bg_color', [
+            'label' => esc_html__('Dots Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-client-logo-slider .owl-dots .owl-dot' => 'background-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_tab();
 
         $this->start_controls_tab(
-            'nav_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
-            ]
+                'nav_hover_tab', [
+            'label' => __('Hover', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'dot_bg_color_hover', [
-                'label' => esc_html__('Dots Color (Hover)', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .het-client-logo-slider .owl-dots .owl-dot:hover' => 'background-color: {{VALUE}}',
-                ],
-            ]
+                'dot_bg_color_hover', [
+            'label' => esc_html__('Dots Color (Hover)', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .het-client-logo-slider .owl-dots .owl-dot:hover' => 'background-color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->end_controls_tab();

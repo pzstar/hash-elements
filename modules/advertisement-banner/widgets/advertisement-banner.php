@@ -38,56 +38,56 @@ class AdvertisementBanner extends Widget_Base {
     protected function register_controls() {
 
         $this->start_controls_section(
-            'content_section', [
-                'label' => esc_html__('Advertisement Banner', 'hash-elements'),
-            ]
+                'content_section', [
+            'label' => esc_html__('Advertisement Banner', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'image', [
-                'label' => __('Advertisement Image', 'hash-elements'),
-                'type' => Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-            ]
+                'image', [
+            'label' => __('Advertisement Image', 'hash-elements'),
+            'type' => Controls_Manager::MEDIA,
+            'default' => [
+                'url' => Utils::get_placeholder_image_src(),
+            ],
+                ]
         );
 
         $this->add_control(
-            'link', [
-                'label' => __('Advertisement Link', 'hash-elements'),
-                'type' => Controls_Manager::URL,
-                'placeholder' => __('https://your-link.com', 'hash-elements'),
-                'show_external' => true,
-                'default' => [
-                    'url' => '',
-                    'is_external' => true,
-                    'nofollow' => true,
-                ],
-                'label_block' => true
-            ]
+                'link', [
+            'label' => __('Advertisement Link', 'hash-elements'),
+            'type' => Controls_Manager::URL,
+            'placeholder' => __('https://your-link.com', 'hash-elements'),
+            'show_external' => true,
+            'default' => [
+                'url' => '',
+                'is_external' => true,
+                'nofollow' => true,
+            ],
+            'label_block' => true
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Image_Size::get_type(), [
-                'name' => 'thumbnail',
-                'exclude' => ['custom'],
-                'include' => [],
-                'default' => 'full',
-            ]
+                Group_Control_Image_Size::get_type(), [
+            'name' => 'thumbnail',
+            'exclude' => ['custom'],
+            'include' => [],
+            'default' => 'full',
+                ]
         );
 
         $this->add_control(
-            'alignment', [
-                'label' => esc_html__('Banner Alignment', 'hash-elements'),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    'left' => esc_html__('Left', 'hash-elements'),
-                    'center' => esc_html__('Center', 'hash-elements'),
-                    'right' => esc_html__('Right', 'hash-elements'),
-                ],
-                'default' => 'left',
-            ]
+                'alignment', [
+            'label' => esc_html__('Banner Alignment', 'hash-elements'),
+            'type' => Controls_Manager::SELECT,
+            'options' => [
+                'left' => esc_html__('Left', 'hash-elements'),
+                'center' => esc_html__('Center', 'hash-elements'),
+                'right' => esc_html__('Right', 'hash-elements'),
+            ],
+            'default' => 'left',
+                ]
         );
 
         $this->end_controls_section();

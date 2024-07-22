@@ -37,151 +37,151 @@ class TotalCounterBlock extends Widget_Base {
     protected function register_controls() {
 
         $this->start_controls_section(
-            'counter', [
-                'label' => esc_html__('Counter', 'hash-elements'),
-            ]
+                'counter', [
+            'label' => esc_html__('Counter', 'hash-elements'),
+                ]
         );
 
         $this->add_control(
-            'counter_icon', [
-                'label' => __('Icon', 'hash-elements'),
-                'type' => Controls_Manager::ICONS,
-                'default' => [
-                    'value' => 'fas fa-star',
-                    'library' => 'solid',
-                ],
-            ]
+                'counter_icon', [
+            'label' => __('Icon', 'hash-elements'),
+            'type' => Controls_Manager::ICONS,
+            'default' => [
+                'value' => 'fas fa-star',
+                'library' => 'solid',
+            ],
+                ]
         );
 
 
         $this->add_control(
-            'counter_title', [
-                'label' => __('Title', 'hash-elements'),
-                'type' => Controls_Manager::TEXT,
-                'default' => __('Counter Heading', 'hash-elements'),
-                'label_block' => true,
-            ]
+                'counter_title', [
+            'label' => __('Title', 'hash-elements'),
+            'type' => Controls_Manager::TEXT,
+            'default' => __('Counter Heading', 'hash-elements'),
+            'label_block' => true,
+                ]
         );
 
         $this->add_control(
-            'counter_number', [
-                'label' => __('Counter Number', 'hash-elements'),
-                'type' => Controls_Manager::NUMBER,
-                'min' => 0,
-                'max' => 1000000,
-                'step' => 1,
-                'default' => 999,
-            ]
+                'counter_number', [
+            'label' => __('Counter Number', 'hash-elements'),
+            'type' => Controls_Manager::NUMBER,
+            'min' => 0,
+            'max' => 1000000,
+            'step' => 1,
+            'default' => 999,
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'icon_style', [
-                'label' => esc_html__('Icon', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'icon_style', [
+            'label' => esc_html__('Icon', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'icon_color', [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#000000',
-                'selectors' => [
-                    '{{WRAPPER}} .het-counter-icon' => 'color: {{VALUE}}; fill: {{VALUE}}',
-                ],
-            ]
+                'icon_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#000000',
+            'selectors' => [
+                '{{WRAPPER}} .het-counter-icon' => 'color: {{VALUE}}; fill: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_control(
-            'icon_size', [
-                'label' => __('Icon Size', 'hash-elements'),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['px'],
-                'range' => [
-                    'px' => [
-                        'min' => 10,
-                        'max' => 80,
-                        'step' => 1,
-                    ]
-                ],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 36,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .het-counter-icon' => 'font-size: {{SIZE}}{{UNIT}};',
-                ],
-            ]
+                'icon_size', [
+            'label' => __('Icon Size', 'hash-elements'),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 10,
+                    'max' => 80,
+                    'step' => 1,
+                ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 36,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .het-counter-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+            ],
+                ]
         );
 
         $this->add_control(
-            'border_color', [
-                'label' => esc_html__('Border Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#000000',
-                'selectors' => [
-                    '{{WRAPPER}} .het-counter' => 'border-color: {{VALUE}}',
-                    '{{WRAPPER}} .het-counter:before, {{WRAPPER}} .het-counter:after' => 'background: {{background}}'
-                ],
-            ]
+                'border_color', [
+            'label' => esc_html__('Border Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#000000',
+            'selectors' => [
+                '{{WRAPPER}} .het-counter' => 'border-color: {{VALUE}}',
+                '{{WRAPPER}} .het-counter:before, {{WRAPPER}} .het-counter:after' => 'background: {{background}}'
+            ],
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'number_style', [
-                'label' => esc_html__('Number', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'number_style', [
+            'label' => esc_html__('Number', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'number_color', [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#000000',
-                'selectors' => [
-                    '{{WRAPPER}} .het-counter-count' => 'color: {{VALUE}}',
-                ],
-            ]
+                'number_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#000000',
+            'selectors' => [
+                '{{WRAPPER}} .het-counter-count' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'number_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .het-counter-count',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'number_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .het-counter-count',
+                ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'title_style', [
-                'label' => esc_html__('Title', 'hash-elements'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
+                'title_style', [
+            'label' => esc_html__('Title', 'hash-elements'),
+            'tab' => Controls_Manager::TAB_STYLE,
+                ]
         );
 
         $this->add_control(
-            'title_color', [
-                'label' => esc_html__('Color', 'hash-elements'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#000000',
-                'selectors' => [
-                    '{{WRAPPER}} .het-counter-title' => 'color: {{VALUE}}',
-                ],
-            ]
+                'title_color', [
+            'label' => esc_html__('Color', 'hash-elements'),
+            'type' => Controls_Manager::COLOR,
+            'default' => '#000000',
+            'selectors' => [
+                '{{WRAPPER}} .het-counter-title' => 'color: {{VALUE}}',
+            ],
+                ]
         );
 
         $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'title_typography',
-                'label' => esc_html__('Typography', 'hash-elements'),
-                'selector' => '{{WRAPPER}} .het-counter-title',
-            ]
+                Group_Control_Typography::get_type(), [
+            'name' => 'title_typography',
+            'label' => esc_html__('Typography', 'hash-elements'),
+            'selector' => '{{WRAPPER}} .het-counter-title',
+                ]
         );
 
         $this->end_controls_section();
