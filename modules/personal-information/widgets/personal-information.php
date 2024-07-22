@@ -41,219 +41,219 @@ class PersonalInformation extends Widget_Base {
 
 
         $this->start_controls_section(
-                'header', [
-            'label' => esc_html__('Title', 'hash-elements'),
-                ]
+            'header', [
+                'label' => esc_html__('Title', 'hash-elements'),
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Header::get_type(), [
-            'name' => 'header',
-            'label' => esc_html__('Header', 'hash-elements'),
-                ]
+            Group_Control_Header::get_type(), [
+                'name' => 'header',
+                'label' => esc_html__('Header', 'hash-elements'),
+            ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'content_section', [
-            'label' => esc_html__('Content', 'hash-elements'),
-                ]
+            'content_section', [
+                'label' => esc_html__('Content', 'hash-elements'),
+            ]
         );
 
         $this->add_control(
-                'name', [
-            'label' => __('Name', 'hash-elements'),
-            'type' => Controls_Manager::TEXT,
-            'default' => __('John Doe', 'hash-elements'),
-            'label_block' => true
-                ]
+            'name', [
+                'label' => __('Name', 'hash-elements'),
+                'type' => Controls_Manager::TEXT,
+                'default' => __('John Doe', 'hash-elements'),
+                'label_block' => true
+            ]
         );
 
         $this->add_control(
-                'image', [
-            'label' => __('Choose Image', 'hash-elements'),
-            'type' => Controls_Manager::MEDIA,
-            'default' => [
-                'url' => Utils::get_placeholder_image_src(),
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'short_intro', [
-            'label' => __('Short Intro', 'hash-elements'),
-            'type' => Controls_Manager::TEXTAREA,
-            'rows' => 5,
-            'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
-                ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'additional Settings', [
-            'label' => esc_html__('Additional Settings', 'hash-elements'),
-                ]
-        );
-
-        $this->add_control(
-                'content_alignment', [
-            'label' => esc_html__('Content Alignment', 'hash-elements'),
-            'type' => Controls_Manager::SELECT,
-            'options' => [
-                'left' => esc_html__('Left', 'hash-elements'),
-                'center' => esc_html__('Center', 'hash-elements'),
-                'right' => esc_html__('Right', 'hash-elements'),
-            ],
-            'default' => 'center',
-                ]
-        );
-
-        $this->add_group_control(
-                Group_Control_Image_Size::get_type(), [
-            'name' => 'thumbnail',
-            'exclude' => ['custom'],
-            'include' => [],
-            'default' => 'full',
-                ]
-        );
-
-        $this->add_control(
-                'image_dimension', [
-            'label' => esc_html__('Image Dimension (px)', 'hash-elements'),
-            'type' => Controls_Manager::SLIDER,
-            'size_units' => ['px'],
-            'range' => [
-                'px' => [
-                    'min' => 50,
-                    'max' => 300,
-                    'step' => 1
+            'image', [
+                'label' => __('Choose Image', 'hash-elements'),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
                 ],
-            ],
-            'default' => [
-                'unit' => 'px',
-                'size' => 150,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .he-personal-information .he-pi-image img' => 'height: {{SIZE}}{{UNIT}};width: {{SIZE}}{{UNIT}};',
-            ],
-                ]
+            ]
+        );
+
+        $this->add_control(
+            'short_intro', [
+                'label' => __('Short Intro', 'hash-elements'),
+                'type' => Controls_Manager::TEXTAREA,
+                'rows' => 5,
+                'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
+            ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'header_title_style', [
-            'label' => esc_html__('Header Title', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
+            'additional Settings', [
+                'label' => esc_html__('Additional Settings', 'hash-elements'),
+            ]
         );
 
         $this->add_control(
-                'header_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'header_short_border_color', [
-            'label' => esc_html__('Short Border Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
-                '{{WRAPPER}} .he-title-style2.he-block-title span:before' => 'background-color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'header_long_border_color', [
-            'label' => esc_html__('Long Border Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
-                '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
-            ],
-                ]
+            'content_alignment', [
+                'label' => esc_html__('Content Alignment', 'hash-elements'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'left' => esc_html__('Left', 'hash-elements'),
+                    'center' => esc_html__('Center', 'hash-elements'),
+                    'right' => esc_html__('Right', 'hash-elements'),
+                ],
+                'default' => 'center',
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'header_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-block-title'
-                ]
+            Group_Control_Image_Size::get_type(), [
+                'name' => 'thumbnail',
+                'exclude' => ['custom'],
+                'include' => [],
+                'default' => 'full',
+            ]
+        );
+
+        $this->add_control(
+            'image_dimension', [
+                'label' => esc_html__('Image Dimension (px)', 'hash-elements'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 50,
+                        'max' => 300,
+                        'step' => 1
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 150,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .he-personal-information .he-pi-image img' => 'height: {{SIZE}}{{UNIT}};width: {{SIZE}}{{UNIT}};',
+                ],
+            ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'name_style', [
-            'label' => esc_html__('Name', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
+            'header_title_style', [
+                'label' => esc_html__('Header Title', 'hash-elements'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
         );
 
         $this->add_control(
-                'name_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-personal-information .he-pi-name' => 'color: {{VALUE}}'
-            ],
-                ]
+            'header_color', [
+                'label' => esc_html__('Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'header_short_border_color', [
+                'label' => esc_html__('Short Border Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
+                    '{{WRAPPER}} .he-title-style2.he-block-title span:before' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'header_long_border_color', [
+                'label' => esc_html__('Long Border Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
+                ],
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'name_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-personal-information .he-pi-name'
-                ]
-        );
-
-        $this->add_control(
-                'name_margin', [
-            'label' => esc_html__('Margin', 'hash-elements'),
-            'type' => Controls_Manager::DIMENSIONS,
-            'allowed_dimensions' => 'vertical',
-            'size_units' => ['px', '%', 'em'],
-            'selectors' => [
-                '{{WRAPPER}} .he-personal-information .he-pi-name' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
-            ],
-                ]
+            Group_Control_Typography::get_type(), [
+                'name' => 'header_typography',
+                'label' => esc_html__('Typography', 'hash-elements'),
+                'selector' => '{{WRAPPER}} .he-block-title'
+            ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'intro_style', [
-            'label' => esc_html__('Intro', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
+            'name_style', [
+                'label' => esc_html__('Name', 'hash-elements'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
         );
 
         $this->add_control(
-                'intro_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-personal-information .he-pi-intro' => 'color: {{VALUE}}'
-            ],
-                ]
+            'name_color', [
+                'label' => esc_html__('Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-personal-information .he-pi-name' => 'color: {{VALUE}}'
+                ],
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'intro_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-personal-information .he-pi-intro'
-                ]
+            Group_Control_Typography::get_type(), [
+                'name' => 'name_typography',
+                'label' => esc_html__('Typography', 'hash-elements'),
+                'selector' => '{{WRAPPER}} .he-personal-information .he-pi-name'
+            ]
+        );
+
+        $this->add_control(
+            'name_margin', [
+                'label' => esc_html__('Margin', 'hash-elements'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'allowed_dimensions' => 'vertical',
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .he-personal-information .he-pi-name' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'intro_style', [
+                'label' => esc_html__('Intro', 'hash-elements'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'intro_color', [
+                'label' => esc_html__('Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-personal-information .he-pi-intro' => 'color: {{VALUE}}'
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(), [
+                'name' => 'intro_typography',
+                'label' => esc_html__('Typography', 'hash-elements'),
+                'selector' => '{{WRAPPER}} .he-personal-information .he-pi-intro'
+            ]
         );
 
         $this->end_controls_section();
@@ -292,10 +292,10 @@ class PersonalInformation extends Widget_Base {
         $settings = $this->get_settings();
 
         $this->add_render_attribute(
-                'header_attr', 'class', [
-            'he-block-title',
-            $settings['header_style']
-                ]
+            'header_attr', 'class', [
+                'he-block-title',
+                $settings['header_style']
+            ]
         );
 
         $link_open = $link_close = "";

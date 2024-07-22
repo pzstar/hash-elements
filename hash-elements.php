@@ -61,11 +61,11 @@ if (!class_exists('Hash_Elements')) {
                 return;
             }
 
-            require(HASHELE_PATH . 'inc/helper-functions.php');
-            require(HASHELE_PATH . 'inc/widget-loader.php');
-            require(HASHELE_PATH . 'inc/sticky-column.php');
-            require(HASHELE_PATH . 'inc/sticky-container.php');
-            require(HASHELE_PATH . 'inc/ajax-select.php');
+            require (HASHELE_PATH . 'inc/helper-functions.php');
+            require (HASHELE_PATH . 'inc/widget-loader.php');
+            require (HASHELE_PATH . 'inc/sticky-column.php');
+            require (HASHELE_PATH . 'inc/sticky-container.php');
+            require (HASHELE_PATH . 'inc/ajax-select.php');
         }
 
         public function required_plugins_notice() {

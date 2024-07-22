@@ -41,108 +41,108 @@ class SquarePlusElasticGallery extends Widget_Base {
     protected function register_controls() {
 
         $this->start_controls_section(
-                'content_section', [
-            'label' => esc_html__('Content', 'hash-elements'),
-                ]
+            'content_section', [
+                'label' => esc_html__('Content', 'hash-elements'),
+            ]
         );
 
         $this->add_control(
-                'gallery', [
-            'label' => __('Add Images', 'hash-elements'),
-            'type' => Controls_Manager::GALLERY,
-            'default' => [],
-                ]
+            'gallery', [
+                'label' => __('Add Images', 'hash-elements'),
+                'type' => Controls_Manager::GALLERY,
+                'default' => [],
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Image_Size::get_type(), [
-            'name' => 'image',
-            'exclude' => ['custom'],
-            'include' => [],
-            'default' => 'large',
-                ]
+            Group_Control_Image_Size::get_type(), [
+                'name' => 'image',
+                'exclude' => ['custom'],
+                'include' => [],
+                'default' => 'large',
+            ]
         );
 
         $this->add_responsive_control(
-                'image_height', [
-            'label' => esc_html__('Image Height', 'hash-elements'),
-            'type' => Controls_Manager::SLIDER,
-            'range' => [
-                'px' => [
-                    'min' => 100,
-                    'max' => 1000,
-                    'step' => 1,
+            'image_height', [
+                'label' => esc_html__('Image Height', 'hash-elements'),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 100,
+                        'max' => 1000,
+                        'step' => 1,
+                    ],
                 ],
-            ],
-            'devices' => ['desktop', 'tablet', 'mobile'],
-            'default' => [
-                'size' => 400,
-                'unit' => 'px',
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .he-elasticstack' => 'height: {{SIZE}}{{UNIT}};',
-            ],
-                ]
+                'devices' => ['desktop', 'tablet', 'mobile'],
+                'default' => [
+                    'size' => 400,
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .he-elasticstack' => 'height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
         );
 
         $this->add_responsive_control(
-                'image_width', [
-            'label' => esc_html__('Image Width', 'hash-elements'),
-            'description' => __('The image width will not extend beyond the container.', 'hash-elements'),
-            'type' => Controls_Manager::SLIDER,
-            'range' => [
-                'px' => [
-                    'min' => 100,
-                    'max' => 1000,
-                    'step' => 1,
+            'image_width', [
+                'label' => esc_html__('Image Width', 'hash-elements'),
+                'description' => __('The image width will not extend beyond the container.', 'hash-elements'),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 100,
+                        'max' => 1000,
+                        'step' => 1,
+                    ],
                 ],
-            ],
-            'devices' => ['desktop', 'tablet', 'mobile'],
-            'default' => [
-                'size' => 400,
-                'unit' => 'px',
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .he-elasticstack' => 'width: {{SIZE}}{{UNIT}};',
-            ],
-                ]
+                'devices' => ['desktop', 'tablet', 'mobile'],
+                'default' => [
+                    'size' => 400,
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .he-elasticstack' => 'width: {{SIZE}}{{UNIT}};',
+                ],
+            ]
         );
 
         $this->add_control(
-                'alignment', [
-            'label' => esc_html__('Gallery Alignment', 'hash-elements'),
-            'description' => esc_html__('When container width is greater than gallery width, the alignment option is useful.', 'hash-elements'),
-            'type' => Controls_Manager::SELECT,
-            'options' => [
-                'left' => esc_html__('Left', 'hash-elements'),
-                'center' => esc_html__('Center', 'hash-elements'),
-                'right' => esc_html__('Right', 'hash-elements'),
-            ],
-            'default' => 'left',
-            'label_block' => true
-                ]
+            'alignment', [
+                'label' => esc_html__('Gallery Alignment', 'hash-elements'),
+                'description' => esc_html__('When container width is greater than gallery width, the alignment option is useful.', 'hash-elements'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'left' => esc_html__('Left', 'hash-elements'),
+                    'center' => esc_html__('Center', 'hash-elements'),
+                    'right' => esc_html__('Right', 'hash-elements'),
+                ],
+                'default' => 'left',
+                'label_block' => true
+            ]
         );
 
         $this->add_responsive_control(
-                'top_spacing', [
-            'label' => esc_html__('Top Spacing', 'hash-elements'),
-            'type' => Controls_Manager::SLIDER,
-            'range' => [
-                'px' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => 1,
+            'top_spacing', [
+                'label' => esc_html__('Top Spacing', 'hash-elements'),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
                 ],
-            ],
-            'devices' => ['desktop', 'tablet', 'mobile'],
-            'default' => [
-                'size' => 20,
-                'unit' => 'px',
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .he-image-stack' => 'margin-top: {{SIZE}}{{UNIT}};',
-            ],
-                ]
+                'devices' => ['desktop', 'tablet', 'mobile'],
+                'default' => [
+                    'size' => 20,
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .he-image-stack' => 'margin-top: {{SIZE}}{{UNIT}};',
+                ],
+            ]
         );
 
         $this->end_controls_section();

@@ -39,211 +39,211 @@ class ContactInformation extends Widget_Base {
 
 
         $this->start_controls_section(
-                'header', [
-            'label' => esc_html__('Title', 'hash-elements'),
-                ]
+            'header', [
+                'label' => esc_html__('Title', 'hash-elements'),
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Header::get_type(), [
-            'name' => 'header',
-            'label' => esc_html__('Header', 'hash-elements'),
-                ]
+            Group_Control_Header::get_type(), [
+                'name' => 'header',
+                'label' => esc_html__('Header', 'hash-elements'),
+            ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'content_section', [
-            'label' => esc_html__('Contact Information', 'hash-elements'),
-                ]
+            'content_section', [
+                'label' => esc_html__('Contact Information', 'hash-elements'),
+            ]
         );
 
         $this->add_control(
-                'phone', [
-            'label' => __('Phone', 'hash-elements'),
-            'type' => Controls_Manager::TEXT,
-            'default' => '+1989383939',
-            'label_block' => true
-                ]
+            'phone', [
+                'label' => __('Phone', 'hash-elements'),
+                'type' => Controls_Manager::TEXT,
+                'default' => '+1989383939',
+                'label_block' => true
+            ]
         );
 
         $this->add_control(
-                'link_phone', [
-            'label' => __('Link Phone', 'hash-elements'),
-            'type' => Controls_Manager::SWITCHER,
-            'label_on' => __('Yes', 'hash-elements'),
-            'label_off' => __('No', 'hash-elements'),
-            'return_value' => 'yes',
-            'default' => 'yes',
-                ]
+            'link_phone', [
+                'label' => __('Link Phone', 'hash-elements'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'hash-elements'),
+                'label_off' => __('No', 'hash-elements'),
+                'return_value' => 'yes',
+                'default' => 'yes',
+            ]
         );
 
         $this->add_control(
-                'email', [
-            'label' => __('Email', 'hash-elements'),
-            'type' => Controls_Manager::TEXT,
-            'default' => 'info@website.com',
-            'label_block' => true
-                ]
+            'email', [
+                'label' => __('Email', 'hash-elements'),
+                'type' => Controls_Manager::TEXT,
+                'default' => 'info@website.com',
+                'label_block' => true
+            ]
         );
 
         $this->add_control(
-                'link_email', [
-            'label' => __('Link Email', 'hash-elements'),
-            'type' => Controls_Manager::SWITCHER,
-            'label_on' => __('Yes', 'hash-elements'),
-            'label_off' => __('No', 'hash-elements'),
-            'return_value' => 'yes',
-            'default' => 'yes',
-                ]
+            'link_email', [
+                'label' => __('Link Email', 'hash-elements'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'hash-elements'),
+                'label_off' => __('No', 'hash-elements'),
+                'return_value' => 'yes',
+                'default' => 'yes',
+            ]
         );
 
         $this->add_control(
-                'website', [
-            'label' => __('Website', 'hash-elements'),
-            'type' => Controls_Manager::TEXT,
-            'default' => 'http://google.com',
-            'label_block' => true
-                ]
+            'website', [
+                'label' => __('Website', 'hash-elements'),
+                'type' => Controls_Manager::TEXT,
+                'default' => 'http://google.com',
+                'label_block' => true
+            ]
         );
 
         $this->add_control(
-                'link_website', [
-            'label' => __('Link Website', 'hash-elements'),
-            'type' => Controls_Manager::SWITCHER,
-            'label_on' => __('Yes', 'hash-elements'),
-            'label_off' => __('No', 'hash-elements'),
-            'return_value' => 'yes',
-            'default' => 'yes',
-                ]
+            'link_website', [
+                'label' => __('Link Website', 'hash-elements'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'hash-elements'),
+                'label_off' => __('No', 'hash-elements'),
+                'return_value' => 'yes',
+                'default' => 'yes',
+            ]
         );
 
         $this->add_control(
-                'contact_address', [
-            'label' => __('Contact Address', 'hash-elements'),
-            'type' => Controls_Manager::TEXTAREA,
-            'default' => 'Avenue Park, California',
-            'rows' => 5,
-                ]
+            'contact_address', [
+                'label' => __('Contact Address', 'hash-elements'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => 'Avenue Park, California',
+                'rows' => 5,
+            ]
         );
 
         $this->add_control(
-                'contact_time', [
-            'label' => __('Contact Time', 'hash-elements'),
-            'type' => Controls_Manager::TEXTAREA,
-            'default' => 'Sun - Friday 
+            'contact_time', [
+                'label' => __('Contact Time', 'hash-elements'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => 'Sun - Friday 
 9:00AM 6:00PM',
-            'rows' => 5,
-                ]
+                'rows' => 5,
+            ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-                'header_title_style', [
-            'label' => esc_html__('Header Title', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
+            'header_title_style', [
+                'label' => esc_html__('Header Title', 'hash-elements'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
         );
 
         $this->add_control(
-                'header_color', [
-            'label' => esc_html__('Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'header_short_border_color', [
-            'label' => esc_html__('Short Border Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
-                '{{WRAPPER}} .he-title-style2.he-block-title span:before' => 'background-color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_control(
-                'header_long_border_color', [
-            'label' => esc_html__('Long Border Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
-                '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
-            ],
-                ]
-        );
-
-        $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'header_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-block-title'
-                ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-                'contact_info_style', [
-            'label' => esc_html__('Contact Info', 'hash-elements'),
-            'tab' => Controls_Manager::TAB_STYLE,
-                ]
-        );
-
-        $this->add_control(
-                'spacing', [
-            'label' => esc_html__('Spacing Between Items', 'hash-elements'),
-            'type' => Controls_Manager::SLIDER,
-            'size_units' => ['px'],
-            'range' => [
-                'px' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => 1
+            'header_color', [
+                'label' => esc_html__('Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-block-title' => 'color: {{VALUE}}',
                 ],
-            ],
-            'default' => [
-                'unit' => 'px',
-                'size' => 10,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .he-contact-information ul li' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-            ],
-                ]
+            ]
+        );
+
+        $this->add_control(
+            'header_short_border_color', [
+                'label' => esc_html__('Short Border Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-title-style3.he-block-title' => 'border-color: {{VALUE}}',
+                    '{{WRAPPER}} .he-title-style2.he-block-title span:before' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'header_long_border_color', [
+                'label' => esc_html__('Long Border Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-title-style3.he-block-title:after, {{WRAPPER}} .he-title-style4.he-block-title:after' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .he-title-style2.he-block-title' => 'border-color: {{VALUE}}',
+                ],
+            ]
         );
 
         $this->add_group_control(
-                Group_Control_Typography::get_type(), [
-            'name' => 'content_typography',
-            'label' => esc_html__('Typography', 'hash-elements'),
-            'selector' => '{{WRAPPER}} .he-contact-information ul li'
-                ]
+            Group_Control_Typography::get_type(), [
+                'name' => 'header_typography',
+                'label' => esc_html__('Typography', 'hash-elements'),
+                'selector' => '{{WRAPPER}} .he-block-title'
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'contact_info_style', [
+                'label' => esc_html__('Contact Info', 'hash-elements'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
         );
 
         $this->add_control(
-                'content_text_color', [
-            'label' => esc_html__('Text Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-contact-information ul li' => 'color: {{VALUE}}'
-            ],
-                ]
+            'spacing', [
+                'label' => esc_html__('Spacing Between Items', 'hash-elements'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => 1
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 10,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .he-contact-information ul li' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(), [
+                'name' => 'content_typography',
+                'label' => esc_html__('Typography', 'hash-elements'),
+                'selector' => '{{WRAPPER}} .he-contact-information ul li'
+            ]
         );
 
         $this->add_control(
-                'content_anchor_color', [
-            'label' => esc_html__('Anchor Color', 'hash-elements'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .he-contact-information ul li a' => 'color: {{VALUE}}'
-            ],
-                ]
+            'content_text_color', [
+                'label' => esc_html__('Text Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-contact-information ul li' => 'color: {{VALUE}}'
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'content_anchor_color', [
+                'label' => esc_html__('Anchor Color', 'hash-elements'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .he-contact-information ul li a' => 'color: {{VALUE}}'
+                ],
+            ]
         );
 
         $this->end_controls_section();
@@ -339,10 +339,10 @@ class ContactInformation extends Widget_Base {
         $settings = $this->get_settings();
 
         $this->add_render_attribute(
-                'header_attr', 'class', [
-            'he-block-title',
-            $settings['header_style']
-                ]
+            'header_attr', 'class', [
+                'he-block-title',
+                $settings['header_style']
+            ]
         );
 
         $link_open = $link_close = "";
