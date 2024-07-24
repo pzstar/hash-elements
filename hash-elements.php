@@ -116,9 +116,9 @@ if (!class_exists('Hash_Elements')) {
         }
 
         public function admin_notice_content() {
-            // if (!$this->is_dismissed('review') && !empty(get_option('hash_elements_first_activation')) && time() > get_option('hash_elements_first_activation') + 15 * DAY_IN_SECONDS) {
+            if (!$this->is_dismissed('review') && !empty(get_option('hash_elements_first_activation')) && time() > get_option('hash_elements_first_activation') + 15 * DAY_IN_SECONDS) {
                 $this->review_notice();
-            // }
+            }
         }
 
         public static function is_dismissed($notice) {
