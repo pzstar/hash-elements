@@ -97,7 +97,7 @@ class Single_News_One extends Widget_Base {
             'categories', [
                 'label' => esc_html__('Select Categories', 'hash-elements'),
                 'type' => Selectize_Control::Selectize,
-                'key_options' => viral_get_dropdown_indent_array(0, $all_categories, $cat_ids),
+                'key_options' => hash_elements_get_dropdown_indent_array(0, $all_categories, $cat_ids),
                 'label_block' => true,
                 'multiple' => true,
                 'condition' => [
@@ -127,7 +127,7 @@ class Single_News_One extends Widget_Base {
             'tags', [
                 'label' => esc_html__('Select Tags', 'hash-elements'),
                 'type' => Selectize_Control::Selectize,
-                'key_options' => viral_get_dropdown_indent_array(0, $all_categories, $cat_ids),
+                'key_options' => hash_elements_get_dropdown_indent_array(0, $all_categories, $cat_ids),
                 'multiple' => true,
                 'label_block' => true,
                 'condition' => [

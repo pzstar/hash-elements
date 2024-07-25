@@ -198,7 +198,7 @@ if (!function_exists('hash_elements_get_tags')) {
 }
 
 
-function viral_get_dropdown_indent_array($parent_id, $categories, $cat_ids = [], $child_count = -1) {
+function hash_elements_get_dropdown_indent_array($parent_id, $categories, $cat_ids = [], $child_count = -1) {
     $options = array();
     $loop_categories = array_filter($categories, function ($cats) use ($parent_id) {
         return $cats->parent == $parent_id;
@@ -211,7 +211,7 @@ function viral_get_dropdown_indent_array($parent_id, $categories, $cat_ids = [],
         if ($loop_categories) {
             foreach ($loop_categories as $cat) {
                 $cat_name = '';
-                $child_options = viral_get_dropdown_indent_array($cat->term_id, $categories, $cat_ids, $child_count);
+                $child_options = hash_elements_get_dropdown_indent_array($cat->term_id, $categories, $cat_ids, $child_count);
 
                 if (in_array($cat->term_id, $visible_slugs)) {
                     $i = 0;

@@ -66,7 +66,7 @@ class Group_Control_Query extends Group_Control_Base {
                 'type' => Selectize_Control::Selectize,
                 'label_block' => true,
                 'multiple' => true,
-                'key_options' => viral_get_dropdown_indent_array(0, $all_categories, $cat_ids),
+                'key_options' => hash_elements_get_dropdown_indent_array(0, $all_categories, $cat_ids),
                 'condition' => [
                     'post_type' => $object->object_type,
                 ],
