@@ -8,6 +8,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use HashElements\AjaxSelect_Control;
+use HashElements\Selectize_Control;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -76,11 +77,27 @@ class Single_News_Two extends Widget_Base {
             ]
         );
 
+        $args = array(
+            'taxonomy' => 'category',
+            'orderby' => 'name',
+            'order' => 'ASC',
+            'hierarchical' => 0,
+            'hide_empty' => 0,
+        );
+        $all_categories = get_terms($args);
+        $cat_ids = [];
+
+        if (!empty($all_categories)) {
+            foreach ($all_categories as $cat) {
+                $cat_ids[] = $cat->term_id;
+            }
+        }
+
         $this->add_control(
             'categories', [
                 'label' => esc_html__('Select Categories', 'hash-elements'),
-                'type' => Controls_Manager::SELECT2,
-                'options' => hash_elements_get_categories(),
+                'type' => Selectize_Control::Selectize,
+                'key_options' => viral_get_dropdown_indent_array(0, $all_categories, $cat_ids),
                 'label_block' => true,
                 'multiple' => true,
                 'condition' => [
@@ -90,11 +107,27 @@ class Single_News_Two extends Widget_Base {
             ]
         );
 
+        $args = array(
+            'taxonomy' => 'post_tag',
+            'orderby' => 'name',
+            'order' => 'ASC',
+            'hierarchical' => 0,
+            'hide_empty' => 0,
+        );
+        $all_categories = get_terms($args);
+        $cat_ids = [];
+
+        if (!empty($all_categories)) {
+            foreach ($all_categories as $cat) {
+                $cat_ids[] = $cat->term_id;
+            }
+        }
+
         $this->add_control(
             'tags', [
                 'label' => esc_html__('Select Tags', 'hash-elements'),
-                'type' => Controls_Manager::SELECT2,
-                'options' => hash_elements_get_tags(),
+                'type' => Selectize_Control::Selectize,
+                'key_options' => viral_get_dropdown_indent_array(0, $all_categories, $cat_ids),
                 'multiple' => true,
                 'label_block' => true,
                 'condition' => [

@@ -196,3 +196,43 @@ if (!function_exists('hash_elements_get_tags')) {
     }
 
 }
+
+
+function viral_get_dropdown_indent_array($parent_id, $categories, $cat_ids = [], $child_count = -1) {
+    $options = array();
+    $loop_categories = array_filter($categories, function ($cats) use ($parent_id) {
+        return $cats->parent == $parent_id;
+    });
+
+    if (count($loop_categories)) {
+        $child_count++;
+        $visible_slugs = $cat_ids;
+
+        if ($loop_categories) {
+            foreach ($loop_categories as $cat) {
+                $cat_name = '';
+                $child_options = viral_get_dropdown_indent_array($cat->term_id, $categories, $cat_ids, $child_count);
+
+                if (in_array($cat->term_id, $visible_slugs)) {
+                    $i = 0;
+                    while ($i < $child_count) {
+                        $cat_name .= '- ';
+                        $i++;
+                    }
+                    $cat_name .= esc_html(ucwords(str_replace('-', ' ', $cat->name)));
+                    $options[] = array(
+                        'key' => $cat->term_id,
+                        'value' => $cat_name . ' (' . $cat->count . ')'
+                    );
+                    if (!empty($child_options)) {
+                        foreach($child_options as $val) {
+                            $options[] = $val;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    return $options;
+}

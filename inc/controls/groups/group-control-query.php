@@ -45,20 +45,28 @@ class Group_Control_Query extends Group_Control_Base {
         $taxonomies = get_taxonomies($taxonomy_filter_args, 'objects');
 
         foreach ($taxonomies as $taxonomy => $object) {
-            $options = array();
+            $args = array(
+                'taxonomy' => $taxonomy,
+                'orderby' => 'name',
+                'order' => 'ASC',
+                'hierarchical' => 0,
+                'hide_empty' => 0,
+            );
+            $all_categories = get_terms($args);
+            $cat_ids = [];
 
-            $terms = get_terms($taxonomy);
-
-            foreach ($terms as $term) {
-                $options[$term->term_id] = $term->name;
+            if (!empty($all_categories)) {
+                foreach ($all_categories as $cat) {
+                    $cat_ids[] = $cat->term_id;
+                }
             }
 
             $fields[$taxonomy . '_ids'] = [
                 'label' => $object->label,
-                'type' => Controls_Manager::SELECT2,
+                'type' => Selectize_Control::Selectize,
                 'label_block' => true,
                 'multiple' => true,
-                'options' => $options,
+                'key_options' => viral_get_dropdown_indent_array(0, $all_categories, $cat_ids),
                 'condition' => [
                     'post_type' => $object->object_type,
                 ],

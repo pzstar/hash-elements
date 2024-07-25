@@ -104,6 +104,7 @@ class HASHELE_Widget_Loader {
 
     function register_controls($controls_manager) {
         require_once HASHELE_PATH . 'inc/controls/class-ajaxselect-control.php';
+        require_once HASHELE_PATH . 'inc/controls/class-selectize-control.php';
         require_once HASHELE_PATH . 'inc/controls/groups/group-control-query.php';
         require_once HASHELE_PATH . 'inc/controls/groups/group-control-header.php';
 
@@ -111,6 +112,7 @@ class HASHELE_Widget_Loader {
         $controls_manager->add_group_control('hash-elements-query', new Group_Control_Query());
         $controls_manager->add_group_control('hash-elements-header', new Group_Control_Header());
         $controls_manager->register(new AjaxSelect_Control());
+        $controls_manager->register(new Selectize_Control());
     }
 
     /**
