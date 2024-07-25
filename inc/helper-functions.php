@@ -225,12 +225,12 @@ function hash_elements_get_dropdown_indent_array($parent_id, $categories, $cat_i
                         'value' => $cat_name . ' (' . $cat->count . ')'
                     );
                     if (!empty($child_options)) {
-                        foreach($child_options as $val) {
+                        foreach ($child_options as $val) {
                             $options[] = $val;
                         }
                     }
                 }
-                
+
             }
         }
     }

@@ -56,9 +56,9 @@ class Selectize_Control extends Base_Data_Control {
 
                 if(keyOptions) {
                     #>
-
                     <select id="<?php echo $control_uid; ?>" class="elementor-selectize" {{ multiple }} data-setting="{{ data.name }}">
-                        <# if(value){
+                        <# 
+                        if(value){
                             _.each(value, function(key) {
                                 const getOption = keyOptions.find(element => element.key == key);
                                 #>
@@ -78,26 +78,27 @@ class Selectize_Control extends Base_Data_Control {
                     <#
                 } else {
                     var options = data.options;
-
                     if(options){
-                    _.each( options, function( option_title, option_value ) {
-                    if (-1 == value.indexOf( option_value ) ) {
-                    unstored[option_value] = option_title;
-                    }
-                    });
+                        _.each( options, function( option_title, option_value ) {
+                            if (-1 == value.indexOf( option_value ) ) {
+                                unstored[option_value] = option_title;
+                            }
+                        });
                     }
                     #>
 
                     <select id="<?php echo $control_uid; ?>" class="elementor-selectize" {{ multiple }} data-setting="{{ data.name }}">
-                        <# if(value){
+                        <# 
+                        if(value){
                         _.each( value, function( key ) { #>
                             <option value="{{ key }}">{{{ options[key] }}}</option>
                         <# }); 
                         }
 
                         _.each( unstored, function( option_title, option_value ) { #>
-                        <option value="{{ option_value }}">{{{ option_title }}}</option>
-                        <# }); #>
+                            <option value="{{ option_value }}">{{{ option_title }}}</option>
+                        <# }); 
+                        #>
                     </select>
                     <#
                 }
