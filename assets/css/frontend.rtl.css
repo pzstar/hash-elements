@@ -2527,6 +2527,11 @@ h3.he-big-title a {
     color: #FFF;
 }
 
+.het-team-social-id a svg{
+    height: 1em;
+    width: 1em;
+}
+
 .het-team-member-excerpt {
     background: rgba(0, 0, 0, 0.9);
     padding: 20px;

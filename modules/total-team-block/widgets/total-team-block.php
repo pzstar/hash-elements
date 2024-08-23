@@ -403,7 +403,7 @@ class TotalTeamBlock extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#FFFFFF',
                 'selectors' => [
-                    '{{WRAPPER}} .het-team-social-id a' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .het-team-social-id a' => 'color: {{VALUE}}; fill: {{VALUE}};',
                 ],
             ]
         );
