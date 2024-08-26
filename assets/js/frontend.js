@@ -187,7 +187,7 @@
                         filter: active_tab
                     });
 
-                    HashSetMasonary($container);
+                    //HashSetMasonary($container);
 
                     $(window).on('resize', function () {
                         HashGetMasonary($element, $container);
@@ -203,7 +203,7 @@
                     var filterValue = $(this).attr('data-filter');
                     $container.isotope({filter: filterValue});
 
-                    HashSetMasonary($container);
+                    //HashSetMasonary($container);
                     HashGetMasonary($element, $container);
 
                     $container.isotope({filter: filterValue});
