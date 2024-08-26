@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Hash Elements - Addons for Elementor
  * Description: Elementor addons for WordPress Themes developed by HashThemes https://hashthemes.com
- * Version: 1.4.5
+ * Version: 1.4.6
  * Author: HashThemes
  * Author URI: https://hashthemes.com/
  * Text Domain: hash-elements
@@ -17,7 +17,7 @@ if (!defined('WPINC')) {
     die();
 }
 
-define('HASHELE_VERSION', '1.4.5');
+define('HASHELE_VERSION', '1.4.6');
 
 define('HASHELE_FILE', __FILE__);
 define('HASHELE_PLUGIN_BASENAME', plugin_basename(HASHELE_FILE));
@@ -63,11 +63,11 @@ if (!class_exists('Hash_Elements')) {
             add_action('wp_loaded', array($this, 'admin_notice'), 20);
             add_action('admin_enqueue_scripts', array($this, 'hash_elements_register_backend_assets'));
 
-            require (HASHELE_PATH . 'inc/helper-functions.php');
-            require (HASHELE_PATH . 'inc/widget-loader.php');
-            require (HASHELE_PATH . 'inc/sticky-column.php');
-            require (HASHELE_PATH . 'inc/sticky-container.php');
-            require (HASHELE_PATH . 'inc/ajax-select.php');
+            require(HASHELE_PATH . 'inc/helper-functions.php');
+            require(HASHELE_PATH . 'inc/widget-loader.php');
+            require(HASHELE_PATH . 'inc/sticky-column.php');
+            require(HASHELE_PATH . 'inc/sticky-container.php');
+            require(HASHELE_PATH . 'inc/ajax-select.php');
         }
 
         public function required_plugins_notice() {

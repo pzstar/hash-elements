@@ -50,7 +50,7 @@ class HASHELE_Widget_Loader {
             $filename = HASHELE_PATH . $filename . '.php';
 
             if (is_readable($filename)) {
-                include ($filename);
+                include($filename);
             }
         }
 

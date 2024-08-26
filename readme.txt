@@ -3,7 +3,7 @@ Contributors: hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 5.0
 Tested up to: 6.6
-Stable tag: 1.4.5
+Stable tag: 1.4.6
 Requires PHP: 5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -41,6 +41,10 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.4.6, 26 Aug, 2024 =
+* Code Fornating
+* Indenting added on category
+
 = 1.4.5, 21 Jul, 2024 =
 * Compatibility test with WordPress 6.6
 
