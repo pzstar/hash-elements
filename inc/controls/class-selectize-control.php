@@ -55,58 +55,57 @@ class Selectize_Control extends Base_Data_Control {
                 var keyOptions = data.key_options;
 
                 if(keyOptions) {
-                    #>
-                    <select id="<?php echo $control_uid; ?>" class="elementor-selectize" {{ multiple }} data-setting="{{ data.name }}">
-                        <# 
-                        if(value){
-                            _.each(value, function(key) {
-                                const getOption = keyOptions.find(element => element.key == key);
-                                #>
-                                <option value="{{ key }}">{{{ getOption.value }}}</option>
-                            <# }); 
-                        }
-
-                        _.each(keyOptions, function(option) {
-                            if (-1 == value.indexOf(option.key)) {
-                                #>
-                                <option value="{{ option.key }}">{{{ option.value }}}</option>
-                                <#
-                            }
-                        });
+                #>
+                <select id="<?php echo $control_uid; ?>" class="elementor-selectize" {{ multiple }} data-setting="{{ data.name }}">
+                    <# if(value){
+                        _.each(value, function(key) {
+                        const getOption = keyOptions.find(element => element.key == key);
                         #>
-                    </select>
-                    <#
-                } else {
-                    var options = data.options;
-                    if(options){
-                        _.each( options, function( option_title, option_value ) {
-                            if (-1 == value.indexOf( option_value ) ) {
-                                unstored[option_value] = option_title;
-                            }
-                        });
+                        <option value="{{ key }}">{{{ getOption.value }}}</option>
+                        <# }); 
                     }
-                    #>
 
-                    <select id="<?php echo $control_uid; ?>" class="elementor-selectize" {{ multiple }} data-setting="{{ data.name }}">
-                        <# 
-                        if(value){
+                    _.each(keyOptions, function(option) {
+                        if (-1 == value.indexOf(option.key)) {
+                        #>
+                            <option value="{{ option.key }}">{{{ option.value }}}</option>
+                        <#
+                        }
+                    });
+                    #>
+                </select>
+                <#
+                } else {
+                var options = data.options;
+
+                if(options){
+                    _.each( options, function( option_title, option_value ) {
+                        if (-1 == value.indexOf( option_value ) ) {
+                        unstored[option_value] = option_title;
+                        }
+                    });
+                }
+                #>
+
+                <select id="<?php echo $control_uid; ?>" class="elementor-selectize" {{ multiple }} data-setting="{{ data.name }}">
+                    <# if(value){
                         _.each( value, function( key ) { #>
                             <option value="{{ key }}">{{{ options[key] }}}</option>
                         <# }); 
-                        }
+                    }
 
-                        _.each( unstored, function( option_title, option_value ) { #>
-                            <option value="{{ option_value }}">{{{ option_title }}}</option>
-                        <# }); 
-                        #>
-                    </select>
-                    <#
+                    _.each( unstored, function( option_title, option_value ) { #>
+                        <option value="{{ option_value }}">{{{ option_title }}}</option>
+                    <# }); #>
+                </select>
+                <#
                 }
                 #>
             </div>
         </div>
+
         <# if ( data.description ) { #>
-        <div class="elementor-control-field-description">{{{ data.description }}}</div>
+            <div class="elementor-control-field-description">{{{ data.description }}}</div>
         <# } #>
         <?php
     }
