@@ -41,6 +41,9 @@ class Ajax_Select {
     }
 
     public function get_posts_title_by_id() {
+        if (!current_user_can('manage_options')) {
+            return;
+        }
         $ids = isset($_POST['id']) ? wp_unslash($_POST['id']) : array(); // phpcs:ignore
         $post_type = isset($_POST['post_type']) ? wp_unslash($_POST['post_type']) : 'post'; // phpcs:ignore
         $results = array();
