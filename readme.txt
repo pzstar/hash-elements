@@ -3,7 +3,7 @@ Contributors: hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 5.0
 Tested up to: 6.6
-Stable tag: 1.4.7
+Stable tag: 1.4.8
 Requires PHP: 5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -41,6 +41,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
+= 1.4.8, 12 Nov, 2024 =
+* Security issue fixed
+
 = 1.4.7, 28 Aug, 2024 =
 * Javascript for portiolio masonart updated
 
