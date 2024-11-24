@@ -23,7 +23,7 @@ class Selectize_Control extends Base_Data_Control {
      */
     public function enqueue() {
         wp_enqueue_script('selectize', HASHELE_URL . 'assets/js/selectize.js', array('jquery', 'jquery-ui-sortable'), HASHELE_VERSION, true);
-        wp_enqueue_script('custom-selectize', HASHELE_URL . 'assets/js/custom-selectize.js', array('selectize'), HASHELE_VERSION, true);
+        wp_enqueue_script('he-custom-selectize', HASHELE_URL . 'assets/js/custom-selectize.js', array('selectize'), HASHELE_VERSION, true);
         wp_enqueue_style('selectize', HASHELE_URL . 'assets/css/selectize.css', array(), '');
     }
 

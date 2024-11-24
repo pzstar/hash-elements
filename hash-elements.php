@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Hash Elements - Addons for Elementor
  * Description: Elementor addons for WordPress Themes developed by HashThemes https://hashthemes.com
- * Version: 1.4.8
+ * Version: 1.4.9
  * Author: HashThemes
  * Author URI: https://hashthemes.com/
  * Text Domain: hash-elements
@@ -17,7 +17,7 @@ if (!defined('WPINC')) {
     die();
 }
 
-define('HASHELE_VERSION', '1.4.8');
+define('HASHELE_VERSION', '1.4.9');
 
 define('HASHELE_FILE', __FILE__);
 define('HASHELE_PLUGIN_BASENAME', plugin_basename(HASHELE_FILE));
@@ -155,7 +155,7 @@ if (!class_exists('Hash_Elements')) {
                         <?php
                         printf(
                             /* translators: %1$s is link start tag, %2$s is link end tag. */
-                            esc_html__('Great to see that you have been using Hash Elements for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'hash-elements'), '<a target="_blank" href="https://wordpress.org/support/plugin/hash-elements/reviews/?filter=5">', '</a>'
+                            esc_html__('Great to see that you have been using Hash Elements for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a %3$s rating%2$s. Your valuable review will inspire us to make it more better.', 'hash-elements'), '<a style="text-decoration:none;font-weight:bold;" target="_blank" href="https://wordpress.org/support/plugin/hash-elements/reviews/?filter=5#new-post">', '</a>', '<span class="he-notice-star"><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></span>'
                         );
                         ?>
                     </p>
