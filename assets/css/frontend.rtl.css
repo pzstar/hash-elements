@@ -2743,7 +2743,6 @@ h3.he-big-title a {
 .het-testimonial-slider.owl-carousel .owl-nav .owl-prev,
 .het-testimonial-slider.owl-carousel .owl-nav .owl-next {
     position: absolute;
-    ;
     top: 50%;
     margin-top: -25px;
     background: #FFC107;

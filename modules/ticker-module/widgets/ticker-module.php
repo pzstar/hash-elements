@@ -317,10 +317,7 @@ class TickerModule extends Widget_Base {
         $args['post_status'] = 'publish';
         $args['offset'] = $settings['posts_offset'];
         $args['posts_per_page'] = $settings['ticker_post_count'];
-        $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : []
-
-        ;
-
+        $args['post__not_in'] = $post_type == 'post' ? $settings['posts_exclude_posts'] : [];
         $args['tax_query'] = [];
 
         $taxonomies = get_object_taxonomies($post_type, 'objects');

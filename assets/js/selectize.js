@@ -447,7 +447,6 @@
             return obj[name];
         var names = name.split(".");
         while (names.length && (obj = obj[names.shift()]))
-            ;
         return obj;
     };
 
