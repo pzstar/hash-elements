@@ -339,10 +339,9 @@ class TotalPortfolioMasonary extends Widget_Base {
             <?php } ?>
 
             <div class="het-portfolio-post-wrap">
-                <div class="het-portfolio-posts-<?php echo $id; ?> het-portfolio-posts">
+                <div class="het-portfolio-posts-<?php echo esc_attr($id); ?> het-portfolio-posts">
                     <?php
                     if ($portfolio_cat) {
-                        $count = 1;
                         $args = $this->query_args();
                         $query = new \WP_Query($args);
                         if ($query->have_posts()):
