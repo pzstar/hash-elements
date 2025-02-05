@@ -11,7 +11,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path: /languages
  * Requires Plugins: elementor
- * Elementor tested up to: 3.25
+ * Elementor tested up to: 3.27
  * Elementor Pro tested up to: 3.2.1
  */
 /* If this file is called directly, abort */

@@ -1,10 +1,10 @@
 === Hash Elements ===
 Contributors: hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
-Requires at least: 5.0
+Requires at least: 6.3
 Tested up to: 6.7
 Stable tag: 1.4.9
-Requires PHP: 5.0
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
