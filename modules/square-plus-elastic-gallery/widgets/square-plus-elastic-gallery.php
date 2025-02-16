@@ -157,7 +157,7 @@ class SquarePlusElasticGallery extends Widget_Base {
         if ($gallery) {
             ?>
             <div class="he-image-stack he-elastic-<?php echo esc_attr($alignment); ?>">
-                <ul id="he-elasticstack-<?php echo $id; ?>" class="he-elasticstack">
+                <ul id="he-elasticstack-<?php echo esc_attr($id); ?>" class="he-elasticstack">
                     <?php
                     foreach ($gallery as $image) {
                         $image_url = Group_Control_Image_Size::get_attachment_image_src($image['id'], 'image', $settings);

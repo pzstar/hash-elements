@@ -331,7 +331,7 @@ class SquarePlusTabBlock extends Widget_Base {
                     if ($square_tab_title) {
                         ?>
                         <li class="he-tab-list<?php echo intval($key + 1); ?>">
-                            <a href="#<?php echo $tab_id; ?>">
+                            <a href="#<?php echo esc_attr($tab_id); ?>">
                                 <?php
                                 ob_start();
                                 \Elementor\Icons_Manager::render_icon($tab['icon'], ['aria-hidden' => 'true']);
@@ -353,7 +353,7 @@ class SquarePlusTabBlock extends Widget_Base {
                     $tab_count = $key + 1;
                     $tab_id = 'he-' . $id . $tab_count;
                     ?>
-                    <div class="he-tab-pane animated zoomIn" id="<?php echo $tab_id; ?>">
+                    <div class="he-tab-pane animated zoomIn" id="<?php echo esc_attr($tab_id); ?>">
                         <?php
                         if ($tab['content_from'] == 'wisiwyg') {
                             ?>
