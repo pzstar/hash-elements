@@ -41,145 +41,145 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 
 == Changelog ==
-= 1.5.1, 17 Feb, 2025 =
+= 1.5.1 - 17 Feb, 2025 =
 * Security bug fixed
 
-= 1.5.0, 7 Feb, 2025 =
+= 1.5.0 - 7 Feb, 2025 =
 * Security bug fixed
 
-= 1.4.9, 24 Nov, 2024 =
+= 1.4.9 - 24 Nov, 2024 =
 * Compatibility test with WordPress v6.7
 * Selectize conflict with Viral Pro - fixed
 
-= 1.4.8, 12 Nov, 2024 =
+= 1.4.8 - 12 Nov, 2024 =
 * Security issue fixed
 
-= 1.4.7, 28 Aug, 2024 =
+= 1.4.7 - 28 Aug, 2024 =
 * Javascript for portiolio masonart updated
 
-= 1.4.6, 26 Aug, 2024 =
+= 1.4.6 - 26 Aug, 2024 =
 * Code Fornating
 * Indenting added on category
 
-= 1.4.5, 21 Jul, 2024 =
+= 1.4.5 - 21 Jul, 2024 =
 * Compatibility test with WordPress 6.6
 
-= 1.4.4, 13 Jun, 2024 =
+= 1.4.4 - 13 Jun, 2024 =
 * Elementor dynamic CSS not working on Tile block - Fixed
 
-= 1.4.3, 4 Jun, 2024 =
+= 1.4.3- 4 Jun, 2024 =
 * CSS fixes for Elementor Container Sticky container
 
-= 1.4.2, 31 May, 2024 =
+= 1.4.2 - 31 May, 2024 =
 * CSS fixes
 
-= 1.4.1, 26 May, 2024 =
+= 1.4.1 - 26 May, 2024 =
 * Elementor Depreciated Error Fixed
 
-= 1.4.0, May 23 2024 =
+= 1.4.0 - May 23, 2024 =
 * Responsive issue fixed with Elementor Flex/Grid containers.
 
-= 1.3.9, May 22 2024 =
+= 1.3.9 - May 22, 2024 =
 * Security bug fixed
 
-= 1.3.8, May 20 2024 =
+= 1.3.8 - May 20, 2024 =
 * Sticky Container bug fixes
 
-= 1.3.7, May 19 2024 =
+= 1.3.7 - May 19, 2024 =
 * Sticky Container option added
 
-= 1.3.6, May 13 2024 =
+= 1.3.6 - May 13, 2024 =
 * CSS fixes
 
-= 1.3.5, Mar 25 2024 =
+= 1.3.5 - Mar 25, 2024 =
 * Title hover color added in Single News One Elementor Module
 
-= 1.3.4, Mar 10 2024 =
+= 1.3.4 - Mar 10, 2024 =
 * Security issue fixes
 
-= 1.3.3, Jan 02 2024 =
+= 1.3.3 - Jan 02, 2024 =
 * Compatibility test with latest WordPress
 
-= 1.3.2, Oct 10 2023 =
+= 1.3.2 - Oct 10, 2023 =
 * New Module 3 bug fixed
 
-= 1.3.1, Aug 30 2023 =
+= 1.3.1 - Aug 30, 2023 =
 * Ajax Select added for post selection on Elementor - Added
 
-= 1.3.0, May 08 2023 =
+= 1.3.0 - May 08, 2023 =
 * RTL Ready Issues - Fixed
 
-= 1.2.9, May 01 2023 =
+= 1.2.9 - May 01, 2023 =
 * RTL Ready - Added
 
-= 1.2.8, Apr 17 2023 =
+= 1.2.8 - Apr 17, 2023 =
 * Bug fixes in Single News One & Two
 
-= 1.2.7, Apr 8 2023 =
+= 1.2.7 - Apr 8, 2023 =
 * Compatibility test with WordPress v6.2
 
-= 1.2.6, Mar 1 2023 =
+= 1.2.6 - Mar 1, 2023 =
 * Font Icons updated to latest version
 
-= 1.2.5, Jan 10 2023 =
+= 1.2.5 - Jan 10, 2023 =
 * Deprecated: Function Elementor\Widgets_Manager::register_widget_type is deprecated since version 3.5.0!  - Fixed
 
-= 1.2.4, Nov 18 2022 =
+= 1.2.4 - Nov 18, 2022 =
 * Added Border Radius option for image
 * Image width added for some magazine modules
 * Post count added for some magazine modules
 
-= 1.2.3, Nov 07 2022 =
+= 1.2.3 - Nov 07, 2022 =
 * CSS fixes
 
-= 1.2.1, Jul 15 2022 =
+= 1.2.1 - Jul 15, 2022 =
 * Slider Module Width issue in responsive fixed
 
-= 1.2.0, May 20 2022 =
+= 1.2.0 - May 20, 2022 =
 * Post Title margin issue in Elementor New modules fixed
 
-= 1.1.9, Apr 5 2022 =
+= 1.1.9 - Apr 5, 2022 =
 * _register_controls depreciated error fixed
 * Sticky Column hr error fixed
 
-= 1.1.8, Jan 28 2022 =
+= 1.1.8 - Jan 28, 2022 =
 * Compatibility issue check with the latest WordPress 5.9
 * Code refinement & optmization for sticky sidebar
 
-= 1.1.7, Dec 12 2021 =
+= 1.1.7 - Dec 12, 2021 =
 * Material Design font icon updated and optimized
 
-= 1.1.6, Oct 24 2021 =
+= 1.1.6 - Oct 24, 2021 =
 * Stable Tag updated
 * Elementor undefined index issue fixed
 
-= 1.1.5, Oct 06 2021 =
+= 1.1.5 - Oct 06, 2021 =
 * Minor Fixes in CSS
 
-= 1.1.4, Aug 12 2021 =
+= 1.1.4 - Aug 12, 2021 =
 * Added support for svg icons
 
-= 1.1.3, July 9 2021 =
+= 1.1.3 - July 9, 2021 =
 * Elastic Gallery Module issue fixed
 * Odometer Module issue fixed
 
-= 1.1.2, June 8 2021 =
+= 1.1.2 - June 8, 2021 =
 * Sticky Column Refined
 
-= 1.1.1, June 7 2021 =
+= 1.1.1 - June 7, 2021 =
 * Added Sticky Column Option
 
-= 1.1.0, June 6 2021 =
+= 1.1.0 - June 6, 2021 =
 * Added New Title Style for News Module
 * Added Column option for New Module 14
 
-= 1.0.9, June 5 2021 =
+= 1.0.9 - June 5, 2021 =
 * Single News One and Single News Two Module added
 
-= 1.0.8, May 18 2021 =
+= 1.0.8 - May 18, 2021 =
 * JS error for Elastic gallery fixed
 
-= 1.0.7, May 15 2021 =
+= 1.0.7 - May 15, 2021 =
 * Localization error fixed
 
 = 1.0.6 =
@@ -205,8 +205,3 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 = 1.0 =
 * Release
-
-== Upgrade Notice ==
-
-= 1.0 =
-Release
