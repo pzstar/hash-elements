@@ -38,7 +38,7 @@ if (!function_exists('hash_elements_post_date')) {
 if (!function_exists('hash_elements_time_ago')) {
 
     function hash_elements_time_ago() {
-        echo '<span class="he-post-date"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'hash-elements') . '</span>';
+        echo '<span class="he-post-date"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . esc_html__('ago', 'hash-elements') . '</span>';
     }
 
 }

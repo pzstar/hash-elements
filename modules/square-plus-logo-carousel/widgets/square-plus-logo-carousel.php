@@ -48,7 +48,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
 
         $repeater->add_control(
             'title', [
-                'label' => __('Title', 'hash-elements'),
+                'label' => esc_html__('Title', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
                 'default' => 'Title'
@@ -57,7 +57,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
 
         $repeater->add_control(
             'image', [
-                'label' => __('Choose Image', 'hash-elements'),
+                'label' => esc_html__('Choose Image', 'hash-elements'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -67,7 +67,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
 
         $repeater->add_control(
             'logo_link', [
-                'label' => __('Logo Link', 'hash-elements'),
+                'label' => esc_html__('Logo Link', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
             ]
@@ -75,7 +75,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
 
         $this->add_control(
             'slides', [
-                'label' => __('Slides', 'hash-elements'),
+                'label' => esc_html__('Slides', 'hash-elements'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'title_field' => '{{{ title }}}',
@@ -84,10 +84,10 @@ class SquarePlusLogoCarousel extends Widget_Base {
 
         $this->add_control(
             'link_new_tab', [
-                'label' => __('Open Link in New Tab', 'hash-elements'),
+                'label' => esc_html__('Open Link in New Tab', 'hash-elements'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'hash-elements'),
-                'label_off' => __('No', 'hash-elements'),
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]

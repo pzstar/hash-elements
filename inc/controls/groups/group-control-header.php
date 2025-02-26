@@ -20,13 +20,13 @@ class Group_Control_Header extends Group_Control_Base {
         $fields = [];
 
         $fields['title'] = [
-            'label' => __('Title', 'hash-elements'),
+            'label' => esc_html__('Title', 'hash-elements'),
             'type' => Controls_Manager::TEXT,
             'label_block' => true
         ];
 
         $fields['link'] = [
-            'label' => __('Link', 'hash-elements'),
+            'label' => esc_html__('Link', 'hash-elements'),
             'type' => Controls_Manager::URL,
             'show_external' => true,
             'default' => [
@@ -37,14 +37,14 @@ class Group_Control_Header extends Group_Control_Base {
         ];
 
         $fields['style'] = [
-            'label' => __('Style', 'hash-elements'),
+            'label' => esc_html__('Style', 'hash-elements'),
             'type' => Controls_Manager::SELECT,
             'default' => 'he-title-style1',
             'options' => [
-                'he-title-style1' => __('Style 1', 'hash-elements'),
-                'he-title-style2' => __('Style 2', 'hash-elements'),
-                'he-title-style3' => __('Style 3', 'hash-elements'),
-                'he-title-style4' => __('Style 4', 'hash-elements')
+                'he-title-style1' => esc_html__('Style 1', 'hash-elements'),
+                'he-title-style2' => esc_html__('Style 2', 'hash-elements'),
+                'he-title-style3' => esc_html__('Style 3', 'hash-elements'),
+                'he-title-style4' => esc_html__('Style 4', 'hash-elements')
             ],
         ];
 

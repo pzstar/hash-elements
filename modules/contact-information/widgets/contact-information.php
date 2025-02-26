@@ -61,7 +61,7 @@ class ContactInformation extends Widget_Base {
 
         $this->add_control(
             'phone', [
-                'label' => __('Phone', 'hash-elements'),
+                'label' => esc_html__('Phone', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'default' => '+1989383939',
                 'label_block' => true
@@ -70,10 +70,10 @@ class ContactInformation extends Widget_Base {
 
         $this->add_control(
             'link_phone', [
-                'label' => __('Link Phone', 'hash-elements'),
+                'label' => esc_html__('Link Phone', 'hash-elements'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'hash-elements'),
-                'label_off' => __('No', 'hash-elements'),
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -81,7 +81,7 @@ class ContactInformation extends Widget_Base {
 
         $this->add_control(
             'email', [
-                'label' => __('Email', 'hash-elements'),
+                'label' => esc_html__('Email', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'default' => 'info@website.com',
                 'label_block' => true
@@ -90,10 +90,10 @@ class ContactInformation extends Widget_Base {
 
         $this->add_control(
             'link_email', [
-                'label' => __('Link Email', 'hash-elements'),
+                'label' => esc_html__('Link Email', 'hash-elements'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'hash-elements'),
-                'label_off' => __('No', 'hash-elements'),
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -101,7 +101,7 @@ class ContactInformation extends Widget_Base {
 
         $this->add_control(
             'website', [
-                'label' => __('Website', 'hash-elements'),
+                'label' => esc_html__('Website', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'default' => 'http://google.com',
                 'label_block' => true
@@ -110,10 +110,10 @@ class ContactInformation extends Widget_Base {
 
         $this->add_control(
             'link_website', [
-                'label' => __('Link Website', 'hash-elements'),
+                'label' => esc_html__('Link Website', 'hash-elements'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'hash-elements'),
-                'label_off' => __('No', 'hash-elements'),
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -121,7 +121,7 @@ class ContactInformation extends Widget_Base {
 
         $this->add_control(
             'contact_address', [
-                'label' => __('Contact Address', 'hash-elements'),
+                'label' => esc_html__('Contact Address', 'hash-elements'),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => 'Avenue Park, California',
                 'rows' => 5,
@@ -130,7 +130,7 @@ class ContactInformation extends Widget_Base {
 
         $this->add_control(
             'contact_time', [
-                'label' => __('Contact Time', 'hash-elements'),
+                'label' => esc_html__('Contact Time', 'hash-elements'),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => 'Sun - Friday 
 9:00AM 6:00PM',

@@ -70,7 +70,7 @@ class NewsModuleNine extends Widget_Base {
 
         $this->add_control(
             'posts_number', [
-                'label' => __('No of Posts', 'hash-elements'),
+                'label' => esc_html__('No of Posts', 'hash-elements'),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 1,
                 'max' => 20,
@@ -398,7 +398,7 @@ class NewsModuleNine extends Widget_Base {
 
         $this->start_controls_tab(
             'category_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -426,7 +426,7 @@ class NewsModuleNine extends Widget_Base {
 
         $this->start_controls_tab(
             'category_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 
@@ -499,7 +499,7 @@ class NewsModuleNine extends Widget_Base {
 
         $this->start_controls_tab(
             'featured_title_tab', [
-                'label' => __('Featured', 'hash-elements'),
+                'label' => esc_html__('Featured', 'hash-elements'),
             ]
         );
 
@@ -527,7 +527,7 @@ class NewsModuleNine extends Widget_Base {
 
         $this->start_controls_tab(
             'listing_title_tab', [
-                'label' => __('Listing Post', 'hash-elements'),
+                'label' => esc_html__('Listing Post', 'hash-elements'),
             ]
         );
 

@@ -45,7 +45,7 @@ class AdvertisementBanner extends Widget_Base {
 
         $this->add_control(
             'image', [
-                'label' => __('Advertisement Image', 'hash-elements'),
+                'label' => esc_html__('Advertisement Image', 'hash-elements'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -55,9 +55,9 @@ class AdvertisementBanner extends Widget_Base {
 
         $this->add_control(
             'link', [
-                'label' => __('Advertisement Link', 'hash-elements'),
+                'label' => esc_html__('Advertisement Link', 'hash-elements'),
                 'type' => Controls_Manager::URL,
-                'placeholder' => __('https://your-link.com', 'hash-elements'),
+                'placeholder' => esc_html__('https://your-link.com', 'hash-elements'),
                 'show_external' => true,
                 'default' => [
                     'url' => '',

@@ -63,16 +63,16 @@ class PersonalInformation extends Widget_Base {
 
         $this->add_control(
             'name', [
-                'label' => __('Name', 'hash-elements'),
+                'label' => esc_html__('Name', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => __('John Doe', 'hash-elements'),
+                'default' => esc_html__('John Doe', 'hash-elements'),
                 'label_block' => true
             ]
         );
 
         $this->add_control(
             'image', [
-                'label' => __('Choose Image', 'hash-elements'),
+                'label' => esc_html__('Choose Image', 'hash-elements'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -82,7 +82,7 @@ class PersonalInformation extends Widget_Base {
 
         $this->add_control(
             'short_intro', [
-                'label' => __('Short Intro', 'hash-elements'),
+                'label' => esc_html__('Short Intro', 'hash-elements'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 5,
                 'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'

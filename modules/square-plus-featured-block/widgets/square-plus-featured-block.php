@@ -45,7 +45,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
 
         $this->add_control(
             'icon', [
-                'label' => __('Icon', 'hash-elements'),
+                'label' => esc_html__('Icon', 'hash-elements'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-plane',
@@ -56,7 +56,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
 
         $this->add_control(
             'title', [
-                'label' => __('Title', 'hash-elements'),
+                'label' => esc_html__('Title', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
                 'default' => 'Heading'
@@ -65,10 +65,10 @@ class SquarePlusFeaturedBlock extends Widget_Base {
 
         $this->add_control(
             'content', [
-                'label' => __('Description', 'hash-elements'),
+                'label' => esc_html__('Description', 'hash-elements'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 10,
-                'placeholder' => __('Type your description here', 'hash-elements'),
+                'placeholder' => esc_html__('Type your description here', 'hash-elements'),
                 'label_block' => true,
                 'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
             ]
@@ -76,9 +76,9 @@ class SquarePlusFeaturedBlock extends Widget_Base {
 
         $this->add_control(
             'link', [
-                'label' => __('Link', 'hash-elements'),
+                'label' => esc_html__('Link', 'hash-elements'),
                 'type' => Controls_Manager::URL,
-                'placeholder' => __('https://your-link.com', 'hash-elements'),
+                'placeholder' => esc_html__('https://your-link.com', 'hash-elements'),
                 'show_external' => true,
                 'default' => [
                     'url' => '#',
@@ -90,7 +90,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
 
         $this->add_control(
             'link_icon', [
-                'label' => __('Read More Link Icon', 'hash-elements'),
+                'label' => esc_html__('Read More Link Icon', 'hash-elements'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'far fa-plus-square',
@@ -111,7 +111,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
         $this->add_group_control(
             Group_Control_Background::get_type(), [
                 'name' => 'box_background',
-                'label' => __('Background', 'hash-elements'),
+                'label' => esc_html__('Background', 'hash-elements'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .he-featured-post:before',
             ]
@@ -149,7 +149,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
 
         $this->add_control(
             'icon_size', [
-                'label' => __('Icon Size', 'hash-elements'),
+                'label' => esc_html__('Icon Size', 'hash-elements'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -268,7 +268,7 @@ class SquarePlusFeaturedBlock extends Widget_Base {
 
         $this->add_control(
             'link_icon_size', [
-                'label' => __('Icon Size', 'hash-elements'),
+                'label' => esc_html__('Icon Size', 'hash-elements'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [

@@ -44,7 +44,7 @@ class TotalFeaturedBlock extends Widget_Base {
 
         $this->add_control(
             'icon', [
-                'label' => __('Icon', 'hash-elements'),
+                'label' => esc_html__('Icon', 'hash-elements'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-star',
@@ -55,7 +55,7 @@ class TotalFeaturedBlock extends Widget_Base {
 
         $this->add_control(
             'featured_title', [
-                'label' => __('Title', 'hash-elements'),
+                'label' => esc_html__('Title', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
                 'default' => 'Heading'
@@ -64,7 +64,7 @@ class TotalFeaturedBlock extends Widget_Base {
 
         $this->add_control(
             'featured_description', [
-                'label' => __('Description', 'hash-elements'),
+                'label' => esc_html__('Description', 'hash-elements'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 8,
                 'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
@@ -74,18 +74,18 @@ class TotalFeaturedBlock extends Widget_Base {
 
         $this->add_control(
             'button_text', [
-                'label' => __('Button Text', 'hash-elements'),
+                'label' => esc_html__('Button Text', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => __('Read More', 'hash-elements'),
+                'default' => esc_html__('Read More', 'hash-elements'),
                 'label_block' => true,
             ]
         );
 
         $this->add_control(
             'button_link', [
-                'label' => __('Button Link', 'hash-elements'),
+                'label' => esc_html__('Button Link', 'hash-elements'),
                 'type' => Controls_Manager::URL,
-                'placeholder' => __('Enter URL', 'hash-elements'),
+                'placeholder' => esc_html__('Enter URL', 'hash-elements'),
                 'show_external' => true,
                 'default' => [
                     'url' => '#',
@@ -157,7 +157,7 @@ class TotalFeaturedBlock extends Widget_Base {
 
         $this->add_control(
             'icon_size', [
-                'label' => __('Icon Size', 'hash-elements'),
+                'label' => esc_html__('Icon Size', 'hash-elements'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -266,7 +266,7 @@ class TotalFeaturedBlock extends Widget_Base {
 
         $this->start_controls_tab(
             'button_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -296,7 +296,7 @@ class TotalFeaturedBlock extends Widget_Base {
 
         $this->start_controls_tab(
             'button_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 

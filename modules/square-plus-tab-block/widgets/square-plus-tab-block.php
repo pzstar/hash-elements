@@ -47,7 +47,7 @@ class SquarePlusTabBlock extends Widget_Base {
 
         $repeater->add_control(
             'icon', [
-                'label' => __('Icon', 'hash-elements'),
+                'label' => esc_html__('Icon', 'hash-elements'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-star',
@@ -58,7 +58,7 @@ class SquarePlusTabBlock extends Widget_Base {
 
         $repeater->add_control(
             'title', [
-                'label' => __('Tab Title', 'hash-elements'),
+                'label' => esc_html__('Tab Title', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
                 'default' => 'Tab Title'
@@ -67,11 +67,11 @@ class SquarePlusTabBlock extends Widget_Base {
 
         $repeater->add_control(
             'content_from', [
-                'label' => __('Add Content From', 'hash-elements'),
+                'label' => esc_html__('Add Content From', 'hash-elements'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'wisiwyg' => __('WISIWYG Editor', 'hash-elements'),
-                    'page' => __('Page', 'hash-elements')
+                    'wisiwyg' => esc_html__('WISIWYG Editor', 'hash-elements'),
+                    'page' => esc_html__('Page', 'hash-elements')
                 ],
                 'default' => 'wisiwyg',
                 'label_block' => true
@@ -80,10 +80,10 @@ class SquarePlusTabBlock extends Widget_Base {
 
         $repeater->add_control(
             'content', [
-                'label' => __('Tab Content', 'hash-elements'),
+                'label' => esc_html__('Tab Content', 'hash-elements'),
                 'type' => Controls_Manager::WYSIWYG,
                 'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
-                'placeholder' => __('Type your description here', 'hash-elements'),
+                'placeholder' => esc_html__('Type your description here', 'hash-elements'),
                 'condition' => [
                     'content_from' => ['wisiwyg']
                 ],
@@ -105,7 +105,7 @@ class SquarePlusTabBlock extends Widget_Base {
 
         $this->add_control(
             'tabs', [
-                'label' => __('Tab List', 'hash-elements'),
+                'label' => esc_html__('Tab List', 'hash-elements'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
@@ -157,7 +157,7 @@ class SquarePlusTabBlock extends Widget_Base {
 
         $this->add_control(
             'icon_size', [
-                'label' => __('Tab Icon Size', 'hash-elements'),
+                'label' => esc_html__('Tab Icon Size', 'hash-elements'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -175,7 +175,7 @@ class SquarePlusTabBlock extends Widget_Base {
 
         $this->add_control(
             'icon_spacing', [
-                'label' => __('Tab Icon Spacing', 'hash-elements'),
+                'label' => esc_html__('Tab Icon Spacing', 'hash-elements'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [

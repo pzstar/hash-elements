@@ -52,25 +52,25 @@ class TotalTestimonialSlider extends Widget_Base {
 
         $repeater->add_control(
             'name', [
-                'label' => __('Name', 'hash-elements'),
+                'label' => esc_html__('Name', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __('John Doe', 'hash-elements'),
+                'default' => esc_html__('John Doe', 'hash-elements'),
             ]
         );
 
         $repeater->add_control(
             'designation', [
-                'label' => __('Designation', 'hash-elements'),
+                'label' => esc_html__('Designation', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __('CEO - ABC Corp.', 'hash-elements'),
+                'default' => esc_html__('CEO - ABC Corp.', 'hash-elements'),
             ]
         );
 
         $repeater->add_control(
             'image', [
-                'label' => __('Choose Image', 'hash-elements'),
+                'label' => esc_html__('Choose Image', 'hash-elements'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -80,7 +80,7 @@ class TotalTestimonialSlider extends Widget_Base {
 
         $repeater->add_control(
             'testimonial', [
-                'label' => __('Testimonial', 'hash-elements'),
+                'label' => esc_html__('Testimonial', 'hash-elements'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 10,
                 'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
@@ -89,7 +89,7 @@ class TotalTestimonialSlider extends Widget_Base {
 
         $this->add_control(
             'testimonial_block', [
-                'label' => __('Testimonials', 'hash-elements'),
+                'label' => esc_html__('Testimonials', 'hash-elements'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'title_field' => '{{{ name }}}',
@@ -293,7 +293,7 @@ class TotalTestimonialSlider extends Widget_Base {
 
         $this->start_controls_tab(
             'nav_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -334,7 +334,7 @@ class TotalTestimonialSlider extends Widget_Base {
 
         $this->start_controls_tab(
             'nav_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 

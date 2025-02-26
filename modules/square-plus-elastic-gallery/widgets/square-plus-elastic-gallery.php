@@ -48,7 +48,7 @@ class SquarePlusElasticGallery extends Widget_Base {
 
         $this->add_control(
             'gallery', [
-                'label' => __('Add Images', 'hash-elements'),
+                'label' => esc_html__('Add Images', 'hash-elements'),
                 'type' => Controls_Manager::GALLERY,
                 'default' => [],
             ]
@@ -88,7 +88,7 @@ class SquarePlusElasticGallery extends Widget_Base {
         $this->add_responsive_control(
             'image_width', [
                 'label' => esc_html__('Image Width', 'hash-elements'),
-                'description' => __('The image width will not extend beyond the container.', 'hash-elements'),
+                'description' => esc_html__('The image width will not extend beyond the container.', 'hash-elements'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [

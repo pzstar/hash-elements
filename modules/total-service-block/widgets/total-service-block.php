@@ -47,7 +47,7 @@ class TotalServiceBlock extends Widget_Base {
 
         $repeater->add_control(
             'icon', [
-                'label' => __('Icon', 'hash-elements'),
+                'label' => esc_html__('Icon', 'hash-elements'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-star',
@@ -58,7 +58,7 @@ class TotalServiceBlock extends Widget_Base {
 
         $repeater->add_control(
             'services_title', [
-                'label' => __('Title', 'hash-elements'),
+                'label' => esc_html__('Title', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
                 'default' => 'Heading'
@@ -67,7 +67,7 @@ class TotalServiceBlock extends Widget_Base {
 
         $repeater->add_control(
             'services_description', [
-                'label' => __('Description', 'hash-elements'),
+                'label' => esc_html__('Description', 'hash-elements'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 8,
                 'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
@@ -76,18 +76,18 @@ class TotalServiceBlock extends Widget_Base {
 
         $repeater->add_control(
             'button_text', [
-                'label' => __('Button Text', 'hash-elements'),
+                'label' => esc_html__('Button Text', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __('Read More', 'hash-elements')
+                'default' => esc_html__('Read More', 'hash-elements')
             ]
         );
 
         $repeater->add_control(
             'button_link', [
-                'label' => __('Button Link', 'hash-elements'),
+                'label' => esc_html__('Button Link', 'hash-elements'),
                 'type' => Controls_Manager::URL,
-                'placeholder' => __('Enter URL', 'hash-elements'),
+                'placeholder' => esc_html__('Enter URL', 'hash-elements'),
                 'show_external' => true,
                 'default' => [
                     'url' => '#',
@@ -99,19 +99,19 @@ class TotalServiceBlock extends Widget_Base {
 
         $this->add_control(
             'services_block', [
-                'label' => __('Services', 'hash-elements'),
+                'label' => esc_html__('Services', 'hash-elements'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'services_title' => __('Heading', 'hash-elements'),
+                        'services_title' => esc_html__('Heading', 'hash-elements'),
                         'services_description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
                         'button_link' => [
                             'url' => '#',
                             'is_external' => false,
                             'nofollow' => true,
                         ],
-                        'button_text' => __('Read More', 'hash-elements')
+                        'button_text' => esc_html__('Read More', 'hash-elements')
                     ]
                 ],
                 'title_field' => '{{{ services_title }}}',
@@ -227,7 +227,7 @@ class TotalServiceBlock extends Widget_Base {
 
         $this->start_controls_tab(
             'normal_link_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -245,7 +245,7 @@ class TotalServiceBlock extends Widget_Base {
 
         $this->start_controls_tab(
             'hover_link_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 

@@ -369,7 +369,7 @@ class NewsModuleFour extends Widget_Base {
 
         $this->start_controls_tab(
             'category_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -397,7 +397,7 @@ class NewsModuleFour extends Widget_Base {
 
         $this->start_controls_tab(
             'category_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 
@@ -462,7 +462,7 @@ class NewsModuleFour extends Widget_Base {
 
         $this->start_controls_tab(
             'top_post_title_tab', [
-                'label' => __('Top Post', 'hash-elements'),
+                'label' => esc_html__('Top Post', 'hash-elements'),
             ]
         );
 
@@ -490,7 +490,7 @@ class NewsModuleFour extends Widget_Base {
 
         $this->start_controls_tab(
             'bottom_post_title_tab', [
-                'label' => __('Bottom Post', 'hash-elements'),
+                'label' => esc_html__('Bottom Post', 'hash-elements'),
             ]
         );
 

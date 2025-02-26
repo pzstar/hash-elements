@@ -142,7 +142,7 @@ class TileModuleOne extends Widget_Base {
 
         $this->add_control(
             'large_image_options', [
-                'label' => __('Large Image', 'hash-elements'),
+                'label' => esc_html__('Large Image', 'hash-elements'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -158,7 +158,7 @@ class TileModuleOne extends Widget_Base {
 
         $this->add_control(
             'small_image_options', [
-                'label' => __('Small image', 'hash-elements'),
+                'label' => esc_html__('Small image', 'hash-elements'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -369,7 +369,7 @@ class TileModuleOne extends Widget_Base {
 
         $this->start_controls_tab(
             'category_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -399,7 +399,7 @@ class TileModuleOne extends Widget_Base {
 
         $this->start_controls_tab(
             'category_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 
@@ -474,7 +474,7 @@ class TileModuleOne extends Widget_Base {
 
         $this->start_controls_tab(
             'featured_title_tab', [
-                'label' => __('Featured Post', 'hash-elements'),
+                'label' => esc_html__('Featured Post', 'hash-elements'),
             ]
         );
 
@@ -502,7 +502,7 @@ class TileModuleOne extends Widget_Base {
 
         $this->start_controls_tab(
             'side_title_tab', [
-                'label' => __('Side Post', 'hash-elements'),
+                'label' => esc_html__('Side Post', 'hash-elements'),
             ]
         );
 

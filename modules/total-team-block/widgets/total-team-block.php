@@ -47,7 +47,7 @@ class TotalTeamBlock extends Widget_Base {
 
         $this->add_control(
             'member_image', [
-                'label' => __('Choose Photo', 'hash-elements'),
+                'label' => esc_html__('Choose Photo', 'hash-elements'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -57,25 +57,25 @@ class TotalTeamBlock extends Widget_Base {
 
         $this->add_control(
             'member_name', [
-                'label' => __('Name', 'hash-elements'),
+                'label' => esc_html__('Name', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __('John Doe', 'hash-elements'),
+                'default' => esc_html__('John Doe', 'hash-elements'),
             ]
         );
 
         $this->add_control(
             'member_designation', [
-                'label' => __('Designations', 'hash-elements'),
+                'label' => esc_html__('Designations', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __('Engineer', 'hash-elements'),
+                'default' => esc_html__('Engineer', 'hash-elements'),
             ]
         );
 
         $this->add_control(
             'member_description', [
-                'label' => __('Description', 'hash-elements'),
+                'label' => esc_html__('Description', 'hash-elements'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 10,
                 'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
@@ -85,18 +85,18 @@ class TotalTeamBlock extends Widget_Base {
 
         $this->add_control(
             'button_text', [
-                'label' => __('Button Text', 'hash-elements'),
+                'label' => esc_html__('Button Text', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __('Read More', 'hash-elements'),
+                'default' => esc_html__('Read More', 'hash-elements'),
             ]
         );
 
         $this->add_control(
             'button_link', [
-                'label' => __('Button Link', 'hash-elements'),
+                'label' => esc_html__('Button Link', 'hash-elements'),
                 'type' => Controls_Manager::URL,
-                'placeholder' => __('Enter URL', 'hash-elements'),
+                'placeholder' => esc_html__('Enter URL', 'hash-elements'),
                 'show_external' => true,
                 'default' => [
                     'url' => '#',
@@ -110,7 +110,7 @@ class TotalTeamBlock extends Widget_Base {
 
         $repeater->add_control(
             'social_icon_title', [
-                'label' => __('Title', 'hash-elements'),
+                'label' => esc_html__('Title', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
             ]
@@ -118,16 +118,16 @@ class TotalTeamBlock extends Widget_Base {
 
         $repeater->add_control(
             'social_icon', [
-                'label' => __('Social Icon', 'hash-elements'),
+                'label' => esc_html__('Social Icon', 'hash-elements'),
                 'type' => Controls_Manager::ICONS,
             ]
         );
 
         $repeater->add_control(
             'social_icon_link', [
-                'label' => __('Button Link', 'hash-elements'),
+                'label' => esc_html__('Button Link', 'hash-elements'),
                 'type' => Controls_Manager::URL,
-                'placeholder' => __('Enter URL', 'hash-elements'),
+                'placeholder' => esc_html__('Enter URL', 'hash-elements'),
                 'show_external' => true,
                 'default' => [
                     'url' => '',
@@ -139,13 +139,13 @@ class TotalTeamBlock extends Widget_Base {
 
         $this->add_control(
             'social_icons_block', [
-                'label' => __('Add Social Icons', 'hash-elements'),
+                'label' => esc_html__('Add Social Icons', 'hash-elements'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'prevent_empty' => false,
                 'default' => [
                     [
-                        'social_icon_title' => __('Facebook', 'hash-elements'),
+                        'social_icon_title' => esc_html__('Facebook', 'hash-elements'),
                         'social_icon' => [
                             'value' => 'fab fa-facebook-f',
                             'library' => 'brand',
@@ -307,7 +307,7 @@ class TotalTeamBlock extends Widget_Base {
 
         $this->start_controls_tab(
             'normal_button_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -337,7 +337,7 @@ class TotalTeamBlock extends Widget_Base {
 
         $this->start_controls_tab(
             'hover_button_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 
@@ -382,7 +382,7 @@ class TotalTeamBlock extends Widget_Base {
 
         $this->start_controls_tab(
             'normal_social_btn_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -412,7 +412,7 @@ class TotalTeamBlock extends Widget_Base {
 
         $this->start_controls_tab(
             'hover_social_btn_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 

@@ -48,7 +48,7 @@ class SquarePlusSlider extends Widget_Base {
 
         $repeater->add_control(
             'slider_image', [
-                'label' => __('Choose Image', 'hash-elements'),
+                'label' => esc_html__('Choose Image', 'hash-elements'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -58,36 +58,36 @@ class SquarePlusSlider extends Widget_Base {
 
         $repeater->add_control(
             'slider_title', [
-                'label' => __('Title', 'hash-elements'),
+                'label' => esc_html__('Title', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __('Slider Title', 'hash-elements'),
+                'default' => esc_html__('Slider Title', 'hash-elements'),
             ]
         );
 
         $repeater->add_control(
             'slider_description', [
-                'label' => __('Description', 'hash-elements'),
+                'label' => esc_html__('Description', 'hash-elements'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 5,
-                'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'hash-elements'),
+                'default' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'hash-elements'),
             ]
         );
 
         $repeater->add_control(
             'button_text', [
-                'label' => __('Button Text', 'hash-elements'),
+                'label' => esc_html__('Button Text', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __('Read More', 'hash-elements'),
+                'default' => esc_html__('Read More', 'hash-elements'),
             ]
         );
 
         $repeater->add_control(
             'button_link', [
-                'label' => __('Button Link', 'hash-elements'),
+                'label' => esc_html__('Button Link', 'hash-elements'),
                 'type' => Controls_Manager::URL,
-                'placeholder' => __('Enter URL', 'hash-elements'),
+                'placeholder' => esc_html__('Enter URL', 'hash-elements'),
                 'show_external' => true,
                 'default' => [
                     'url' => '',
@@ -99,12 +99,12 @@ class SquarePlusSlider extends Widget_Base {
 
         $this->add_control(
             'slider_block', [
-                'label' => __('Sliders', 'hash-elements'),
+                'label' => esc_html__('Sliders', 'hash-elements'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'slider_title' => __('Title', 'hash-elements'),
+                        'slider_title' => esc_html__('Title', 'hash-elements'),
                     ]
                 ],
                 'title_field' => '{{{ slider_title }}}',
@@ -265,7 +265,7 @@ class SquarePlusSlider extends Widget_Base {
 
         $this->start_controls_tab(
             'button_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -293,7 +293,7 @@ class SquarePlusSlider extends Widget_Base {
 
         $this->start_controls_tab(
             'button_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 
@@ -336,7 +336,7 @@ class SquarePlusSlider extends Widget_Base {
 
         $this->start_controls_tab(
             'nav_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -364,7 +364,7 @@ class SquarePlusSlider extends Widget_Base {
 
         $this->start_controls_tab(
             'nav_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 

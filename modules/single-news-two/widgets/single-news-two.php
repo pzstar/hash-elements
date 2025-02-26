@@ -324,7 +324,7 @@ class Single_News_Two extends Widget_Base {
         $this->add_group_control(
             \Elementor\Group_Control_Background::get_type(), [
                 'name' => 'background',
-                'label' => __('Overlay Background', 'hash-elements'),
+                'label' => esc_html__('Overlay Background', 'hash-elements'),
                 'types' => ['gradient'],
                 'selector' => '{{WRAPPER}} .he-post-graident-title .he-post-content',
             ]

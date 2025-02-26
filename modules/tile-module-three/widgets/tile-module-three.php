@@ -284,7 +284,7 @@ class TileModuleThree extends Widget_Base {
 
         $this->start_controls_tab(
             'category_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -314,7 +314,7 @@ class TileModuleThree extends Widget_Base {
 
         $this->start_controls_tab(
             'category_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 

@@ -366,7 +366,7 @@ class NewsModuleSix extends Widget_Base {
 
         $this->start_controls_tab(
             'category_normal_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -394,7 +394,7 @@ class NewsModuleSix extends Widget_Base {
 
         $this->start_controls_tab(
             'category_hover_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 
@@ -467,7 +467,7 @@ class NewsModuleSix extends Widget_Base {
 
         $this->start_controls_tab(
             'top_block_title_tab', [
-                'label' => __('Top Block', 'hash-elements'),
+                'label' => esc_html__('Top Block', 'hash-elements'),
             ]
         );
 
@@ -495,7 +495,7 @@ class NewsModuleSix extends Widget_Base {
 
         $this->start_controls_tab(
             'bottom_block_title_tab', [
-                'label' => __('Bottom Block', 'hash-elements'),
+                'label' => esc_html__('Bottom Block', 'hash-elements'),
             ]
         );
 

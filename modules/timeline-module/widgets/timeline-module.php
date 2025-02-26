@@ -69,7 +69,7 @@ class TimelineModule extends Widget_Base {
 
         $this->add_control(
             'posts_number', [
-                'label' => __('No of Posts', 'hash-elements'),
+                'label' => esc_html__('No of Posts', 'hash-elements'),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 5,
                 'max' => 20,

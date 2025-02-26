@@ -61,7 +61,7 @@ class TotalBlogModule extends Widget_Base {
 
         $this->add_control(
             'post_count', [
-                'label' => __('Number of Posts', 'hash-elements'),
+                'label' => esc_html__('Number of Posts', 'hash-elements'),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 3,
                 'max' => 50,
@@ -253,7 +253,7 @@ class TotalBlogModule extends Widget_Base {
 
         $this->start_controls_tab(
             'normal_button_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -282,7 +282,7 @@ class TotalBlogModule extends Widget_Base {
 
         $this->start_controls_tab(
             'hover_button_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 

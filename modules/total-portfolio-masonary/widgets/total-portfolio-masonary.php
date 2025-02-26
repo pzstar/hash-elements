@@ -55,7 +55,7 @@ class TotalPortfolioMasonary extends Widget_Base {
 
         $this->add_control(
             'exclude_posts', [
-                'label' => __('Exclude Posts', 'hash-elements'),
+                'label' => esc_html__('Exclude Posts', 'hash-elements'),
                 'type' => Controls_Manager::SELECT2,
                 'label_block' => true,
                 'multiple' => true,
@@ -112,10 +112,10 @@ class TotalPortfolioMasonary extends Widget_Base {
 
         $this->add_control(
             'display_all_tab', [
-                'label' => __('Display All Tab', 'hash-elements'),
+                'label' => esc_html__('Display All Tab', 'hash-elements'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'hash-elements'),
-                'label_off' => __('No', 'hash-elements'),
+                'label_on' => esc_html__('Yes', 'hash-elements'),
+                'label_off' => esc_html__('No', 'hash-elements'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -172,13 +172,13 @@ class TotalPortfolioMasonary extends Widget_Base {
 
         $this->add_control(
             'tab_alignment', [
-                'label' => __('Tab Alignment', 'square-plus'),
+                'label' => esc_html__('Tab Alignment', 'square-plus'),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'default' => 'tab-align-right',
                 'options' => [
-                    'tab-align-left' => __('Left', 'square-plus'),
-                    'tab-align-center' => __('Center', 'square-plus'),
-                    'tab-align-right' => __('Right', 'square-plus')
+                    'tab-align-left' => esc_html__('Left', 'square-plus'),
+                    'tab-align-center' => esc_html__('Center', 'square-plus'),
+                    'tab-align-right' => esc_html__('Right', 'square-plus')
                 ],
             ]
         );
@@ -237,7 +237,7 @@ class TotalPortfolioMasonary extends Widget_Base {
 
         $this->start_controls_tab(
             'normal_button_tab', [
-                'label' => __('Normal', 'hash-elements'),
+                'label' => esc_html__('Normal', 'hash-elements'),
             ]
         );
 
@@ -267,7 +267,7 @@ class TotalPortfolioMasonary extends Widget_Base {
 
         $this->start_controls_tab(
             'hover_button_tab', [
-                'label' => __('Hover', 'hash-elements'),
+                'label' => esc_html__('Hover', 'hash-elements'),
             ]
         );
 

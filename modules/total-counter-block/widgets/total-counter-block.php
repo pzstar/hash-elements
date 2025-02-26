@@ -44,7 +44,7 @@ class TotalCounterBlock extends Widget_Base {
 
         $this->add_control(
             'counter_icon', [
-                'label' => __('Icon', 'hash-elements'),
+                'label' => esc_html__('Icon', 'hash-elements'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-star',
@@ -56,16 +56,16 @@ class TotalCounterBlock extends Widget_Base {
 
         $this->add_control(
             'counter_title', [
-                'label' => __('Title', 'hash-elements'),
+                'label' => esc_html__('Title', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
-                'default' => __('Counter Heading', 'hash-elements'),
+                'default' => esc_html__('Counter Heading', 'hash-elements'),
                 'label_block' => true,
             ]
         );
 
         $this->add_control(
             'counter_number', [
-                'label' => __('Counter Number', 'hash-elements'),
+                'label' => esc_html__('Counter Number', 'hash-elements'),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 0,
                 'max' => 1000000,
@@ -96,7 +96,7 @@ class TotalCounterBlock extends Widget_Base {
 
         $this->add_control(
             'icon_size', [
-                'label' => __('Icon Size', 'hash-elements'),
+                'label' => esc_html__('Icon Size', 'hash-elements'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [

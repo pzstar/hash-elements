@@ -47,7 +47,7 @@ class TotalProgressbar extends Widget_Base {
 
         $repeater->add_control(
             'progressbar_title', [
-                'label' => __('Title', 'hash-elements'),
+                'label' => esc_html__('Title', 'hash-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
             ]
@@ -55,7 +55,7 @@ class TotalProgressbar extends Widget_Base {
 
         $repeater->add_control(
             'progressbar_percentage', [
-                'label' => __('Percentage', 'hash-elements'),
+                'label' => esc_html__('Percentage', 'hash-elements'),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 0,
                 'max' => 100,
@@ -66,12 +66,12 @@ class TotalProgressbar extends Widget_Base {
 
         $this->add_control(
             'progressbar_block', [
-                'label' => __('Progress Bars', 'hash-elements'),
+                'label' => esc_html__('Progress Bars', 'hash-elements'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'progressbar_title' => __('Progress Bar #1', 'hash-elements'),
+                        'progressbar_title' => esc_html__('Progress Bar #1', 'hash-elements'),
                     ]
                 ],
                 'title_field' => '{{{ progressbar_title }}}',
@@ -109,7 +109,7 @@ class TotalProgressbar extends Widget_Base {
 
         $this->add_control(
             'progressbar_spacing', [
-                'label' => __('Spacing between Progress bars (px)', 'hash-elements'),
+                'label' => esc_html__('Spacing between Progress bars (px)', 'hash-elements'),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 0,
                 'max' => 100,
