@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Hash Elements - Addons for Elementor
  * Description: Elementor addons for WordPress Themes developed by HashThemes https://hashthemes.com
- * Version: 1.5.1
+ * Version: 1.5.2
  * Author: HashThemes
  * Author URI: https://hashthemes.com/
  * Text Domain: hash-elements
