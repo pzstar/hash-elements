@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hash Elements\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-21 07:16+0000\n"
+"POT-Creation-Date: 2025-03-03 04:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.4.0; wp-5.4.2"
 
-#: hash-elements.php:86
+#: hash-elements.php:89
 msgid "Activate Elementor Now"
 msgstr ""
 
@@ -87,7 +87,7 @@ msgid "ago"
 msgstr ""
 
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:109
-#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:321
+#: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:320
 msgid "All"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr ""
 msgid "Anchor Color"
 msgstr ""
 
-#: inc/controls/groups/group-control-query.php:101
+#: inc/controls/groups/group-control-query.php:109
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:89
 msgid "Ascending"
 msgstr ""
@@ -110,7 +110,7 @@ msgstr ""
 msgid "Autoplay"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:292
+#: modules/single-news-one/widgets/single-news-one.php:325
 msgid "Backgorund"
 msgstr ""
 
@@ -197,7 +197,7 @@ msgstr ""
 msgid "Banner Alignment"
 msgstr ""
 
-#: modules/square-plus-slider/widgets/square-plus-slider.php:450
+#: modules/square-plus-slider/widgets/square-plus-slider.php:448
 msgid "Banner Shadow"
 msgstr ""
 
@@ -282,18 +282,18 @@ msgstr ""
 msgid "Button Text"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:56
-#: modules/single-news-two/widgets/single-news-two.php:56
+#: modules/single-news-one/widgets/single-news-one.php:57
+#: modules/single-news-two/widgets/single-news-two.php:57
 msgid "By Categories"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:55
-#: modules/single-news-two/widgets/single-news-two.php:55
+#: modules/single-news-one/widgets/single-news-one.php:56
+#: modules/single-news-two/widgets/single-news-two.php:56
 msgid "By Post Title"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:57
-#: modules/single-news-two/widgets/single-news-two.php:57
+#: modules/single-news-one/widgets/single-news-one.php:58
+#: modules/single-news-two/widgets/single-news-two.php:58
 msgid "By Tags"
 msgstr ""
 
@@ -352,10 +352,10 @@ msgid "Category Typography"
 msgstr ""
 
 #: modules/advertisement-banner/widgets/advertisement-banner.php:86
-#: modules/single-news-one/widgets/single-news-one.php:283
+#: modules/single-news-one/widgets/single-news-one.php:316
 #: modules/square-plus-elastic-gallery/widgets/square-plus-elastic-gallery.php:118
 #: modules/personal-information/widgets/personal-information.php:106
-#: modules/single-news-two/widgets/single-news-two.php:284
+#: modules/single-news-two/widgets/single-news-two.php:317
 msgid "Center"
 msgstr ""
 
@@ -438,9 +438,9 @@ msgstr ""
 #: modules/news-module-one/widgets/news-module-one.php:324
 #: modules/news-module-one/widgets/news-module-one.php:546
 #: modules/news-module-one/widgets/news-module-one.php:573
-#: modules/single-news-one/widgets/single-news-one.php:333
-#: modules/single-news-one/widgets/single-news-one.php:382
-#: modules/single-news-one/widgets/single-news-one.php:421
+#: modules/single-news-one/widgets/single-news-one.php:366
+#: modules/single-news-one/widgets/single-news-one.php:415
+#: modules/single-news-one/widgets/single-news-one.php:454
 #: modules/square-plus-logo-carousel/widgets/square-plus-logo-carousel.php:230
 #: modules/total-team-block/widgets/total-team-block.php:203
 #: modules/total-team-block/widgets/total-team-block.php:327
@@ -454,9 +454,9 @@ msgstr ""
 #: modules/total-testimonial-slider/widgets/total-testimonial-slider.php:191
 #: modules/total-testimonial-slider/widgets/total-testimonial-slider.php:218
 #: modules/total-testimonial-slider/widgets/total-testimonial-slider.php:245
-#: modules/single-news-two/widgets/single-news-two.php:333
-#: modules/single-news-two/widgets/single-news-two.php:372
-#: modules/single-news-two/widgets/single-news-two.php:411
+#: modules/single-news-two/widgets/single-news-two.php:366
+#: modules/single-news-two/widgets/single-news-two.php:405
+#: modules/single-news-two/widgets/single-news-two.php:444
 #: modules/news-module-twelve/widgets/news-module-twelve.php:267
 #: modules/news-module-twelve/widgets/news-module-twelve.php:449
 #: modules/news-module-two/widgets/news-module-two.php:324
@@ -474,13 +474,13 @@ msgstr ""
 #: modules/total-service-block/widgets/total-service-block.php:254
 #: modules/total-featured-block/widgets/total-featured-block.php:316
 #: modules/total-slider/widgets/total-slider.php:323
-#: modules/single-news-one/widgets/single-news-one.php:343
+#: modules/single-news-one/widgets/single-news-one.php:376
 #: modules/square-plus-logo-carousel/widgets/square-plus-logo-carousel.php:249
 #: modules/total-team-block/widgets/total-team-block.php:357
 msgid "Color (Hover)"
 msgstr ""
 
-#: inc/controls/groups/group-control-query.php:88
+#: inc/controls/groups/group-control-query.php:96
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:74
 msgid "Comment Count"
 msgstr ""
@@ -510,18 +510,18 @@ msgstr ""
 #: modules/square-plus-featured-block/widgets/square-plus-featured-block.php:225
 #: modules/news-module-thirteen/widgets/news-module-thirteen.php:408
 #: modules/ticker-module/widgets/ticker-module.php:157
-#: modules/single-news-one/widgets/single-news-one.php:272
+#: modules/single-news-one/widgets/single-news-one.php:305
 #: modules/square-plus-logo-carousel/widgets/square-plus-logo-carousel.php:43
 #: modules/square-plus-elastic-gallery/widgets/square-plus-elastic-gallery.php:45
 #: modules/personal-information/widgets/personal-information.php:60
-#: modules/single-news-two/widgets/single-news-two.php:273
+#: modules/single-news-two/widgets/single-news-two.php:306
 #: modules/square-plus-tab-block/widgets/square-plus-tab-block.php:42
 msgid "Content"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:279
+#: modules/single-news-one/widgets/single-news-one.php:312
 #: modules/personal-information/widgets/personal-information.php:102
-#: modules/single-news-two/widgets/single-news-two.php:280
+#: modules/single-news-two/widgets/single-news-two.php:313
 msgid "Content Alignment"
 msgstr ""
 
@@ -542,9 +542,9 @@ msgstr ""
 #: modules/tile-module-one/widgets/tile-module-one.php:60
 #: modules/news-module-ten/widgets/news-module-ten.php:60
 #: modules/news-module-one/widgets/news-module-one.php:60
-#: modules/single-news-one/widgets/single-news-one.php:46
+#: modules/single-news-one/widgets/single-news-one.php:47
 #: modules/total-blog-module/widgets/total-blog-module.php:43
-#: modules/single-news-two/widgets/single-news-two.php:46
+#: modules/single-news-two/widgets/single-news-two.php:47
 #: modules/news-module-twelve/widgets/news-module-twelve.php:59
 #: modules/news-module-two/widgets/news-module-two.php:60
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:42
@@ -553,13 +553,13 @@ msgstr ""
 msgid "Content Filter"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:313
-#: modules/single-news-two/widgets/single-news-two.php:313
+#: modules/single-news-one/widgets/single-news-one.php:346
+#: modules/single-news-two/widgets/single-news-two.php:346
 msgid "Content Margin"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:302
-#: modules/single-news-two/widgets/single-news-two.php:302
+#: modules/single-news-one/widgets/single-news-one.php:335
+#: modules/single-news-two/widgets/single-news-two.php:335
 msgid "Content Padding"
 msgstr ""
 
@@ -595,8 +595,8 @@ msgstr ""
 #: modules/tile-module-one/widgets/tile-module-one.php:267
 #: modules/news-module-ten/widgets/news-module-ten.php:246
 #: modules/news-module-one/widgets/news-module-one.php:303
-#: modules/single-news-one/widgets/single-news-one.php:180
-#: modules/single-news-two/widgets/single-news-two.php:180
+#: modules/single-news-one/widgets/single-news-one.php:213
+#: modules/single-news-two/widgets/single-news-two.php:213
 #: modules/news-module-twelve/widgets/news-module-twelve.php:245
 #: modules/news-module-two/widgets/news-module-two.php:303
 #: modules/news-module-eight/widgets/news-module-eight.php:294
@@ -620,8 +620,8 @@ msgstr ""
 #: modules/tile-module-one/widgets/tile-module-one.php:257
 #: modules/news-module-ten/widgets/news-module-ten.php:236
 #: modules/news-module-one/widgets/news-module-one.php:293
-#: modules/single-news-one/widgets/single-news-one.php:167
-#: modules/single-news-two/widgets/single-news-two.php:167
+#: modules/single-news-one/widgets/single-news-one.php:200
+#: modules/single-news-two/widgets/single-news-two.php:200
 #: modules/news-module-twelve/widgets/news-module-twelve.php:235
 #: modules/news-module-two/widgets/news-module-two.php:293
 #: modules/news-module-eight/widgets/news-module-eight.php:284
@@ -629,7 +629,7 @@ msgstr ""
 msgid "Custom Format"
 msgstr ""
 
-#: inc/controls/groups/group-control-query.php:85
+#: inc/controls/groups/group-control-query.php:93
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:71
 msgid "Date"
 msgstr ""
@@ -650,8 +650,8 @@ msgstr ""
 #: modules/tile-module-one/widgets/tile-module-one.php:252
 #: modules/news-module-ten/widgets/news-module-ten.php:231
 #: modules/news-module-one/widgets/news-module-one.php:288
-#: modules/single-news-one/widgets/single-news-one.php:162
-#: modules/single-news-two/widgets/single-news-two.php:162
+#: modules/single-news-one/widgets/single-news-one.php:195
+#: modules/single-news-two/widgets/single-news-two.php:195
 #: modules/news-module-twelve/widgets/news-module-twelve.php:230
 #: modules/news-module-two/widgets/news-module-two.php:288
 #: modules/news-module-eight/widgets/news-module-eight.php:279
@@ -659,7 +659,7 @@ msgstr ""
 msgid "Date Format"
 msgstr ""
 
-#: inc/controls/groups/group-control-query.php:100
+#: inc/controls/groups/group-control-query.php:108
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:88
 msgid "Descending"
 msgstr ""
@@ -693,22 +693,26 @@ msgstr ""
 msgid "Designations"
 msgstr ""
 
+#: hash-elements.php:171
+msgid "Dismiss this notice."
+msgstr ""
+
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:115
 msgid "Display All Tab"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:89
-#: modules/single-news-two/widgets/single-news-two.php:89
+#: modules/single-news-one/widgets/single-news-one.php:106
+#: modules/single-news-two/widgets/single-news-two.php:106
 msgid "Displays latest post from the selected categories"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:103
-#: modules/single-news-two/widgets/single-news-two.php:103
+#: modules/single-news-one/widgets/single-news-one.php:136
+#: modules/single-news-two/widgets/single-news-two.php:136
 msgid "Displays latest post from the selected tags"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:61
-#: modules/single-news-two/widgets/single-news-two.php:61
+#: modules/single-news-one/widgets/single-news-one.php:62
+#: modules/single-news-two/widgets/single-news-two.php:62
 msgid "Displays only one post"
 msgstr ""
 
@@ -812,12 +816,12 @@ msgstr ""
 msgid "Excerpt Length"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:200
-#: modules/single-news-two/widgets/single-news-two.php:200
+#: modules/single-news-one/widgets/single-news-one.php:233
+#: modules/single-news-two/widgets/single-news-two.php:233
 msgid "Excerpt Length (in Letters)"
 msgstr ""
 
-#: inc/controls/groups/group-control-query.php:69
+#: inc/controls/groups/group-control-query.php:77
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:58
 msgid "Exclude Posts"
 msgstr ""
@@ -838,8 +842,8 @@ msgstr ""
 #: modules/tile-module-one/widgets/tile-module-one.php:270
 #: modules/news-module-ten/widgets/news-module-ten.php:249
 #: modules/news-module-one/widgets/news-module-one.php:306
-#: modules/single-news-one/widgets/single-news-one.php:183
-#: modules/single-news-two/widgets/single-news-two.php:183
+#: modules/single-news-one/widgets/single-news-one.php:216
+#: modules/single-news-two/widgets/single-news-two.php:216
 #: modules/news-module-twelve/widgets/news-module-twelve.php:248
 #: modules/news-module-two/widgets/news-module-two.php:306
 #: modules/news-module-eight/widgets/news-module-eight.php:297
@@ -896,6 +900,15 @@ msgstr ""
 
 #: modules/square-plus-elastic-gallery/widgets/square-plus-elastic-gallery.php:113
 msgid "Gallery Alignment"
+msgstr ""
+
+#. %1$s is link start tag, %2$s is link end tag.
+#: hash-elements.php:159
+#, php-format
+msgid ""
+"Great to see that you have been using Hash Elements for some time. We hope "
+"you love it, and we would really appreciate it if you would %1$sgive us a "
+"%3$s rating%2$s. Your valuable review will inspire us to make it more better."
 msgstr ""
 
 #. Name of the plugin
@@ -1041,9 +1054,8 @@ msgstr ""
 msgid "https://hashthemes.com/"
 msgstr ""
 
-#: modules/square-plus-featured-block/widgets/square-plus-featured-block.php:81
-#: modules/advertisement-banner/widgets/advertisement-banner.php:60
-msgid "https://your-link.com"
+#: hash-elements.php:164
+msgid "I have already rated"
 msgstr ""
 
 #: modules/square-plus-featured-block/widgets/square-plus-featured-block.php:48
@@ -1103,8 +1115,8 @@ msgstr ""
 #: modules/tile-module-one/widgets/tile-module-one.php:230
 #: modules/news-module-ten/widgets/news-module-ten.php:209
 #: modules/news-module-one/widgets/news-module-one.php:266
-#: modules/single-news-one/widgets/single-news-one.php:248
-#: modules/single-news-two/widgets/single-news-two.php:248
+#: modules/single-news-one/widgets/single-news-one.php:281
+#: modules/single-news-two/widgets/single-news-two.php:281
 #: modules/news-module-twelve/widgets/news-module-twelve.php:208
 #: modules/news-module-two/widgets/news-module-two.php:266
 #: modules/news-module-eight/widgets/news-module-eight.php:257
@@ -1120,8 +1132,8 @@ msgstr ""
 msgid "Image Height"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:226
-#: modules/single-news-two/widgets/single-news-two.php:226
+#: modules/single-news-one/widgets/single-news-one.php:259
+#: modules/single-news-two/widgets/single-news-two.php:259
 msgid "Image Height (%)"
 msgstr ""
 
@@ -1156,8 +1168,8 @@ msgstr ""
 msgid "Image Position"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:211
-#: modules/single-news-two/widgets/single-news-two.php:211
+#: modules/single-news-one/widgets/single-news-one.php:244
+#: modules/single-news-two/widgets/single-news-two.php:244
 msgid "Image Settings"
 msgstr ""
 
@@ -1174,7 +1186,7 @@ msgstr ""
 msgid "Image Width(px)"
 msgstr ""
 
-#: hash-elements.php:94
+#: hash-elements.php:97
 msgid "Install Elementor Now"
 msgstr ""
 
@@ -1192,7 +1204,7 @@ msgstr ""
 msgid "Large Image"
 msgstr ""
 
-#: inc/controls/groups/group-control-query.php:86
+#: inc/controls/groups/group-control-query.php:94
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:72
 msgid "Last Modified Date"
 msgstr ""
@@ -1201,17 +1213,17 @@ msgstr ""
 msgid "Latest Posts"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:204
-#: modules/single-news-two/widgets/single-news-two.php:204
+#: modules/single-news-one/widgets/single-news-one.php:237
+#: modules/single-news-two/widgets/single-news-two.php:237
 msgid "Leave blank or enter 0 to hide the excerpt"
 msgstr ""
 
 #: modules/advertisement-banner/widgets/advertisement-banner.php:85
 #: modules/news-module-ten/widgets/news-module-ten.php:150
-#: modules/single-news-one/widgets/single-news-one.php:282
+#: modules/single-news-one/widgets/single-news-one.php:315
 #: modules/square-plus-elastic-gallery/widgets/square-plus-elastic-gallery.php:117
 #: modules/personal-information/widgets/personal-information.php:105
-#: modules/single-news-two/widgets/single-news-two.php:283
+#: modules/single-news-two/widgets/single-news-two.php:316
 msgid "Left"
 msgstr ""
 
@@ -1301,12 +1313,6 @@ msgstr ""
 msgid "Long Border Color"
 msgstr ""
 
-#: modules/square-plus-slider/widgets/square-plus-slider.php:73
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, "
-"luctus nec ullamcorper mattis, pulvinar dapibus leo."
-msgstr ""
-
 #: inc/widget-loader.php:95
 msgid "Magazine Blocks"
 msgstr ""
@@ -1337,14 +1343,14 @@ msgstr ""
 #: modules/news-module-ten/widgets/news-module-ten.php:424
 #: modules/news-module-one/widgets/news-module-one.php:490
 #: modules/news-module-one/widgets/news-module-one.php:519
-#: modules/single-news-one/widgets/single-news-one.php:361
-#: modules/single-news-one/widgets/single-news-one.php:400
-#: modules/single-news-one/widgets/single-news-one.php:439
+#: modules/single-news-one/widgets/single-news-one.php:394
+#: modules/single-news-one/widgets/single-news-one.php:433
+#: modules/single-news-one/widgets/single-news-one.php:472
 #: modules/personal-information/widgets/personal-information.php:222
 #: modules/total-blog-module/widgets/total-blog-module.php:158
-#: modules/single-news-two/widgets/single-news-two.php:351
-#: modules/single-news-two/widgets/single-news-two.php:390
-#: modules/single-news-two/widgets/single-news-two.php:429
+#: modules/single-news-two/widgets/single-news-two.php:384
+#: modules/single-news-two/widgets/single-news-two.php:423
+#: modules/single-news-two/widgets/single-news-two.php:462
 #: modules/news-module-twelve/widgets/news-module-twelve.php:428
 #: modules/news-module-two/widgets/news-module-two.php:490
 #: modules/news-module-two/widgets/news-module-two.php:519
@@ -1604,17 +1610,17 @@ msgstr ""
 #: modules/news-module-one/widgets/news-module-one.php:230
 #: modules/news-module-one/widgets/news-module-one.php:240
 #: modules/news-module-one/widgets/news-module-one.php:250
-#: modules/single-news-one/widgets/single-news-one.php:132
-#: modules/single-news-one/widgets/single-news-one.php:143
-#: modules/single-news-one/widgets/single-news-one.php:154
+#: modules/single-news-one/widgets/single-news-one.php:165
+#: modules/single-news-one/widgets/single-news-one.php:176
+#: modules/single-news-one/widgets/single-news-one.php:187
 #: modules/square-plus-logo-carousel/widgets/square-plus-logo-carousel.php:90
 #: modules/square-plus-logo-carousel/widgets/square-plus-logo-carousel.php:193
 #: modules/total-logo-carousel/widgets/total-logo-carousel.php:90
 #: modules/total-logo-carousel/widgets/total-logo-carousel.php:119
 #: modules/total-testimonial-slider/widgets/total-testimonial-slider.php:113
-#: modules/single-news-two/widgets/single-news-two.php:132
-#: modules/single-news-two/widgets/single-news-two.php:143
-#: modules/single-news-two/widgets/single-news-two.php:154
+#: modules/single-news-two/widgets/single-news-two.php:165
+#: modules/single-news-two/widgets/single-news-two.php:176
+#: modules/single-news-two/widgets/single-news-two.php:187
 #: modules/news-module-twelve/widgets/news-module-twelve.php:157
 #: modules/news-module-twelve/widgets/news-module-twelve.php:170
 #: modules/news-module-twelve/widgets/news-module-twelve.php:181
@@ -1714,9 +1720,9 @@ msgstr ""
 msgid "Number of Posts"
 msgstr ""
 
-#: inc/controls/groups/group-control-query.php:107
-#: modules/single-news-one/widgets/single-news-one.php:109
-#: modules/single-news-two/widgets/single-news-two.php:109
+#: inc/controls/groups/group-control-query.php:115
+#: modules/single-news-one/widgets/single-news-one.php:142
+#: modules/single-news-two/widgets/single-news-two.php:142
 msgid "Offset"
 msgstr ""
 
@@ -1725,24 +1731,24 @@ msgstr ""
 msgid "Open Link in New Tab"
 msgstr ""
 
-#: hash-elements.php:85
+#: hash-elements.php:88
 msgid ""
 "Ops! Hash Elements is not working because you need to activate the Elementor "
 "plugin first."
 msgstr ""
 
-#: hash-elements.php:93
+#: hash-elements.php:96
 msgid ""
 "Ops! Hash Elements is not working because you need to install the Elementor "
 "plugin"
 msgstr ""
 
-#: inc/controls/groups/group-control-query.php:97
+#: inc/controls/groups/group-control-query.php:105
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:85
 msgid "Order"
 msgstr ""
 
-#: inc/controls/groups/group-control-query.php:82
+#: inc/controls/groups/group-control-query.php:90
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:68
 msgid "Order By"
 msgstr ""
@@ -1751,7 +1757,7 @@ msgstr ""
 msgid "Outline Color"
 msgstr ""
 
-#: modules/single-news-two/widgets/single-news-two.php:294
+#: modules/single-news-two/widgets/single-news-two.php:327
 msgid "Overlay Background"
 msgstr ""
 
@@ -1807,8 +1813,8 @@ msgstr ""
 msgid "Portfolio Masonary"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:129
-#: modules/single-news-two/widgets/single-news-two.php:129
+#: modules/single-news-one/widgets/single-news-one.php:162
+#: modules/single-news-two/widgets/single-news-two.php:162
 msgid "Post Author"
 msgstr ""
 
@@ -1823,40 +1829,40 @@ msgstr ""
 msgid "Post Block"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:151
-#: modules/single-news-two/widgets/single-news-two.php:151
+#: modules/single-news-one/widgets/single-news-one.php:184
+#: modules/single-news-two/widgets/single-news-two.php:184
 msgid "Post Comments"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:140
-#: modules/single-news-two/widgets/single-news-two.php:140
+#: modules/single-news-one/widgets/single-news-one.php:173
+#: modules/single-news-two/widgets/single-news-two.php:173
 msgid "Post Date"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:195
-#: modules/single-news-one/widgets/single-news-one.php:414
-#: modules/single-news-two/widgets/single-news-two.php:195
-#: modules/single-news-two/widgets/single-news-two.php:404
+#: modules/single-news-one/widgets/single-news-one.php:228
+#: modules/single-news-one/widgets/single-news-one.php:447
+#: modules/single-news-two/widgets/single-news-two.php:228
+#: modules/single-news-two/widgets/single-news-two.php:437
 msgid "Post Excerpt"
 msgstr ""
 
-#: inc/controls/groups/group-control-query.php:90
+#: inc/controls/groups/group-control-query.php:98
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:76
 msgid "Post ID"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:123
-#: modules/single-news-two/widgets/single-news-two.php:123
+#: modules/single-news-one/widgets/single-news-one.php:156
+#: modules/single-news-two/widgets/single-news-two.php:156
 msgid "Post Meta"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:375
-#: modules/single-news-two/widgets/single-news-two.php:365
+#: modules/single-news-one/widgets/single-news-one.php:408
+#: modules/single-news-two/widgets/single-news-two.php:398
 msgid "Post Metas"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:326
-#: modules/single-news-two/widgets/single-news-two.php:326
+#: modules/single-news-one/widgets/single-news-one.php:359
+#: modules/single-news-two/widgets/single-news-two.php:359
 msgid "Post Title"
 msgstr ""
 
@@ -1899,7 +1905,7 @@ msgstr ""
 msgid "Progress Bars"
 msgstr ""
 
-#: inc/controls/groups/group-control-query.php:87
+#: inc/controls/groups/group-control-query.php:95
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:73
 msgid "Rand"
 msgstr ""
@@ -1910,7 +1916,7 @@ msgstr ""
 #: modules/total-featured-block/widgets/total-featured-block.php:79
 #: modules/total-slider/widgets/total-slider.php:82
 #: modules/total-team-block/widgets/total-team-block.php:91
-#: modules/total-blog-module/widgets/total-blog-module.php:360
+#: modules/total-blog-module/widgets/total-blog-module.php:361
 msgid "Read More"
 msgstr ""
 
@@ -1942,8 +1948,8 @@ msgstr ""
 #: modules/tile-module-one/widgets/tile-module-one.php:255
 #: modules/news-module-ten/widgets/news-module-ten.php:234
 #: modules/news-module-one/widgets/news-module-one.php:291
-#: modules/single-news-one/widgets/single-news-one.php:165
-#: modules/single-news-two/widgets/single-news-two.php:165
+#: modules/single-news-one/widgets/single-news-one.php:198
+#: modules/single-news-two/widgets/single-news-two.php:198
 #: modules/news-module-twelve/widgets/news-module-twelve.php:233
 #: modules/news-module-two/widgets/news-module-two.php:291
 #: modules/news-module-eight/widgets/news-module-eight.php:282
@@ -1953,10 +1959,10 @@ msgstr ""
 
 #: modules/advertisement-banner/widgets/advertisement-banner.php:87
 #: modules/news-module-ten/widgets/news-module-ten.php:151
-#: modules/single-news-one/widgets/single-news-one.php:284
+#: modules/single-news-one/widgets/single-news-one.php:317
 #: modules/square-plus-elastic-gallery/widgets/square-plus-elastic-gallery.php:119
 #: modules/personal-information/widgets/personal-information.php:107
-#: modules/single-news-two/widgets/single-news-two.php:285
+#: modules/single-news-two/widgets/single-news-two.php:318
 msgid "Right"
 msgstr ""
 
@@ -1964,23 +1970,23 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:81
-#: modules/single-news-two/widgets/single-news-two.php:81
+#: modules/single-news-one/widgets/single-news-one.php:98
+#: modules/single-news-two/widgets/single-news-two.php:98
 msgid "Select Categories"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:52
-#: modules/single-news-two/widgets/single-news-two.php:52
+#: modules/single-news-one/widgets/single-news-one.php:53
+#: modules/single-news-two/widgets/single-news-two.php:53
 msgid "Select Filter"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:67
-#: modules/single-news-two/widgets/single-news-two.php:67
+#: modules/single-news-one/widgets/single-news-one.php:68
+#: modules/single-news-two/widgets/single-news-two.php:68
 msgid "Select Post"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:95
-#: modules/single-news-two/widgets/single-news-two.php:95
+#: modules/single-news-one/widgets/single-news-one.php:128
+#: modules/single-news-two/widgets/single-news-two.php:128
 msgid "Select Tags"
 msgstr ""
 
@@ -2072,7 +2078,7 @@ msgstr ""
 msgid "Show Category"
 msgstr ""
 
-#: inc/controls/groups/group-control-query.php:91
+#: inc/controls/groups/group-control-query.php:99
 #: modules/carousel-module-one/widgets/carousel-module-one.php:139
 #: modules/news-module-thirteen/widgets/news-module-thirteen.php:120
 #: modules/news-module-nine/widgets/news-module-nine.php:124
@@ -2210,11 +2216,11 @@ msgstr ""
 msgid "Side Post Title Color (Hover)"
 msgstr ""
 
-#: modules/single-news-one/widgets/single-news-one.php:28
+#: modules/single-news-one/widgets/single-news-one.php:29
 msgid "Single News One"
 msgstr ""
 
-#: modules/single-news-two/widgets/single-news-two.php:28
+#: modules/single-news-two/widgets/single-news-two.php:29
 msgid "Single News Two"
 msgstr ""
 
@@ -2449,7 +2455,7 @@ msgid "Timeline Module"
 msgstr ""
 
 #: inc/controls/groups/group-control-header.php:23
-#: inc/controls/groups/group-control-query.php:89
+#: inc/controls/groups/group-control-query.php:97
 #: modules/square-plus-featured-block/widgets/square-plus-featured-block.php:59
 #: modules/square-plus-featured-block/widgets/square-plus-featured-block.php:176
 #: modules/total-service-block/widgets/total-service-block.php:61
@@ -2695,9 +2701,9 @@ msgstr ""
 #: modules/news-module-one/widgets/news-module-one.php:511
 #: modules/news-module-one/widgets/news-module-one.php:557
 #: modules/news-module-one/widgets/news-module-one.php:584
-#: modules/single-news-one/widgets/single-news-one.php:354
-#: modules/single-news-one/widgets/single-news-one.php:393
-#: modules/single-news-one/widgets/single-news-one.php:432
+#: modules/single-news-one/widgets/single-news-one.php:387
+#: modules/single-news-one/widgets/single-news-one.php:426
+#: modules/single-news-one/widgets/single-news-one.php:465
 #: modules/total-team-block/widgets/total-team-block.php:215
 #: modules/total-team-block/widgets/total-team-block.php:288
 #: modules/personal-information/widgets/personal-information.php:188
@@ -2710,9 +2716,9 @@ msgstr ""
 #: modules/total-testimonial-slider/widgets/total-testimonial-slider.php:202
 #: modules/total-testimonial-slider/widgets/total-testimonial-slider.php:229
 #: modules/total-testimonial-slider/widgets/total-testimonial-slider.php:256
-#: modules/single-news-two/widgets/single-news-two.php:344
-#: modules/single-news-two/widgets/single-news-two.php:383
-#: modules/single-news-two/widgets/single-news-two.php:422
+#: modules/single-news-two/widgets/single-news-two.php:377
+#: modules/single-news-two/widgets/single-news-two.php:416
+#: modules/single-news-two/widgets/single-news-two.php:455
 #: modules/news-module-twelve/widgets/news-module-twelve.php:300
 #: modules/news-module-twelve/widgets/news-module-twelve.php:317
 #: modules/news-module-twelve/widgets/news-module-twelve.php:421
@@ -2769,8 +2775,8 @@ msgstr ""
 #: modules/tile-module-one/widgets/tile-module-one.php:256
 #: modules/news-module-ten/widgets/news-module-ten.php:235
 #: modules/news-module-one/widgets/news-module-one.php:292
-#: modules/single-news-one/widgets/single-news-one.php:166
-#: modules/single-news-two/widgets/single-news-two.php:166
+#: modules/single-news-one/widgets/single-news-one.php:199
+#: modules/single-news-two/widgets/single-news-two.php:199
 #: modules/news-module-twelve/widgets/news-module-twelve.php:234
 #: modules/news-module-two/widgets/news-module-two.php:292
 #: modules/news-module-eight/widgets/news-module-eight.php:283
@@ -2884,17 +2890,17 @@ msgstr ""
 #: modules/news-module-one/widgets/news-module-one.php:229
 #: modules/news-module-one/widgets/news-module-one.php:239
 #: modules/news-module-one/widgets/news-module-one.php:249
-#: modules/single-news-one/widgets/single-news-one.php:131
-#: modules/single-news-one/widgets/single-news-one.php:142
-#: modules/single-news-one/widgets/single-news-one.php:153
+#: modules/single-news-one/widgets/single-news-one.php:164
+#: modules/single-news-one/widgets/single-news-one.php:175
+#: modules/single-news-one/widgets/single-news-one.php:186
 #: modules/square-plus-logo-carousel/widgets/square-plus-logo-carousel.php:89
 #: modules/square-plus-logo-carousel/widgets/square-plus-logo-carousel.php:192
 #: modules/total-logo-carousel/widgets/total-logo-carousel.php:89
 #: modules/total-logo-carousel/widgets/total-logo-carousel.php:118
 #: modules/total-testimonial-slider/widgets/total-testimonial-slider.php:112
-#: modules/single-news-two/widgets/single-news-two.php:131
-#: modules/single-news-two/widgets/single-news-two.php:142
-#: modules/single-news-two/widgets/single-news-two.php:153
+#: modules/single-news-two/widgets/single-news-two.php:164
+#: modules/single-news-two/widgets/single-news-two.php:175
+#: modules/single-news-two/widgets/single-news-two.php:186
 #: modules/news-module-twelve/widgets/news-module-twelve.php:156
 #: modules/news-module-twelve/widgets/news-module-twelve.php:169
 #: modules/news-module-twelve/widgets/news-module-twelve.php:180
@@ -2921,6 +2927,10 @@ msgstr ""
 #: modules/tile-module-three/widgets/tile-module-three.php:117
 #: modules/tile-module-three/widgets/tile-module-three.php:128
 msgid "Yes"
+msgstr ""
+
+#: hash-elements.php:163
+msgid "Yes, of course"
 msgstr ""
 
 #: modules/total-portfolio-masonary/widgets/total-portfolio-masonary.php:229

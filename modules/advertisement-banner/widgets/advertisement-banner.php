@@ -57,7 +57,7 @@ class AdvertisementBanner extends Widget_Base {
             'link', [
                 'label' => esc_html__('Advertisement Link', 'hash-elements'),
                 'type' => Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'hash-elements'),
+                'placeholder' => 'https://your-link.com',
                 'show_external' => true,
                 'default' => [
                     'url' => '',
