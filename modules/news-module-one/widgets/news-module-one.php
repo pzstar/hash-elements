@@ -23,7 +23,7 @@ class NewsModuleOne extends Widget_Base {
 
     /** Widget Title */
     public function get_title() {
-        return esc_html__('News module 1', 'hash-elements');
+        return esc_html__('News Module 1', 'hash-elements');
     }
 
     /** Icon */
