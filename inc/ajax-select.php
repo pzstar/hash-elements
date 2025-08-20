@@ -10,12 +10,15 @@ class Ajax_Select {
 
     public function __construct() {
         add_action('wp_ajax_hash_elements_get_posts_by_query', array($this, 'get_posts_by_query'));
-        add_action('wp_ajax_nopriv_hash_elements_get_posts_by_query', array($this, 'get_posts_by_query'));
+        //add_action('wp_ajax_nopriv_hash_elements_get_posts_by_query', array($this, 'get_posts_by_query'));
         add_action('wp_ajax_hash_elements_get_posts_title_by_id', array($this, 'get_posts_title_by_id'));
-        add_action('wp_ajax_nopriv_hash_elements_get_posts_title_by_id', array($this, 'get_posts_title_by_id'));
+        //add_action('wp_ajax_nopriv_hash_elements_get_posts_title_by_id', array($this, 'get_posts_title_by_id'));
     }
 
     public function get_posts_by_query() {
+        if (!current_user_can('manage_options')) {
+            return;
+        }
         $search_string = isset($_POST['q']) ? sanitize_text_field(wp_unslash($_POST['q'])) : ''; // phpcs:ignore
         $post_type = isset($_POST['post_type']) ? wp_unslash($_POST['post_type']) : 'post'; // phpcs:ignore
         $results = array();
@@ -56,6 +59,7 @@ class Ajax_Select {
             )
         );
         wp_reset_postdata();
+
         if (!isset($query->posts)) {
             return;
         }
