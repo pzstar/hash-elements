@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 6.3
-Tested up to: 6.7
+Tested up to: 6.8
 Stable tag: 1.5.2
 Requires PHP: 7.4
 License: GPLv2 or later

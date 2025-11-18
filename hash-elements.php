@@ -10,8 +10,7 @@
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path: /languages
- * Elementor tested up to: 3.27
- * Elementor Pro tested up to: 3.2.1
+ * Elementor tested up to: 3.33
  */
 /* If this file is called directly, abort */
 if (!defined('WPINC')) {

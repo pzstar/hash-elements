@@ -265,7 +265,7 @@ class SquarePlusLogoCarousel extends Widget_Base {
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        $logo_images = $settings['slides'];
+        $target = $settings['link_new_tab'] ? '_blank' : '_self';
         $params = array(
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,
             'pause' => (int) $settings['autoplay_speed']['size'] * 1000,
