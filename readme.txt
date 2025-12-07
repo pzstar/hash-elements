@@ -2,9 +2,9 @@
 Contributors: hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 6.3
-Tested up to: 6.8
-Stable tag: 1.5.3
-Requires PHP: 7.4
+Tested up to: 6.9
+Stable tag: 1.5.4
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,12 +39,10 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 <li>Activate Plugin from "Plugins" menu in WordPress.</li>
 </ol>
 
-== Frequently Asked Questions ==
-= How can I report security bugs? =
-
-You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/9e5fbeed-b556-48d9-b23c-3bbccda745f0)
-
 == Changelog ==
+= 1.5.4 - 6 Dec, 2025 =
+* Compatibility test with WordPress version 6.9
+
 = 1.5.3 - 18 Nov, 2025 =
 * Warning in Logo Carousel block - Fixed
 
