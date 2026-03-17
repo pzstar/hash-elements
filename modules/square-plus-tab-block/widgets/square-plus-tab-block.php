@@ -354,55 +354,42 @@ class SquarePlusTabBlock extends Widget_Base {
                     $tab_id = 'he-' . $id . $tab_count;
                     ?>
                     <div class="he-tab-pane animated zoomIn" id="<?php echo esc_attr($tab_id); ?>">
-                        <?php
-                        if ($tab['content_from'] == 'wisiwyg') {
-                            ?>
-                            <div class="he-content"><?php echo do_shortcode($tab['content']); ?></div>
+                        <div class="he-content">
                             <?php
-                        } else if ($tab['content_from'] == 'page') {
-                            $square_tab_page = $tab['select_page'];
-                            if ($square_tab_page) {
-                                ?>
-                                    <div class="he-content">
-                                        <?php
-                                        // Get ID
-                                        $get_id = $square_tab_page;
-                                        // Check if page is Elementor page
-                                        $elementor = get_post_meta($get_id, '_elementor_edit_mode', true);
-                                        $siteorigin = get_post_meta($get_id, 'panels_data', true);
+                            if (isset($tab['content_from']) && $tab['content_from'] === 'page' && !empty($tab['content_from'])) {
+                                $page_id = $tab['select_page'];
+                                $post_obj = get_post($page_id);
+                                $siteorigin = get_post_meta($page_id, 'panels_data', true);
 
-                                        // If Elementor
-                                        if (class_exists('Elementor\Plugin') && $elementor) {
-                                            echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($get_id);
-                                        }
+                                if ($post_obj && $post_obj->post_status === 'publish' && !post_password_required($post_obj)) {
+                                    if (\Elementor\Plugin::$instance->db->is_built_with_elementor($page_id)) {
+                                        echo 'yes';
+                                        echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display($page_id);
+                                    }
 
-                                        // If Beaver Builder
-                                        else if (class_exists('FLBuilder') && !empty($get_id)) {
-                                            echo do_shortcode('[fl_builder_insert_layout id="' . $get_id . '"]');
-                                        }
+                                    // If Beaver Builder
+                                    elseif (class_exists('FLBuilder') && !empty($page_id)) {
+                                        echo do_shortcode('[fl_builder_insert_layout id="' . $page_id . '"]');
+                                    }
 
-                                        // If Site Origin
-                                        else if (class_exists('SiteOrigin_Panels') && $siteorigin) {
-                                            echo SiteOrigin_Panels::renderer()->render($get_id);
-                                        } else {
-                                            // Get template content
-                                            $template_id = get_post($get_id);
-
-                                            if ($template_id && !is_wp_error($template_id)) {
-                                                $content = $template_id->post_content;
-                                                if (\Elementor\Plugin::$instance->editor->is_edit_mode()) {
-                                                    echo $content;
-                                                } else {
-                                                    echo apply_filters('the_content', $content);
-                                                }
+                                    // If Site Origin
+                                    elseif (class_exists('SiteOrigin_Panels') && $siteorigin) {
+                                        echo SiteOrigin_Panels::renderer()->render($page_id);
+                                    } else {
+                                        if ($post_obj && !is_wp_error($post_obj)) {
+                                            if (\Elementor\Plugin::$instance->editor->is_edit_mode()) {
+                                                echo do_shortcode($post_obj->post_content);
+                                            } else {
+                                                echo apply_filters('the_content', $post_obj->post_content);
                                             }
                                         }
-                                        ?>
-                                    </div>
-                                <?php
+                                    }
+                                }
+                            } elseif (isset($tab['content_from']) && $tab['content_from'] === 'wisiwyg' && !empty($tab['content_from'])) {
+                                echo wp_kses_post(do_shortcode($tab['content']));
                             }
-                        }
-                        ?>
+                            ?>
+                        </div>
                     </div>
                     <?php
                 }
