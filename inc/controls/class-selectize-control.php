@@ -54,19 +54,38 @@ class Selectize_Control extends Base_Data_Control {
                 var value = data.controlValue;
                 var keyOptions = data.key_options;
 
+                /*
+                 * A saved term is not always among the options. Demo content
+                 * arrives with the ids of the site it was exported from, and
+                 * terms get deleted. Reading a label off the missing option
+                 * used to throw, which took the whole Content tab down with
+                 * it. Keep the value, so saving does not quietly drop it, and
+                 * fall back to showing the id.
+                 *
+                 * The value arrives as strings and the keys as numbers, so
+                 * every comparison here is made on strings; a strict indexOf
+                 * matched nothing and listed the chosen terms twice.
+                 */
+                var selected = _.isArray( value ) ? value : ( value ? [ value ] : [] );
+                var selectedKeys = _.map( selected, String );
+
+                var isSelected = function( key ) {
+                    return -1 !== _.indexOf( selectedKeys, String( key ) );
+                };
+
                 if(keyOptions) {
                 #>
                 <select id="<?php echo $control_uid; ?>" class="elementor-selectize" {{ multiple }} data-setting="{{ data.name }}">
-                    <# if(value){
-                        _.each(value, function(key) {
-                        const getOption = keyOptions.find(element => element.key == key);
+                    <# _.each(selected, function(key) {
+                        var getOption = _.find(keyOptions, function(element) {
+                            return String( element.key ) === String( key );
+                        });
                         #>
-                        <option value="{{ key }}">{{{ getOption.value }}}</option>
-                        <# }); 
-                    }
+                        <option value="{{ key }}">{{{ getOption ? getOption.value : key }}}</option>
+                    <# });
 
                     _.each(keyOptions, function(option) {
-                        if (-1 == value.indexOf(option.key)) {
+                        if ( ! isSelected( option.key ) ) {
                         #>
                             <option value="{{ option.key }}">{{{ option.value }}}</option>
                         <#
@@ -76,23 +95,19 @@ class Selectize_Control extends Base_Data_Control {
                 </select>
                 <#
                 } else {
-                var options = data.options;
+                var options = data.options || {};
 
-                if(options){
-                    _.each( options, function( option_title, option_value ) {
-                        if (-1 == value.indexOf( option_value ) ) {
+                _.each( options, function( option_title, option_value ) {
+                    if ( ! isSelected( option_value ) ) {
                         unstored[option_value] = option_title;
-                        }
-                    });
-                }
+                    }
+                });
                 #>
 
                 <select id="<?php echo $control_uid; ?>" class="elementor-selectize" {{ multiple }} data-setting="{{ data.name }}">
-                    <# if(value){
-                        _.each( value, function( key ) { #>
-                            <option value="{{ key }}">{{{ options[key] }}}</option>
-                        <# }); 
-                    }
+                    <# _.each( selected, function( key ) { #>
+                            <option value="{{ key }}">{{{ options[key] ? options[key] : key }}}</option>
+                    <# });
 
                     _.each( unstored, function( option_title, option_value ) { #>
                         <option value="{{ option_value }}">{{{ option_title }}}</option>
