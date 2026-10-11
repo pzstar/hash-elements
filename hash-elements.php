@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Hash Elements - Addons for Elementor
  * Description: Elementor addons for WordPress Themes developed by HashThemes https://hashthemes.com
- * Version: 1.5.6
+ * Version: 1.5.7
  * Author: HashThemes
  * Author URI: https://hashthemes.com/
  * Text Domain: hash-elements
@@ -16,7 +16,7 @@ if (!defined('WPINC')) {
     die();
 }
 
-define('HASHELE_VERSION', '1.5.6');
+define('HASHELE_VERSION', '1.5.7');
 
 define('HASHELE_FILE', __FILE__);
 define('HASHELE_PLUGIN_BASENAME', plugin_basename(HASHELE_FILE));
@@ -46,6 +46,23 @@ if (!class_exists('Hash_Elements')) {
 
             // Load necessary files.
             add_action('plugins_loaded', array($this, 'init'));
+
+            add_action('admin_init', array($this, 'admin_init'));
+        }
+
+        public function admin_init() {
+            // The review notice is timed from this, so it has to be stored once.
+            if (!get_option('hash_elements_first_activation')) {
+                update_option('hash_elements_first_activation', time());
+            }
+
+            if (isset($_GET['he-hide-notice'], $_GET['hash_elements_notice_nonce'])) {
+                $notice = sanitize_key($_GET['he-hide-notice']);
+                check_admin_referer($notice, 'hash_elements_notice_nonce');
+                self::dismiss($notice);
+                wp_safe_redirect(remove_query_arg(array('he-hide-notice', 'hash_elements_notice_nonce'), wp_get_referer()));
+                exit;
+            }
         }
 
         public function load_plugin_textdomain() {
@@ -95,7 +112,7 @@ if (!class_exists('Hash_Elements')) {
                 $admin_message .= '<p>' . sprintf('<a href="%s" class="button-primary">%s</a>', $install_url, esc_html__('Install Elementor Now', 'hash-elements')) . '</p>';
             }
 
-            echo '<div class="error">' . $admin_message . '</div>';
+            echo '<div class="error">' . wp_kses_post($admin_message) . '</div>';
         }
 
         /**
@@ -105,6 +122,11 @@ if (!class_exists('Hash_Elements')) {
          */
         public function is_elementor_installed() {
             $file_path = 'elementor/elementor.php';
+
+            if (!function_exists('get_plugins')) {
+                require_once ABSPATH . 'wp-admin/includes/plugin.php';
+            }
+
             $installed_plugins = get_plugins();
 
             return isset($installed_plugins[$file_path]);
@@ -115,13 +137,36 @@ if (!class_exists('Hash_Elements')) {
         }
 
         public function admin_notice_content() {
-            if (!$this->is_dismissed('review') && !empty(get_option('hash_elements_first_activation')) && time() > get_option('hash_elements_first_activation') + 15 * DAY_IN_SECONDS) {
+            if (!current_user_can('manage_options') || self::is_dismissed('review')) {
+                return;
+            }
+
+            $activated = (int) get_option('hash_elements_first_activation');
+
+            if ($activated > 0 && time() > $activated + 15 * DAY_IN_SECONDS) {
                 $this->review_notice();
+            }
+        }
+
+        public static function dismiss($notice) {
+            $dismissed = get_option('hash_elements_dismissed_notices', array());
+
+            if (!is_array($dismissed)) {
+                $dismissed = array();
+            }
+
+            if (!in_array($notice, $dismissed, true)) {
+                $dismissed[] = $notice;
+                update_option('hash_elements_dismissed_notices', $dismissed);
             }
         }
 
         public static function is_dismissed($notice) {
             $dismissed = get_option('hash_elements_dismissed_notices', array());
+
+            if (!is_array($dismissed)) {
+                $dismissed = array();
+            }
 
             // Handle legacy user meta
             $dismissed_meta = get_user_meta(get_current_user_id(), 'hash_elements_dismissed_notices', true);
@@ -170,7 +215,7 @@ if (!class_exists('Hash_Elements')) {
         }
 
         public function hash_elements_register_backend_assets() {
-            wp_enqueue_style('he-admin-style', HASHELE_URL . '/assets/css/admin-styles.css', array(), HASHELE_VERSION);
+            wp_enqueue_style('he-admin-style', HASHELE_URL . 'assets/css/admin-styles.css', array(), HASHELE_VERSION);
         }
 
     }

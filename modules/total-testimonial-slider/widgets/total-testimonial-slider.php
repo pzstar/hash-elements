@@ -388,9 +388,9 @@ class TotalTestimonialSlider extends Widget_Base {
             'nav' => $settings['nav'] == 'yes' ? true : false,
             'dots' => $settings['dots'] == 'yes' ? true : false
         );
-        $params = json_encode($params);
+        $params = wp_json_encode($params);
         ?>
-        <div class="het-testimonial-slider owl-carousel" data-params='<?php echo $params ?>'>
+        <div class="het-testimonial-slider owl-carousel" data-params='<?php echo esc_attr($params); ?>'>
             <?php
             foreach ($testimonials as $key => $testimonial) {
                 ?>

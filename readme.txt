@@ -3,7 +3,7 @@ Contributors: hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 6.3
 Tested up to: 7.0
-Stable tag: 1.5.6
+Stable tag: 1.5.7
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -40,6 +40,18 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 </ol>
 
 == Changelog ==
+= 1.5.7 - 11 Oct, 2026 =
+* Stray "yes" text printed before Elementor page content in Square Plus Tab block - Fixed
+* Undefined variable warning on linked logos in Total Logo Carousel block - Fixed
+* Warning on posts without featured image in Total Portfolio Masonry block - Fixed
+* Review notice could not be dismissed - Fixed
+* Square Plus Tab block could loop endlessly when a tab loaded its own page - Fixed
+* Sticky options are no longer listed twice when Viral Pro, Square Plus, Total Plus or Easy Elementor Addons already provides them
+* Sticky column no longer wraps the column content in an extra div on Elementor 3 and above
+* Warning in news, tile and carousel blocks when the featured image file is missing - Fixed
+* Exclude Posts search now works for Editors and Authors and is nonce protected
+* Output escaping hardened in carousel, slider, contact information and helper functions
+
 = 1.5.6 - 30 Jul, 2026 =
 * Compatibility fixes with WordPress v 7.0
 

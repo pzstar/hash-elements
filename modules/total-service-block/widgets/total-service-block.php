@@ -280,7 +280,7 @@ class TotalServiceBlock extends Widget_Base {
                     </div>
 
                     <div class="het-service-excerpt">
-                        <h5><?php echo esc_attr($service['services_title']); ?></h5>
+                        <h5><?php echo esc_html($service['services_title']); ?></h5>
 
                         <div class="het-service-text">
                             <div class="het-service-excerpt-text">

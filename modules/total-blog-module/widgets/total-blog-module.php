@@ -335,7 +335,7 @@ class TotalBlogModule extends Widget_Base {
                                 if (isset($total_image[0])) {
                                     ?>
                                     <div class="het-blog-thumbnail">
-                                        <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title(); ?>"></a>
+                                        <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title_attribute(); ?>"></a>
                                     </div>
                                     <?php
                                 }
@@ -343,7 +343,7 @@ class TotalBlogModule extends Widget_Base {
                             ?>
                             <div class="het-blog-excerpt">
                                 <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                                <div class="het-blog-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><?php echo get_the_date(); ?></div>
+                                <div class="het-blog-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><?php echo esc_html(get_the_date()); ?></div>
                                 <?php
                                 if (has_excerpt() && '' != trim(get_the_excerpt())) {
                                     echo '<div class="het-blog-excerpt-text">';
@@ -351,7 +351,7 @@ class TotalBlogModule extends Widget_Base {
                                     echo '</div>';
                                 } else {
                                     echo '<div class="het-blog-excerpt-text">';
-                                    echo esc_html(hash_elements_custom_excerpt($settings['excerpt_length']));
+                                    hash_elements_custom_excerpt($settings['excerpt_length']);
                                     echo '</div>';
                                 }
                                 ?>

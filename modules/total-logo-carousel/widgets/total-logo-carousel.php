@@ -263,20 +263,21 @@ class TotalLogoCarousel extends Widget_Base {
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
+        $target = $settings['link_new_tab'] ? '_blank' : '_self';
         $params = array(
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,
             'pause' => (int) $settings['pause_duration']['size'] * 1000,
             'items' => (int) $settings['no_of_slides']['size'],
-            'items_tablet' => (int) isset($settings['no_of_slides_tablet']['size']) ? $settings['no_of_slides_tablet']['size'] : 3,
-            'items_mobile' => (int) isset($settings['no_of_slides_mobile']['size']) ? $settings['no_of_slides_mobile']['size'] : 2,
+            'items_tablet' => isset($settings['no_of_slides_tablet']['size']) ? (int) $settings['no_of_slides_tablet']['size'] : 3,
+            'items_mobile' => isset($settings['no_of_slides_mobile']['size']) ? (int) $settings['no_of_slides_mobile']['size'] : 2,
             'margin' => (int) $settings['slides_margin']['size'],
-            'margin_tablet' => (int) isset($settings['slides_margin_tablet']['size']) ? $settings['slides_margin_tablet']['size'] : 30,
-            'margin_mobile' => (int) isset($settings['slides_margin_mobile']['size']) ? $settings['slides_margin_mobile']['size'] : 30,
+            'margin_tablet' => isset($settings['slides_margin_tablet']['size']) ? (int) $settings['slides_margin_tablet']['size'] : 30,
+            'margin_mobile' => isset($settings['slides_margin_mobile']['size']) ? (int) $settings['slides_margin_mobile']['size'] : 30,
             'dots' => $settings['dots'] == 'yes' ? true : false
         );
-        $params = json_encode($params);
+        $params = wp_json_encode($params);
         ?>
-        <div class="het-client-logo-slider owl-carousel" data-params='<?php echo $params ?>'>
+        <div class="het-client-logo-slider owl-carousel" data-params='<?php echo esc_attr($params); ?>'>
             <?php
             if ($settings['slides']) {
                 foreach ($settings['slides'] as $item) {

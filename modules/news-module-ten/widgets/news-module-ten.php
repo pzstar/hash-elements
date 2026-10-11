@@ -485,10 +485,11 @@ class NewsModuleTen extends Widget_Base {
                             <a href="<?php the_permalink(); ?>">
                                 <div class="he-thumb-container">
                                     <?php
-                                    if (has_post_thumbnail()) {
-                                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $listing_post_image_size);
+                                    $image = has_post_thumbnail() ? wp_get_attachment_image_src(get_post_thumbnail_id(), $listing_post_image_size) : false;
+
+                                    if ($image) {
                                         ?>
-                                        <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
+                                        <img alt="<?php the_title_attribute(); ?>" src="<?php echo esc_url($image[0]) ?>">
                                     <?php }
                                     ?>
                                 </div>

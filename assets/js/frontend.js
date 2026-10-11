@@ -315,7 +315,10 @@
             }
 
             if (enable_sticky) {
-                $scope.find('.elementor-column-wrap').addClass('theiaStickySidebar');
+                // Elementor 3+ names the inner wrapper .elementor-widget-wrap. Without the class
+                // the sticky script wraps the column in an extra div, which breaks Elementor's
+                // direct-child column styles.
+                $scope.children('.elementor-column-wrap, .elementor-widget-wrap').addClass('theiaStickySidebar');
                 $scope.css({display: 'block'});
 
                 $scope.theiaStickySidebar({

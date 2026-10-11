@@ -314,6 +314,9 @@ class SquarePlusTabBlock extends Widget_Base {
         $this->end_controls_section();
     }
 
+    /** Pages currently being rendered inside a tab, to stop a page from loading itself. */
+    private static $rendering_pages = [];
+
     /** Render Layout */
     protected function render() {
         $settings = $this->get_settings_for_display();
@@ -357,13 +360,16 @@ class SquarePlusTabBlock extends Widget_Base {
                         <div class="he-content">
                             <?php
                             if (isset($tab['content_from']) && $tab['content_from'] === 'page' && !empty($tab['content_from'])) {
-                                $page_id = $tab['select_page'];
+                                $page_id = absint($tab['select_page']);
                                 $post_obj = get_post($page_id);
                                 $siteorigin = get_post_meta($page_id, 'panels_data', true);
 
-                                if ($post_obj && $post_obj->post_status === 'publish' && !post_password_required($post_obj)) {
+                                $is_nested = $page_id === get_the_ID() || in_array($page_id, self::$rendering_pages, true);
+
+                                if ($post_obj && !$is_nested && $post_obj->post_status === 'publish' && !post_password_required($post_obj)) {
+                                    self::$rendering_pages[] = $page_id;
+
                                     if (\Elementor\Plugin::$instance->db->is_built_with_elementor($page_id)) {
-                                        echo 'yes';
                                         echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display($page_id);
                                     }
 
@@ -374,7 +380,7 @@ class SquarePlusTabBlock extends Widget_Base {
 
                                     // If Site Origin
                                     elseif (class_exists('SiteOrigin_Panels') && $siteorigin) {
-                                        echo SiteOrigin_Panels::renderer()->render($page_id);
+                                        echo \SiteOrigin_Panels::renderer()->render($page_id);
                                     } else {
                                         if ($post_obj && !is_wp_error($post_obj)) {
                                             if (\Elementor\Plugin::$instance->editor->is_edit_mode()) {
@@ -384,6 +390,8 @@ class SquarePlusTabBlock extends Widget_Base {
                                             }
                                         }
                                     }
+
+                                    array_pop(self::$rendering_pages);
                                 }
                             } elseif (isset($tab['content_from']) && $tab['content_from'] === 'wisiwyg' && !empty($tab['content_from'])) {
                                 echo wp_kses_post(do_shortcode($tab['content']));

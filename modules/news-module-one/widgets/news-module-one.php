@@ -615,10 +615,11 @@ class NewsModuleOne extends Widget_Base {
                                     <?php
                                     $image_size = ($index == 1) ? $featured_post_image_size : $side_post_image_size;
 
-                                    if (has_post_thumbnail()) {
-                                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
+                                    $image = has_post_thumbnail() ? wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size) : false;
+
+                                    if ($image) {
                                         ?>
-                                        <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
+                                        <img alt="<?php the_title_attribute(); ?>" src="<?php echo esc_url($image[0]) ?>">
                                     <?php }
                                     ?>
                                 </div>

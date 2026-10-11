@@ -24,10 +24,19 @@ class Sticky_Container {
     }
 
     public function init() {
-        add_action('elementor/element/container/section_effects/before_section_end', [$this, 'add_controls']);
+        // Late priority, so the premium themes and plugins have already added theirs by the time this runs.
+        add_action('elementor/element/container/section_effects/before_section_end', [$this, 'add_controls'], 20);
     }
 
     public function add_controls($section) {
+        // Viral Pro, Square Plus, Total Plus and Easy Elementor Addons ship the same option
+        // under their own prefix (viral_pro_sticky_container, ...): do not list it twice.
+        foreach (array_keys($section->get_controls()) as $control_id) {
+            if ('hash_elements_sticky_container' !== $control_id && preg_match('/_sticky_container$/', $control_id)) {
+                return;
+            }
+        }
+
         $section->add_control(
             'hash_elements_sticky_container', [
                 'label' => esc_html__('Enable Sticky', 'hash-elements'),

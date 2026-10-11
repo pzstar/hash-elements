@@ -270,16 +270,16 @@ class SquarePlusLogoCarousel extends Widget_Base {
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,
             'pause' => (int) $settings['autoplay_speed']['size'] * 1000,
             'items' => (int) $settings['slides_to_show']['size'],
-            'items_tablet' => (int) isset($settings['slides_to_show_tablet']['size']) ? $settings['slides_to_show_tablet']['size'] : 2,
-            'items_mobile' => (int) isset($settings['slides_to_show_mobile']['size']) ? $settings['slides_to_show_mobile']['size'] : 1,
+            'items_tablet' => isset($settings['slides_to_show_tablet']['size']) ? (int) $settings['slides_to_show_tablet']['size'] : 2,
+            'items_mobile' => isset($settings['slides_to_show_mobile']['size']) ? (int) $settings['slides_to_show_mobile']['size'] : 1,
             'margin' => (int) $settings['slides_margin']['size'],
-            'margin_tablet' => (int) isset($settings['slides_margin_tablet']['size']) ? $settings['slides_margin_tablet']['size'] : 30,
-            'margin_mobile' => (int) isset($settings['slides_margin_mobile']['size']) ? $settings['slides_margin_mobile']['size'] : 30,
+            'margin_tablet' => isset($settings['slides_margin_tablet']['size']) ? (int) $settings['slides_margin_tablet']['size'] : 30,
+            'margin_mobile' => isset($settings['slides_margin_mobile']['size']) ? (int) $settings['slides_margin_mobile']['size'] : 30,
             'dots' => $settings['dots'] == 'yes' ? true : false
         );
-        $params = json_encode($params);
+        $params = wp_json_encode($params);
         ?>
-        <div class="he-client-logo-slider owl-carousel" data-params='<?php echo $params ?>'>
+        <div class="he-client-logo-slider owl-carousel" data-params='<?php echo esc_attr($params); ?>'>
             <?php
             if ($settings['slides']) {
                 foreach ($settings['slides'] as $item) {

@@ -313,11 +313,11 @@ class TotalPortfolioMasonary extends Widget_Base {
 
             if ($portfolio_cat) {
                 ?>
-                <div class="het-portfolio-cat-name-list <?php echo esc_attr($tab_alignment); ?>" data-active="<?php echo $active_tab; ?>">
+                <div class="het-portfolio-cat-name-list <?php echo esc_attr($tab_alignment); ?>" data-active="<?php echo esc_attr($active_tab); ?>">
                     <i class="fa fa-th-large" aria-hidden="true"></i>
                     <?php if ($show_all) { ?>
                         <div class="het-portfolio-cat-name" data-filter="*">
-                            <?php _e('All', 'hash-elements'); ?>
+                            <?php esc_html_e('All', 'hash-elements'); ?>
                         </div>
                         <?php
                     }
@@ -361,7 +361,7 @@ class TotalPortfolioMasonary extends Widget_Base {
                                     $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-portfolio-thumb');
                                     $total_image_large = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
                                 } else {
-                                    $total_image = "";
+                                    $total_image = $total_image_large = array('');
                                 }
                                 ?>
                                 <div class="het-portfolio <?php echo esc_attr($category_slug); ?>">

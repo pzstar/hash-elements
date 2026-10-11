@@ -405,9 +405,9 @@ class SquarePlusSlider extends Widget_Base {
             'pause' => (int) $pause_duration,
             'nav' => $settings['nav'] == 'yes' ? true : false
         );
-        $params = json_encode($params);
+        $params = wp_json_encode($params);
         ?>
-        <div class="he-bx-slider owl-carousel" data-params='<?php echo $params ?>'>
+        <div class="he-bx-slider owl-carousel" data-params='<?php echo esc_attr($params); ?>'>
             <?php
             if ($sliders) {
                 foreach ($sliders as $slider) {

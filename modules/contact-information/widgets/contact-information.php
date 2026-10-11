@@ -265,7 +265,7 @@ class ContactInformation extends Widget_Base {
                         <span>
                             <?php
                             if ($settings['link_phone']) {
-                                echo '<a href="tel:' . esc_html($settings['phone']) . '">';
+                                echo '<a href="' . esc_url('tel:' . preg_replace('/\s+/', '', $settings['phone'])) . '">';
                             }
                             ?>
                             <?php echo esc_html($settings['phone']); ?>
@@ -284,7 +284,7 @@ class ContactInformation extends Widget_Base {
                         <span>
                             <?php
                             if ($settings['link_email']) {
-                                echo '<a href="mailto:' . esc_html($settings['email']) . '">';
+                                echo '<a href="' . esc_url('mailto:' . trim($settings['email'])) . '">';
                             }
                             ?>
                             <?php echo esc_html($settings['email']); ?>
@@ -303,7 +303,7 @@ class ContactInformation extends Widget_Base {
                         <span>
                             <?php
                             if ($settings['link_website']) {
-                                echo '<a target="_blank" href="' . esc_html($settings['website']) . '">';
+                                echo '<a target="_blank" rel="noopener" href="' . esc_url($settings['website']) . '">';
                             }
                             ?>
                             <?php echo esc_html($settings['website']); ?>
@@ -319,14 +319,14 @@ class ContactInformation extends Widget_Base {
                 <?php if (!empty($settings['contact_address'])): ?>
                     <li>
                         <i class="mdi-map-marker"></i>
-                        <span><?php echo wpautop(esc_html($settings['contact_address'])); ?></span>
+                        <span><?php echo wp_kses_post(wpautop(esc_html($settings['contact_address']))); ?></span>
                     </li>
                 <?php endif; ?>
 
                 <?php if (!empty($settings['contact_time'])): ?>
                     <li>
                         <i class="mdi-clock-time-three"></i>
-                        <span><?php echo wpautop(esc_html($settings['contact_time'])); ?></span>
+                        <span><?php echo wp_kses_post(wpautop(esc_html($settings['contact_time']))); ?></span>
                     </li>
                 <?php endif; ?>
             </ul>

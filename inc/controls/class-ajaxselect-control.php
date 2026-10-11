@@ -37,7 +37,10 @@ class AjaxSelect_Control extends Base_Data_Control {
      * Enqueue control scripts and styles.
      */
     public function enqueue() {
-        wp_enqueue_script('he-ajaxselect2-editor', HASHELE_URL . 'assets/js/ajaxselect2-editor.js', array(), HASHELE_VERSION);
+        wp_enqueue_script('he-ajaxselect2-editor', HASHELE_URL . 'assets/js/ajaxselect2-editor.js', array('jquery'), HASHELE_VERSION);
+        wp_localize_script('he-ajaxselect2-editor', 'hash_elements_ajaxselect', array(
+            'nonce' => wp_create_nonce('hash-elements-ajax-select')
+        ));
     }
 
     /**

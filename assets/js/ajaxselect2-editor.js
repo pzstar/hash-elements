@@ -24,7 +24,7 @@ jQuery(window).on('elementor:init', function ($) {
                     post_type: self.model.get('post_type'),
                     taxonomy: self.model.get('taxonomy'),
                     id: ids,
-
+                    nonce: hash_elements_ajaxselect.nonce,
                 },
 
                 success: function (results) {
@@ -58,6 +58,7 @@ jQuery(window).on('elementor:init', function ($) {
                             action: self.model.get('search'),
                             post_type: self.model.get('post_type'),
                             taxonomy: self.model.get('taxonomy'),
+                            nonce: hash_elements_ajaxselect.nonce,
                         };
                     },
                     processResults: function (data) {

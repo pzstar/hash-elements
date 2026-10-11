@@ -22,12 +22,21 @@ class Sticky_Column {
     }
 
     public function init() {
-        add_filter('elementor/element/column/layout/after_section_start', [$this, 'add_controls']);
+        // Late priority, so the premium themes and plugins have already added theirs by the time this runs.
+        add_filter('elementor/element/column/layout/after_section_start', [$this, 'add_controls'], 20);
         add_action('elementor/frontend/column/before_render', [$this, 'render_attribute'], 10);
         add_action('elementor/column/print_template', [$this, 'print_template'], 10, 2);
     }
 
     public function add_controls($section) {
+        // Viral Pro, Square Plus and Total Plus ship the same option under their own
+        // prefix (viral_pro_sidebar_sticky, ...): do not list it twice.
+        foreach (array_keys($section->get_controls()) as $control_id) {
+            if ('hash_elements_sidebar_sticky' !== $control_id && preg_match('/_sidebar_sticky$/', $control_id)) {
+                return;
+            }
+        }
+
         $section->add_control(
             'hash_elements_sidebar_sticky', [
                 'label' => esc_html__('Enable Sticky Sidebar', 'hash-elements'),
@@ -76,6 +85,10 @@ class Sticky_Column {
     }
 
     public function render_attribute($widget) {
+        if (!$widget->get_controls('hash_elements_sidebar_sticky')) {
+            return;
+        }
+
         $settings = $widget->get_settings_for_display();
         if ('true' === $settings['hash_elements_sidebar_sticky']) {
             $top_spacing = $settings['hash_elements_sidebar_sticky_top_spacing'] ? $settings['hash_elements_sidebar_sticky_top_spacing'] : 0;
@@ -90,6 +103,10 @@ class Sticky_Column {
     }
 
     public function print_template($template, $widget) {
+        if (!$widget->get_controls('hash_elements_sidebar_sticky')) {
+            return $template;
+        }
+
         ob_start();
         $old_template = $template;
         ?>

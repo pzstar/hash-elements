@@ -272,7 +272,7 @@ class TickerModule extends Widget_Base {
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,
         );
 
-        $parameters_json = json_encode($parameters);
+        $parameters_json = wp_json_encode($parameters);
 
 
         $args = $this->query_args();

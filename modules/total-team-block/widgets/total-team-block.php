@@ -460,12 +460,12 @@ class TotalTeamBlock extends Widget_Base {
                 ?>
 
                 <div class="het-title-wrap">
-                    <h6><?php echo esc_attr($settings['member_name']); ?></h6>
+                    <h6><?php echo esc_html($settings['member_name']); ?></h6>
                 </div>
 
                 <div class="het-team-member-excerpt">
                     <div class="het-team-member-excerpt-wrap">
-                        <h6><?php echo esc_attr($settings['member_name']); ?></h6>
+                        <h6><?php echo esc_html($settings['member_name']); ?></h6>
 
                         <?php if ($settings['member_designation']) { ?>
                             <div class="het-team-designation"><?php echo esc_html($settings['member_designation']); ?></div>
@@ -481,7 +481,7 @@ class TotalTeamBlock extends Widget_Base {
                             ?>
                             <div class="het-team-detail">
                                 <a href="<?php echo esc_url($settings['button_link']['url']); ?>" <?php echo $target . $nofollow; ?>>
-                                    <?php esc_html_e($settings['button_text']) ?>
+                                    <?php echo esc_html($settings['button_text']); ?>
                                 </a>
                             </div>
                         <?php } ?>
@@ -495,10 +495,9 @@ class TotalTeamBlock extends Widget_Base {
                 <div class="het-team-social-id">
                     <?php
                     foreach ($social_icons_block as $key => $icon_block) {
-                        $target = $icon_block['social_icon_link']['is_external'] ? ' target="_blank"' : '';
                         $nofollow = $icon_block['social_icon_link']['nofollow'] ? ' rel="nofollow"' : '';
                         ?>
-                        <a target="_blank" href="<?php echo esc_url($icon_block['social_icon_link']['url']) ?>" <?php echo $target . $nofollow; ?>>
+                        <a target="_blank" href="<?php echo esc_url($icon_block['social_icon_link']['url']) ?>" <?php echo $nofollow; ?>>
                             <?php \Elementor\Icons_Manager::render_icon($icon_block['social_icon'], ['aria-hidden' => 'true']); ?>
                         </a>
                     <?php } ?>

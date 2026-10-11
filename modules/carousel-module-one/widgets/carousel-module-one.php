@@ -701,25 +701,25 @@ class CarouselModuleOne extends Widget_Base {
 
         $params = array(
             'autoplay' => $settings['autoplay'] == 'yes' ? true : false,
-            'pause' => (int) (isset($settings['pause_duration']['size']) ? $settings['pause_duration']['size'] : 5) * 1000,
-            'items' => (int) isset($settings['no_of_slides']['size']) ? $settings['no_of_slides']['size'] : 3,
-            'items_tablet' => (int) isset($settings['no_of_slides_tablet']['size']) ? $settings['no_of_slides_tablet']['size'] : 2,
-            'items_mobile' => (int) isset($settings['no_of_slides_mobile']['size']) ? $settings['no_of_slides_mobile']['size'] : 1,
-            'margin' => (int) isset($settings['slides_margin']['size']) ? $settings['slides_margin']['size'] : 30,
-            'margin_tablet' => (int) isset($settings['slides_margin_tablet']['size']) ? $settings['slides_margin_tablet']['size'] : 30,
-            'margin_mobile' => (int) isset($settings['slides_margin_mobile']['size']) ? $settings['slides_margin_mobile']['size'] : 30,
-            'stagepadding' => (int) isset($settings['slides_stagepadding']['size']) ? $settings['slides_stagepadding']['size'] : 0,
-            'stagepadding_tablet' => (int) isset($settings['slides_stagepadding_tablet']['size']) ? $settings['slides_stagepadding_tablet']['size'] : 0,
-            'stagepadding_mobile' => (int) isset($settings['slides_stagepadding_mobile']['size']) ? $settings['slides_stagepadding_mobile']['size'] : 0,
+            'pause' => (isset($settings['pause_duration']['size']) ? (int) $settings['pause_duration']['size'] : 5) * 1000,
+            'items' => isset($settings['no_of_slides']['size']) ? (int) $settings['no_of_slides']['size'] : 3,
+            'items_tablet' => isset($settings['no_of_slides_tablet']['size']) ? (int) $settings['no_of_slides_tablet']['size'] : 2,
+            'items_mobile' => isset($settings['no_of_slides_mobile']['size']) ? (int) $settings['no_of_slides_mobile']['size'] : 1,
+            'margin' => isset($settings['slides_margin']['size']) ? (int) $settings['slides_margin']['size'] : 30,
+            'margin_tablet' => isset($settings['slides_margin_tablet']['size']) ? (int) $settings['slides_margin_tablet']['size'] : 30,
+            'margin_mobile' => isset($settings['slides_margin_mobile']['size']) ? (int) $settings['slides_margin_mobile']['size'] : 30,
+            'stagepadding' => isset($settings['slides_stagepadding']['size']) ? (int) $settings['slides_stagepadding']['size'] : 0,
+            'stagepadding_tablet' => isset($settings['slides_stagepadding_tablet']['size']) ? (int) $settings['slides_stagepadding_tablet']['size'] : 0,
+            'stagepadding_mobile' => isset($settings['slides_stagepadding_mobile']['size']) ? (int) $settings['slides_stagepadding_mobile']['size'] : 0,
             'nav' => $settings['nav'] == 'yes' ? true : false,
             'dots' => $settings['dots'] == 'yes' ? true : false
         );
-        $params = json_encode($params);
+        $params = wp_json_encode($params);
         ?>
         <div class="he-carousel-block">
             <?php $this->render_header(); ?>
 
-            <div class="he-carousel-block-wrap owl-carousel" data-params='<?php echo $params; ?>'>
+            <div class="he-carousel-block-wrap owl-carousel" data-params='<?php echo esc_attr($params); ?>'>
                 <?php
                 $args = $this->query_args();
                 $query = new \WP_Query($args);
@@ -732,17 +732,18 @@ class CarouselModuleOne extends Widget_Base {
                             <a href="<?php the_permalink(); ?>">
                                 <div class="he-thumb-container">
                                     <?php
-                                    if (has_post_thumbnail()) {
-                                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $slide_post_image_size);
+                                    $image = has_post_thumbnail() ? wp_get_attachment_image_src(get_post_thumbnail_id(), $slide_post_image_size) : false;
+
+                                    if ($image) {
                                         ?>
-                                        <img alt="<?php echo the_title_attribute() ?>" src="<?php echo esc_url($image[0]) ?>">
+                                        <img alt="<?php the_title_attribute(); ?>" src="<?php echo esc_url($image[0]) ?>">
                                     <?php }
                                     ?>
                                 </div>
                             </a>
                             <?php
                             if ($settings['post_category'] == 'yes')
-                                echo he_get_the_primary_category();
+                                he_get_the_primary_category();
                             ?>
                         </div>
 
