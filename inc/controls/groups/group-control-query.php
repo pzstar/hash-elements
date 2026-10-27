@@ -45,28 +45,12 @@ class Group_Control_Query extends Group_Control_Base {
         $taxonomies = get_taxonomies($taxonomy_filter_args, 'objects');
 
         foreach ($taxonomies as $taxonomy => $object) {
-            $args = array(
-                'taxonomy' => $taxonomy,
-                'orderby' => 'name',
-                'order' => 'ASC',
-                'hierarchical' => 0,
-                'hide_empty' => 0,
-            );
-            $all_categories = get_terms($args);
-            $cat_ids = [];
-
-            if (!empty($all_categories)) {
-                foreach ($all_categories as $cat) {
-                    $cat_ids[] = $cat->term_id;
-                }
-            }
-
             $fields[$taxonomy . '_ids'] = [
                 'label' => $object->label,
                 'type' => Selectize_Control::Selectize,
                 'label_block' => true,
                 'multiple' => true,
-                'key_options' => hash_elements_get_dropdown_indent_array(0, $all_categories, $cat_ids),
+                'key_options' => self::get_term_options($taxonomy),
                 'condition' => [
                     'post_type' => $object->object_type,
                 ],
@@ -119,6 +103,25 @@ class Group_Control_Query extends Group_Control_Base {
         ];
 
         return parent::prepare_fields($fields);
+    }
+
+    // Built once per request: about 20 widgets add this control, and Elementor builds all of them at once when it loads the widget panel.
+    private static function get_term_options($taxonomy) {
+        static $options = array();
+
+        if (!isset($options[$taxonomy])) {
+            $terms = get_terms(array(
+                'taxonomy' => $taxonomy,
+                'orderby' => 'name',
+                'order' => 'ASC',
+                'hierarchical' => 0,
+                'hide_empty' => 0,
+            ));
+            $terms = is_array($terms) ? $terms : array();
+            $options[$taxonomy] = hash_elements_get_dropdown_indent_array(0, $terms, wp_list_pluck($terms, 'term_id'));
+        }
+
+        return $options[$taxonomy];
     }
 
     private static function get_post_types() {

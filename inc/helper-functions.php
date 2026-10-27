@@ -199,40 +199,38 @@ if (!function_exists('hash_elements_get_tags')) {
 
 
 function hash_elements_get_dropdown_indent_array($parent_id, $categories, $cat_ids = [], $child_count = -1) {
+    // Groups terms by parent once, so sites with thousands of tags are walked in one pass instead of rescanning the whole list for every term.
+    $children = array();
+    foreach ($categories as $cat) {
+        $children[$cat->parent][] = $cat;
+    }
+
+    return hash_elements_get_dropdown_indent_options($parent_id, $children, array_flip($cat_ids), $child_count);
+}
+
+function hash_elements_get_dropdown_indent_options($parent_id, $children, $visible_ids, $child_count) {
     $options = array();
-    $loop_categories = array_filter($categories, function ($cats) use ($parent_id) {
-        return $cats->parent == $parent_id;
-    });
 
-    if (count($loop_categories)) {
-        $child_count++;
-        $visible_slugs = $cat_ids;
+    if (empty($children[$parent_id])) {
+        return $options;
+    }
 
-        if ($loop_categories) {
-            foreach ($loop_categories as $cat) {
-                $cat_name = '';
-                $child_options = hash_elements_get_dropdown_indent_array($cat->term_id, $categories, $cat_ids, $child_count);
+    $child_count++;
 
-                if (in_array($cat->term_id, $visible_slugs)) {
-                    $i = 0;
-                    while ($i < $child_count) {
-                        $cat_name .= '- ';
-                        $i++;
-                    }
-                    $cat_name .= esc_html(ucwords(str_replace('-', ' ', $cat->name)));
-                    $options[] = array(
-                        'key' => $cat->term_id,
-                        'value' => $cat_name . ' (' . $cat->count . ')'
-                    );
-                    if (!empty($child_options)) {
-                        foreach ($child_options as $val) {
-                            $options[] = $val;
-                        }
-                    }
-                }
+    foreach ($children[$parent_id] as $cat) {
+        if (!isset($visible_ids[$cat->term_id])) {
+            continue;
+        }
 
-            }
+        $options[] = array(
+            'key' => $cat->term_id,
+            'value' => str_repeat('- ', $child_count) . esc_html(ucwords(str_replace('-', ' ', $cat->name))) . ' (' . $cat->count . ')'
+        );
+
+        foreach (hash_elements_get_dropdown_indent_options($cat->term_id, $children, $visible_ids, $child_count) as $val) {
+            $options[] = $val;
         }
     }
+
     return $options;
 }

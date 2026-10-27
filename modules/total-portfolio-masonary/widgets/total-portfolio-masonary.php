@@ -7,6 +7,7 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
+use HashElements\AjaxSelect_Control;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -56,10 +57,13 @@ class TotalPortfolioMasonary extends Widget_Base {
         $this->add_control(
             'exclude_posts', [
                 'label' => esc_html__('Exclude Posts', 'hash-elements'),
-                'type' => Controls_Manager::SELECT2,
+                // Searched over AJAX; listing every post here stalled the editor's widget panel on large sites.
+                'type' => AjaxSelect_Control::AJAXSELECT,
+                'search' => 'hash_elements_get_posts_by_query',
+                'render' => 'hash_elements_get_posts_title_by_id',
+                'post_type' => 'post',
                 'label_block' => true,
                 'multiple' => true,
-                'options' => $this->get_posts(),
             ]
         );
 
@@ -420,28 +424,6 @@ class TotalPortfolioMasonary extends Widget_Base {
         }
 
         return $args;
-    }
-
-    private function get_posts() {
-        /** Get All Posts */
-        $post_list = get_posts(
-            array(
-                'post_type' => 'post',
-                'orderby' => 'date',
-                'order' => 'DESC',
-                'posts_per_page' => -1,
-            )
-        );
-
-        $posts = array();
-
-        if (!empty($post_list) && !is_wp_error($post_list)) {
-            foreach ($post_list as $post) {
-                $posts[$post->ID] = $post->post_title;
-            }
-        }
-
-        return $posts;
     }
 
     protected function get_portfolio_category() {

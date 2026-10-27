@@ -3,7 +3,7 @@ Contributors: hashthemes
 Tags: elementor, hashthemes, drag and drop, page builder
 Requires at least: 6.3
 Tested up to: 7.1
-Stable tag: 1.5.7
+Stable tag: 1.5.8
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -40,6 +40,10 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 </ol>
 
 == Changelog ==
+= 1.5.8 - 27 Oct, 2026 =
+* Elementor widget panel could keep loading on sites with many posts or tags, as the news blocks rebuilt their category and tag lists for every widget and the Portfolio Masonry block listed every post - Fixed
+* Exclude Posts in the Total Portfolio Masonry block is now a search box, like the news blocks
+
 = 1.5.7 - 11 Oct, 2026 =
 * Stray "yes" text printed before Elementor page content in Square Plus Tab block - Fixed
 * Undefined variable warning on linked logos in Total Logo Carousel block - Fixed
