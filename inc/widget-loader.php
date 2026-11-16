@@ -153,7 +153,7 @@ class HASHELE_Widget_Loader {
      * Enqueue Frontend Styles
      */
     public function enqueue_frontend_styles() {
-        wp_enqueue_style('materialdesignicons', HASHELE_URL . 'assets/fonts/materialdesignicons/materialdesignicons.css', array(), HASHELE_VERSION);
+        wp_enqueue_style('materialdesignicons-7.4.47', HASHELE_URL . 'assets/fonts/materialdesignicons/materialdesignicons.css', array(), HASHELE_VERSION);
         wp_enqueue_style('owl-carousel', HASHELE_URL . 'assets/css/owl.carousel.css', array(), HASHELE_VERSION);
         if (is_rtl()) {
             wp_enqueue_style('hash-elements-frontend-style', HASHELE_URL . 'assets/css/frontend.rtl.css', array(), HASHELE_VERSION);
