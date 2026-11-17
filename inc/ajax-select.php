@@ -10,9 +10,7 @@ class Ajax_Select {
 
     public function __construct() {
         add_action('wp_ajax_hash_elements_get_posts_by_query', array($this, 'get_posts_by_query'));
-        //add_action('wp_ajax_nopriv_hash_elements_get_posts_by_query', array($this, 'get_posts_by_query'));
         add_action('wp_ajax_hash_elements_get_posts_title_by_id', array($this, 'get_posts_title_by_id'));
-        //add_action('wp_ajax_nopriv_hash_elements_get_posts_title_by_id', array($this, 'get_posts_title_by_id'));
     }
 
     /**

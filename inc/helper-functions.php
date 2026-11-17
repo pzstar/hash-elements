@@ -199,7 +199,7 @@ if (!function_exists('hash_elements_get_tags')) {
 
 
 function hash_elements_get_dropdown_indent_array($parent_id, $categories, $cat_ids = [], $child_count = -1) {
-    // Groups terms by parent once, so sites with thousands of tags are walked in one pass instead of rescanning the whole list for every term.
+    // Groups terms by parent once, so thousands of tags are walked in one pass.
     $children = array();
     foreach ($categories as $cat) {
         $children[$cat->parent][] = $cat;

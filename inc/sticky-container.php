@@ -29,8 +29,7 @@ class Sticky_Container {
     }
 
     public function add_controls($section) {
-        // Viral Pro, Square Plus, Total Plus and Easy Elementor Addons ship the same option
-        // under their own prefix (viral_pro_sticky_container, ...): do not list it twice.
+        // Viral Pro, Square Plus, Total Plus and Easy Elementor Addons ship the same option under their own prefix (viral_pro_sticky_container, ...): do not list it twice.
         foreach (array_keys($section->get_controls()) as $control_id) {
             if ('hash_elements_sticky_container' !== $control_id && preg_match('/_sticky_container$/', $control_id)) {
                 return;

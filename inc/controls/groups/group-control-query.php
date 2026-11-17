@@ -30,8 +30,6 @@ class Group_Control_Query extends Group_Control_Base {
 
     protected function prepare_fields($fields) {
 
-        //$args = $this->get_args();
-
         $post_types = self::get_post_types();
 
         $fields['post_type']['options'] = $post_types;
@@ -105,7 +103,7 @@ class Group_Control_Query extends Group_Control_Base {
         return parent::prepare_fields($fields);
     }
 
-    // Built once per request: about 20 widgets add this control, and Elementor builds all of them at once when it loads the widget panel.
+    // Built once per request: about 20 widgets add this control, all built when the panel loads.
     private static function get_term_options($taxonomy) {
         static $options = array();
 

@@ -29,8 +29,7 @@ class Sticky_Column {
     }
 
     public function add_controls($section) {
-        // Viral Pro, Square Plus and Total Plus ship the same option under their own
-        // prefix (viral_pro_sidebar_sticky, ...): do not list it twice.
+        // Viral Pro, Square Plus and Total Plus ship the same option under their own prefix (viral_pro_sidebar_sticky, ...): do not list it twice.
         foreach (array_keys($section->get_controls()) as $control_id) {
             if ('hash_elements_sidebar_sticky' !== $control_id && preg_match('/_sidebar_sticky$/', $control_id)) {
                 return;

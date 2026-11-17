@@ -54,18 +54,7 @@ class Selectize_Control extends Base_Data_Control {
                 var value = data.controlValue;
                 var keyOptions = data.key_options;
 
-                /*
-                 * A saved term is not always among the options. Demo content
-                 * arrives with the ids of the site it was exported from, and
-                 * terms get deleted. Reading a label off the missing option
-                 * used to throw, which took the whole Content tab down with
-                 * it. Keep the value, so saving does not quietly drop it, and
-                 * fall back to showing the id.
-                 *
-                 * The value arrives as strings and the keys as numbers, so
-                 * every comparison here is made on strings; a strict indexOf
-                 * matched nothing and listed the chosen terms twice.
-                 */
+                /* A saved term may be missing from the options (deleted, or from demo content): keep the value, show its id, and compare as strings. */
                 var selected = _.isArray( value ) ? value : ( value ? [ value ] : [] );
                 var selectedKeys = _.map( selected, String );
 

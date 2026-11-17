@@ -121,11 +121,9 @@
             var $element = $scope.find('#he-elasticstack-' + $id);
             if ($element.length > 0) {
                 new ElastiStack(document.getElementById('he-elasticstack-' + $id), {
-                    // distDragBack: if the user stops dragging the image in a area that does not exceed [distDragBack]px 
-                    // for either x or y then the image goes back to the stack 
+                    // distDragBack: if the user stops dragging the image in a area that does not exceed [distDragBack]px for either x or y then the image goes back to the stack
                     distDragBack: 200,
-                    // distDragMax: if the user drags the image in a area that exceeds [distDragMax]px 
-                    // for either x or y then the image moves away from the stack 
+                    // distDragMax: if the user drags the image in a area that exceeds [distDragMax]px for either x or y then the image moves away from the stack
                     distDragMax: 450,
                     // callback
                     onUpdateStack: function (current) {
@@ -187,8 +185,6 @@
                         filter: active_tab
                     });
 
-                    //HashSetMasonary($container);
-
                     $(window).on('resize', function () {
                         HashGetMasonary($element, $container);
                     }).resize();
@@ -203,7 +199,6 @@
                     var filterValue = $(this).attr('data-filter');
                     $container.isotope({filter: filterValue});
 
-                    //HashSetMasonary($container);
                     HashGetMasonary($element, $container);
 
                     $container.isotope({filter: filterValue});
@@ -315,9 +310,7 @@
             }
 
             if (enable_sticky) {
-                // Elementor 3+ names the inner wrapper .elementor-widget-wrap. Without the class
-                // the sticky script wraps the column in an extra div, which breaks Elementor's
-                // direct-child column styles.
+                // Elementor 3+ names the inner wrapper .elementor-widget-wrap; without it the sticky script adds a wrapper that breaks column styles.
                 $scope.children('.elementor-column-wrap, .elementor-widget-wrap').addClass('theiaStickySidebar');
                 $scope.css({display: 'block'});
 
